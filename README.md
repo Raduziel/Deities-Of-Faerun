@@ -1,1 +1,0 @@
-# Deities-Of-Faerun
