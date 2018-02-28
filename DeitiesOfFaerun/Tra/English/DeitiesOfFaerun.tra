@@ -1136,7 +1136,7 @@ The Icevassal throws a dagger made of pure ice into a target. The dagger deals d
 
 FROST WHIP
 
-The Icevassal hits some of the targets ahead of <PRO_HIMHER> for some damage.
+The Icevassal hits the target for some damage slipping it away from <PRO_HIMHER>.
 
 FROST SWORD
 
@@ -1197,7 +1197,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and a ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.~
+Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and an ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.~
 @1712 = ~Ice Elemental~
 @1713 = ~Frozen~
 @1714 = ~Holy Symbol of Auril~

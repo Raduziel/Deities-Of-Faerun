@@ -352,6 +352,68 @@ The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently, a 50% 
 
 ====================================================================================================================================================================
 
+11) AURIL
+
+Frost Dagger
+(Evocation)
+
+Level: 1
+Sphere: Water
+Range: 30
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a dagger that flies to a target determined by the caster. This weapon hits for 1d4+5 points of cold damage and the target must make a Saving Throw vs. Death or be frozen for 1 round.
+
+---
+
+Frost Whip
+(Evocation)
+
+Level: 2
+Sphere: Water
+Range: 5
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a whip made of pure ice that is used immediately against a target designed by the caster for 4d4 points of cold damage. The whip makes the area around the target slippery - a Saving Throw vs. Wands must be made, otherwise the target will slip three feet away from the caster.
+
+---
+
+Frost Sword
+(Alteration, Evocation)
+
+Level: 4
+Sphere: Water
+Range: 0
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a swirling sword-shaped formation of jagged, fast-swirling ice shards extending from the caster's hand. Weightless and nonmetallic, it is considered a +2 enchanted weapon for purposes of determining what it can hit and strikes at THACO 6, regardless of the caster's normal combat abilities. Its touch lacerates for 3d4 points of damage and chills for an additional 1d6 points of cold damage.
+
+---
+
+Conjure Ice Elemental
+(Conjuration/Summoning)
+
+Level: 6
+Sphere: Water
+Range: Visual range of the caster
+Duration: 10 turns
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and an ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -377,6 +439,8 @@ This component also alters stats (raising it to the kit's minimum), alignment (a
 d) New strongholds possibilities
 
 Some kits will be able to get strongholds non-related to the cleric's one (as listed below). Notice that the one-stronghold rule still applies, so even with Tyr being eligible for three strongholds (Helm, Fighter and Paladin) chosen one will make you lose the possibility of getting another. 
+
+- Auril: Talos
 
 - Baervan Wildwanderer : Druid, Ranger
 
