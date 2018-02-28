@@ -1213,4 +1213,98 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Talon of Malar
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1801 = ~talon of malar~
+@1802 = ~Talon of Malar~
+@1803 = ~TALON OF MALAR: Malar (MAH-larr) is the god of the savage wild. Along with Umberlee and Auril, he is one of the Gods of Fury who serve Talos. He is worshiped by hunters who revel in the kill or who hunt for sport or to excess, fallen rangers, sentient carnivores, and lycanthropes. Those who suffer the depredations of wild beasts attempt to placate the Beastlord with offerings of freshly killed and bloody meat, but Malar rarely recognizes their entreaties. In his more favorable aspects he is revered by beings who identify with the untamed nature, grace, and amorality of predators.
+
+Malar achieves almost sensual fulfillment from the hunt and the kill. He revels in the fear radiated by the hunted and hungers for the blood of his prey. He speaks only in low growling undertone or vicious snarl. The Lord of Beasts despises the Balance sought by druids and their deities and seeks to overthrow it through the actions of his faithful. He manifests an avatar in Faerûn in an endless hunt across the Realms whenever the mood strikes him - which is almost constantly.
+
+During the Time of Troubles, Malar stalked the length and breadth of Faerûn. He is known to have battled Nobanion in the Gukhmere Forest in a fierce conflict known as the Roar of Shadows. The Beastlord was driven north and west by the Lion God working in an alliance with the Emerald Enclave. When Malar appeared in the North, he was relentlessly pursued by Gwaeron Windstrom and could not shake the Master of Tracking from his trail. The Beastlord did challenge and defeat Herne, a corrupted incarnation of the Master of the Hunt brought to the Realms by an ancient wave of immigrants along with Oghma and other powers. Herne was venerated by the ores of the High Forest, and Malar has since assumed his portfolio.
+
+In the aftermath of the Time of Troubles, Malar has been weakened by the growing strength of Talos. As a result, he has been forced to seek new worshipers among the nonhuman tribes, and now numerous humanoids have begun to venerate the Beastlord as an adjunct to their traditional pantheons. Malar has also acquired additional human worshipers from the ranks of a few beast cults by slaying their totem spirits and assuming the animal spirits' portfolios as aspects of his own. One of the first beast totems to fall to his bloody talons was Blue Bear, an Uthgardt beast cult corrupted by pervasive contact with lower planar beings and venerated in other lands as Render, the Bear God.
+
+Armor: All up to and including studded leather armor.
+Weapon: Non-missile bludgeoning and dagger only. 
+Major Spheres: Animal, Vigor, Dread, War, Destruction. 
+Minor Spheres: Plant, Affliction.
+
+Advantages:
+
+- May use the Claws of Malar weapon.
+- Receives Attacks Per Round as if they were warriors.
+- May cast Beast Claw once per day as a special ability, starting at level 3.
+- Becomes immune to Charm effects, starting at level 7.
+- May cast Animal Rage once per day as a special ability, starting at level 10.
+
+CLAWS OF MALAR
+
+This weapon is a pair of magical claws that the Talon can use on <PRO_HISHER> bare hands or over a glove.
+
+~
+@1804 = ~Claws of Malar~
+@1805 = ~These claws are given by the Church of Malar to its elected Talons. They consist of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like lion's claws. The claws must be used as a pair to be effective in combat. Despise being uncomfortable, it is possible to wear a glove under the claws.
+
+STATISTICS:
+
+Equipped abilities:
+- Critical Hit Chance: +5%
+
+Combat abilities:
+– 1 extra attack per round
+– Target suffers 3 points of additional bleeding damage per round for 2 rounds on a critical hit
+
+Thac0: +1
+Damage: 1d6+1 (slashing)
+Speed Factor: 2
+Proficiency Type: Talon of Malar
+Type: Two-handed
+Requires:
+12 Strength
+
+Weight: 5~
+@1806 = ~Beast Claw~
+@1807 = ~Beast Claw
+(Alteration)
+
+Level: 2
+Sphere: Animal
+Range: 0
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transforms the caster's arms into the claws of a mighty beast, giving the caster 18/72 Strength and the ability to rake an opponent for 2d4 (plus Strength bonus) points of slashing damage. The caster can attack twice per round with the beast claws, with a +2 bonus to hit.~
+@1808 = ~Animal Rage~
+@1809 = ~Animal Rage
+(Enchantment)
+
+Level: 5
+Sphere: Vigor
+Range: Touch
+Duration: 15 rounds
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell imbues the target creature with animal ferocity. The target creature gains a Strength score of 19, +20 Hit Points, +20% movement rate, and a +2 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect; when enemies are within sight, <PRO_HESHE> immediately attacks in melee, using whatever is in hand. While this spell is in effect, there is a 5% chance per round that the target will go berserk, attacking friend and foe alike.~
+@1810 = ~Holy Symbol of Malar~
+@1811 = ~Only the most worthy and devoted servants of the Lord of the Beasts are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF

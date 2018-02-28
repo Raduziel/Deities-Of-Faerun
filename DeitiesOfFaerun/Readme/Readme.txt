@@ -456,6 +456,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Lathander: Lathander
 
+- Malar: Talos, Druid
+
 - Mask: Talos, Thief
 
 - Mystra: Wizard
