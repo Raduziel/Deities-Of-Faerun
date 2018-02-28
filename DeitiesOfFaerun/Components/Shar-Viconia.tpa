@@ -1,0 +1,42 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						  VICONIA, THE NIGHTCLOAK OF SHAR
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+DELETE ~BELTSH.itm~
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSSHAR.itm" ~override\BELTSH.itm~ SAY NAME1 @414 SAY NAME2 @414 SAY DESC @415
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = 0
+			  parameter2 = 11
+			  timing = 2
+			  power = 1
+			STR_VAR
+			  resource = VICONIA
+		  END
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAShar" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAShar"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAShar%"
+COPY_EXISTING_REGEXP GLOB ~^_?viconi[0-20]*.*\.cre$~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  WRITE_BYTE    0x238 14
+      BUT_ONLY
+	  
+//EoF

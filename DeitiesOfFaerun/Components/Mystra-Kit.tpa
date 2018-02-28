@@ -1,0 +1,158 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Dweomerkeeper of Mystra
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAMyst~
+    ~RAMyst 0 0 0 0 1 1 0 1~
+    ~RAMyst 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMyst 3 3 3 14 12 3~
+	~RAMyst 0 0 0 0 0 0~
+	~RAMyst 3 3 3 14 12 3~
+    ~RAMyst 3 3 3 14 12 3~
+	~RAMyst 0 1 0 1 0 0 0 1 0~
+	~RAMyst 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RAMyst.2da~
+	~K_C_H K_C_HE K_C_E K_C_G~
+	~0x04000000 3~
+	~Cl0~
+	~CHAN18 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF10 HAMM09 *~
+	SAY @1401
+	SAY @1402
+	SAY @1403
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAMyst~
+		clascolr = ~57 79 123 2 24~
+		clswpbon = ~0 0 3~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~major~
+	s_Death 		= ~x~
+	s_Benediction 	= ~minor~
+	s_Destruction 	= ~x~
+	s_Protection 	= ~minor~
+	s_War 			= ~x~
+	s_Exploration   = ~major~
+	s_Knowledge 	= ~major~
+	s_Deception 	= ~minor~
+	s_Thought 		= ~major~
+	s_Dread 		= ~minor~
+	s_Vigor 		= ~x~
+	s_Affliction 	= ~x~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~major~
+	s_Magic 		= ~major~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RAMYSTFE.spl" override
+
+COPY "DeitiesOfFaerun\Spl\RAHSMYST.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSMYST.itm" override SAY NAME1 @1404 SAY NAME2 @1404 SAY DESC @1405
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMyst + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+COPY_EXISTING ~SPPR303.spl~ ~override/RAMYST1.spl~            //Dispel Magic
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMyst + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@1402)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+ACTION_FOR_EACH file IN ~MYSTS~ ~MYSTL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

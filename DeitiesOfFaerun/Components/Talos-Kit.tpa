@@ -1,0 +1,272 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						         Stormcaller of Talos
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
+  COPY_EXISTING ~clastext.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~text~
+      PATCH_IF ~%text%~ STRING_EQUAL_CASE ~GODTALOS~ BEGIN
+        SET talos_row = %row%
+      END
+    END
+    SET_2DA_ENTRY %talos_row% 3 cols RESOLVE_STR_REF (@901)
+    SET_2DA_ENTRY %talos_row% 5 cols RESOLVE_STR_REF (@902)
+    SET_2DA_ENTRY %talos_row% 4 cols RESOLVE_STR_REF (@903)
+  BUT_ONLY
+END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~text~
+      PATCH_IF ~%text%~ STRING_EQUAL_CASE ~GODTALOS~ BEGIN
+        SET talos_row = %row%
+      END
+    END
+    SET_2DA_ENTRY %talos_row% 3 cols RESOLVE_STR_REF (@901)
+    SET_2DA_ENTRY %talos_row% 5 cols RESOLVE_STR_REF (@902)
+    SET_2DA_ENTRY %talos_row% 4 cols RESOLVE_STR_REF (@903)
+  BUT_ONLY
+END
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  COPY_EXISTING ~kitlist.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 1 ~text~
+      PATCH_IF ~%text%~ STRING_EQUAL_CASE ~TALOS~ BEGIN
+        SET talos_row = %row%
+      END
+    END
+    SET_2DA_ENTRY %talos_row% 2 cols RESOLVE_STR_REF (@901)
+    SET_2DA_ENTRY %talos_row% 3 cols RESOLVE_STR_REF (@902)
+    SET_2DA_ENTRY %talos_row% 4 cols RESOLVE_STR_REF (@903)
+  BUT_ONLY
+END
+
+COPY "DeitiesOfFaerun\Tables\CLABPR02.2DA" override
+
+COPY_EXISTING ~CLASCOLR.2DA~ ~override~
+SET_2DA_ENTRY_LATER ~RACLASCOLR~ 3 46  ~205~
+SET_2DA_ENTRY_LATER ~RACLASCOLR~ 4 46  ~97~
+SET_2DA_ENTRY_LATER ~RACLASCOLR~ 5 46  ~142~
+SET_2DA_ENTRY_LATER ~RACLASCOLR~ 6 46  ~41~
+SET_2DA_ENTRY_LATER ~RACLASCOLR~ 7 46  ~96~
+SET_2DA_ENTRIES_NOW ~RACLASCOLR~ 1
+PRETTY_PRINT_2DA
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ABCLASRQ.2DA~ ~override~
+SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 47 1  ~13~
+SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 47 2  ~3~
+SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 47 3  ~3~
+SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 47 4  ~3~
+SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 47 5  ~14~
+SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 47 6  ~3~
+SET_2DA_ENTRIES_NOW ~RAABCLASRQ~ 1
+PRETTY_PRINT_2DA
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ALIGNMNT.2DA~ ~override~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 1  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 2  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 3  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 4  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 5  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 6  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 7  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 8  ~0~
+SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 47 9  ~1~
+SET_2DA_ENTRIES_NOW ~RAALIGNMNT~ 1
+PRETTY_PRINT_2DA
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 3  48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 4  48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 5  48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 6  48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 7  48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 8  48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 9  48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 10 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 11 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 12 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 13 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 14 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 15 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 16 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 17 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 18 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 19 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 20 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 21 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 22 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 23 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 24 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 25 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 26 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 27 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 28 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 29 48  ~0~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 30 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 31 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 32 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 33 48  ~1~
+SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 34 48  ~2~
+SET_2DA_ENTRIES_NOW ~RAWEAPPROF~ 1
+PRETTY_PRINT_2DA
+BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SPRINT mod_clab ~CLABPR02~
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+LAF ~DEFINE_FNP_KIT_INFO~
+	INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 1
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+	STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~minor~
+	s_Benediction 	= ~minor~
+	s_Destruction 	= ~major~
+	s_Protection 	= ~x~
+	s_War 			= ~major~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~x~
+	s_Thought 		= ~x~
+	s_Dread 		= ~major~
+	s_Vigor 		= ~x~
+	s_Affliction 	= ~minor~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~major~
+	s_Air 			= ~major~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~x~
+	s_Magic 		= ~x~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY_EXISTING ~SPWI512.spl~ ~override/RATALOFE.spl~
+WRITE_SHORT 0x1C 4                                                    
+WRITE_LONG  0x34 1                                                         
+WRITE_LONG  0x22 00
+LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
+LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+
+COPY "DeitiesOfFaerun\Spl\RAHSTALO.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSTALO.itm" override SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~GODTALOS~)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+COPY_EXISTING ~SPWI308.spl~ ~override/RATALO1.spl~    //Lightning Bolt
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPPR302.spl~ ~override/RATALO2.spl~    //Call Lightning
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI115.spl~ ~override/RATALO3.spl~    //Shocking Grasp
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPPR720.spl~ ~override/RATALO4.spl~    //Earthquake
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~GODTALOS~)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@902)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+ACTION_FOR_EACH file IN ~TALOS~ ~TALOL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

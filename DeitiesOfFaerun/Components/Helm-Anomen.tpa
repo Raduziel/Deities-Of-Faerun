@@ -1,0 +1,117 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						   ANOMEN, THE WATCHER OF HELM
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAHelmFC~
+    ~RAHelmFC 0 0 0 0 2 2 0 0~
+    ~RAHelmFC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHelmFC 14 3 3 3 13 3~
+	~RAHelmFC 0 0 0 0 0 0~
+	~RAHelmFC 14 3 3 3 13 3~
+    ~RAHelmFC 14 3 3 3 13 3~
+	~RAHelmFC 0 1 0 0 0 0 0 0 0~
+	~RAHelmFC 0 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\CLABPR03.2da~
+	~~
+	~0x04000000 8~
+	~FC0~
+	~PLAT16 HAMM09 BDHELM09 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT03 * * * * * * * WAFLAIL *~
+	SAY @801
+	SAY @802
+	SAY @803
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHelmFC~
+		clascolr = ~205 5 79 41 105~
+		clswpbon = ~1 0 3~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHelmFC~
+      kit_clab = ~CLABPR03~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAHelmFC + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+	READ_ASCII	0x22 animation (2)
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RaHelmFC~) parameter2 = 9 END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelmFC~) parameter2 = 9 END
+	END
+END
+END
+BUT_ONLY
+
+//Anomen
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAHelmFC" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAHelmFC"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAHelmFC%"
+ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 anomen12 BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_LONG    0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  WRITE_BYTE    0x23b 13
+      BUT_ONLY
+  END
+  END
+  
+DELETE ~BELT13.itm~
+  
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSHELM.itm" ~override/BELT13.itm~ SAY NAME1 @811 SAY NAME2 @811 SAY DESC @812
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = 0
+			  parameter2 = 11
+			  timing = 2
+			  power = 1
+			STR_VAR
+	          resource = ANOMEN
+		  END
+
+//EoF

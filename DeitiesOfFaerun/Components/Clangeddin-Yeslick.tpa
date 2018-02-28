@@ -1,0 +1,69 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//							YESLICK, THE ALAGHAR OF CLANGEDDIN
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAClanFC~
+    ~RAClanFC 1 1 1 1 3 1 3 1~
+    ~RAClanFC 1 1 1 1 3 1 3 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAClanFC 15 3 3 3 9 3~
+	~RAClanFC 0 0 0 0 0 0~
+	~RAClanFC 15 3 3 3 9 3~
+    ~RAClanFC 15 3 3 3 9 3~
+	~RAClanFC 1 1 0 0 0 0 0 0 0~
+	~RAClanFC 0 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RAClan.2da~
+	~~
+	~0x04000000 8~
+	~FC0~
+	~PLAT16 HAMM09 BDHELM09 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT03 * * * * * * AX1H07 WAFLAIL *~
+	SAY @501
+	SAY @502
+	SAY @503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAClanFC~
+		clascolr = ~205 5 79 41 105~
+		clswpbon = ~1 0 3~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAClanFC~
+      kit_clab = ~RAClan~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAClanFC" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAClanFC"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAClanFC%"
+ACTION_FOR_EACH creature IN yeslic yeslic5 yeslid BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+      REMOVE_MEMORIZED_SPELL ~SPIN112~
+      REMOVE_KNOWN_SPELL ~SPIN112~
+      BUT_ONLY
+  END
+  END
+  
+//EoF

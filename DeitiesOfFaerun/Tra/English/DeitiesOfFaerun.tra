@@ -1,0 +1,1216 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						          Heartwarder of Sune
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@101 = ~heartwarder of sune~
+@102 = ~Heartwarder of Sune~
+@103 = ~HEARTWARDER OF SUNE: Sune (SUE-nee) Firehair is said to be the fairest of the powers. When she is represented, she is shown as the most beautiful woman in the Realms, with sweeping, radiant, red hair and incredible charms. The Sunite faith is a popular one in large metropolitan areas and among the nobility. Those of a literary or artistic bent, as well as people falling in love or looking for life-mates, often venerate the Lady Firehair.
+
+Sune herself is said to be benevolent and sometimes whimsical, alternating between deep passions and shallow flirtations. She has been romantically linked with many of the Faerûnian powers in the myths of the Realms, although she has never borne any love at all for the gods of fury, Talona, or Tempus, since their functions posit the destruction of many beautiful things, both living and inanimate. Currently, she is rumored to have been rather smitten by the noble actions of Torm at Tantras during the Time of Troubles.
+
+Sune is said to share the waters of the Evergold, a sacred pool, with the elven goddess Hanali Celanil, and a friendly but intense rivalry exists between the two over the innate superiority of elven versus human beauty. Sune abhors and actively opposes any force or deity that causes the marring of living beauty.
+
+Armor: Any.
+Weapon: Bludgeoning and darts.
+Major Spheres: Benediction, Dread, Fire, Healing, Thought.
+Minor Spheres: Knowledge, Light, Protection, Vigor.
+
+Advantages:
+
+- May cast Dire Charm once per day as a special ability, starting at level 1.
+- May use the Rapture special ability once per day, starting at level 5.
+- May cast Flame Strike once per day as a special ability, starting at level 7.
+- May cast Emotion once per day as a special ability, starting at level 9.
+- Gains a permanent +1 to their Charisma at level 9.
+
+RAPTURE
+
+The Heartwarder either charms an ally, curing it of fear, disease and charm effects or awes an enemy, stunning it.
+
+Disadvantages:
+
+- None~
+@104 = ~Rapture~
+@105 = ~Rapture
+(Enchantment/Charm)
+
+Sphere: Thought
+Range: 15-ft/level
+Duration: 2 turns
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell has two effects: when cast upon an ally it will put it on a state of bliss, raising its morale and banishing all effects of disease, fear, sleep and charm. When cast upon an enemy the target must make a Saving Throw vs. Paralyzation or become stunned during the effect of the spell.~
+@106 = ~Emotion~
+@107 = ~Emotion
+(Enchantment/Charm)
+
+Sphere: Benediction/Dread
+Range: Visual range of the caster
+Duration: See below
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: See below
+
+The Heartwarder can inspire one of the following emotions of <PRO_HISHER> target:
+
+HOPE: This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain, during 1 hour, a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.
+
+COURAGE: This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain, during 1 hour, +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.
+
+FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
+
+HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+@108 = ~Emotion: Courage~
+@109 = ~Emotion: Fear~
+@110 = ~Emotion: Hope~
+@111 = ~Courage~
+@112 = ~Hope~
+@113 = ~Emotion: Hopelessness
+(Enchantment/Charm)
+
+Level: 4
+Range: 50 ft.
+Duration: 9 rounds + 1 round/level after 7th
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: Special
+
+When this spell is cast, the wizard can disturb the emotional state of those around <PRO_HIMHER>. The effect of this is to inflict a feeling of hopelessness upon the enemies within the visual range of the caster. Upon a failed Saving Throw vs. Spell, the affected creature will lie down where they stand and give over all their will to a higher power. Sometimes they can be heard to exclaim things such as "I lay down and die," or "I'm going home." This will last for the duration of the spell, upon which they will return to normal.
+
+The secondary effect of this spell is to instill upon the caster the feeling of courage. This will remove any effects of panic and restore <PRO_HISHER> morale, as well as prevent the above from creeping forth into <PRO_HISHER> psyche. There is no Saving Throw vs. this and it will last for the duration of the spell. It will, however, be affected by Magic Resistance and other such things.~
+@114 = ~Holy Symbol of Sune~
+@115 = ~Only the most worthy and devoted servants of the Lady Firehair are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Battleguard of Tempus
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@201 = ~battleguard of tempus~
+@202 = ~Battleguard of Tempus~
+@203 = ~BATTLEGUARD OF TEMPUS: Tempus (TEM-pus) is random in his favors, yet his chaotic nature favors all sides equally. Lord Tempus may be on an army's side on one day, and against them the next; such is the nature of a war. Tempus is prayed to most of all on the nights before battles and regularly venerated by all warriors, regardless of their alignment. As a result, he is a strong, exuberant, robust god — a warrior's god. Tempus sometimes appears at huge battles and important combats — and on rare occasions to individuals who are in a position to cause great strife by their decisions.
+
+Although mighty and profoundly honorable in battle, Tempus answers to his own warrior's code. He is quiet and solitary in relationship to other Faerûnian deities, pursuing no long-lasting alliances or brief flirtations. He is known to love food, drink, and the hunt, though he loves battle best. In recent years, he has sponsored the Red Knight into godhood. His relationship with her is one of a fond and protective father to a brilliant daughter who works hard and successfully at the family business—war.
+
+His diametric opposite in portfolio, Eldath, he considers naive and weak. However, out of respect for her convictions, he punishes those of his faithful who abuse her priests, shrines, or temples. Perhaps he feels that war has little meaning without peace to define and highlight it. Sune, who considers him a foe, he regards as irrelevant and flighty, and therefore unworthy of being his foe.
+
+Armor: Any.
+Weapon: Any, except missiles.
+Major Spheres: Benediction, Destruction, Healing, Vigor, War.
+Minor Spheres: Dread, Protection.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- May specialize in any melee weapon.
+- May Enrage as a Berserker once per day.
+- May cast Prayer once per day as a special ability, starting at level 5.
+- Hit Dice: d10.
+
+Disadvantages:
+
+- None.
+~
+@204 = ~Prayer~
+@205 = ~Prayer
+(Conjuration/Summoning)
+
+Level: 3
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+Prayer bestows favor on the priest and <PRO_HISHER> allies, and curses their enemies. All attacks, damage, and Saving Throws by friendly characters gain a +1 bonus, while enemy attacks, damage rolls, and saves get a -1 penalty. Any creatures within the area of effect when the spell is cast will continue to be affected by the spell when they leave the area, so if the warriors want to chase down that fleeing goblin, the effects of the Prayer will follow them.~
+@206 = ~Combat Bonuses~
+@207 = ~Combat Penalties~
+@208 = ~Holy Symbol of Tempus~
+@209 = ~Only the most worthy and devoted servants of the Foehammer are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Strifeleader of Cyric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@301 = ~strifleader of cyric~
+@302 = ~Strifleader of Cyric~
+@303 = ~STRIFLEADER OF CYRIC: Cyric (SEER-ick) is a god born of the events of the Time of Troubles. He gained the followers and portfolios of many old evil gods and fights to retain them. His power base is immense, and he is one of the three greater powers of evil in Faerûn. The destruction of Zhentil Keep, along with many of the rest of the woes of Faerûn, may be laid at his feet. In an attempt to further enhance his own power, Cyric created the Cyrinishad, a book that is enchanted to bind the reader slavishly to believing that Cyric is the most important being in the universe, exceeding all others. Cyric made the serious error of reading his own book and is now mad, believing that he himself is the center of the universe and everything that occurs is by his direct intervention.
+
+Cyric's madness has taken a number of forms, including visions and a continual chorus of voices that burble and moan in the back of his mind. These voices may be parts of Cyric's own shattered consciousness or they may be the remains of the gods that Cyric slew or usurped the portfolios of.
+
+Cyric is petty, megalomaniac, and totally self-centered. He enjoys tricking and misleading both well-meaning and corrupt individuals and then revealing his deceit when they have made some fatal mistake in judgment or taken a personally devastating action that will ruin their lives. His favorite libation is the tears of disillusioned dreamers and broken-hearted lovers, which he drinks from a silver chalice encrusted with tiny rubies in the shape of sundered hearts.
+
+Cyric hates the other gods, especially Mystra and Kelemvor, but believes they are his puppets, easily fooled and defeated, existing only on his whim. Due to the consequences of his creation of the Cyrinishad, Cyric abandoned the portfolio of death and the dead to Kelemvor and lost the portfolio of tyranny to Iyachtu Xvim, the Godson of Bane.
+
+Cyric uses his new, twisted, ever-changing home in Pandemonium, the Shattered Keep (Cyric refers to it as the "Castle of the Supreme Throne"), as a base for his future plans for the Realms. Such plans have thus far met varying degrees of success, but Cyric believes that the results are as he himself has declared—since he is the most powerful being in the universe.
+
+Armor: Any.
+Weapon: Bludgeoning and longswords.
+Major Spheres: Death, Deception, Dread, Shadow, Thought.
+Minor Spheres: Destruction, Exploration, Knowledge, Protection.
+
+Advantages:
+
+- Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
+- Immune to non-beneficial emotion-altering and stun-inducing magic.
+- May use the Dark Aura special ability once per day, starting at level 7.
+- May use the Instill Madness special ability once per day, starting at level 15.
+
+INSTILL MADNESS:
+
+As the wizard spell Feeblemind, except that it have a touch range.
+
+DARK AURA:
+
+The Strifeleader creates an aura that helps evil aligned and prejudice good aligned creatures. Neutral aligned creatures are not affected.
+
+Disadvantages:
+
+-None~
+@304 = ~Dark Aura~
+@305 = ~Dark Aura
+(Alteration, Invocation/Evocation)
+
+Sphere: Dread
+Range: 0
+Duration: 3 turns
+Casting Time: 7
+Area of Effect: A sphere of 15-ft radius
+Saving Throw: None
+
+This spell creates a spherical miasma of gloom and menace centered on the caster. When this spell is cast, all evil aligned beings attack at a +1 bonus to their attack and damage rolls, all good-aligned creatures strike at a -1 penalty to their attack and damage rolls, and the caster is personally empowered to strike at a +3 bonus to <PRO_HISHER> attack and damage rolls. Neutral-aligned beings (with respect to good and evil) are unaffected by this spell. Once cast, the spell moves with the caster and does not need to be concentrated on to be maintained.~
+@306 = ~Instill Madness~
+@307 = ~Instill Madness
+(Enchantment/Charm)
+
+Sphere: Thought
+Range: Touch
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.~
+@308 = ~Holy Symbol of Cyric~
+@309 = ~Only the most worthy and devoted servants of the Dark Sun are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@310 = ~Insane~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Nightcloak of Shar
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@401 = ~nightcloak of shar~
+@402 = ~Nightcloak of Shar~
+@403 = ~NIGHTCLOAK OF SHAR: Loss is the nature of Shar (SHAHR). One of the Dark Gods, she is a deeply twisted and perverse being of ineffable evil and endless petty hatred and jealousy. She rules over pains hidden but not forgotten, bitterness carefully nurtured away from the light and from others, and quiet revenge for any slight, no matter how old. She is said to have the power to make her devout followers forget their pain, yet what occurs is that they become inured to the loss, treating it as a common and natural state of being. The basic inanity of life and foolishness of hope are the cotnerstones of Shar's being. She revels in the concealed, in that which is hidden, never to be revealed. She can always clearly perceive every being, object, and act performed within darkness.
+
+In temples, representations of the goddess are either a black sphere outlined in racing, magically animated flames of purple or paintings of a beautiful human with long, raven-black hair dressed in swirling dark garb. She smiles coldly and her large eyes have black pupils and are otherwise solid purple.
+
+Shar is the mortal enemy of Selune and battles her ceaselessly on many planes through mortal worshipers and servitor creatures. The undying enmity between the two goddesses is older than recorded time.
+
+During the Time of Troubles, Shar killed Ibrandul, a lesser power of caverns, dungeons, and the Underdark worshiped in Calimshan, the Shining South, and even Waterdeep, for daring to subvert those who venerate the dark away from her. She appropriated his portfolio. She continues to grant the clergy of Ibrandul spells in Ibrandul's name. She is quietly delighted that she is able to use this puppet church to subvert the worship of Selune without drawing attention to her most faithful worshipers.
+
+Armor: All up to and including splint mail.
+Weapon: Bludgeoning only.
+Major Spheres: Deception, Dread, Earth, Shadow, Thought.
+Minor Spheres: Affliction, Benediction, Magic, Perdition.
+
+Advantages:
+
+- Gains +1 bonus to hit, damage and on Saving Throws during the night.
+- May cast Darkness once per day as a special ability, starting at level 1. Gain an additional use every two levels.
+- May cast Blindness once per day as a special ability, starting at level 3.
+- May use the Nightmare special ability on per day, starting at level 9.
+- May cast Shadow Door once per day as a special ability, starting at level 13.
+- May use the Eyebite special ability once per day, starting at level 13.
+
+EYEBITE
+
+The Nightcloak gazes a target and delivers one of the following effects: Charm, Fear, Sickness, Sleep.
+
+NIGHTMARE
+
+Target is put to sleep and suffers 1d10 points of magic damage unless a Saving Throw vs. Spells is successfully made.
+
+Disadvantages:
+
+- None~
+@404 = ~Darkness~
+@405 = ~Darkness
+(Alteration)
+
+Sphere: Shadow
+Range: 20 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell causes total, impenetrable darkness in the area of effect. Infravision is useless. Neither normal nor magical light works. Every creature, foe or friend, will be blinded during the effect of this spell, unless it leaves the affected area.~
+@406 = ~Nightmare~
+@407 = ~Nightmare
+(Invocation, Illusion/Phantasm)
+
+Sphere: Thought
+Range: 40 ft.
+Duration: 2 turns
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber and send a hideous and unsettling vision to the recipient, causing 1d10 points of magic damage. A Saving Throw vs. Spells is allowed to avoid all the effects.~
+@408 = ~Eyebite~
+@409 = ~Eyebite
+(Enchantment/Charm, Illusion/Phantasm)
+
+Sphere: Thought
+Range: 60 ft.
+Duration: 1 round/3 levels
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+An eyebite spell enables the caster to merely meet the gaze of a creature and speak a single word to cause an effect. The Nightcloak selects one of four possible gaze attacks at the time the spell is cast. Every effect can be resisted with a Saving Throw vs. Spells with a -4 penalty. The four effects of the spell are as follows:
+
+CHARM: The Nightcloak can charm a single person or monster. The effect is to make the charmed subject absolutely loyal and docile to the caster, even to the point of personal danger. It is otherwise the same as a Domination spell.
+
+FEAR: The Nightcloak can cause fear. The subject flees in blind terror for the duration of the spell.
+
+SICKEN: This power enables the caster to cause sudden pain and fever to sweep over the subject's body. The target will suffer a -4 penalty to Strength, Dexterity, Constitution, Armor Class, Thac0, damage and a 50% penalty to its Movement Rate.
+
+SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.~
+@410 = ~Charm Gaze~
+@411 = ~Fear Gaze~
+@412 = ~Sicken Gaze~
+@413 = ~Sleep Gaze~
+@414 = ~Holy Symbol of Shar~
+@415 = ~Only the most worthy and devoted servants of the Mistress of the Night are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Alaghar of Clangeddin
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@501 = ~alaghar of clangeddin~
+@502 = ~Alaghar of Clangeddin~
+@503 = ~ALAGHAR OF CLANGEDDIN: Clangeddin Silverbeard (CLAN-gehd-din SIHL-vur-beerd) is the Father of Battle and primary dwarven war god. All dwarves who must fight, especially dwarves who are warriors by profession, worship Clangeddin, their patron and exultant leader in war. The Father of Battle is the deity of choice among lawful neutral dwarven warriors.
+
+Clangeddin watches over the battle-skills and performances of dwarves from his mountain fortress in Arcadia. He encourages valor in battle, weapon-mastery and training, and wisdom in war, and most often manifests his powers to further these aims. Clangeddin is concerned with war as a way of life and is very different from Moradin in this respect. The aptly named Father of Battle especially hates giants and has taught the dwarves - and the gnomes, through their gods - special ways of fighting giant-type creatures.
+
+Clangeddin is a resolute warrior who never backs down from danger and who refuses to surrender even when all seems lost. He is a strict and ethical deity who brooks no treachery or deceit and who never negotiates or compromises. Triumph must be obtained through valor and bravery, and Clangeddin is swift to humble and humiliate any who overcome by cowardly or deceitful means. The Father of Battle is known for often snatching victory from the narrowest of margins in battle. Clangeddin uses his magic only to influence events indirectly, never in battle. He only resorts to influencing a battle when the very existence of his avatar in the Realms is threatened. He always prefers force of arms to spells. Clangeddin is merry in battle, roaring appreciation of shrewd strategies, bravery, and feats of skill even when such are directed against him. He often sings (both stirring battle-ballads and taunting little ditties to unnerve enemies) in the midst of a fight, and dwarves have learned to listen for hints, cues, and warnings in his lyrics. He is a master at turning the tables on enemy armies by anticipating their movements on the battlefield and singing directions to dwarves fighting with him. Like most dwarves, Clangeddin admires most those who help themselves. He typically appears at a battle only to right hopeless odds against dwarves, to balance treachery and punish the treasonous, and to aid the weak of all races against evil, especially the acts of giants.
+
+Armor: Any.
+Weapon: Any.
+Major Spheres: Benediction, Earth, Protection, Vigor, War.
+Minor Spheres: Healing, Thought.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- May specialize in Axes and Warhammers.
+- May cast Command twice per day as a special ability, starting at level 1.
+- May cast Spiritual Hammer once per day as a special ability, starting at level 3.
+- May cast Strength of One once per day as a special ability, starting at level 5.
+- May cast Defensive Harmony once per day as a special ability, starting at level 7.
+- May cast Blade Barrier once per day as a special ability, starting at level 15.
+
+Disadvantages:
+
+- None~
+@504 = ~Holy Symbol of Clangeddin Silverbeard~
+@505 = ~Only the most worthy and devoted servants of the Lord of the Twin Axes are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Hoodwinker of Baravar
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@601 = ~hoodwinker of baravar~
+@602 = ~Hoodwinker of Baravar~
+@603 = ~HOODWINKER OF BARAVAR: Baravar Cloakshadow (BARE-uh-vahr CLOKE-sha-doh) is a sly, sneaky protector of the Forgotten Folk. His defenses and protective strategies are rooted in deceit-illusions, traps, ambushes, and the like-and his jests and tricks may cause their victims some pain (emotional if not physical). In addition to teaching the arts of disguise, stealth, and spying to the gnomes, the Sly One creates traps and illusions of incredible depth and cunning, a skill he has passed on to gnomes throughout the Realms. As the patron of illusions, Baravar is the preeminent gnome god of magic. The Sly One oversees the magical arts of gnome magical craftsfolk as well. All those who survive by their wits venerate Baravar, particularly those who must often combat kobolds, goblins, and other humanoids. Most gnome wizards venerate the Sly One as well, though they do not necessarily participate in their god's ongoing war with the goblinkin powers.
+
+Baravar is closely allied with the other gods of the gnome pantheon, and despite Baravar's somewhat mean-spirited nature, the Sly One follows Garl's lead in emphasizing trickery over strength. Baravar works closely with Segojan Earthcaller, as the Lord of the Burrow once included illusions in his portfolio, and Callarduran Smoothhands, for many deep gnomes are well versed in the art of magical deception. While the Baravar and Gaerdal Ironhand share similar concerns, Baravar's deceits do not sit well with the Shield of the Golden Hills and Gaerdal sometimes chooses to foil the Sly One's plans. Baravar has a genuine dislike for deities of many goblinkin races, particularly the powers of the goblin and kobold pantheons, and unlike the other gnome gods, he is none too restrained about expressing his view. Baravar and Leira were once closely allied, and the apparent death of the Leira at the hands of Cyric has earned him Baravar's eternal vengeance.
+
+Baravar is a crafty, vengeful power who specializes in deceptions. He is unforgiving of any who threaten his charges, and he feels no compunctions about acting against those who have earned his enmity. Although he shares Carl's love of a good practical joke, Baravar's jests and tricks may cause no small discomfort to the victims. He is also a thief and enjoys using illusions to confuse creatures before robbing them. Baravar most often steals out of sheer boredom. The Sly One dispatches avatars to defend gnomes oppressed by humanoids; he often sends one to harass goblinkin from a distance even before they threaten gnomes: "Do unto them before they have a chance to do unto you" is a philosophy he often acts upon.
+
+Armor: All up to and including studded leather armor.
+Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaff.
+Major Spheres: Deception, Exploration, Healing, Protection, Shadow.
+Minor Spheres: Affliction, Earth, Knowledge, War.
+
+Advantages:
+
+- Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic at level 3.
+- May cast Mirror Image once per day as a special ability, starting at level 3.
+- May cast Invisibility once per day as a special ability, starting at level 5.
+- May cast Dimension Door once per day as a special ability, starting at level 7.
+- May cast Mislead once per day as a special ability, starting at level 13.
+- May cast Prismatic Spray once per day as a special ability, starting at level 15.
+
+Disadvantages:
+
+- None~
+@604 = ~Holy Symbol of Baravar Cloakshadow~
+@605 = ~Only the most worthy and devoted servants of the Sly One are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Fastpaw of Baervan
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@701 = ~fastpaw of baervan~
+@702 = ~Fastpaw of Baervan~
+@703 = ~FASTPAW OF BAERVAN: Baervan Wildwanderer (BAY-ur-van WILD-WAN-der-er) is the god of forest-dwelling gnomes and their communities, travel, and the outdoors. Hi loves oak trees and all forest animals and is . guardian of the wild. Baervan gifted forest gnomes with the ability to communicate with forest animals, and taught them to how to hide in and move through wooded environments without being detected. The Masked Leaf is the patron god of forest gnomes, but he is well loved by all of the gnome subraces. He is even revered by the svirfneblin as the Father of Fish and Fungus. Baervan is worshiped by those who love the woodlands, as well as many wanderers, thieves, fighter/thieves, and fighters, particularly those who prefer living in the outdoors rather than in a city all the time.
+
+Baervan's friend and constant companion in his escapades is a giant raccoon named Chiktikka Fastpaws, who is highly intelligent but prone to act before he thinks. Many stories are told of the adventures that this duo has shared, often started by Chiktikka's humorous ability to get into trouble by borrowing something valuable, such as a minor artifact. Baervan is closely allied with the other gods of the gnome pantheon, with the notable exception of Urdlen. He works closely with Segojan Earthcaller, for both gods are concerned with the natural world.
+
+Traditionally, their portfolios are divided between caring for forest animals and plants for Baervan, and burrowing animals for Segojan. Baervan sometimes accompanies Garl, or even Baravar, on their mischievous escapades, and the trio's shared interest in mischief embodies and encourages this aspect of the gnome psyche. Baervan's carefree nature and penchant for jests strains the patience of Gaerdal Iron-hand, albeit not to the extent that the pranks of Baravar Cloakshadow do. Baervan is closely allied with many of the sylvan powers of the Seelie Court. His passion for oak trees has led to his endless, if so far fruitless, pursuit of Verenestra's affections. The Masked Leaf is a frequent participant in the councils of Emmantiensien, Rillifane Rallathil, and Silvanus, though he rarely has the patience to sit through an entire discussion with these slow-speaking woodland giants. Baervan has few foes aside from Urdlen, although the Beastlord has earned his ire for hunting forest gnomes under the Masked Leaf's protection.
+
+Baervan is gentle, good-natured, and mischievous. His penchant for good-natured pranks rivals Garl Glittergold. Except for Chiktikka's company, he tends to keep to himself. Though Baervan sometimes plays jokes on others, it is hard not to like him. The Masked Leaf's tricks are often designed to serve some purpose, unlike the mischief typical of Forgotten Folk. If Baervan wants to send someone a message, he does so in the form of a joke. Baervan dispatches avatars to help repair severe damage to nature, though sometimes just to create mischief.
+
+Armor: All up to and including studded leather armor. No shield allowed.
+Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
+Major Spheres: Air, Animal, Healing, Plant, Water. 
+Minor Spheres: Deception, Exploration, Light, Protection.
+
+Advantages:
+
+- Immune to Entangle and Web.
+- May cast Barkskin once per day as a special ability, starting at level 3.
+- May cast Call Woodland Beings once per day as a special ability, starting at level 7.
+- May cast Animal Summoning III once per day as a special ability, starting at level 13.
+- May use the Changestaff special ability once per day, starting at level 15.
+
+CHANGESTAFF
+
+The Fastpaw turns an ordinary piece of wood into a Treant that will fight by <PRO_HISHER> side until slew or the spell expires.
+
+Disadvantages:
+
+- None~
+@704 = ~Changestaff~
+@705 = ~Changestaff
+(Alteration)
+
+Sphere: Plant 
+Range: Touch
+Duration: 5 turns
+Casting Time: 4 
+Area of Effect: Special 
+Saving Throw: None
+
+By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature with 12 Hit Dice, 80 hit points, and Armor Class 0. It attacks twice per round, inflicting 4d6 points of damage with every successful attack. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for as many turns as the caster has experience levels or until the staff is destroyed, whichever occurs first. If the
+staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.~
+@706 = ~Summoned Treant~
+@707 = ~Attack~
+@708 = ~Immune to Entangle~
+@709 = ~Immune to Web~
+@710 = ~Holy Symbol of Baervan Wildwanderer~
+@711 = ~Only the most worthy and devoted servants of the Masked Leaf are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Watcher of Helm
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@801 = ~watcher of helm~
+@802 = ~Watcher of Helm~
+@803 = ~WATCHER OF HELM: Helm (HELM) is the epitome of the guardian, the watcher, the guard, and has in years past been greatly venerated by those who need to remain watchful for evil at their doorsteps. He was once a much more powerful god, but has fallen upon hard times through two actions. During the Time of Troubles, Helm was left with his powers and ordered to hold the gates to the Outer Planes against the other powers of the Realms when the other deities were stripped of their power and confined to the surface of Abeir-Toril. Helm did so all too successfully, and much of the resulting destruction and deific turmoil caused by the many divine deaths of the Godswar is laid at his feet.
+
+Helm is difficult to understand and is often viewed as emotionless, heartless, and devoted only to his duty or goal at the cost of all mortal consideration. While he is devoted to the point of obsession, he is not heartless, but merely a stern disciplinarian. He is fond of children and has been known to be most uncharacteristically lenient (for Helm) when dealing with small infractions by them or on their behalf.
+
+In attempting to comprehend Helm's driven nature, many mortal sages have attempted to account for him throwing himself into his work by blaming his behavior on a broken heart caused by long-unrequited or spurned love. Others say he lost a great love to tragedy or eternally grieves for a lost relative, such as a brother, sister, or child. Still others account for his behavior more coldly as a burning ambition to become the greatest of deities. Helm has never given credence to any of these theories, as he considers such speculations frivolous use of time that could be spent more honestly at productive work.
+
+Armor: Plate mail and full plate mail only.
+Weapon: Bludgeoning only.
+Major Spheres: Benediction, Knowledge, Protection, Vigor, War.
+Minor Spheres: Healing, Thought.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- Gains -2 bonus to Speed Factor.
+- May cast Glyph of Warding once per day as a special ability, starting at level 1.
+- May use the special ability Wyvern Watch once per day, starting at level 3.
+- May use the special ability Mace of Odo once per day, starting at level 5.
+- May use the special ability Seeking Sword once per day, starting at level 7.
+
+MACE OF ODO
+
+Through this spell the Watcher creates a mace that deals 3d6 damage per hit (4d6 versus undead) for 3 rounds.
+
+WYVERN WATCH
+
+This spell protects an area from enemies. Anyone not invited by the Watcher must make a Saving Throw vs. Spells or become paralyzed.
+
+SEEKING SWORD
+
+The Watcher creates a magical sword that acts accordingly to the Helmite orders.
+
+Disadvantages:
+
+- None~
+@804 = ~Mace of Odo~
+@805 = ~Mace of Odo
+(Evocation)
+
+Sphere: War 
+Range: 0
+Duration: Special 
+Casting Time: 10
+Area of Effect: One magical mace-like construct
+Saving Throw: None
+
+This spell enables a Watcher to create a magical mace in <PRO_HISHER> hand. The Mace of Odo is wielded immediately when casting is complete and protects the Watcher against all level 1 and level 2 spells.
+
+A Mace of Odo strikes as a +5 weapon and does 3d6+5 points of damage. Creatures of 2 HD or less must make a successful Saving Throw vs. Paralyzation when struck by the mace or be paralyzed for 3 turns.
+
+The mace vanishes after one strike or after 3 rounds.~
+@806 = ~Wyvern Watch~
+@807 = ~Wyvern Watch
+(Abjuration, Evocation)
+
+Sphere: Protection 
+Range: 30 ft.
+Duration: Special 
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: Neg.
+
+This spell is known as wyvern watch because of the insubstantial haze brought forth by its casting, which vaguely resembles a wyvern. It is typically used to guard some area against intrusion. Any creature that approaches the guarded area may be affected by the "wyvern" and must roll a successful Saving Throw vs. Spells or stand paralyzed for one round per level of the caster, until freed by the Watcher, by a dispel magic spell, or by a remove paralysis spell. A successful saving throw indicates that the subject creature was missed by the attack of the wyvern-form, and the intruder was not affected.~
+@808 = ~Seeking Sword~
+@809 = ~Seeking Sword
+(Evocation)
+
+Sphere: War 
+Range: 30 ft.
+Duration: 2 turns 
+Casting Time: 7
+Area of Effect: One magical sword-like construct
+Saving Throw: None
+
+This spell brings into being a shimmering blade of force that appears as a sword of any description the caster desires, typically a broad sword. The sword forms in midair and is animated by the will of the caster (who need never touch it), flashing about as it attacks. The blade can strike four times per round, doing 2d4 points of damage with each successful hit, but cannot act beyond the caster's line of sight.
+
+Although it has no attack or damage bonuses, a seeking sword is considered a +4 magical weapon for determining what sorts of beings it can strike. It has 15 Thac0, 30 Hit Points, 5 AC and can only be harmed by fire, magic, acid or crushing damage. Other spell casting is impossible while maintaining the spell, though the caster may move at half his or her normal movement rate per round while doing so.~
+@810 = ~Attack~
+@811 = ~Holy Symbol of Helm~
+@812 = ~Only the most worthy and devoted servants of the Vigilant One are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Stormcaller of Talos
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@901 = ~stormcaller of talos~
+@902 = ~Stormcaller of Talos~
+@903 = ~STORMCALLER OF TALOS: Talos (TAH-los) is the destructive force of nature. He is the god of storms, forest fires, earthquakes, tornadoes, hurricanes, and general destruction. He attracts the destroyer, the raider, the looter, and the brigand among his followers. His actions often seem petty and vengeful and are frequently motivated by rage, anger, and the desire to not appear weak or compromising in any way to his followers or the other powers of Faerûn. He exults in seeing what he or his followers can burn, break, flood, kill or otherwise utterly destroy. He is like a malicious and twisted child whose power and wrath know no bounds and who proves his self-worth and standing again and again by raining havoc and ruin down on those who can little oppose him. Under the alias of Malyk, Talos is trying to fold wild and destructive magic into his portfolio. Mystra is openly challenging the Storm Lord's ploy, and it is likely to fail quickly in the face of her open opposition.
+
+When Talos is portrayed in religious art, he looks similar to his avatar. His home, the Towers of Ruin, is also known as the Screaming Towers and the Towers at the Heart of the Winds because of the howling winds that curl eternally around it in a helix. He is served by Auril, Malar, and Umberlee. Collectively, the four are known as the Gods of Fury. The storm god's relationship with Auril is said to be close and cordial, though he has no compunction about attempting to erode and usurp her portfolio and power base whenever possible. His relationship with Umberlee is flirtatious and filled with rivalry. Talos and Malar only grudgingly work together, and Malar would happily kill Talos if he only had the power to do so. Talos has recently sponsored the once-mortal Velsharoon the Vaunted to demipower status, but Velsharoon is not likely to survive long with the sort of "aid" Talos seems to be providing powers in his service.
+
+Aside from his divine foes listed above, Talos counts among his enemies all those who dare to work magic to try to control the winds and weather in an ongoing or wide-ranging fashion, including the mortal wizards of Netheril and Myth Drannor in the past and the wizards of Halruaa and Thay currently.
+
+Armor: Any.
+Weapon: Bludgeoning and spears.
+Major Spheres: Air, Destruction, Dread, War, Water.
+Minor Spheres: Affliction, Benediction, Death, Healing.
+
+Advantages:
+
+- Gains immunity to all forms of lightning and electrical damage.
+- May cast Shocking Grasp once per day as a special ability, starting at level 1.
+- May cast Call Lightning once per day as a special ability, starting at level 3.
+- May cast Lightning Bolt once per day as a special ability, starting at level 7 and gaining another use every three levels.
+- May cast Earthquake once per day as a special ability, starting at level 15.
+
+Disadvantages:
+
+- None~
+@904 = ~Holy Symbol of Talos~
+@905 = ~Only the most worthy and devoted servants of the Destroyer are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Dawnbringer of Lathander
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1001 = ~dawnbringer of lathander~
+@1002 = ~Dawnbringer of Lathander~
+@1003 = ~DAWNBRINGER OF LATHANDER: A powerful, exuberant god, Lathander (Lah-THANder) is known as the Commander of Creativity and the Morninglord. When Lathander is depicted, he is most often shown in a form similar to his avatar or as a mist of glowing, rose-colored swirls with two golden eyes at the center. As the god of beginnings, Lathander traditionally receives prayer from many inhabitants of Faerûn at the start of a journey or endeavor. Lathander's name is invoked to seal alliances and start new ventures or companies. As a result, the god is very popular among the merchant classes. Though depicted as young, Lathander's noble bearing and demeanor serve him well among the nobility, who also favor his worship in many places. Because he encourages his clergy to strike out and start new shrines and temples all over Faerûn, Lathander's broad-based popularity is rounded out by the many peasant folk aided by his clergy. 
+
+Lathander has a reputation for being sometimes overly enthusiastic, slightly vain, and given to excesses, all flaws very common among the young. He is also eternally optimistic and doggedly perseverant. His alliance with Chauntea serves them both well, since his interests in birth, nurture, and vibrant life dovetail well with her portfolio. The churches of Chauntea and Lathandet have only grown closer since the Time of Troubles, and rumors hold that Lathander has been courting the favor of the Earthmother romantically as well as politically.
+
+Armor: Any.
+Weapon: Bludgeoning only.
+Major Spheres: Healing, Protection, Light, Vigor, Knowledge.
+Minor Spheres: Benediction, Fire, Thought, War.
+
+Advantages:
+
+- Turns Undead as a priest two levels higher.
+- May use the special ability Faerie Fire once per day, starting at level 3.
+- May use the special ability Sunrise once per day, starting at level 5.
+- May use the special ability Boon of Lathander once per day, starting at level 7.
+- May cast False Dawn as a special ability once per day, starting at level 9.
+
+BOON OF LATHANDER:
+
+The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.
+
+FAERIE FIRE
+
+The Dawnbringer makes <PRO_HISHER> enemy glow, giving it a -2 penalty to Armor Class and dispelling invisibility.
+
+SUNRISE
+
+The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature. 
+
+Disadvantages:
+
+- None~
+@1004 = ~Boon of Lathander~
+@1005 = ~Boon of Lathander
+(Conjuration/Summoning)
+
+Sphere: Benediction
+Range: 0
+Duration: 6 rounds
+Casting Time: 7
+Area of Effect: The caster
+Saving Throw: None
+
+During this spell's effect, the spell recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in faerie fire.~
+@1006 = ~Faerie Fire~
+@1007 = ~Faerie Fire
+(Alteration)
+
+Sphere: Fire
+Range: 80 ft.
+Duration: 2 turns
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell enables the caster to outline one or more objects or creatures with a pale glowing light. Outlined creatures are easier to strike; thus, opponents gain a +2 bonus to attack rolls. Note that outlining can render otherwise invisible creatures visible.~
+@1008 = ~Sunrise~
+@1009 = ~Sunrise
+(Evocation, Alteration)
+
+Sphere: Light
+Range: Touch
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Special
+
+With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around himself. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.~
+@1010 = ~Holy Symbol of Lathander~
+@1011 = ~Only the most worthy and devoted servants of the Morninglord are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Holy Justice of Tyr
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1101 = ~holy justice of tyr~
+@1102 = ~Holy Justice of Tyr~
+@1103 = ~HOLY JUSTICE OF TYR: When he is depicted in religious art, Tyr (TEER) appears as a noble warrior missing his right hand, lost to Kezef the Chaos Hound in proving his resilience and strength of spirit. In recent years, he has been shown blinded as well, a fatality of the wrath of Ao during the Time of Troubles. Tyr's symbol shows his nature: justice through benevolent force and armed vigilance. He opposes all beings who deal in trickery, rule-breaking, and unjust destruction or misdeeds. He is said to be a latecomer among the powers of Faerun, appearing over a millennium ago but after most other Realms powers had established themselves. His faith is popular, as everyone knows exactly what Tyr expects his faithful to do and everyone can trust Tyrrans to be honorable, honest, just, and righteous.
+
+Tyr is rather enigmatic to those outside his faith. He represents such stern justice that it is difficult to see the more subtle qualities of the god. He is a courageous father figure to his faithful and struggles continually to achieve for his followers a paradisiacal state of affairs in Faerûn that he knows will never come in an imperfect world. In his more affectionate moods, he sometimes refers to his abode in Lunia as the Just House, and one senses from him at times an odd sort of longing to want to be able to deal with troubles as one could among a perfect family: with love, courage, and the knowledge that everyone will try their best and not betray their fellows because of a special bond that all share. Unfortunately, he also knows that this will never happen, and so emits an undercurrent of stern sadness for what can never be. He is terribly protective of his priesthood, and because of this, he is more likely to manifest in some form to aid them than many other powers.
+
+Torm and Ilmater serve Tyr, and the three deities are sometimes called the Triad.
+
+Armor: Any.
+Weapon: Bludgeoning, bastard sword, and longsword.
+Major Spheres: Benediction, Dread, Knowledge, Thought, War.
+Minor Spheres: Healing, Protection.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- May cast Hold Person as a special ability once per day, starting at level 1.
+- May cast Strength of One as a special ability once per day, starting at level 3.
+- May cast Holy Word as a special ability once per day, starting at level 10.
+- May cast Detect Invisibility as a special ability at will, starting at level 12.
+
+Disadvantages:
+
+- None~
+@1104 = ~Holy Symbol of Tyr~
+@1105 = ~Only the most worthy and devoted servants of the Blind Overlord are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Lorekeeper of Oghma
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1201 = ~lorekeeper of oghma~
+@1202 = ~Lorekeeper of Oghma~
+@1203 = ~LOREKEEPER OF OGHMA: Oghma (OGG-mah) is the most powerful god of knowledge in Faerûn. Much as Mystra of old was said to sit in judgment of each new spell, Oghma is said to decide whether a new idea would be known to the world or confined to its originator. Deneir and Milil both act as intercessors for Oghma, carrying new information both to him and to those whom Oghma favors. He is on good relations with the artificer god, Gond Wonderbringer, who serves him by giving ideas manifest form, but their relationship has sometimes become tense due to Gond's proclivity to press for the rapid introduction of new devices throughout Faerûn. In Durpar, Estagund, and Var the Golden, Oghma is worshiped as part of the Adama, the Durparian concept of a world spirit that embraces and enfolds the divine essence that is part of all beings. Here he is known as Curna, goddess of wisdom.
+
+Oghma is a cheerful and wise power whose ability to persuade others to his point of view he puts to endless use. He can be solemn and righteous, but he is more often quietly humorous and quick to smile. His one flaw may be his fondness for his own thoughts; he tends to implement rather convoluted plots that he has worked out first in his own mind rather than to take direct action.
+
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: Bludgeoning only. 
+Major Spheres: Benediction, Exploration, Healing, Knowledge, Magic, Thought.
+Minor Spheres: Deception, Dread, Protection, Vigor.
+
+Advantages:
+
+- May cast Friends as a special ability once per day, starting at level 5.
+- May use the Legend Lore special ability once per day, starting at level 10.
+- Gains permanently the benefits of Free Action at level 12.
+
+LEGEND LORE:
+
+The Lorekeeper boosts <PRO_HISHER> Lore, learning how to unequip cursed items, neutralize poisons and cure diseases. 
+
+Disadvantages:
+
+- None~
+@1204 = ~Legend Lore~
+@1205 = ~Legend Lore
+(Divination)
+
+Sphere: Knowledge
+Range: 0
+Duration: Special
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+With this spell, the Lorekeeper can extend  knowledge immensely. The caster gains 100 points of Lore for five rounds, and  learns how to unequip cursed items, cure diseases and neutralize poisons.~
+@1206 = ~Holy Symbol of Oghma~
+@1207 = ~Only the most worthy and devoted servants of the Wise God are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Painbearer of Ilmater
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1301 = ~painbearer of ilmater~
+@1302 = ~Painbearer of Ilmater~
+@1303 = ~PAINBEARER OF ILMATER: Ilmater (Ihl-MAY-ter) offers succor and calming words to those who are in pain, oppressed, or in great need. He is the willing sufferer, the one who takes the place of another to heft the other's burden, to take the other's pain. He is the god of the oppressed and unjustly treated.
+
+Ilmater is quiet, kind, good-spirited, and slow to anger. He appreciates a humorous story and has a rather rustic humor himself. When his avatar appears, he takes assaults upon his person passively and rarely lifts a hand against another. He is not totally nonviolent, though, as many often assume by his doctrine of endurance. When facing cruelties and atrocities his rage can boil up, and then he is a figure of frighteningly righteous wrath. His appearance can frighten the young, but he takes great care to reassure them as he treasures children and all young creatures, taking exceptional offense at those who would abuse or harm them.
+
+Ilmater is allied to and serves Tyr, aiding the blinded god in his travels and teaching him to live without his sight but to rely more upon his feelings. He is also on very good terms with Torm, who also serves Tyr, and the three deities are known collectively as the Triad.
+
+Ilmater's symbol in the early days was the blood-stained rack, but since the Godswar the use of a pair white hands bound with blood-red cord has come into almost exclusive use. This newer symbol has increased Ilmater's popularity in the world at large.
+
+Armor: None.
+Weapon: Bludgeoning only. 
+Major Spheres: Benediction, Healing, Exploration, Protection, Vigor.
+Minor Spheres: Light, Knowledge, Plant, Thought.
+
+Advantages:
+
+- Gains a bonus of +2 on Constitution and +4 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
+- May cast Remove Fear as a special ability once per day, starting at level 1 and gaining one additional use every level.
+- May cast Draw Upon Holy Might as a special ability once per day, starting at level 3.
+- May use the Endurance of Ilmater special ability once per day, starting at level 7.
+- May use the Martyrdom of Ilmater special ability once per day, starting at level 12.
+
+MARTYRDOM OF ILMATER
+
+While this spell is in effect, the Painbearer is immune to physical damage, but can't move, cast spells or attack.
+
+ENDURANCE OF ILMATER
+
+This special ability doubles the target's Hit Points, grants it immunity to disease and a +2 bonus to every Saving Throw. All the effects last for 3 turns.
+
+Disadvantages:
+
+- None~
+@1304 = ~Martyrdom of Ilmater~
+@1305 = ~Martyrdom of Ilmater
+(Abjuration, Alteration)
+
+Sphere: Vigor 
+Range: 0
+Duration: 3 rounds
+Casting Time: 3
+Area of Effect: The caster 
+Saving Throw: None 
+
+By means of this spell the Painbearer call a beneficial servant of Ilmater to possess <PRO_HIMHER>. During this possession the priest can resist any sort of physical attacks, but can't move, cast spells or fight back.~
+@1306 = ~Endurance of Ilmater~
+@1307 = ~Endurance of Ilmater
+(Abjuration, Alteration, Necromancy)
+
+Sphere: Vigor 
+Range: Touch
+Duration: 6 rounds
+Casting Time: 7
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+
+This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is only then taken from the real hit points of the affected being. The spell also protects the vitality of the spell recipient so that all checks of any sort against contracting diseases automatically succeed, and all other Saving Throws receive a +2 bonus.~
+@1308 = ~Holy Symbol of Ilmater~
+@1309 = ~Only the most worthy and devoted servants of the One Who Endures are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Dweomerkeeper of Mystra
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1401 = ~dweomerkeeper of mystra~
+@1402 = ~Dweomerkeeper of Mystra~
+@1403 = ~DWEOMERKEEPER OF MYSTRA: Mystra (MISS-trah) is the goddess of magic and with that the goddess of possibilities, which makes her arguably the most powerful deity in Faerûn and possibly throughout Realmspace. She is said to have taught the first spellcaster of the Realms, and to have enabled many of the races to use magic. She supposedly weighs and judges each new spell or magical item to determine whether it should be permitted into the Realms. She is most venerated by wizards and those who use magic or magical items in their daily use. She differs from Azuth in that Azuth is the god of wizards (as to a much lesser degree, all spellcasters), while Mystra is the goddess of the essential force that makes all spellcasting possible. She provides and tends the Weave, the conduit to enable mortal spellcasters and magical crafters to safely access the raw force that is magic. Mystran advisers are common in Azuthian churches, and vice versa.
+
+During the Time of Troubles, the former incarnation of the goddess of magic, Mystra, was destroyed and her essence merged with that of the land itself. A new goddess of magic, arising from the human form of the magician Midnight, took the mantle of divinity and the goddess's portfolio. At this time, the goddess of magic's alignment shifted from lawful neutral, maintaining the balance in use of magic, to neutral good, reflecting the new incarnation's attitudes toward the uses and purpose of magic. Rather than forcing her worshipers to change their ways, Midnight has taken a conservative, long-term strategy by assuming the name and trappings of her predecessor to make the change as smooth as possible for her church and worshipers. Midnight is now revered within the church as the human avatar of Mystra, and her form now graces the avatar of the goddess when she walks the Realms seeking to rebalance the dead and wild magic areas of the land. 
+
+In the past, Mystra contested with Talos and Gond as rivals and with both Bane, and later, Cyric over attempts to control or usurp her power. She despises Cyric.
+
+Mystra is fond of Kelemvor, Lord of the Dead, who was her love during her mortal life. Whether their relationship will again blossom into love is yet to be seen. She is aided in her work by Azuth, Dornal the Watcher, and by her Chosen: Elminster, Khelben "Blackstaff" Arunsun, and the Seven Sisters. Mystra is also served by the Magister, a title borne by a single mortal worker of the magical arts chosen by victory in one-on-one spell combat to be champion of magic. The Magister is also one of the Chosen of Mystra. The current Magister, Lady Magister Noumea, was elevated to the position in 1354 DR.
+
+Armor: Any.
+Weapon: Bludgeoning only. 
+Major Spheres: Magic, Exploration, Knowledge, Thought, Shadow, Healing.
+Minor Spheres: Benediction, Protection, Dread, Deception.
+
+Advantages:
+
+- Immune to wild and miscast magic.
+- Gains a bonus of +2 bonus to <PRO_HISHER> Saving Throws vs. Spells.
+- May cast Dispel Magic as a special ability once per day, starting at level 5.
+- Gains a bonus of +2 bonus to spellcasting time, starting at level 7.
+- Gains immunity to Dispel Magic, Remove Magic and Spellstrike, starting at level 15.~
+@1404 = ~Holy Symbol of Mystra~
+@1405 = ~Only the most worthy and devoted servants of the Lady of Mysteries are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Holy Champion of Torm
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1501 = ~holy champion of torm~
+@1502 = ~Holy Champion of Torm~
+@1503 = ~HOLY CHAMPION OF TORM: Torm (TORM) is the patron of paladins and those who face danger for a greater good. In life, Torm was the most faithful of warriors, obeying all the commands of his king regardless of personal danger. Today he is the war arm and champion of Tyr, Lord of Justice, delivering justice to those who are evil, deceitful, and destructive, and acting to keep law, order, and loyalty everywhere. The Loyal Fury is unflinching in his duty and judges his faithful accordingly. He is stern, righteous, and unyielding, yet his heart is filled first and foremost with goodness, and he can be a kind and gentle power when dealing with the young, the weak, and faithful friends of all sorts.
+
+Together, Ilmater, Torm, and Tyr are sometimes called the Triad. Torm and Ilmater see themselves serving as opposite sides of the same coin and are close allies and friends. Torm and Helm have always been allies, although their followers are often rivals. At Tyr's urging, Torm has begun to cultivate a close relationship with the Red Knight in the hope of drawing her into the fold of justice and away from war for its own sake.
+
+Torm figured significantly in the struggle over the Tablets of Fate during the Time of Troubles. Prior to his battle with Bane, Lord of Strife, Torm discovered a great evil being done in his name by his then-current high priest (named Tenwealth). The followers of Torm had always dominated the religious and political activity of Tantras, but during the time of Torm's Coming, they began to actively persecute all "unbelievers" (in other words, followers of other gods). With the aid of the fallen cleric of Sune named Adon, Torm implicated the chief conspirators and accused them of their crimes.
+
+When the avatar of Bane marched across the Dragonreach to seize the Tablet of Fate hidden in Torm's temple (without the Lord of Duty's knowledge), Torm absorbed the souls of many of his true worshipers, including the heretical leaders of his clergy, and assumed the form of a monstrous lion-headed man. He then battled Bane in a battle of mutual destruction, in the process destroying the besieging Zhentarim navy and creating many dead magic areas.
+
+Because Torm died in service to his own ethos (following orders) and Torm's native plane was the Prime Material itself, he was reinstated by Lord Ao. Soon after, Tyr rewarded his faithful paladin with elevation to lesser power status. In the Year of the Sword, the Lonely Citadel, an isolated single-turreted tower of massive size that crowned a rocky spire in the remote Ice Mountains north of Citadel Adbar, vanished in a burst of divine radiance and reappeared on the flanks of Mt. Celestia as Torm ascended to the Outer Planes. It now forms the heart of his realm, Trueheart, on the layer of Mercuria.
+
+Torm was also active in the battle against Cyric 10 years after the Time of Troubles. The Lord of Duty assisted Mystra, Oghma, and Mask in dethroning Cyric as Lord of the Dead, although Cyric was not destroyed. Torm's actions have earned him and his followers the undying hatred of Cyric, Prince of Lies.
+
+Torm still frequently stalks the Realms in avatar form, as he did when he was a demipower, battling legendary monsters and evil incarnate. In the liturgy of the Tormish church, it is said that Torm will perish in the final battle of the gods, saving the Realms once and for all from Cyric's madness by his self-sacrifice.
+
+Armor: Any.
+Weapon: Bludgeoning only. 
+Major Spheres: Benediction, Protection, Destruction, Vigor, War.
+Minor Spheres: Healing, Dread.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- May cast Command as a special ability once per day, starting at level 1.
+- May cast Greater Command as a special ability once per day, starting at level 5.
+- May cast Bolt of Glory as a special ability once per day, starting at level 12.
+- May cast Power Word, Stun as a special ability once per day, starting at level 15.
+- May cast Holy Word as a special ability once per day, starting at level 20.
+- Hit Dice: d10.~
+@1504 = ~Holy Symbol of Torm~
+@1505 = ~Only the most worthy and devoted servants of the Loyal Fury are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Silentwalker of Mask
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1601 = ~silentwalker of mask~
+@1602 = ~Silentwalker of Mask~
+@1603 = ~SILENT WALKER OF MASK: Mask (MASK) was the deity of intrigue along with being the patron of thieves, but his disastrous perusal of the Cyrinishad led to Cyric being able to steal this aspect of his portfolio from him. One school of thought believed the god totally destroyed after reading the Cyrinishad and having his Godsbane avatar form destroyed by Cyric, another held that Mask was totally subsumed by Cyric, and a third school believed that Mask, engaged in his own intrigues, faked his loyalty to Cyric and later his own death. The truth is that Mask survived the enslaving effects of the Cyrinishad and the destruction of a major avatar form at great cost, losing much of his godly power in the process.
+
+Mask had allowed his intrigue with Cyric to progress so far that he had neglected his own worshipers and was effectively but a lesser power when hit by the effects of the Cyrinishad. When forced to cut away part of his divine power, leaving it in Cyric's hands, Mask was temporarily reduced to the status of a demipower. To make matters worse, Mask crossed a powerful extraplanar entity known as Kezef the Chaos Hound, who has sworn eternal revenge. Mask cannot remain too long in one location or Kezef catches up to him, and Mask does not wish to confront the Chaos Hound until he regains the status of an intermediate power that he had just after the Godswar. Such is the price of intrigue, a price that Mask has paid dearly. (The Chaos Hound's chase has slowed somewhat of late, though, as it becomes distracted by the new-found joys of freedom after so many years of imprisonment.)
+
+Mask's form is ever-changing in regard to appearance—and his true form is not known for sure. Mask remains the patron of thieves, and there his faith is strongest. After a year of frenzied activity by his priests on his behalf (at his encouragement), Mask has taken shadows into his portfolio and managed to climb to the status of lesser power. However, Mask is still a weakened power and walks (or runs, when the Chaos Hound is abroad) carefully in his dealings with the other powers. For the time being, he wants to remain out of the sight (and hopefully out of the mind) of Cyric, who might still covet his remaining power, but he is already plotting ways and means to regain that which he lost to the Mad God.
+
+Mask is very self-possessed and confident—too confident for his own good. He enjoys erecting convoluted and intricate plots to achieve his ends and then playing them out to his benefit. As he has recently learned, however, such predilections proved a weakness for him, and he is now trying much more direct methods to accomplish his goals than before in order to avoid such needless—and unwanted—plot twists as nearly cost him his life and his godhood in his manipulations of Cyric.
+
+Armor: All up to and including studded leather armor. No shield allowed.
+Weapon: Bludgeoning, dagger, and crossbow. 
+Major Spheres: Deception, Shadow, Dread, Knowledge, Exploration, Thought.
+Minor Spheres: Perdition, Death, Affliction, Destruction.
+
+Advantages:
+
+- May cast Darkness once per day as a special ability, starting at level 1.
+- May use the Shadowcloak special ability once per day, starting at level 2.
+- May cast Shadow Door once per day as a special ability, starting at level 3.
+- May cast Shadow Monsters once per day as a special ability, starting at level 5.
+- May cast Demi-shadow Monsters once per day as a special ability, starting at level 7.
+- May cast Summon Shadows once per day as a special ability, starting at level 9.
+- May cast Shades once per day as a special ability, starting at level 13.
+- May cast Invisible Stalker once per day as a special ability, starting at level 15.
+
+SHADOWCLOAK
+
+The Silentwalker surrounds itself with dense shadows, completely silencing <PRO_HISHER> sounds and being protected against physical attacks.~
+@1604 = ~Shadowcloak~
+@1605 = ~Shadowcloak
+(Alteration)
+
+Sphere: Shadow
+Range: 0
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a semisolid fog of amorphous shape that engulfs the caster and moves with <PRO_HIMHER> for the duration of the spell.
+
+A shadowcloak both confuses attackers with its swirling, smoky chaos, and slows strikes, so that all attacks against the shadowcloak-user occur at a -3 attack penalty and a damage penalty of-1 point per die. The shadowcloak also muffles all sounds made by the cloaked being (regardless of that being's desires), so that even shouted speech seems faint and distant, and all sounds short of breakage or metallic ringing or clinking are very likely to be completely blanked out.
+
+The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently, a 50% bonus do Hide in Shadows and puts the caster under the effect of Silence.~
+@1606 = ~Shadow Monsters~
+@1607 = ~Shadow Monsters
+(Illusion/Phantasm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None
+
+This spell shapes material from the Demiplane of Shadow into illusionary monsters. Up to six shadowy creatures can be summoned at once, but their total Hit Dice will normally not exceed the spellcaster's level.~
+@1608 = ~Demi-shadow Monsters~
+@1609 = ~Demi-Shadow Monsters
+(Illusion/Phantasm)
+
+Level: 5
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell is similar to the 4th-level wizard spell Shadow Monsters, except the summoned creatures are much more powerful.~
+@1610 = ~Summon Shadows~
+@1611 = ~Summon Shadows
+(Conjuration/Summoning, Necromancy)
+
+Level: 5
+Range: Visual range of the caster
+Duration: 1 round + 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons three 4-HD shadows. The shadows will obey the orders of the caster, attacking <PRO_HISHER> enemies or performing tasks until the spell expires or the shadows are slain.~
+@1612 = ~Shades~
+@1613 = ~Shades
+(Illusion/Phantasm)
+
+Level: 6
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: Special
+Saving Throw: None
+
+Shades is similar to Shadow Monsters and Demi-Shadow Monsters - it allows the caster to shape material from the Demiplane of Shadow into illusionary creatures. These shadows are tougher than the shadows summoned by Shadow Monsters and Demi-Shadow Monsters, and they will obey the caster until the spell expires or they are slain.~
+@1614 = ~Shadow Goblin~
+@1615 = ~Shadow Lizard Man~
+@1616 = ~Shadow Troll~
+@1617 = ~Shadow Umber Hulk~
+@1618 = ~Summoned Shadow~
+@1619 = ~Holy Symbol of Mask~
+@1620 = ~Only the most worthy and devoted servants of the Shadowlord are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Icevassal of Auril
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1701 = ~icevassal of auril~
+@1702 = ~Icevassal of Auril~
+@1703 = ~ICEVASSAL OF AURIL: Auril (AWE-ril) is most powerful in those regions that are affected by deep winters or crouch at the edges of the Great Glacier. She is worshiped primarily out of fear. She serves Talos and is one of the Gods of Fury, and much of her ethos is similar to that of the god of nature's destruction. She has seen much of her personal power eroded by Talos, and as a result, the winters have grown colder in the past decade to remind the northerners who still controls the power of cold. While she can call on the other Gods of Fury for aid, she only does so with Umberlee with any confidence; Talos usually responds but then directs all the glory and worship to himself, and Malar despises her. The feeling is mutual.
+
+She is a fickle, vain, and evil creature whose cold divine heart remains untouched by any hint of true love, noble feeling, or honor. She often toys with those who offend her, trapping them in snow storms and then driving them insane by tantalizing them with visions of warmth and the comforts of home before she freezes them to death. Her eternal beauty is cold and deadly, the flower of womanhood preserved forever in a slab of arctic ice—with sensibilities to match the ice.
+
+Armor: All up to and including splint mail.
+Weapon: Bludgeoning and axe only. 
+Major Spheres: Death, Destruction, Dread, Affliction, Water. 
+Minor Spheres: Healing, Vigor, Animal, Air.
+
+Advantages:
+
+- May use the Frost Dagger special ability once per day, starting at level 1.
+- May use the Frost Whip special ability once per day, starting at level 3.
+- May use the Frost Sword special ability once per day, starting at level 5.
+- May cast Ice Storm once per day as a special ability, starting at level 8.
+- May cast Cone of Cold once per day as a special ability, starting at level 10.
+- May use the Conjure Ice Elemental special ability once per day, starting at level 12.
+
+FROST DAGGER
+
+The Icevassal throws a dagger made of pure ice into a target. The dagger deals damage and may freeze its target for a brief moment.
+
+FROST WHIP
+
+The Icevassal hits some of the targets ahead of <PRO_HIMHER> for some damage.
+
+FROST SWORD
+
+The Icevassal creates a sharp blade made of pure ice.
+
+CONJURE ICE ELEMENTAL
+
+This spell conjures an Ice Elemental for 10 turns.
+~
+@1704 = ~Frost Dagger~
+@1705 = ~Frost Dagger
+(Evocation)
+
+Level: 1
+Sphere: Water
+Range: 30
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a dagger that flies to a target determined by the caster. This weapon hits for 1d4+5 points of cold damage and the target must make a Saving Throw vs. Death or be frozen for 1 round.~
+@1706 = ~Frost Whip~
+@1707 = ~Frost Whip
+(Evocation)
+
+Level: 2
+Sphere: Water
+Range: 5
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a whip made of pure ice that is used immediately against a target designed by the caster for 4d4 points of cold damage. The whip makes the area around the target slippery - a Saving Throw vs. Wands must be made, otherwise the target will fall.~
+@1708 = ~Frost Sword~
+@1709 = ~Frost Sword
+(Alteration, Evocation)
+
+Level: 4
+Sphere: Water
+Range: 0
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a swirling sword-shaped formation of jagged, fast-swirling ice shards extending from the caster's hand. Weightless and nonmetallic, it is considered a +2 enchanted weapon for purposes of determining what it can hit and strikes at THACO 6, regardless of the caster's normal combat abilities. Its touch lacerates for 3d4 points of damage and chills for an additional 1d6 points of cold damage.~
+@1710 = ~Conjure Ice Elemental~
+@1711 = ~Conjure Ice Elemental
+(Conjuration/Summoning)
+
+Level: 6
+Sphere: Water
+Range: Visual range of the caster
+Duration: 10 turns
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and a ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.~
+@1712 = ~Ice Elemental~
+@1713 = ~Frozen~
+@1714 = ~Holy Symbol of Auril~
+@1715 = ~Only the most worthy and devoted servants of the Frostmaiden are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//EoF

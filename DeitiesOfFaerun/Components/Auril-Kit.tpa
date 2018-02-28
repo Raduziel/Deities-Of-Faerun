@@ -1,0 +1,246 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Icevassal of Auril
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAAuri~
+    ~RAAuri 0 0 0 0 1 1 0 1~
+    ~RAAuri 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAAuri 3 3 13 3 12 3~
+	~RAAuri 0 0 0 0 0 0~
+	~RAAuri 3 3 13 3 12 3~
+    ~RAAuri 3 3 13 3 12 3~
+	~RAAuri 0 0 0 0 0 1 0 0 0~
+	~RAAuri 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RAAuri.2da~
+	~K_C_H K_C_HO K_C_D~
+	~0x04000000 3~
+	~Cl0~
+	~CHAN18 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF10 HAMM09 *~
+	SAY @1701
+	SAY @1702
+	SAY @1703
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAAuri~
+		clascolr = ~68 71 105 222 68~
+		clswpbon = ~0 0 3~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 0
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 1
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~major~
+	s_Benediction 	= ~x~
+	s_Destruction 	= ~major~
+	s_Protection 	= ~x~
+	s_War 			= ~x~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~x~
+	s_Thought 		= ~x~
+	s_Dread 		= ~major~
+	s_Vigor 		= ~minor~
+	s_Affliction 	= ~major~
+	s_Animal 		= ~minor~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~major~
+	s_Air 			= ~minor~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~x~
+	s_Magic 		= ~x~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY_EXISTING ~SPWI320.spl~ ~override/RAAURIFE.spl~
+WRITE_SHORT 0x1C 4                                                    
+WRITE_LONG  0x34 1                                                         
+WRITE_LONG  0x22 00
+LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
+LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+
+COPY "DeitiesOfFaerun\Spl\RAHSAURI.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSAURI.itm" override SAY NAME1 @1714 SAY NAME2 @1714 SAY DESC @1715
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAAuri + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAAURI1.PRO~
+
+COPY "DeitiesOfFaerun\Spl\RAAURI1.spl" override SAY NAME1 @1704 SAY UNIDENTIFIED_DESC @1705    //Frost Dagger
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAAURI1% END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@1713) END
+
+COPY "DeitiesOfFaerun\Spl\RAAURI2.spl" override SAY NAME1 @1706 SAY UNIDENTIFIED_DESC @1707    //Frost Whip
+
+COPY "DeitiesOfFaerun\Spl\RAAURI3.spl" override SAY NAME1 @1708 SAY UNIDENTIFIED_DESC @1709    //Frost Sword
+
+COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.itm" override SAY NAME1 @1708 SAY NAME2 @1708      //Frost Sword (Bam)
+
+COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.bam" override                                      //Frost Sword (Bam)
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun\Itm\IceBlade\MOS%original_base_index%.pvrz~
+    END
+  END
+
+COPY_EXISTING ~SPWI404.spl~ ~override/RAAURI4.spl~                                             //Ice Storm
+
+COPY_EXISTING ~SPWI503.spl~ ~override/RAAURI5.spl~                                             //Cone of Cold
+
+COPY "DeitiesOfFaerun\Spl\RAAURI6.spl" override SAY NAME1 @1710 SAY UNIDENTIFIED_DESC @1711    //Conjure Ice Elemental
+
+COPY "DeitiesOfFaerun\Spl\RAAUR6E1.eff" override
+
+COPY "DeitiesOfFaerun\Spl\RAAUR6E2.eff" override
+
+COPY "DeitiesOfFaerun\Spl\RAAUR6E3.eff" override
+
+COPY "DeitiesOfFaerun\Cre\IceElemental\Complement" override                                    //Ice Elemental - animation, bam, sounds, itm
+
+COPY "DeitiesOfFaerun\Cre\IceElemental\RAIceEl1.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 12 HD
+
+COPY "DeitiesOfFaerun\Cre\IceElemental\RAIceEl2.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 16 HD
+
+COPY "DeitiesOfFaerun\Cre\IceElemental\RAIceEl3.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 24 HD
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAAuri + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@1702)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+	READ_ASCII	0x22 animation (2)
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAuri~) parameter2 = 9 special = RESOLVE_STR_REF (@1702) END
+	END
+END
+END
+BUT_ONLY
+
+ACTION_FOR_EACH file IN ~AURIS~ ~AURIL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~AURIDAGG~ ~AURIELEM~ ~AURIICBL~ ~AURIWHIP~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END	
+
+//EoF

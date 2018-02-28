@@ -1,0 +1,87 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						    TIAX, THE STRIFELEADER OF CYRIC
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RACyriCT~
+    ~RACyriCT 1 0 0 0 1 1 0 1~
+    ~RACyriCT 1 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RACyriCT 13 3 3 3 13 3~
+	~RACyriCT 0 0 0 0 0 0~
+	~RACyriCT 13 3 3 3 13 3~
+    ~RACyriCT 13 3 3 3 13 3~
+	~RACyriCT 0 0 0 0 0 1 0 0 1~
+	~RACyriCT 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RACyri.2da~
+	~~
+	~0x04000000 15~
+	~CT0~
+	~PLAT18 SHLD21 HELM03 * RING22 RING39 CLCK07 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN14 HAMM09 *~
+	SAY @301
+	SAY @302
+	SAY @303
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RACyriCT~
+		clascolr = ~205 104 136 41 80~
+		clswpbon = ~0 0 3~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RACyriCT~
+      kit_clab = ~RACyri~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RACyriCT + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//Tiax
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RACyriCT" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RACyriCT"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RACyriCT%"
+ACTION_FOR_EACH creature IN tiax tiax4 tiax6 tiaxd BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+      WRITE_BYTE    0x238 13
+      BUT_ONLY
+  END
+  END
+  
+//EoF

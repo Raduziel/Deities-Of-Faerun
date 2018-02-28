@@ -1,0 +1,23 @@
+// Setting variables to be included into LPF ALTER_EFFECT function.
+OUTER_SET RA_Drain1 = (GAME_IS ~bgee~) ? 25802 : GAME_IS ~bg2ee eet~ ? 41495 : (GAME_IS ~iwdee~) ? 35498 : 0		// One Level Drained
+OUTER_SET RA_Drain2 = (GAME_IS ~bgee~) ? 25803 : GAME_IS ~bg2ee eet~ ? 40968 : (GAME_IS ~iwdee~) ? 35497 : 0		// Two Levels Drained
+OUTER_SET RA_Drain3 = (GAME_IS ~bgee~) ? 25804 : GAME_IS ~bg2ee eet~ ? 40969 : (GAME_IS ~iwdee~) ? 35496 : 0		// Three Levels Drained
+OUTER_SET RA_Drain4 = (GAME_IS ~bgee~) ? 25805 : GAME_IS ~bg2ee eet~ ? 40979 : (GAME_IS ~iwdee~) ? 35472 : 0		// Four Levels Drained
+OUTER_SET RA_Drain5 = (GAME_IS ~bgee~) ? 25806 : GAME_IS ~bg2ee eet~ ? 41616 : (GAME_IS ~iwdee~) ? 35495 : 0		// Five Levels Drained
+
+OUTER_SET RA_Panic = (GAME_IS ~bgee~) ? 25818 : GAME_IS ~bg2ee eet~ ? 17427 : (GAME_IS ~iwdee~) ? 35484 : 0			// Panic
+OUTER_SET RA_MoralFail = (GAME_IS ~bgee~) ? 20568 : GAME_IS ~bg2ee eet~ ? 14007 : (GAME_IS ~iwdee~) ? 20568 : 0		// Morale Failure: Panic 14007
+
+OUTER_SET RA_Diseased = (GAME_IS ~bgee~) ? 31238 : GAME_IS ~bg2ee eet~ ? 54337 : (GAME_IS ~iwdee~) ? 35593 : 0		// Diseased
+OUTER_SET RA_FoulDisease = (GAME_IS ~bgee~) ? 26453 : GAME_IS ~bg2ee eet~ ? 39752 : (GAME_IS ~iwdee~) ? 39752 : 0	// Stricken by a foul disease
+
+OUTER_SET RA_Berserk = (GAME_IS ~bgee bg2ee eet~) ? 14036 : (GAME_IS ~iwdee~) ? 37605 : 0							// Berserk
+OUTER_SET RA_Held = (GAME_IS ~bgee bg2ee eet~) ? 14102 : (GAME_IS ~iwdee~) ? 35606 : 0								// Held
+OUTER_SET RA_Dominated = (GAME_IS ~bgee~) ? 26206 : GAME_IS ~bg2ee eet~ ? 8364 : (GAME_IS ~iwdee~) ? 35544 : 0		// Dominated
+OUTER_SET RA_Feebleminded = (GAME_IS ~bgee bg2ee eet~) ? 23744 : (GAME_IS ~iwdee~) ? 14407 : 0						// Feebleminded
+OUTER_SET RA_Sleep = (GAME_IS ~bgee~) ? 26371 : GAME_IS ~bg2ee eet~ ? 14001 : (GAME_IS ~iwdee~) ? 37613 : 0		    // Sleep
+
+OUTER_SET RA_DeafIc = (GAME_IS ~bgee~) ? 112 : GAME_IS ~bg2ee eet~ ? 112 : (GAME_IS ~iwdee~) ? 83 : 0	// Deafness Icon
+OUTER_SET RA_FeebIc = (GAME_IS ~bgee~) ? 54  : GAME_IS ~bg2ee eet~ ? 54  : (GAME_IS ~iwdee~) ? 48 : 0	// Feeblemind Icon
+OUTER_SET RA_NausIc = (GAME_IS ~bgee~) ? 126 : GAME_IS ~bg2ee eet~ ? 126 : (GAME_IS ~iwdee~) ? 43 : 0	// Nauseous Icon
+OUTER_SET RA_FatiIc = (GAME_IS ~bgee~) ? 39  : GAME_IS ~bg2ee eet~ ? 39  : (GAME_IS ~iwdee~) ? 44 : 0	// Fatigue Icon

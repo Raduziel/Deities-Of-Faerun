@@ -1,0 +1,441 @@
+Welcome and thanks for installing Deities of Faerun.
+
+INSTALLATION NOTES:
+
+This mods is fully compatible with Faiths and Powers sphere system, but not with its kits. If you want to play DoF with FnP's sphere system be aware that DoF must be installed BEFORE it. 
+If you install it after not a big deal will happen, but you'll lose the sphere designed by DoF for Tyr, Talos, Helm, Lathander and Tempus in favor of FnP's ones.
+
+When it comes to kits, problems may happen, as both FnP and DoF does overhaulings that will probably conflict, so don't do it. For a more complete experience, install all Deities of Faerun components that you want and Faiths and Powers sphere system - in that order.
+
+As many kitpack mods, DoF must be installed AFTER any itempack mods.
+
+KNOWN ISSUES:
+
+Anomen will be able to get proficiencies as a kitless Fighter (5 slots in every weapon). There is nothing I can do about it. He is still bounded to equipment restriction, so be aware that a Watcher of Helm can only use bludgeoning weapons.
+
+This mod is splitted in the following components:
+
+a) Base changes
+
+Those are needed for the rest of the mod. Basically it install all the new BAMs and removes restrictions from the base cleric, so the kits can have their weapon restrictions accordingly to PnP. These changes will affect *every* cleric, including the base class and kits introduced from other mods.
+
+But don't worry: many of the changes will be imperceptible in other cleric mods. The only one you'll perceive is the increase of APR by level. This had to be done because of the kits that gains APR as warriors (like Tempus). You can overhaul this change in other cleric mods by adding "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the mod's kit tpa/tp2 as the example below:
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~TheKitName~
+		clswpbon = ~0 0 3~
+		(...)
+END
+
+====================================================================================================================================================================
+
+b) Kits
+
+This component will add the kits per se. At the moment, this mod has sixteen kits: Sune, Tempus, Cyric, Shar, Clangeddin, Baravar, Baervan, Helm, Talos, Lathander, Tyr, Oghma, Ilmater, Mask, Torm and Mystra - there are plans to add more kits, but it is not a priority for now.
+
+All the kits were made as close to their PnP counterpart as possible - what includes some new special abilities exclusive to a specific kit. You can have access to the spell's description by right-clicking the spell's icon at the special ability menu, inside the game. You can see a brief description of the spells at the character generation screen. The new spells are:
+
+1) SUNE
+
+Rapture
+(Enchantment/Charm)
+
+Sphere: Thought
+Range: 15-ft/level
+Duration: 2 turns
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell has two effects: when cast upon an ally it will put it on a state of bliss, raising its morale and banishing all effects of disease, fear, sleep and charm. When cast upon an enemy the target must make a Saving Throw vs. Paralyzation or become stunned during the effect of the spell.
+
+---
+
+Emotion
+(Enchantment/Charm)
+
+Sphere: Benediction/Dread
+Range: Visual range of the caster
+Duration: See below
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: See below
+
+The Heartwarder can inspire one of the following emotions of <PRO_HISHER> target:
+
+HOPE: This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain, during 1 hour, a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.
+
+COURAGE: This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain, during 1 hour, +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.
+
+FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
+
+HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.
+
+====================================================================================================================================================================
+
+2) TEMPUS
+
+The Prayer spell (from IWDEE) is now available in BG(2)EE too.
+
+Prayer
+(Conjuration/Summoning)
+
+Level: 3
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+Prayer bestows favor on the priest and <PRO_HISHER> allies, and curses their enemies. All attacks, damage, and Saving Throws by friendly characters gain a +1 bonus, while enemy attacks, damage rolls, and saves get a -1 penalty. Any creatures within the area of effect when the spell is cast will continue to be affected by the spell when they leave the area, so if the warriors want to chase down that fleeing goblin, the effects of the Prayer will follow them.
+
+====================================================================================================================================================================
+
+3) CYRIC
+
+Dark Aura
+(Alteration, Invocation/Evocation)
+
+Sphere: Dread
+Range: 0
+Duration: 3 turns
+Casting Time: 7
+Area of Effect: A sphere of 15-ft radius
+Saving Throw: None
+
+This spell creates a spherical miasma of gloom and menace centered on the caster. When this spell is cast, all evil aligned beings attack at a +1 bonus to their attack and damage rolls, all good-aligned creatures strike at a -1 penalty to their attack and damage rolls, and the caster is personally empowered to strike at a +3 bonus to <PRO_HISHER> attack and damage rolls. Neutral-aligned beings (with respect to good and evil) are unaffected by this spell. Once cast, the spell moves with the caster and does not need to be concentrated on to be maintained.
+
+---
+
+Instill Madness
+(Enchantment/Charm)
+
+Sphere: Thought
+Range: Touch
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.
+
+====================================================================================================================================================================
+
+4) SHAR
+
+Darkness
+(Alteration)
+
+Sphere: Shadow
+Range: 20 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell causes total, impenetrable darkness in the area of effect. Infravision is useless. Neither normal nor magical light works. Every creature, foe or friend, will be blinded during the effect of this spell, unless it leaves the affected area.
+
+---
+
+Nightmare
+(Invocation, Illusion/Phantasm)
+
+Sphere: Thought
+Range: 40 ft.
+Duration: 2 turns
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber and send a hideous and unsettling vision to the recipient, causing 1d10 points of magic damage. A Saving Throw vs. Spells is allowed to avoid all the effects.
+
+---
+
+Eyebite
+(Enchantment/Charm, Illusion/Phantasm)
+
+Sphere: Thought
+Range: 60 ft.
+Duration: 1 round/3 levels
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+An eyebite spell enables the caster to merely meet the gaze of a creature and speak a single word to cause an effect. The Nightcloak selects one of four possible gaze attacks at the time the spell is cast. Every effect can be resisted with a Saving Throw vs. Spells with a -4 penalty. The four effects of the spell are as follows:
+
+CHARM: The Nightcloak can charm a single person or monster. The effect is to make the charmed subject absolutely loyal and docile to the caster, even to the point of personal danger. It is otherwise the same as a Domination spell.
+
+FEAR: The Nightcloak can cause fear. The subject flees in blind terror for the duration of the spell.
+
+SICKEN: This power enables the caster to cause sudden pain and fever to sweep over the subject's body. The target will suffer a -4 penalty to Strength, Dexterity, Constitution, Armor Class, Thac0, damage and a 50% penalty to its Movement Rate.
+
+SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.
+
+====================================================================================================================================================================
+
+5) BAERVAN
+
+Changestaff
+(Alteration)
+
+Sphere: Plant 
+Range: Touch
+Duration: 5 turns
+Casting Time: 4 
+Area of Effect: Special 
+Saving Throw: None
+
+By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature with 12 Hit Dice, 80 hit points, and Armor Class 0. It attacks twice per round, inflicting 4d6 points of damage with every successful attack. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for as many turns as the caster has experience levels or until the staff is destroyed, whichever occurs first. If the staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.
+
+====================================================================================================================================================================
+
+6) HELM
+
+Mace of Odo
+(Evocation)
+
+Sphere: War 
+Range: 0
+Duration: Special 
+Casting Time: 10
+Area of Effect: One magical mace-like construct
+Saving Throw: None
+
+This spell enables a Watcher to create a magical mace in <PRO_HISHER> hand. The Mace of Odo is wielded immediately when casting is complete and protects the Watcher against all level 1 and level 2 spells.
+
+A Mace of Odo strikes as a +5 weapon and does 3d6+5 points of damage. Creatures of 2 HD or less must make a successful Saving Throw vs. Paralyzation when struck by the mace or be paralyzed for 3 turns.
+
+The mace vanishes after one strike or after 3 rounds.
+
+---
+
+Wyvern Watch
+(Abjuration, Evocation)
+
+Sphere: Protection 
+Range: 30 ft.
+Duration: Special 
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: Neg.
+
+This spell is known as wyvern watch because of the insubstantial haze brought forth by its casting, which vaguely resembles a wyvern. It is typically used to guard some area against intrusion. Any creature that approaches the guarded area may be affected by the "wyvern" and must roll a successful Saving Throw vs. Spells or stand paralyzed for one round per level of the caster, until freed by the Watcher, by a dispel magic spell, or by a remove paralysis spell. A successful saving throw indicates that the subject creature was missed by the attack of the wyvern-form, and the intruder was not affected.
+
+---
+
+Seeking Sword
+(Evocation)
+
+Sphere: War 
+Range: 30 ft.
+Duration: 2 turns 
+Casting Time: 7
+Area of Effect: One magical sword-like construct
+Saving Throw: None
+
+This spell brings into being a shimmering blade of force that appears as a sword of any description the caster desires, typically a broad sword. The sword forms in midair and is animated by the will of the caster (who need never touch it), flashing about as it attacks. The blade can strike four times per round, doing 2d4 points of damage with each successful hit, but cannot act beyond the caster's line of sight.
+
+Although it has no attack or damage bonuses, a seeking sword is considered a +4 magical weapon for determining what sorts of beings it can strike. It has 15 Thac0, 30 Hit Points, 5 AC and can only be harmed by fire, magic, acid or crushing damage. Other spell casting is impossible while maintaining the spell, though the caster may move at half his or her normal movement rate per round while doing so.
+
+====================================================================================================================================================================
+
+7) LATHANDER
+
+Boon of Lathander
+(Conjuration/Summoning)
+
+Sphere: Benediction
+Range: 0
+Duration: 6 rounds
+Casting Time: 7
+Area of Effect: The caster
+Saving Throw: None
+
+During this spell's effect, the spell recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in faerie fire.
+
+---
+
+Faerie Fire
+(Alteration)
+
+Sphere: Fire
+Range: 80 ft.
+Duration: 2 turns
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell enables the caster to outline one or more objects or creatures with a pale glowing light. Outlined creatures are easier to strike; thus, opponents gain a +2 bonus to attack rolls. Note that outlining can render otherwise invisible creatures visible.
+
+---
+
+Sunrise
+(Evocation, Alteration)
+
+Sphere: Light
+Range: Touch
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Special
+
+With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around himself. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.
+
+====================================================================================================================================================================
+
+8) OGHMA
+
+Legend Lore
+(Divination)
+
+Sphere: Knowledge
+Range: 0
+Duration: Special
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+With this spell, the Lorekeeper can extend  knowledge immensely. The caster gains 100 points of Lore for five rounds, and  learns how to unequip cursed items, cure diseases and neutralize poisons.
+
+====================================================================================================================================================================
+
+9) ILMATER
+
+Martyrdom of Ilmater
+(Abjuration, Alteration)
+
+Sphere: Vigor 
+Range: 0
+Duration: 3 rounds
+Casting Time: 3
+Area of Effect: The caster 
+Saving Throw: None 
+
+By means of this spell the Painbearer call a beneficial servant of Ilmater to possess <PRO_HIMHER>. During this possession the priest can resist any sort of physical attacks, but can't move, cast spells or fight back.
+
+---
+
+Endurance of Ilmater
+(Abjuration, Alteration, Necromancy)
+
+Sphere: Vigor 
+Range: Touch
+Duration: 6 rounds
+Casting Time: 7
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+
+This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is only then taken from the real hit points of the affected being. The spell also protects the vitality of the spell recipient so that all checks of any sort against contracting diseases automatically succeed, and all other Saving Throws receive a +2 bonus.
+
+====================================================================================================================================================================
+
+10) MASK
+
+Shadowcloak
+(Alteration)
+
+Sphere: Shadow
+Range: 0
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a semisolid fog of amorphous shape that engulfs the caster and moves with <PRO_HIMHER> for the duration of the spell.
+
+A shadowcloak both confuses attackers with its swirling, smoky chaos, and slows strikes, so that all attacks against the shadowcloak-user occur at a -3 attack penalty and a damage penalty of-1 point per die. The shadowcloak also muffles all sounds made by the cloaked being (regardless of that being's desires), so that even shouted speech seems faint and distant, and all sounds short of breakage or metallic ringing or clinking are very likely to be completely blanked out.
+
+The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently, a 50% bonus do Hide in Shadows and puts the caster under the effect of Silence.
+
+====================================================================================================================================================================
+
+On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0
+
+====================================================================================================================================================================
+
+c) Kits to NPCs
+
+This component will give the kit for a NPC that follows that deity. So Viconia will become a Nightcloak of Shar, Quayle a Hoodwinker of Baravar Cloakshadow and Anomen a Watcher of Helm. And so it goes.
+
+This component also alters stats (raising it to the kit's minimum), alignment (altering it to the kit's restriction) and proficiencies (to be in line with what the kit allows) when necessary. Also the NPCs special abilities will be removed (as Yeslick's Dispel Magic and Branwen's Spiritual Hammer) for balance reasons.
+
+====================================================================================================================================================================
+
+d) New strongholds possibilities
+
+Some kits will be able to get strongholds non-related to the cleric's one (as listed below). Notice that the one-stronghold rule still applies, so even with Tyr being eligible for three strongholds (Helm, Fighter and Paladin) chosen one will make you lose the possibility of getting another. 
+
+- Baervan Wildwanderer : Druid, Ranger
+
+- Baravar Cloakshadow: Thief
+
+- Clangeddin: Helm, Fighter
+                                                                
+- Cyric: Talos, Thief                                      
+                 
+- Helm: Helm
+
+- Ilmater: Lathander
+
+- Lathander: Lathander
+
+- Mask: Talos, Thief
+
+- Mystra: Wizard
+
+- Oghma: Bard, Wizard
+
+- Shar: Talos
+
+- Sune: Lathander, Bard                                    
+
+- Talos: Talos
+
+- Tempus: Fighter
+
+- Torm: Helm, Paladin
+
+- Tyr: Helm, Paladin
+
+
+Without this component the strongholds will be chosen by alignment, as the unmodded game does.
+
+====================================================================================================================================================================
+
+e) Kits for hostile NPCs (WIP)
+
+This component will add kits for enemies clerics when its appropriate. So Mulahey and Bassilus will both become Strifeleaders of Cyric and use the kit's special abilities. Many of the enemies clerics in game (as Laryssa) doesn't state their deities, so I just altered as I felt adequate.
+
+====================================================================================================================================================================
+
+THANKS
+
+I have a lot of people to say "Thank You".
+
+Kjeron undoubtedly deserves a huge thank you as he guided me through this long journey. I learned a lot from him.
+
+Subtledoctor and Grammarsalad also deserve a big thank you. When I approached them saying that I wanted to make a cleric kitpack they were very supportive.
+
+CrevsDaak's guide "[How to] Making kit mods for the EE!" made this kitpack possible. To be honest, made possible that I started modding. Thanks!
+
+CamDawg's SPELL_TO_INNATE helped me a lot in this process. His guide to modding strongholds and the code that I turned into SPELL_TO_KIT_FEATURE where very helpful too. So thanks.
+
+Gwendolyne was fundamental to make this kitpack have so many BAMs. Thank you!
+
+Argent77 for giving me the code that allowed the BAM files to be in the game without conflicting with any other mods. You have my thanks.
+
+Arctodus who briefly was in this project and helped me a lot with brainstorming. Thanks, dude!
+

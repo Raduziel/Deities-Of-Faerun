@@ -1,0 +1,39 @@
+/* ===================== *
+ *         SETUP         *
+ * ===================== */
+@1 = ~Base Cleric Changes (required for all components)~ 
+@2 = ~This component requires the Base Cleric changes~
+@3 = ~For your efforts and dedication, your deity and its Church have given you a powerful Holy Symbol~
+@4 = ~Deities & Pantheons' Kits (requires Base Cleric Changes)~
+@5 = ~This component requires its respective kit~
+@6 = ~This component is not available for your game~
+@7 = ~Give Kits to NPCs (requires the respective kit component)~
+@8 = ~Strongholds Alterings (requires the respective kit component)~
+@9 = ~Give Kits to Hostile Priests (requires the respective kit component)~
+@10 = ~Aerie, the Fastpaw of Baervan~
+@11 = ~Quayle, the Hoodwinker of Baravar~
+@12 = ~Glint, the Hoodwinker of Baravar~
+@13 = ~Yeslick, the Alaghar of Clangeddin~
+@14 = ~Tiax, the Strifeleader of Cyric~
+@15 = ~Anomen, the Watcher of Helm~
+@16 = ~Branwen, the Battleguard of Tempus~
+@17 = ~Viconia, the Nightcloak of Shar~
+@18 = ~Install kit: Heartwarder of Sune~
+@19 = ~Install kit: Battleguard of Tempus~
+@20 = ~Install kit: Strifeleader of Cyric~
+@21 = ~Install kit: Nightcloak of Shar~
+@22 = ~Install kit: Alaghar of Clangeddin~
+@23 = ~Install kit: Hoodwinker of Baravar~
+@24 = ~Install kit: Fastpaw of Baervan~
+@25 = ~Install kit: Watcher of Helm~
+@26 = ~Install kit: Stormcaller of Talos~ 
+@27 = ~Install kit: Dawnbringer of Lathander~
+@28 = ~Install kit: Holy Justice of Tyr~
+@29 = ~Install kit: Lorekeeper of Oghma~
+@30 = ~Install kit: Painbearer of Ilmater~
+@31 = ~Install kit: Dweomerkeeper of Mystra~
+@32 = ~Install kit: Holy Champion of Torm~
+@33 = ~Install kit: Silentwalker of Mask~
+@34 = ~Install kit: Icevassal of Auril~
+
+// EoF
