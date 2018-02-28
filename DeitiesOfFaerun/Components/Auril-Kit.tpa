@@ -15,7 +15,7 @@ ADD_KIT ~RAAuri~
 	~RAAuri 0 0 0 0 0 1 0 0 0~
 	~RAAuri 1 1 1 1 1 1~
 	~DeitiesOfFaerun\Tables\RAAuri.2da~
-	~K_C_H K_C_HO K_C_D~
+	~K_C_H K_C_HO K_C_HE K_C_D~
 	~0x04000000 3~
 	~Cl0~
 	~CHAN18 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF10 HAMM09 *~
@@ -156,8 +156,10 @@ COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.bam" override                       
   END
 
 COPY_EXISTING ~SPWI404.spl~ ~override/RAAURI4.spl~                                             //Ice Storm
+LPM SPELL_TO_INNATE
 
 COPY_EXISTING ~SPWI503.spl~ ~override/RAAURI5.spl~                                             //Cone of Cold
+LPM SPELL_TO_INNATE
 
 COPY "DeitiesOfFaerun\Spl\RAAURI6.spl" override SAY NAME1 @1710 SAY UNIDENTIFIED_DESC @1711    //Conjure Ice Elemental
 
