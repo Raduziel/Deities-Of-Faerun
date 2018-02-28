@@ -318,11 +318,16 @@ BUT_ONLY
 
 END
 
-//Let Baervan get the Druid's Stronghold
+//Let Baervan and Malar get the Druid's Stronghold
 
 OUTER_SPRINT extend ~~
 OUTER_SET count = 1
 ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
+OUTER_SPRINT extend ~%extend%
+Kit(Player1,RABAER)~
+	OUTER_SET count += 1
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~RAMALA.2da~ BEGIN
 OUTER_SPRINT extend ~%extend%
 Kit(Player1,RABAER)~
 	OUTER_SET count += 1
