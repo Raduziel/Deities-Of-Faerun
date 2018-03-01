@@ -1305,4 +1305,91 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Waveservant of Umberlee
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@1901 = ~waveservant of umberlee~
+@1902 = ~Waveservant of Umberlee~
+@1903 = ~WAVESERVANT OF UMBERLEE: Umberlee (Um-ber-LEE) the Bitch Queen rules from her watery lair in a flooded level of the Abyss. She is worshiped by most out of fear as opposed to adoration, though some few—such as most weresharks, who she created to try to undermine Selûne - find her ethos to their liking. Ship crews toss her gems over the sides of their vessels to calm storm-tossed waters. She has a large number of shrines in coastal cities, and sailors often leave flowers, candles, small candies, or coins on her altars in hopes that Umberlee will spare them on the next voyage. Others who pay tribute to her include merchants sending goods by sea, port cities, and island nations and settlements who would be devastated by her wrath and have not a powerful patron deity to counter her menacing demands.
+
+Umberlee continually contests with Selûne, in whom navigators trust to guide their ships safely home. Of late, she has also felt the heavy presence of her own patron, Talos, who is trying to pick up violent nature in all its forms as his personal portfolio. Though Umberlee flirts with him on occasion, she would gladly end his existence and become sole deity of destruction herself if she had the power. Unfortunately, her ambitions are limited by her inability to directly affect the land, so she bides her time and plays the coquette. Together Auril, Malar, Umberlee, and Talos are known as the Gods of Fury.
+
+Umberlee is just plain malicious, mean, and evil. She breaks agreements on a whim when she feels that she has not gotten the best part of a deal and takes great pleasure in both watching her sharks tear shipwreck victims to shreds and watching others die slowly of drowning. She is also vain and expects to be flattered. If she has any weakness, it is probably her incessant greed for power and her intoxication with exercising it.
+
+Umberlee spent the Time of Troubles in the Sea of Fallen Stars, wreaking destruction on one pirate isle after another. The sea has remained stormy and troubled since that time, though it has calmed somewhat in the last two to three years after an organized effort to appease her promoted by certain allied merchant coasters said to be part of or in league with the Iron Throne.
+
+Armor: All up to and including studded leather armor.
+Weapon: Bludgeoning, spear and dagger. 
+Major Spheres: Water, Exploration, Thought, Affliction, Air. 
+Minor Spheres: Healing, Death, Dread, Protection.
+
+Advantages:
+
+- May cast Smashing Wave once per day as a special ability, starting at level 4.
+- May use the Dehydrate special ability once per day, starting at level 6.
+- Gains permanently the benefits of Free Action at level 10.
+- May use the Drown special ability once per day, starting at level 12.
+
+DEHYDRATE
+
+The Waveservant removes the water from the target's body, delivering damage.
+
+DROWN
+
+The Waveservant fills the target's lungs with water, imposing heavy penalties to <PRO_HISHER> victim.~
+@1904 = ~Smashing Wave~
+@1905 = ~Smashing Wave
+(Invocation)
+
+Level: 4
+Sphere: Water
+Range: 100 ft.
+Duration: Instant
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 4d10 points of crushing damage; in addition, struck creatures may be either stunned (25% chance) or knocked unconscious (5% chance) for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon, the damage is reduced by half and the creature avoids being stunned or knocked unconscious.~
+@1906 = ~Dehydrate~
+@1907 = ~Dehydrate
+(Alteration)
+
+Level: 4
+Sphere: Water
+Range: 40
+Duration: Instant
+Casting Time: 4
+Area of Effect: One creature
+Saving Throw: Neg.
+
+This spell evaporates moisture from the bodies of the target creature, inflicting 1d8 points of magic damage per level of the caster (maximum 10d8) on a failed Saving Throw vs. Death.~
+@1908 = ~Drown~
+@1909 = ~Drown
+(Alteration)
+
+Level: 4
+Sphere: Water
+Range: 30
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: One creature
+Saving Throw: Special
+
+This spell fill the lungs of the target creature with water. Creatures that do not breathe are unaffected. Drowning creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, and half movement rate during the effect of the spell. On top of that, the target takes 4d8 of crushing damage. A successful Saving Throw vs. Spells negates all effects except for the damage.~
+@1910 = ~Holy Symbol of Umberlee~
+@1911 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF
