@@ -26,7 +26,7 @@ ADD_KIT ~RAMala~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAMala~
-		clascolr = ~68 71 105 222 68~ //Rever
+		clascolr = ~198 87 195 87 198~
 		clswpbon = ~1 0 3~
 END
 
@@ -113,9 +113,9 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 END
 		  
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAMalaCS.spl" override		  
+COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMalaCS.spl" override		  
 		  
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAMalaCI.itm" override SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
+COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMalaCI.itm" override SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
@@ -138,11 +138,11 @@ COPY "DeitiesOfFaerun\Spl\Import\Malar\Complement" override
 
 COPY "DeitiesOfFaerun\Spl\Import\Malar\BCLAW.ITM" override SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
 
-COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR219.SPL" ~override/RAMALA1~  SAY NAME1 @1806 SAY UNIDENTIFIED_DESC @1807
+COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR219.SPL" ~override/RAMALA1.SPL~  SAY NAME1 @1806 SAY UNIDENTIFIED_DESC @1807
 LPM SPELL_TO_INNATE
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1808) STR_VAR bam_file = ANRAGEIC RET icon END
-COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR522.SPL" ~override/RAMALA2~  SAY NAME1 @1808 SAY UNIDENTIFIED_DESC @1809
+COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR522.SPL" ~override/RAMALA2.SPL~  SAY NAME1 @1808 SAY UNIDENTIFIED_DESC @1809
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 173 parameter2 = icon END
 LPM SPELL_TO_INNATE
 
@@ -150,10 +150,10 @@ END
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
-COPY_EXISTING ~SPPR219.spl~ ~override/RAMALA1~
+COPY_EXISTING ~SPPR219.spl~ ~override/RAMALA1.SPL~
 LPM SPELL_TO_INNATE
 
-COPY_EXISTING ~SPPR522.spl~ ~override/RAMALA2~
+COPY_EXISTING ~SPPR522.spl~ ~override/RAMALA2.SPL~
 LPM SPELL_TO_INNATE
 
 END
