@@ -74,26 +74,7 @@ HOPELESSNESS: This spell creates the emotion of hopelessness within the area of 
 
 ====================================================================================================================================================================
 
-2) TEMPUS
-
-The Prayer spell (from IWDEE) is now available in BG(2)EE too.
-
-Prayer
-(Conjuration/Summoning)
-
-Level: 3
-Sphere: Combat
-Range: 0
-Duration: 1 round/level
-Casting Time: 6
-Area of Effect: 30-ft. radius
-Saving Throw: None
-
-Prayer bestows favor on the priest and <PRO_HISHER> allies, and curses their enemies. All attacks, damage, and Saving Throws by friendly characters gain a +1 bonus, while enemy attacks, damage rolls, and saves get a -1 penalty. Any creatures within the area of effect when the spell is cast will continue to be affected by the spell when they leave the area, so if the warriors want to chase down that fleeing goblin, the effects of the Prayer will follow them.
-
-====================================================================================================================================================================
-
-3) CYRIC
+2) CYRIC
 
 Dark Aura
 (Alteration, Invocation/Evocation)
@@ -123,7 +104,7 @@ Instill Madness causes the subject to become completely insane unless a Saving T
 
 ====================================================================================================================================================================
 
-4) SHAR
+3) SHAR
 
 Darkness
 (Alteration)
@@ -175,7 +156,7 @@ SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.
 
 ====================================================================================================================================================================
 
-5) BAERVAN
+4) BAERVAN
 
 Changestaff
 (Alteration)
@@ -191,7 +172,7 @@ By means of this spell, the caster is able to change a specially prepared staff 
 
 ====================================================================================================================================================================
 
-6) HELM
+5) HELM
 
 Mace of Odo
 (Evocation)
@@ -241,7 +222,7 @@ Although it has no attack or damage bonuses, a seeking sword is considered a +4 
 
 ====================================================================================================================================================================
 
-7) LATHANDER
+6) LATHANDER
 
 Boon of Lathander
 (Conjuration/Summoning)
@@ -285,7 +266,7 @@ With this spell, the caster evokes a dazzling sphere of light equal to natural s
 
 ====================================================================================================================================================================
 
-8) OGHMA
+7) OGHMA
 
 Legend Lore
 (Divination)
@@ -301,7 +282,7 @@ With this spell, the Lorekeeper can extend  knowledge immensely. The caster gain
 
 ====================================================================================================================================================================
 
-9) ILMATER
+8) ILMATER
 
 Martyrdom of Ilmater
 (Abjuration, Alteration)
@@ -332,7 +313,7 @@ This spell doubles the hit points of the spell recipient for the spell duration.
 
 ====================================================================================================================================================================
 
-10) MASK
+9) MASK
 
 Shadowcloak
 (Alteration)
@@ -352,7 +333,7 @@ The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently, a 50% 
 
 ====================================================================================================================================================================
 
-11) AURIL
+10) AURIL
 
 Frost Dagger
 (Evocation)
@@ -411,6 +392,38 @@ Area of Effect: Special
 Saving Throw: None
 
 Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and an ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.
+
+====================================================================================================================================================================
+
+11) UMBERLEE
+
+Dehydrate
+(Alteration)
+
+Level: 4
+Sphere: Water
+Range: 40
+Duration: Instant
+Casting Time: 4
+Area of Effect: One creature
+Saving Throw: Neg.
+
+This spell evaporates moisture from the bodies of the target creature, inflicting 1d8 points of magic damage per level of the caster (maximum 10d8) on a failed Saving Throw vs. Death.
+
+---
+
+Drown
+(Alteration)
+
+Level: 4
+Sphere: Water
+Range: 30
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: One creature
+Saving Throw: Special
+
+This spell fill the lungs of the target creature with water. Creatures that do not breathe are unaffected. Drowning creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, and half movement rate during the effect of the spell. On top of that, the target takes 4d8 of crushing damage. A successful Saving Throw vs. Spells negates all effects except for the damage.
 
 ====================================================================================================================================================================
 
@@ -476,6 +489,7 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Tyr: Helm, Paladin
 
+- Umberlee: Talos
 
 Without this component the strongholds will be chosen by alignment, as the unmodded game does.
 
