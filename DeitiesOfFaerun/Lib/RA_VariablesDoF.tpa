@@ -11,6 +11,8 @@ OUTER_SET RA_MoralFail = (GAME_IS ~bgee~) ? 20568 : GAME_IS ~bg2ee eet~ ? 14007 
 OUTER_SET RA_Diseased = (GAME_IS ~bgee~) ? 31238 : GAME_IS ~bg2ee eet~ ? 54337 : (GAME_IS ~iwdee~) ? 35593 : 0		// Diseased
 OUTER_SET RA_FoulDisease = (GAME_IS ~bgee~) ? 26453 : GAME_IS ~bg2ee eet~ ? 39752 : (GAME_IS ~iwdee~) ? 39752 : 0	// Stricken by a foul disease
 
+OUTER_SET RA_Charmed = (GAME_IS ~bgee bg2ee eet~) ? 14672 : (GAME_IS ~iwdee~) ? 37801 : 0							// Charmed
+OUTER_SET RA_DireCharmed = (GAME_IS ~bgee bg2ee eet~) ? 14780 : (GAME_IS ~iwdee~) ? 17392 : 0					    // Dire Charmed
 OUTER_SET RA_Berserk = (GAME_IS ~bgee bg2ee eet~) ? 14036 : (GAME_IS ~iwdee~) ? 37605 : 0							// Berserk
 OUTER_SET RA_Held = (GAME_IS ~bgee bg2ee eet~) ? 14102 : (GAME_IS ~iwdee~) ? 35606 : 0								// Held
 OUTER_SET RA_Dominated = (GAME_IS ~bgee~) ? 26206 : GAME_IS ~bg2ee eet~ ? 8364 : (GAME_IS ~iwdee~) ? 35544 : 0		// Dominated
