@@ -1332,6 +1332,7 @@ Advantages:
 - May use the Dehydrate special ability once per day, starting at level 6.
 - Gains permanently the benefits of Free Action at level 10.
 - May use the Drown special ability once per day, starting at level 12.
+- May cast Conjure Water Elemental once per day as a special ability, starting at level 15.
 
 DEHYDRATE
 
@@ -1392,8 +1393,9 @@ Area of Effect: Special
 Saving Throw: None
 
 Upon casting a Conjure Water Elemental spell, the Waveservant opens a special gate to the Elemental Plane of Water, and a water elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.~
-@1912 = ~Holy Symbol of Umberlee~
-@1913 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
+@1912 = ~Water Elemental~
+@1913 = ~Holy Symbol of Umberlee~
+@1914 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
 	
 STATISTICS:
 
