@@ -257,7 +257,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Malar-Kit.tpa~
 BEGIN @37
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
-INCLUDE  ~DeitiesOfFaerun/Components/Malar-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Kit.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -375,7 +375,7 @@ BEGIN @18
 GROUP @7
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAUmbe.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~Tenya.cre~)
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~Tenya.cre~) @6
 INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Tenya.tpa~
 
 
