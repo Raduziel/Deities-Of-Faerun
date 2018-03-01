@@ -37,7 +37,7 @@ INCLUDE ~DeitiesOfFaerun/Components/DeitiesOfFaerun.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @18
+BEGIN @19
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Sune-Kit.tpa~
@@ -49,7 +49,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Sune-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @19
+BEGIN @20
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Kit.tpa~
@@ -61,7 +61,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @20
+BEGIN @21
 GROUP @4
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
@@ -74,7 +74,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Cyric-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @21
+BEGIN @22
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Shar-Kit.tpa~
@@ -86,7 +86,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Shar-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @22
+BEGIN @23
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-Kit.tpa~
@@ -98,7 +98,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @23
+BEGIN @24
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Kit.tpa~
@@ -110,7 +110,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @24
+BEGIN @25
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Baervan-Kit.tpa~
@@ -122,7 +122,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baervan-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @25
+BEGIN @26
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Helm-Kit.tpa~
@@ -134,7 +134,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Helm-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @26
+BEGIN @27
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Talos-Kit.tpa~
@@ -146,7 +146,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Talos-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @27
+BEGIN @28
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Kit.tpa~
@@ -158,7 +158,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @28
+BEGIN @29
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Tyr-Kit.tpa~
@@ -170,7 +170,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tyr-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @29
+BEGIN @30
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Oghma-Kit.tpa~
@@ -182,7 +182,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Oghma-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @30
+BEGIN @31
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-Kit.tpa~
@@ -194,7 +194,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @31
+BEGIN @32
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Mystra-Kit.tpa~
@@ -206,7 +206,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Mystra-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @32
+BEGIN @33
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Torm-Kit.tpa~
@@ -218,7 +218,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Torm-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @33
+BEGIN @34
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Mask-Kit.tpa~
@@ -230,7 +230,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Mask-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @34
+BEGIN @35
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Auril-Kit.tpa~
@@ -242,7 +242,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Auril-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @35
+BEGIN @36
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Malar-Kit.tpa~
@@ -254,7 +254,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Malar-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @36
+BEGIN @37
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Malar-Kit.tpa~
@@ -362,6 +362,22 @@ GROUP @7
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAShar.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Shar-Viconia.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				       TENYA, THE WAVESERVANT OF UMBERLEE
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @18
+GROUP @7
+REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAUmbe.2da~) @5
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~Tenya.cre~)
+INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Tenya.tpa~
+
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
