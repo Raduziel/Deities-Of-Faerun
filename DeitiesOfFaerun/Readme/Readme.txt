@@ -459,6 +459,29 @@ A priest casting shooting stars creates a violent turbulence in the air above th
 
 ====================================================================================================================================================================
 
+13) TALONA
+
+Poison Touch
+(Necromancy)
+
+Level: 2
+Sphere: Affliction
+Range: 0
+Duration: Special
+Casting Time: 5
+Area of Effect: One creature
+Saving Throw: Special
+
+This spell creates a deadly poison in the caster's hand or another chosen limb. Touching a creature will deliver this poison immediately and enforce a Saving Throw vs. Poison.
+
+If the saving throw succeeds, the victim takes 1 point of damage and the corrosive magic eats a hole in any armor or garment worn and causes a disfiguring eruption of the skin beneath the touched area, reducing the target's Charisma by 2. If the saving throw fails, the victim suffers 6 points of damage and is slowed instantly for three rounds and in the next round the second stage of the poison applies.
+
+On this second round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1 point of damage, is corroded as discussed above, and the spell ends. If this second Saving Throw fails, the victim suffers 3d6 points of additional damage, loses another 2 points of Charisma, and the third (and final) stage of the poison begins.
+
+On this third round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1d10 points of poison damage. If it fails, the victim will fall into a coma that will last for 1 turn.
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -513,7 +536,9 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Shar: Talos
 
-- Sune: Lathander, Bard                                    
+- Sune: Lathander, Bard
+
+- Talona: Talos                                   
 
 - Talos: Talos
 

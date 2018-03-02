@@ -1500,4 +1500,85 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Malagent of Talona
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2101 = ~malagent of talona~
+@2102 = ~Malagent of Talona~
+@2103 = ~MALAGENT OF TALONA: Talona (Tah-LOW-nah), one of the Dark Gods, is often depicted as a withered old crone with a scarred, tattooed face in religious texts. Where she walks, misfortune and death follow. She is an odd deity. Sages have described her as having the personality of a petulant, greedy child trapped in the body of a once-beautiful woman now scarred by horrific disease and ravaged by age: She is alternately desirous of attention at any cost like a small child and aloof like a wounded paramour who has been discarded by her love.
+
+Talona's power slowly wanes after each great plague in Faerûn. When she feels vulnerable in her position, she unleashes another wave of misery and disease-brought death and receives a torrent of prayers entreating her to spare the inhabitants of Faerûn from her withering touch. Her power then waxes again in an endless cycle of indifference, devastation, and appeasement. In particular, Talona's power was ascendant during the destruction of Asram (after the erection of the Standing Stone), in the Year of the Clinging Death (75 DR), during the Rotting War (902 DR), in the Year of the Scourge (1150 DR), in the Year of the Empty Goblet and the Year of Beckoning Death (1252-1253 DR), and during the Great Plague of the Inner Sea (1317-1323 DR).
+
+Some old texts of Talona refer to her as Kiputytto, but this is actually the name of a rival demipower who challenged Talona's portfolio and lost. The battle between the two goddesses destroyed the Netherese survivor state of Asram in its wake. When Kiputytto attacked Talona, Talona plagued the ill-fated Asram in order to obtain the devotional power generated from the worship of its citizens, who hoped to appease Talona and lessen the effects of the disease. Kiputytto responded in kind in the same location, provoking a devastating series of increasingly virulent plagues (perhaps even magical in nature) that overloaded the curative resources of Asram's various priesthoods and wiped out the entire population in less than a month. Even most of those who escaped the scourged area died soon after of disease. Shortly afterward, Talona won this devastating deific contest and murdered Kiputytto.
+
+Representations of Talona's symbol dated to before her battle with Kiputytto show it depicted as a flesh-colored equilateral triangle with point upward containing three teardrops arranged in a triangle with the uppermost black, the lower left purple, and the lower right green. Why the coloration was changed after her triumph over Kiputytto is one of the inner mysteries of the church not ever revealed to outsiders.
+
+While he lived, Talona served Bhaal along with Loviatar, though Loviatar and Talona and are fierce rivals. Loviatar loves to torment and tease Talona over her ugly appearance, her scanty number of followers, her cowardly and ineffectual attacks, and her puny portfolio (in Loviatar's words). Needless to say, Talona openly delights in any setbacks Loviatar experiences, and sometimes even aids good adventurers if she thinks they will damage Loviatar's reputation. Talona has recently cultivated an alliance with Shar
+
+Armor: Any.
+Weapon: Bludgeoning only.
+Major Spheres: Affliction, Perdition, Dread, Death, Thought.
+Minor Spheres: Vigor, Healing, Destruction, Deception.
+
+Advantages:
+
+- Immune to disease.
+- Gains a bonus of +4 bonus to <PRO_HISHER> Saving Throws vs. Poison.
+- May use the Poison Weapon special ability once per day, starting at level 5.
+- May use the Poison Touch special ability once per day, starting at level 7.
+- May cast Contagion once per day as a special ability, starting at level 10.
+- May cast Poison once per day as a special ability, starting at level 10.
+- May cast Cloud of Pestilence once per day as a special ability, starting at level 15.
+
+POISON TOUCH:
+
+The Malagent delivers a maleficent poison that gets worse every round.~
+@2104 = ~Poison Touch~
+@2105 = ~Poison Touch
+(Necromancy)
+
+Level: 2
+Sphere: Affliction
+Range: 0
+Duration: Special
+Casting Time: 5
+Area of Effect: One creature
+Saving Throw: Special
+
+This spell creates a deadly poison in the caster's hand or another chosen limb. Touching a creature will deliver this poison immediately and enforce a Saving Throw vs. Poison.
+
+If the saving throw succeeds, the victim takes 1 point of damage and the corrosive magic eats a hole in any armor or garment worn and causes a disfiguring eruption of the skin beneath the touched area, reducing the target's Charisma by 2. If the saving throw fails, the victim suffers 6 points of damage and is slowed instantly for three rounds and in the next round the second stage of the poison applies.
+
+On this second round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1 point of damage, is corroded as discussed above, and the spell ends. If this second Saving Throw fails, the victim suffers 3d6 points of additional damage, loses another 2 points of Charisma, and the third (and final) stage of the poison begins.
+
+On this third round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1d10 points of poison damage. If it fails, the victim will fall into a coma that will last for 1 turn.~
+@2106 = ~Cloud of Pestilence~
+@2107 = ~Cloud of Pestilence
+(Alteration)
+
+Level: 4
+Sphere: Affliction
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 7
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This spell transforms the air in a 12-ft. radius into sickening, grayish mists. The caster and non-living creatures are immune to the effects of the cloud. For every round of exposure to the disease-ridden air, a creature must save vs. Breath or suffer 3 points of magic damage, blindness, and the loss of 3 points of Strength and Dexterity. The blindness and ability score penalties last 1 turn. Cloud of Pestilence can only be cast by evil-aligned characters.~
+@2108 = ~Holy Symbol of Talona~
+@2109 = ~Only the most worthy and devoted servants of the Mother of All Plagues are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF

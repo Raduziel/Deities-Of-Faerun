@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.5~
+VERSION ~1.6~
 
 ALWAYS
 
@@ -270,6 +270,18 @@ BEGIN @38
 GROUP @4
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Selune-Kit.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				   MALAGENT OF TALONA (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @39
+GROUP @4
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Talona-Kit.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
