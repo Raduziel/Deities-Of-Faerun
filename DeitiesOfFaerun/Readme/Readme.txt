@@ -455,7 +455,7 @@ Casting Time: 7
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-A priest casting shooting stars creates a violent turbulence in the air above the area of effect, from which a number of magically-charged miniature starts erupt and shower onto the ground. Within the area of effect, all creatures suffer 6d10 points of magical damage and 48 points of crushing damage. A successful Saving Throw vs. Spells at a -4 penalty indicates half damage.
+A priest casting shooting stars creates a violent turbulence in the air above the area of effect, from which a number of magically-charged miniature starts to erupt and shower onto the ground. Within the area of effect, all creatures suffer 6d10 points of magical damage and 48 points of crushing damage. A successful Saving Throw vs. Spells at a -4 penalty indicates half damage.
 
 ====================================================================================================================================================================
 
