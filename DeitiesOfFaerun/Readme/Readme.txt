@@ -427,6 +427,38 @@ This spell fill the lungs of the target creature with water. Creatures that do n
 
 ====================================================================================================================================================================
 
+12) SELÛNE
+
+Moonbeam
+(Invocation)
+
+Level: 2
+Sphere: Light
+Range: 60
+Duration: 5 rounds
+Casting Time: 2
+Area of Effect: One creature
+Saving Throw: Neg.
+
+This spell can only be used outdoors. The Silverstar calls a beam of light from the sky and directs it to a target blinding it and turning it incapable of becoming invisible for the duration of the spell. A successful Saving Throw vs. Breath avoids all the effects.
+
+---
+
+Shooting Star
+(Invocation)
+
+Level: 7
+Sphere: Light
+Range: 100
+Duration: Instant
+Casting Time: 7
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+A priest casting shooting stars creates a violent turbulence in the air above the area of effect, from which a number of magically-charged miniature starts erupt and shower onto the ground. Within the area of effect, all creatures suffer 6d10 points of magical damage and 48 points of crushing damage. A successful Saving Throw vs. Spells at a -4 penalty indicates half damage.
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -476,6 +508,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Mystra: Wizard
 
 - Oghma: Bard, Wizard
+
+- Selûne: Lathander
 
 - Shar: Talos
 
