@@ -203,7 +203,7 @@ Sphere: Dread
 Range: 0
 Duration: 3 turns
 Casting Time: 7
-Area of Effect: A sphere of 15-ft radius
+Area of Effect: A sphere of 15-ft. radius
 Saving Throw: None
 
 This spell creates a spherical miasma of gloom and menace centered on the caster. When this spell is cast, all evil aligned beings attack at a +1 bonus to their attack and damage rolls, all good-aligned creatures strike at a -1 penalty to their attack and damage rolls, and the caster is personally empowered to strike at a +3 bonus to <PRO_HISHER> attack and damage rolls. Neutral-aligned beings (with respect to good and evil) are unaffected by this spell. Once cast, the spell moves with the caster and does not need to be concentrated on to be maintained.~
@@ -245,9 +245,9 @@ Weight: 0~
 
 In temples, representations of the goddess are either a black sphere outlined in racing, magically animated flames of purple or paintings of a beautiful human with long, raven-black hair dressed in swirling dark garb. She smiles coldly and her large eyes have black pupils and are otherwise solid purple.
 
-Shar is the mortal enemy of Selune and battles her ceaselessly on many planes through mortal worshipers and servitor creatures. The undying enmity between the two goddesses is older than recorded time.
+Shar is the mortal enemy of Selûne and battles her ceaselessly on many planes through mortal worshipers and servitor creatures. The undying enmity between the two goddesses is older than recorded time.
 
-During the Time of Troubles, Shar killed Ibrandul, a lesser power of caverns, dungeons, and the Underdark worshiped in Calimshan, the Shining South, and even Waterdeep, for daring to subvert those who venerate the dark away from her. She appropriated his portfolio. She continues to grant the clergy of Ibrandul spells in Ibrandul's name. She is quietly delighted that she is able to use this puppet church to subvert the worship of Selune without drawing attention to her most faithful worshipers.
+During the Time of Troubles, Shar killed Ibrandul, a lesser power of caverns, dungeons, and the Underdark worshiped in Calimshan, the Shining South, and even Waterdeep, for daring to subvert those who venerate the dark away from her. She appropriated his portfolio. She continues to grant the clergy of Ibrandul spells in Ibrandul's name. She is quietly delighted that she is able to use this puppet church to subvert the worship of Selûne without drawing attention to her most faithful worshipers.
 
 Armor: All up to and including splint mail.
 Weapon: Bludgeoning only.
@@ -1396,6 +1396,99 @@ Upon casting a Conjure Water Elemental spell, the Waveservant opens a special ga
 @1912 = ~Water Elemental~
 @1913 = ~Holy Symbol of Umberlee~
 @1914 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Silverstar of Selûne
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2001 = ~silverstar of selûne~
+@2002 = ~Silverstar of Selûne~
+@2003 = ~SILVERSTAR OF SELÛNE: When Selûne (Seh-LOON-eh) journeys to the Realms, she is said to appear in many forms and is depicted in religious art as everything from a female face on a lunar disk to a dusky-skinned woman with wide, radiant eyes and long ivory-colored hair to a matronly, middle-aged woman whose dark hair is streaked with gray. In Durpar, Estagund, and Var the Golden, Selûne is worshiped as part of the Adama, the Durparian concept of a world spirit that embraces and enfolds the divine essence that is part of all beings. Here she is known as Lucha, She Who Guides. Lucha oversees connections and relationships, guiding herdsmen to good pastures, blessing marriages, helping lost ships at sea, and ensuring safe births. It can be safely said that as the moon changes, so does the nature of the moon goddess.
+
+Selûne's eternal foe is the evil goddess Shar, and she battles her ceaselessly on many planes of existence, both through mortal worshipers and servitor creatures. The undying enmity between the two goddesses predates the existence of most, if not all, of the present-day existing Faerûnian deities. The enmity between Shar and Selûne carries into their priesthoods, such that open battle often occurs when followers of each faith meet. Selûne also struggles with Umberlee constantly over the fate of ships at sea and with Mask over the works of mischief and evil he performs in the shadows the moon's soft glow creates.
+
+Selûne is a caring but quietly mystical power who often seems saddened by events perhaps millennia old. While she is normally calm and placid, her war with Shar is fierce, with neither side giving or receiving quarter. She is seen in many ways by her followers, who are a diverse group, and she is at times effervescently joyful and active, at others maternal, quiet, and almost poetic, and at yet others warlike and fierce, showing little mercy to her foes.
+
+Before the Time of Troubles, Selûne had served Sune for some centuries after being independent for millennia. After the Godswar, she went her own way again. Her relationship with Sune and Lliira is still extremely friendly and cooperative.
+
+Selûne is served by the Shards, a group of shining female servitors. The Shards can grow wings or banish them as they desire and have long, flowing blue hair and pearly-white skin. They are in reality planetars.
+
+Armor: Any.
+Weapon: Bludgeoning only.
+Major Spheres: Light, Knowledge, Protection, Benediction, Healing.
+Minor Spheres: Magic, Thought, Vigor, Fire.
+
+Advantages:
+
+- Gains Infravision.
+- Immune to all Blindness effects and spells.
+- May use the Moonbeam special ability once per day, starting at level 3.
+- May cast Moonblade once per day as a special ability, starting at level 5.
+- May cast True Seeing once per day as a special ability, starting at level 10.
+- May use the Shooting Star special ability once per day, starting at level 15.
+
+MOONBEAM:
+
+The Silverstar call a beam of light that blinds the target and forbids it from becoming invisible.
+
+SHOOTING STAR:
+
+The Silverstar throws a shooting star upon an area, causing massive damage to all creatures within.~
+@2004 = ~Moonbeam~
+@2005 = ~Moonbeam
+(Invocation)
+
+Level: 2
+Sphere: Light
+Range: 60
+Duration: 5 rounds
+Casting Time: 2
+Area of Effect: One creature
+Saving Throw: Neg.
+
+This spell can only be used outdoors. The Silverstar calls a beam of light from the sky and directs it to a target blinding it and turning it incapable of becoming invisible for the duration of the spell. A successful Saving Throw vs. Breath avoids all the effects.~
+@2006 = ~Moonblade~
+@2007 = ~Moonblade
+(Invocation)
+
+Level: 3
+Sphere: Light
+Range: 0
+Duration: 2 turns
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, melee bonuses from Strength do not apply.
+
+The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 1d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
+@2008 = ~Shooting Star~
+@2009 = ~Shooting Star
+(Invocation)
+
+Level: 7
+Sphere: Light
+Range: 100
+Duration: Instant
+Casting Time: 7
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+A priest casting shooting stars creates a violent turbulence in the air above the area of effect, from which a number of magically-charged miniature starts erupt and shower onto the ground. Within the area of effect, all creatures suffer 6d10 points of magical damage and 48 points of crushing damage. A successful Saving Throw vs. Spells at a -4 penalty indicates half damage.~
+@2010 = ~Holy Symbol of Selûne~
+@2011 = ~Only the most worthy and devoted servants of the Moonmaiden are granted these powerful holy symbols.
 	
 STATISTICS:
 
