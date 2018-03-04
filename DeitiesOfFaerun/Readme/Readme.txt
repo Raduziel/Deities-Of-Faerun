@@ -32,9 +32,7 @@ END
 
 b) Kits
 
-This component will add the kits per se. At the moment, this mod has sixteen kits: Sune, Tempus, Cyric, Shar, Clangeddin, Baravar, Baervan, Helm, Talos, Lathander, Tyr, Oghma, Ilmater, Mask, Torm and Mystra - there are plans to add more kits, but it is not a priority for now.
-
-All the kits were made as close to their PnP counterpart as possible - what includes some new special abilities exclusive to a specific kit. You can have access to the spell's description by right-clicking the spell's icon at the special ability menu, inside the game. You can see a brief description of the spells at the character generation screen. The new spells are:
+This component will add the kits per se. All the kits were made as close to their PnP counterpart as possible - what includes some new special abilities exclusive to a specific kit. You can have access to the spell's description by right-clicking the spell's icon at the special ability menu, inside the game. You can see a brief description of the spells at the character generation screen. The new spells are:
 
 1) SUNE
 
@@ -482,6 +480,89 @@ On this third round, the victim must make another Saving Throw. If it succeeds, 
 
 ====================================================================================================================================================================
 
+14) LOVIATAR
+
+Touch of Loviatar
+(Alteration)
+
+Level: 1
+Sphere: Affliction
+Range: Touch
+Duration: 5 rounds
+Casting Time: 1
+Area of Effect: One creature
+Saving Throw: Neg.
+
+This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and reduce its Dexterity by 2.
+
+---
+
+Whip of Flame
+(Invocation/Evocation)
+
+Level: 2
+Sphere: Affliction
+Range: 12
+Duration: Special
+Casting Time: 5
+Area of Effect: One creature
+Saving Throw: Special
+
+The Pain creates a whip made of fire that is directed against a creature. The whip damages the target with fire by 1d8 and imposes a Saving Throw vs. Breath Weapons. A failure means that the target is burning and will keep receiving 3 points of fire damage per round until succeeds on the saving throw.
+
+---
+
+Whip of Pain
+(Necromancy)
+
+Level: 3
+Sphere: Affliction
+Range: 10
+Duration: Special
+Casting Time: 6
+Area of Effect: One creature
+Saving Throw: Special
+
+A whip is created by the Pain and immediately used against a creature and imposes a Saving Throw vs. Spells. If succeeds, the target only gets 2d4 points of slashing damage. If it fails, the target suffers a huge pain that gives a -2 penalty to its attack rolls, a -1 penalty to its AC and makes impossible to concentrate enough to cast spells.
+
+---
+
+Touch of Torment
+(Necromancy)
+
+Level: 4
+Sphere: Affliction
+Range: 0
+Duration: Special
+Casting Time: 7
+Area of Effect: One creature
+Saving Throw: Special
+
+By touching a creature, the Pain attacks its nervous system, delivering an overwhelming pain, causing 4d6 points of magic damage and completely incapacitating the target.
+
+At the end of the first round, the victim makes a Saving Throw vs. Spells. If it succeeds, the spell ends. If it fails, 2d6 points of magic damage are delivered and the victim is incapacitated for another round. 
+
+At the end of the second round, the victim makes another Saving Throw vs. Spells. If it succeeds, the spell ends. If it fails, 1d6 points of magic damage are delivered and the victim is incapacitated for a third round, when the spell expires.
+
+---
+
+Ensnarement
+(Necromancy)
+
+Level: 6
+Sphere: Perdition
+Range: 35
+Duration: 10 turns
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons an Erinyes to serve the Pain. The priest must be successful in a mental battle in order to control the devil.
+
+The Erinyes has 48 HP, 15 Thac0, AC 0, can only be damaged with weapons +2 or better, strikes twice per round and each hit drains one level of the target. She also has access to the following spells: Harm, Domination and Gate.
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -523,6 +604,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Ilmater: Lathander
 
 - Lathander: Lathander
+
+- Loviatar: Talos
 
 - Malar: Talos, Druid
 
