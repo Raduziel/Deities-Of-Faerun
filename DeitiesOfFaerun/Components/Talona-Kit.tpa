@@ -15,7 +15,7 @@ ADD_KIT ~RATlna~
 	~RATlna 0 0 0 0 0 0 0 0 1~
 	~RATlna 1 1 1 1 1 1~
 	~DeitiesOfFaerun\Tables\RATlna.2da~
-	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D~
+	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D   K_C_HO~
 	~0x04000000 3~
 	~Cl0~
 	~LEAT18 * HELM07 * RING46 RING39 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN22 HAMM09 *~
