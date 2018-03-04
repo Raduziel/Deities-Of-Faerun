@@ -251,7 +251,7 @@ COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.itm" override SAY NAME1 @707 SAY 
 
 COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.cre" override SAY NAME1 @808 SAY NAME2 @808             //Seeking Sword (Cre)
 
-COPY_EXISTING ~SPPR304.spl~ ~override/RAHELM4.spl~                                                       //Glyph of Warding
+COPY_EXISTING ~SPPR304.spl~ ~override/RAHELM4.spl~                                                     //Glyph of Warding
 LPM SPELL_TO_INNATE
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

@@ -141,9 +141,9 @@ COPY "DeitiesOfFaerun\Spl\Import\Malar\BCLAW.ITM" override SAY NAME1 @1806 SAY N
 COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR219.SPL" ~override/RAMALA1.SPL~  SAY NAME1 @1806 SAY UNIDENTIFIED_DESC @1807
 LPM SPELL_TO_INNATE
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1808) STR_VAR bam_file = ANRAGEIC RET icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1808) STR_VAR bam_file = ANRAGEIC RET iconrage = icon END
 COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR522.SPL" ~override/RAMALA2.SPL~  SAY NAME1 @1808 SAY UNIDENTIFIED_DESC @1809
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 173 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 173 parameter2 = iconrage END
 LPM SPELL_TO_INNATE
 
 END

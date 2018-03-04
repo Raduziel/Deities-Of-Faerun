@@ -493,7 +493,7 @@ Casting Time: 1
 Area of Effect: One creature
 Saving Throw: Neg.
 
-This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and reduce its Dexterity by 2.
+This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and a -2 penalty to its AC.
 
 ---
 

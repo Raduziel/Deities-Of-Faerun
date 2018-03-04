@@ -115,25 +115,25 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY "DeitiesOfFaerun\Spl\RASUNE1.spl"  override SAY NAME1 @104 SAY UNIDENTIFIED_DESC @105 //Rapture
+COPY "DeitiesOfFaerun\Spl\RASUNE1.spl"  override SAY NAME1 @104 SAY UNIDENTIFIED_DESC @105              //Rapture
 
-COPY "DeitiesOfFaerun\Spl\RASUNEA.spl"  override                                           //Effect upon allies
+COPY "DeitiesOfFaerun\Spl\RASUNEA.spl"  override                                                            //Effect upon allies
 LPF ALTER_EFFECT INT_VAR match_parameter2 = 999 match_opcode = 240 parameter2 = EVAL "%RA_DeafIc%" END
 LPF ALTER_EFFECT INT_VAR match_parameter2 = 998 match_opcode = 240 parameter2 = EVAL "%RA_FeebIc%" END
 LPF ALTER_EFFECT INT_VAR match_parameter2 = 997 match_opcode = 240 parameter2 = EVAL "%RA_NausIc%" END
 LPF ALTER_EFFECT INT_VAR match_parameter2 = 996 match_opcode = 240 parameter2 = EVAL "%RA_FatiIc%" END
 
-COPY "DeitiesOfFaerun\Spl\RASUNEE.spl"  override                                           //Effect upon enemies
+COPY "DeitiesOfFaerun\Spl\RASUNEE.spl"  override                                                             //Effect upon enemies
 
-COPY_EXISTING ~SPPR503.spl~ ~override/RASUNE2.spl~                                         //Flame Strike
+COPY_EXISTING ~SPPR503.spl~ ~override/RASUNE2.spl~                                                           //Flame Strike
 LPM SPELL_TO_INNATE
 
-COPY_EXISTING ~SPWI316.spl~ ~override/RASUNE3.spl~                                         //Dire Charm
+COPY_EXISTING ~SPWI316.spl~ ~override/RASUNE3.spl~                                                           //Dire Charm
 LPM SPELL_TO_INNATE
 
-COPY "DeitiesOfFaerun\Spl\RASUNE4.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107 //Emotion
+COPY "DeitiesOfFaerun\Spl\RASUNE4.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                   //Emotion
 
-COPY "DeitiesOfFaerun\Tables\RASUNE4.2da" override                                         //Emotion 2da
+COPY "DeitiesOfFaerun\Tables\RASUNE4.2da" override                                                           //Emotion 2da
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
@@ -143,27 +143,27 @@ ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO255.PRO~
 
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO407.PRO~
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@111) STR_VAR bam_file = COURAGIC RET icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI427.spl" override SAY NAME1 @108                              //Emotion: Courage
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@111) STR_VAR bam_file = COURAGIC RET iconcoura = icon END
+COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI427.spl" override SAY NAME1 @108                                    //Emotion: Courage
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconcoura END
 
-COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI428.spl" override SAY NAME1 @109                              //Emotion: Fear
+COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI428.spl" override SAY NAME1 @109                                    //Emotion: Fear
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@112) STR_VAR bam_file = HOPEIC RET icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI429.spl" override SAY NAME1 @110                              //Emotion: Hope
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@112) STR_VAR bam_file = HOPEIC RET iconhope = icon END
+COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI429.spl" override SAY NAME1 @110                                    //Emotion: Hope
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 186 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 186 parameter2 = iconhope END
 
-COPY_EXISTING ~SPWI411.spl~ ~override\SPWI411S.spl~                                                     //Emotion: Hopelessness (consistent radius fix)
+COPY_EXISTING ~SPWI411.spl~ ~override\SPWI411S.spl~                                                           //Emotion: Hopelessness (consistent radius fix)
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
 SAY UNIDENTIFIED_DESC @113
 
 END
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN                                                                         //Emotion, Hopelessness (IWDEE)
+ACTION_IF GAME_IS ~iwdee~ BEGIN                                                                               //Emotion, Hopelessness (IWDEE)
 
 COPY_EXISTING ~SPWI411.spl~ ~override\SPWI411S.spl~
 

@@ -210,11 +210,11 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY "DeitiesOfFaerun\Spl\RALATH1.spl" override SAY NAME1 @1004 SAY UNIDENTIFIED_DESC  @1005 //Boon of Lathander
+COPY "DeitiesOfFaerun\Spl\RALATH1.spl" override SAY NAME1 @1004 SAY UNIDENTIFIED_DESC  @1005   //Boon of Lathander
 
-COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007 //Faerie Fire
+COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Faerie Fire
 
-COPY "DeitiesOfFaerun\Spl\RALATH3.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009 //Sunrise
+COPY "DeitiesOfFaerun\Spl\RALATH3.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Sunrise
 
 COPY_EXISTING ~SPPR609.spl~ ~override/RALATH4.spl~                                             //False Dawn
 LPM SPELL_TO_INNATE

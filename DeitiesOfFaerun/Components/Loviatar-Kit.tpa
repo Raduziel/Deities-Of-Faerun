@@ -115,9 +115,9 @@ LPF ADD_ITEM_EQEFFECT
 
 COPY "DeitiesOfFaerun\Spl\RALoviIC.bam" override		  
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2216) STR_VAR bam_file = RALOVIIC RET icon END		  
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2216) STR_VAR bam_file = RALOVIIC RET iconpain = icon END		  
 COPY "DeitiesOfFaerun\Spl\RALovi1.spl" override SAY NAME1 @2204 SAY UNIDENTIFIED_DESC @2205
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2216) END
 
 COPY "DeitiesOfFaerun\Spl\RALovi2.spl" override SAY NAME1 @2206 SAY UNIDENTIFIED_DESC @2207
@@ -125,25 +125,23 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RE
 
 COPY "DeitiesOfFaerun\Spl\RALovi2.bam" override		  
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2217) STR_VAR bam_file = RALOVI2 RET icon END		  
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2217) STR_VAR bam_file = RALOVI2 RET iconburn = icon END		  
 COPY "DeitiesOfFaerun\Spl\RALovi21.spl" override
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconburn END
 
 COPY "DeitiesOfFaerun\Spl\RALovi3.spl" override SAY NAME1 @2208 SAY UNIDENTIFIED_DESC @2209
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2216) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
 COPY "DeitiesOfFaerun\Spl\RALovi4.spl" override SAY NAME1 @2210 SAY UNIDENTIFIED_DESC @2211
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2216) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
-COPY "DeitiesOfFaerun\Spl\RALovi41.spl"
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2216) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+COPY "DeitiesOfFaerun\Spl\RALovi41.spl" override
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
-COPY "DeitiesOfFaerun\Spl\RALovi42.spl"
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2216) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+COPY "DeitiesOfFaerun\Spl\RALovi42.spl" override
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
@@ -152,7 +150,7 @@ COPY "DeitiesOfFaerun\Spl\Import\Loviatar\Complement" override
 COPY "DeitiesOfFaerun\Spl\Import\Loviatar\RAPR714.spl" ~override\RALovi5.spl~ SAY NAME1 @2212 SAY UNIDENTIFIED_DESC @2213
 LPM SPELL_TO_INNATE
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2216) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
 END
 

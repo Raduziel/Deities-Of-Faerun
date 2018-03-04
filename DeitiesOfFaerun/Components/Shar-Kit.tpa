@@ -125,12 +125,12 @@ ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASHAR1.PRO~
 COPY "DeitiesOfFaerun\Spl\RASHAR1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405 //Darkness
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASHAR1% END
 
-COPY_EXISTING ~SPWI106.spl~ ~override/RASHAR2.spl~                                            //Blindness
+COPY_EXISTING ~SPWI106.spl~ ~override/RASHAR2.spl~                                          //Blindness
 LPM SPELL_TO_INNATE
 
 COPY "DeitiesOfFaerun\Spl\RASHAR3.spl" override  SAY NAME1 @406 SAY UNIDENTIFIED_DESC @407  //Nightmare
 
-COPY_EXISTING ~SPWI505.spl~ ~override/RASHAR4.spl~                                            //Shadow Door
+COPY_EXISTING ~SPWI505.spl~ ~override/RASHAR4.spl~                                          //Shadow Door
 LPM SPELL_TO_INNATE
 
 COPY "DeitiesOfFaerun\Spl\RASHAR5.vvc" override
