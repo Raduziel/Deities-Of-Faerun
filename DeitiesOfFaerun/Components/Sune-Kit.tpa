@@ -144,16 +144,16 @@ ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO255.PRO~
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO407.PRO~
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@111) STR_VAR bam_file = COURAGIC RET iconcoura = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI427.spl" override SAY NAME1 @108                                    //Emotion: Courage
+COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI427.spl" override SAY NAME1 @108                                    //Emotion: Courage
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconcoura END
 
-COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI428.spl" override SAY NAME1 @109                                    //Emotion: Fear
+COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI428.spl" override SAY NAME1 @109                                    //Emotion: Fear
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@112) STR_VAR bam_file = HOPEIC RET iconhope = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\SPWI429.spl" override SAY NAME1 @110                                    //Emotion: Hope
+COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI429.spl" override SAY NAME1 @110                                    //Emotion: Hope
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 186 parameter2 = iconhope END
 
