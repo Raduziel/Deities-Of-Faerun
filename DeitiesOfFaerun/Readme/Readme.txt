@@ -493,7 +493,7 @@ Casting Time: 1
 Area of Effect: One creature
 Saving Throw: Neg.
 
-This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and a -2 penalty to its AC.
+This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and reduce its Dexterity by 2.
 
 ---
 
@@ -557,9 +557,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell summons an Erinyes to serve the Pain. The priest must be successful in a mental battle in order to control the devil.
-
-The Erinyes has 48 HP, 15 Thac0, AC 0, can only be damaged with weapons +2 or better, strikes twice per round and each hit drains one level of the target. She also has access to the following spells: Harm, Domination and Gate.
+This spell summons an Erinyes to serve the Pain. She has 48 HP, 15 Thac0, AC 0, can only be damaged with weapons +2 or better, strikes twice per round and each hit drains one level of the target. The devil is also immune to poison, fear, stun, charm and confusion.
 
 ====================================================================================================================================================================
 

@@ -1595,7 +1595,7 @@ Casting Time: 1
 Area of Effect: One creature
 Saving Throw: Neg.
 
-This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and reduce its Dexterity by 2.~
+This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and and a -2 to its AC.~
 @2206 = ~Whip of Flame~
 @2207 = ~Whip of Flame
 (Invocation/Evocation)
@@ -1621,7 +1621,7 @@ Casting Time: 6
 Area of Effect: One creature
 Saving Throw: Special
 
-A whip is created by the Pain and immediately used against a creature and imposes a Saving Throw vs. Spells. If succeeds, the target only gets 2d4 points of slashing damage. If it fails, the target suffers a huge pain that gives a -2 penalty to its attack rolls, a -1 penalty to its AC and makes impossible to concentrate enough to cast spells.~
+A whip is created by the Pain and immediately used against a creature and imposes a Saving Throw vs. Spells. If succeeds, the target only gets 2d4 points of slashing damage. If it fails, the target gets 4d4 points of slashing damage and suffers a huge pain that gives a -2 penalty to its attack rolls, a -1 penalty to its AC and makes impossible to concentrate enough to cast spells.~
 @2210 = ~Touch of Torment~
 @2211 = ~Touch of Torment
 (Necromancy)
@@ -1664,9 +1664,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell summons an Erinyes to serve the Pain. The priest must be successful in a mental battle in order to control the devil.
-
-The Erinyes has 48 HP, 15 Thac0, AC 0, can only be damaged with weapons +2 or better, strikes twice per round and each hit drains one level of the target. She also has access to the following spells: Harm, Domination, and Gate.~
+This spell summons an Erinyes to serve the Pain. She has 48 HP, 15 Thac0, AC 0, can only be damaged with weapons +2 or better, strikes twice per round and each hit drains one level of the target. The devil is also immune to poison, fear, stun, charm and confusion.~
 @2216 = ~Pain~
 @2217 = ~Burning~
 @2218 = ~Summoned Erinyes~ 
