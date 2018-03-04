@@ -166,12 +166,6 @@ COPY "DeitiesOfFaerun\Spl\RALovi6.spl" override SAY NAME1 @2214 SAY UNIDENTIFIED
 COPY "DeitiesOfFaerun\Spl\RALovi6.eff" override
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\LoviDevi.cre" override SAY NAME1 @2218 SAY NAME2 @2218
-ADD_KNOWN_SPELL ~SPWI506~ #5 ~innate~
-ADD_KNOWN_SPELL ~SPPR608~ #6 ~innate~
-ADD_KNOWN_SPELL ~SPPR703~ #7 ~innate~
-ADD_MEMORIZED_SPELL ~SPWI506~ #5 ~innate~
-ADD_MEMORIZED_SPELL ~SPPR608~ #6 ~innate~
-ADD_MEMORIZED_SPELL ~SPPR703~ #7 ~innate~
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\BDERINYE.itm" override
 
