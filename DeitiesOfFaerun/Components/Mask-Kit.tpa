@@ -176,21 +176,21 @@ COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA3UMB9.cre~ override SAY NAME1 @1617 SAY
 
 COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RASUSHAD.cre~ override SAY NAME1 @1618 SAY NAME2 @1618
 
-LAF cd_new_summon_table STR_VAR descript = "RA_SHADOW_MONSTERS" 2da_file = RA_SMO RET table END
+LAF cd_new_summon_table STR_VAR descript = "RA_SHADOW_MONSTERS" 2da_file = RA_SMO RET RASMO = table END
 COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI426.spl" override SAY NAME1 @1606 SAY UNIDENTIFIED_DESC @1607    //Shadow Monster
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = table END
+LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RASMO END
 
-LAF cd_new_summon_table STR_VAR descript = "RA_DEMI_SHMONSTERS" 2da_file = RA_DSM RET table END
+LAF cd_new_summon_table STR_VAR descript = "RA_DEMI_SHMONSTERS" 2da_file = RA_DSM RET RADSM = table END
 COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI525.spl" override SAY NAME1 @1608 SAY UNIDENTIFIED_DESC @1609    //Demi-Shadow Monsters
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = table END
+LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RADSM END
 
-LAF cd_new_summon_table STR_VAR descript = "RA_SUMMON_SHADOW" 2da_file = RA_SDW RET table END
+LAF cd_new_summon_table STR_VAR descript = "RA_SUMMON_SHADOW" 2da_file = RA_SDW RET RASDW = table END
 COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI526.spl" override SAY NAME1 @1610 SAY UNIDENTIFIED_DESC @1611    //Summon Shadow
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = table END
+LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RASDW END
 
-LAF cd_new_summon_table STR_VAR descript = "RA_SHADES" 2da_file = RA_SHD RET table END
+LAF cd_new_summon_table STR_VAR descript = "RA_SHADES" 2da_file = RA_SHD RET RASHD = table END
 COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI629.spl" override SAY NAME1 @1612 SAY UNIDENTIFIED_DESC @1613    //Shades
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = table END
+LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RASHD END
 
 COPY_EXISTING ~RAWI426.spl~ ~override/RAMASK4.spl~                                                         //Shadow Monsters
 LPM SPELL_TO_INNATE
