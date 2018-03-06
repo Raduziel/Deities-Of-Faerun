@@ -12,7 +12,7 @@ OUTER_SET RA_Diseased = (GAME_IS ~bgee~) ? 31238 : GAME_IS ~bg2ee eet~ ? 54337 :
 OUTER_SET RA_FoulDisease = (GAME_IS ~bgee~) ? 26453 : GAME_IS ~bg2ee eet~ ? 39752 : (GAME_IS ~iwdee~) ? 39752 : 0	// Stricken by a foul disease
 OUTER_SET RA_Poison = (GAME_IS ~bgee~) ? 26215 : GAME_IS ~bg2ee eet~ ? 14017 : (GAME_IS ~iwdee~) ? 36317 : 0		// Poison
 OUTER_SET RA_Poisoned = (GAME_IS ~bgee~) ? 25425 : GAME_IS ~bg2ee eet~ ? 14662 : (GAME_IS ~iwdee~) ? 37607 : 0		// Poisoned
-OUTER_SET RA_Bleeding = = (GAME_IS ~bgee~) ? 25137 : GAME_IS ~bg2ee eet~ ? 54335 : (GAME_IS ~iwdee~) ? 37307 : 0	// Bleeding
+OUTER_SET RA_Bleeding = (GAME_IS ~bgee~) ? 25137 : GAME_IS ~bg2ee eet~ ? 54335 : (GAME_IS ~iwdee~) ? 37307 : 0	    // Bleeding
 OUTER_SET RA_Charmed = (GAME_IS ~bgee bg2ee eet~) ? 14672 : (GAME_IS ~iwdee~) ? 37801 : 0							// Charmed
 OUTER_SET RA_DireCharmed = (GAME_IS ~bgee bg2ee eet~) ? 14780 : (GAME_IS ~iwdee~) ? 17392 : 0					    // Dire Charmed
 OUTER_SET RA_Berserk = (GAME_IS ~bgee bg2ee eet~) ? 14036 : (GAME_IS ~iwdee~) ? 37605 : 0							// Berserk
