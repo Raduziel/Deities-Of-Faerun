@@ -132,13 +132,22 @@ LPM SPELL_TO_INNATE
 
 COPY "DeitiesOfFaerun\Cre\Changestaff\SMTREANT.cre" override SAY NAME1 @706 SAY NAME2 @706       //Treant (Creature)
 
-COPY "DeitiesOfFaerun\Cre\Changestaff\TreantAnim"   override                                     //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
+COPY "DeitiesOfFaerun\Cre\Changestaff\SMTREANT.itm" override SAY NAME1 @707 SAY NAME2 @707       //Treant (Weapon)
 
-COPY "DeitiesOfFaerun\Itm\Changestaff\SMTREANT.bam" override                                     //Treant (Weapon Icon)
+COPY "DeitiesOfFaerun\Cre\Changestaff\BDPlant.itm" override                                      //Treant (Ring)
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_Poisoned%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Paralyzed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Held%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Sleep%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Bleeding%" END
 
-COPY "DeitiesOfFaerun\Itm\Changestaff\BDPlant.itm" override                                      //Treant (Ring)
 
-COPY "DeitiesOfFaerun\Itm\Changestaff\SMTREANT.itm" override SAY NAME1 @707 SAY NAME2 @707       //Treant (Weapon)
+COPY "DeitiesOfFaerun\Cre\Changestaff\Complement"   override                                     //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
+
+
 
 
 
