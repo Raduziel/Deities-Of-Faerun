@@ -17,6 +17,7 @@ OUTER_SET RA_Charmed = (GAME_IS ~bgee bg2ee eet~) ? 14672 : (GAME_IS ~iwdee~) ? 
 OUTER_SET RA_DireCharmed = (GAME_IS ~bgee bg2ee eet~) ? 14780 : (GAME_IS ~iwdee~) ? 17392 : 0					    // Dire Charmed
 OUTER_SET RA_Berserk = (GAME_IS ~bgee bg2ee eet~) ? 14036 : (GAME_IS ~iwdee~) ? 37605 : 0							// Berserk
 OUTER_SET RA_Held = (GAME_IS ~bgee bg2ee eet~) ? 14102 : (GAME_IS ~iwdee~) ? 35606 : 0								// Held
+OUTER_SET RA_Paralyzed = (GAME_IS ~bgee bg2ee eet~) ? 14650 : (GAME_IS ~iwdee~) ? 35542 : 0		                    // Paralyzed
 OUTER_SET RA_Dominated = (GAME_IS ~bgee~) ? 26206 : GAME_IS ~bg2ee eet~ ? 8364 : (GAME_IS ~iwdee~) ? 35544 : 0		// Dominated
 OUTER_SET RA_Feebleminded = (GAME_IS ~bgee bg2ee eet~) ? 23744 : (GAME_IS ~iwdee~) ? 14407 : 0						// Feebleminded
 OUTER_SET RA_Sleep = (GAME_IS ~bgee~) ? 26371 : GAME_IS ~bg2ee eet~ ? 14001 : (GAME_IS ~iwdee~) ? 37613 : 0		    // Sleep
