@@ -251,6 +251,21 @@ COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.itm" override SAY NAME1 @707 SAY 
 
 COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.cre" override SAY NAME1 @808 SAY NAME2 @808             //Seeking Sword (Cre)
 
+COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELMR.itm" override
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_Poisoned%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Charmed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_DireCharmed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Dominated%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 9 parameter1 = EVAL "%RA_MoralFail%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 10 parameter1 = EVAL "%RA_RigidThink%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 11 parameter1 = EVAL "%RA_Confused%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 12 parameter1 = EVAL "%RA_Diseased%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 13 parameter1 = EVAL "%RA_FoulDisease%" END
+
 COPY_EXISTING ~SPPR304.spl~ ~override/RAHELM4.spl~                                                     //Glyph of Warding
 LPM SPELL_TO_INNATE
 
