@@ -117,24 +117,26 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPPR602.spl~ ~override/RABAER1.spl~                                               //Animal Summoning III
+COPY_EXISTING ~SPPR602.spl~ ~override\RABAER1.spl~                                               //Animal Summoning III
 LPM SPELL_TO_INNATE
 
-COPY_EXISTING ~SPPR202.spl~ ~override/RABAER2.spl~                                               //Barkskin
+COPY_EXISTING ~SPPR202.spl~ ~override\RABAER2.spl~                                               //Barkskin
 LPM SPELL_TO_INNATE
 
 COPY "DeitiesOfFaerun\Spl\RABAER3.spl" override SAY NAME1 @704 SAY UNIDENTIFIED_DESC  @705       //Changestaff
 
 COPY "DeitiesOfFaerun\Spl\RABAER3E.eff" override 
 
-COPY_EXISTING ~SPPR410.spl~ ~override/RABAER4.spl~                                               //Call Woodland Beings
+COPY_EXISTING ~SPPR410.spl~ ~override\RABAER4.spl~                                               //Call Woodland Beings
 LPM SPELL_TO_INNATE
 
-COPY "DeitiesOfFaerun\Cre\Changestaff\SMTREANT.cre" override SAY NAME1 @706 SAY NAME2 @706       //Treant (Creature)
+COPY "DeitiesOfFaerun\Cre\Changestaff\Complement"   override                                     //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
+
+COPY "DeitiesOfFaerun\Cre\Changestaff\RATREANT.cre" override SAY NAME1 @706 SAY NAME2 @706       //Treant (Creature)
 
 COPY "DeitiesOfFaerun\Cre\Changestaff\SMTREANT.itm" override SAY NAME1 @707 SAY NAME2 @707       //Treant (Weapon)
 
-COPY "DeitiesOfFaerun\Cre\Changestaff\BDPlant.itm" override                                      //Treant (Ring)
+COPY "DeitiesOfFaerun\Cre\Changestaff\RAPlant.itm" override                                      //Treant (Ring)
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%" END
@@ -143,13 +145,6 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EV
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Held%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Sleep%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Bleeding%" END
-
-
-COPY "DeitiesOfFaerun\Cre\Changestaff\Complement"   override                                     //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
-
-
-
-
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
