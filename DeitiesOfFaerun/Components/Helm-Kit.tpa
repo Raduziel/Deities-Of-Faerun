@@ -265,6 +265,7 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 10 parameter1 = E
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 11 parameter1 = EVAL "%RA_Confused%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 12 parameter1 = EVAL "%RA_Diseased%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 13 parameter1 = EVAL "%RA_FoulDisease%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 14 parameter1 = EVAL "%RA_Blinded%" END
 
 COPY_EXISTING ~SPPR304.spl~ ~override/RAHELM4.spl~                                                     //Glyph of Warding
 LPM SPELL_TO_INNATE
