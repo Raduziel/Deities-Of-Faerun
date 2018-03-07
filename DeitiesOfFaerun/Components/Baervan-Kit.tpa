@@ -13,7 +13,7 @@ ADD_KIT ~RABaer~
 	~RABaer 3 3 10 3 9 3~
     ~RABaer 3 3 10 3 9 3~
 	~RABaer 0 0 0 1 0 0 1 0 0~
-	~RABaer 0 0 0 0 0 0~
+	~RABaer 1 1 1 1 1 1~
 	~DeitiesOfFaerun\Tables\RABaer.2da~
 	~K_C_G~
 	~0x04000000 3~
@@ -28,6 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RABaer~
 		clascolr = ~205 7 8 41 10~
 		clswpbon = ~0 0 3~
+		clsrcreq = ~0 0 0 0 0 1 0~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~

@@ -28,6 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RAUmbe~
 		clascolr = ~81 121 55 10 10~
 		clswpbon = ~0 0 3~
+		clsrcreq = ~1 0 1 0 0 0 1~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~

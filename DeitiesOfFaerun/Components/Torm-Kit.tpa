@@ -28,6 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RATorm~
 		clascolr = ~205 132 94 41 93~
 		clswpbon = ~1 0 3~
+		clsrcreq = ~1 0 1 1 0 0 1~
 		hpclass = ~HPWAR~
 END
 

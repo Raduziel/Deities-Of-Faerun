@@ -13,7 +13,7 @@ ADD_KIT ~RAClan~
 	~RAClan 15 3 3 3 9 3~
     ~RAClan 15 3 3 3 9 3~
 	~RAClan 1 1 0 0 0 0 0 0 0~
-	~RAClan 0 0 0 0 0 0~
+	~RAClan 1 1 1 1 1 1~
 	~DeitiesOfFaerun\Tables\RAClan.2da~
 	~K_C_D~
 	~0x04000000 3~
@@ -28,6 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RAClan~
 		clascolr = ~205 5 79 41 105~
 		clswpbon = ~1 0 3~
+		clsrcreq = ~0 0 0 1 0 0 0~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~

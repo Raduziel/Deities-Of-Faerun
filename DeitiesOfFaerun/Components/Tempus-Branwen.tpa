@@ -9,14 +9,14 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   COUNT_2DA_ROWS ~9~ "rows"
   FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
     READ_2DA_ENTRY "%index%" 5 9 "clab"
-    PATCH_IF ("%clab%" STRING_COMPARE_CASE "OHTEMPUS" = 0) BEGIN
-      READ_2DA_ENTRY "%index%" 0 9 "OHTEMPUS"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RATemp" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RATemp"
       SET "rows" = 0
     END
   END
   BUT_ONLY_IF_IT_CHANGES
 
-OUTER_SET kit = "%OHTEMPUS%"
+OUTER_SET kit = "%RATemp%"
 ACTION_FOR_EACH creature IN branwe branwe5 BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN

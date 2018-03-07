@@ -16,7 +16,7 @@ ADD_KIT ~RABaraCM~
     ~RABaraCM 3 15 3 15 9 3~
 	~RABaraCM 0 0 0 1 0 0 0 0 0~
 	~RABaraCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RABara.2da~
+	~DeitiesOfFaerun\Tables\RABaraCM.2da~
 	~~
 	~0x04000000 14~
 	~CM0~
@@ -35,9 +35,78 @@ END
 LAF qd_multiclass
   STR_VAR 
       kit_name = ~RABaraCM~
-      kit_clab = ~RABara~
+      kit_clab = ~RABaraCM~
       base_class = ~P~
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 0
+	u_plate_armor 		= 0
+	u_club_staff	 	= 1
+	u_hammers	 		= 0
+	u_maces 	 		= 0
+	u_flails 			= 0
+	u_axes 				= 0
+	u_daggers 			= 1
+	u_short_swords		= 1
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 1
+	u_slings	 		= 1
+	u_bows 				= 1
+	u_crossbows 		= 1
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~major~
+	s_Death 		= ~x~
+	s_Benediction 	= ~x~
+	s_Destruction 	= ~x~
+	s_Protection 	= ~major~
+	s_War 			= ~minor~
+	s_Exploration   = ~major~
+	s_Knowledge 	= ~minor~
+	s_Deception 	= ~major~
+	s_Thought 		= ~x~
+	s_Dread 		= ~x~
+	s_Vigor 		= ~x~
+	s_Affliction 	= ~minor~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~minor~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~major~
+	s_Magic 		= ~x~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
 END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

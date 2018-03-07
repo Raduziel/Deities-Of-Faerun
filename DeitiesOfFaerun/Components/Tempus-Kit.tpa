@@ -5,18 +5,16 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-
-ADD_KIT ~OHTEMPUS~
-    ~OHTEMPUS 2 2 1 2 2 2 2 1~
-    ~OHTEMPUS 2 2 1 2 2 2 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~OHTEMPUS 14 3 3 3 12 3~
-	~OHTEMPUS 0 0 0 0 0 0~
-	~OHTEMPUS 14 3 3 3 12 3~
-    ~OHTEMPUS 14 3 3 3 12 3~
-	~OHTEMPUS 0 0 0 0 0 0 1 1 1~
-	~OHTEMPUS 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\OHTEMPUS.2da~
+ADD_KIT ~RATemp~
+    ~RATemp 2 2 1 2 2 2 2 1~
+    ~RATemp 2 2 1 2 2 2 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATemp 14 3 3 3 12 3~
+	~RATemp 0 0 0 0 0 0~
+	~RATemp 14 3 3 3 12 3~
+    ~RATemp 14 3 3 3 12 3~
+	~RATemp 0 0 0 0 0 0 1 1 1~
+	~RATemp 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RATemp.2da~
 	~K_C_H   K_C_HE   K_C_D   K_C_HO~
 	~0x04000000 3~
 	~Cl0~
@@ -27,208 +25,19 @@ ADD_KIT ~OHTEMPUS~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~OHTEMPUS~
+		kit_name = ~RATemp~
 		clascolr = ~205 83 65 41 93~
 		clswpbon = ~1 0 3~
+		clsrcreq = ~1 0 1 1 0 0 1~
 		hpclass = ~HPWAR~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 
- COPY_EXISTING ~kitlist.2da~ ~override~
+COPY_EXISTING ~kitlist.2da~ ~override~
 	COUNT_2DA_ROWS 1 rows
 	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
  BUT_ONLY
-
- LAF ~DEFINE_FNP_KIT_INFO~
-  INT_VAR
-	u_leather_armor 	= 1
-	u_chain_armor 		= 1
-	u_plate_armor 		= 1
-	u_club_staff	 	= 2
-	u_hammers	 		= 2
-	u_maces 	 		= 2
-	u_flails 			= 2
-	u_axes 				= 2
-	u_daggers 			= 2
-	u_short_swords		= 2
-	u_long_swords		= 2
-	u_scimitars 		= 2
-	u_katanas 			= 2
-	u_bastard_swords 	= 2
-	u_2hand_swords 		= 2
-	u_halberds 			= 2
-	u_spears 	 		= 2
-	u_darts 			= 0
-	u_slings	 		= 0
-	u_bows 				= 0
-	u_crossbows 		= 0
-
-  STR_VAR
-    clab_name 	= EVAL ~%mod_clab%~
-	class 			= ~cleric~	 
-	s_Life 			= ~major~
-	s_Death 		= ~x~
-	s_Benediction 	= ~major~
-	s_Destruction 	= ~major~
-	s_Protection 	= ~minor~
-	s_War 			= ~major~
-	s_Exploration   = ~x~
-	s_Knowledge 	= ~x~
-	s_Deception 	= ~x~
-	s_Thought 		= ~x~
-	s_Dread 		= ~minor~
-	s_Vigor 		= ~major~
-	s_Affliction 	= ~x~
-	s_Animal 		= ~x~
-	s_Plant 		= ~x~
-	s_Earth 		= ~x~
-	s_Water 		= ~x~
-	s_Air 			= ~x~
-	s_Fire 			= ~x~
-	s_Light 		= ~x~
-	s_Shadow 		= ~x~
-	s_Magic 		= ~x~
-	s_Perdition     = ~x~
-END
-
-LAM ~READ_FNP_KIT_INFO~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-  LAM apply_fnp_spheres
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-  LAM apply_fnp_usability
-END
-
-END
-
-//A thank you to Subtledoctor for helping me out in the entries and giving me the string-related part of the code.
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-
-ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
-  COPY_EXISTING ~clastext.2da~ ~override~
-    COUNT_2DA_COLS cols
-    READ_2DA_ENTRIES_NOW rows cols
-    FOR (row = 1; row < rows; ++row) BEGIN
-      READ_2DA_ENTRY_FORMER rows row 0 ~text~
-      PATCH_IF ~%text%~ STRING_EQUAL_CASE ~OHTEMPUS~ BEGIN
-        SET tempus_row = %row%
-      END
-    END
-    SET_2DA_ENTRY %tempus_row% 3 cols RESOLVE_STR_REF (@201)
-    SET_2DA_ENTRY %tempus_row% 5 cols RESOLVE_STR_REF (@202)
-    SET_2DA_ENTRY %tempus_row% 4 cols RESOLVE_STR_REF (@203)
-  BUT_ONLY
-END
-
-ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
-  COPY_EXISTING ~kitlist.2da~ ~override~
-    COUNT_2DA_COLS cols
-    READ_2DA_ENTRIES_NOW rows cols
-    FOR (row = 1; row < rows; ++row) BEGIN
-      READ_2DA_ENTRY_FORMER rows row 1 ~text~
-      PATCH_IF ~%text%~ STRING_EQUAL_CASE ~OHTEMPUS~ BEGIN
-        SET tempus_row = %row%
-      END
-    END
-    SET_2DA_ENTRY %tempus_row% 2 cols RESOLVE_STR_REF (@201)
-    SET_2DA_ENTRY %tempus_row% 3 cols RESOLVE_STR_REF (@202)
-    SET_2DA_ENTRY %tempus_row% 4 cols RESOLVE_STR_REF (@203)
-  BUT_ONLY
-END
-
-COPY "DeitiesOfFaerun\Tables\OHTEMPUS.2DA" override
-
-COPY_EXISTING ~HPCLASS.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RAHPCLASS~ 62 1 ~HPWAR~
-SET_2DA_ENTRIES_NOW ~RAHPCLASS~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
-
-COPY_EXISTING ~CLSWPBON.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RACLSWPBON~ 63 1 ~1~
-SET_2DA_ENTRIES_NOW ~RACLSWPBON~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
-
-COPY_EXISTING ~CLASCOLR.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RACLASCOLR~ 3 59  ~205~
-SET_2DA_ENTRY_LATER ~RACLASCOLR~ 4 59  ~83~
-SET_2DA_ENTRY_LATER ~RACLASCOLR~ 5 59  ~65~
-SET_2DA_ENTRY_LATER ~RACLASCOLR~ 6 59  ~41~
-SET_2DA_ENTRY_LATER ~RACLASCOLR~ 7 59  ~93~
-SET_2DA_ENTRIES_NOW ~RACLASCOLR~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
-
-COPY_EXISTING ~ABCLASRQ.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 62 1  ~14~
-SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 62 2  ~3~
-SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 62 3  ~3~
-SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 62 4  ~3~
-SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 62 5  ~12~
-SET_2DA_ENTRY_LATER ~RAABCLASRQ~ 62 6  ~3~
-SET_2DA_ENTRIES_NOW ~RAABCLASRQ~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
-
-COPY_EXISTING ~ALIGNMNT.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 1  ~0~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 2  ~0~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 3  ~0~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 4  ~0~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 5  ~0~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 6  ~0~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 7  ~1~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 8  ~1~
-SET_2DA_ENTRY_LATER ~RAALIGNMNT~ 62 9  ~1~
-SET_2DA_ENTRIES_NOW ~RAALIGNMNT~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
-
-COPY_EXISTING ~WEAPPROF.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 3  62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 4  62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 5  62  ~1~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 6  62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 7  62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 8  62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 9  62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 10 62  ~1~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 11 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 12 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 13 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 14 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 15 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 16 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 17 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 18 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 19 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 20 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 21 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 22 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 23 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 24 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 25 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 26 62  ~0~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 27 62  ~0~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 28 62  ~0~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 29 62  ~0~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 30 62  ~0~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 31 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 32 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 33 62  ~2~
-SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 34 62  ~3~
-SET_2DA_ENTRIES_NOW ~RAWEAPPROF~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
-
-OUTER_SPRINT mod_clab ~OHTEMPUS~
-
-ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 
 LAF ~DEFINE_FNP_KIT_INFO~
 	INT_VAR
@@ -292,8 +101,6 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-END
-
 COPY "DeitiesOfFaerun\Spl\RAHSTEMP.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
@@ -302,7 +109,7 @@ LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~OHTEMPUS~)
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATemp~)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
@@ -351,7 +158,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~OHTEMPUS~)
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATemp~)
 			  parameter2 = 9
 			  timing = 2
 			  special = RESOLVE_STR_REF (@202)
@@ -378,6 +185,32 @@ ACTION_FOR_EACH file IN ~TEMPS~ ~TEMPL~ BEGIN
       source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
     END
   END
+END
+
+//Hide the original kit
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING
+~K_C_H.2DA~  override
+~K_C_HO.2DA~ override 
+~K_C_HE.2DA~ override
+~K_C_HL.2DA~ override
+~K_C_E.2DA~  override
+~K_C_D.2DA~  override
+~K_C_G.2DA~  override
+	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
+	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
+		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
+		PATCH_MATCH kit WITH
+			41 BEGIN
+				REMOVE_2DA_ROW i 2
+			END
+			DEFAULT
+		END
+	END
+BUT_ONLY
+
 END
 
 //EoF

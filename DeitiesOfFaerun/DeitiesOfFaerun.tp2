@@ -342,7 +342,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Cyric-Tiax.tpa~
 
 BEGIN @15
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAHelm1.spl~) @5
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAHelm.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Helm-Anomen.tpa~
 
 //__________________________________________________________________________________
@@ -354,7 +354,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Helm-Anomen.tpa~
 
 BEGIN @16
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RATemp1.spl~) @5
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RATemp.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Branwen.tpa~
 
 //__________________________________________________________________________________

@@ -28,6 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RATlna~
 		clascolr = ~20 51 37 95 20~
 		clswpbon = ~0 0 3~
+		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~

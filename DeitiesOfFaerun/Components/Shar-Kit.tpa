@@ -28,6 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RAShar~
 		clascolr = ~205 136 118 41 104~
 		clswpbon = ~0 0 3~
+		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~

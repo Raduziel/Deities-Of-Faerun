@@ -28,6 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RAMala~
 		clascolr = ~198 87 195 87 198~
 		clswpbon = ~1 0 3~
+		clsrcreq = ~1 0 0 0 0 0 1~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
