@@ -391,7 +391,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Tenya.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @8
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
-REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
-INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
+//BEGIN @8
+//REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
+//REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+//INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
