@@ -9,6 +9,7 @@
 //Remove Baervan, Baravar, Mystra, Oghma, Tempus from Lathander's quest-line
 
 OUTER_SPRINT extend ~~
+OUTER_SET count = 0
 ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 	!Kit(Player1,RABAER)~
@@ -47,21 +48,26 @@ ACTION_IF count > 0 BEGIN
 //Remove Ilmater, Loviatar, Mystra, and Oghma from Helm's quest-line
 
 OUTER_SPRINT extend ~~
+OUTER_SET count = 0
 ACTION_IF FILE_EXISTS_IN_GAME ~RAILMA.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAILMA)~
+	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RALOVI.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RALOVI)~
+	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAMYST)~
+	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAOGHM)~
+	OUTER_SET count += 1
 END
 
 ACTION_IF count > 0 BEGIN
@@ -76,13 +82,16 @@ ACTION_IF count > 0 BEGIN
 //Remove Mystra and Tempus from Talos' quest-line
 
 OUTER_SPRINT extend ~~
+OUTER_SET count = 0
 ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAMYST)~
+	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RATEMP)~
+	OUTER_SET count += 1
 END
 
 ACTION_IF count > 0 BEGIN
@@ -160,37 +169,37 @@ END
 
 //Add Baervan, Baravar, Mystra, Oghma, and Tempus to non-cleric quest-line
 
-	OUTER_SPRINT extend ~~
-	OUTER_SET count = 0
-	ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
-		OUTER_SPRINT extend ~%extend%
+OUTER_SPRINT extend ~~
+OUTER_SET count = 0
+ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
+	OUTER_SPRINT extend ~%extend%
 	Kit(Player1,RABAER)~
-		OUTER_SET count += 1
+	OUTER_SET count += 1
 	END
-	ACTION_IF FILE_EXISTS_IN_GAME ~RABARA.2da~ BEGIN
-		OUTER_SPRINT extend ~%extend%
+ACTION_IF FILE_EXISTS_IN_GAME ~RABARA.2da~ BEGIN
+	OUTER_SPRINT extend ~%extend%
 	Kit(Player1,RABARA)~
-		OUTER_SET count += 1
+	OUTER_SET count += 1
 	END
-	ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
-		OUTER_SPRINT extend ~%extend%
+ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
+	OUTER_SPRINT extend ~%extend%
 	Kit(Player1,RAMYST)~
-		OUTER_SET count += 1
+	OUTER_SET count += 1
 	END
-	ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
-		OUTER_SPRINT extend ~%extend%
+ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
+	OUTER_SPRINT extend ~%extend%
 	Kit(Player1,RAOGHM)~
-		OUTER_SET count += 1
+	OUTER_SET count += 1
 	END
-	ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
-		OUTER_SPRINT extend ~%extend%
+ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
+	OUTER_SPRINT extend ~%extend%
 	Kit(Player1,RATEMP)~
-		OUTER_SET count += 1
+	OUTER_SET count += 1
 	END
-	ACTION_IF	count = 1 BEGIN
-		OUTER_SPRINT orblock ~~
+ACTION_IF	count = 1 BEGIN
+	OUTER_SPRINT orblock ~~
 	END	ELSE	BEGIN
-		OUTER_SPRINT orblock ~OR(%count%)~
+	OUTER_SPRINT orblock ~OR(%count%)~
 	END
 <<<<<<<< rastrong.baf
 IF
