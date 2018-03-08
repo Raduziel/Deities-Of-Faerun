@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.6.5~
+VERSION ~1.6.6~
 
 ALWAYS
 
@@ -280,7 +280,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Loviatar-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @10
+BEGIN @8
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RABaer.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Baervan-Aerie.tpa~
@@ -292,7 +292,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baervan-Aerie.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @11
+BEGIN @9
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RABara.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Quayle.tpa~
@@ -304,7 +304,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Quayle.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @12
+BEGIN @10
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RABara.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Glint.tpa~
@@ -316,7 +316,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Glint.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @13
+BEGIN @11
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAClan.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-Yeslick.tpa~
@@ -328,7 +328,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-Yeslick.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @14
+BEGIN @12
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RACyri.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Cyric-Tiax.tpa~
@@ -340,7 +340,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Cyric-Tiax.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @15
+BEGIN @13
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAHelm.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Helm-Anomen.tpa~
@@ -352,7 +352,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Helm-Anomen.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @16
+BEGIN @14
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RATemp.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Branwen.tpa~
@@ -364,7 +364,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Branwen.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @17
+BEGIN @15
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAShar.2da~) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Shar-Viconia.tpa~
@@ -377,12 +377,39 @@ INCLUDE  ~DeitiesOfFaerun/Components/Shar-Viconia.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @18
+BEGIN @16
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAUmbe.2da~) @5
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~Tenya.cre~) @6
 INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Tenya.tpa~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				       DRAKE, THE HOLY JUSTICE OF TYR
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @17
+REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RATyr.2da~) @5
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0drake.cre~) @6
+INCLUDE  ~DeitiesOfFaerun/Components/Tyr-Drake.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				       SIRENE, THE DAWNBRINGER OF LATHANDER
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @18
+REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RALath.2da~) @5
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sirefc.cre~) @6
+INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Sirene.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -391,7 +418,9 @@ INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Tenya.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-//BEGIN @8
-//REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
-//REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
-//INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
+BEGIN @7
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
+
+//EoF
