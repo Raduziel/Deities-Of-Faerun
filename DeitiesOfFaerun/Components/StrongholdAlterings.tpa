@@ -301,6 +301,8 @@ ACTION_IF count > 1 BEGIN
 	
 COPY_EXISTING ~NALIA.DLG~ override
 	DECOMPILE_AND_PATCH		BEGIN
+		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER)~
+~OR(%count%) Class(Player1,FIGHTER) %extend%~
 		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER_ALL)~
 ~OR(%count%) Class(Player1,FIGHTER_ALL) %extend%~
 END
@@ -310,6 +312,8 @@ COPY_EXISTING ~NALIAJ.DLG~ override
 	DECOMPILE_AND_PATCH		BEGIN
 		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER)~
 ~OR(%count%) Class(Player1,FIGHTER) %extend%~
+		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER_ALL)~
+~OR(%count%) Class(Player1,FIGHTER_ALL) %extend%~
 END
 BUT_ONLY
 
@@ -402,7 +406,7 @@ BUT_ONLY
 
 END
 
-//Let Baervan and Malar get the Druid's Stronghold
+//Let Baervan and Malar get the Druid's Stronghold 
 
 OUTER_SPRINT extend ~~
 OUTER_SET count = 1
