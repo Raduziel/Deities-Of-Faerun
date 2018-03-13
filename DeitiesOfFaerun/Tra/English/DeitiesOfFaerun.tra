@@ -452,12 +452,12 @@ Disadvantages:
 
 Sphere: Plant 
 Range: Touch
-Duration: 5 turns
+Duration: 10 turns
 Casting Time: 4 
 Area of Effect: Special 
 Saving Throw: None
 
-By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature with 12 Hit Dice, 80 hit points, and Armor Class 0. It attacks twice per round, inflicting 4d6 points of damage with every successful attack. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for 5 turns or until the staff is destroyed, whichever occurs first.
+By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature with 12 Hit Dice, 80 hit points, and Armor Class 0. It attacks twice per round, inflicting 4d6 points of damage with every successful attack. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for 10 turns or until the staff is destroyed, whichever occurs first.
 
 If the staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.~
 @706 = ~Summoned Treant~
