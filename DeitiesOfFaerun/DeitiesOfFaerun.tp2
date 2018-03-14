@@ -452,9 +452,9 @@ INCLUDE  ~DeitiesOfFaerun/Components/Sune-Yvette.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @7
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
-REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
-INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
+//BEGIN @7
+//REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
+//REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+//INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
 
 //EoF
