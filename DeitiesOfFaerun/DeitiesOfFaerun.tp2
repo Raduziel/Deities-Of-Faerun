@@ -440,7 +440,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tyr-Drake.tpa~
 BEGIN @18
 REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAIlma.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sirefc.cre~) @6
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sirene.cre~) @6
 INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-Sirene.tpa~
 
 //__________________________________________________________________________________
