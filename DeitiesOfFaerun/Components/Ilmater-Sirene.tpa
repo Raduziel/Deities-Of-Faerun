@@ -22,9 +22,12 @@ ACTION_FOR_EACH creature IN c0sirene c02siren BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 
     COPY_EXISTING ~%creature%.cre~ ~override~
-      WRITE_SHORT   0x244 0
-      WRITE_BYTE    0x246 "%kit%"
-      WRITE_BYTE    0x247 0x40
+      WRITE_SHORT     0x244 0
+      WRITE_BYTE      0x246 "%kit%"
+      WRITE_BYTE      0x247 0x40
+	  WRITE_BYTE	  0x23d 18
+	  REMOVE_CRE_ITEM ~CHAN04~
+	  REMOVE_CRE_ITEM ~PLAT04~
       BUT_ONLY
   END
   END
