@@ -1,32 +1,32 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						      Painbearer of Ilmater
+//						      Silverstar of Selûne
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAIlma~
-    ~RAIlma 0 0 0 0 1 1 0 1~
-    ~RAIlma 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAIlma 3 3 14 3 12 3~
-	~RAIlma 0 0 2 0 0 0~
-	~RAIlma 3 3 3 3 12 3~
-    ~RAIlma 3 3 14 3 12 3~
-	~RAIlma 1 0 0 0 0 0 0 0 0~
-	~RAIlma 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAIlma.2da~
-	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HO   K_C_HL   K_C_D~
+ADD_KIT ~RASelu~
+    ~RASelu 0 0 0 0 1 1 0 1~
+    ~RASelu 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RASelu 3 3 12 3 14 3~
+	~RASelu 0 0 0 0 0 0~
+	~RASelu 3 3 12 3 14 3~
+    ~RASelu 3 3 12 3 14 3~
+	~RASelu 0 0 0 0 0 0 1 0 0~
+	~RASelu 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RASelu.2da~
+	~K_C_H K_C_HO K_C_HE K_C_D K_C_HL K_C_G K_C_E~
 	~0x04000000 3~
 	~Cl0~
-	~* WAFLAIL HELM04 * RING31 MISC72 OHRCLCK3 BOOT01 AMUL27 BRAC16 BELT09 * * * * * * STAF10 HAMM09 *~
-	SAY @1301
-	SAY @1302
-	SAY @1303
+	~PLAT16 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF10 HAMM09 *~
+	SAY @2001
+	SAY @2002
+	SAY @2003
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAIlma~
-		clascolr = ~205 223 222 41 232~
+		kit_name = ~RASelu~
+		clascolr = ~79 222 121 95 79~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
@@ -40,8 +40,8 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 
  LAF ~DEFINE_FNP_KIT_INFO~
   INT_VAR
-	u_leather_armor 	= 0
-	u_chain_armor 		= 0
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
 	u_plate_armor 		= 0
 	u_club_staff	 	= 1
 	u_hammers	 		= 1
@@ -71,22 +71,22 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Destruction 	= ~x~
 	s_Protection 	= ~major~
 	s_War 			= ~x~
-	s_Exploration   = ~major~
-	s_Knowledge 	= ~minor~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~major~
 	s_Deception 	= ~x~
 	s_Thought 		= ~minor~
 	s_Dread 		= ~x~
-	s_Vigor 		= ~major~
+	s_Vigor 		= ~minor~
 	s_Affliction 	= ~x~
 	s_Animal 		= ~x~
-	s_Plant 		= ~minor~
+	s_Plant 		= ~x~
 	s_Earth 		= ~x~
 	s_Water 		= ~x~
 	s_Air 			= ~x~
-	s_Fire 			= ~x~
-	s_Light 		= ~minor~
+	s_Fire 			= ~minor~
+	s_Light 		= ~major~
 	s_Shadow 		= ~x~
-	s_Magic 		= ~x~
+	s_Magic 		= ~minor~
 	s_Perdition     = ~x~
 END
 
@@ -100,33 +100,52 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAILMAF.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSILMA.spl" override
+COPY "DeitiesOfFaerun\Spl\RAHSSELU.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSILMA.itm" override SAY NAME1 @1308 SAY NAME2 @1308 SAY DESC @1309
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSSELU.itm" override SAY NAME1 @2010 SAY NAME2 @2010 SAY DESC @2011
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAIlma + 0x4000)
+			  parameter1 = (RASelu + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPPR108.spl~ ~override/RAILMA1.spl~                                            //Remove Fear
+COPY ~DeitiesOfFaerun\Spl\RASELUFE.spl~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
+
+COPY ~DeitiesOfFaerun\Spl\RASELU1.spl~ override SAY NAME1 @2004 SAY UNIDENTIFIED_DESC @2005
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
+
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+
+COPY ~DeitiesOfFaerun\Spl\Import\Selune\Complement~ override
+
+COPY ~DeitiesOfFaerun\Spl\Import\Selune\MOONBLA.itm~ override SAY NAME1 @2006 SAY NAME2 @2006 SAY DESC @2006
+
+COPY ~DeitiesOfFaerun\Spl\Import\Selune\RAPR322.spl~ ~override/RASELU2.spl~ SAY NAME1 @2006 SAY UNIDENTIFIED_DESC @2007
 LPM SPELL_TO_INNATE
 
-COPY_EXISTING ~SPPR214.spl~ ~override/RAILMA2.spl~                                            //Draw Upon Holy Might
+END		  
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~SPPR322.spl~ ~override\RASELU2.spl~
 LPM SPELL_TO_INNATE
 
-COPY "DeitiesOfFaerun\Spl\RAILMA3.spl" override SAY NAME1 @1304 SAY UNIDENTIFIED_DESC @1305   //Martyrdom of Ilmater
+END
 
-COPY "DeitiesOfFaerun\Spl\RAILMA4.spl" override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307   //Endurance of Ilmater
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
+COPY_EXISTING ~SPPR505.spl~ ~override\RASELU3.spl~
+LPM SPELL_TO_INNATE
+		  
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASELU4.PRO~
+
+COPY "DeitiesOfFaerun\Spl\RASELU4.spl" override SAY NAME1 @2008 SAY UNIDENTIFIED_DESC @2009
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASELU4% END
+
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -136,35 +155,17 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAIlma + 0x4000)
+			  parameter1 = (RASelu + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1302)
+			  special = RESOLVE_STR_REF (@2002)
 		  END
 		END
 		DEFAULT
 	END
 BUT_ONLY
 
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    READ_BYTE 0x18 flags1
-    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-	READ_ASCII	0x22 animation (2)
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 special = RESOLVE_STR_REF (@1302) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 special = RESOLVE_STR_REF (@1302) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 special = RESOLVE_STR_REF (@1302) END
-	END
-END
-END
-BUT_ONLY
-
-ACTION_FOR_EACH file IN ~ILMAS~ ~ILMAL~ BEGIN
+ACTION_FOR_EACH file IN ~SELUS~ ~SELUL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
     LPF UPDATE_PVRZ_INDICES
     RET
@@ -183,7 +184,7 @@ ACTION_FOR_EACH file IN ~ILMAS~ ~ILMAL~ BEGIN
   END
 END
 
-ACTION_FOR_EACH file IN ~ILMAENDU~ ~ILMAMART~ BEGIN
+ACTION_FOR_EACH file IN ~SELUSHST~ ~SELUMOBE~ BEGIN
 COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
     LPF UPDATE_PVRZ_INDICES
     RET
@@ -200,6 +201,6 @@ COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
       source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
     END
   END
-END
+END	
 
 //EoF

@@ -114,7 +114,7 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY "DeitiesOfFaerun\Spl\RATLNAFE.spl" override		  
+COPY "DeitiesOfFaerun\Spl\RATLNAF.spl" override		  
 		  
 COPY_EXISTING ~SPCL423.spl~ ~override/RATLNA1.spl~
 LPM SPELL_TO_INNATE

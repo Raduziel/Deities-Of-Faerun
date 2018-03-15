@@ -1,34 +1,35 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						      Dweomerkeeper of Mystra
+//						       Holy Champion of Torm
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAMyst~
-    ~RAMyst 0 0 0 0 1 1 0 1~
-    ~RAMyst 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAMyst 3 3 3 14 12 3~
-	~RAMyst 0 0 0 0 0 0~
-	~RAMyst 3 3 3 14 12 3~
-    ~RAMyst 3 3 3 14 12 3~
-	~RAMyst 0 1 0 1 0 0 0 1 0~
-	~RAMyst 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAMyst.2da~
-	~K_C_H K_C_HE K_C_E K_C_G~
+ADD_KIT ~RATorm~
+    ~RATorm 0 0 0 0 1 1 0 1~
+    ~RATorm 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATorm 3 3 12 3 15 3~
+	~RATorm 0 0 0 0 0 0~
+	~RATorm 3 3 12 3 15 3~
+    ~RATorm 3 3 12 3 15 3~
+	~RATorm 1 0 0 0 0 0 0 0 0~
+	~RATorm 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RATorm.2da~
+	~K_C_H K_C_HE K_C_D K_C_HO~
 	~0x04000000 3~
 	~Cl0~
-	~CHAN18 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF10 HAMM09 *~
-	SAY @1401
-	SAY @1402
-	SAY @1403
+	~PLAT18 SHLD21 HELM21 * RING09 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * BLUN14 HAMM09 *~
+	SAY @1501
+	SAY @1502
+	SAY @1503
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAMyst~
-		clascolr = ~57 79 123 2 24~
-		clswpbon = ~0 0 3~
-		clsrcreq = ~1 1 1 0 0 1 0~
+		kit_name = ~RATorm~
+		clascolr = ~205 132 94 41 93~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 0 1 1 0 0 1~
+		hpclass = ~HPWAR~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -65,18 +66,18 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
   STR_VAR
     clab_name 	= EVAL ~%mod_clab%~
 	class 			= ~cleric~	 
-	s_Life 			= ~major~
+	s_Life 			= ~minor~
 	s_Death 		= ~x~
-	s_Benediction 	= ~minor~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~minor~
-	s_War 			= ~x~
-	s_Exploration   = ~major~
-	s_Knowledge 	= ~major~
-	s_Deception 	= ~minor~
-	s_Thought 		= ~major~
+	s_Benediction 	= ~major~
+	s_Destruction 	= ~major~
+	s_Protection 	= ~major~
+	s_War 			= ~major~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~x~
+	s_Thought 		= ~x~
 	s_Dread 		= ~minor~
-	s_Vigor 		= ~x~
+	s_Vigor 		= ~major~
 	s_Affliction 	= ~x~
 	s_Animal 		= ~x~
 	s_Plant 		= ~x~
@@ -85,8 +86,8 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Air 			= ~x~
 	s_Fire 			= ~x~
 	s_Light 		= ~x~
-	s_Shadow 		= ~major~
-	s_Magic 		= ~major~
+	s_Shadow 		= ~x~
+	s_Magic 		= ~x~
 	s_Perdition     = ~x~
 END
 
@@ -100,24 +101,36 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAMYSTF.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSMYST.spl" override
+COPY "DeitiesOfFaerun\Spl\RAHSTORM.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSMYST.itm" override SAY NAME1 @1404 SAY NAME2 @1404 SAY DESC @1405
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSTORM.itm" override SAY NAME1 @1504 SAY NAME2 @1504 SAY DESC @1505
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAMyst + 0x4000)
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATorm~)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
-		  END
+		  
+END
 
-COPY_EXISTING ~SPPR303.spl~ ~override/RAMYST1.spl~            //Dispel Magic
-LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPPR102.spl~ ~override/RATORM1.spl~  //Command
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING ~SPPR512.spl~ ~override/RATORM2.spl~  //Greater Command
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING ~SPPR612.spl~ ~override/RATORM3.spl~  //Bolt of Glory
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING ~SPWI715.spl~ ~override/RATORM4.spl~  //Power Word, Stun
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING ~SPPR710.spl~ ~override/RATORM5.spl~  //Holy Word
+LPM ~SPELL_TO_INNATE~
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -127,17 +140,17 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAMyst + 0x4000)
+			  parameter1 = (RATorm + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1402)
+			  special = RESOLVE_STR_REF (@1502)
 		  END
 		END
 		DEFAULT
 	END
 BUT_ONLY
 
-ACTION_FOR_EACH file IN ~MYSTS~ ~MYSTL~ BEGIN
+ACTION_FOR_EACH file IN ~TORMS~ ~TORML~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
     LPF UPDATE_PVRZ_INDICES
     RET

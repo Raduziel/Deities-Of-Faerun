@@ -114,7 +114,7 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY ~DeitiesOfFaerun\Spl\RASELUFE.spl~ override
+COPY ~DeitiesOfFaerun\Spl\RASELUF.spl~ override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
 
 COPY ~DeitiesOfFaerun\Spl\RASELU1.spl~ override SAY NAME1 @2004 SAY UNIDENTIFIED_DESC @2005

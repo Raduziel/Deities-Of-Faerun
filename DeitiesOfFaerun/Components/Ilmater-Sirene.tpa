@@ -1,0 +1,32 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					    SIRENE, THE PAINBEARER OF ILMATER
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAIlmaFC" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAIlmaFC"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAIlmaFC%"
+ACTION_FOR_EACH creature IN c0sirefc c02sirfc BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+      BUT_ONLY
+  END
+  END
+
+//EoF

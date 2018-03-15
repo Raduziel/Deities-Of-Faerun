@@ -1,46 +1,45 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						      Dawnbringer of Lathander
+//						      Malagent of Talona
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RALath~
-    ~RALath 0 0 0 0 1 1 0 1~
-    ~RALath 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RALath 3 3 3 3 14 12~
-	~RALath 0 0 0 0 0 0~
-	~RALath 3 3 3 3 14 12~
-    ~RALath 3 3 3 3 14 12~
-	~RALath 0 0 0 1 0 0 0 0 0~
-	~RALath 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RALath.2da~
-	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
+ADD_KIT ~RATlna~
+    ~RATlna 0 0 0 0 1 1 0 1~
+    ~RATlna 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATlna 3 3 14 3 14 3~
+	~RATlna 0 0 0 0 0 0~
+	~RATlna 3 3 14 3 14 3~
+    ~RATlna 3 3 14 3 14 3~
+	~RATlna 0 0 0 0 0 0 0 0 1~
+	~RATlna 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RATlna.2da~
+	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D   K_C_HO~
 	~0x04000000 3~
 	~Cl0~
-	~WA2PLAT SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * BLUN14 HAMM09 *~
-	SAY @1001
-	SAY @1002
-	SAY @1003
+	~LEAT18 * HELM07 * RING46 RING39 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN22 HAMM09 *~
+	SAY @2101
+	SAY @2102
+	SAY @2103
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RALath~
-		clascolr = ~205 99 172 41 172~
+		kit_name = ~RATlna~
+		clascolr = ~20 51 37 95 20~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 
-COPY_EXISTING ~kitlist.2da~ ~override~
+ COPY_EXISTING ~kitlist.2da~ ~override~
 	COUNT_2DA_ROWS 1 rows
 	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
  BUT_ONLY
 
  LAF ~DEFINE_FNP_KIT_INFO~
-
-	INT_VAR
+  INT_VAR
 	u_leather_armor 	= 1
 	u_chain_armor 		= 1
 	u_plate_armor 		= 1
@@ -62,33 +61,33 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 	u_slings	 		= 1
 	u_bows 				= 0
 	u_crossbows 		= 0
-	
-	STR_VAR
+
+  STR_VAR
     clab_name 	= EVAL ~%mod_clab%~
 	class 			= ~cleric~	 
-	s_Life 			= ~major~
-	s_Death 		= ~x~
-	s_Benediction 	= ~minor~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~major~
-	s_War 			= ~minor~
+	s_Life 			= ~minor~
+	s_Death 		= ~major~
+	s_Benediction 	= ~x~
+	s_Destruction 	= ~minor~
+	s_Protection 	= ~x~
+	s_War 			= ~x~
 	s_Exploration   = ~x~
-	s_Knowledge 	= ~major~
-	s_Deception 	= ~x~
-	s_Thought 		= ~minor~
-	s_Dread 		= ~x~
-	s_Vigor 		= ~major~
-	s_Affliction 	= ~x~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~minor~
+	s_Thought 		= ~major~
+	s_Dread 		= ~major~
+	s_Vigor 		= ~minor~
+	s_Affliction 	= ~major~
 	s_Animal 		= ~x~
 	s_Plant 		= ~x~
 	s_Earth 		= ~x~
 	s_Water 		= ~x~
 	s_Air 			= ~x~
-	s_Fire 			= ~minor~
-	s_Light 		= ~major~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
 	s_Shadow 		= ~x~
 	s_Magic 		= ~x~
-	s_Perdition     = ~x~
+	s_Perdition     = ~major~
 END
 
 LAM ~READ_FNP_KIT_INFO~
@@ -101,30 +100,57 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RALATHF.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSLATH.spl" override
+COPY "DeitiesOfFaerun\Spl\RAHSTLNA.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSLATH.itm" override SAY NAME1 @1010 SAY NAME2 @1010 SAY DESC @1011
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSTLNA.itm" override SAY NAME1 @2108 SAY NAME2 @2108 SAY DESC @2109
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALath~)
+			  parameter1 = (RATlna + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
 
-COPY "DeitiesOfFaerun\Spl\RALATH1.spl" override SAY NAME1 @1004 SAY UNIDENTIFIED_DESC  @1005   //Boon of Lathander
-
-COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Faerie Fire
-
-COPY "DeitiesOfFaerun\Spl\RALATH3.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Sunrise
-
-COPY_EXISTING ~SPPR609.spl~ ~override/RALATH4.spl~                                             //False Dawn
+COPY "DeitiesOfFaerun\Spl\RATLNAFE.spl" override		  
+		  
+COPY_EXISTING ~SPCL423.spl~ ~override/RATLNA1.spl~
 LPM SPELL_TO_INNATE
+
+COPY "DeitiesOfFaerun\Spl\RATLNA2.spl" override SAY NAME1 @2104 SAY UNIDENTIFIED_DESC @2105
+
+COPY "DeitiesOfFaerun\Spl\RATLNA21.spl" override
+
+COPY "DeitiesOfFaerun\Spl\RATLNA22.spl" override
+
+COPY_EXISTING ~SPWI409.spl~ ~override/RATLNA3.spl~
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPPR411.spl~ ~override/RATLNA4.spl~
+LPM SPELL_TO_INNATE
+
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+
+COPY ~DeitiesOfFaerun\Spl\Import\Talona\Complement~ override
+
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Talona\Complement\RATLNA.PRO~
+
+COPY ~DeitiesOfFaerun\Spl\Import\Talona\RAPR423.spl~ ~override\RATLNA5.spl~ SAY NAME1 @2106 SAY UNIDENTIFIED_DESC @2107
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RATLNA% END
+LPM SPELL_TO_INNATE
+
+END
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~SPPR423.spl~ ~override\RATLNA5.spl~
+LPM SPELL_TO_INNATE
+
+END
+
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -134,17 +160,17 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALath~)
+			  parameter1 = (RATlna + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1002)
+			  special = RESOLVE_STR_REF (@2102)
 		  END
 		END
 		DEFAULT
 	END
 BUT_ONLY
 
-ACTION_FOR_EACH file IN ~LATHS~ ~LATHL~ BEGIN
+ACTION_FOR_EACH file IN ~TLNAS~ ~TLNAL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
     LPF UPDATE_PVRZ_INDICES
     RET
@@ -163,7 +189,7 @@ ACTION_FOR_EACH file IN ~LATHS~ ~LATHL~ BEGIN
   END
 END
 
-ACTION_FOR_EACH file IN ~LATHFAFI~ ~LATHSUNR~ BEGIN
+ACTION_FOR_EACH file IN ~TLNAPOTO~ BEGIN
 COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
     LPF UPDATE_PVRZ_INDICES
     RET
@@ -181,27 +207,5 @@ COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
     END
   END
 END
-
-//Hide the original kit
-
-COPY_EXISTING
-~K_C_H.2DA~  override
-~K_C_HO.2DA~ override 
-~K_C_HE.2DA~ override
-~K_C_HL.2DA~ override
-~K_C_E.2DA~  override
-~K_C_D.2DA~  override
-~K_C_G.2DA~  override
-	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
-	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
-		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
-		PATCH_MATCH kit WITH
-			21 BEGIN
-				REMOVE_2DA_ROW i 2
-			END
-			DEFAULT
-		END
-	END
-BUT_ONLY
 
 //EoF

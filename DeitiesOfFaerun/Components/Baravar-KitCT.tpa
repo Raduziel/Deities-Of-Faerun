@@ -100,7 +100,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RABARAF.spl" override
+COPY "DeitiesOfFaerun\Spl\RABARAFE.spl" override
 
 COPY "DeitiesOfFaerun\Spl\RAHSBARA.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
