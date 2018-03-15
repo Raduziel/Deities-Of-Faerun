@@ -30,8 +30,6 @@ ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 anomen12 BE
   END
   END
   
-DELETE ~BELT13.itm~
-  
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSHELM.itm" ~override/BELT13.itm~ SAY NAME1 @811 SAY NAME2 @811 SAY DESC @812
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR

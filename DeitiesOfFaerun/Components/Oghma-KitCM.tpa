@@ -5,19 +5,21 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAOghm~
-    ~RAOghm 0 0 0 0 1 1 0 1~
-    ~RAOghm 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAOghm 3 3 3 12 14 3~
-	~RAOghm 0 0 0 0 0 0~
-	~RAOghm 3 3 3 12 14 3~
-    ~RAOghm 3 3 3 12 14 3~
-	~RAOghm 0 0 0 0 1 0 0 0 0~
-	~RAOghm 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAOghm.2da~
-	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAOghmCM~
+    ~RAOghmCM 0 0 0 0 1 1 0 1~
+    ~RAOghmCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAOghmCM 3 3 3 12 14 3~
+	~RAOghmCM 0 0 0 0 0 0~
+	~RAOghmCM 3 3 3 12 14 3~
+    ~RAOghmCM 3 3 3 12 14 3~
+	~RAOghmCM 0 0 0 0 1 0 0 0 0~
+	~RAOghmCM 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RAOghmCM.2da~
+	~K_CM_H   K_CM_HE   K_CM_E   K_CM_G   K_CM_HL   K_CM_D~
+	~0x04000000 14~
+	~CM0~
 	~CHAN13 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF20 HAMM09 *~
 	SAY @1201
 	SAY @1202
@@ -25,10 +27,18 @@ ADD_KIT ~RAOghm~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAOghm~
+		kit_name = ~RAOghmCM~
 		clascolr = ~205 254 105 41 205~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAOghmCM~
+      kit_clab = ~RAOghmCM~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,37 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY_EXISTING ~SPPR403.spl~ ~override/RAOGHMFE.spl~
-WRITE_SHORT 0x1C 4                                                    
-WRITE_LONG  0x34 1                                                         
-WRITE_LONG  0x22 00
-LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
-LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
-
-COPY "DeitiesOfFaerun\Spl\RAHSOGHM.spl" override
+COPY "DeitiesOfFaerun\Spl\RAMOGHM.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSOGHM.itm" override SAY NAME1 @1206 SAY NAME2 @1206 SAY DESC @1207
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RACMOGHM.itm" override SAY NAME1 @1206 SAY NAME2 @1206 SAY DESC @1207
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAOghm + 0x4000)
+			  parameter1 = (RAOghmCM + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
-		  END
-
-COPY "DeitiesOfFaerun\Spl\RAOGHM1.spl" override SAY NAME1 @1204 SAY UNIDENTIFIED_DESC @1205 //Legend Lore
-
-COPY_EXISTING ~SPWI107.spl~ ~override/RAOGHM2.spl~                                          //Friends
-LPM SPELL_TO_INNATE
+END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -140,10 +132,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAOghm + 0x4000)
+			  parameter1 = (RAOghmCM + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1202)
 		  END
 		END
 		DEFAULT
@@ -156,81 +147,43 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 	READ_ASCII	0x22 animation (2)
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D1") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D3") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D4") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C0") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C1") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C3") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C4") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C5") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C6") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~) parameter2 = 9 special = RESOLVE_STR_REF (@1202) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 	END
 END
 END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~OGHMS~ ~OGHML~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~OGHMLELO~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

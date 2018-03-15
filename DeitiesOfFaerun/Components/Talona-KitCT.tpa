@@ -5,19 +5,21 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RATlna~
-    ~RATlna 0 0 0 0 1 1 0 1~
-    ~RATlna 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RATlna 3 3 14 3 14 3~
-	~RATlna 0 0 0 0 0 0~
-	~RATlna 3 3 14 3 14 3~
-    ~RATlna 3 3 14 3 14 3~
-	~RATlna 0 0 0 0 0 0 0 0 1~
-	~RATlna 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RATlna.2da~
-	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D   K_C_HO~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RATlnaCT~
+    ~RATlnaCT 0 0 0 0 1 1 0 1~
+    ~RATlnaCT 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATlnaCT 3 3 14 3 14 3~
+	~RATlnaCT 0 0 0 0 0 0~
+	~RATlnaCT 3 3 14 3 14 3~
+    ~RATlnaCT 3 3 14 3 14 3~
+	~RATlnaCT 0 0 0 0 0 0 0 0 1~
+	~RATlnaCT 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RATlnaCT.2da~
+	~K_CT_H   K_CT_HE   K_CT_E   K_CT_G   K_CT_HL   K_CT_D   K_CT_HO~
+	~0x04000000 15~
+	~CT0~
 	~LEAT18 * HELM07 * RING46 RING39 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN22 HAMM09 *~
 	SAY @2101
 	SAY @2102
@@ -25,10 +27,18 @@ ADD_KIT ~RATlna~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RATlna~
+		kit_name = ~RATlnaCT~
 		clascolr = ~20 51 37 95 20~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RATlnaCT~
+      kit_clab = ~RATlnaCT~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,57 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSTLNA.spl" override
+COPY "DeitiesOfFaerun\Spl\RATTLNA.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSTLNA.itm" override SAY NAME1 @2108 SAY NAME2 @2108 SAY DESC @2109
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RACTTLNA.itm" override SAY NAME1 @2108 SAY NAME2 @2108 SAY DESC @2109
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RATlna + 0x4000)
+			  parameter1 = (RATlnaCT + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-COPY "DeitiesOfFaerun\Spl\RATLNAFE.spl" override		  
-		  
-COPY_EXISTING ~SPCL423.spl~ ~override/RATLNA1.spl~
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Spl\RATLNA2.spl" override SAY NAME1 @2104 SAY UNIDENTIFIED_DESC @2105
-
-COPY "DeitiesOfFaerun\Spl\RATLNA21.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RATLNA22.spl" override
-
-COPY_EXISTING ~SPWI409.spl~ ~override/RATLNA3.spl~
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR411.spl~ ~override/RATLNA4.spl~
-LPM SPELL_TO_INNATE
-
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-
-COPY ~DeitiesOfFaerun\Spl\Import\Talona\Complement~ override
-
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Talona\Complement\RATLNA.PRO~
-
-COPY ~DeitiesOfFaerun\Spl\Import\Talona\RAPR423.spl~ ~override\RATLNA5.spl~ SAY NAME1 @2106 SAY UNIDENTIFIED_DESC @2107
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %RATLNA% END
-LPM SPELL_TO_INNATE
-
-END
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-
-COPY_EXISTING ~SPPR423.spl~ ~override\RATLNA5.spl~
-LPM SPELL_TO_INNATE
-
-END
-
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -160,52 +132,13 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RATlna + 0x4000)
+			  parameter1 = (RATlnaCT + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@2102)
 		  END
 		END
 		DEFAULT
 	END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~TLNAS~ ~TLNAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~TLNAPOTO~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

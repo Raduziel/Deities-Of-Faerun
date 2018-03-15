@@ -1,23 +1,25 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						       Strifeleader of Cyric
+//					     Strifeleader of Cyric - Cleric/Thief
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RACyri~
-    ~RACyri 1 0 0 0 1 1 0 1~
-    ~RACyri 1 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RACyri 13 3 3 3 13 3~
-	~RACyri 0 0 0 0 0 0~
-	~RACyri 13 3 3 3 13 3~
-    ~RACyri 13 3 3 3 13 3~
-	~RACyri 0 0 0 0 0 1 0 0 1~
-	~RACyri 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RACyri.2da~
-	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HO   K_C_HL   K_C_D~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RACyriCT~
+    ~RACyriCT 1 0 0 0 1 1 0 1~
+    ~RACyriCT 1 0 0 0 1 1 0 1 0 1 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RACyriCT 13 3 3 3 13 3~
+	~RACyriCT 0 0 0 0 0 0~
+	~RACyriCT 13 3 3 3 13 3~
+    ~RACyriCT 13 3 3 3 13 3~
+	~RACyriCT 0 0 0 0 0 1 0 0 1~
+	~RACyriCT 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RACyriCT.2da~
+	~K_CT_H   K_CT_HE   K_CT_E   K_CT_G   K_CT_HO   K_CT_HL   K_CT_D~
+	~0x04000000 15~
+	~CT0~
 	~PLAT18 SHLD21 HELM03 * RING22 RING39 CLCK07 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN14 HAMM09 *~
 	SAY @301
 	SAY @302
@@ -25,10 +27,18 @@ ADD_KIT ~RACyri~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RACyri~
+		kit_name = ~RACyriCT~
 		clascolr = ~205 104 136 41 80~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RACyriCT~
+      kit_clab = ~RACyriCT~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,30 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RACYRIFE.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSCYRI.spl" override
+COPY "DeitiesOfFaerun\Spl\RATCYRI.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSCYRI.itm" override SAY NAME1 @308 SAY NAME2 @308 SAY DESC @309
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RACTCYRI.itm" override SAY NAME1 @308 SAY NAME2 @308 SAY DESC @309
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RACyri + 0x4000)
+			  parameter1 = (RACyriCT + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @304 SAY UNIDENTIFIED_DESC @305 //Dark Aura
-
-COPY "DeitiesOfFaerun\Spl\RACYRIE.spl" override                                           //Bonuses for Evil-aligned
-
-COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                           //Penalties for Good-aligned
-
-COPY "DeitiesOfFaerun\Spl\RACYRI2.spl" override SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307 //Instill Madness
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@310) END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -133,52 +132,13 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RACyri + 0x4000)
+			  parameter1 = (RACyriCT + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@302)
 		  END
 		END
 		DEFAULT
 	END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~CYRIS~ ~CYRIL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~CYRIDAAU~ ~CYRIINMA~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

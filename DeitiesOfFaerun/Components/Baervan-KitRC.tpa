@@ -1,23 +1,25 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						      Fastpaw of Baervan
+//						Fastpaw of Baervan - Ranger/Cleric
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RABaer~
-    ~RABaer 0 1 1 1 1 0 1 1~
-    ~RABaer 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 1 0 1 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RABaer 3 3 10 3 9 3~
-	~RABaer 0 0 0 0 0 0~
-	~RABaer 3 3 10 3 9 3~
-    ~RABaer 3 3 10 3 9 3~
-	~RABaer 0 0 0 1 0 0 1 0 0~
-	~RABaer 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RABaer.2da~
-	~K_C_G~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RABaerRC~
+    ~RABaerRC 0 1 1 1 1 0 1 1~
+    ~RABaerRC 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 1 0 1 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABaerRC 3 3 10 3 9 3~
+	~RABaerRC 0 0 0 0 0 0~
+	~RABaerRC 3 3 10 3 9 3~
+    ~RABaerRC 3 3 10 3 9 3~
+	~RABaerRC 0 0 0 1 0 0 1 0 0~
+	~RABaerRC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RABaerRC.2da~
+	~K_CR_G~
+	~0x04000000 18~
+	~CR0~
 	~LEAT19 * HELM16 * RING29 RING31 CLCK27 BOOT04 AMUL27 BRAC10 BELT03 * * * * * * BLUN24 WASLING *~
 	SAY @701
 	SAY @702
@@ -25,10 +27,18 @@ ADD_KIT ~RABaer~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RABaer~
+		kit_name = ~RABaerRC~
 		clascolr = ~205 7 8 41 10~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~0 0 0 0 0 1 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RABaerRC~
+      kit_clab = ~RABaerRC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,52 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RABAERFE.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 206 parameter1 = RESOLVE_STR_REF (@708) END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 206 parameter1 = RESOLVE_STR_REF (@709) END
-
-COPY "DeitiesOfFaerun\Spl\RAHSBAER.spl" override
+COPY "DeitiesOfFaerun\Spl\RARBAER.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSBAER.itm" override SAY NAME1 @710 SAY NAME2 @710 SAY DESC @711
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RARCBAER.itm" override SAY NAME1 @710 SAY NAME2 @710 SAY DESC @711
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RABaer + 0x4000)
+			  parameter1 = (RABaerRC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-COPY_EXISTING ~SPPR602.spl~ ~override\RABAER1.spl~                                               //Animal Summoning III
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR202.spl~ ~override\RABAER2.spl~                                               //Barkskin
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Spl\RABAER3.spl" override SAY NAME1 @704 SAY UNIDENTIFIED_DESC  @705       //Changestaff
-
-COPY "DeitiesOfFaerun\Spl\RABAER3E.eff" override 
-
-COPY_EXISTING ~SPPR410.spl~ ~override\RABAER4.spl~                                               //Call Woodland Beings
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Cre\Changestaff\Complement"   override                                     //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
-
-COPY "DeitiesOfFaerun\Cre\Changestaff\RATREANT.cre" override SAY NAME1 @706 SAY NAME2 @706       //Treant (Creature)
-
-COPY "DeitiesOfFaerun\Cre\Changestaff\SMTREANT.itm" override SAY NAME1 @707 SAY NAME2 @707       //Treant (Weapon)
-
-COPY "DeitiesOfFaerun\Cre\Changestaff\RAPlant.itm" override                                      //Treant (Ring)
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_Poisoned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Paralyzed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Held%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Sleep%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Bleeding%" END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -155,10 +132,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RABaer + 0x4000)
+			  parameter1 = (RABaerRC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@702)
 		  END
 		END
 		DEFAULT
@@ -171,84 +147,46 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 	READ_ASCII	0x22 animation (2)
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D1") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D3") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D4") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C0") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C1") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C3") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C4") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C5") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C6") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~) parameter2 = 9 special = RESOLVE_STR_REF (@702) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
 	END
 END
 END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~BAERS~ ~BAERL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~BAERCHAN~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

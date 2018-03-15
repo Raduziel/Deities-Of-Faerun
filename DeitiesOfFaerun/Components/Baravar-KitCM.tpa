@@ -1,23 +1,25 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						      Hoodwinker of Baravar
+//					      Hoodwinker of Baravar - Cleric/Mage
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RABara~
-    ~RABara 0 1 1 0 1 0 0 1~
-    ~RABara 0 1 1 0 1 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 1 0 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RABara 3 15 3 15 9 3~
-	~RABara 0 0 0 0 0 0~
-	~RABara 3 15 3 15 9 3~
-    ~RABara 3 15 3 15 9 3~
-	~RABara 0 0 0 1 0 0 0 0 0~
-	~RABara 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RABara.2da~
-	~K_C_G~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RABaraCM~
+    ~RABaraCM 0 1 1 0 1 0 0 1~
+    ~RABaraCM 0 1 1 0 1 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 1 0 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABaraCM 3 15 3 15 9 3~
+	~RABaraCM 0 0 0 0 0 0~
+	~RABaraCM 3 15 3 15 9 3~
+    ~RABaraCM 3 15 3 15 9 3~
+	~RABaraCM 0 0 0 1 0 0 0 0 0~
+	~RABaraCM 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RABaraCM.2da~
+	~K_CM_G~
+	~0x04000000 14~
+	~CM0~
 	~LEAT08 BDSHLD01 HELM14 * RING05 RING28 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * DAGG13 BOW19 *~
 	SAY @601
 	SAY @602
@@ -25,10 +27,18 @@ ADD_KIT ~RABara~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RABara~
+		kit_name = ~RABaraCM~
 		clascolr = ~205 43 66 41 66~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~0 0 0 0 0 1 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RABaraCM~
+      kit_clab = ~RABaraCM~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,37 +110,21 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RABARAFE.spl" override
+COPY "DeitiesOfFaerun\Spl\RABARAF.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RAHSBARA.spl" override
+COPY "DeitiesOfFaerun\Spl\RAMBARA.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSBARA.itm" override SAY NAME1 @604 SAY NAME2 @604 SAY DESC @605
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RACMBARA.itm" override SAY NAME1 @604 SAY NAME2 @604 SAY DESC @605
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RABara + 0x4000)
+			  parameter1 = (RABaraCM + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-
-COPY_EXISTING ~SPWI212.spl~ ~override/RABARA1.spl~                              //Mirror Image
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI206.spl~ ~override/RABARA2.spl~                              //Invisibility
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI402.spl~ ~override/RABARA3.spl~                              //Dimension Door
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI607.spl~ ~override/RABARA4.spl~                              //Mislead
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI714.spl~ ~override/RABARA5.spl~                              //Prismatic Spray
-LPM SPELL_TO_INNATE
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -140,10 +134,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RABara + 0x4000)
+			  parameter1 = (RABaraCM + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@602)
 		  END
 		END
 		DEFAULT
@@ -156,32 +149,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 	READ_ASCII	0x22 animation (2)
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCM~) parameter2 = 9 END
 	END
 END
 END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~BARAS~ ~BARAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

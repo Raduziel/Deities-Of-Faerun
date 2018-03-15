@@ -5,19 +5,21 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAMala~
-    ~RAMala 0 0 0 0 1 1 0 1~
-    ~RAMala 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAMala 13 3 3 3 12 3~
-	~RAMala 0 0 0 0 0 0~
-	~RAMala 13 3 3 3 12 3~
-    ~RAMala 13 3 3 3 12 3~
-	~RAMala 0 0 0 0 0 0 0 0 1~
-	~RAMala 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAMala.2da~
-	~K_C_H K_C_HO~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAMalaRC~
+    ~RAMalaRC 0 0 0 0 1 1 0 1~
+    ~RAMalaRC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMalaRC 13 3 3 3 12 3~
+	~RAMalaRC 0 0 0 0 0 0~
+	~RAMalaRC 13 3 3 3 12 3~
+    ~RAMalaRC 13 3 3 3 12 3~
+	~RAMalaRC 0 0 0 0 0 0 0 0 1~
+	~RAMalaRC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RAMalaRC.2da~
+	~K_CR_H K_CR_HO~
+	~0x04000000 18~
+	~CR0~
 	~LEAT21 * HELM14 * RING09 RING31 CLCK04 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * MISC75 HAMM09 *~
 	SAY @1801
 	SAY @1802
@@ -25,10 +27,18 @@ ADD_KIT ~RAMala~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAMala~
+		kit_name = ~RAMalaRC~
 		clascolr = ~198 87 195 87 198~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 0 0 0 0 0 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAMalaRC~
+      kit_clab = ~RAMalaRC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,65 +110,20 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSMALA.spl" override
+COPY "DeitiesOfFaerun\Spl\RARMALA.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSMALA.itm" override SAY NAME1 @1810 SAY NAME2 @1810 SAY DESC @1811
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RARCMALA.itm" override SAY NAME1 @1810 SAY NAME2 @1810 SAY DESC @1811
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAMala + 0x4000)
+			  parameter1 = (RAMalaRC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 END
 		  
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMalaCS.spl" override		  
-		  
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMalaCI.itm" override SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAMala + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-END
-		  
-COPY "DeitiesOfFaerun\Spl\RAMALAFE.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Charmed%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
-
-
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-		  
-COPY "DeitiesOfFaerun\Spl\Import\Malar\Complement" override
-
-COPY "DeitiesOfFaerun\Spl\Import\Malar\BCLAW.ITM" override SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
-
-COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR219.SPL" ~override/RAMALA1.SPL~  SAY NAME1 @1806 SAY UNIDENTIFIED_DESC @1807
-LPM SPELL_TO_INNATE
-
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1808) STR_VAR bam_file = ANRAGEIC RET iconrage = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR522.SPL" ~override/RAMALA2.SPL~  SAY NAME1 @1808 SAY UNIDENTIFIED_DESC @1809
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 173 parameter2 = iconrage END
-LPM SPELL_TO_INNATE
-
-END
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-
-COPY_EXISTING ~SPPR219.spl~ ~override/RAMALA1.SPL~
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR522.spl~ ~override/RAMALA2.SPL~
-LPM SPELL_TO_INNATE
-
-END
-
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
@@ -167,10 +132,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAMala + 0x4000)
+			  parameter1 = (RAMalaRC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1802)
 		  END
 		END
 		DEFAULT
@@ -183,51 +147,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 	READ_ASCII	0x22 animation (2)
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMala~) parameter2 = 9 special = RESOLVE_STR_REF (@1802) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMalaRC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMala~) parameter2 = 9 special = RESOLVE_STR_REF (@1802) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMalaRC~) parameter2 = 9 END
 	END
 END
 END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~MALAS~ ~MALAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~RAMALACL~ ~RAMALACS~ BEGIN
-COPY ~DeitiesOfFaerun\Itm\MalarClaw\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun\Itm\MalarClaw\MOS%original_base_index%.pvrz~
-    END
-  END
-END	
 
 //EoF

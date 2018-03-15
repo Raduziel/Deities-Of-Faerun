@@ -1,23 +1,25 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						       Watcher of Helm
+//						    Watcher of Helm - Fighter/Cleric
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAHelm~
-    ~RAHelm 0 0 0 0 1 1 0 1~
-    ~RAHelm 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAHelm 14 3 3 3 13 3~
-	~RAHelm 0 0 0 0 0 0~
-	~RAHelm 14 3 3 3 13 3~
-    ~RAHelm 14 3 3 3 13 3~
-	~RAHelm 0 1 0 0 0 0 0 0 0~
-	~RAHelm 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAHelm.2da~
-	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAHelmFC~
+    ~RAHelmFC 0 0 0 0 1 1 0 1~
+    ~RAHelmFC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHelmFC 14 3 3 3 13 3~
+	~RAHelmFC 0 0 0 0 0 0~
+	~RAHelmFC 14 3 3 3 13 3~
+    ~RAHelmFC 14 3 3 3 13 3~
+	~RAHelmFC 0 1 0 0 0 0 0 0 0~
+	~RAHelmFC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RAHelmFC.2da~
+	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
+	~0x04000000 8~
+	~FC0~
 	~PLAT09 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * WAFLAIL HAMM09 *~
 	SAY @801
 	SAY @802
@@ -25,10 +27,18 @@ ADD_KIT ~RAHelm~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAHelm~
+		kit_name = ~RAHelmFC~
 		clascolr = ~205 250 127 41 205~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHelmFC~
+      kit_clab = ~RAHelmFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,77 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHELMFE.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSHELM.spl" override
+COPY "DeitiesOfFaerun\Spl\RAFHELM.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSHELM.itm" override SAY NAME1 @811 SAY NAME2 @811 SAY DESC @812
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCHELM.itm" override SAY NAME1 @811 SAY NAME2 @811 SAY DESC @812
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~)
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelmFC~)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-COPY "DeitiesOfFaerun\Spl\RAHELM1.spl" override SAY NAME1 @804 SAY UNIDENTIFIED_DESC @805              //Mace of Odo
-
-COPY "DeitiesOfFaerun\Itm\MaceofOdo\RAHELM1.itm" override SAY NAME1 @804 SAY NAME2 @804                //Mace of Odo (Itm)
-
-COPY "DeitiesOfFaerun\Itm\MaceofOdo\RAHELM1.bam" override                                              //Mace of Odo (Bam)
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun\Itm\MaceofOdo\MOS%original_base_index%.pvrz~
-    END
-  END
-
-COPY "DeitiesOfFaerun\Spl\RAHELM2.BAM" override                                                        //Wyvern Watch (Projectile Bam)
-  
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAHELM2.PRO~                                                       //Wyvern Watch (Projectile)
-
-COPY "DeitiesOfFaerun\Spl\RAHELM2.spl" override SAY NAME1 @806 SAY UNIDENTIFIED_DESC @807              //Wyvern Watch
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAHELM2% END
-
-COPY "DeitiesOfFaerun\Spl\RAHELM3.spl" override SAY NAME1 @808 SAY UNIDENTIFIED_DESC @809              //Seeking Sword
-
-COPY "DeitiesOfFaerun\Spl\RAHELM3E.eff" override                                                       //Seeking Sword (Eff)
-
-COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.itm" override SAY NAME1 @707 SAY NAME2 @707             //Seeking Sword (Itm)
-
-COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.cre" override SAY NAME1 @808 SAY NAME2 @808             //Seeking Sword (Cre)
-
-COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELMR.itm" override
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_Poisoned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Charmed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Dominated%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Panic%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 9 parameter1 = EVAL "%RA_MoralFail%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 10 parameter1 = EVAL "%RA_RigidThink%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 11 parameter1 = EVAL "%RA_Confused%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 12 parameter1 = EVAL "%RA_Diseased%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 13 parameter1 = EVAL "%RA_FoulDisease%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 14 parameter1 = EVAL "%RA_Blinded%" END
-
-COPY_EXISTING ~SPPR304.spl~ ~override/RAHELM4.spl~                                                     //Glyph of Warding
-LPM SPELL_TO_INNATE
-
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
@@ -179,10 +131,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~)
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelmFC~)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@802)
 		  END
 		END
 		DEFAULT
@@ -195,73 +146,13 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 	READ_ASCII	0x22 animation (2)
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelmFC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelmFC~) parameter2 = 9 END
 	END
 END
 END
-BUT_ONLY
-
-ACTION_FOR_EACH file IN ~HELMS~ ~HELML~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~HELMMAOD~ ~HELMWYWA~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-//Hide the original kit
-
-COPY_EXISTING
-~K_C_H.2DA~  override
-~K_C_HO.2DA~ override 
-~K_C_HE.2DA~ override
-~K_C_HL.2DA~ override
-~K_C_E.2DA~  override
-~K_C_D.2DA~  override
-~K_C_G.2DA~  override
-	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
-	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
-		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
-		PATCH_MATCH kit WITH
-			20 BEGIN
-				REMOVE_2DA_ROW i 2
-			END
-			DEFAULT
-		END
-	END
 BUT_ONLY
 
 //EoF

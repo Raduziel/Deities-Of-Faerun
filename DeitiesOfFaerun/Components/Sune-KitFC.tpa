@@ -5,19 +5,21 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RASune~
-    ~RASune 0 0 0 0 1 1 0 1~
-    ~RASune 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RASune 3 3 3 3 12 16~
-	~RASune 0 0 0 0 0 0~
-	~RASune 3 3 3 3 12 16~
-    ~RASune 3 3 3 3 12 16~
-	~RASune 0 0 0 0 0 0 1 0 0~
-	~RASune 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RASune.2da~
-	~K_C_H   K_C_HE   K_C_E~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RASuneFC~
+    ~RASuneFC 0 0 0 0 1 1 0 1~
+    ~RASuneFC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RASuneFC 3 3 3 3 12 16~
+	~RASuneFC 0 0 0 0 0 0~
+	~RASuneFC 3 3 3 3 12 16~
+    ~RASuneFC 3 3 3 3 12 16~
+	~RASuneFC 0 0 0 0 0 0 1 0 0~
+	~RASuneFC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RASuneFC.2da~
+	~K_FC_H   K_FC_HE   K_FC_E~
+	~0x04000000 8~
+	~FC0~
 	~PLAT18 SHLD21 HELM03 * RING22 RING39 CLCK07 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN14 HAMM09 *~
 	SAY @101
 	SAY @102
@@ -25,10 +27,18 @@ ADD_KIT ~RASune~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RASune~
+		kit_name = ~RASuneFC~
 		clascolr = ~80 81 46 41 101~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RASuneFC~
+      kit_clab = ~RASuneFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,75 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RASUNEFE.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSSUNE.spl" override
+COPY "DeitiesOfFaerun\Spl\RAFSUNE.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSSUNE.itm" override SAY NAME1 @114 SAY NAME2 @114 SAY DESC @115
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCSUNE.itm" override SAY NAME1 @114 SAY NAME2 @114 SAY DESC @115
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RASune + 0x4000)
+			  parameter1 = (RASuneFC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-COPY "DeitiesOfFaerun\Spl\RASUNE1.spl"  override SAY NAME1 @104 SAY UNIDENTIFIED_DESC @105              //Rapture
-
-COPY "DeitiesOfFaerun\Spl\RASUNEA.spl"  override                                                            //Effect upon allies
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 999 match_opcode = 240 parameter2 = EVAL "%RA_DeafIc%" END
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 998 match_opcode = 240 parameter2 = EVAL "%RA_FeebIc%" END
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 997 match_opcode = 240 parameter2 = EVAL "%RA_NausIc%" END
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 996 match_opcode = 240 parameter2 = EVAL "%RA_FatiIc%" END
-
-COPY "DeitiesOfFaerun\Spl\RASUNEE.spl"  override                                                             //Effect upon enemies
-
-COPY_EXISTING ~SPPR503.spl~ ~override/RASUNE2.spl~                                                           //Flame Strike
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI316.spl~ ~override/RASUNE3.spl~                                                           //Dire Charm
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Spl\RASUNE4.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                   //Emotion
-
-COPY "DeitiesOfFaerun\Tables\RASUNE4.2da" override                                                           //Emotion 2da
-
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-
-COPY ~DeitiesOfFaerun\Spl\Import\Sune\Complement~ override
-
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO255.PRO~
-
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO407.PRO~
-
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@111) STR_VAR bam_file = COURAGIC RET iconcoura = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI427.spl" override SAY NAME1 @108                                    //Emotion: Courage
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconcoura END
-
-COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI428.spl" override SAY NAME1 @109                                    //Emotion: Fear
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
-
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@112) STR_VAR bam_file = HOPEIC RET iconhope = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI429.spl" override SAY NAME1 @110                                    //Emotion: Hope
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 186 parameter2 = iconhope END
-
-COPY_EXISTING ~SPWI411.spl~ ~override\SPWI411S.spl~                                                           //Emotion: Hopelessness (consistent radius fix)
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
-SAY UNIDENTIFIED_DESC @113
-
-END
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN                                                                               //Emotion, Hopelessness (IWDEE)
-
-COPY_EXISTING ~SPWI411.spl~ ~override\SPWI411S.spl~
-
-END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -178,52 +132,13 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RASune + 0x4000)
+			  parameter1 = (RASuneFC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@102)
 		  END
 		END
 		DEFAULT
 	END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~SUNES~ ~SUNEL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~SUNERAPT~ ~SUNEEMOT~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

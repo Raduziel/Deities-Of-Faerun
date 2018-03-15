@@ -5,19 +5,21 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RATyr~
-    ~RATyr 1 0 0 0 1 1 0 1~
-    ~RATyr 0 0 0 0 1 1 0 1 1 1 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RATyr 9 3 3 3 9 3~
-	~RATyr 0 0 0 0 0 0~
-	~RATyr 9 3 3 3 9 3~
-    ~RATyr 9 3 3 3 9 3~
-	~RATyr 1 0 0 0 0 0 0 0 0~
-	~RATyr 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RATyr.2da~
-	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RATyrFC~
+    ~RATyrFC 1 0 0 0 1 1 0 1~
+    ~RATyrFC 0 0 0 0 1 1 0 1 1 1 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATyrFC 9 3 3 3 9 3~
+	~RATyrFC 0 0 0 0 0 0~
+	~RATyrFC 9 3 3 3 9 3~
+    ~RATyrFC 9 3 3 3 9 3~
+	~RATyrFC 1 0 0 0 0 0 0 0 0~
+	~RATyrFC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RATyrFC.2da~
+	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
+	~0x04000000 8~
+	~FC0~
 	~PLAT15 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * SW1H31 HAMM09 *~
 	SAY @1101
 	SAY @1102
@@ -25,10 +27,18 @@ ADD_KIT ~RATyr~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RATyr~
+		kit_name = ~RATyrFC~
 		clascolr = ~205 122 132 41 142~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RATyrFC~
+      kit_clab = ~RATyrFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,71 +110,18 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSTYR.spl" override
+COPY "DeitiesOfFaerun\Spl\RAFTYR.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSTYR.itm" override SAY NAME1 @1104 SAY NAME2 @1104 SAY DESC @1105
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCTYR.itm" override SAY NAME1 @1104 SAY NAME2 @1104 SAY DESC @1105
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyr~)
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyrFC~)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
-END
-
-COPY_EXISTING ~SPWI203.spl~ ~override/RATYR1.spl~   //Detect Invisibility
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR312.spl~ ~override/RATYR2.spl~   //Strength of One
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR208.spl~ ~override/RATYR3.spl~   //Hold Person
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR710.spl~ ~override/RATYR4.spl~   //Holy Word
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~RATYR1.spl~ ~override~
-PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
-	READ_SHORT 0x1c spell_type
-PATCH_IF  (%spell_type% = 4) BEGIN
-    READ_LONG 	0x64	ab_off			                             // Abilities Offset
-	READ_SHORT	0x68	ab_num			                             // Number of Abilities
-	READ_SHORT	0x6a	fx_off			                             // Effects Offset
-	READ_SHORT	0x70	glob_fx			                             // Number of Global Effects
-	SET	glob_add = 0
-
-INSERT_BYTES (fx_off) 0x30
-	WRITE_SHORT (fx_off) 171			                             // opcode
-	WRITE_BYTE (fx_off + 0x2) 1			                             // Target (self)
-	// WRITE_BYTE (fx_off + 0x4) 1			                         // Level 1
-	// WRITE_LONG (fx_off + 0x8) 0			                         // Wizard
-	WRITE_LONG (fx_off + 0xc) 9			                             // timing (Perm)
-    // WRITE_LONG (fx_off + 0xe) 10                                  // duration
-	WRITE_BYTE (fx_off + 0x12) 100			                         // Probability 1
-	WRITE_ASCII (fx_off + 0x14) ~RATYR1~                             // resource
-	++glob_add
-
-INSERT_BYTES (fx_off) 0x30
-	WRITE_SHORT (fx_off) 172			                             // opcode
-	WRITE_BYTE (fx_off + 0x2) 1			                             // Target (self)
-	// WRITE_BYTE (fx_off + 0x4) 1			                         // Level 1
-	// WRITE_LONG (fx_off + 0x8) 0			                         // Wizard
-	WRITE_LONG (fx_off + 0xc) 9			                             // timing (Perm)
-    // WRITE_LONG (fx_off + 0xe) 10                                  // duration
-	WRITE_BYTE (fx_off + 0x12) 100			                         // Probability 1
-    WRITE_ASCII (fx_off + 0x14) ~RATYR1~                             // resource
-	++glob_add
-	
-    glob_fx += glob_add
-	WRITE_SHORT 0x70 glob_fx			                             // Increment Number of Global Effects
-	FOR (i = 0; i < ab_num; ++i) BEGIN		                         // Offset Effect Index for all Abilities
-	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
-	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
-	END
-END
 END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
@@ -175,83 +132,13 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyr~)
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyrFC~)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1102)
 		  END
 		END
 		DEFAULT
 	END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~TYRS~ ~TYRL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-//Hide the original kit
-
-ACTION_IF GAME_IS ~iwdee bg2ee~ BEGIN
-
-COPY_EXISTING
-~K_C_H.2DA~  override
-~K_C_HO.2DA~ override 
-~K_C_HE.2DA~ override
-~K_C_HL.2DA~ override
-~K_C_E.2DA~  override
-~K_C_D.2DA~  override
-~K_C_G.2DA~  override
-	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
-	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
-		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
-		PATCH_MATCH kit WITH
-			40 BEGIN
-				REMOVE_2DA_ROW i 2
-			END
-			DEFAULT
-		END
-	END
-BUT_ONLY
-
-END
-
-ACTION_IF GAME_IS ~bgee~ BEGIN
-
-COPY_EXISTING
-~K_C_H.2DA~  override
-~K_C_HO.2DA~ override 
-~K_C_HE.2DA~ override
-~K_C_HL.2DA~ override
-~K_C_E.2DA~  override
-~K_C_D.2DA~  override
-~K_C_G.2DA~  override
-	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
-	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
-		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
-		PATCH_MATCH kit WITH
-			38 BEGIN
-				REMOVE_2DA_ROW i 2
-			END
-			DEFAULT
-		END
-	END
-BUT_ONLY
-
-END
 
 //EoF

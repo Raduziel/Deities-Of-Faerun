@@ -5,19 +5,21 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAShar~
-    ~RAShar 0 0 0 0 1 1 0 0~
-    ~RAShar 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAShar 14 3 3 3 12 3~
-	~RAShar 0 0 0 0 0 0~
-	~RAShar 14 3 3 3 12 3~
-    ~RAShar 14 3 3 3 12 3~
-	~RAShar 0 0 0 0 0 1 0 0 0~
-	~RAShar 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAShar.2da~
-	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HO   K_C_HL   K_C_D~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RASharCM~
+    ~RASharCM 0 0 0 0 1 1 0 0~
+    ~RASharCM 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RASharCM 14 3 3 3 12 3~
+	~RASharCM 0 0 0 0 0 0~
+	~RASharCM 14 3 3 3 12 3~
+    ~RASharCM 14 3 3 3 12 3~
+	~RASharCM 0 0 0 0 0 1 0 0 0~
+	~RASharCM 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RASharCM.2da~
+	~K_CM_H   K_CM_HE   K_CM_E   K_CM_G   K_CM_HO   K_CM_HL   K_CM_D~
+	~0x04000000 14~
+	~CM0~
 	~CHAN18 SHLD20 HELM04 * RING05 RING39 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN14 WAFLAIL *~
 	SAY @401
 	SAY @402
@@ -25,10 +27,18 @@ ADD_KIT ~RAShar~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAShar~
+		kit_name = ~RASharCM~
 		clascolr = ~205 136 118 41 104~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RASharCM~
+      kit_clab = ~RASharCM~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,57 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RASHARFE.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RASHARFE.eff" override
-
-COPY "DeitiesOfFaerun\Spl\RASHAREF.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSSHAR.spl" override
+COPY "DeitiesOfFaerun\Spl\RAMSHAR.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSSHAR.itm" override SAY NAME1 @414 SAY NAME2 @414 SAY DESC @415
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RACMSHAR.itm" override SAY NAME1 @414 SAY NAME2 @414 SAY DESC @415
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAShar + 0x4000)
+			  parameter1 = (RASharCM + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASHAR1.PRO~
-		  
-COPY "DeitiesOfFaerun\Spl\RASHAR1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405 //Darkness
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASHAR1% END
-
-COPY_EXISTING ~SPWI106.spl~ ~override/RASHAR2.spl~                                          //Blindness
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Spl\RASHAR3.spl" override  SAY NAME1 @406 SAY UNIDENTIFIED_DESC @407  //Nightmare
-
-COPY_EXISTING ~SPWI505.spl~ ~override/RASHAR4.spl~                                          //Shadow Door
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Spl\RASHAR5.vvc" override
-
-COPY "DeitiesOfFaerun\Spl\RASHAR5.spl" override  SAY NAME1 @408 SAY UNIDENTIFIED_DESC @409  //Eyebite
-
-COPY "DeitiesOfFaerun\Spl\RASHARE1.spl" override SAY NAME1 @410 SAY UNIDENTIFIED_DESC @410  //Charm Gaze
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Dominated%" END
-
-COPY "DeitiesOfFaerun\Spl\RASHARE2.spl" override SAY NAME1 @411 SAY UNIDENTIFIED_DESC @411  //Fear Gaze
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
-
-COPY "DeitiesOfFaerun\Spl\RASHARE3.spl" override SAY NAME1 @412 SAY UNIDENTIFIED_DESC @412  //Sicken Gaze
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_FoulDisease%" END
-
-COPY "DeitiesOfFaerun\Spl\RASHARE4.spl" override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413  //Sleep Gaze
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Sleep%" END
-
-COPY "DeitiesOfFaerun\Tables\RASHAR5.2da" override
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -160,10 +132,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAShar + 0x4000)
+			  parameter1 = (RASharCM + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@402)
 		  END
 		END
 		DEFAULT
@@ -176,48 +147,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 	READ_ASCII	0x22 animation (2)
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShar~) parameter2 = 9 special = RESOLVE_STR_REF (@402) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASharCM~) parameter2 = 9 END
 	END
 END
 END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~SHARS~ ~SHARL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~SHARDARK~ ~SHAREYEB~ ~SHARNIGH~ ~RASHARE1~ ~RASHARE2~ ~RASHARE3~ ~RASHARE4~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

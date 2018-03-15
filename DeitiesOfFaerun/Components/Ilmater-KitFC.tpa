@@ -1,23 +1,25 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						      Painbearer of Ilmater
+//						Painbearer of Ilmater - Fighter/Cleric
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAIlma~
-    ~RAIlma 0 0 0 0 1 1 0 1~
-    ~RAIlma 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAIlma 3 3 14 3 12 3~
-	~RAIlma 0 0 2 0 0 0~
-	~RAIlma 3 3 3 3 12 3~
-    ~RAIlma 3 3 14 3 12 3~
-	~RAIlma 1 0 0 0 0 0 0 0 0~
-	~RAIlma 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAIlma.2da~
-	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HO   K_C_HL   K_C_D~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAIlmaFC~
+    ~RAIlmaFC 0 0 0 0 1 1 0 1~
+    ~RAIlmaFC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAIlmaFC 3 3 14 3 12 3~
+	~RAIlmaFC 0 0 2 0 0 0~
+	~RAIlmaFC 3 3 3 3 12 3~
+    ~RAIlmaFC 3 3 14 3 12 3~
+	~RAIlmaFC 1 0 0 0 0 0 0 0 0~
+	~RAIlmaFC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RAIlmaFC.2da~
+	~K_FC_H   K_FC_HE   K_FC_E   K_FC_G   K_FC_HO   K_FC_HL   K_FC_D~
+	~0x04000000 8~
+	~FC0~
 	~* WAFLAIL HELM04 * RING31 MISC72 OHRCLCK3 BOOT01 AMUL27 BRAC16 BELT09 * * * * * * STAF10 HAMM09 *~
 	SAY @1301
 	SAY @1302
@@ -25,10 +27,18 @@ ADD_KIT ~RAIlma~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAIlma~
+		kit_name = ~RAIlmaFC~
 		clascolr = ~205 223 222 41 232~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAIlmaFC~
+      kit_clab = ~RAIlmaFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,33 +110,19 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAILMAFE.spl" override
-
-COPY "DeitiesOfFaerun\Spl\RAHSILMA.spl" override
+COPY "DeitiesOfFaerun\Spl\RAFILMA.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSILMA.itm" override SAY NAME1 @1308 SAY NAME2 @1308 SAY DESC @1309
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCILMA.itm" override SAY NAME1 @1308 SAY NAME2 @1308 SAY DESC @1309
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAIlma + 0x4000)
+			  parameter1 = (RAIlmaFC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-COPY_EXISTING ~SPPR108.spl~ ~override/RAILMA1.spl~                                            //Remove Fear
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR214.spl~ ~override/RAILMA2.spl~                                            //Draw Upon Holy Might
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Spl\RAILMA3.spl" override SAY NAME1 @1304 SAY UNIDENTIFIED_DESC @1305   //Martyrdom of Ilmater
-
-COPY "DeitiesOfFaerun\Spl\RAILMA4.spl" override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307   //Endurance of Ilmater
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -136,10 +132,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAIlma + 0x4000)
+			  parameter1 = (RAIlmaFC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1302)
 		  END
 		END
 		DEFAULT
@@ -152,54 +147,16 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
     PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 	READ_ASCII	0x22 animation (2)
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 special = RESOLVE_STR_REF (@1302) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlmaFC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 special = RESOLVE_STR_REF (@1302) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlmaFC~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 special = RESOLVE_STR_REF (@1302) END
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlmaFC~) parameter2 = 9 END
 	END
 END
 END
 BUT_ONLY
-
-ACTION_FOR_EACH file IN ~ILMAS~ ~ILMAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
-
-ACTION_FOR_EACH file IN ~ILMAENDU~ ~ILMAMART~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF

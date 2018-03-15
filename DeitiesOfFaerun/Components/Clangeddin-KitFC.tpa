@@ -1,23 +1,25 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						       Alaghar of Clangeddin
+//						 Alaghar of Clangeddin - Fighter/Cleric
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAClan~
-    ~RAClan 1 1 1 1 3 1 3 1~
-    ~RAClan 1 1 1 1 3 1 3 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAClan 15 3 3 3 9 3~
-	~RAClan 0 0 0 0 0 0~
-	~RAClan 15 3 3 3 9 3~
-    ~RAClan 15 3 3 3 9 3~
-	~RAClan 1 1 0 0 0 0 0 0 0~
-	~RAClan 1 1 1 1 1 1~
-	~DeitiesOfFaerun\Tables\RAClan.2da~
-	~K_C_D~
-	~0x04000000 3~
-	~Cl0~
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAClanFC~
+    ~RAClanFC 1 1 1 1 3 1 3 1~
+    ~RAClanFC 1 1 1 1 3 1 3 1 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAClanFC 15 3 3 3 9 3~
+	~RAClanFC 0 0 0 0 0 0~
+	~RAClanFC 15 3 3 3 9 3~
+    ~RAClanFC 15 3 3 3 9 3~
+	~RAClanFC 1 1 0 0 0 0 0 0 0~
+	~RAClanFC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RAClanFC.2da~
+	~K_FC_D~
+	~0x04000000 8~
+	~FC0~
 	~PLAT16 HAMM09 BDHELM09 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT03 * * * * * * AX1H07 WAFLAIL *~
 	SAY @501
 	SAY @502
@@ -25,10 +27,18 @@ ADD_KIT ~RAClan~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAClan~
+		kit_name = ~RAClanFC~
 		clascolr = ~205 5 79 41 105~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~0 0 0 1 0 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAClanFC~
+      kit_clab = ~RAClanFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
@@ -100,52 +110,18 @@ ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
   LAM apply_fnp_usability
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSCLAN.spl" override
+COPY "DeitiesOfFaerun\Spl\RAFCLAN.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSCLAN.itm" override SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCCLAN.itm" override SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAClan + 0x4000)
+			  parameter1 = (RAClanFC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 		  END
-
-COPY_EXISTING ~SPPR102.spl~ ~override/RACLAN1.spl~                              //Command
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR213.spl~ ~override/RACLAN2.spl~                              //Spiritual Hammer
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR312.spl~ ~override/RACLAN3.spl~                              //Strength of One
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR406.spl~ ~override/RACLAN4.spl~                              //Defensive Harmony
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR603.spl~ ~override/RACLAN5.spl~                              //Blade Barrier
-LPM SPELL_TO_INNATE
-
-ACTION_FOR_EACH file IN ~CLANS~ ~CLANL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
-    END
-  END
-END
 
 //EoF
