@@ -766,7 +766,7 @@ Advantages:
 
 LEGEND LORE:
 
-The Lorekeeper boosts <PRO_HISHER> Lore, learning how to unequip cursed items, neutralize poisons and cure diseases. 
+The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip cursed items, neutralize poisons and cure diseases. 
 
 Disadvantages:
 
@@ -782,7 +782,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-With this spell, the Lorekeeper can extend  knowledge immensely. The caster gains 100 points of Lore for five rounds, and  learns how to unequip cursed items, cure diseases and neutralize poisons.~
+With this spell, the Lorekeeper can extend <PRO_HISHER> knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.~
 @1206 = ~Holy Symbol of Oghma~
 @1207 = ~Only the most worthy and devoted servants of the Wise God are granted these powerful holy symbols.
 

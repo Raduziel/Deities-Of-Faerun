@@ -276,7 +276,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-With this spell, the Lorekeeper can extend  knowledge immensely. The caster gains 100 points of Lore for five rounds, and  learns how to unequip cursed items, cure diseases and neutralize poisons.
+With this spell, the Lorekeeper can extend  knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.
 
 ====================================================================================================================================================================
 
