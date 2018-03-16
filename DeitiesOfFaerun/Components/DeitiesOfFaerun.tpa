@@ -98,6 +98,10 @@ BUT_ONLY_IF_IT_CHANGES
 
 END
 
+//Solves the issue with the extra spell slot for Multiclass Cleric-Mage
+
+COPY ~DeitiesOfFaerun\Spl\RASLOT.spl~ override
+
 //Solves the issue with WPPROF, PROFSMAX and CLSWPBON
 
 COPY_EXISTING ~CLSWPBON.2DA~ ~override~
