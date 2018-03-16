@@ -174,7 +174,7 @@ IF
 THEN
 	RESPONSE #100
 		Wait(2)
-		CreateCreature("bhnalla",[3077.1	630],SW)
+		CreateCreature("bhnalla",[3077.1630],SW)
 		SetGlobal("EvilMask","AR0900",1)
 		SetGlobal("GaalSpoke","AR0900",2)
 END
