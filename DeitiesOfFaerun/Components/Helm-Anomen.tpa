@@ -30,17 +30,11 @@ ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 anomen12 BE
   END
   END
   
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSHELM.itm" ~override/BELT13.itm~ SAY NAME1 @811 SAY NAME2 @811 SAY DESC @812
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = 0
-			  parameter2 = 11
-			  timing = 2
-			  power = 1
-			STR_VAR
-	          resource = ANOMEN
-		  END
+ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 BEGIN
 
+	COPY_EXISTING ~%creature%.cre~ ~override~
+      REPLACE_CRE_ITEM    ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
+	  BUT_ONLY
+  END
+  
 //EoF

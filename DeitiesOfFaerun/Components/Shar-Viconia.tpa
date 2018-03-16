@@ -5,21 +5,6 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-DELETE ~BELTSH.itm~
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSSHAR.itm" ~override\BELTSH.itm~ SAY NAME1 @414 SAY NAME2 @414 SAY DESC @415
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = 0
-			  parameter2 = 11
-			  timing = 2
-			  power = 1
-			STR_VAR
-			  resource = VICONIA
-		  END
-
 COPY_EXISTING ~kitlist.2da~ ~override~
   COUNT_2DA_ROWS ~9~ "rows"
   FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
