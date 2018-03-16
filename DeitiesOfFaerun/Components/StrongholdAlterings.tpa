@@ -12,32 +12,53 @@ OUTER_SPRINT extend ~~
 OUTER_SET count = 0
 ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	!Kit(Player1,RABAER)~
+!Kit(Player1,RABAER)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RABAERCM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RABAERRC)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RABARA.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	!Kit(Player1,RABARA)~
+!Kit(Player1,RABARA)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RABARACM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RABARACT)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	!Kit(Player1,RAMYST)~
+!Kit(Player1,RAMYST)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RAMYSTCM)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	!Kit(Player1,RAOGHM)~
+!Kit(Player1,RAOGHM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RAOGHMCM)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	!Kit(Player1,RATEMP)~
+!Kit(Player1,RATEMP)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RATEMPFC)~
 	OUTER_SET count += 1
 	END
 	
 ACTION_IF count > 0 BEGIN
-		COPY_EXISTING ~BHARVAL.DLG~ override
+		COPY_EXISTING ~AR0900.bcs~ override
 			DECOMPILE_AND_PATCH     BEGIN
 				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODHELM)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODTALOS)\)~ ~\1 %extend%~
 			END
@@ -52,25 +73,43 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RAILMA.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAILMA)~
 	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RAILMACM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RAILMAFC)~
+	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RALOVI.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RALOVI)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RALOVICM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RALOVIFC)~
 	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAMYST)~
 	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RAMYSTCM)~
+	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAOGHM)~
 	OUTER_SET count += 1
+		OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RAOGHMCM)~
+	OUTER_SET count += 1
 END
 
 ACTION_IF count > 0 BEGIN
-		COPY_EXISTING ~BHOISIG.DLG~ override
+		COPY_EXISTING ~AR0900.bcs~ override
 			DECOMPILE_AND_PATCH     BEGIN
 				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODLATHANDER)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODTALOS)\)~ ~\1 %extend%~
 			END
@@ -85,15 +124,21 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RAMYST)~
 	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RAMYSTCM)~
+	OUTER_SET count += 1
 END
 ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 !Kit(Player1,RATEMP)~
 	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+!Kit(Player1,RATEMPFC)~
+	OUTER_SET count += 1
 END
 
 ACTION_IF count > 0 BEGIN
-		COPY_EXISTING ~BHNALLA.DLG~ override
+		COPY_EXISTING ~AR0900.bcs~ override
 			DECOMPILE_AND_PATCH     BEGIN
 				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODLATHANDER)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODHELM)\)~ ~\1 %extend%~
 			END
@@ -107,6 +152,12 @@ OUTER_SET count = 0
 ACTION_IF FILE_EXISTS_IN_GAME ~RALOVI.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 Kit(Player1,RALOVI)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RALOVICM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RALOVIFC)~
 	OUTER_SET count += 1
 END
 
@@ -123,13 +174,22 @@ IF
 THEN
 	RESPONSE #100
 		Wait(2)
-		CreateCreature("bhnalla",[3077.1630],SW)
+		CreateCreature("bhnalla",[3077.1	630],SW)
 		SetGlobal("EvilMask","AR0900",1)
 		SetGlobal("GaalSpoke","AR0900",2)
 END
 >>>>>>>>
 ACTION_IF count > 0 BEGIN
     EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+END
+ACTION_IF count > 0 BEGIN
+		OUTER_SET	count += 1
+		COPY_EXISTING ~BHNALLA.DLG~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REFACTOR_TRIGGER ~Kit(Player1,GODTALOS)~
+~OR(%count%) Kit(Player1,GODTALOS) %extend%~
+			END
+		BUT_ONLY
 END
 
 //Add Ilmater to Lathander's quest-line
@@ -139,6 +199,12 @@ OUTER_SET count = 0
 ACTION_IF FILE_EXISTS_IN_GAME ~RAILMA.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
 Kit(Player1,RAILMA)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RAILMACM)~
+	OUTER_SET count += 1
+		OUTER_SPRINT extend ~%extend%
+Kit(Player1,RAILMAFC)~
 	OUTER_SET count += 1
 END
 
@@ -170,27 +236,48 @@ OUTER_SPRINT extend ~~
 OUTER_SET count = 0
 ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	Kit(Player1,RABAER)~
+Kit(Player1,RABAER)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RABAERCM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RABAERRC)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RABARA.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	Kit(Player1,RABARA)~
+Kit(Player1,RABARA)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RABARACM)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RABARACT)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	Kit(Player1,RAMYST)~
+Kit(Player1,RAMYST)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RAMYSTCM)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	Kit(Player1,RAOGHM)~
+Kit(Player1,RAOGHM)~
+	OUTER_SET count += 1
+		OUTER_SPRINT extend ~%extend%
+Kit(Player1,RAOGHMCM)~
 	OUTER_SET count += 1
 	END
 ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
 	OUTER_SPRINT extend ~%extend%
-	Kit(Player1,RATEMP)~
+Kit(Player1,RATEMP)~
+	OUTER_SET count += 1
+	OUTER_SPRINT extend ~%extend%
+Kit(Player1,RATEMPFC)~
 	OUTER_SET count += 1
 	END
 ACTION_IF	count = 1 BEGIN
@@ -198,7 +285,7 @@ ACTION_IF	count = 1 BEGIN
 	END	ELSE	BEGIN
 	OUTER_SPRINT orblock ~OR(%count%)~
 	END
-<<<<<<<< rastrong.baf
+<<<<<<<< RAStrong.baf
 IF
 	Global("GaalSpoke","AR0900",1)
 	%orblock%
@@ -213,7 +300,7 @@ END
 >>>>>>>>
 	ACTION_IF count > 0 BEGIN
 		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdAlterings.d~
-		EXTEND_BOTTOM ~AR0900.bcs~	~rastrong.baf~ EVAL
+		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
 		OUTER_SET	count += 1
 		COPY_EXISTING ~BHOISIG.DLG~ override
 			DECOMPILE_AND_PATCH     BEGIN
