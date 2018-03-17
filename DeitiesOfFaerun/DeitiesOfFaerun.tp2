@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.6.6~
+VERSION ~1.6.7~
 
 ALWAYS
 
@@ -488,7 +488,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Gavin.tpa~
 //BEGIN @21
 //REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
 //REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RADene.2da~) @5
-//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~YxYve1.cre~) @6
+//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~sufinchi.cre~) @6
 //INCLUDE  ~DeitiesOfFaerun/Components/Deneir-Finch.tpa~
 
 //__________________________________________________________________________________
@@ -498,9 +498,9 @@ INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Gavin.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-//BEGIN @7
-//REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
-//REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
-//INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
+BEGIN @7
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/StrongholdAlterings.tpa~
 
 //EoF
