@@ -9,7 +9,7 @@ INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 
 ADD_KIT ~RASuneFC~
     ~RASuneFC 0 0 0 0 1 1 0 1~
-    ~RASuneFC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RASuneFC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RASuneFC 3 3 3 3 12 16~
 	~RASuneFC 0 0 0 0 0 0~
 	~RASuneFC 3 3 3 3 12 16~

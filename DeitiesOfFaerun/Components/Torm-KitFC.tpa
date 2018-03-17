@@ -9,7 +9,7 @@ INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 
 ADD_KIT ~RATormFC~
     ~RATormFC 0 0 0 0 1 1 0 1~
-    ~RATormFC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RATormFC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RATormFC 3 3 12 3 15 3~
 	~RATormFC 0 0 0 0 0 0~
 	~RATormFC 3 3 12 3 15 3~
