@@ -1,3 +1,3 @@
 EXTEND_BOTTOM BHOISIG 3
-IF ~%orblock% %extend%~ THEN DO ~OpenDoor("DOR0901") MoveBetweenAreas("AR0901",690,565,SW)~ UNSOLVED_JOURNAL #34388	EXIT
+IF ~%orblock% %extend%~ THEN DO ~OpenDoor("DOR0901") MoveBetweenAreas("AR0901",[690.565],SW)~ UNSOLVED_JOURNAL #34388	EXIT
 END
