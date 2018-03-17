@@ -104,6 +104,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~		RET	extend	count	END	//	Umberlee
 	//	Kit Headers	End
 	ACTION_IF count > 0 BEGIN
+		ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
 		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdOisig.d~
 		OUTER_SET	count += 1
 		ACTION_IF	count = 2 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
@@ -320,14 +321,11 @@ THEN
 END
 >>>>>>>>
 	ACTION_IF count > 0 BEGIN
+		ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
 		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdArval.d~
 		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
 		OUTER_SET	count += 1
-		COPY_EXISTING ~BHOISIG.DLG~ override
-			DECOMPILE_AND_PATCH     BEGIN
-				REFACTOR_TRIGGER ~Kit(Player1,GODLATHANDER)~	~OR(%count%) Kit(Player1,GODLATHANDER) %extend%~
-			END
-		BUT_ONLY
+		OUTER_SPRINT orblock ~OR(%count%)~
 		COPY_EXISTING ~BHOISIG.DLG~ override
 			DECOMPILE_AND_PATCH     BEGIN
 				REFACTOR_TRIGGER ~\(Global("PlayerHasStronghold","GLOBAL",1)\)~ ~%orblock% Global("PlayerHasStronghold","GLOBAL",1) %extend%~
