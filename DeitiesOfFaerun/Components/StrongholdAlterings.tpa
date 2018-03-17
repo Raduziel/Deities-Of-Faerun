@@ -296,6 +296,14 @@ END
 		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdArval.d~
 		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
 	END
+	
+COPY_EXISTING ~BHARVAL.DLG~ override
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~Alignment(Player1,LAWFUL_GOOD)~ ~False()~
+		REPLACE_TEXTUALLY ~Alignment(Player1,NEUTRAL)~ ~False()~
+		END
+	BUT_ONLY
+	
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -308,24 +316,11 @@ END
 	OUTER_SPRINT extend ~~
 	OUTER_SET count = 0
 	//	Kit Headers	Begin
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~		RET	extend	count	END	//	Auril
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~		RET	extend	count	END	//	Baravar
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~		RET	extend	count	END	//	Cyric
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAILMA~		RET	extend	count	END	//	Ilmater
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALATH~		RET	extend	count	END	//	Lathander
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALOVI~		RET	extend	count	END	//	Loviatar
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMALA~		RET	extend	count	END	//	Malar
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~		RET	extend	count	END	//	Mask
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~		RET	extend	count	END	//	Mystra
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~		RET	extend	count	END	//	Selune
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~		RET	extend	count	END	//	Shar
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~		RET	extend	count	END	//	Sune
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~		RET	extend	count	END	//	Talona
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~		RET	extend	count	END	//	Talos
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~		RET	extend	count	END	//	Tempus
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~		RET	extend	count	END	//	Umberlee
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
 <<<<<<<< RAStrong.baf
