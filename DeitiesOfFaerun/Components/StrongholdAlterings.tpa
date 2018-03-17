@@ -5,214 +5,130 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-
-//Remove Baervan, Baravar, Mystra, Oghma, Tempus from Lathander's quest-line
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 0
-ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RABAER)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RABAERCM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RABAERRC)~
-	OUTER_SET count += 1
-	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RABARA.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RABARA)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RABARACM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RABARACT)~
-	OUTER_SET count += 1
-	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAMYST)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAMYSTCM)~
-	OUTER_SET count += 1
-	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAOGHM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAOGHMCM)~
-	OUTER_SET count += 1
-	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RATEMP)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RATEMPFC)~
-	OUTER_SET count += 1
-	END
+//	ACTION_DEFINE_ARRAY	$SH(~%2da%~)	BEGIN	~KIDID~	=> 0	~MULTIID1~ => 0	~MULTIID2~ => 0	etc...	END
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAAURI~)	BEGIN	~RAAURI~ => 0	~RAAURICM~ => 0	END	//	Auril	->	Talos
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABAER~)	BEGIN	~RABAER~ => 0	~RABAERCM~ => 0	~RABAERRC~ => 0	END	//	Baervan	->	Ranger, Druid
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABARA~)	BEGIN	~RABARA~ => 0	~RABARACM~ => 0	~RABARACT~ => 0	END	//	Baravar	->	Thief
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RACLAN~)	BEGIN	~RACLAN~ => 0	~RACLANFC~ => 0	END	//	Clangeddin	->	Helm, Fighter
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RACYRI~)	BEGIN	~RACYRI~ => 0	~RACYRICT~ => 0	END	//	Cyric	->	Talos, Thief
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAHELM~)	BEGIN	~RAHELM~ => 0	~RAHELMFC~ => 0	END	//	Helm	->	Helm
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAILMA~)	BEGIN	~RAILMA~ => 0	~RAILMACM~ => 0	~RAILMAFC~ => 0	END	//	Ilmater	->	Lathander
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RALATH~)	BEGIN	~RALATH~ => 0	~RALATHCM~ => 0	~RALATHFC~ => 0	END	//	Lathander	->	Lathander
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RALOVI~)	BEGIN	~RALOVI~ => 0	~RALOVICM~ => 0	~RALOVIFC~ => 0	END	//	Loviatar	->	Talos
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMALA~)	BEGIN	~RAMALA~ => 0	~RAMALARC~ => 0	END	//	Malar	->	Talos, Druid
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMASK~)	BEGIN	~RAMASK~ => 0	~RAMASKCT~ => 0	END	//	Mask	->	Talos, Thief
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMYST~)	BEGIN	~RAMYST~ => 0	~RAMYSTCM~ => 0	END	//	Mystra	->	Wizard
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAOGHM~)	BEGIN	~RAOGHM~ => 0	~RAOGHMCM~ => 0	END	//	Oghma	->	Bard, Wizard
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASELU~)	BEGIN	~RASELU~ => 0	~RASELUCM~ => 0	~RASELUFC~ => 0	END	//	Selune	->	Lathander
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASHAR~)	BEGIN	~RASHAR~ => 0	~RASHARCM~ => 0	~RASHARCT~ => 0	END	//	Shar	->	Talos
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASUNE~)	BEGIN	~RASUNE~ => 0	~RASUNECT~ => 0	~RASUNEFC~ => 0	END	//	Sune	->	Lathander, Bard
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATLNA~)	BEGIN	~RATLNA~ => 0	~RATLNACM~ => 0	~RATLNACT~ => 0	END	//	Talona	->	Talos
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATALO~)	BEGIN	~RATALO~ => 0	~RATALOCM~ => 0	~RATALOFC~ => 0	END	//	Talos	->	Talos
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATEMP~)	BEGIN	~RATEMP~ => 0	~RATEMPFC~ => 0	END	//	Tempus	->	Fighter
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATORM~)	BEGIN	~RATORM~ => 0	~RATORMFC~ => 0	END	//	Torm	->	Helm, Paladin
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATYR~)	BEGIN	~RATYR~ => 0	~RATYRFC~ => 0	END	//	Tyr	->	Helm, Paladin
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAUMBE~)	BEGIN	~RAUMBE~ => 0	~RAUMBECT~ => 0	END	//	Umberlee	->	Talos
 	
-ACTION_IF count > 0 BEGIN
+	DEFINE_ACTION_FUNCTION	STRONGHOLD_STRING
+	INT_VAR	count = 0
+	STR_VAR	negate = ~~	kit = ~~	extend = ~~
+	RET	extend	count
+	BEGIN
+		ACTION_IF	FILE_EXISTS_IN_GAME	~%kit%.2da~	BEGIN
+			ACTION_PHP_EACH EVAL $SH(~%kit%~)	AS	id => nil	BEGIN
+				OUTER_SPRINT	extend ~%extend%%LNL%%negate%Kit(Player1,%id%)~
+				OUTER_SET	count += 1
+			END
+		END
+	END
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//							    LATHANDER ALTERINGS
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//Remove Kits from Lathander's quest-line (script)
+	OUTER_SPRINT negate ~!~	//	is the Kit-check for this section negated (!Kit() or Kit())
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~		RET	extend	count	END	//	Auril
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~		RET	extend	count	END	//	Baravar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~		RET	extend	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~		RET	extend	count	END	//	Cyric
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~		RET	extend	count	END	//	Helm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALOVI~		RET	extend	count	END	//	Loviatar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMALA~		RET	extend	count	END	//	Malar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~		RET	extend	count	END	//	Mask
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~		RET	extend	count	END	//	Mystra
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~		RET	extend	count	END	//	Shar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~		RET	extend	count	END	//	Talona
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~		RET	extend	count	END	//	Talos
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~		RET	extend	count	END	//	Tempus
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~		RET	extend	count	END	//	Torm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~			RET	extend	count	END	//	Tyr
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~		RET	extend	count	END	//	Umberlee
+	//	Kit Headers	End
+	ACTION_IF count > 0 BEGIN
 		COPY_EXISTING ~AR0900.bcs~ override
 			DECOMPILE_AND_PATCH     BEGIN
 				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODHELM)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODTALOS)\)~ ~\1 %extend%~
 			END
 		BUT_ONLY
 	END
-
-//Remove Ilmater, Loviatar, Mystra, and Oghma from Helm's quest-line
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 0
-ACTION_IF FILE_EXISTS_IN_GAME ~RAILMA.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAILMA)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAILMACM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAILMAFC)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RALOVI.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RALOVI)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RALOVICM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RALOVIFC)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAMYST)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAMYSTCM)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAOGHM)~
-	OUTER_SET count += 1
-		OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAOGHMCM)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 0 BEGIN
-		COPY_EXISTING ~AR0900.bcs~ override
-			DECOMPILE_AND_PATCH     BEGIN
-				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODLATHANDER)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODTALOS)\)~ ~\1 %extend%~
-			END
-		BUT_ONLY
-	END
-
-//Remove Mystra and Tempus from Talos' quest-line
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 0
-ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAMYST)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RAMYSTCM)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RATEMP)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-!Kit(Player1,RATEMPFC)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 0 BEGIN
-		COPY_EXISTING ~AR0900.bcs~ override
-			DECOMPILE_AND_PATCH     BEGIN
-				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODLATHANDER)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODHELM)\)~ ~\1 %extend%~
-			END
-		BUT_ONLY
-	END
-
-//Add Loviatar to Talo's quest-line
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 0
-ACTION_IF FILE_EXISTS_IN_GAME ~RALOVI.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RALOVI)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RALOVICM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RALOVIFC)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF	count = 1 BEGIN
-		OUTER_SPRINT orblock ~~
-	END	ELSE	BEGIN
-		OUTER_SPRINT orblock ~OR(%count%)~
-	END
-<<<<<<<< RAStrong.baf
-IF
-	Global("GaalSpoke","AR0900",1)
-	%orblock%
-	%extend%
-THEN
-	RESPONSE #100
-		Wait(2)
-		CreateCreature("bhnalla",[3077.1630],SW)
-		SetGlobal("EvilMask","AR0900",1)
-		SetGlobal("GaalSpoke","AR0900",2)
-END
->>>>>>>>
-ACTION_IF count > 0 BEGIN
-    EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
-END
-ACTION_IF count > 0 BEGIN
+	
+//Remove Kits from Lathander's quest-line (dialogue)
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~		RET	extend	count	END	//	Auril
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~		RET	extend	count	END	//	Baravar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~		RET	extend	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~		RET	extend	count	END	//	Cyric
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~		RET	extend	count	END	//	Helm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALOVI~		RET	extend	count	END	//	Loviatar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMALA~		RET	extend	count	END	//	Malar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~		RET	extend	count	END	//	Mask
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~		RET	extend	count	END	//	Mystra
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~		RET	extend	count	END	//	Shar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~		RET	extend	count	END	//	Talona
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~		RET	extend	count	END	//	Talos
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~		RET	extend	count	END	//	Tempus
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~		RET	extend	count	END	//	Torm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~			RET	extend	count	END	//	Tyr
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~		RET	extend	count	END	//	Umberlee
+	//	Kit Headers	End
+	ACTION_IF count > 0 BEGIN
+		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdOisig.d~
 		OUTER_SET	count += 1
-		COPY_EXISTING ~BHNALLA.DLG~ override
+		ACTION_IF	count = 2 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
+		COPY_EXISTING ~BHARVAL.DLG~ override
 			DECOMPILE_AND_PATCH     BEGIN
-				REFACTOR_TRIGGER ~Kit(Player1,GODTALOS)~
-~OR(%count%) Kit(Player1,GODTALOS) %extend%~
+				REFACTOR_TRIGGER ~\(Kit(Player1,GODLATHANDER)\)~ ~%orblock% \1 %extend%~
 			END
 		BUT_ONLY
-END
-
-//Add Ilmater to Lathander's quest-line
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 0
-ACTION_IF FILE_EXISTS_IN_GAME ~RAILMA.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAILMA)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAILMACM)~
-	OUTER_SET count += 1
-		OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAILMAFC)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF	count = 1 BEGIN
-		OUTER_SPRINT orblock ~~
-	END	ELSE	BEGIN
-		OUTER_SPRINT orblock ~OR(%count%)~
 	END
+	
+//Add Kits to Lathander's quest-line	(script)
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAILMA~		RET	extend	count	END	//	Ilmater
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALATH~		RET	extend	count	END	//	Lathander
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~		RET	extend	count	END	//	Selune
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~		RET	extend	count	END	//	Shar
+	//	Kit Headers	End
+	ACTION_IF	count = 1 BEGIN
+			OUTER_SPRINT orblock ~~
+		END	ELSE	BEGIN
+			OUTER_SPRINT orblock ~OR(%count%)~
+		END
 <<<<<<<< RAStrong.baf
 IF
 	Global("GaalSpoke","AR0900",1)
@@ -226,65 +142,134 @@ THEN
 		SetGlobal("GaalSpoke","AR0900",2)
 END
 >>>>>>>>
-ACTION_IF count > 0 BEGIN
-    EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+	ACTION_IF count > 0 BEGIN
+			EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+	END
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//							    TALOS ALTERINGS
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//Remove Kits from Talos' quest-line	(script)
+	OUTER_SPRINT negate ~!~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~		RET	extend	count	END	//	Baravar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~		RET	extend	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~		RET	extend	count	END	//	Helm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAILMA~		RET	extend	count	END	//	Ilmater
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALATH~		RET	extend	count	END	//	Lathander
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~		RET	extend	count	END	//	Mystra
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~		RET	extend	count	END	//	Selune
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~		RET	extend	count	END	//	Sune
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~		RET	extend	count	END	//	Tempus
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~		RET	extend	count	END	//	Torm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~			RET	extend	count	END	//	Tyr
+	//	Kit Headers	End
+	ACTION_IF count > 0 BEGIN
+		COPY_EXISTING ~AR0900.bcs~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODLATHANDER)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODHELM)\)~ ~\1 %extend%~
+			END
+		BUT_ONLY
+	END
+//	Add Kits to Talo's quest-line	(script + dialogue)
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~		RET	extend	count	END	//	Auril
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~		RET	extend	count	END	//	Cyric
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALOVI~		RET	extend	count	END	//	Loviatar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMALA~		RET	extend	count	END	//	Malar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~		RET	extend	count	END	//	Mask
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~		RET	extend	count	END	//	Shar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~		RET	extend	count	END	//	Talona
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~		RET	extend	count	END	//	Talos
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~		RET	extend	count	END	//	Umberlee
+	//	Kit Headers	End
+	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
+<<<<<<<< RAStrong.baf
+IF
+	Global("GaalSpoke","AR0900",1)
+	%orblock%
+	%extend%
+THEN
+	RESPONSE #100
+		Wait(2)
+		CreateCreature("bhnalla",[3077.1630],SW)
+		SetGlobal("EvilMask","AR0900",1)
+		SetGlobal("GaalSpoke","AR0900",2)
 END
-
-//Add Baervan, Baravar, Mystra, Oghma, and Tempus to non-cleric quest-line
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 0
-ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABAER)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABAERCM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABAERRC)~
-	OUTER_SET count += 1
+>>>>>>>>
+	ACTION_IF count > 0 BEGIN
+		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+		OUTER_SET	count += 1
+		COPY_EXISTING ~BHNALLA.DLG~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REFACTOR_TRIGGER ~Kit(Player1,GODTALOS)~	~OR(%count%) Kit(Player1,GODTALOS) %extend%~
+			END
+		BUT_ONLY
 	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RABARA.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABARA)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABARACM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABARACT)~
-	OUTER_SET count += 1
+	
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//							    HELM ALTERINGS
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//Remove Kits from Helm's quest-line (script + dialogue)
+	OUTER_SPRINT negate ~!~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~		RET	extend	count	END	//	Auril
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~		RET	extend	count	END	//	Baravar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~		RET	extend	count	END	//	Cyric
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAILMA~		RET	extend	count	END	//	Ilmater
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALATH~		RET	extend	count	END	//	Lathander
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMALA~		RET	extend	count	END	//	Malar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~		RET	extend	count	END	//	Mask
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~		RET	extend	count	END	//	Mystra
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~		RET	extend	count	END	//	Selune
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~		RET	extend	count	END	//	Shar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~		RET	extend	count	END	//	Sune
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~		RET	extend	count	END	//	Talona
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~		RET	extend	count	END	//	Talos
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~		RET	extend	count	END	//	Tempus
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~		RET	extend	count	END	//	Umberlee
+	//	Kit Headers	End
+	ACTION_IF count > 0 BEGIN
+		COPY_EXISTING ~AR0900.bcs~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODLATHANDER)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODTALOS)\)~ ~\1 %extend%~
+			END
+		BUT_ONLY
+		COPY_EXISTING ~BHOISIG.DLG~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REPLACE_TEXTUALLY ~\(!Kit(Player1,GODLATHANDER)[ %TAB%%LNL%%MNL%%WNL%]+!Kit(Player1,GODTALOS)\)~ ~\1 %extend%~
+				REPLACE_TEXTUALLY ~\(Global("PlayerHasStronghold","GLOBAL",0)\)~ ~\1 %extend%~
+			END
+		BUT_ONLY
 	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAMYST)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAMYSTCM)~
-	OUTER_SET count += 1
-	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAOGHM)~
-	OUTER_SET count += 1
-		OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAOGHMCM)~
-	OUTER_SET count += 1
-	END
-ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RATEMP)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RATEMPFC)~
-	OUTER_SET count += 1
-	END
-ACTION_IF	count = 1 BEGIN
-	OUTER_SPRINT orblock ~~
-	END	ELSE	BEGIN
-	OUTER_SPRINT orblock ~OR(%count%)~
-	END
+	
+//	Add Kits to Helm's quest-line (script)
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~		RET	extend	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~		RET	extend	count	END	//	Helm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~		RET	extend	count	END	//	Torm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~			RET	extend	count	END	//	Tyr
+	//	Kit Headers	End
+	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
 <<<<<<<< RAStrong.baf
 IF
 	Global("GaalSpoke","AR0900",1)
@@ -299,262 +284,200 @@ THEN
 END
 >>>>>>>>
 	ACTION_IF count > 0 BEGIN
-		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdAlterings.d~
+		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdArval.d~
+		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+	END
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//							    NON-CLERIC UNSEEING EYE QUEST
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+	
+//	Add Kits to non-Cleric quest-line (scripts + dialogue)
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 0
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~		RET	extend	count	END	//	Baravar
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~		RET	extend	count	END	//	Mystra
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~		RET	extend	count	END	//	Tempus
+	//	Kit Headers	End
+	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
+<<<<<<<< RAStrong.baf
+IF
+	Global("GaalSpoke","AR0900",1)
+	%orblock%
+	%extend%
+THEN
+	RESPONSE #100
+		Wait(2)
+		CreateCreature("bhoisig",[3077.1630],SW)
+		SetGlobal("NeutralMask","AR0900",1)
+		SetGlobal("GaalSpoke","AR0900",2)
+END
+>>>>>>>>
+	ACTION_IF count > 0 BEGIN
+		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdArval.d~
 		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
 		OUTER_SET	count += 1
 		COPY_EXISTING ~BHOISIG.DLG~ override
 			DECOMPILE_AND_PATCH     BEGIN
-				REFACTOR_TRIGGER ~Kit(Player1,GODLATHANDER)~
-		~OR(%count%) Kit(Player1,GODLATHANDER) %extend%~
+				REFACTOR_TRIGGER ~Kit(Player1,GODLATHANDER)~	~OR(%count%) Kit(Player1,GODLATHANDER) %extend%~
+			END
+		BUT_ONLY
+		COPY_EXISTING ~BHOISIG.DLG~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REFACTOR_TRIGGER ~\(Global("PlayerHasStronghold","GLOBAL",1)\)~ ~%orblock% Global("PlayerHasStronghold","GLOBAL",1) %extend%~
+			END
+		BUT_ONLY
+	END
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//							    NON-CLERIC STRONGHOLD ALTERINGS
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//Let Kits get the Wizard's Stronghold
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 1
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~		RET	extend	count	END	//	Mystra
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
+	//	Kit Headers	End
+	ACTION_IF count > 1 BEGIN	
+		COPY_EXISTING ~LAVOK.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER	~Class(Player1,MAGE_ALL)~	~OR(%count%) Class(Player1,MAGE_ALL) %extend%~
 			END
 		BUT_ONLY
 	END
 
-//Let Mystra and Oghma get the Wizard's Stronghold
+//Let Kits get the Bard's Stronghold
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 1
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~		RET	extend	count	END	//	Oghma
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~		RET	extend	count	END	//	Sune
+	//	Kit Headers	End
+	ACTION_IF count > 1 BEGIN
+		COPY_EXISTING ~RAELIS.DLG~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REFACTOR_TRIGGER ~Class(Player1,BARD_ALL)~	~OR(%count%) Class(Player1,BARD_ALL) %extend%~
+			END
+		BUT_ONLY
+		COPY_EXISTING ~HAERDA.DLG~ override
+			DECOMPILE_AND_PATCH     BEGIN
+				REFACTOR_TRIGGER ~Class(Player1,BARD_ALL)~	~OR(%count%) Class(Player1,BARD_ALL) %extend%~
+			END
+		BUT_ONLY
+	END
 
-OUTER_SPRINT extend ~~
-OUTER_SET count = 1
-ACTION_IF FILE_EXISTS_IN_GAME ~RAMYST.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAMYST)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAOGHM)~
-	OUTER_SET count += 1
-END
-	
-ACTION_IF count > 1 BEGIN	
-	
-COPY_EXISTING ~LAVOK.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER	~Class(Player1,MAGE_ALL)~
-~OR(%count%) Class(Player1,MAGE_ALL) %extend%~
-END
-BUT_ONLY
+//Let Kits get the Fighter's Stronghold
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 1
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~		RET	extend	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~		RET	extend	count	END	//	Tempus
+	//	Kit Headers	End
+	ACTION_IF count > 1 BEGIN
+		COPY_EXISTING ~NALIA.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,FIGHTER)~	~OR(%count%) Class(Player1,FIGHTER) %extend%~
+				REFACTOR_TRIGGER    ~Class(Player1,FIGHTER_ALL)~	~OR(%count%) Class(Player1,FIGHTER_ALL) %extend%~
+			END
+		BUT_ONLY
+		COPY_EXISTING ~NALIAJ.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,FIGHTER)~	~OR(%count%) Class(Player1,FIGHTER) %extend%~
+				REFACTOR_TRIGGER    ~Class(Player1,FIGHTER_ALL)~	~OR(%count%) Class(Player1,FIGHTER_ALL) %extend%~
+			END
+		BUT_ONLY
+	END
 
-END
+//Let Kits get the Thief's Stronghold
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 1
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~		RET	extend	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~		RET	extend	count	END	//	Cyric
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~		RET	extend	count	END	//	Mask
+	//	Kit Headers	End
+	ACTION_IF count > 1 BEGIN
+		COPY_EXISTING ~RENAL.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER	~Class(Player1,THIEF)~	~OR(%count%) Class(Player1,THIEF) %extend%~
+				REFACTOR_TRIGGER	~Class(Player1,THIEF_ALL)~	~OR(%count%) Class(Player1,THIEF_ALL) %extend%~
+			END
+		BUT_ONLY
+	END
 
-//Let Oghma and Sune get the Bard's Stronghold
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 1
-ACTION_IF FILE_EXISTS_IN_GAME ~RAOGHM.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAOGHM)~
-	OUTER_SET count += 1
-		OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAOGHMCM)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RASUNE.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RASUNE)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RASUNECT)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 1 BEGIN
-
-COPY_EXISTING ~RAELIS.DLG~ override
-	DECOMPILE_AND_PATCH     BEGIN
-		REFACTOR_TRIGGER ~Class(Player1,BARD_ALL)~
-~OR(%count%) Class(Player1,BARD_ALL) %extend%~
-END
-BUT_ONLY
-
-COPY_EXISTING ~HAERDA.DLG~ override
-	DECOMPILE_AND_PATCH     BEGIN
-		REFACTOR_TRIGGER ~Class(Player1,BARD_ALL)~
-~OR(%count%) Class(Player1,BARD_ALL) %extend%~
-END
-BUT_ONLY
-
-END
-
-//Let Clangeddin and Tempus get the Fighter's Stronghold
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 1
-ACTION_IF FILE_EXISTS_IN_GAME ~RACLAN.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RACLAN)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RATEMP.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RATEMP)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 1 BEGIN
-	
-COPY_EXISTING ~NALIA.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER)~
-~OR(%count%) Class(Player1,FIGHTER) %extend%~
-		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER_ALL)~
-~OR(%count%) Class(Player1,FIGHTER_ALL) %extend%~
-END
-BUT_ONLY
-
-COPY_EXISTING ~NALIAJ.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER)~
-~OR(%count%) Class(Player1,FIGHTER) %extend%~
-		REFACTOR_TRIGGER    ~Class(Player1,FIGHTER_ALL)~
-~OR(%count%) Class(Player1,FIGHTER_ALL) %extend%~
-END
-BUT_ONLY
-
-END
-
-//Let Baravar, Cyric, and Mask get the Thief's Stronghold
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 1
-ACTION_IF FILE_EXISTS_IN_GAME ~RABARA.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABARA)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABARACM)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RACYRI.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RACYRI)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAMASK.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAMASK)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 1 BEGIN
-
-COPY_EXISTING ~RENAL.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER	~Class(Player1,THIEF)~
-~OR(%count%) Class(Player1,THIEF) %extend%~
-		REFACTOR_TRIGGER	~Class(Player1,THIEF_ALL)~
-~OR(%count%) Class(Player1,THIEF_ALL) %extend%~
-END
-BUT_ONLY
-
-END
-
-//Let Torm and Tyr get the Paladin's Stronghold
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 1
-ACTION_IF FILE_EXISTS_IN_GAME ~RATORM.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RATORM)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RATORMFC)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RATYR.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RATYR)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RATYRFC)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 1 BEGIN
-
-COPY_EXISTING ~GARREN.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,PALADIN)~
-~OR(%count%) Class(Player1,PALADIN) %extend%~
-END
-BUT_ONLY
-
-COPY_EXISTING ~HPRELATE.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,PALADIN_ALL)~
-~OR(%count%) Class(Player1,PALADIN_ALL) %extend%~
-END
-BUT_ONLY
+//Let Kits get the Paladin's Stronghold
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 1
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~		RET	extend	count	END	//	Torm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~			RET	extend	count	END	//	Tyr
+	//	Kit Headers	End
+	ACTION_IF count > 1 BEGIN
+		COPY_EXISTING ~GARREN.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,PALADIN)~	~OR(%count%) Class(Player1,PALADIN) %extend%~
+			END
+		BUT_ONLY
+		COPY_EXISTING ~HPRELATE.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,PALADIN_ALL)~	~OR(%count%) Class(Player1,PALADIN_ALL) %extend%~
+			END
+		BUT_ONLY
+	END
 		
-END
-		
-//Let Baervan get the Ranger's Stronghold
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 1
-ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABAER)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABAERCM)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 1 BEGIN
-
-COPY_EXISTING ~UHMAY01.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,RANGER_ALL)~
-~OR(%count%) Class(Player1,RANGER_ALL) %extend%~
-END
-BUT_ONLY
-
-END
+//Let Kits get the Ranger's Stronghold
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 1
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
+	//	Kit Headers	End
+	ACTION_IF count > 1 BEGIN
+		COPY_EXISTING ~UHMAY01.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,RANGER_ALL)~	~OR(%count%) Class(Player1,RANGER_ALL) %extend%~
+			END
+		BUT_ONLY
+	END
 
 //Let Baervan and Malar get the Druid's Stronghold 
-
-OUTER_SPRINT extend ~~
-OUTER_SET count = 1
-ACTION_IF FILE_EXISTS_IN_GAME ~RABAER.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABAER)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RABAERCM)~
-	OUTER_SET count += 1
-END
-ACTION_IF FILE_EXISTS_IN_GAME ~RAMALA.2da~ BEGIN
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAMALA)~
-	OUTER_SET count += 1
-	OUTER_SPRINT extend ~%extend%
-Kit(Player1,RAMALARC)~
-	OUTER_SET count += 1
-END
-
-ACTION_IF count > 1 BEGIN
-
-COPY_EXISTING ~CECHALLE.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,DRUID_ALL)~
-~OR(%count%) Class(Player1,DRUID_ALL) %extend%~
-END
-BUT_ONLY
-
-COPY_EXISTING ~CEFALDOR.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,DRUID_ALL)~
-~OR(%count%) Class(Player1,DRUID_ALL) %extend%~
-END
-BUT_ONLY
-
-COPY_EXISTING ~DRUIDAD.DLG~ override
-	DECOMPILE_AND_PATCH		BEGIN
-		REFACTOR_TRIGGER    ~Class(Player1,DRUID_ALL)~
-~OR(%count%) Class(Player1,DRUID_ALL) %extend%~
-END
-BUT_ONLY
-
-END
+	OUTER_SPRINT negate ~~
+	OUTER_SPRINT extend ~~
+	OUTER_SET count = 1
+	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~		RET	extend	count	END	//	Baervan
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMALA~		RET	extend	count	END	//	Malar
+	//	Kit Headers	End
+	ACTION_IF count > 1 BEGIN
+		COPY_EXISTING ~CECHALLE.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,DRUID_ALL)~	~OR(%count%) Class(Player1,DRUID_ALL) %extend%~
+			END
+		BUT_ONLY
+		COPY_EXISTING ~CEFALDOR.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,DRUID_ALL)~	~OR(%count%) Class(Player1,DRUID_ALL) %extend%~
+			END
+		BUT_ONLY
+		COPY_EXISTING ~DRUIDAD.DLG~ override
+			DECOMPILE_AND_PATCH		BEGIN
+				REFACTOR_TRIGGER    ~Class(Player1,DRUID_ALL)~	~OR(%count%) Class(Player1,DRUID_ALL) %extend%~
+			END
+		BUT_ONLY
+	END
 
 //EoF
