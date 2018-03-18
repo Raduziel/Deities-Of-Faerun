@@ -12,7 +12,7 @@ ADD_KIT ~RABane~
 	~RABane 0 0 0 0 0 0~
 	~RABane 12 3 3 3 10 3~
     ~RABane 12 3 3 3 10 3~
-	~RABane 0 0 0 0 0 0 1 0 0~
+	~RABane 0 0 1 0 0 0 0 0 0~
 	~RABane 1 1 1 1 1 1~
 	~DeitiesOfFaerun\Tables\RABane.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
