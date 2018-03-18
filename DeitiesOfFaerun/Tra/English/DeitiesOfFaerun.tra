@@ -34,6 +34,7 @@ Disadvantages:
 @105 = ~Rapture
 (Enchantment/Charm)
 
+Level: 3
 Sphere: Thought
 Range: 15-ft/level
 Duration: 2 turns
@@ -46,6 +47,7 @@ This spell has two effects: when cast upon an ally it will put it on a state of 
 @107 = ~Emotion
 (Enchantment/Charm)
 
+Level: 4
 Sphere: Benediction/Dread
 Range: Visual range of the caster
 Duration: See below
@@ -193,6 +195,7 @@ Disadvantages:
 @305 = ~Dark Aura
 (Alteration, Invocation/Evocation)
 
+Level: 4
 Sphere: Dread
 Range: 0
 Duration: 3 turns
@@ -205,6 +208,7 @@ This spell creates a spherical miasma of gloom and menace centered on the caster
 @307 = ~Instill Madness
 (Enchantment/Charm)
 
+Level: 7
 Sphere: Thought
 Range: Touch
 Duration: Permanent
@@ -270,6 +274,7 @@ Disadvantages:
 @405 = ~Darkness
 (Alteration)
 
+Level: 1
 Sphere: Shadow
 Range: 20 ft.
 Duration: 1 turn
@@ -282,6 +287,7 @@ This spell causes total, impenetrable darkness in the area of effect. Infravisio
 @407 = ~Nightmare
 (Invocation, Illusion/Phantasm)
 
+Level: 4
 Sphere: Thought
 Range: 40 ft.
 Duration: 2 turns
@@ -294,6 +300,7 @@ This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber a
 @409 = ~Eyebite
 (Enchantment/Charm, Illusion/Phantasm)
 
+Level: 6
 Sphere: Thought
 Range: 60 ft.
 Duration: 1 round/3 levels
@@ -450,6 +457,7 @@ Disadvantages:
 @705 = ~Changestaff
 (Alteration)
 
+Level: 7
 Sphere: Plant 
 Range: Touch
 Duration: 10 turns
@@ -520,8 +528,9 @@ Disadvantages:
 - None~
 @804 = ~Mace of Odo~
 @805 = ~Mace of Odo
-(Evocation)
+(Invocation/Evocation)
 
+Level: 2
 Sphere: War 
 Range: 0
 Duration: Special 
@@ -538,6 +547,7 @@ The mace vanishes after one strike or after 3 rounds.~
 @807 = ~Wyvern Watch
 (Abjuration, Evocation)
 
+Level: 2
 Sphere: Protection 
 Range: 30 ft.
 Duration: Special 
@@ -548,8 +558,9 @@ Saving Throw: Neg.
 This spell is known as wyvern watch because of the insubstantial haze brought forth by its casting, which vaguely resembles a wyvern. It is typically used to guard some area against intrusion. Any creature that approaches the guarded area may be affected by the "wyvern" and must roll a successful Saving Throw vs. Spells or stand paralyzed for one round per level of the caster, until freed by the Watcher, by a dispel magic spell, or by a remove paralysis spell. A successful saving throw indicates that the subject creature was missed by the attack of the wyvern-form, and the intruder was not affected.~
 @808 = ~Seeking Sword~
 @809 = ~Seeking Sword
-(Evocation)
+(Invocation/Evocation)
 
+Level: 4
 Sphere: War 
 Range: 30 ft.
 Duration: 2 turns 
@@ -657,6 +668,7 @@ Disadvantages:
 @1005 = ~Boon of Lathander
 (Conjuration/Summoning)
 
+Level: 4
 Sphere: Benediction
 Range: 0
 Duration: 6 rounds
@@ -669,6 +681,7 @@ During this spell's effect, the spell recipient receives bonuses of + 1 on attac
 @1007 = ~Faerie Fire
 (Alteration)
 
+Level: 2
 Sphere: Fire
 Range: 80 ft.
 Duration: 2 turns
@@ -681,6 +694,7 @@ This spell enables the caster to outline one or more objects or creatures with a
 @1009 = ~Sunrise
 (Evocation, Alteration)
 
+Level: 3
 Sphere: Light
 Range: Touch
 Duration: Instant
@@ -775,6 +789,7 @@ Disadvantages:
 @1205 = ~Legend Lore
 (Divination)
 
+Level: 6
 Sphere: Knowledge
 Range: 0
 Duration: Special
@@ -838,6 +853,7 @@ Disadvantages:
 @1305 = ~Martyrdom of Ilmater
 (Abjuration, Alteration)
 
+Level: 6
 Sphere: Vigor 
 Range: 0
 Duration: 3 rounds
@@ -850,13 +866,13 @@ By means of this spell the Painbearer call a beneficial servant of Ilmater to po
 @1307 = ~Endurance of Ilmater
 (Abjuration, Alteration, Necromancy)
 
+Level: 5
 Sphere: Vigor 
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
 Area of Effect: 1 creature 
 Saving Throw: None 
-
 
 This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is only then taken from the real hit points of the affected being. The spell also protects the vitality of the spell recipient so that all checks of any sort against contracting diseases automatically succeed, and all other Saving Throws receive a +2 bonus.~
 @1308 = ~Holy Symbol of Ilmater~
@@ -995,6 +1011,7 @@ The Silentwalker surrounds itself with dense shadows, completely silencing <PRO_
 @1605 = ~Shadowcloak
 (Alteration)
 
+Level: 2
 Sphere: Shadow
 Range: 0
 Duration: 1 turn
@@ -1116,7 +1133,7 @@ This spell conjures an Ice Elemental for 10 turns.
 ~
 @1704 = ~Frost Dagger~
 @1705 = ~Frost Dagger
-(Evocation)
+(Invocation/Evocation)
 
 Level: 1
 Sphere: Water
@@ -1129,7 +1146,7 @@ Saving Throw: Special
 This spell creates a dagger that flies to a target determined by the caster. This weapon hits for 1d4+5 points of cold damage and the target must make a Saving Throw vs. Death or be frozen for 1 round.~
 @1706 = ~Frost Whip~
 @1707 = ~Frost Whip
-(Evocation)
+(Invocation/Evocation)
 
 Level: 2
 Sphere: Water
@@ -1734,6 +1751,76 @@ Casting this spell creates a long whip of ghostly, glowing red force that emanat
 4: Target is hurled 25 yards away from the Dreadruler and suffer an extra 2d6 points of bludgeoning damage.~
 @2306 = ~Holy Symbol of Bane~
 @2307 = ~Only the most worthy and devoted servants of the Black Lord are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Deathstalker of Bhaal
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2301 = ~deathstalker of bhaal~
+@2302 = ~Deathstalker of Bhaal~
+@2303 = ~DEATHSTALKER OF BHAAL: Bhaal (Bahl), one of the Dark Gods, was the god of death, particularly of slaying, assassination, and violent death. His was a powerful faith in Faerun at one time, and the Lord of Murder was venerated by numerous assassins, violent mercenaries, and other brutal and fiendish killers. While he lived, Loviatar and Talona served him (though the two were rivals to each other), and he in turn served Bane.
+
+Bhaal was violent, cruel, and hateful at all times, and lived only to hunt and murder. He could be alternately cold, calculating, and ruthless or filled with a savage bloodlust. The presence of living creatures instilled a deadly hunger in the Lord of Murder and an overpowering need to kill and destroy. His minions, such as Kazgoroth the Beast in the Moonshae Islands, wrought devastation and violent death wherever they roamed. Bhaal suffered a series of reverses prior to the Time of Troubles, the most vital being his banishment from the Moonshaes. Bhaal tried to destroy the Earthmother (Chauntea) and seize the Moonshae Islands as his personal domain. The Ravager, imbued with a greater fraction of Bhaal's essence than is normally contained in an avatar, was slain by Tristan, High King of the Ffolk, who wielded the Sword of Cymrjch Hugh. As a result, Bhaal was severely weakened and exiled from the Realms for a time.
+
+Before Bhaal could rebuild much of his power, he was returned to Faerûn in avatar form by the will of Ao during the Fall of the Gods. Bhaal, reduced to a killing force able only to possess humans, then went on a spree of murder and destruction the like of which had never before been seen. When LordBane sought the power needed to challenge Torm, he slew all of the assassins in the Realms who made up the bulk of the Lord of Murder's faithful, further reducing Bhaal's power. After the Lord of Strife's destruction, Bhaal forged an alliance with Myrkul. The two gods sought the Tablets of Fate so that they could return to the Outer Planes. After pursuing her across the Heartlands, Bhaal kidnapped Midnight and seized one Tablet of Fate, but was murdered soon after by Cyric with the sword Godsbane (later revealed to have been the avatar form of Mask). What remained of Bhaal's essence was absorbed by the Winding Water, and that river has subsequently been poisonous from the Boareskyr Bridge downstream to the Trollclaw Ford.
+
+It is believed a fragment of Bhaal's personality remains in the jet black, foul-smelling waters of the Winding Water much like Myrkul's essence survives in the Crown of Horns and fragments of Bane's personality survive in his servitor Baneliches. If Bhaal is ever resurrected, it will be in the shadow of Boareskyr Bridge.
+	
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: Any, except slashing.
+
+Advantages:
+
+- May use the Bone Dagger special ability once per day, starting at level 2.
+- May cast Finger of Death once per day as a special ability, starting at level 7.
+- May use the Plane Skipping special ability once per day, starting at level 10.
+- May cast Aerial Servant once per day as a special ability, starting at level 11.
+
+BONE DAGGER:
+
+The Deathstalker creates a dagger that has a 1% every 2 levels of slaying any creature it strikes.
+
+PLANE SKIPPING:
+
+The Deathstalker steps into Gehenna and moves freely while others are frozen in time. There's a slim chance that a Pit Fiend will follow the caster.
+~
+@2304 = ~Bone Dagger~
+@2305 = ~Bone Dagger
+(Invocation/Evocation)
+
+Level: 1
+Sphere: Affliction
+Range: 0
+Duration: 3 rounds
+Casting Time: 1
+Area of Effect: Special
+Saving Throw: None~
+
+@2306 = ~Plane Skipping~
+@2307 = ~Plane Skipping
+(Alteration)
+
+Level: 6
+Sphere: Perdition
+Range: 0
+Duration: 2 rounds
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None~
+@2308 = ~Holy Symbol of Bhaal~
+@2309 = ~Only the most worthy and devoted servants of the Lord of Murder are granted these powerful holy symbols.
 	
 STATISTICS:
 
