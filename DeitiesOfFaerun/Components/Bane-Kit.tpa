@@ -139,7 +139,7 @@ COPY "DeitiesOfFaerun\Spl\RABANE31.spl" override													      //Stun Effect
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL "%RA_Stunned%" END 
 
 COPY "DeitiesOfFaerun\Spl\RABANE32.spl" override                                                          //Paralyze Effect
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL "%%RA_Paralyzed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL "%RA_Paralyzed%" END
 
 COPY "DeitiesOfFaerun\Spl\RABANE33.spl" override
 
