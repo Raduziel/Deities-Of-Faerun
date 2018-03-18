@@ -561,6 +561,31 @@ This spell summons an Erinyes to serve the Pain. She has 48 HP, 15 Thac0, AC 0, 
 
 ====================================================================================================================================================================
 
+15) BANE
+
+Mystic Lash
+(Invocation/Evocation)
+
+Level: 5
+Sphere: War
+Range: 10
+Duration: Special
+Casting Time: 8
+Area of Effect: One creature
+Saving Throw: Special
+
+Casting this spell creates a long whip of ghostly, glowing red force that emanates from the priest's hand. A mystic lash does 2d8 points of electrical damage. Targets who are hit by the lash are entitled to a Saving Throw vs. Spells to take half damage. The strike of the lash also has a magical effect randomly chosen from the list below:
+
+1: Target is stunned for 2 rounds
+
+2: Target is paralyzed for 1 round and will stay paralyzed until a successful Saving Throw vs. Spells is made
+
+3: Target takes an extra 2d4 points of slashing damage
+
+4: Target is hurled 25 yards away from the Dreadruler and suffer an extra 2d6 points of bludgeoning damage.
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -590,6 +615,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Auril: Talos
 
 - Baervan Wildwanderer : Druid, Ranger
+
+- Bane: Talos, Fighter
 
 - Baravar Cloakshadow: Thief
 
@@ -635,12 +662,6 @@ Without this component the strongholds will be chosen by alignment, as the unmod
 
 ====================================================================================================================================================================
 
-e) Kits for hostile NPCs (WIP)
-
-This component will add kits for enemies clerics when its appropriate. So Mulahey and Bassilus will both become Strifeleaders of Cyric and use the kit's special abilities. Many of the enemies clerics in game (as Laryssa) doesn't state their deities, so I just altered as I felt adequate.
-
-====================================================================================================================================================================
-
 THANKS
 
 I have a lot of people to say "Thank You".
@@ -658,4 +679,3 @@ Gwendolyne was fundamental to make this kitpack have so many BAMs. Thank you!
 Argent77 for giving me the code that allowed the BAM files to be in the game without conflicting with any other mods. You have my thanks.
 
 Arctodus who briefly was in this project and helped me a lot with brainstorming. Thanks, dude!
-

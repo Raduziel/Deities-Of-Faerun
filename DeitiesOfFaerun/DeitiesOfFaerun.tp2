@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.6.7~
+VERSION ~1.7~
 
 ALWAYS
 
@@ -304,6 +304,18 @@ REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Loviatar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Loviatar-KitCM.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Loviatar-KitFC.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				    DREADRULER OF BANE (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @44
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Bane-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Bane-KitFC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________

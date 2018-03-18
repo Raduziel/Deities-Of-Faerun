@@ -1682,4 +1682,66 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Dreadruler of Bane
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2301 = ~dreadruler of bane~
+@2302 = ~Dreadruler of Bane~
+@2303 = ~DREADRULER OF BANE: Bane (BAIN), one of the Dark Gods, was the ultimate tyrant and a thoroughly evil and malicious being who reveled in hatred and strife and was worshiped by those who in turn enjoyed such wickedness. From his throne in the Black Bastion, he ruled over select parts of Faerun through his clergy. In religious art, he was depicted as a looming, brooding black hand ready to crush the world in its palm, as an empty black throne, or as a shadowy, vaguely human-shaped figure garbed in garments of black streaked with red sitting on a throne of skulls. The one constant in these depictions was a jewel-encrusted gauntlet streaked with blood.
+
+While Bane hated most of the Faerunian pantheon, in particular he hated Mystra and dreamed of torturing her and consuming her power. He devoted much research to trying to learn ways in which other gods have in the past subsumed the powers of rival gods whom they destroyed, for Bane desired above all to gain true supreme power by acquiring governance over all magic. This may have been the underlying reason that Bane plotted with Myrkul to steal the Tablets of Fate from Ao, precipitating the Fall of the Gods. The Black Lord was destroyed in conflict with Torm during the Time of Troubles, and his portfolio was given to the once-mortal Cyric by Ao, along with the portfolios of Myrkul and Bhaal. In life, he commanded Bhaal and Iyachtu Xvim, his son, though Xvim performed his designated tasks only reluctantly, as he held no love for his father. Loviatar and Talona served Bane indirectly by serving Bhaal.
+
+Iyachtu Xvim, the Godson, is said to be the result of a union between the Black Lord and a greater or a true tanar'ri, and thus the blood of Bane runs through his veins. (Another tale says he is the spawn of the Lord of Darkness and a corrupted paladin.) Prior to the Time of Troubles, Xvim stalked the Realms for many years, enacting his father's will. With his father's death and Cyric's partial defeat, the Cruel Master has moved to seize his hated father's black throne. If any remaining cultists of Bane ever seek the return of the Dark One, such efforts will certainly be opposed by Xvim, the New Darkness.
+
+Although much of Bane's power was absorbed by Cyric, the Prince of Lies, when the Black Lord was destroyed by Torm, the Lord of Duty, some of it passed on to Iyachtu Xvim, imprisoned deep beneath Zhentil Keep. As is the case with Myrkul, a small fraction of Bane's essence remains in the Realms, but unlike the deceased deity of the dead, Bane's personality was not captured in an artifact. Instead, fragments of his personality were scattered among his 25 or more surviving Baneliches (clerical liches of Bane). In centuries past, the Black Lord had transformed over 35 living High Imperceptors at the end of their tenure into undead "Mouths of Bane"— Baneliches. In the wake of the Godswar, each Banelich now believes itself to be the reincarnated form of Bane, with the expected corresponding megalomaniacal plans for conquering Faerûn. They are also the only known beings in the Realms to either still receive spells from Bane and/or grant themselves clerical spell-like abilities without a living divine patron.
+	
+Armor: Any.
+Weapon: All non-missile bludgeoning and spears	.
+
+Advantages:
+
+- Immune to fear.
+- May cast Cloak of Fear once per day as a special ability, starting at level 5.
+- May cast Domination once per day as a special ability, starting at level 7.
+- May use the Mystic Lash special ability once per day, starting at level 10.
+
+MYSTIC LASH:
+
+The Dreadruler creates a whip that delivers electrical damage and may stun, paralyze, hurl or cut the target.~
+@2304 = ~Mystic Lash~
+@2305 = ~Mystic Lash
+(Invocation/Evocation)
+
+Level: 5
+Sphere: War
+Range: 10
+Duration: Special
+Casting Time: 8
+Area of Effect: One creature
+Saving Throw: Special
+
+Casting this spell creates a long whip of ghostly, glowing red force that emanates from the priest's hand. A mystic lash does 2d8 points of electrical damage. Targets who are hit by the lash are entitled to a Saving Throw vs. Spells to take half damage. The strike of the lash also has a magical effect randomly chosen from the list below:
+
+1: Target is stunned for 2 rounds
+
+2: Target is paralyzed for 1 round and will stay paralyzed until a successful Saving Throw vs. Spells is made
+
+3: Target takes an extra 2d4 points of slashing damage
+
+4: Target is hurled 25 yards away from the Dreadruler and suffer an extra 2d6 points of bludgeoning damage.~
+@2306 = ~Holy Symbol of Bane~
+@2307 = ~Only the most worthy and devoted servants of the Black Lord are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
 //EoF
