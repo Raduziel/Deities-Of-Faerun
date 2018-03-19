@@ -1,7 +1,7 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						       Deathstalker of Bhaal
+//					  Deathstalker of Bhaal - Cleric/Thief
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -17,9 +17,9 @@ ADD_KIT ~RABhaaCT~
 	~RABhaaCT 0 0 1 0 0 0 0 0 0~
 	~RABhaaCT 1 1 1 1 1 1~
 	~DeitiesOfFaerun\Tables\RABhaaCT.2da~
-	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
+	~K_CT_H K_CT_HE K_CT_D K_CT_HO K_CT_E K_CT_HL K_CT_G~
 	~0x04000000 15~
-	~Cl0~
+	~CT0~
 	~LEAT21 DAGG14 HELM07 * RING09 RING31 CLCK20 BOOT01 AMUL27 BRAC16 BELT04 * * * * * * SW1H25 HAMM09 *~
 	SAY @2401
 	SAY @2402
@@ -27,7 +27,7 @@ ADD_KIT ~RABhaaCT~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RABhaa~
+		kit_name = ~RABhaaCT~
 		clascolr = ~182 47 119 41 182~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
@@ -36,7 +36,7 @@ END
 LAF qd_multiclass
   STR_VAR 
       kit_name = ~RABhaaCT~
-      kit_clab = ~RABaraCT~
+      kit_clab = ~RABhaaCT~
       base_class = ~P~
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
