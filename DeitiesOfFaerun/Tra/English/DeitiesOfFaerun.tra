@@ -287,7 +287,7 @@ This spell causes total, impenetrable darkness in the area of effect. Infravisio
 @407 = ~Nightmare
 (Invocation, Illusion/Phantasm)
 
-Level: 4
+Level: 5
 Sphere: Thought
 Range: 40 ft.
 Duration: 2 turns
@@ -530,7 +530,7 @@ Disadvantages:
 @805 = ~Mace of Odo
 (Invocation/Evocation)
 
-Level: 2
+Level: 3
 Sphere: War 
 Range: 0
 Duration: Special 
@@ -789,7 +789,7 @@ Disadvantages:
 @1205 = ~Legend Lore
 (Divination)
 
-Level: 6
+Level: 5
 Sphere: Knowledge
 Range: 0
 Duration: Special
@@ -1352,7 +1352,7 @@ This spell evaporates moisture from the bodies of the target creature, inflictin
 @1909 = ~Drown
 (Alteration)
 
-Level: 4
+Level: 6	
 Sphere: Water
 Range: 30
 Duration: 1 turn
@@ -1517,7 +1517,7 @@ The Malagent delivers a maleficent poison that gets worse every round.~
 @2105 = ~Poison Touch
 (Necromancy)
 
-Level: 2
+Level: 4
 Sphere: Affliction
 Range: Touch
 Duration: Special
