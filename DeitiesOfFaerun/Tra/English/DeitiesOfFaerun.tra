@@ -25,11 +25,7 @@ Advantages:
 
 RAPTURE
 
-The Heartwarder either charms an ally, curing it of fear, disease and charm effects or awes an enemy, stunning it.
-
-Disadvantages:
-
-- None~
+The Heartwarder either charms an ally, curing it of fear, disease and charm effects or awes an enemy, stunning it.~
 @104 = ~Rapture~
 @105 = ~Rapture
 (Enchantment/Charm)
@@ -119,10 +115,6 @@ Advantages:
 - May Enrage as a Berserker once per day.
 - May cast Prayer once per day as a special ability, starting at level 5.
 - Hit Dice: d10.
-
-Disadvantages:
-
-- None.
 ~
 @204 = ~Prayer~
 @205 = ~Prayer
@@ -186,11 +178,7 @@ As the wizard spell Feeblemind, except that it have a touch range.
 
 DARK AURA:
 
-The Strifeleader creates an aura that helps evil aligned and prejudice good aligned creatures. Neutral aligned creatures are not affected.
-
-Disadvantages:
-
--None~
+The Strifeleader creates an aura that helps evil aligned and prejudice good aligned creatures. Neutral aligned creatures are not affected.~
 @304 = ~Dark Aura~
 @305 = ~Dark Aura
 (Alteration, Invocation/Evocation)
@@ -265,11 +253,7 @@ The Nightcloak gazes a target and delivers one of the following effects: Charm, 
 
 NIGHTMARE
 
-Target is put to sleep and suffers 1d10 points of magic damage unless a Saving Throw vs. Spells is successfully made.
-
-Disadvantages:
-
-- None~
+Target is put to sleep and suffers 1d10 points of magic damage unless a Saving Throw vs. Spells is successfully made.~
 @404 = ~Darkness~
 @405 = ~Darkness
 (Alteration)
@@ -359,11 +343,7 @@ Advantages:
 - May cast Spiritual Hammer once per day as a special ability, starting at level 3.
 - May cast Strength of One once per day as a special ability, starting at level 5.
 - May cast Defensive Harmony once per day as a special ability, starting at level 7.
-- May cast Blade Barrier once per day as a special ability, starting at level 15.
-
-Disadvantages:
-
-- None~
+- May cast Blade Barrier once per day as a special ability, starting at level 15.~
 @504 = ~Holy Symbol of Clangeddin Silverbeard~
 @505 = ~Only the most worthy and devoted servants of the Lord of the Twin Axes are granted these powerful holy symbols.
 
@@ -401,11 +381,7 @@ Advantages:
 - May cast Invisibility once per day as a special ability, starting at level 5.
 - May cast Dimension Door once per day as a special ability, starting at level 7.
 - May cast Mislead once per day as a special ability, starting at level 13.
-- May cast Prismatic Spray once per day as a special ability, starting at level 15.
-
-Disadvantages:
-
-- None~
+- May cast Prismatic Spray once per day as a special ability, starting at level 15.~
 @604 = ~Holy Symbol of Baravar Cloakshadow~
 @605 = ~Only the most worthy and devoted servants of the Sly One are granted these powerful holy symbols.
 
@@ -448,11 +424,7 @@ Advantages:
 
 CHANGESTAFF
 
-The Fastpaw turns an ordinary piece of wood into a Treant that will fight by <PRO_HISHER> side until slew or the spell expires.
-
-Disadvantages:
-
-- None~
+The Fastpaw turns an ordinary piece of wood into a Treant that will fight by <PRO_HISHER> side until slew or the spell expires.~
 @704 = ~Changestaff~
 @705 = ~Changestaff
 (Alteration)
@@ -521,11 +493,7 @@ This spell protects an area from enemies. Anyone not invited by the Watcher must
 
 SEEKING SWORD
 
-The Watcher creates a magical sword that acts accordingly to the Helmite orders.
-
-Disadvantages:
-
-- None~
+The Watcher creates a magical sword that acts accordingly to the Helmite orders.~
 @804 = ~Mace of Odo~
 @805 = ~Mace of Odo
 (Invocation/Evocation)
@@ -608,11 +576,7 @@ Advantages:
 - May cast Shocking Grasp once per day as a special ability, starting at level 1.
 - May cast Call Lightning once per day as a special ability, starting at level 3.
 - May cast Lightning Bolt once per day as a special ability, starting at level 7 and gaining another use every three levels.
-- May cast Earthquake once per day as a special ability, starting at level 15.
-
-Disadvantages:
-
-- None~
+- May cast Earthquake once per day as a special ability, starting at level 15.~
 @904 = ~Holy Symbol of Talos~
 @905 = ~Only the most worthy and devoted servants of the Destroyer are granted these powerful holy symbols.
 
@@ -659,11 +623,7 @@ The Dawnbringer makes <PRO_HISHER> enemy glow, giving it a -2 penalty to Armor C
 
 SUNRISE
 
-The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature. 
-
-Disadvantages:
-
-- None~
+The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.~
 @1004 = ~Boon of Lathander~
 @1005 = ~Boon of Lathander
 (Conjuration/Summoning)
@@ -739,11 +699,7 @@ Advantages:
 - May cast Hold Person as a special ability once per day, starting at level 1.
 - May cast Strength of One as a special ability once per day, starting at level 3.
 - May cast Holy Word as a special ability once per day, starting at level 10.
-- May cast Detect Invisibility as a special ability at will, starting at level 12.
-
-Disadvantages:
-
-- None~
+- May cast Detect Invisibility as a special ability at will, starting at level 12.~
 @1104 = ~Holy Symbol of Tyr~
 @1105 = ~Only the most worthy and devoted servants of the Blind Overlord are granted these powerful holy symbols.
 
@@ -780,11 +736,7 @@ Advantages:
 
 LEGEND LORE:
 
-The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip cursed items, neutralize poisons and cure diseases. 
-
-Disadvantages:
-
-- None~
+The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip cursed items, neutralize poisons and cure diseases.~
 @1204 = ~Legend Lore~
 @1205 = ~Legend Lore
 (Divination)
@@ -844,11 +796,7 @@ While this spell is in effect, the Painbearer is immune to physical damage, but 
 
 ENDURANCE OF ILMATER
 
-This special ability doubles the target's Hit Points, grants it immunity to disease and a +2 bonus to every Saving Throw. All the effects last for 3 turns.
-
-Disadvantages:
-
-- None~
+This special ability doubles the target's Hit Points, grants it immunity to disease and a +2 bonus to every Saving Throw. All the effects last for 3 turns.~
 @1304 = ~Martyrdom of Ilmater~
 @1305 = ~Martyrdom of Ilmater
 (Abjuration, Alteration)
