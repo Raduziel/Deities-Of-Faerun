@@ -102,10 +102,14 @@ END
 
 COPY ~DeitiesOfFaerun\Spl\RASLOT.spl~ override
 
+//Solves the issue with the HP for F/C Kits thats receive HP as Warriors
+
+COPY ~DeitiesOfFaerun\Spl\RAHPFIX.spl~ override
+
 //Solves the issue with WPPROF, PROFSMAX and CLSWPBON
 
 COPY_EXISTING ~CLSWPBON.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RACLSWPBON~ 5 1 ~1~  //Cleric ((Linha x Coluna))
+SET_2DA_ENTRY_LATER ~RACLSWPBON~ 5 1 ~1~
 SET_2DA_ENTRIES_NOW ~RACLSWPBON~ 1
 PRETTY_PRINT_2DA
 BUT_ONLY_IF_IT_CHANGES
