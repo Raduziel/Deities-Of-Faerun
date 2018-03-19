@@ -1716,9 +1716,9 @@ Weight: 0~
 //						       Deathstalker of Bhaal
 //__________________________________________________________________________________
 //__________________________________________________________________________________
-@2301 = ~deathstalker of bhaal~
-@2302 = ~Deathstalker of Bhaal~
-@2303 = ~DEATHSTALKER OF BHAAL: Bhaal (Bahl), one of the Dark Gods, was the god of death, particularly of slaying, assassination, and violent death. His was a powerful faith in Faerun at one time, and the Lord of Murder was venerated by numerous assassins, violent mercenaries, and other brutal and fiendish killers. While he lived, Loviatar and Talona served him (though the two were rivals to each other), and he in turn served Bane.
+@2401 = ~deathstalker of bhaal~
+@2402 = ~Deathstalker of Bhaal~
+@2403 = ~DEATHSTALKER OF BHAAL: Bhaal (Bahl), one of the Dark Gods, was the god of death, particularly of slaying, assassination, and violent death. His was a powerful faith in Faerun at one time, and the Lord of Murder was venerated by numerous assassins, violent mercenaries, and other brutal and fiendish killers. While he lived, Loviatar and Talona served him (though the two were rivals to each other), and he in turn served Bane.
 
 Bhaal was violent, cruel, and hateful at all times, and lived only to hunt and murder. He could be alternately cold, calculating, and ruthless or filled with a savage bloodlust. The presence of living creatures instilled a deadly hunger in the Lord of Murder and an overpowering need to kill and destroy. His minions, such as Kazgoroth the Beast in the Moonshae Islands, wrought devastation and violent death wherever they roamed. Bhaal suffered a series of reverses prior to the Time of Troubles, the most vital being his banishment from the Moonshaes. Bhaal tried to destroy the Earthmother (Chauntea) and seize the Moonshae Islands as his personal domain. The Ravager, imbued with a greater fraction of Bhaal's essence than is normally contained in an avatar, was slain by Tristan, High King of the Ffolk, who wielded the Sword of Cymrjch Hugh. As a result, Bhaal was severely weakened and exiled from the Realms for a time.
 
@@ -1744,8 +1744,8 @@ PLANE SKIPPING:
 
 The Deathstalker steps into Gehenna and moves freely while others appear to be frozen in time. There's a slim chance that a Pit Fiend will follow the caster.
 ~
-@2304 = ~Bone Dagger~
-@2305 = ~Bone Dagger
+@2404 = ~Bone Dagger~
+@2405 = ~Bone Dagger
 (Invocation/Evocation)
 
 Level: 1
@@ -1757,8 +1757,8 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell creates a dagger on the Deathstalker's hand that can't be dropped or unequipped for the duration of the spell. The dagger strikes as a +2 weapon, but does not offers a bonus for hit or damage and can be used despite the cleric's proficiency. Every time the dagger strikes, there's a chance of 1% for every two 2 levels of the caster of automatically slaying the target creature.~
-@2306 = ~Plane Skipping~
-@2307 = ~Plane Skipping
+@2406 = ~Plane Skipping~
+@2407 = ~Plane Skipping
 (Alteration)
 
 Level: 6
@@ -1770,8 +1770,8 @@ Area of Effect: The caster
 Saving Throw: None
 
 The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> appear to be frozen in time. While in the other plane, the <PRO_HESHE> can move freely for 30 seconds, but can't attack, cast spells, use items or turn undead while this spell lasts. The Deathstalker must be cautious, as there's a 5% chance of a Pit Fiend follow <PRO_HIMHER> during the Plane Skipping.~
-@2308 = ~Holy Symbol of Bhaal~
-@2309 = ~Only the most worthy and devoted servants of the Lord of Murder are granted these powerful holy symbols.
+@2408 = ~Holy Symbol of Bhaal~
+@2409 = ~Only the most worthy and devoted servants of the Lord of Murder are granted these powerful holy symbols.
 	
 STATISTICS:
 
@@ -1782,4 +1782,5 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
+
 //EoF
