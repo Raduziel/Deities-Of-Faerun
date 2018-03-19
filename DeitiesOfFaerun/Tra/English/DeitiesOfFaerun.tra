@@ -1790,11 +1790,11 @@ Advantages:
 
 BONE DAGGER:
 
-The Deathstalker creates a dagger that has a 1% every 2 levels of slaying any creature it strikes.
+The Deathstalker creates a dagger that has a slim chance of slaying any creature it strikes.
 
 PLANE SKIPPING:
 
-The Deathstalker steps into Gehenna and moves freely while others are frozen in time. There's a slim chance that a Pit Fiend will follow the caster.
+The Deathstalker steps into Gehenna and moves freely while others appear to be frozen in time. There's a slim chance that a Pit Fiend will follow the caster.
 ~
 @2304 = ~Bone Dagger~
 @2305 = ~Bone Dagger
@@ -1806,8 +1806,9 @@ Range: 0
 Duration: 3 rounds
 Casting Time: 1
 Area of Effect: Special
-Saving Throw: None~
+Saving Throw: None
 
+This spell creates a dagger on the Deathstalker's hand that can't be dropped or unequipped for the duration of the spell. The dagger strikes as a +2 weapon, but does not offers a bonus for hit or damage and can be used despite the cleric's proficiency. Every time the dagger strikes, there's a chance of 1% for every two 2 levels of the caster of automatically slaying the target creature.~
 @2306 = ~Plane Skipping~
 @2307 = ~Plane Skipping
 (Alteration)
@@ -1815,10 +1816,12 @@ Saving Throw: None~
 Level: 6
 Sphere: Perdition
 Range: 0
-Duration: 2 rounds
+Duration: 5 rounds
 Casting Time: 1
 Area of Effect: The caster
-Saving Throw: None~
+Saving Throw: None
+
+The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> appear to be frozen in time. While in the other plane, the <PRO_HESHE> can move freely during 30 seconds, but can't attack, cast spells, use items or turn undead while this spell lasts. The Deathstalker must be cautious, as there's a 5% chance of a Pit Fiend follow <PRO_HIMHER> during the Plane Skipping.~
 @2308 = ~Holy Symbol of Bhaal~
 @2309 = ~Only the most worthy and devoted servants of the Lord of Murder are granted these powerful holy symbols.
 	

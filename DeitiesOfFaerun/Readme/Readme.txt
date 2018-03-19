@@ -586,6 +586,39 @@ Casting this spell creates a long whip of ghostly, glowing red force that emanat
 
 ====================================================================================================================================================================
 
+16) BHAAL
+
+Bone Dagger
+(Invocation/Evocation)
+
+Level: 1
+Sphere: Affliction
+Range: 0
+Duration: 3 rounds
+Casting Time: 1
+Area of Effect: Special
+Saving Throw: None
+
+This spell creates a dagger on the Deathstalker's hand that can't be dropped or unequipped for the duration of the spell. The dagger strikes as a +2 weapon, but does not offers a bonus for hit or damage and can be used despite the cleric's proficiency. Every time the dagger strikes, there's a chance of 1% for every two 2 levels of the caster of automatically slaying the target creature.
+
+---
+
+Plane Skipping
+(Alteration)
+
+Level: 6
+Sphere: Perdition
+Range: 0
+Duration: 5 rounds
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> appear to be frozen in time. While in the other plane, the <PRO_HESHE> can move freely during 30 seconds, but can't attack, cast spells, use items or turn undead while this spell lasts. The Deathstalker must be cautious, as there's a 5% chance of a Pit Fiend follow <PRO_HIMHER> during the Plane Skipping.
+
+====================================================================================================================================================================
+
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -619,6 +652,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Bane: Talos, Fighter
 
 - Baravar Cloakshadow: Thief
+
+- Bhaal: Talos
 
 - Clangeddin: Helm, Fighter
                                                                 
