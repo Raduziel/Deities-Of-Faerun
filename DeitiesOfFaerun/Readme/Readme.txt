@@ -653,8 +653,6 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Baravar Cloakshadow: Thief
 
-- Bhaal: Talos
-
 - Clangeddin: Helm, Fighter
                                                                 
 - Cyric: Talos, Thief                                      
