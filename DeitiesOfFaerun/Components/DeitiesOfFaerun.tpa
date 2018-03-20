@@ -104,7 +104,17 @@ COPY ~DeitiesOfFaerun\Spl\RASLOT.spl~ override
 
 //Solves the issue with the HP for F/C Kits thats receive HP as Warriors
 
-COPY ~DeitiesOfFaerun\Spl\RAHPFIX.spl~ override
+ACTION_IF GAME_IS ~bgee iwdee~ BEGIN
+
+COPY ~DeitiesOfFaerun\Spl\RAHPB1.spl~ override
+
+END
+
+ACTION_IF GAME_IS ~bg2ee~ BEGIN
+
+COPY ~DeitiesOfFaerun\Spl\RAHPB2.spl~ override
+
+END
 
 //Solves the issue with WPPROF, PROFSMAX and CLSWPBON
 
