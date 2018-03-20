@@ -1,0 +1,146 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Holy Champion of Torm
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RATormFC~
+    ~RATormFC 0 0 0 0 1 1 0 1~
+    ~RATormFC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATormFC 3 3 12 3 15 3~
+	~RATormFC 0 0 0 0 0 0~
+	~RATormFC 3 3 12 3 15 3~
+    ~RATormFC 3 3 12 3 15 3~
+	~RATormFC 1 0 0 0 0 0 0 0 0~
+	~RATormFC 1 1 1 1 1 1~
+	~DeitiesOfFaerun\Tables\RATormFC.2da~
+	~K_FC_H K_FC_HE K_FC_D K_FC_HO~
+	~0x04000000 8~
+	~FC0~
+	~PLAT18 SHLD21 HELM21 * RING09 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * BLUN14 HAMM09 *~
+	SAY @1501
+	SAY @1502
+	SAY @1503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RATormFC~
+		clascolr = ~205 132 94 41 93~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 0 1 1 0 0 1~
+		hpclass = ~HPWAR~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RATormFC~
+      kit_clab = ~RATormFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~x~
+	s_Benediction 	= ~major~
+	s_Destruction 	= ~major~
+	s_Protection 	= ~major~
+	s_War 			= ~major~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~x~
+	s_Thought 		= ~x~
+	s_Dread 		= ~minor~
+	s_Vigor 		= ~major~
+	s_Affliction 	= ~x~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~x~
+	s_Magic 		= ~x~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RAFTORM.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCTORM.itm" override SAY NAME1 @1504 SAY NAME2 @1504 SAY DESC @1505
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATormFC~)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  
+END
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RATormFC + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//EoF
