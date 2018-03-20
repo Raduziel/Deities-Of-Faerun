@@ -125,6 +125,8 @@ ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASHAR1.PRO~
 		  
 COPY "DeitiesOfFaerun\Spl\RASHAR1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405 //Darkness
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASHAR1% END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
 
 COPY_EXISTING ~SPWI106.spl~ ~override/RASHAR2.spl~                                          //Blindness
 LPM SPELL_TO_INNATE
