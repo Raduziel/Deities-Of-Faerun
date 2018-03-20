@@ -208,6 +208,8 @@ LPM SPELL_TO_INNATE
 END
 
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAMASK1.PRO~
+
+COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
 		  
 COPY "DeitiesOfFaerun\Spl\RAMASK1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405     //Darkness
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAMASK1% END
