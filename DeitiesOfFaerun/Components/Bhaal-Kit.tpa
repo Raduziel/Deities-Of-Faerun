@@ -7,7 +7,7 @@
 
 ADD_KIT ~RABhaa~
     ~RABhaa 0 0 0 0 0 0 0 0~
-    ~RABhaa 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RABhaa 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RABhaa 3 3 12 3 14 3~
 	~RABhaa 0 0 0 0 0 0~
 	~RABhaa 3 3 12 3 14 3~
@@ -129,7 +129,7 @@ COPY "DeitiesOfFaerun\Spl\RABHAA3.spl" override SAY NAME1 @2406 SAY UNIDENTIFIED
 COPY_EXISTING ~SPPR601.spl~ ~override/RABHAA4.spl~                                                          //Aerial Servant
 LPM SPELL_TO_INNATE
 
-COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.itm" override SAY NAME1 @2304 SAY NAME2 @2304 SAY DESC @2304
+COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.itm" override SAY NAME1 @2404 SAY NAME2 @2404 SAY DESC @2404
 
 COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.bam" override
 
