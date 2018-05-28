@@ -1783,4 +1783,75 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Gray One of Myrkul
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2501 = ~gray one of myrkul~
+@2502 = ~Gray One of Myrkul~
+@2503 = ~GRAY ONE OF MYRKUL: Myrkul (MER-kul), one of the Dark Gods, was the god of the dead, as opposed to the god of death, which was the province of Bhaal. His portfolio, and his home in Hades, the Bone Castle, were both usurped by Cyric after the Lord of Bones was destroyed atop Blackstaff Tower in Waterdeep during the Time of Troubles by Midnight. Later Myrkul's portfolio passed to Kelemvor when Cyric was driven from the City of Strife by an a1liance of gods and denizens.
+
+Myrkul had a cold, malignant intelligence, and spoke in a high whisper. He was always alert, never slept, and was never surprised. He was never known to lose his temper or be anything other than coldly amused when a mortal succeeded in avoiding his directives or chosen fates. His influence in Faerûn was imposed through fear, and he was a master of making mortals terrified of him through his words and deeds. At times, just to remain unpredictable, he seemed almost kind and caring. His cowled skull head was known in nightmares all over Faerûn, and he was the one deity that almost all human mortals could picture clearly. Myrkul took care that all mortals thought of him often—he was even known to materialize beside open graves, scythe in hand, just to gaze around at gathering mourners for a few silent seconds before fading away, in order to remind everyone that he was waiting for them all.
+
+Armor: Any.
+Weapon: Bludgeoning and scimitar.
+
+Advantages:
+
+- Commands Undead as a priest two levels higher.
+- Gains +1 Saving Throws vs. Paralyzation/Poison/Death.
+- May cast Animate Dead once per day as a special ability, starting at level 5.
+- May cast Dolorous Decay once per day as a special ability, starting at level 9.
+- May use the Summon Minor Death special ability once per day, starting at level 10.
+- May use the Hand of Myrkul special ability once per day, starting at level 15.
+
+SUMMON MINOR DEATH:
+
+This spell summons a powerful shadow that stays at the Gray One's service for 1 turns.
+
+HAND OF MYRKUL:
+
+As the wizard spell Disintegrate, except that it has a touch range and a casting time of 1.~
+@2504 = ~Minor Death~
+@2505 = ~Summon Minor Death~
+@2506 = ~Summon Minor Death
+(Necromancy)
+
+Level: 6
+Sphere: Death
+Range: 35
+Duration: 1 turns
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The shadow is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.~
+@2507 = ~Hand of Myrkul~
+@2508 = ~Hand of Myrkul
+(Necromancy)
+
+Level: 7
+Sphere: Death
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+The Gray One touches <PRO_HISHER> victim enforcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.~
+@2509 = ~Holy Symbol of Myrkul~
+@2510 = ~Only the most worthy and devoted servants of the Lord of Bones are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF
