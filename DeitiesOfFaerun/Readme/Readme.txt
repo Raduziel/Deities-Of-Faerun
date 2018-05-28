@@ -618,6 +618,39 @@ The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> app
 
 ====================================================================================================================================================================
 
+17) MYRKUL
+
+Hand of Myrkul
+(Necromancy)
+
+Level: 7
+Sphere: Death
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+The Gray One touches <PRO_HISHER> victim enforcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
+
+---
+
+Summon Minor Death
+(Necromancy)
+
+Level: 6
+Sphere: Death
+Range: 35
+Duration: 1 turns
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The shadow is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.
+
+
+====================================================================================================================================================================
+
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
