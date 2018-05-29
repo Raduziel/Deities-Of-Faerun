@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.6.8~
+VERSION ~1.7~
 
 ALWAYS
 
@@ -329,6 +329,19 @@ REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Bhaal-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Bhaal-KitCT.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				          GRAY ONE OF MYRKUL (IWDEE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @46
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Myrkul-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Myrkul-KitCM.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
