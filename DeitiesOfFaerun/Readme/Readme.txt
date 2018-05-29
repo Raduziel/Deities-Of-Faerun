@@ -646,7 +646,7 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The shadow is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.
+This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.
 
 
 ====================================================================================================================================================================
