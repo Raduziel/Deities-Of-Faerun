@@ -142,6 +142,10 @@ END
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
+COPY ~DeitiesOfFaerun\Spl\Import\Umberlee\Complement\RAWI533b.BAM~ override
+
+COPY ~DeitiesOfFaerun\Spl\Import\Umberlee\Complement\RAWI533c.BAM~ override
+
 COPY_EXISTING ~SPPR426.SPL~ ~override/RAUMBE1.SPL~
 LPM SPELL_TO_INNATE
 
