@@ -1,4 +1,4 @@
-//__________________________________________________________________________________
+	//__________________________________________________________________________________
 //__________________________________________________________________________________
 //
 //						        Gray One of Myrkul
@@ -124,7 +124,7 @@ LPM SPELL_TO_INNATE
 		  
 COPY "DeitiesOfFaerun\Spl\RAMYRK3.spl" override  SAY NAME1 @2504 SAY  UNIDENTIFIED_DESC @2505 //Summon Minor Death
 
-COPY "DeitiesOfFaerun\Spl\RAMYRK3.spl" override  SAY NAME1 @2507 SAY  UNIDENTIFIED_DESC @2508 //Hand of Myrkul
+COPY "DeitiesOfFaerun\Spl\RAMYRK4.spl" override  SAY NAME1 @2507 SAY  UNIDENTIFIED_DESC @2508 //Hand of Myrkul
 
 COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2504 SAY NAME2 @2504   //Minor Death - creature
 
@@ -132,7 +132,24 @@ COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.itm" override                     
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Poison%" END
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_Poisoned%" END
 
-
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMyrk + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@2502)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY	
+	
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
     READ_BYTE 0x18 flags1
@@ -153,19 +170,22 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "HB") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
 	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S0") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
+	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S1") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S2") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
 	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S3") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
+	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "SP") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "SS") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S3") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 special = RESOLVE_STR_REF (@2502) END
 	END
 END

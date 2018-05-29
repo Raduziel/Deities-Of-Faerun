@@ -123,6 +123,23 @@ LPF ADD_ITEM_EQEFFECT
 			  timing = 2
 			  power = 1
 		  END
+		  
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMyrkCM + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
@@ -144,19 +161,22 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "HB") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
 	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S0") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
+	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S1") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S2") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
 	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S3") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
+	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "SP") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "SS") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "S3") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
 	END
 END
