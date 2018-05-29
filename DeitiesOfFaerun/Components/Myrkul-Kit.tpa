@@ -124,6 +124,8 @@ LPM SPELL_TO_INNATE
 		  
 COPY "DeitiesOfFaerun\Spl\RAMYRK3.spl" override  SAY NAME1 @2505 SAY  UNIDENTIFIED_DESC @2506 //Summon Minor Death
 
+COPY "DeitiesOfFaerun\Spl\RAMYRK3.eff" override
+
 COPY "DeitiesOfFaerun\Spl\RAMYRK4.spl" override  SAY NAME1 @2507 SAY  UNIDENTIFIED_DESC @2508 //Hand of Myrkul
 
 COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2504 SAY NAME2 @2504   //Minor Death - creature
