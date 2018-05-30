@@ -200,13 +200,20 @@ BUT_ONLY
 
 //Hide the kit from Dual Classing
 
-COPY_EXISTING ~DUALCLAS.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RADUALCLAS~ 47 1 ~0~
-SET_2DA_ENTRY_LATER ~RADUALCLAS~ 47 3 ~0~
-SET_2DA_ENTRY_LATER ~RADUALCLAS~ 47 4 ~0~
-SET_2DA_ENTRY_LATER ~RADUALCLAS~ 47 6 ~0~
-SET_2DA_ENTRIES_NOW ~RADUALCLAS~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
+  COPY_EXISTING ~DUALCLAS.2da~ ~override~
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~kit_name~
+      PATCH_IF (~%kit_name%~ STRING_EQUAL_CASE ~TALOS~) BEGIN
+        SET talos_row = %row%
+      END
+    END
+    FOR (col = 1; col < 7; ++col) BEGIN
+      PATCH_IF IS_AN_INT %talos_row% BEGIN
+        SET_2DA_ENTRY %talos_row% col cols 0
+      END
+    END
+  BUT_ONLY
 
 //EoF
