@@ -13,7 +13,7 @@ ADD_KIT ~RASune~
 	~RASune 3 3 3 3 12 16~
     ~RASune 3 3 3 3 12 16~
 	~RASune 0 0 0 0 0 0 1 0 0~
-	~RASune 1 1 1 1 1 1~
+	~RASune 1 0 0 1 0 0~
 	~DeitiesOfFaerun\Tables\RASune.2da~
 	~K_C_H   K_C_HE   K_C_E~
 	~0x04000000 3~

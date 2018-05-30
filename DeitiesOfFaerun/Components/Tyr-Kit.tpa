@@ -13,7 +13,7 @@ ADD_KIT ~RATyr~
 	~RATyr 9 3 3 3 9 3~
     ~RATyr 9 3 3 3 9 3~
 	~RATyr 1 0 0 0 0 0 0 0 0~
-	~RATyr 1 1 1 1 1 1~
+	~RATyr 1 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATyr.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
 	~0x04000000 3~

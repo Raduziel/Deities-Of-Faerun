@@ -15,7 +15,7 @@ ADD_KIT ~RABaerRC~
 	~RABaerRC 3 3 10 3 9 3~
     ~RABaerRC 3 3 10 3 9 3~
 	~RABaerRC 0 0 0 1 0 0 1 0 0~
-	~RABaerRC 1 1 1 1 1 1~
+	~RABaerRC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RABaerRC.2da~
 	~K_CR_G~
 	~0x04000000 18~

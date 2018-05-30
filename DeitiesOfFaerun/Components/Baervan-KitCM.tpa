@@ -15,7 +15,7 @@ ADD_KIT ~RABaerCM~
 	~RABaerCM 3 3 10 3 9 3~
     ~RABaerCM 3 3 10 3 9 3~
 	~RABaerCM 0 0 0 1 0 0 1 0 0~
-	~RABaerCM 1 1 1 1 1 1~
+	~RABaerCM 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RABaerCM.2da~
 	~K_CM_G~
 	~0x04000000 14~

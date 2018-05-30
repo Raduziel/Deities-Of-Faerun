@@ -13,7 +13,7 @@ ADD_KIT ~RAMyst~
 	~RAMyst 3 3 3 14 12 3~
     ~RAMyst 3 3 3 14 12 3~
 	~RAMyst 0 1 0 1 0 0 0 1 0~
-	~RAMyst 1 1 1 1 1 1~
+	~RAMyst 0 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RAMyst.2da~
 	~K_C_H K_C_HE K_C_E K_C_G~
 	~0x04000000 3~

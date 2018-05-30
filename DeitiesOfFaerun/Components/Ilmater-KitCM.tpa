@@ -15,7 +15,7 @@ ADD_KIT ~RAIlmaCM~
 	~RAIlmaCM 3 3 3 3 12 3~
     ~RAIlmaCM 3 3 14 3 12 3~
 	~RAIlmaCM 1 0 0 0 0 0 0 0 0~
-	~RAIlmaCM 1 1 1 1 1 1~
+	~RAIlmaCM 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAIlmaCM.2da~
 	~K_CM_H   K_CM_HE   K_CM_E   K_CM_G   K_CM_HO   K_CM_HL   K_CM_D~
 	~0x04000000 14~

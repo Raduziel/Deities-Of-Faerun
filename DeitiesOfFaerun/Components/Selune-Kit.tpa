@@ -13,7 +13,7 @@ ADD_KIT ~RASelu~
 	~RASelu 3 3 12 3 14 3~
     ~RASelu 3 3 12 3 14 3~
 	~RASelu 0 0 0 0 0 0 1 0 0~
-	~RASelu 1 1 1 1 1 1~
+	~RASelu 1 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RASelu.2da~
 	~K_C_H K_C_HO K_C_HE K_C_D K_C_HL K_C_G K_C_E~
 	~0x04000000 3~
@@ -142,6 +142,8 @@ COPY_EXISTING ~SPPR505.spl~ ~override\RASELU3.spl~
 LPM SPELL_TO_INNATE
 		  
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASELU4.PRO~
+
+COPY "DeitiesOfFaerun\Spl\UB!SSta1.bam" override
 
 COPY "DeitiesOfFaerun\Spl\RASELU4.spl" override SAY NAME1 @2008 SAY UNIDENTIFIED_DESC @2009
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASELU4% END

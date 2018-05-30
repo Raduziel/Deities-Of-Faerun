@@ -15,7 +15,7 @@ ADD_KIT ~RAIlmaFC~
 	~RAIlmaFC 3 3 3 3 12 3~
     ~RAIlmaFC 3 3 14 3 12 3~
 	~RAIlmaFC 1 0 0 0 0 0 0 0 0~
-	~RAIlmaFC 1 1 1 1 1 1~
+	~RAIlmaFC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAIlmaFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_E   K_FC_G   K_FC_HO   K_FC_HL   K_FC_D~
 	~0x04000000 8~

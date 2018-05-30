@@ -13,7 +13,7 @@ ADD_KIT ~RAUmbe~
 	~RAUmbe 3 3 15 3 13 3~
     ~RAUmbe 3 3 15 3 13 3~
 	~RAUmbe 0 0 0 0 0 0 0 0 1~
-	~RAUmbe 1 1 1 1 1 1~
+	~RAUmbe 0 0 0 1 0 0~
 	~DeitiesOfFaerun\Tables\RAUmbe.2da~
 	~K_C_H K_C_HO K_C_HE~
 	~0x04000000 3~

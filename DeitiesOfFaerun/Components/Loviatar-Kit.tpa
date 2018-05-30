@@ -13,7 +13,7 @@ ADD_KIT ~RALovi~
 	~RALovi 3 3 15 3 15 3~
     ~RALovi 3 3 15 3 15 3~
 	~RALovi 0 0 1 0 0 0 0 0 0~
-	~RALovi 1 1 1 1 1 1~
+	~RALovi 1 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RALovi.2da~
 	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D   K_C_HO~
 	~0x04000000 3~

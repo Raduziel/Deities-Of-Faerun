@@ -15,7 +15,7 @@ ADD_KIT ~RAUmbeCT~
 	~RAUmbeCT 3 3 15 3 13 3~
     ~RAUmbeCT 3 3 15 3 13 3~
 	~RAUmbeCT 0 0 0 0 0 0 0 0 1~
-	~RAUmbeCT 1 1 1 1 1 1~
+	~RAUmbeCT 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAUmbeCT.2da~
 	~K_CT_H K_CT_HO K_CT_HE~
 	~0x04000000 15~

@@ -15,7 +15,7 @@ ADD_KIT ~RATempFC~
 	~RATempFC 14 3 3 3 12 3~
     ~RATempFC 14 3 3 3 12 3~
 	~RATempFC 0 0 0 0 0 0 1 1 1~
-	~RATempFC 1 1 1 1 1 1~
+	~RATempFC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATempFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_D   K_FC_HO~
 	~0x04000000 8~

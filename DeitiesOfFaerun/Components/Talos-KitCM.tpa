@@ -15,7 +15,7 @@ ADD_KIT ~RATaloCM~
 	~RATaloCM 13 3 3 3 14 3~
     ~RATaloCM 13 3 3 3 14 3~
 	~RATaloCM 0 0 0 0 0 0 0 0 1~
-	~RATaloCM 1 1 1 1 1 1~
+	~RATaloCM 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATaloCM.2da~
 	~K_CM_H K_CM_HE K_CM_D K_CM_HO K_CM_E K_CM_HL K_CM_G~
 	~0x04000000 14~

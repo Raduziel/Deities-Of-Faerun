@@ -13,7 +13,7 @@ ADD_KIT ~RABara~
 	~RABara 3 15 3 15 9 3~
     ~RABara 3 15 3 15 9 3~
 	~RABara 0 0 0 1 0 0 0 0 0~
-	~RABara 1 1 1 1 1 1~
+	~RABara 0 0 1 1 0 0~
 	~DeitiesOfFaerun\Tables\RABara.2da~
 	~K_C_G~
 	~0x04000000 3~

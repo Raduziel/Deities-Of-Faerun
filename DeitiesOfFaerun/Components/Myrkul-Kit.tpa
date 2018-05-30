@@ -13,7 +13,7 @@ ADD_KIT ~RAMyrk~
 	~RAMyrk 14 3 3 14 14 3~
     ~RAMyrk 14 3 3 14 14 3~
 	~RAMyrk 0 0 0 0 0 1 0 0 0~
-	~RAMyrk 1 1 1 1 1 1~
+	~RAMyrk 0 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RAMyrk.2da~
 	~K_C_H~
 	~0x04000000 3~

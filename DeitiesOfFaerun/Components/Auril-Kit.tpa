@@ -13,7 +13,7 @@ ADD_KIT ~RAAuri~
 	~RAAuri 3 3 13 3 12 3~
     ~RAAuri 3 3 13 3 12 3~
 	~RAAuri 0 0 0 0 0 1 0 0 0~
-	~RAAuri 1 1 1 1 1 1~
+	~RAAuri 0 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RAAuri.2da~
 	~K_C_H K_C_HO K_C_HE K_C_D~
 	~0x04000000 3~

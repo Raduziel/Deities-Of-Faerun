@@ -15,7 +15,7 @@ ADD_KIT ~RABaraCT~
 	~RABaraCT 3 15 3 15 9 3~
     ~RABaraCT 3 15 3 15 9 3~
 	~RABaraCT 0 0 0 1 0 0 0 0 0~
-	~RABaraCT 1 1 1 1 1 1~
+	~RABaraCT 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RABaraCT.2da~
 	~K_CT_G~
 	~0x04000000 15~

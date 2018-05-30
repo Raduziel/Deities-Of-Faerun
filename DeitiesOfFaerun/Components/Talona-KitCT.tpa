@@ -15,7 +15,7 @@ ADD_KIT ~RATlnaCT~
 	~RATlnaCT 3 3 14 3 14 3~
     ~RATlnaCT 3 3 14 3 14 3~
 	~RATlnaCT 0 0 0 0 0 0 0 0 1~
-	~RATlnaCT 1 1 1 1 1 1~
+	~RATlnaCT 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATlnaCT.2da~
 	~K_CT_H   K_CT_HE   K_CT_E   K_CT_G   K_CT_HL   K_CT_D   K_CT_HO~
 	~0x04000000 15~

@@ -15,7 +15,7 @@ ADD_KIT ~RALoviFC~
 	~RALoviFC 3 3 15 3 15 3~
     ~RALoviFC 3 3 15 3 15 3~
 	~RALoviFC 0 0 1 0 0 0 0 0 0~
-	~RALoviFC 1 1 1 1 1 1~
+	~RALoviFC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RALoviFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_E   K_FC_G   K_FC_HL   K_FC_D   K_FC_HO~
 	~0x04000000 8~

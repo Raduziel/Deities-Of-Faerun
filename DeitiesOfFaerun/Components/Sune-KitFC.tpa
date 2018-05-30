@@ -15,7 +15,7 @@ ADD_KIT ~RASuneFC~
 	~RASuneFC 3 3 3 3 12 16~
     ~RASuneFC 3 3 3 3 12 16~
 	~RASuneFC 0 0 0 0 0 0 1 0 0~
-	~RASuneFC 1 1 1 1 1 1~
+	~RASuneFC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RASuneFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_E~
 	~0x04000000 8~

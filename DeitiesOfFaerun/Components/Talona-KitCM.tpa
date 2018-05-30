@@ -15,7 +15,7 @@ ADD_KIT ~RATlnaCM~
 	~RATlnaCM 3 3 14 3 14 3~
     ~RATlnaCM 3 3 14 3 14 3~
 	~RATlnaCM 0 0 0 0 0 0 0 0 1~
-	~RATlnaCM 1 1 1 1 1 1~
+	~RATlnaCM 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATlnaCM.2da~
 	~K_CM_H   K_CM_HE   K_CM_E   K_CM_G   K_CM_HL   K_CM_D   K_CM_HO~
 	~0x04000000 14~

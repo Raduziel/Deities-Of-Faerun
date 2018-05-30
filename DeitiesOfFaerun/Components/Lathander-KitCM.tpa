@@ -15,7 +15,7 @@ ADD_KIT ~RALathCM~
 	~RALathCM 3 3 3 3 14 12~
     ~RALathCM 3 3 3 3 14 12~
 	~RALathCM 0 0 0 1 0 0 0 0 0~
-	~RALathCM 1 1 1 1 1 1~
+	~RALathCM 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RALathCM.2da~
 	~K_CM_H K_CM_HE K_CM_D K_CM_HO K_CM_E K_CM_HL K_CM_G~
 	~0x04000000 14~

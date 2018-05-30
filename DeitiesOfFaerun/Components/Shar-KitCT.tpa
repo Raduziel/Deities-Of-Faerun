@@ -15,7 +15,7 @@ ADD_KIT ~RASharCT~
 	~RASharCT 14 3 3 3 12 3~
     ~RASharCT 14 3 3 3 12 3~
 	~RASharCT 0 0 0 0 0 1 0 0 0~
-	~RASharCT 1 1 1 1 1 1~
+	~RASharCT 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RASharCT.2da~
 	~K_CT_H   K_CT_HE   K_CT_E   K_CT_G   K_CT_HO   K_CT_HL   K_CT_D~
 	~0x04000000 15~

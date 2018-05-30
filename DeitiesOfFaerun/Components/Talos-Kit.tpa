@@ -13,7 +13,7 @@ ADD_KIT ~RATalo~
 	~RATalo 13 3 3 3 14 3~
     ~RATalo 13 3 3 3 14 3~
 	~RATalo 0 0 0 0 0 0 0 0 1~
-	~RATalo 1 1 1 1 1 1~
+	~RATalo 1 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RATalo.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
 	~0x04000000 3~

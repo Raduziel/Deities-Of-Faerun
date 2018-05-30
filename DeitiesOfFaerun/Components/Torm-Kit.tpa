@@ -13,7 +13,7 @@ ADD_KIT ~RATorm~
 	~RATorm 3 3 12 3 15 3~
     ~RATorm 3 3 12 3 15 3~
 	~RATorm 1 0 0 0 0 0 0 0 0~
-	~RATorm 1 1 1 1 1 1~
+	~RATorm 1 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATorm.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO~
 	~0x04000000 3~

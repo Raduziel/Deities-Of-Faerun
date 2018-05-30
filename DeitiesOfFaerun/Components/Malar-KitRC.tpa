@@ -15,7 +15,7 @@ ADD_KIT ~RAMalaRC~
 	~RAMalaRC 13 3 3 3 12 3~
     ~RAMalaRC 13 3 3 3 12 3~
 	~RAMalaRC 0 0 0 0 0 0 0 0 1~
-	~RAMalaRC 1 1 1 1 1 1~
+	~RAMalaRC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAMalaRC.2da~
 	~K_CR_H K_CR_HO~
 	~0x04000000 18~

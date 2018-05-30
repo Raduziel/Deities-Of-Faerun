@@ -13,7 +13,7 @@ ADD_KIT ~RAOghm~
 	~RAOghm 3 3 3 12 14 3~
     ~RAOghm 3 3 3 12 14 3~
 	~RAOghm 0 0 0 0 1 0 0 0 0~
-	~RAOghm 1 1 1 1 1 1~
+	~RAOghm 0 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RAOghm.2da~
 	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D~
 	~0x04000000 3~

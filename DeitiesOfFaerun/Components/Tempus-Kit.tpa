@@ -13,7 +13,7 @@ ADD_KIT ~RATemp~
 	~RATemp 14 3 3 3 12 3~
     ~RATemp 14 3 3 3 12 3~
 	~RATemp 0 0 0 0 0 0 1 1 1~
-	~RATemp 1 1 1 1 1 1~
+	~RATemp 1 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATemp.2da~
 	~K_C_H   K_C_HE   K_C_D   K_C_HO~
 	~0x04000000 3~

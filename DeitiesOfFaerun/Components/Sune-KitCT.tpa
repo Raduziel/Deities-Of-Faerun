@@ -15,7 +15,7 @@ ADD_KIT ~RASuneCT~
 	~RASuneCT 3 3 3 3 12 16~
     ~RASuneCT 3 3 3 3 12 16~
 	~RASuneCT 0 0 0 0 0 0 1 0 0~
-	~RASuneCT 1 1 1 1 1 1~
+	~RASuneCT 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RASuneCT.2da~
 	~K_CT_H   K_CT_HE   K_CT_E~
 	~0x04000000 15~
