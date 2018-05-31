@@ -1,0 +1,143 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						            Cleric/Mage
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAKitCM~
+    ~RAKitCM 0 0 0 0 1 1 0 1~
+    ~RAKitCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAKitCM 3 3 3 3 3 3~
+	~RAKitCM 0 0 0 0 0 0~
+	~RAKitCM 3 3 3 3 3 3~
+    ~RAKitCM 3 3 3 3 3 3~
+	~RAKitCM 1 1 1 1 1 1 1 1 1~
+	~RAKitCM 0 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RAKitC.2da~
+	~~
+	~0x04000000 14~
+	~CM0~
+	~* * * * * * * * * * * * * * * * * * * *~
+	SAY ~cleric/mage~
+	SAY ~Cleric/Mage~
+	SAY ~CLERIC/MAGE~
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAKitCM~
+		clswpbon = ~0 0 3~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAKitCM~
+      kit_clab = ~RAKitC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~major~
+	s_Death 		= ~major~
+	s_Benediction 	= ~major~
+	s_Destruction 	= ~major~
+	s_Protection 	= ~major~
+	s_War 			= ~major~
+	s_Exploration   = ~major~
+	s_Knowledge 	= ~major~
+	s_Deception 	= ~major~
+	s_Thought 		= ~major~
+	s_Dread 		= ~major~
+	s_Vigor 		= ~major~
+	s_Affliction 	= ~major~
+	s_Animal 		= ~major~
+	s_Plant 		= ~major~
+	s_Earth 		= ~major~
+	s_Water 		= ~major~
+	s_Air 			= ~major~
+	s_Fire 			= ~major~
+	s_Light 		= ~major~
+	s_Shadow 		= ~major~
+	s_Magic 		= ~major~
+	s_Perdition     = ~major~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+//Kits to Enemies (Fix APR issue) - Thanks, Kjeron!
+
+ACTION_FOR_EACH file IN ~NPCLEVEL~ ~NPCLVL25~ ~NPCLVLDS~ BEGIN
+	ACTION_CLEAR_ARRAY ~READ_ENTRIES~
+	COPY_EXISTING	~%file%.2da~	override
+		COUNT_2DA_COLS	cols
+		READ_2DA_ENTRIES_NOW		~READ_ENTRIES~	cols
+		FOR (i = 0; i < READ_ENTRIES; ++i)	BEGIN
+			FOR (j= 0; j < cols; ++j)	BEGIN
+				READ_2DA_ENTRY_FORMER ~READ_ENTRIES~ i j name
+				TO_UPPER name
+				SET	$party_npc(~%name%~) = 1
+			END
+		END
+	BUT_ONLY	IF_EXISTS
+END
+
+COPY_EXISTING_REGEXP	~.*\.CRE~	override
+	TEXT_SPRINT	file ~%SOURCE_RES%~
+	TO_UPPER file
+	PATCH_IF	!VARIABLE_IS_SET	$party_npc(~%file%~)	BEGIN
+		READ_BYTE	0x273	class
+		READ_LONG	0x244	kit
+		PATCH_IF	(kit = 0) OR (kit = 0x40000000)	BEGIN
+			PATCH_MATCH	class	WITH
+				14	BEGIN	SET	kitid = RAKitCM + 0x4000 	WRITE_SHORT	0x246	kitid 	READ_SHORT	0x244 id 	WRITE_SHORT	0x246 id	WRITE_SHORT	0x244	0 END
+			DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//EoF
