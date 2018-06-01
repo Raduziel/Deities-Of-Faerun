@@ -29,7 +29,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATaloFC~
 		clascolr = ~205 97 142 41 96~
-		clswpbon = ~0 0 3~
+		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 

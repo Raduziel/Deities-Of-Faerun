@@ -29,7 +29,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASuneFC~
 		clascolr = ~80 81 46 41 101~
-		clswpbon = ~0 0 3~
+		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 0 0 0 0~
 END
 
