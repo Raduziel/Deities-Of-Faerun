@@ -1854,4 +1854,79 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Doomguide of Kelemvor
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2601 = ~doomguide of kelemvor~
+@2602 = ~Doomguide of Kelemvor~
+@2603 = ~DOOMGUIDE OF KELEMVOR: Kelemvor (KELL-ehm-vor), a former associate of Midnight, Cyric, and Adon during the events of the Godswar, inherited the portfolio of the god of the dead when Cyric lost those responsibilities following the Cyrinishad debacle. The first official act of the newly created god of the dead was to turn Cyric's Bone Castle into a gleaming tower of crystal, a symbol that this particular god of the dead would hide nothing from his subjects. He intends to impart justice among the dead in an even-handed and fair manner.
+
+Kelemvor is kind, just, forthright, and earnest, though stern at times. He is not terribly clever for a power and tends to try to solve what he perceives as his immediate problems with direct action. Though he means well, he does not always see the difficulties down the road caused by short-term solutions.
+
+Kelemvor has an unexpected ally, at least in terms of traditional godly alliances. He and Mystra, formerly the human Midnight, remain close. They were in love during their mortal lives, but whether this romance has kindled during their godly tenure is a matter they have thus far kept private.
+
+Cyric, who lost his death portfolio to Kelemvor, is Kelemvor's bitter enemy. Cyric views Kelemvor as someone who pointedly and maliciously set out to steal a part of Cyric's rightful power. One traditional foe of the Faerunian god of the dead, Lathander, has not declared against Kelemvor, but is waiting to see if his actions live up to his promises.
+
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: Bludgeoning and piercing only.
+
+Advantages:
+
+- Commands Undead as a priest two levels higher.
+- Gains +1 Saving Throws vs. Paralyzation/Poison/Death.
+- Gains +2 bonus to AC, Thac0 and damage vs. undead.
+- May use the Chilling Scythe special ability once per day, starting at level 5.
+- Gains permanently the benefits of Negative Plane Protection at level 7.
+- May use the Summon Minor Death special ability once per day, starting at level 10.
+
+CHILLING SCYTHE
+	
+Through this spell the Doomguide creates a magical scythe especially effective against the undead.
+
+SUMMON MINOR DEATH:
+
+This spell summons a powerful skeleton that stays at the Doomguide's service for 1 turns.~
+@2604 = ~Summon Minor Death
+(Necromancy)
+
+Level: 6
+Sphere: Death
+Range: 35
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.~
+@2605 = ~Chilling Scythe~
+@2606 = ~Chilling Scythe
+(Evocation, Necromancy)
+
+Level: 3
+Sphere: War
+Range: 0
+Duration: 1 turn 
+Casting Time: 5
+Area of Effect: One magical scythe
+Saving Throw: None
+
+This spell creates an over-sized but weightless scythe that can be wielded by any living creature either as a tool or as weapon. The scythe is a two-handed, 7-foot-long device that is a +2 enchanted weapon dealing 2d4+2 points of slashing damage plus chilling for a further 1d4 points of magic damage - this chilling damage is caused by draining of life force, not cold. A Chilling Scythe has a speed factor of 5 and the Doomguide wields it as if <PRO_HESHE> is proficient.
+
+If a Chilling Scythe even touches an undead creature it delivers 4d6 points of magic damage to the undead and hurls it helplessly 20 feet away from the Doomguide.~
+@2607 = ~Holy Symbol of Kelemvor~
+@2608 = ~Only the most worthy and devoted servants of the Judge of the Damned are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF
