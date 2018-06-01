@@ -12,7 +12,7 @@ ADD_KIT ~RAKele~
 	~RAKele 0 0 0 0 0 0~
 	~RAKele 3 3 12 3 14 3~
     ~RAKele 3 3 12 3 14 3~
-	~RAKele 0 0 1 0 0 0 0 0 0~
+	~RAKele 0 1 0 0 0 0 0 0 0~
 	~RAKele 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAKele.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
@@ -120,9 +120,9 @@ COPY "DeitiesOfFaerun\Spl\RAKELE1.spl" override SAY NAME1 @2605 SAY UNIDENTIFIED
 
 COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESCYT.itm" override SAY NAME1 @2605 SAY NAME2 @2605      //Chilling Scythe (Itm)
 
-COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESCYT.spl" override                                      //Chilling Scythe (Spl)
+COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESBLD.spl" override                                      //Chilling Scythe (Spl)
 
-COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESCYT.bam" override                                      //Chilling Scythe (Bam)
+COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESBLD.bam" override                                      //Chilling Scythe (Bam)
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

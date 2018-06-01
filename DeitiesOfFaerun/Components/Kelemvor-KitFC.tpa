@@ -15,7 +15,7 @@ ADD_KIT ~RAKeleFC~
 	~RAKeleFC 0 0 0 0 0 0~
 	~RAKeleFC 3 3 12 3 14 3~
     ~RAKeleFC 3 3 12 3 14 3~
-	~RAKeleFC 0 0 1 0 0 0 0 0 0~
+	~RAKeleFC 0 1 0 0 0 0 0 0 0~
 	~RAKeleFC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAKeleFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
