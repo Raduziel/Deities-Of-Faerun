@@ -188,9 +188,6 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~) parameter2 = 9 special = RESOLVE_STR_REF (@2602) END
 	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~) parameter2 = 9 special = RESOLVE_STR_REF (@2602) END
-	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D1") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~) parameter2 = 9 special = RESOLVE_STR_REF (@2602) END
 	END
