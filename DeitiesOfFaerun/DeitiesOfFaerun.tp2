@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.7.2~
+VERSION ~1.7.5~
 
 ALWAYS
 
@@ -61,7 +61,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tempus-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//				 STRIFELEADER OF CYRIC (IWDEE, EET, BGEE and BG2EE)
+//				   STRIFELEADER OF CYRIC (EET, BGEE and BG2EE)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -345,6 +345,19 @@ REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Myrkul-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Myrkul-KitCM.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				          DOOMGUIDE OF KELEMVOR (EET BGEE BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @47
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-KitFC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
