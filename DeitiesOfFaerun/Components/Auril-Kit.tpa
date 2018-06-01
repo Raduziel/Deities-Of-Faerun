@@ -137,7 +137,7 @@ COPY "DeitiesOfFaerun\Spl\RAAURI2.spl" override SAY NAME1 @1706 SAY UNIDENTIFIED
 
 COPY "DeitiesOfFaerun\Spl\RAAURI3.spl" override SAY NAME1 @1708 SAY UNIDENTIFIED_DESC @1709    //Frost Sword
 
-COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.itm" override SAY NAME1 @1708 SAY NAME2 @1708      //Frost Sword (Bam)
+COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.itm" override SAY NAME1 @1708 SAY NAME2 @1708      //Frost Sword (Itm)
 
 COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.bam" override                                      //Frost Sword (Bam)
     LPF UPDATE_PVRZ_INDICES
