@@ -651,6 +651,40 @@ This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, A
 
 ====================================================================================================================================================================
 
+18) KELEMVOR
+
+Chilling Scythe
+(Evocation, Necromancy)
+
+Level: 3
+Sphere: War
+Range: 0
+Duration: 1 turn 
+Casting Time: 5
+Area of Effect: One magical scythe
+Saving Throw: None
+
+This spell creates an over-sized but weightless scythe that can be wielded by any living creature either as a tool or as weapon. The scythe is a two-handed, 7-foot-long device that is a +2 enchanted weapon dealing 2d4+2 points of slashing damage plus chilling for a further 1d4 points of magic damage - this chilling damage is caused by draining of life force, not cold. A Chilling Scythe has a speed factor of 5 and the Doomguide wields it as if <PRO_HESHE> is proficient.
+
+If a Chilling Scythe even touches an undead creature it delivers 4d6 points of magic damage to the undead and hurls it helplessly 20 feet away from the Doomguide.
+
+---
+
+Summon Minor Death
+(Necromancy)
+
+Level: 6
+Sphere: Death
+Range: 35
+Duration: 1 turns
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.
+
+
+====================================================================================================================================================================
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
@@ -693,6 +727,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Helm: Helm
 
 - Ilmater: Lathander
+
+- Kelemvor: Helm
 
 - Lathander: Lathander
 
