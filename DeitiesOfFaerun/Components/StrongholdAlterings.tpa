@@ -5,7 +5,7 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-//	ACTION_DEFINE_ARRAY	$SH(~%2da%~)	BEGIN	~KIDID~	=> 0	~MULTIID1~ => 0	~MULTIID2~ => 0	etc...	END
+//	ACTION_DEFINE_ARRAY	$SH(~%2da%~)	BEGIN	~KITID~	=> 0	~MULTIID1~ => 0	~MULTIID2~ => 0	etc...	END
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAAURI~)	BEGIN	~RAAURI~ => 0	~RAAURICM~ => 0	END	//	Auril	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABAER~)	BEGIN	~RABAER~ => 0	~RABAERCM~ => 0	~RABAERRC~ => 0	END	//	Baervan	->	Ranger, Druid
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABANE~)	BEGIN	~RABANE~ => 0	~RABANEFC~ => 0	END	//	Bane	->	Fighter, Talos
@@ -479,7 +479,7 @@ END
 		BUT_ONLY
 	END
 
-//Let Baervan and Malar get the Druid's Stronghold 
+//Let Kits get the Druid's Stronghold 
 	OUTER_SPRINT negate ~~
 	OUTER_SPRINT extend ~~
 	OUTER_SET count = 1
