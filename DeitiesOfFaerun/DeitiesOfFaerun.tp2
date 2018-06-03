@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.7.5~
+VERSION ~1.7.6~
 
 ALWAYS
 
@@ -520,16 +520,16 @@ INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Gavin.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//				       YVETTE, THE HEARTWARDER OF SUNE
+//				       DUSKY, THE SILENTWALKER OF MASK
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 
-//BEGIN @20
-//REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
-//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RASune.2da~) @5
-//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~YxYve1.cre~) @6
-//INCLUDE  ~DeitiesOfFaerun/Components/Sune-Yvette.tpa~
+BEGIN @20
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAMask.2da~) @5
+REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~l#dusky.cre~) @6
+INCLUDE  ~DeitiesOfFaerun/Components/Mask-Dusky.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
