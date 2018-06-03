@@ -22,6 +22,7 @@ COPY_EXISTING_REGEXP GLOB ~.*dusky.cre$~ ~override~
 	  WRITE_SHORT   0x244 0
       WRITE_BYTE    0x246 "%kit%"
       WRITE_BYTE    0x247 0x40
+	  REMOVE_CRE_ITEM ~SHLD08~
 BUT_ONLY
 
 //EoF
