@@ -7,6 +7,7 @@
 
 //	ACTION_DEFINE_ARRAY	$SH(~%2da%~)	BEGIN	~KITID~	=> 0	~MULTIID1~ => 0	~MULTIID2~ => 0	etc...	END
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAAURI~)	BEGIN	~RAAURI~ => 0	~RAAURICM~ => 0					END	//	Auril	->	Talos
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAAURI~)	BEGIN	~RAAZUT~ => 0	~RAAZUTCM~ => 0					END	//	Azuth	->	Wizard
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABAER~)	BEGIN	~RABAER~ => 0	~RABAERCM~ => 0	~RABAERRC~ => 0	END	//	Baervan	->	Ranger, Druid
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABANE~)	BEGIN	~RABANE~ => 0	~RABANEFC~ => 0					END	//	Bane	->	Fighter, Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABARA~)	BEGIN	~RABARA~ => 0	~RABARACM~ => 0	~RABARACT~ => 0	END	//	Baravar	->	Thief
@@ -159,6 +160,7 @@
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~	RET	extend	negate	count	END	//	Auril
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABANE~	RET	extend	negate	count	END	//	Bane
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
@@ -241,6 +243,7 @@ END
 //Remove Kits from Talos' quest-line
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~	RET	extend	negate	count	END	//	Clangeddin
@@ -317,6 +320,7 @@ END
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~	RET	extend	negate	count	END	//	Auril
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABANE~	RET	extend	negate	count	END	//	Bane
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
@@ -396,6 +400,7 @@ END
 //	Add Kits to non-Cleric quest-line (scripts + dialogue)
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~	RET	extend	negate	count	END	//	Mystra
@@ -436,6 +441,7 @@ END
 	OUTER_SPRINT extend ~~
 	OUTER_SET count = 1
 	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~	RET	extend	negate	count	END	//	Mystra
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~	RET	extend	negate	count	END	//	Oghma
 	//	Kit Headers	End
