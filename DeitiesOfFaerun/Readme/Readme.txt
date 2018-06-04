@@ -714,6 +714,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Auril: Talos
 
+- Azuth: Wizard
+
 - Baervan Wildwanderer : Druid, Ranger
 
 - Bane: Talos, Fighter
