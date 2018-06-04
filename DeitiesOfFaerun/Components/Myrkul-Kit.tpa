@@ -66,28 +66,28 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
     clab_name 	= EVAL ~%mod_clab%~
 	class 			= ~cleric~	 
 	s_Life 			= ~x~
-	s_Death 		= ~x~
-	s_Benediction 	= ~minor~
+	s_Death 		= ~major~
+	s_Benediction 	= ~x~
 	s_Destruction 	= ~x~
-	s_Protection 	= ~x~
+	s_Protection 	= ~minor~
 	s_War 			= ~x~
 	s_Exploration   = ~x~
-	s_Knowledge 	= ~x~
-	s_Deception 	= ~major~
-	s_Thought 		= ~major~
+	s_Knowledge 	= ~minor~
+	s_Deception 	= ~x~
+	s_Thought 		= ~minor~
 	s_Dread 		= ~major~
 	s_Vigor 		= ~x~
-	s_Affliction 	= ~minor~
+	s_Affliction 	= ~major~
 	s_Animal 		= ~x~
 	s_Plant 		= ~x~
-	s_Earth 		= ~major~
+	s_Earth 		= ~x~
 	s_Water 		= ~x~
 	s_Air 			= ~x~
 	s_Fire 			= ~x~
 	s_Light 		= ~x~
 	s_Shadow 		= ~major~
 	s_Magic 		= ~minor~
-	s_Perdition     = ~minor~
+	s_Perdition     = ~major~
 END
 
 LAM ~READ_FNP_KIT_INFO~
