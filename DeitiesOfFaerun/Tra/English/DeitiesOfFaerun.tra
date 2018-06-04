@@ -1929,4 +1929,54 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Magistrati of Azuth
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2701 = ~magistrati of azuth~
+@2702 = ~Magistrati of Azuth~
+@2703 = ~MAGISTRATI OF AZUTH: Azuth (Ah-ZOOTH) is the god of wizards and mages and to a much lesser degree, all spellcasters, as opposed to Mystra, who is the goddess of all magic. Azuth is Mystra's servant, friend, and advisor. This last role has become even more important in the years since the Time of Troubles. Before the Godswar, he and Mystra were much closer and very affectionate toward one another, but Azuth's relationship with Midnight/Mystra is much more professional. He regards the new Mystra as an inexperienced daughter facing a taxing and complex job whom he must coach to allow her to best perform her duties. In religious art, Azuth is most often portrayed as a bearded old man unbent by age, wielding a stout, gem-topped staff.
+
+Savras the All-Seeing, a rival god of mages whom Azuth defeated, was Azuth's foe for centuries. Savras now serves Azuth, albeit uneasily, as a demipower of diviners and truth-speakers. The two deities seem to cautiously be working toward friendship and a formal division of duties, albeit with Savras continuing to serve Azuth. Azuth also works closely to guide the Magister, the mortal spellwielding champion of magic who serves Mystra. Likewise, Velsharoon, demipower of necromancy, must pay at least lip service to Azuth's commands.
+
+Azuth is a sober sort of father-figure deity, but he is not humorless or mean-spirited. He has a rather dry, sardonic wit and appreciates plays on words and subtle humor. He has perfected a straight-faced delivery to such a degree that often those who hear him speak are left wondering whether some of his comments were said seriously or in jest. When he is in good humor, he likes to present those who have called on him with small gifts, such as flowers in unusual colors, magical fabric of elegant drape, or edible delicacies. When he is upset, his wrath is terrible to behold as the air crackles with magical energy about him that seems to flow both into and out of his eyes and the Old Staff, a divine artifact of ancient construction that he wields to devastating effect.
+
+Armor: None.
+Weapon: Bludgeoning only.
+
+Advantages:
+
+- Gains a bonus of +2 bonus to spellcasting time.
+- May cast the some wizard spells as cleric spells as they were one circle higher, starting at level 3.
+- May cast Magic Missile once per day as a special ability, starting at level 7.
+- May cast Fireball once per day as a special ability, starting at level 9.
+
+LIST OF KNOWN WIZARD SPELLS:
+
+Level 3: Shield and Armor (second circle)
+
+Level 5: Blur and Luck (third circle)
+
+Level 7: Remove Magic and Spell Thrust (fourth circle)
+
+Level 9: Minor Globe of Invulnerability and Secret Word (fifth circle)
+
+Level 11: Spell Shield and Breach (sixth circle)
+
+Level 14: Globe of Invulnerability and Protection From Magic Energy (seventh circle)~
+@2704 = ~Holy Symbol of Azuth~
+@2705 = ~Only the most worthy and devoted servants of the Lord of Spellcraft are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF
