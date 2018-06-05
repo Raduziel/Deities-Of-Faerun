@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.7.6~
+VERSION ~1.7.7~
 
 ALWAYS
 
@@ -349,7 +349,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Myrkul-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//				          DOOMGUIDE OF KELEMVOR (EET BGEE BG2EE)
+//				      DOOMGUIDE OF KELEMVOR (EET, BGEE and BG2EE)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -358,6 +358,18 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-KitFC.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				    MAGISTRATI OF AZUTH (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @48
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Azuth-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Azuth-KitCM.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
