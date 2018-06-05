@@ -116,38 +116,34 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY "DeitiesOfFaerun\Spl\RAAZU11.spl" override 	  //Shield
+COPY_EXISTING ~SPWI102.spl~ ~override/RAAZUT1.spl~    //Armor
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 2
 
-COPY "DeitiesOfFaerun\Spl\RAAZU12.spl" override 	  //Armor
+COPY_EXISTING ~SPWI217.spl~ ~override/RAAZUT2.spl~    //Agannazar's Scorcher
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 3
 
-COPY "DeitiesOfFaerun\Spl\RAAZU21.spl" override 	  //Luck
+COPY_EXISTING ~SPWI325.spl~ ~override/RAAZUT3.spl~    //Melf's Minute Meteors
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 4
 
-COPY "DeitiesOfFaerun\Spl\RAAZU22.spl" override 	  //Vocalize
+COPY_EXISTING ~SPWI413.spl~ ~override/RAAZUT4.spl~    //Otiluke's Resilient Sphere
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 5
 
-COPY "DeitiesOfFaerun\Spl\RAAZU31.spl" override 	  //Remove Magic
+COPY_EXISTING ~SPWI510.spl~ ~override/RAAZUT5.spl~    //Spell Immunity
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 6
 
-COPY "DeitiesOfFaerun\Spl\RAAZU32.spl" override 	  //Spell Thrust
+COPY_EXISTING ~SPWI606.spl~ ~override/RAAZUT6.spl~    //Protection From Magic Energy
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 7
 
-COPY "DeitiesOfFaerun\Spl\RAAZU41.spl" override 	  //Secret Word
-
-COPY "DeitiesOfFaerun\Spl\RAAZU42.spl" override 	  //Minor Globe of Invulnerability
-
-COPY "DeitiesOfFaerun\Spl\RAAZU51.spl" override 	  //Spell Shield
-
-COPY "DeitiesOfFaerun\Spl\RAAZU52.spl" override 	  //Breach
-
-COPY "DeitiesOfFaerun\Spl\RAAZU61.spl" override 	  //Globe of Invulnerability
-
-COPY "DeitiesOfFaerun\Spl\RAAZU62.spl" override 	  //Protection from Magic Energy
-
-COPY "DeitiesOfFaerun\Spl\RAAZU71.spl" override 	  //Ruby Ray of Reversal
-
-COPY "DeitiesOfFaerun\Spl\RAAZU72.spl" override       //Khelben's Warding Whip
-
-COPY_EXISTING ~SPWI112.spl~ ~override/RAAZUT1.spl~    //Magic Missile
+COPY_EXISTING ~SPWI112.spl~ ~override/RAAZUT7.spl~    //Magic Missile
 LPM SPELL_TO_INNATE
 
-COPY_EXISTING ~SPWI304.spl~ ~override/RAAZUT2.spl~    //Fireball
+COPY_EXISTING ~SPWI304.spl~ ~override/RAAZUT8.spl~    //Fireball
 LPM SPELL_TO_INNATE
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
