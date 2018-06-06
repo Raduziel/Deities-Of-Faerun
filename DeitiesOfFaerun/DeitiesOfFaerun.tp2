@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.7.7~
+VERSION ~1.7.8~
 
 ALWAYS
 
@@ -370,6 +370,18 @@ BEGIN @48
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Azuth-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Azuth-KitCM.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				    DOOMSCRIBE OF JERGAL (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @49
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Jergal-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Jergal-KitCM.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
