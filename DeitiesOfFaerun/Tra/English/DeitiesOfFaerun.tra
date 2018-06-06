@@ -1875,9 +1875,9 @@ Weapon: Bludgeoning and piercing only.
 
 Advantages:
 
-- Commands Undead as a priest two levels higher.
+- Turns Undead as a priest two levels higher.
 - Gains +1 Saving Throws vs. Paralyzation/Poison/Death.
-- Gains +2 bonus to AC, Thac0 and damage vs. undead.
+- Gains +2 bonus to AC, Saving Throws, Thac0 and damage vs. undead.
 - May use the Chilling Scythe special ability once per day, starting at level 5.
 - Gains permanently the benefits of Negative Plane Protection at level 7.
 - May use the Summon Minor Death special ability once per day, starting at level 10.
@@ -1968,6 +1968,68 @@ Level 11: Spell Immunity (sixth circle)
 Level 14: Protection From Magic Energy (seventh circle)~
 @2704 = ~Holy Symbol of Azuth~
 @2705 = ~Only the most worthy and devoted servants of the Lord of Spellcraft are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Doomscribe of Jergal
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2801 = ~doomscribe of jergal~
+@2802 = ~Doomscribe of Jergal~
+@2803 = ~DOOMSCRIBE OF JERGAL: Jergal (JER-gull), Lord of the End of Everything, is responsible for keeping records on the final disposition of all the spirits of the dead. He is the fatalistic undertaker who strives for order in death, anticipating the ever-encroaching termination of all things living. Jergal strives for an orderly accounting of the fate of the world as it slowly sinks into death. Few mortals are even aware of Jergal's existence except for a few sages studying ancient history.
+
+Jergal was Myrkul's predecessor as Lord of the Dead, although he apparently voluntarily relinquished that position to the Lord of Bones many centuries ago. Some sages believe Jergal held the portfolios of Bhaal and Bane at that time, as well, and was venerated as Nakasr by the Netherese survivor states. After stepping down from his position, Jergal became the Seneschal of Bone Castle, assisting Myrkul in the execution of his duties. In the intervening centuries, Jergal become the Forgotten One and faded into Myrkul's shadow.
+
+Jergal played no part in the Time of Troubles, but when Cyric succeeded Myrkul as Lord of the Dead, the Scribe of the Doomed continued to serve as the Seneschal of Bone Castle. A core component of his very being makes Jergal absolutely loyal to the current Lord of the Dead, regardless of who holds that office. From Jergal's action during Cyric's tenure, however, it is apparent that while Jergal is utterly loyal to the office of Lord of the Dead, he does have freedom to subtly undermine the current officeholder is she or he is not true to the position's responsibilities.
+
+Jergal seems to find working with Kelemvor, the new Lord of the Dead, much more to his personal satisfaction. The Forgotten One serves the Judge of the Damned as seneschal by maintaining careful records of all who enter the Crystal Spire, Kelemvor's new abode build on the rubble of the Bone Castle. It is possible that Jergal will regain some of his former prominence serving Kelemvor, but it is equally likely that the Seneschal of the Crystal Spire will pass on into death himself, having found a suitable successor to his old position. Regardless, the Scribe of the Doomed has little apparent interest in the living save for recording their final fates.
+
+Jergal retains a fondness from Netheril's heyday for the long-vanished Amaunator, valuing that ancient sun god's adherence to law and order, but he otherwise has few allies aside from Kelemvor, and even fewer friends. Following the events of the Cyrinishad debacle, Jergal has nothing but scorn for Cyric, the former Lord of the Dead, considering him anathema to the orderly dissolution of the universe. In the aftermath of Velsharoon's divine ascendance, Jergal spends much of his efforts in the Realms combating the Necromancer's efforts to prolong life into undeath and to thwart the orderly procession of death in the Realms.
+
+Jergal never angers, and always speaks with a disembodied, chilling voice that echoes with the dry whisper of a long forgotten crypt. His tone is always blind, his word fatalistic, and his demeanor excessively formal. Most mortals find the Forgotten One a shadowy, sinister figure who leaves a vague feeling of unease and enervation in his wake. Jergal is totally focused on death and perceives life as momentary existence before death's eternity. A few bards have noted that Jergal's philosophy and actions resemble a mortal attempting to tidy up his affairs and accounts before his imminent death.
+
+This monstrous scribe is depicted in his religion's art as a smooth gray face holding no features other than a pair of bulging yellow eyes. His body is nothing but a shadow-filled gray cloak which rises and falls as if buffeted by an unseen wind, and he wears white gloves that are supported by invisible hands and arms. 
+
+Armor: Any.
+Weapon: Bludgeoning only.
+
+Advantages:
+
+- Turns or Commands Undead as a priest one level higher.
+- Gains +1 Saving Throw bonus against spells using Necromancy magic.
+- Gains +2 bonus to AC and Saving Throws vs. undead.
+- May cast Ray of Enfeeblement once per day as a special ability, starting at level 1.
+- May cast Skull Trap once per day as a special ability, starting at level 3.
+- May cast Undead Ward once per day as a special ability, starting at level 5.
+- May cast Negative Plane Protection once per day as a special ability, starting at level 5.
+- May cast Animate Dead once per day as a special ability, starting at level 10.
+- May cast Energy Drain once per day as a special ability, starting at level 20.~
+@2804 = ~Undead Ward~
+@2805 = ~Undead Ward
+(Necromancy)
+
+Level: 5
+Sphere: Wards
+Range: 0
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 10-ft. radius
+Saving Throw: None
+
+This spell amplifies the influence a priest has over undead, though it is tied to the area surrounding the priest at the moment of its casting and does not move. Any undead creature entering the area of effect is affected as if turned by the priest that cast this spell. If the turning fails, the undead creature is immune to further turning attempts by the spell unless it leaves and reenters the area of effect.~
+@2806 = ~Holy Symbol of Jergal~
+@2807 = ~Only the most worthy and devoted servants of the Lord of the End of Everything are granted these powerful holy symbols.
 	
 STATISTICS:
 
