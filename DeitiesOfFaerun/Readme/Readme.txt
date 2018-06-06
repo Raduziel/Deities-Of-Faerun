@@ -730,6 +730,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Ilmater: Lathander
 
+- Jergal: Helm
+
 - Kelemvor: Helm
 
 - Lathander: Lathander
