@@ -1,0 +1,190 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Doomscribe of Jergal
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAJerg~
+    ~RAJerg 0 0 0 0 0 0 0 0~
+    ~RAJerg 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAJerg 3 3 3 11 9 3~
+	~RAJerg 0 0 0 0 0 0~
+	~RAJerg 3 3 3 11 9 3~
+    ~RAJerg 3 3 3 11 9 3~
+	~RAJerg 0 1 1 0 0 0 0 0 0~
+	~RAJerg 0 0 1 0 0 0~
+	~DeitiesOfFaerun\Tables\RAJerg.2da~
+	~K_C_H~
+	~0x04000000 3~
+	~Cl0~
+	~PLAT05 SHLD25 HELM17 * RING09 RING39 CLCK05 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * BLUN25 HAMM09 *~
+	SAY @2801
+	SAY @2802
+	SAY @2803
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAJerg~
+		clascolr = ~6 110 188 42 63~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~1 0 0 0 0 0 0~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+	INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+    STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~major~
+	s_Benediction 	= ~x~
+	s_Destruction 	= ~x~
+	s_Protection 	= ~x~
+	s_War 			= ~x~
+	s_Exploration   = ~minor~
+	s_Knowledge 	= ~major~
+	s_Deception 	= ~x~
+	s_Thought 		= ~major~
+	s_Dread 		= ~minor~
+	s_Vigor 		= ~x~
+	s_Affliction 	= ~major~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~minor~
+	s_Magic 		= ~x~
+	s_Perdition     = ~major~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RAJergF.spl" override
+
+COPY "DeitiesOfFaerun\Spl\RAHSJERG.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSJERG.itm" override SAY NAME1 @2806 SAY NAME2 @2806 SAY DESC @2807
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAJerg + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+COPY_EXISTING ~SPWI221.spl~ ~override/RAJERG1.spl~    //Ray of Enfeeblement
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI313.spl~ ~override/RAJERG2.spl~    //Skull Trap
+LPM SPELL_TO_INNATE
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~SPPR521.spl~ ~override/RAJERG3.spl~    //Undead Ward
+LPM SPELL_TO_INNATE
+
+END
+
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Jergal\Complement\UWARD.PRO~
+
+COPY "DeitiesOfFaerun\Spl\Import\Jergal\RAPR521.spl" ~override/RAJERG3.spl~  SAY NAME1 @2804 SAY  UNIDENTIFIED_DESC @2805
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %UWARD% END
+
+COPY "DeitiesOfFaerun\Spl\Import\Jergal\Complement"  override
+
+END
+
+COPY_EXISTING ~SPPR413.spl~ ~override/RAJERG4.spl~    //Negative Plane Protection
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI501.spl~ ~override/RAJERG5.spl~    //Animate Dead
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI914.spl~ ~override/RAJERG6.spl~    //Energy Drain
+LPM SPELL_TO_INNATE
+		  
+		  
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+	89 90 92 93 94 95 99 BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAJerg + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@2802)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY	
+	
+ACTION_FOR_EACH file IN ~JERGS~ ~JERGL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
