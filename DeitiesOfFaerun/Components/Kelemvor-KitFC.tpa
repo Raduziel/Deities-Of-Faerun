@@ -10,7 +10,7 @@ INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 
 ADD_KIT ~RAKeleFC~
     ~RAKeleFC 0 0 0 0 0 0 0 0~
-    ~RAKeleFC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 2 0 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAKeleFC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 2 0 2 2 2 2 2 2 2 2 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAKeleFC 3 3 12 3 14 3~
 	~RAKeleFC 0 0 0 0 0 0~
 	~RAKeleFC 3 3 12 3 14 3~
