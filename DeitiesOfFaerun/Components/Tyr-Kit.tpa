@@ -206,8 +206,6 @@ END
 
 //Hide the original kit
 
-ACTION_IF GAME_IS ~iwdee bg2ee~ BEGIN
-
 COPY_EXISTING
 ~K_C_H.2DA~  override
 ~K_C_HO.2DA~ override 
@@ -227,32 +225,6 @@ COPY_EXISTING
 		END
 	END
 BUT_ONLY
-
-END
-
-ACTION_IF GAME_IS ~bgee~ BEGIN
-
-COPY_EXISTING
-~K_C_H.2DA~  override
-~K_C_HO.2DA~ override 
-~K_C_HE.2DA~ override
-~K_C_HL.2DA~ override
-~K_C_E.2DA~  override
-~K_C_D.2DA~  override
-~K_C_G.2DA~  override
-	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
-	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
-		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
-		PATCH_MATCH kit WITH
-			38 BEGIN
-				REMOVE_2DA_ROW i 2
-			END
-			DEFAULT
-		END
-	END
-BUT_ONLY
-
-END
 
 //Hide the kit from Dual Classing
 
