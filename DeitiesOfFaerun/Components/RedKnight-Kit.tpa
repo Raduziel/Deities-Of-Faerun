@@ -1,0 +1,183 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						   Holy Strategist of the Red Knight
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RARedK~
+    ~RARedK 0 0 0 0 1 1 0 1~
+    ~RARedK 0 0 0 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RARedK 3 3 3 13 13 10~
+	~RARedK 0 0 0 0 0 0~
+	~RARedK 3 3 3 13 13 10~
+    ~RARedK 3 3 3 13 13 10~
+	~RARedK 0 1 0 0 0 0 0 0 0~
+	~RARedK 1 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RARedK.2da~
+	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
+	~0x04000000 3~
+	~Cl0~
+	~PLAT09 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * WAFLAIL HAMM09 *~
+	SAY @2901
+	SAY @2902
+	SAY @2903
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RARedK~
+		clascolr = ~198 29 47 46 195~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+LAF ~DEFINE_FNP_KIT_INFO~
+	INT_VAR
+	u_leather_armor 	= 0
+	u_chain_armor 		= 0
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+	STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~x~
+	s_Benediction 	= ~major~
+	s_Destruction 	= ~x~
+	s_Protection 	= ~x~
+	s_War 			= ~major~
+	s_Exploration   = ~major~
+	s_Knowledge 	= ~major~
+	s_Deception 	= ~minor~
+	s_Thought 		= ~minor~
+	s_Dread 		= ~x~
+	s_Vigor 		= ~major~
+	s_Affliction 	= ~x~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~x~
+	s_Magic 		= ~x~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RARedKF.spl" override
+
+COPY "DeitiesOfFaerun\Spl\RAHSREDK.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSREDK.itm" override SAY NAME1 @2908 SAY NAME2 @2908 SAY DESC @2909
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RARedK~)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+COPY_EXISTING ~SPWI301.spl~ ~override/RARedK1.spl~                                                       //Clairvoyance   
+LPM ~SPELL_TO_INNATE~                                                   	  
+		  
+COPY "DeitiesOfFaerun\Spl\RARedK2.spl" override SAY NAME1 @2904 SAY UNIDENTIFIED_DESC @2905              //Divination
+
+COPY "DeitiesOfFaerun\Spl\RARedK3.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907              //Consequence
+
+COPY_EXISTING ~SPWI421.spl~ ~override/RARedK4.spl~                                                       //Teleport Field   
+LPM ~SPELL_TO_INNATE~
+
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+	READ_ASCII	0x22 animation (2)
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RARedK~) parameter2 = 9 special = RESOLVE_STR_REF (@2902) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RARedK~) parameter2 = 9 special = RESOLVE_STR_REF (@2902) END
+	END
+END
+END
+BUT_ONLY
+
+ACTION_FOR_EACH file IN ~REDKS~ ~REDKL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~REDKDIVI~ ~REDKCONS~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
