@@ -47,20 +47,20 @@ LAF ~DEFINE_FNP_KIT_INFO~
 	u_hammers	 		= 1
 	u_maces 	 		= 1
 	u_flails 			= 1
-	u_axes 				= 0
-	u_daggers 			= 0
-	u_short_swords		= 0
-	u_long_swords		= 0
-	u_scimitars 		= 0
-	u_katanas 			= 0
-	u_bastard_swords 	= 0
-	u_2hand_swords 		= 0
-	u_halberds 			= 0
-	u_spears 	 		= 0
-	u_darts 			= 0
+	u_axes 				= 1
+	u_daggers 			= 1
+	u_short_swords		= 1
+	u_long_swords		= 1
+	u_scimitars 		= 1
+	u_katanas 			= 1
+	u_bastard_swords 	= 1
+	u_2hand_swords 		= 1
+	u_halberds 			= 1
+	u_spears 	 		= 1
+	u_darts 			= 1
 	u_slings	 		= 1
-	u_bows 				= 0
-	u_crossbows 		= 0
+	u_bows 				= 1
+	u_crossbows 		= 1
 
 	STR_VAR
     clab_name 	= EVAL ~%mod_clab%~
