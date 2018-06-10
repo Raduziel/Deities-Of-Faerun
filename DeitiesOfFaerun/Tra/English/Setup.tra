@@ -1,6 +1,7 @@
 /* ===================== *
  *         SETUP         *
  * ===================== */
+ 
 @1 = ~Base Cleric Changes (required for all components)~ 
 @2 = ~This component requires the Base Cleric changes~
 @3 = ~For your efforts and dedication, your deity and its Church have given you a powerful Holy Symbol~
@@ -50,5 +51,8 @@
 @47 = ~Install kit: Doomguide of Kelemvor~
 @48 = ~Install kit: Magistrati of Azuth~
 @49 = ~Install kit: Doomscribe of Jergal~
+@50 = ~Install kit: Holy Strategist of The Red Knight~
+@51 = ~Install kit: Necrophant of Velsharoon~
+@52 = ~Install kit: Sibylite of Savras~
 
 // EoF
