@@ -686,6 +686,39 @@ This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, 
 
 ====================================================================================================================================================================
 
+19) RED KNIGHT
+
+Divination
+(Divination)
+
+Level: 3
+Sphere: Knowledge
+Range: 0
+Duration: 1 turn
+Casting Time: 10
+Area of Effect: The caster
+Saving Throw: None
+
+This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> in the next moments. Due to this awareness, the caster becomes immune to backstabbing and gains a +2 bonus to Thac0, Armor Class and Saving Throws.
+
+---
+
+Consequence
+(Divination)
+
+Level: 5
+Sphere: Knowledge
+Range: 0
+Duration: 1 turn
+Casting Time: 10
+Area of Effect: The caster
+Saving Throw: None
+
+This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> and around <PRO_HIMHER> in the next moments. Due to this awareness, the caster becomes immune to backstabbing and gains a +2 bonus to Thac0, Armor Class, Saving Throws and can to detect traps that are close.
+
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -745,6 +778,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Mystra: Wizard
 
 - Oghma: Bard, Wizard
+
+- Red Knight: Helm, Fighter
 
 - Selûne: Lathander
 
