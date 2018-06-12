@@ -105,7 +105,7 @@ COPY "DeitiesOfFaerun\Spl\RARedKF.spl" override
 COPY "DeitiesOfFaerun\Spl\RAHSREDK.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSREDK.itm" override SAY NAME1 @2908 SAY NAME2 @2908 SAY DESC @2909
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSREDK.itm" override SAY NAME1 @2909 SAY NAME2 @2909 SAY DESC @2910
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
@@ -115,15 +115,25 @@ LPF ADD_ITEM_EQEFFECT
 			  timing = 2
 			  power = 1
 		  END
+		  
+ACTION_IF NOT FILE_EXISTS ~override/RAForeIc.bam~ BEGIN
+
+COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2908) STR_VAR bam_file = RAFOREIC RET iconfore = icon END
+
+END
 
 COPY_EXISTING ~SPWI301.spl~ ~override/RARedK1.spl~                                                       //Clairvoyance   
 LPM ~SPELL_TO_INNATE~                                                   	  
 		  
 COPY "DeitiesOfFaerun\Spl\RARedK2.spl" override SAY NAME1 @2904 SAY UNIDENTIFIED_DESC @2905              //Divination
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
 COPY "DeitiesOfFaerun\Spl\RARedK3.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907              //Consequence
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
-COPY_EXISTING ~SPWI421.spl~ ~override/RARedK4.spl~                                                       //Teleport Field   
+COPY_EXISTING ~SPWI721.spl~ ~override/RARedK4.spl~                                                       //Mass Invisibility   
 LPM ~SPELL_TO_INNATE~
 
 
