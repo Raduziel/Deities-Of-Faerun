@@ -2041,4 +2041,79 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				          Holy Strategist of The Red Knight
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@2901 = ~holy strategist of the red knight~
+@2902 = ~Holy Strategist of The Red Knight~
+@2903 = ~HOLY STRATEGIST OF THE RED KNIGHT: The Red Knight serves Tempus, the Lord of War, as the goddess of planning and strategy. She is portrayed as a dark-haired woman in blood-red armor, with a map of the Realms tightly clasped in her hands. The Red Knight keeps her true name secret from all but the Lord of Battles, as she realizes that if any power, mortal or divine, were to gain any measure of control over her, they would be privy to all the plots and stratagems of rulers throughout the Realms and the powers throughout the planes.
+
+The Red Knight is venerated by the Foehammer's followers in a secondary position to the Lord of Battles. Only since the Time of Troubles has a small priesthood distinct from that of the Foehammer arisen in her name. This small priesthood, owing it existence in part to the increasingly complex nature of war, is grudgingly tolerated by Tempurans and apparently encouraged by the Lord of Battles himself. Some sages speculate that Tempus has sponsored the Red Knight to the rank of demipower and encouraged her worship as a natural counterbalance to Garagos the Reaver, his mortal enemy.
+
+The Lady of Strategy is calm and logical in demeanor, but displays a great wealth of compassion, though she is unafraid to send her worshipers to their deaths when necessary to secure the objective of a plan. She rarely raises her voice and is said to love a good joke and have a throaty laugh. She dislikes flighty behavior, and looks unfavorably upon those who switch alliances often or capriciously.
+
+The Red Knight see Tempus as a father figure, and the two spend a great deal of time together. They sometimes hunt together or exchange tales in his feasting hall, but most often they are busy visiting the numerous fields of battle in Faerun or reviewing battles of times past. The Red Knight sees Valkur as her best ally in the disposition of naval conflicts, though her expectations of him sometimes exceed his demonstrated level of commitment to all but the protection of sailors. The Red Knight and Torm are similar in disposition, and their interests in battle and the duties of warriors coincide well. She is known to be fond of him, but whether they are in love or merely close friends is a matter they have kept very private. The Lady of Strategy dislikes Garagos from what she has been told of his behavior by Tempus, though she personally has not come to blows with him. Her animosity is reserved for Cyric, who she despies as the utmost of traitors and liars and a poor planner besides.
+
+During the Time of Troubles, the Red Knight was active in Tethyr defending the strife-torn nation against an army of monsters that threatened to surge forth from the Forest of Tethir. Her military genius was decisive in numerous battles where the small, but determined, Company of the Red Falcon overwhelmed numerically superior armies of beasts and humanoids. 
+
+Armor: Plate mail and full plate mail only.
+Weapon: Any.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- May cast Clairvoyance once per day as a special ability, starting at level 3.
+- May use the Divination special ability once per day, starting at level 5.
+- May use the Consequence special ability once per day, starting at level 7.
+- May cast Mass Invisibility once per day as a special ability, starting at level 9.
+
+DIVINATION
+
+The caster becomes capable of foreseeing moments about <PRO_HIMHER> in a near future gaining a slight advantage in combat.
+
+CONSEQUENCE
+
+The caster becomes capable of foreseeing brief moments <PRO_HIMHER> and the environment around <PRO_HIMHER> in the near future gaining a slight advantage in combat.~
+@2904 = ~Divination~
+@2905 = ~Divination
+(Divination)
+
+Level: 3
+Sphere: Knowledge
+Range: 0
+Duration: 1 turn
+Casting Time: 10
+Area of Effect: The caster
+Saving Throw: None
+
+This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> in the next moments. Due to this awareness, the caster becomes immune to backstabbing and gains a +2 bonus to Thac0, Armor Class and Saving Throws.~
+@2906 = ~Consequence~
+@2907 = ~Consequence
+(Divination)
+
+Level: 5
+Sphere: Knowledge
+Range: 0
+Duration: 1 turn
+Casting Time: 10
+Area of Effect: The caster
+Saving Throw: None
+
+This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> and around <PRO_HIMHER> in the next moments. Due to this awareness, the caster becomes immune to backstabbing and gains a +2 bonus to Thac0, Armor Class, Saving Throws and can also detect traps that are around the caster.~
+@2908 = ~Holy Symbol of The Red Knight~
+@2909 = ~Only the most worthy and devoted servants of the Lady of Strategy are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF
