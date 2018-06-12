@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.7.8~
+VERSION ~1.7.9~
 
 ALWAYS
 
@@ -382,6 +382,18 @@ BEGIN @49
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Jergal-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Jergal-KitCM.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		   HOLY STRATEGIST OF THE RED KNIGHT (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @50
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/RedKnight-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/RedKnight-KitFC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
