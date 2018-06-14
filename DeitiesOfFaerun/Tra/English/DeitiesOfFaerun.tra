@@ -178,7 +178,7 @@ As the wizard spell Feeblemind, except that it has a touch range.
 
 DARK AURA:
 
-The Strifeleader creates an aura that helps evil-aligned and prejudices good-aligned creatures. Neutral aligned creatures are not affected.~
+The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.~
 @304 = ~Dark Aura~
 @305 = ~Dark Aura
 (Alteration, Invocation/Evocation)
@@ -2106,6 +2106,86 @@ This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> 
 @2908 = ~Foreseeing~
 @2909 = ~Holy Symbol of The Red Knight~
 @2910 = ~Only the most worthy and devoted servants of the Lady of Strategy are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				               Bloodreaver of Garagos
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3001 = ~bloodreaver of garagos~
+@3002 = ~Bloodreaver of Garagos~
+@3003 = ~BLOODREAVER OF GARAGOS: Some legends claim Garagos (GAH-rah-gos) was the primary war god in western Faerûn until he was overthrown by the upstart Tempus. Certainly Garagos was worshiped in Westgate and the Vilhon Reach during the days of Myth Drannor, and his faith was strong long before that time—reportedly even in ancient Netheril. He was thought killed by Tempus, as he is recorded as slain, but either this means that he was destroyed as the primary war god of Faerûn, a position which Tempus took from him as the spoils of their one-on-one battle, or he was resurrected by some of his diehard cultists along the southern coast of the Sea of Fallen Stars, in the Vilhon Reach, or in the Border Kingdoms. He is most certainly not dead, but alive.
+
+Garagos is associated with the rampaging destruction and plundering of war than tactics, strategies, or armies. The Reaver is linked with the mad bloodlust that overtakes some warriors, resulting in horrifying carnage. (Followers of Tempus claim their god destroyed Garagos by using the Reaver's berserking fury against him.) The scarlet cloak he is portrayed as wearing in religious art is one made of the blood of his foes, and in recent times he is often shown wading through a blood-red sea—again, the blood of his slain enemies.
+
+In 1368 DR, Garagos reappeared to crush an impostor, the marilith Glackzana, a tanar'ri who had been attempting to start a cult in his name using her powers to present herself in a form like that of his avatar. He demolished the temple built to her at the ruined villager of Gosra, located in the Fields of Nun of central Chondath, and ordered it reconstructed in a more grand manner and rededicated to his worship.
+
+Garagos himself scorns the use of armor (though he does not care if his priests wear it) and admires those who give in to battle-lust and merciless destruction in conflict, destroying all that lies in their path and taking no prisoners. He is blood-thirsty and single-minded. He angers quickly and cools down from an emotional boil very slowly. He is feared for the damage he can do and the uncontrolled nature of his fury.
+
+Garagos was even more even-tempered and less prone to explode of old, but since his defeat by Tempus his fuse has gotten shorter, and he has lost all sense of mercy once he becomes caught up in a battle. With the change in his disposition, he no longer felt comfortable in his former abode in Limbo and moved to Pandemonium. Some say that he moved to his new abode when his heart grew hard upon finally giving up all hope for attaining his secret love. Others say this is so much poppycock, and speculate that Garagos is finally going over the edge to outright evil he has been teetering on for so long.
+
+Armor: Any.
+Weapon: Any.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- May Enrage as a Berserker once per day.
+- May use the Chaotic Combat special ability once per day, starting at level 5.
+- May use the Blood Armor special ability once per day, starting at level 7.
+- May cast Blade Barrier once per day as a special ability, starting at level 9.
+- Hit Dice: d10.
+
+BLOOD ARMOR
+
+The caster baths <PRO_HIMHER>self in blood, gaining protection against physical attacks, resistance against fire and cold and vulnerability to electricity. 
+
+CHAOTIC COMBAT
+
+The caster imbues a target with the chaos of the battlefield giving it a random bonus or penalty to AC and Thac0.~
+@3004 = ~Chaotic Combat~
+@3005 = ~Chaotic Combat
+(Invocation/Evocation)
+
+Level: 4
+Sphere: War
+Range: 30
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: One creature
+Saving Throw: None
+
+When chaotic combat is cast on a creature, it is inspired beyond his years of training and is suddenly struck with numerous insights for variations on the standard moves of attack and defense.
+
+Unfortunately, these insights are helpful in only four-fifths (80%) of the warrior's attacks. In the remaining attacks, the spell actually impairs the warrior's standard performance. This spell takes effect at the beginning of each round. On a positive roll the target gains bonuses of +2 to Thac0 and Armor Class. On a negative roll, the target suffers a -2 penalty to Thac0 and Armor Class.~
+@3006 = ~Blood Armor~
+@3007 = ~Blood Armor
+(Alteration)
+
+Level: 4
+Sphere: War
+Range: 0
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: The caster
+Saving Throw: None
+
+This spell enshrouds the priest in an armor of dense blood. Any weapon used to attack the Bloodreaver seems to impact on a iron wall as the blood momentarily coagulates to form a bulwark against the imminent attack.
+
+While protected by a Blood Armor, the cleric has a +3 bonus to <PRO_HISHER> Armor Class and a 25% resistance to cold and fire as well as a 25% vulnerability to electricity.~
+@3008 = ~Holy Symbol of Garagos~
+@3009 = ~Only the most worthy and devoted servants of the Reaver are granted these powerful holy symbols.
 	
 STATISTICS:
 
