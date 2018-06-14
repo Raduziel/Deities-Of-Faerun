@@ -5,17 +5,17 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RATemp~
-    ~RAGaraFC 1 1 1 1 1 1 1 1~
-    ~RAGaraFC 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAGaraFC 14 3 3 3 12 3~
-	~RAGaraFC 0 0 0 0 0 0~
-	~RAGaraFC 13 3 11 3 9 3~
-    ~RAGaraFC 13 3 11 3 9 3~
-	~RAGaraFC 0 0 0 0 0 0 0 1 1~
-	~RAGaraFC 1 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAGaraFC.2da~
-	~K_FC_H   K_FC_HE   K_FC_D   K_FC_HO   K_FC_HL   K_FC_G   K_FC_E~
+ADD_KIT ~RAGara~
+    ~RAGara 1 1 1 1 1 1 1 1~
+    ~RAGara 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAGara 14 3 3 3 12 3~
+	~RAGara 0 0 0 0 0 0~
+	~RAGara 13 3 11 3 9 3~
+    ~RAGara 13 3 11 3 9 3~
+	~RAGara 0 0 0 0 0 0 0 1 1~
+	~RAGara 1 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RAGara.2da~
+	~K_C_H   K_C_HE   K_C_D   K_C_HO   K_C_HL   K_C_G   K_C_E~
 	~0x04000000 3~
 	~Cl0~
 	~PLAT18 WAFLAIL HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * SW2H09 HAMM09 *~
