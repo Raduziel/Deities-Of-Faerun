@@ -719,6 +719,44 @@ This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> 
 
 ====================================================================================================================================================================
 
+20) GARAGOS
+
+
+Chaotic Combat
+(Invocation/Evocation)
+
+Level: 4
+Sphere: War
+Range: 30
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: One creature
+Saving Throw: None
+
+When chaotic combat is cast on a creature, it is inspired beyond his years of training and is suddenly struck with numerous insights for variations on the standard moves of attack and defense.
+
+Unfortunately, these insights are helpful in only four-fifths (80%) of the warrior's attacks. In the remaining attacks, the spell actually impairs the warrior's standard performance. This spell takes effect at the beginning of each round. On a positive roll the target gains bonuses of +2 to Thac0 and Armor Class. On a negative roll, the target suffers a -2 penalty to Thac0 and Armor Class.
+
+---
+
+Blood Armor
+(Alteration)
+
+Level: 4
+Sphere: War
+Range: 0
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: The caster
+Saving Throw: None
+
+This spell enshrouds the priest in an armor of dense blood. Any weapon used to attack the Bloodreaver seems to impact on a iron wall as the blood momentarily coagulates to form a bulwark against the imminent attack.
+
+While protected by a Blood Armor, the cleric has a +3 bonus to <PRO_HISHER> Armor Class and a 25% resistance to cold and fire as well as a 25% vulnerability to electricity.
+
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -757,7 +795,9 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Clangeddin: Helm, Fighter
                                                                 
-- Cyric: Talos, Thief                                      
+- Cyric: Talos, Thief
+
+- Garagos: Talos                                   
                  
 - Helm: Helm
 
