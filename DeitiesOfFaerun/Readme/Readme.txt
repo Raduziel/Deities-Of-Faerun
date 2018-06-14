@@ -821,6 +821,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Red Knight: Helm, Fighter
 
+- Savras: Wizard
+
 - Selûne: Lathander
 
 - Shar: Talos
