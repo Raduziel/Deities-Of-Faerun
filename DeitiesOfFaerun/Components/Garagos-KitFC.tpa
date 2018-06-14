@@ -9,7 +9,7 @@ INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 
 ADD_KIT ~RAGaraFC~
     ~RAGaraFC 1 1 1 1 1 1 1 1~
-    ~RAGaraFC 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAGaraFC 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAGaraFC 14 3 3 3 12 3~
 	~RAGaraFC 0 0 0 0 0 0~
 	~RAGaraFC 13 3 11 3 9 3~
@@ -54,24 +54,24 @@ LAF ~DEFINE_FNP_KIT_INFO~
 	u_leather_armor 	= 1
 	u_chain_armor 		= 1
 	u_plate_armor 		= 1
-	u_club_staff	 	= 1
-	u_hammers	 		= 1
-	u_maces 	 		= 1
-	u_flails 			= 1
-	u_axes 				= 1
-	u_daggers 			= 1
-	u_short_swords		= 1
-	u_long_swords		= 1
-	u_scimitars 		= 1
-	u_katanas 			= 1
-	u_bastard_swords 	= 1
-	u_2hand_swords 		= 1
-	u_halberds 			= 1
-	u_spears 	 		= 1
-	u_darts 			= 1
-	u_slings	 		= 1
-	u_bows 				= 1
-	u_crossbows 		= 1
+	u_club_staff	 	= 2
+	u_hammers	 		= 2
+	u_maces 	 		= 2
+	u_flails 			= 2
+	u_axes 				= 2
+	u_daggers 			= 2
+	u_short_swords		= 2
+	u_long_swords		= 2
+	u_scimitars 		= 2
+	u_katanas 			= 2
+	u_bastard_swords 	= 2
+	u_2hand_swords 		= 2
+	u_halberds 			= 2
+	u_spears 	 		= 2
+	u_darts 			= 2
+	u_slings	 		= 2
+	u_bows 				= 2
+	u_crossbows 		= 2
 
 	STR_VAR
     clab_name 	= EVAL ~%mod_clab%~
