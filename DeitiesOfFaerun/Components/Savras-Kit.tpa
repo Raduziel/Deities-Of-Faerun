@@ -65,7 +65,7 @@ LAF ~DEFINE_FNP_KIT_INFO~
     STR_VAR
     clab_name 	= EVAL ~%mod_clab%~
 	class 			= ~cleric~	 
-	s_Life 			= ~major~
+	s_Life 			= ~minor~
 	s_Death 		= ~x~
 	s_Benediction 	= ~minor~
 	s_Destruction 	= ~x~
@@ -84,7 +84,7 @@ LAF ~DEFINE_FNP_KIT_INFO~
 	s_Water 		= ~x~
 	s_Air 			= ~x~
 	s_Fire 			= ~x~
-	s_Light 		= ~minor~
+	s_Light 		= ~major~
 	s_Shadow 		= ~x~
 	s_Magic 		= ~major~
 	s_Perdition     = ~x~
