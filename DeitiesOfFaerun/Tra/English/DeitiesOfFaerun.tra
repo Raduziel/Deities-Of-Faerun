@@ -2197,4 +2197,43 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				               Sibylite of Savras
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3101 = ~sibylite of savras~
+@3102 = ~Sibylite of Savras~
+@3103 = ~SIBYLITE OF SAVRAS: 
+
+Armor: None.
+Weapon: Bludgeoning only.
+
+Advantages:
+
+- May cast Clairvoyance once per day as a special ability, starting at level 1.
+- May cast Wizard Eye once per day as a special ability, starting at level 3.
+- May cast True Seeing once per day as a special ability, starting at level 5.
+- May cast Farsight once per day as a special ability, starting at level 7.
+- May use the Consequence special ability once per day, starting at level 10.
+- Becomes immune to Blindness, starting at level 10.
+- Becomes immune to backstab, starting at level 13.
+- May target invisible foes, starting at level 15.
+
+CONSEQUENCE
+
+The caster becomes capable of foreseeing brief moments <PRO_HIMHER> and the environment around <PRO_HIMHER> in the near future gaining a slight advantage in combat.~
+@3104 = ~Holy Symbol of Savras~
+@3105 = ~Only the most worthy and devoted servants of the All-Seeing One are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
 //EoF
