@@ -1822,7 +1822,7 @@ As the wizard spell Disintegrate, except that it has a touch range and a casting
 Level: 6
 Sphere: Death
 Range: 35
-Duration: 1 turn
+Duration: 10 turns
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
@@ -1895,7 +1895,7 @@ This spell summons a powerful skeleton that stays at the Doomguide's service for
 Level: 6
 Sphere: Death
 Range: 35
-Duration: 1 turn
+Duration: 10 turns
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
