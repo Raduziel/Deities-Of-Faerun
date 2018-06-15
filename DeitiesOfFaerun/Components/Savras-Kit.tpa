@@ -1,7 +1,7 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						       Sibylite of Savras
+//						            Seer of Savras
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -116,27 +116,27 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
+COPY_EXISTING ~SPWI301.spl~ ~override/RASavr1.spl~    											//Clairvoyance
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI425.spl~ ~override/RASavr2.spl~    											//Wizard Eye
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPPR505.spl~ ~override/RASavr3.spl~    											//True Seeing
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPPR415.spl~ ~override/RASavr4.spl~    											//Farsight
+LPM SPELL_TO_INNATE
+
 ACTION_IF NOT FILE_EXISTS ~override/RAForeIc.bam~ BEGIN
 
 COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2908) STR_VAR bam_file = RAFOREIC RET iconfore = icon END
 
-END		  
-		  
-COPY_EXISTING ~SPWI301.spl~ ~override/RASavr1.spl~    													 //Clairvoyance
-LPM SPELL_TO_INNATE
+END
 
-COPY_EXISTING ~SPWI425.spl~ ~override/RASavr2.spl~    													 //Wizard Eye
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR505.spl~ ~override/RASavr3.spl~    													 //True Seeing
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPPR415.spl~ ~override/RASavr4.spl~    													 //Farsight
-LPM SPELL_TO_INNATE
-
-COPY "DeitiesOfFaerun\Spl\RASavr5.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907              //Consequence
+COPY "DeitiesOfFaerun\Spl\RASavr5.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907     //Consequence
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
