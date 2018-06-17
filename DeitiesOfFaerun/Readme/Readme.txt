@@ -757,6 +757,30 @@ While protected by a Blood Armor, the cleric has a +3 bonus to <PRO_HISHER> Armo
 
 ====================================================================================================================================================================
 
+21) VELSHAROON
+
+
+Gaseous Form
+(Necromancy)
+
+Level: 6
+Sphere: Death
+Range: 0
+Duration: 10 turns
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell enables the Necrophant to assume the gaseous form of a vampire. No form of attack or spellcasting is possible while in gaseous form, but the cleric can flow/fly near the ground at a base movement rate equal to <PRO_HISHER> own.
+
+In gaseous form, the priest is all but immune to attack. Only magical fire or lightning has any effect, inflicting normal damage.
+
+The Necrophant immediately returns to his original form upon the expiration of the spell duration or by voluntarily ending the spell.
+
+
+====================================================================================================================================================================
+
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -840,6 +864,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Tyr: Helm, Paladin
 
 - Umberlee: Talos
+
+- Velsharoon: Talos, Wizard
 
 Without this component the strongholds will be chosen by alignment, as the unmodded game does.
 
