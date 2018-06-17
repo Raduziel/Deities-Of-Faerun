@@ -2279,6 +2279,7 @@ Weapon: Bludgeoning only.
 Advantages:
 
 - May cast Necromancy spells, up to level 7, as divine spells.
+- Gains +2 Saving Throw bonus against spells using Necromancy magic.
 - May cast Chill Touch once per day as a special ability, starting at level 1.
 - May cast Animate Dead once per day as a special ability, starting at level 5.
 - May cast Wraithform once per day as a special ability, starting at level 7.
@@ -2319,4 +2320,70 @@ Equipped abilities:
 
 Weight: 0~
 
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				                Mistcaller of Leira
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3301 = ~mistcaller of leira~
+@3302 = ~Mistcaller of Leira~
+@3303 = ~MISTCALLER OF LEIRA: Velsharoon (VEL-shah-roon) is the Archmage of Necromancy, a demipower who has gathered the study, practice, and practitioners of necromancy and evil liches into his portfolio and who is striving to add general undeath as well. Newly elevated to a divine state, the Lord of the Forgotten Crypt is only beginning to create a cult of worshipers in the Realms. Although many prognosticators, mortals and immortals alike, have predicted the quick destruction of this arrogant necromancer, Velsharoon has played one power off against another, and he has begun to establish himself in the Faerunian pantheon.
+
+As a mortal, Velsharoon was a renegade Red Wizard of Thay who lived in the Tower Terrible in Soorenar as well as several other abodes. He aspired to the position of Zulkir of Necromancy, but was driven from that land centuries ago after feuding with his chief rival, Szass Tarn, and several other powerful Red Wizards. Nearly as powerful as his archrival, Velsharoon spent many decades seeking enough power to destroy Tarn and other wizards who challenged his evil machinations, including Haider of Delzimmer, Omm Hlandrar of Halruaa, the Simbul of Aglarond, and Elminster of Shadowdale.
+
+In a very old ruin in the Plains of Purple Dust, southwest of the city of Zindalankh on the Sempharwater, Velsharoon discovered a process laid down long ago by Talos the Destroyer by which a great wizard can achieve demipowerhood. The Vaunted, as the archnecromancer was sometimes pilloried, managed to complete the ritual, which first turned him into a lich, and ascended into the ranks of Faerûn's pantheon with the Destroyer's sponsorship at the end of 1368 DR. (Sages speculate Ao allowed his ascension to provide a balance to the new Lord of the Dead's dislike for the undead.)
+
+Velsharoon served the Storm Lord dutifully, if not loyally, for two years before realizing that Talos was forcing him to expend his divine energy at a profligate pace. Unwilling to be worn out like a footsoldier's marching boots, Velsharoon shifted his allegiance to Azuth after forging an alliance of convenience with the Patron of Wizards. Infuriated, Talos railed against his fickle servant, but Azuth, with Mystra's help, backed the Archmage of Necromancy in a bid to redress Talos's encroachment on Mystra's province of magic. After Talos calmed down, Velsharoon made a secret alliance of convenience with the Destroyer, and he now plays Azuth and Talos off against each other. Officially, Velsharoon serves Azuth as the power primarily concerned with one class of specialist wizard — necromancers — much like Savras the All-Seeing serves Azuth as a patron of diviners. Unofficially, Velsharoon continues to aid Talos's quest for perennial destruction by encouraging his followers to unleash their horrible creations on an unsuspecting world.
+
+Azuth remains an unlikely and unhappy ally of Velsharoon, and Talos seems to be biding his time until the Lord of the Forgotten Crypt gets his comeuppance. Kelemvor, the new Lord of the Dead, and Jergal, Scribe of the Doomed, actively oppose Velsharoon as his predilection for black necromancy violates many of their most cherished tenets. Cyric and Velsharoon share a mutual enmity as both seek to acquire a larger portfolio at the expense of Kelemvor. Finally, though they are not yet numbered among his enemies, it is likely that Velsharoon will soon find himself opposed by the myriad powers of nature, by the Triad of law and good (Tyr, Torm, and Ilmater), and by Lathander, the Morninglord.
+
+Velsharoon is a vain, selfish, petty, but very canny power consumed with vengeance, obsessed with experimenting on living and dead beings, and unconcerned with the fates of lesser creatures. In many ways he continues to act like the mortal he recently was, albeit with far greater power at his disposal than before.
+
+Armor: None.
+Weapon: Bludgeoning only.
+
+Advantages:
+
+- May cast Illusion/Phantasm spells, up to level 7, as divine spells.
+- May cast Chill Touch once per day as a special ability, starting at level 1.
+- May cast Animate Dead once per day as a special ability, starting at level 5.
+- May cast Wraithform once per day as a special ability, starting at level 7.
+- May use the Gaseous Form special ability once per day, starting at level 10.
+- May cast Energy Drain once per day as a special ability, starting at level 15.
+
+GASEOUS FORM
+
+This spell enables the Necrophant to assume the gaseous form of a vampire.~
+@3204 = ~Gaseous Form~
+@3205 = ~Gaseous Form
+(Necromancy)
+
+Level: 6
+Sphere: Death
+Range: 0
+Duration: 10 turns
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell enables the Necrophant to assume the gaseous form of a vampire. No form of attack or spellcasting is possible while in gaseous form, but the cleric can flow/fly near the ground at a base movement rate equal to <PRO_HISHER> own.
+
+In gaseous form, the priest is all but immune to attack. Only magical fire or lightning has any effect, inflicting normal damage.
+
+The Necrophant immediately returns to his original form upon the expiration of the spell duration or by voluntarily ending the spell.~
+@3206 = ~Return to Natural Form~
+@3207 = ~Holy Symbol of Velsharoon~
+@3208 = ~Only the most worthy and devoted servants of the Archmage of Necromancy are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
 //EoF
