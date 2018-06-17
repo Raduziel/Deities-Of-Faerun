@@ -1,0 +1,193 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Mistcaller of Leira
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RALeir~
+    ~RALeir 0 0 0 0 1 1 0 1~
+    ~RALeir 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RALeir 3 11 3 12 14 3~
+	~RALeir 0 0 0 0 0 0~
+	~RALeir 3 11 3 12 14 3~
+    ~RALeir 3 11 3 12 14 3~
+	~RALeir 0 0 0 0 0 0 0 1 1~
+	~RALeir 0 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RALeir.2da~
+	~K_C_H  K_C_HE  K_C_G~
+	~0x04000000 3~
+	~Cl0~
+	~* * * * * * * * * * * * * * * * * * * *~
+	SAY @3301
+	SAY @3302
+	SAY @3303
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RALeir~
+		clascolr = ~100 62 91 38 100~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~0 0 0 0 0 1 0~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 0
+	u_chain_armor 		= 0
+	u_plate_armor 		= 0
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~x~
+	s_Benediction 	= ~minor~
+	s_Destruction 	= ~x~
+	s_Protection 	= ~major~
+	s_War 			= ~x~
+	s_Exploration   = ~major~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~major~
+	s_Thought 		= ~major~
+	s_Dread 		= ~x~
+	s_Vigor 		= ~minor~
+	s_Affliction 	= ~x~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~major~
+	s_Magic 		= ~minor~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RALeirF.spl" override
+
+COPY "DeitiesOfFaerun\Spl\RAHSLEIR.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSLEIR.itm" override SAY NAME1 @3304 SAY NAME2 @3304 SAY DESC @3305
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RALeir + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+
+COPY_EXISTING ~SPWI212.spl~ ~override/RALeir1.spl~                              //Mirror Image
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI201.spl~ ~override/RALeir2.spl~                              //Blur
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI426.spl~ ~override/RALeir3.spl~                              //Shadow Monsters
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI525.spl~ ~override/RALeir4.spl~                              //Demi-Shadow Monsters
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI607.spl~ ~override/RALeir5.spl~                              //Mislead
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI703.spl~ ~override/RALeir6.spl~                              //Project Image
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RALeir + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@3302)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+	READ_ASCII	0x22 animation (2)
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeir~) parameter2 = 9 special = RESOLVE_STR_REF (@3302) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeir~) parameter2 = 9 special = RESOLVE_STR_REF (@3302) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeir~) parameter2 = 9 special = RESOLVE_STR_REF (@3302) END
+	END
+END
+END
+BUT_ONLY
+
+ACTION_FOR_EACH file IN ~LEIRS~ ~LEIRL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
