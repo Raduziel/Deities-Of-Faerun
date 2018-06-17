@@ -386,11 +386,12 @@ INCLUDE  ~DeitiesOfFaerun/Components/Jergal-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//		   HOLY STRATEGIST OF THE RED KNIGHT (IWDEE, EET, BGEE and BG2EE)
+//		    HOLY STRATEGIST OF THE RED KNIGHT (EET, BGEE and BG2EE)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 BEGIN @50
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/RedKnight-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/RedKnight-KitFC.tpa~
@@ -418,6 +419,33 @@ BEGIN @52
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Savras-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Savras-KitCM.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		            NECROPHANT OF VELSHAROON (EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @53
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Velsharoon-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Velsharoon-KitCM.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		                     MISTCALLER OF LEIRA (IWDEE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @54
+REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Leira-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Leira-KitCM.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Leira-KitCT.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
