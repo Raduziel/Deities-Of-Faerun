@@ -132,7 +132,7 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EV
 
 COPY ~DeitiesOfFaerun\Spl\RAVels41.spl~ ~override~ SAY NAME1 @3206 SAY UNIDENTIFIED_DESC @3206
 
-COPY ~DeitiesOfFaerun\Spl\RAVelsNF.BAM~ ~override~
+COPY ~DeitiesOfFaerun\Spl\RAVelsNF.bam~ ~override~
 
 
 COPY_EXISTING ~SPWI914.spl~ ~override/RAVels5.spl~    //Energy Drain
