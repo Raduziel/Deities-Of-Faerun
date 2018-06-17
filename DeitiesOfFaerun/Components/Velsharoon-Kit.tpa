@@ -213,4 +213,96 @@ COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
   END
 END
 
+//Kjeron's monster code for shenanigans.
+
+OUTER_SPRINT	temp	~PLACEHOLDER~	// any non-space text (label for CLAB row)
+
+OUTER_FOR (i = 0; i < 50; ++i)	BEGIN
+	OUTER_SPRINT	temp ~%temp% ****~	//	new row for CLABFILE
+END
+ACTION_DEFINE_ASSOCIATIVE_ARRAY	clabs	BEGIN
+	~RAVELS.2DA~ => 0
+END
+
+COPY_EXISTING_REGEXP ~^SPWI[1-7]\([0-4][1-9]\|\|10\|20\|30\|40\|50\)\.spl$~ override
+	SET	$hidden(~%SOURCE_RES%~) = 0	//	setup variable for each spell
+BUT_ONLY
+
+COPY_EXISTING ~HIDESPL.2DA~	override
+	COUNT_2DA_COLS	2
+	READ_2DA_ENTRIES_NOW	~READ_HIDESPL~ 2
+	FOR (i = 0; i < READ_HIDESPL; ++i)	BEGIN
+		READ_2DA_ENTRY_FORMER ~READ_HIDESPL~ i 0 res
+		READ_2DA_ENTRY_FORMER ~READ_HIDESPL~ i 1 value
+		PATCH_IF IS_AN_INT value BEGIN
+			SET $hidden(~%res%~) = value	// update as necessary
+		END
+	END
+BUT_ONLY
+
+OUTER_SPRINT animate ~~
+ACTION_IF	FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_ANIMATE_DEAD[ %TAB%%WNL%%MNL%%LNL%]~)	BEGIN
+	LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_ANIMATE_DEAD~	RET animate = spell_res	END
+END	//	find the spell in SPELL.IDS (because SR changes some of these)
+
+OUTER_SPRINT finger ~~
+ACTION_IF	FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_FINGER_OF_DEATH[ %TAB%%WNL%%MNL%%LNL%]~)	BEGIN
+	LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FINGER_OF_DEATH~	RET finger = spell_res	END
+END	//	find the spell in SPELL.IDS (because SR changes some of these)
+
+OUTER_SPRINT soul ~~
+ACTION_IF	FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_SOUL_EATER[ %TAB%%WNL%%MNL%%LNL%]~)	BEGIN
+	LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SOUL_EATER~	RET soul = spell_res	END
+END	//	find the spell in SPELL.IDS (because SR changes some of these)
+
+OUTER_SPRINT drain ~~
+ACTION_IF	FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_LARLOCH_MINOR_DRAIN[ %TAB%%WNL%%MNL%%LNL%]~)	BEGIN
+	LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_LARLOCH_MINOR_DRAIN~	RET drain = spell_res	END
+END	//	find the spell in SPELL.IDS (because SR changes some of these)
+
+COPY_EXISTING_REGEXP ~^SPWI[1-7]\([0-4][1-9]\|\|10\|20\|30\|40\|50\)\.spl$~ override
+	PATCH_IF	! ~%SOURCE_RES%~ STRING_EQUAL ~%animate%~ AND ! ~%SOURCE_RES%~ STRING_EQUAL ~%finger%~ AND ! ~%SOURCE_RES%~ STRING_EQUAL ~%soul%~ AND ! ~%SOURCE_RES%~ STRING_EQUAL ~%drain%~	BEGIN	// not either of these spells
+		PATCH_IF $hidden(~%SOURCE_RES%~) = 0 BEGIN	//	not normally hidden
+			READ_SHORT	0x1c	type
+			READ_SHORT	0x25	school
+			READ_SHORT	0x34	level
+			PATCH_IF (type = 1) AND (school = 7) BEGIN
+				PATCH_IF	level > 6	BEGIN
+					SET	column = (level * 2)		//	column/level of CLABFILE to add spell
+				END	ELSE	BEGIN
+					SET	column = (level * 2 - 1)	//	column/level of CLABFILE to add spell
+				END
+				TEXT_SPRINT	file ~%SOURCE_RES%~
+				INNER_PATCH_SAVE	fnpfile ~%file%~	BEGIN	WRITE_ASCII 0 ~D5FP~	END
+				PATCH_IF	! FILE_EXISTS_IN_GAME ~%fnpfile%~	BEGIN
+					INNER_PATCH_SAVE	newfile ~%file%~ BEGIN	INSERT_BYTES	0 1 WRITE_ASCII 0 ~VELS~	END
+					PATCH_IF	! FILE_EXISTS_IN_GAME ~%newfile%~	BEGIN
+						INNER_ACTION BEGIN
+							COPY_EXISTING ~%file%.spl~	~override\%newfile%.spl~
+								WRITE_LONG	0x1c	2	//	priest
+								LPF	CLONE_EFFECT INT_VAR	match_opcode = 206 STR_VAR silent = 1 match_resource = EVAL ~%file%~ resource = EVAL ~%newfile%~	END
+								LPF	CLONE_EFFECT INT_VAR	match_opcode = 321 STR_VAR silent = 1 match_resource = EVAL ~%file%~ resource = EVAL ~%newfile%~	END
+								LPF	ALTER_EFFECT INT_VAR	match_opcode = 318 STR_VAR silent = 1 match_resource = EVAL ~%file%~ resource = EVAL ~%newfile%~	END
+								LPF	ALTER_EFFECT INT_VAR	match_opcode = 324 STR_VAR silent = 1 match_resource = EVAL ~%file%~ resource = EVAL ~%newfile%~	END
+						END
+						LPF	CLONE_EFFECT INT_VAR	match_opcode = 206 STR_VAR silent = 1 match_resource = EVAL ~%file%~ resource = EVAL ~%newfile%~	END
+						LPF	CLONE_EFFECT INT_VAR	match_opcode = 321 STR_VAR silent = 1 match_resource = EVAL ~%file%~ resource = EVAL ~%newfile%~	END
+					END
+					INNER_PATCH_SAVE	newrow ~%temp%~ BEGIN	SET_2DA_ENTRY 0 column 50 ~GA_%newfile%~	END	// replace proper column of '****' with AP_newfile
+				END	ELSE	BEGIN
+					INNER_PATCH_SAVE	newrow ~%temp%~ BEGIN	SET_2DA_ENTRY 0 column 50 ~GA_%fnpfile%~	END	// use fnp spell instead if it exists, replace proper column of '****' with AP_fnpfile
+				END
+				INNER_ACTION	BEGIN
+					ACTION_PHP_EACH	clabs AS one => two 	BEGIN
+						APPEND	~%one%~ ~%newrow%~ // add new row to each CLABFILE
+					END
+				END
+			END
+		END
+	END
+BUT_ONLY
+ACTION_PHP_EACH	clabs AS one => two 	BEGIN
+	COPY_EXISTING	~%one%~	override 	PRETTY_PRINT_2DA
+END
+
 //EoF
