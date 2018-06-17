@@ -13,7 +13,7 @@ ADD_KIT ~RALeir~
 	~RALeir 3 11 3 12 14 3~
     ~RALeir 3 11 3 12 14 3~
 	~RALeir 0 0 0 0 0 0 0 1 1~
-	~RALeir 0 0 0 0 0 0~
+	~RALeir 0 0 1 1 0 0~
 	~DeitiesOfFaerun\Tables\RALeir.2da~
 	~K_C_H  K_C_HE  K_C_G~
 	~0x04000000 3~
@@ -28,7 +28,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RALeir~
 		clascolr = ~100 62 91 38 100~
 		clswpbon = ~0 0 3~
-		clsrcreq = ~0 0 0 0 0 1 0~
+		clsrcreq = ~1 0 1 0 0 1 0~
 END
 
 ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
