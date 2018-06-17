@@ -275,7 +275,7 @@ COPY_EXISTING_REGEXP ~^SPWI[1-7]\([0-4][1-9]\|\|10\|20\|30\|40\|50\)\.spl$~ over
 				TEXT_SPRINT	file ~%SOURCE_RES%~
 				INNER_PATCH_SAVE	fnpfile ~%file%~	BEGIN	WRITE_ASCII 0 ~D5FP~	END
 				PATCH_IF	! FILE_EXISTS_IN_GAME ~%fnpfile%~	BEGIN
-					INNER_PATCH_SAVE	newfile ~%file%~ BEGIN	INSERT_BYTES	0 1 WRITE_ASCII 0 ~VELS~	END
+					INNER_PATCH_SAVE	newfile ~%file%~ BEGIN	WRITE_ASCII 0 ~VELS~	END
 					PATCH_IF	! FILE_EXISTS_IN_GAME ~%newfile%~	BEGIN
 						INNER_ACTION BEGIN
 							COPY_EXISTING ~%file%.spl~	~override\%newfile%.spl~
