@@ -24,7 +24,6 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMASK~)	BEGIN	~RAMASK~ => 0	~RAMASKCT~ => 0					END	//	Mask	->	Talos, Thief
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMYST~)	BEGIN	~RAMYST~ => 0	~RAMYSTCM~ => 0					END	//	Mystra	->	Wizard
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAOGHM~)	BEGIN	~RAOGHM~ => 0	~RAOGHMCM~ => 0					END	//	Oghma	->	Bard, Wizard
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAOGHM~)	BEGIN	~RASAVR~ => 0	~RASAVRCM~ => 0					END	//	Savras	->	Wizard
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATEMP~)	BEGIN	~RAREDK~ => 0	~RAREDKFC~ => 0					END	//	Red Knight	->	Fighter, Helm
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASELU~)	BEGIN	~RASELU~ => 0	~RASELUCM~ => 0	~RASELUFC~ => 0	END	//	Selune	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASHAR~)	BEGIN	~RASHAR~ => 0	~RASHARCM~ => 0	~RASHARCT~ => 0	END	//	Shar	->	Talos
@@ -35,6 +34,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATORM~)	BEGIN	~RATORM~ => 0	~RATORMFC~ => 0					END	//	Torm	->	Helm, Paladin
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATYR~)	BEGIN	~RATYR~  => 0	~RATYRFC~  => 0					END	//	Tyr	->	Helm, Paladin
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAUMBE~)	BEGIN	~RAUMBE~ => 0	~RAUMBECT~ => 0					END	//	Umberlee	->	Talos
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVELS~)	BEGIN	~RAVELS~ => 0	~RAVELSCM~ => 0					END	//	Velsharoon	->	Talos, Wizard
 	
 	DEFINE_PATCH_FUNCTION	EXTEND_TRIGGER
 		INT_VAR	index = 0	section = 0	or = 0	warn = 1
@@ -180,7 +180,6 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~	RET	extend	negate	count	END	//	Mystra
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~	RET	extend	negate	count	END	//	Oghma
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAREDK~	RET	extend	negate	count	END	//	Red Knight
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASAVR~	RET	extend	negate	count	END	//	Savras
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~	RET	extend	negate	count	END	//	Shar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~	RET	extend	negate	count	END	//	Talona
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~	RET	extend	negate	count	END	//	Talos
@@ -188,6 +187,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~	RET	extend	negate	count	END	//	Torm
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~		RET	extend	negate	count	END	//	Tyr
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~	RET	extend	negate	count	END	//	Umberlee
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVELS~	RET	extend	negate	count	END	//	Velsharoon
 	//	Kit Headers	End
 	ACTION_IF count > 0 BEGIN
 		//	Remove Kits from Lathander's quest-line (script)
@@ -263,7 +263,6 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~	RET	extend	negate	count	END	//	Mystra
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~	RET	extend	negate	count	END	//	Oghma
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAREDK~	RET	extend	negate	count	END	//	Red Knight
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASAVR~	RET	extend	negate	count	END	//	Savras
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~	RET	extend	negate	count	END	//	Selune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~	RET	extend	negate	count	END	//	Sune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
@@ -296,6 +295,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~	RET	extend	negate	count	END	//	Talona
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~	RET	extend	negate	count	END	//	Talos
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~	RET	extend	negate	count	END	//	Umberlee
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVELS~	RET	extend	negate	count	END	//	Velsharoon
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
 <<<<<<<< RAStrong.baf
@@ -345,7 +345,6 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~	RET	extend	negate	count	END	//	Mask
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~	RET	extend	negate	count	END	//	Mystra
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~	RET	extend	negate	count	END	//	Oghma
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASAVR~	RET	extend	negate	count	END	//	Savras
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~	RET	extend	negate	count	END	//	Selune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~	RET	extend	negate	count	END	//	Shar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~	RET	extend	negate	count	END	//	Sune
@@ -353,6 +352,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~	RET	extend	negate	count	END	//	Talos
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~	RET	extend	negate	count	END	//	Umberlee
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVELS~	RET	extend	negate	count	END	//	Velsharoon
 	//	Kit Headers	End
 	ACTION_IF count > 0 BEGIN
 	//	Remove Kits from Helm's quest-line (script)
@@ -421,7 +421,6 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~	RET	extend	negate	count	END	//	Mystra
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~	RET	extend	negate	count	END	//	Oghma
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASAVR~	RET	extend	negate	count	END	//	Savras
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
@@ -461,7 +460,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMYST~	RET	extend	negate	count	END	//	Mystra
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAOGHM~	RET	extend	negate	count	END	//	Oghma
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASAVR~	RET	extend	negate	count	END	//	Savras
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVELS~	RET	extend	negate	count	END	//	Velsharoon
 	//	Kit Headers	End
 	ACTION_IF count > 1 BEGIN	
 		COPY_EXISTING ~LAVOK.DLG~ override

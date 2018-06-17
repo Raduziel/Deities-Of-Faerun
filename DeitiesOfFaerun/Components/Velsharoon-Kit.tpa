@@ -1,0 +1,216 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Necrophant of Velsharoon
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAVels~
+    ~RAVels 0 0 0 0 1 1 0 1~
+    ~RAVels 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAVels 3 3 3 11 16 3~
+	~RAVels 0 0 0 0 0 0~
+	~RAVels 3 3 3 11 16 3~
+    ~RAVels 3 3 3 11 16 3~
+	~RAVels 0 0 1 0 0 1 0 0 1~
+	~RAVels 0 0 1 0 0 0~
+	~DeitiesOfFaerun\Tables\RAVels.2da~
+	~K_C_H~
+	~0x04000000 3~
+	~Cl0~
+	~* SHLD22 HELM07 * RING07 RING39 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF09 BLUN25 *~
+	SAY @3201
+	SAY @3202
+	SAY @3203
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAVels~
+		clascolr = ~17 93 137 87 17~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~1 0 0 0 0 0 0~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+LAF ~DEFINE_FNP_KIT_INFO~
+	INT_VAR
+	u_leather_armor 	= 0
+	u_chain_armor 		= 0
+	u_plate_armor 		= 0
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+    STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~x~
+	s_Death 		= ~major~
+	s_Benediction 	= ~x~
+	s_Destruction 	= ~major~
+	s_Protection 	= ~x~
+	s_War 			= ~x~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~major~
+	s_Deception 	= ~minor~
+	s_Thought 		= ~x~
+	s_Dread 		= ~major~
+	s_Vigor 		= ~x~
+	s_Affliction 	= ~minor~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~z~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~minor~
+	s_Magic 		= ~major~
+	s_Perdition     = ~major~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RAVelsF.spl" override
+
+COPY "DeitiesOfFaerun\Spl\RAHSVels.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSVels.itm" override SAY NAME1 @3207 SAY NAME2 @3207 SAY DESC @3208
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+COPY_EXISTING ~SPWI117.spl~ ~override/RAVels1.spl~    //Chill Touch
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI501.spl~ ~override/RAVels2.spl~    //Animate Dead
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI315.spl~ ~override/RAVels3.spl~    //Wraithform
+LPM SPELL_TO_INNATE
+
+COPY ~DeitiesOfFaerun\Spl\RAVels4.spl~  ~override~ SAY NAME1 @3204 SAY UNIDENTIFIED_DESC @3205
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Poison%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Poisoned%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Bleeding%" END
+
+COPY ~DeitiesOfFaerun\Spl\RAVels41.spl~ ~override~ SAY NAME1 @3206 SAY UNIDENTIFIED_DESC @3206
+
+COPY ~DeitiesOfFaerun\Spl\RAVelsNF.BAM~ ~override~
+
+
+COPY_EXISTING ~SPWI914.spl~ ~override/RAVels5.spl~    //Energy Drain
+LPM SPELL_TO_INNATE
+
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@3202)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+	READ_ASCII	0x22 animation (2)
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~) parameter2 = 9 special = RESOLVE_STR_REF (@3202) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~) parameter2 = 9 special = RESOLVE_STR_REF (@3202) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~) parameter2 = 9 special = RESOLVE_STR_REF (@3202) END
+	END
+END
+END
+BUT_ONLY
+
+ACTION_FOR_EACH file IN ~VELSS~ ~VELSL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~VELSGASO~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
