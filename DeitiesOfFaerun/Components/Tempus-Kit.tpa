@@ -72,7 +72,7 @@ LAF ~DEFINE_FNP_KIT_INFO~
 	s_Destruction 	= ~major~
 	s_Protection 	= ~minor~
 	s_War 			= ~major~
-	s_Exploration   = ~x~
+	s_Exploration   = ~minor~
 	s_Knowledge 	= ~x~
 	s_Deception 	= ~x~
 	s_Thought 		= ~x~
