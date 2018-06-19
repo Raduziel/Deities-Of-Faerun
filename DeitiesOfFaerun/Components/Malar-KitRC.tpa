@@ -90,7 +90,7 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Affliction 	= ~minor~
 	s_Animal 		= ~major~
 	s_Plant 		= ~minor~
-	s_Earth 		= ~x~
+	s_Earth 		= ~minor~
 	s_Water 		= ~x~
 	s_Air 			= ~x~
 	s_Fire 			= ~x~
