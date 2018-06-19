@@ -85,7 +85,7 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Water 		= ~x~
 	s_Air 			= ~x~
 	s_Fire 			= ~x~
-	s_Light 		= ~x~
+	s_Light 		= ~minor~
 	s_Shadow 		= ~x~
 	s_Magic 		= ~x~
 	s_Perdition     = ~x~
