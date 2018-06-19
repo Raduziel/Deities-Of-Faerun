@@ -92,7 +92,7 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Plant 		= ~x~
 	s_Earth 		= ~x~
 	s_Water 		= ~x~
-	s_Air 			= ~x~
+	s_Air 			= ~major~
 	s_Fire 			= ~x~
 	s_Light 		= ~x~
 	s_Shadow 		= ~major~
