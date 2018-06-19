@@ -67,14 +67,14 @@ LAF ~DEFINE_FNP_KIT_INFO~
 	class 			= ~cleric~	 
 	s_Life 			= ~minor~
 	s_Death 		= ~x~
-	s_Benediction 	= ~major~
+	s_Benediction 	= ~x~
 	s_Destruction 	= ~x~
 	s_Protection 	= ~x~
 	s_War 			= ~major~
 	s_Exploration   = ~major~
 	s_Knowledge 	= ~major~
 	s_Deception 	= ~minor~
-	s_Thought 		= ~minor~
+	s_Thought 		= ~x~
 	s_Dread 		= ~x~
 	s_Vigor 		= ~major~
 	s_Affliction 	= ~x~
