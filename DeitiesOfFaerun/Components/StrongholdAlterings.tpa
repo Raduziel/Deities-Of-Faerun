@@ -33,6 +33,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATALO~)	BEGIN	~RATALO~ => 0	~RATALOCM~ => 0	~RATALOFC~ => 0	END	//	Talos	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATEMP~)	BEGIN	~RATEMP~ => 0	~RATEMPFC~ => 0					END	//	Tempus	->	Fighter
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATORM~)	BEGIN	~RATORM~ => 0	~RATORMFC~ => 0					END	//	Torm	->	Helm, Paladin
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATYMO~)	BEGIN	~RATYMO~ => 0	~RATYMOCT~ => 0					END	//	Tymora	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATYR~)	BEGIN	~RATYR~  => 0	~RATYRFC~  => 0					END	//	Tyr	->	Helm, Paladin
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAUMBE~)	BEGIN	~RAUMBE~ => 0	~RAUMBECT~ => 0					END	//	Umberlee	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVELS~)	BEGIN	~RAVELS~ => 0	~RAVELSCM~ => 0					END	//	Velsharoon	->	Talos, Wizard
@@ -216,6 +217,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALATH~	RET	extend	negate	count	END	//	Lathander
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~	RET	extend	negate	count	END	//	Selune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~	RET	extend	negate	count	END	//	Sune
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYMO~	RET	extend	negate	count	END	//	Tymora
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN
 			OUTER_SPRINT orblock ~~
@@ -270,6 +272,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~	RET	extend	negate	count	END	//	Sune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~	RET	extend	negate	count	END	//	Torm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYMO~	RET	extend	negate	count	END	//	Tymora
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~		RET	extend	negate	count	END	//	Tyr
 	//	Kit Headers	End
 	ACTION_IF count > 0 BEGIN
@@ -355,6 +358,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~	RET	extend	negate	count	END	//	Talona
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~	RET	extend	negate	count	END	//	Talos
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYMO~	RET	extend	negate	count	END	//	Tymora
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~	RET	extend	negate	count	END	//	Umberlee
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVELS~	RET	extend	negate	count	END	//	Velsharoon
 	//	Kit Headers	End
