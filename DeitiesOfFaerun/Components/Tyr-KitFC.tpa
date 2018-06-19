@@ -85,8 +85,8 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 	s_Knowledge 	= ~major~
 	s_Deception 	= ~x~
 	s_Thought 		= ~major~
-	s_Dread 		= ~major~
-	s_Vigor 		= ~x~
+	s_Dread 		= ~minor~
+	s_Vigor 		= ~major~
 	s_Affliction 	= ~x~
 	s_Animal 		= ~x~
 	s_Plant 		= ~x~
