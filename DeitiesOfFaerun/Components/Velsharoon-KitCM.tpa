@@ -15,9 +15,9 @@ ADD_KIT ~RAVelsCM~
 	~RAVelsCM 3 3 3 11 16 3~
     ~RAVelsCM 3 3 3 11 16 3~
 	~RAVelsCM 0 0 1 0 0 1 0 0 1~
-	~RAVelsCM 1 1 1 1 1 1~
+	~RAVelsCM 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAVelsCM.2da~
-	~K_CM_H K_CM_E~
+	~K_CM_H~
 	~0x04000000 14~
 	~CM0~
 	~WA2ROBE SHLD22 HELM07 * RING07 RING39 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF11 BLUN25 *~
@@ -30,7 +30,7 @@ LAF fl#add_kit_ee
 		kit_name = ~RAVelsCM~
 		clascolr = ~17 93 137 87 17~
 		clswpbon = ~0 0 3~
-		clsrcreq = ~1 1 1 1 1 1 1~
+		clsrcreq = ~1 0 0 0 0 0 0~
 END
 
 //Kjeron's monster code for shenanigans.
@@ -189,7 +189,7 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Light 		= ~x~
 	s_Shadow 		= ~minor~
 	s_Magic 		= ~major~
-	s_Perdition     = ~major~
+	s_Perdition     = ~x~
 END
 
 LAM ~READ_FNP_KIT_INFO~
