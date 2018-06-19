@@ -82,7 +82,7 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Protection 	= ~x~
 	s_War 			= ~x~
 	s_Exploration   = ~x~
-	s_Knowledge 	= ~x~
+	s_Knowledge 	= ~minor~
 	s_Deception 	= ~major~
 	s_Thought 		= ~major~
 	s_Dread 		= ~major~
@@ -96,7 +96,7 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
 	s_Fire 			= ~x~
 	s_Light 		= ~x~
 	s_Shadow 		= ~major~
-	s_Magic 		= ~minor~
+	s_Magic 		= ~major~
 	s_Perdition     = ~minor~
 END
 
