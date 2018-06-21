@@ -2445,7 +2445,7 @@ Saving Throw: None
 Level: 7
 Sphere: Benediction
 Range: 0
-Duration: 4 rounds
+Duration: 5 rounds
 Casting Time: 0
 Area of Effect: The caster
 Saving Throw: None
@@ -2463,4 +2463,5 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
+
 //EoF
