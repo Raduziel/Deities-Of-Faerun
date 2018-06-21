@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.7.9~
+VERSION ~1.8.0~
 
 ALWAYS
 
@@ -446,6 +446,18 @@ REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Leira-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Leira-KitCM.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Leira-KitCT.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		          LUCKBRINGER OF TYMORA (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @55
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Tymora-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Tymora-KitCT.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
