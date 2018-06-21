@@ -777,6 +777,77 @@ In gaseous form, the priest is all but immune to attack. Only magical fire or li
 
 The Necrophant immediately returns to his original form upon the expiration of the spell duration or by voluntarily ending the spell.
 
+====================================================================================================================================================================
+
+22) TYMORA
+
+
+Moment
+(Divination)
+
+Level: 2
+Sphere: Benediction
+Range: 0
+Duration: 3 rounds
+Casting Time: 10
+Area of Effect: One creature
+Saving Throw: None
+
+By twisting Fate accordingly to <PRO_HISHER> will, the Luckbringer makes every moment of a combat favorable to the target of this spell, granting a +2 bonus to Thac0, Speed Factor and to its critical hit range.
+
+---
+
+Favor of Tymora
+(Abjuration)
+
+Level: 2
+Sphere: Protection
+Range: 0
+Duration: 5 rounds
+Casting Time: 5
+Area of Effect: One creature
+Saving Throw: None
+
+This spell confers a protection upon single living recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a +4 bonus to its Saving Throws.
+
+---
+
+Luckbolt
+(Invocation/Evocation)
+
+Level: 6
+Sphere: Benediction
+Range: 100
+Duration: 4 rounds
+Casting Time: 9
+Area of Effect: One creature
+Saving Throw: None
+
+This spell can be used by the caster directly or fired at a chosen creature as a bolt that cannot miss. If the recipient being is not the caster, the recipient must be viewed by the caster, either directly or through some means of scrying, as the Luckbolt is cast. The spell affects the target as follows:
+
+Round 1: Maximum damage, +10 bonus to damage, automatically hits and succeeds on Saving Throws.
+
+Round 2: +8 bonus to damage, +6 bonus to Thac0 and +4 bonus to Saving Throws.
+
+Round 3: +6 bonus to damage, +3 bonus to Thac0 and +2 bonus to Saving Throws.
+
+Round 4: +4 bonus to damage, +2 bonus to Thac0 and +1 bonus to Saving Throws.
+
+---
+
+Tymora's Blessing
+(Invocation/Evocation)
+
+Level: 7
+Sphere: Benediction
+Range: 0
+Duration: 5 rounds
+Casting Time: 0
+Area of Effect: The caster
+Saving Throw: None
+
+In the blink of an eye, the Luckbringer can be blessed by Tymora when asking for the Lady's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.
+
 
 ====================================================================================================================================================================
 
@@ -860,6 +931,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Tempus: Fighter
 
 - Torm: Helm, Paladin
+
+- Tymora: Lathander
 
 - Tyr: Helm, Paladin
 
