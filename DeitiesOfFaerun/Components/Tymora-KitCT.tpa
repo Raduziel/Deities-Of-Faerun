@@ -35,8 +35,8 @@ END
 
 LAF qd_multiclass
   STR_VAR 
-      kit_name = ~RASuneCT~
-      kit_clab = ~RASuneCT~
+      kit_name = ~RATymoCT~
+      kit_clab = ~RATymoCT~
       base_class = ~P~
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
