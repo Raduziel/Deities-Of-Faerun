@@ -2359,4 +2359,108 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				                Luckbringer of Tymora
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3301 = ~luckbringer of tymora~
+@3302 = ~Luckbringer of Tymora~
+@3303 = ~LUCKBRINGER OF TYMORA: Tymora (Tie-MORE-ah) is sometimes called Tyche's fair-haired or fair-tressed daughter or Beshaba's I bright sister, but these are more poetic titles than I designations of her maternal lineage or her hair I color. In actuality, Tymora is half of the deity once known as Tyche, with Beshaba being the other half. Tymora inherited Tyche's grace and kindness when that goddess split into two beings in the Dawn Cataclysm, a war among the gods that long preceded the Time of Troubles and is said to have heralded the fall of Myth Drannor. Beshaba garnered more of Tyche's wanton, willful nature, sensual side, and restless energy.
+
+Tymora's faith is one of the most common in the Faerûn, in particular since it caters most heavily to a highly mobile, relatively wealthy, and intrinsically powerful group who live by their wits and by their luck: adventurers. Tymora is fickle but playful and never vengeful or malicious. She likes a good joke and has been known to play an occasional practical joke on some of the more straight-laced Faerunian deities, such as Helm and Tyr. She is reputed by sages to have had short-lived romances with several of the good male deities of Faerûn, but these ended amicably on both sides after a short while. She likes merriment and festive occasions and rumors abound at gaming houses throughout Faerûn of people who spotted her at the tables during one holiday or another, laughing and having a good time with all.
+
+Armor: Any.
+Weapon: Bludgeoning only.
+
+Advantages:
+
+- May cast Luck once per day as a special ability, starting at level 1.
+- May use the Moment special ability once per day, starting at level 3.
+- May use the Favor of Tymora special ability once per day, starting at level 5.
+- May cast Lower Resistance once per day as a special ability, starting at level 7.
+- May use the Luckbolt special ability once per day, starting at level 10.
+- May use the Tymora's Blessing special ability once per day, starting at level 15.
+
+MOMENT
+
+The Luckbringer twists the odds of an action in <PRO_HISHER> favor, increasing <PRO_HISHER> chances of success.
+
+FAVOR OF TYMORA
+
+The Luckbringer calls for Tymora's aid to increase the chances of a creature or <PRO_HIMHER>self success on Saving Throws.
+
+LUCKBOLT
+
+The Luckbringer blesses a creature or <PRO_HIMHER>self with an outbreak of luck which gradually fades within 4 rounds.
+
+TYMORA'S BLESSING
+
+The Luckbringer pleads the goodwill of Tymora to <PRO_HIMHER>self, receiving a significant bonuses to several actions.~
+@3304 = ~Moment~
+@3305 = ~Moment
+(Divination)
+
+Level: 2
+Sphere: Benediction
+Range: 0
+Duration: 3 rounds
+Casting Time: 10
+Area of Effect: One creature
+Saving Throw: None
+
+~
+@3306 = ~Favor of Tymora~
+@3307 = ~Favor of Tymora
+(Abjuration)
+
+Level: 2
+Sphere: Protection
+Range: 0
+Duration: 5 rounds
+Casting Time: 5
+Area of Effect: One creature
+Saving Throw: None
+
+~
+@3308 = ~Luckbolt~
+@3309 = ~Luckbolt
+(Invocation/Evocation)
+
+Level: 6
+Sphere: Benediction
+Range: 100
+Duration: 4 rounds
+Casting Time: 9
+Area of Effect: One creature
+Saving Throw: None
+
+~
+@3310 = ~Tymora's Blessing~
+@3311 = ~Tymora's Blessing
+(Invocation/Evocation)
+
+Level: 7
+Sphere: Benediction
+Range: 0
+Duration: 4 rounds
+Casting Time: 0
+Area of Effect: The caster
+Saving Throw: None
+
+~
+@3312 = ~Holy Symbol of Tymora~
+@3313 = ~Only the most worthy and devoted servants of the Lady Luck are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
 //EoF
