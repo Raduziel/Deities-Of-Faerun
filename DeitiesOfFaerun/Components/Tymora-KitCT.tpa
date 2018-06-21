@@ -10,10 +10,10 @@ INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 ADD_KIT ~RATymoCT~
     ~RATymoCT 0 0 0 0 1 1 0 1~
     ~RATymoCT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RATymoCT 3 3 14 3 15 3~
+	~RATymoCT 3 14 3 3 15 3~
 	~RATymoCT 0 0 0 0 0 0~
-	~RATymoCT 3 3 14 3 15 3~
-    ~RATymoCT 3 3 14 3 15 3~
+	~RATymoCT 3 14 3 3 15 3~
+    ~RATymoCT 3 14 3 3 15 3~
 	~RATymoCT 0 0 0 0 0 0 1 0 0~
 	~RATymoCT 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RATymoCT.2da~

@@ -8,10 +8,10 @@
 ADD_KIT ~RATymo~
     ~RATymo 0 0 0 0 1 1 0 1~
     ~RATymo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RATymo 3 3 14 3 15 3~
+	~RATymo 3 14 3 3 15 3~
 	~RATymo 0 0 0 0 0 0~
-	~RATymo 3 3 14 3 15 3~
-    ~RATymo 3 3 14 3 15 3~
+	~RATymo 3 14 3 3 15 3~
+    ~RATymo 3 14 3 3 15 3~
 	~RATymo 0 0 0 0 0 0 1 0 0~
 	~RATymo 0 0 0 1 0 0~
 	~DeitiesOfFaerun\Tables\RATymo.2da~
