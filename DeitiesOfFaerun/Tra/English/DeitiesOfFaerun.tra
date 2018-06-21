@@ -2366,9 +2366,9 @@ Weight: 0~
 //				                Luckbringer of Tymora
 //__________________________________________________________________________________
 //__________________________________________________________________________________
-@3301 = ~luckbringer of tymora~
-@3302 = ~Luckbringer of Tymora~
-@3303 = ~LUCKBRINGER OF TYMORA: Tymora (Tie-MORE-ah) is sometimes called Tyche's fair-haired or fair-tressed daughter or Beshaba's I bright sister, but these are more poetic titles than I designations of her maternal lineage or her hair I color. In actuality, Tymora is half of the deity once known as Tyche, with Beshaba being the other half. Tymora inherited Tyche's grace and kindness when that goddess split into two beings in the Dawn Cataclysm, a war among the gods that long preceded the Time of Troubles and is said to have heralded the fall of Myth Drannor. Beshaba garnered more of Tyche's wanton, willful nature, sensual side, and restless energy.
+@3401 = ~luckbringer of tymora~
+@3402 = ~Luckbringer of Tymora~
+@3403 = ~LUCKBRINGER OF TYMORA: Tymora (Tie-MORE-ah) is sometimes called Tyche's fair-haired or fair-tressed daughter or Beshaba's I bright sister, but these are more poetic titles than I designations of her maternal lineage or her hair I color. In actuality, Tymora is half of the deity once known as Tyche, with Beshaba being the other half. Tymora inherited Tyche's grace and kindness when that goddess split into two beings in the Dawn Cataclysm, a war among the gods that long preceded the Time of Troubles and is said to have heralded the fall of Myth Drannor. Beshaba garnered more of Tyche's wanton, willful nature, sensual side, and restless energy.
 
 Tymora's faith is one of the most common in the Faerûn, in particular since it caters most heavily to a highly mobile, relatively wealthy, and intrinsically powerful group who live by their wits and by their luck: adventurers. Tymora is fickle but playful and never vengeful or malicious. She likes a good joke and has been known to play an occasional practical joke on some of the more straight-laced Faerunian deities, such as Helm and Tyr. She is reputed by sages to have had short-lived romances with several of the good male deities of Faerûn, but these ended amicably on both sides after a short while. She likes merriment and festive occasions and rumors abound at gaming houses throughout Faerûn of people who spotted her at the tables during one holiday or another, laughing and having a good time with all.
 
@@ -2399,8 +2399,8 @@ The Luckbringer blesses a creature or <PRO_HIMHER>self with an outbreak of luck 
 TYMORA'S BLESSING
 
 The Luckbringer pleads the goodwill of Tymora to <PRO_HIMHER>self, receiving significant bonuses to several actions.~
-@3304 = ~Moment~
-@3305 = ~Moment
+@3404 = ~Moment~
+@3405 = ~Moment
 (Divination)
 
 Level: 2
@@ -2412,8 +2412,8 @@ Area of Effect: One creature
 Saving Throw: None
 
 By twisting Fate accordingly to <PRO_HISHER> will, the Luckbringer makes every moment of a combat favorable to the target of this spell, granting a +2 bonus to Thac0, Speed Factor and to its critical hit range.~
-@3306 = ~Favor of Tymora~
-@3307 = ~Favor of Tymora
+@3406 = ~Favor of Tymora~
+@3407 = ~Favor of Tymora
 (Abjuration)
 
 Level: 2
@@ -2425,8 +2425,8 @@ Area of Effect: One creature
 Saving Throw: None
 
 This spell confers a protection upon single living recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a +4 bonus to its Saving Throws.~
-@3308 = ~Luckbolt~
-@3309 = ~Luckbolt
+@3408 = ~Luckbolt~
+@3409 = ~Luckbolt
 (Invocation/Evocation)
 
 Level: 6
@@ -2446,8 +2446,8 @@ Round 2: +8 bonus to damage, +6 bonus to Thac0 and +4 bonus to Saving Throws.
 Round 3: +6 bonus to damage, +3 bonus to Thac0 and +2 bonus to Saving Throws.
 
 Round 4: +4 bonus to damage, +2 bonus to Thac0 and +1 bonus to Saving Throws.~
-@3310 = ~Tymora's Blessing~
-@3311 = ~Tymora's Blessing
+@3410 = ~Tymora's Blessing~
+@3411 = ~Tymora's Blessing
 (Invocation/Evocation)
 
 Level: 7
@@ -2459,8 +2459,8 @@ Area of Effect: The caster
 Saving Throw: None
 
 In the blink of an eye, the Luckbringer can be blessed by Tymora when asking for the Lady's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.~
-@3312 = ~Holy Symbol of Tymora~
-@3313 = ~Only the most worthy and devoted servants of the Lady Luck are granted these powerful holy symbols.
+@3412 = ~Holy Symbol of Tymora~
+@3413 = ~Only the most worthy and devoted servants of the Lady Luck are granted these powerful holy symbols.
 	
 STATISTICS:
 
