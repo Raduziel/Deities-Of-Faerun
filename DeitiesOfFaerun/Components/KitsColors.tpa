@@ -2,11 +2,11 @@
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_ASCII 0x22 animation (2)
+  READ_SHORT 0x1c type
   READ_LONG 0x18 flags
-  PATCH_IF (((flags & BIT6) = 0) AND ((("%animation%" STRING_EQUAL_CASE "4A")) OR (("%animation%" STRING_EQUAL_CASE "3A")) OR (("%animation%" STRING_EQUAL_CASE "2A")))) BEGIN
+  PATCH_IF (((flags & BIT6) = 0) AND (("%animation%" STRING_EQUAL_CASE "4A") OR ("%animation%" STRING_EQUAL_CASE "3A") OR ("%animation%" STRING_EQUAL_CASE "2A") OR (type = 7) OR (type = 12) OR (type = 41) OR (type = 47) OR (type = 49) OR (type = 53))) BEGIN
       LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 7  END                                   
   END
   BUT_ONLY
-
 
 //EoF
