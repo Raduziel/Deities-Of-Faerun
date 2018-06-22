@@ -2439,7 +2439,7 @@ Saving Throw: None
 
 This spell can be used by the caster directly or fired at a chosen creature as a bolt that cannot miss. If the recipient being is not the caster, the recipient must be viewed by the caster, either directly or through some means of scrying, as the Luckbolt is cast. The spell affects the target as follows:
 
-Round 1: Maximum damage, +10 bonus to damage, automatically hits and succeeds on Saving Throws.
+Round 1: Maximum damage, +10 bonus to damage, automatically hits (except on a critical miss) and succeeds on Saving Throws.
 
 Round 2: +8 bonus to damage, +6 bonus to Thac0 and +4 bonus to Saving Throws.
 
