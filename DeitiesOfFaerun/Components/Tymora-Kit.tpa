@@ -131,6 +131,8 @@ COPY "DeitiesOfFaerun\Spl\RATymo51.spl"  override
 
 COPY "DeitiesOfFaerun\Spl\RATymo52.spl"  override
 
+COPY "DeitiesOfFaerun\Spl\RATymo53.spl"  override
+
 COPY "DeitiesOfFaerun\Spl\RATymo6.spl"  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Luckbolt
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
