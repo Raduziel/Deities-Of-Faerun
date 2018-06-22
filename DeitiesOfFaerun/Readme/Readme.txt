@@ -944,6 +944,12 @@ Without this component the strongholds will be chosen by alignment, as the unmod
 
 ====================================================================================================================================================================
 
+e) Kits' Colors
+
+This component will make all non-magical armors, helmets and shields use the kit's assigned colors instead of those imposed by the item.
+
+====================================================================================================================================================================
+
 THANKS
 
 I have a lot of people to say "Thank You".
