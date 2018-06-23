@@ -29,7 +29,7 @@ ADD_KIT ~RAKeleFC~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAKeleFC~
-		clascolr = ~6 72 51 41 72~
+		clascolr = ~6 43 137 95 30~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END

@@ -26,7 +26,7 @@ ADD_KIT ~RAMyst~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAMyst~
-		clascolr = ~57 79 123 2 24~
+		clascolr = ~57 79 124 17 18~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 1 0~
 END

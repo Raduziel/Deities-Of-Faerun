@@ -28,7 +28,7 @@ ADD_KIT ~RATymoCT~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATymoCT~
-		clascolr = ~14 28 18 95 14~
+		clascolr = ~14 96 97 5 17~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 0 1 0 0~
 END

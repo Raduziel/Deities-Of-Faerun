@@ -26,7 +26,7 @@ ADD_KIT ~RATlna~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATlna~
-		clascolr = ~20 51 37 95 20~
+		clascolr = ~20 54 39 92 137~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END

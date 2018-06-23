@@ -26,7 +26,7 @@ ADD_KIT ~RAAzut~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAAzut~
-		clascolr = ~5 170 141 137 5~
+		clascolr = ~5 170 169 135 5~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 1 0~
 END

@@ -28,7 +28,7 @@ ADD_KIT ~RABhaaCT~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RABhaaCT~
-		clascolr = ~182 47 119 41 182~
+		clascolr = ~182 140 140 62 186~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END

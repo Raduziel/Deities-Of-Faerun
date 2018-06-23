@@ -26,7 +26,7 @@ ADD_KIT ~RAUmbe~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAUmbe~
-		clascolr = ~81 121 55 10 10~
+		clascolr = ~81 55 125 15 15~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 0 0 0 1~
 END

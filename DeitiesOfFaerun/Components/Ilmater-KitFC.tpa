@@ -28,7 +28,7 @@ ADD_KIT ~RAIlmaFC~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAIlmaFC~
-		clascolr = ~205 223 222 41 232~
+		clascolr = ~14 28 222 9 14~~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END

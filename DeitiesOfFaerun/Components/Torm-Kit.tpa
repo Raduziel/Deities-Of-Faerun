@@ -26,7 +26,7 @@ ADD_KIT ~RATorm~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATorm~
-		clascolr = ~205 132 94 41 93~
+		clascolr = ~66 140 190 164 186~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 0 1 1 0 0 1~
 		hpclass = ~HPWAR~

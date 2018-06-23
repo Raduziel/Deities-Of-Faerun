@@ -26,7 +26,7 @@ ADD_KIT ~RASelu~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASelu~
-		clascolr = ~79 222 121 95 79~
+		clascolr = ~79 222 123 97 102~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END

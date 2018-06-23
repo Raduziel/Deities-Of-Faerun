@@ -28,7 +28,7 @@ ADD_KIT ~RAVelsCM~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAVelsCM~
-		clascolr = ~17 93 137 87 17~
+		clascolr = ~67 99 16 137 17~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 0 0 0 0 0~
 END

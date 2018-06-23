@@ -29,7 +29,7 @@ ADD_KIT ~RABaneFC~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RABaneFC~
-		clascolr = ~182 47 136 41 182~
+		clascolr = ~29 47 136 188 182~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END

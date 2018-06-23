@@ -26,7 +26,7 @@ ADD_KIT ~RAShar~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAShar~
-		clascolr = ~205 136 118 41 104~
+		clascolr = ~247 186 204 41 229~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END

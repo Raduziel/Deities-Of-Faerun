@@ -28,7 +28,7 @@ ADD_KIT ~RAGaraFC~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAGaraFC~
-		clascolr = ~30 65 47 41 66~
+		clascolr = ~30 65 47 39 66~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 		hpclass = ~HPWAR~

@@ -26,7 +26,7 @@ ADD_KIT ~RASune~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASune~
-		clascolr = ~80 81 46 41 101~
+		clascolr = ~67 81 47 46 70~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 0 0~
 END

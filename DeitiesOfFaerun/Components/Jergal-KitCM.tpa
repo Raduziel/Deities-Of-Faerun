@@ -28,7 +28,7 @@ ADD_KIT ~RAJergCM~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAJergCM~
-		clascolr = ~6 110 188 42 63~
+		clascolr = ~6 110 186 185 187~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 0 0 0 0 0~
 END

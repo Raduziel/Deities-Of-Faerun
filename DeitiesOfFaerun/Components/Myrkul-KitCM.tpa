@@ -28,7 +28,7 @@ ADD_KIT ~RAMyrkCM~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAMyrkCM~
-		clascolr = ~21 64 93 65 100~
+		clascolr = ~21 66 136 65 100~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 0 0 0 0 0~
 END
