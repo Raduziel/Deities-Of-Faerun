@@ -25,4 +25,17 @@ COPY_EXISTING ~yxyve1.cre~ ~override~
  END
 BUT_ONLY
 
+<<<<<<<< .../inlined_script.baf
+IF
+	Global("MyKit","LOCALS",0)
+	InParty(Myself)
+	Class(Myself,CLERIC)
+THEN
+	RESPONSE #100
+		SetGlobal("MyKit","LOCALS",1)
+		AddKit(RASune)
+END
+>>>>>>>>
+EXTEND_TOP ~YXYVE.BCS~ ~.../inlined_script.baf~
+
 //EoF
