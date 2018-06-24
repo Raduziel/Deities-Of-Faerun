@@ -13,7 +13,7 @@ Sune herself is said to be benevolent and sometimes whimsical, alternating betwe
 Sune is said to share the waters of the Evergold, a sacred pool, with the elven goddess Hanali Celanil, and a friendly but intense rivalry exists between the two over the innate superiority of elven versus human beauty. Sune abhors and actively opposes any force or deity that causes the marring of living beauty.
 
 Armor: Any.
-Weapon: Bludgeoning and darts.
+Weapon: Bludgeoning, shortbow and darts.
 
 Advantages:
 
@@ -2472,4 +2472,38 @@ Equipped abilities:
 
 Weight: 0~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Black Finger of Beshaba
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3501 = ~black finger of beshaba~
+@3502 = ~Black Finger of Beshaba~
+@3503 = ~BLACK FINGER OF BESHABA: Beshaba (Beh-SHAH-ba), the Maid of Misfortune, is a deity feared and placated in Faerûn much more than she is venerated. When represented, she is shown much like her avatar appears, as a lovely maiden with snow-white hair, her features twisted by maniacal laughter. In Anauroch, where she pretends that she is Shaundakul to perform mischievous and malicious tricks (such as causing oases to dry out, blinding people, and causing travelers to get lost), she appears as a jackal-headed man. Needless to say, this behavior has done much to befoul the reputation of the real Shaundakul.
+
+She is known as Tyche's unpleasant daughter, but this is more a poetic title than one designating her maternal lineage. In actuality, Tyche was not her mother in the sense of giving birth to Beshaba, rather Beshaba is half of the deity once known as Tyche, with Tymora being the other half. It is said among sages that when Tyche split to become her two warring "daughters" in the Dawn Cataclysm, Beshaba got the looks, and Tymora all the love. Certainly many men seem to lose their senses when they meet the gaze of Beshaba, either being overwhelmed with lust and driven to carry out Beshaba's every whim in reckless, slobbering haste or descending into pure gibbering madness on the spot. In women, her gaze is said to inspire mania reflective of Beshaba's own inner turmoil or a similar insanity.
+
+Beshaba is spiteful, petty and malicious. While most people tremble in fear at Beshaba's attendance at any event even in spirit, Beshaba is almost always invited and welcomed formally in the opening speeches or ceremonies of formal functions (such as marriages and coronations), contests of sport or martial prowess, and at the naming ceremonies of children. If she is not so invited, she may take offense and wreak endless misfortune upon those involved. She is difficult to understand as her actions often seem random, but in the main she is jealous of the favorable opinion people have of her sister and demands equal veneration (or at least equal lip service) to that given to Tymora or she will ruin the lives who so slight her.
+
+Talos has recently been courting the affections of Beshaba, perhaps with an eye toward eventually controlling misfortune and bad luck along with destruction. Beshaba has not returned his overtures.
+
+Armor: Any.
+Weapon: Bludgeoning only.
+
+Advantages:
+
+~
+@3504 = ~Holy Symbol of Beshaba~
+@3505 = ~Only the most worthy and devoted servants of the Maid of Misfortune are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
 //EoF
