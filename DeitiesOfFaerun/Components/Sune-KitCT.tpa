@@ -9,7 +9,7 @@ INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 
 ADD_KIT ~RASuneCT~
     ~RASuneCT 0 0 0 0 1 1 0 1~
-    ~RASuneCT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RASuneCT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RASuneCT 3 3 3 3 12 16~
 	~RASuneCT 0 0 0 0 0 0~
 	~RASuneCT 3 3 3 3 12 16~
@@ -127,7 +127,7 @@ LPF ADD_ITEM_EQEFFECT
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 98 99 103 104 105  BEGIN
+		89 90 91 92 93 94 95 96 98 99 103 104  BEGIN
 		  LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
