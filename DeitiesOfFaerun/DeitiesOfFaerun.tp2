@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.8.1~
+VERSION ~1.8.2~
 
 ALWAYS
 
@@ -472,13 +472,26 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tymora-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
+//		          BLACK FINGER OF BESHABA (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+//BEGIN @58
+//REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-Kit.tpa~
+//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitFC.tpa~
+//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitCM.tpa~
+//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitCT.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
 //				          AERIE, THE FASPAWN OF BAERVAN
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 BEGIN @9
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RABaer.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RABaer.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Baervan-Aerie.tpa~
 
 //__________________________________________________________________________________
@@ -489,8 +502,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baervan-Aerie.tpa~
 //__________________________________________________________________________________
 
 BEGIN @10
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RABara.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RABara.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Quayle.tpa~
 
 //__________________________________________________________________________________
@@ -501,8 +513,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Quayle.tpa~
 //__________________________________________________________________________________
 
 BEGIN @11
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RABara.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RABara.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Glint.tpa~
 
 //__________________________________________________________________________________
@@ -513,8 +524,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Glint.tpa~
 //__________________________________________________________________________________
 
 BEGIN @12
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAClan.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAClan.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-Yeslick.tpa~
 
 //__________________________________________________________________________________
@@ -525,8 +535,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-Yeslick.tpa~
 //__________________________________________________________________________________
 
 BEGIN @13
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RACyri.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RACyri.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Cyric-Tiax.tpa~
 
 //__________________________________________________________________________________
@@ -537,8 +546,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Cyric-Tiax.tpa~
 //__________________________________________________________________________________
 
 BEGIN @14
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAHelm.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAHelm.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Helm-Anomen.tpa~
 
 //__________________________________________________________________________________
@@ -549,8 +557,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Helm-Anomen.tpa~
 //__________________________________________________________________________________
 
 BEGIN @15
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RATemp.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RATemp.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Branwen.tpa~
 
 //__________________________________________________________________________________
@@ -561,8 +568,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Branwen.tpa~
 //__________________________________________________________________________________
 
 BEGIN @16
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAShar.2da~) @5
+REQUIRE_PREDICATE ((GAME_IS ~bgee bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAShar.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Shar-Viconia.tpa~
 
 //__________________________________________________________________________________
@@ -574,9 +580,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Shar-Viconia.tpa~
 
 
 BEGIN @17
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAUmbe.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~Tenya.cre~) @6
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAUmbe.2da~) AND (FILE_EXISTS_IN_GAME ~Tenya.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Tenya.tpa~
 
 //__________________________________________________________________________________
@@ -588,9 +592,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Tenya.tpa~
 
 
 BEGIN @18
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RATyr.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0drake.cre~) @6
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RATyr.2da~) AND (FILE_EXISTS_IN_GAME ~c0drake.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Tyr-Drake.tpa~
 
 //__________________________________________________________________________________
@@ -602,9 +604,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tyr-Drake.tpa~
 
 
 BEGIN @19
-REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAIlma.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~c0sirene.cre~) @6
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAIlma.2da~) AND (FILE_EXISTS_IN_GAME ~c0sirene.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-Sirene.tpa~
 
 //__________________________________________________________________________________
@@ -616,15 +616,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-Sirene.tpa~
 
 
 BEGIN @20
-REQUIRE_PREDICATE (GAME_IS ~bgee~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RALath.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~b!gavin.cre~) @6
-INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Gavin.tpa~
-
-BEGIN @19
-REQUIRE_PREDICATE (GAME_IS ~bg2ee~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RALath.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~b!gav08.cre~) @6
+REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RALath.2da~) AND (((GAME_IS ~bgee~) AND (FILE_EXISTS_IN_GAME ~b!gavin.cre~)) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~b!gav08.cre~)))) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Gavin.tpa~
 
 //__________________________________________________________________________________
@@ -636,24 +628,8 @@ INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Gavin.tpa~
 
 
 BEGIN @21
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RAMask.2da~) @5
-REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~l#dusky.cre~) @6
+REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (FILE_EXISTS_IN_GAME ~RAMask.2da~) AND (FILE_EXISTS_IN_GAME ~l#dusky.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Components/Mask-Dusky.tpa~
-
-//__________________________________________________________________________________
-//__________________________________________________________________________________
-//
-//				       FINCH, THE GLYPHSCRIBER OF DENEIR
-//__________________________________________________________________________________
-//__________________________________________________________________________________
-
-
-//BEGIN @22
-//REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RADene.2da~) @5
-//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~sufinchi.cre~) @6
-//INCLUDE  ~DeitiesOfFaerun/Components/Deneir-Finch.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -663,11 +639,21 @@ INCLUDE  ~DeitiesOfFaerun/Components/Mask-Dusky.tpa~
 //__________________________________________________________________________________
 
 
+BEGIN @22
+REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RASune.2da~) AND (FILE_EXISTS_IN_GAME ~yxyve1.cre~)) @5
+INCLUDE  ~DeitiesOfFaerun/Components/Sune-Yvette.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				       FINCH, THE GLYPHSCRIBER OF DENEIR
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
 //BEGIN @23
-//REQUIRE_PREDICATE (GAME_IS ~bgee eet~) @6
-//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~RASune.2da~) @5
-//REQUIRE_PREDICATE (FILE_EXISTS_IN_GAME ~yxyve1.cre~) @6
-//INCLUDE  ~DeitiesOfFaerun/Components/Sune-Yvette.tpa~
+//REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RADene.2da~) AND (FILE_EXISTS_IN_GAME ~sufinchi.cre~)) @5
+//INCLUDE  ~DeitiesOfFaerun/Components/Deneir-Finch.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________

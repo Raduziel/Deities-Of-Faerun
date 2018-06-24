@@ -6,7 +6,7 @@
 @2 = ~This component requires the Base Cleric changes~
 @3 = ~For your efforts and dedication, your deity and its Church have given you a powerful Holy Symbol~
 @4 = ~Deities & Pantheons' Kits (requires Base Cleric Changes)~
-@5 = ~This component requires its respective kit~
+@5 = ~The kit or creature file wasn't found, the component will be ignored~
 @6 = ~This component is not available for your game~
 @7 = ~Strongholds Alterings (requires the respective kit component)~
 @8 = ~Use Kits' Colors~
