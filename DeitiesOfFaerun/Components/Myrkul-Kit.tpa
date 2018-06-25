@@ -152,7 +152,7 @@ COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.itm" override                     
 	LPF ALTER_EFFECT INT_VAR match_parameter1 = 19 match_opcode = 267 parameter1 = EVAL "%RA_Charmed%" END
 	LPF ALTER_EFFECT INT_VAR match_parameter1 = 20 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
 	LPF ALTER_EFFECT INT_VAR match_parameter1 = 21 match_opcode = 267 parameter1 = EVAL "%RA_Held%" END
-	LPF ALTER_EFFECT INT_VAR match_parameter1 = 22 match_opcode = 267 parameter1 = EVAL "%RA_Paralyze%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 22 match_opcode = 267 parameter1 = EVAL "%RA_Paralyzed%" END
 	LPF ALTER_EFFECT INT_VAR match_parameter1 = 23 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
 	LPF ALTER_EFFECT INT_VAR match_parameter1 = 24 match_opcode = 267 parameter1 = EVAL "%RA_Confused%" END
 	LPF ALTER_EFFECT INT_VAR match_parameter1 = 25 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
