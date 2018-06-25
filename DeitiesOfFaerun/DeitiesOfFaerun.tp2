@@ -651,9 +651,9 @@ INCLUDE  ~DeitiesOfFaerun/Components/Sune-Yvette.tpa~
 //__________________________________________________________________________________
 
 
-//BEGIN @23
-//REQUIRE_PREDICATE ((GAME_IS ~bgee bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAKele.2da~) AND (FILE_EXISTS_IN_GAME ~jklhel.cre~)) @5
-//INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-Helarine.tpa~
+BEGIN @23
+REQUIRE_PREDICATE ((GAME_IS ~bgee bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAKele.2da~) AND (FILE_EXISTS_IN_GAME ~jklhel.cre~)) @5
+INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-Helarine.tpa~
 
 
 //__________________________________________________________________________________

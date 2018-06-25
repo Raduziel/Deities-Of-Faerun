@@ -2398,7 +2398,7 @@ The Luckbringer blesses a creature or <PRO_HIMHER>self with an outbreak of luck 
 
 TYMORA'S BLESSING
 
-The Luckbringer pleads the goodwill of Tymora to <PRO_HIMHER>self, receiving significant bonuses to several actions.~
+The Luckbringer pleads for the goodwill of Tymora to <PRO_HIMHER>self, receiving significant bonuses to several actions.~
 @3404 = ~Moment~
 @3405 = ~Moment
 (Divination)
@@ -2493,9 +2493,31 @@ Weapon: Bludgeoning only.
 
 Advantages:
 
-~
-@3504 = ~Holy Symbol of Beshaba~
-@3505 = ~Only the most worthy and devoted servants of the Maid of Misfortune are granted these powerful holy symbols.
+- May use the Bad Luck special ability once per day, starting at level 1.
+- May use the Doom special ability once per day, starting at level 3.
+- May use the Bane of Beshaba special ability once per day, starting at level 5.
+- May cast Lower Resistance once per day as a special ability, starting at level 7.
+- May use the Misfortune special ability once per day, starting at level 10.
+- May use the Beshaba's Mercy special ability once per day, starting at level 15.
+- May cast Black Blade of Disaster once per day as a special ability, starting at level 20.
+
+BAD LUCK
+
+The reverse form of the wizard spell Luck.
+
+BANE OF BESHABA
+
+The Black Finger calls for Beshaba's aid to decrease the Saving Throws of a creature.
+
+MISFORTUNE
+
+The Black Finger pleads for Beshaba's curse upon an enemy, decreasing its chances of success on Saving Throws as well as in hit and damage rolls.
+
+BESHABA'S MERCY
+
+The Black Finger supplicates for the clemency of Beshaba to <PRO_HIMHER>self, receiving significant bonuses to several actions.~
+@3512 = ~Holy Symbol of Beshaba~
+@3513 = ~Only the most worthy and devoted servants of the Maid of Misfortune are granted these powerful holy symbols.
 	
 STATISTICS:
 
@@ -2506,4 +2528,5 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
+
 //EoF
