@@ -159,9 +159,35 @@ COPY "DeitiesOfFaerun\Spl\RAKELE3.eff" override
 COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2504 SAY NAME2 @2504   //Minor Death - creature
 
 COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.itm" override                                   //Minor Death - weapon/immunities 
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Poison%" END
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_Poisoned%" END
-
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL "%RA_Poison%" END
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL "%RA_Poisoned%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 3  match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 4  match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 5  match_opcode = 267 parameter1 = EVAL "%RA_Bleeding%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 6  match_opcode = 267 parameter1 = EVAL "%RA_Berserk%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 7  match_opcode = 267 parameter1 = EVAL "%RA_Feebleminded%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 8  match_opcode = 267 parameter1 = EVAL "%RA_Sleep%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 9  match_opcode = 267 parameter1 = EVAL "%RA_Stun%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 10 match_opcode = 267 parameter1 = EVAL "%RA_Stunned%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 11 match_opcode = 267 parameter1 = EVAL "%RA_RigidThink%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 12 match_opcode = 267 parameter1 = EVAL "%RA_Panic%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 13 match_opcode = 267 parameter1 = EVAL "%RA_MoralFail%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 14 match_opcode = 267 parameter1 = EVAL "%RA_Drain1%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 15 match_opcode = 267 parameter1 = EVAL "%RA_Drain2%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 16 match_opcode = 267 parameter1 = EVAL "%RA_Drain3%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 17 match_opcode = 267 parameter1 = EVAL "%RA_Drain4%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 18 match_opcode = 267 parameter1 = EVAL "%RA_Drain5%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 19 match_opcode = 267 parameter1 = EVAL "%RA_Charmed%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 20 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 21 match_opcode = 267 parameter1 = EVAL "%RA_Held%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 22 match_opcode = 267 parameter1 = EVAL "%RA_Paralyze%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 23 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 24 match_opcode = 267 parameter1 = EVAL "%RA_Confused%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 25 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 26 match_opcode = 267 parameter1 = EVAL "%RA_Hopeless%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 27 match_opcode = 267 parameter1 = EVAL "%RA_AbDrain%" END
+	LPF ALTER_EFFECT INT_VAR match_parameter1 = 28 match_opcode = 267 parameter1 = EVAL "%RA_IntDrain%" END
+	
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
