@@ -476,12 +476,12 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tymora-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-//BEGIN @59
-//REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
-//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-Kit.tpa~
-//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitFC.tpa~
-//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitCM.tpa~
-//INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitCT.tpa~
+BEGIN @59
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
+INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitFC.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitCM.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitCT.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
