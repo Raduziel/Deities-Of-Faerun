@@ -26,7 +26,7 @@ ADD_KIT ~RABesh~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RABesh~
-		clascolr = ~44 132 117 180 119~
+		clascolr = ~44 139 117 140 119~
 		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 0 1 1 1~
 END
