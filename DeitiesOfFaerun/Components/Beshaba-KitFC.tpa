@@ -76,14 +76,14 @@ ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
   STR_VAR
     clab_name 	= EVAL ~%mod_clab%~
 	class 			= ~cleric~	 
-	s_Life 			= ~minor~
+	s_Life 			= ~x~
 	s_Death 		= ~major~
 	s_Benediction 	= ~x~
 	s_Destruction 	= ~major~
 	s_Protection 	= ~x~
 	s_War 			= ~x~
 	s_Exploration   = ~x~
-	s_Knowledge 	= ~x~
+	s_Knowledge 	= ~minor~
 	s_Deception 	= ~minor~
 	s_Thought 		= ~minor~
 	s_Dread 		= ~major~

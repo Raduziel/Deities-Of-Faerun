@@ -7,7 +7,6 @@
 
 INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 
-
 ADD_KIT ~RABaneFC~
     ~RABaneFC 0 0 0 0 0 0 0 0~
     ~RABaneFC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 2 2 0 2 2 2 0 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
