@@ -1,0 +1,192 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Black Finger of Beshaba
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RABesh~
+    ~RABesh 0 0 0 0 1 1 0 1~
+    ~RABesh 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABesh 3 3 3 3 10 3~
+	~RABesh 0 0 0 0 0 0~
+	~RABesh 3 3 3 3 10 3~
+    ~RABesh 3 3 3 3 10 3~
+	~RABesh 0 0 0 0 0 0 0 0 1~
+	~RABesh 1 0 1 1 0 0~
+	~DeitiesOfFaerun\Tables\RABesh.2da~
+	~K_C_H   K_C_HE   K_C_HL   H_C_G   K_C_HO~
+	~0x04000000 3~
+	~Cl0~
+	~PLAT12 SHLD22 HELM04 * RING31 RING09 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN14 HAMM09 *~
+	SAY @3501
+	SAY @3502
+	SAY @3503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RABesh~
+		clascolr = ~44 132 117 180 119~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~1 0 1 0 1 1 1~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~major~
+	s_Benediction 	= ~x~
+	s_Destruction 	= ~major~
+	s_Protection 	= ~x~
+	s_War 			= ~x~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~minor~
+	s_Thought 		= ~minor~
+	s_Dread 		= ~major~
+	s_Vigor 		= ~x~
+	s_Affliction 	= ~minor~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~major~
+	s_Magic 		= ~x~
+	s_Perdition     = ~major~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RAHSBesh.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSBesh.itm" override SAY NAME1 @3512 SAY NAME2 @3512 SAY DESC @3513
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RABesh + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+
+COPY "DeitiesOfFaerun\Spl\RABesh1.spl"  override SAY NAME1 @3504 SAY UNIDENTIFIED_DESC @3505	             //Bad Luck
+
+COPY_EXISTING ~SPPR113.spl~ ~override/RABesh2.spl~                                                           //Doom
+LPM SPELL_TO_INNATE
+
+COPY "DeitiesOfFaerun\Spl\RABesh3.spl"  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bane of Beshaba
+
+COPY_EXISTING ~SPWI514.spl~ ~override/RABesh4.spl~                                                           //Lower Resistance
+LPM SPELL_TO_INNATE
+
+COPY "DeitiesOfFaerun\Spl\RABesh5.spl"  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Misfortune
+
+
+COPY "DeitiesOfFaerun\Spl\RABesh6.spl"  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Beshaba's Mercy
+
+COPY_EXISTING ~SPWI915.spl~ ~override/RABesh7.spl~                                                           //Black Blade of Disaster
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RABesh + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  special = RESOLVE_STR_REF (@3502)
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+ACTION_FOR_EACH file IN ~BESHS~ ~BESHL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~BESHBLUC~ ~BESHBANE~ ~BESHMISF~ ~BESHMERC~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
