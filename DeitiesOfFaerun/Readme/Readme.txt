@@ -808,7 +808,7 @@ Casting Time: 5
 Area of Effect: One creature
 Saving Throw: None
 
-This spell confers a protection upon single living recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a +4 bonus to its Saving Throws.
+This spell confers a protection for a single recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a +4 bonus to its Saving Throws. This spell will cancel the effects of Bane of Beshaba.
 
 ---
 
@@ -836,7 +836,7 @@ Round 4: +4 bonus to damage, +2 bonus to Thac0 and +1 bonus to Saving Throws.
 ---
 
 Tymora's Blessing
-(Invocation/Evocation)
+(Abjuration)
 
 Level: 7
 Sphere: Benediction
@@ -848,6 +848,68 @@ Saving Throw: None
 
 In the blink of an eye, the Luckbringer can be blessed by Tymora when asking for the Lady's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.
 
+
+====================================================================================================================================================================
+
+23) BESHABA
+
+
+Bad Luck
+(Enchantment/Charm)
+
+Level: 2
+Sphere: Dread
+Range: 15 ft.
+Duration: 3 rounds
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient of this spell gains extraordinary bad luck for the next 3 rounds, receiving a -1 penalty to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as -5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is increased by 1. For example, a 6d6 fireball will do 6d7 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d4 fire damage instead.
+---
+
+Bane of Beshaba
+(Abjuration)
+
+Level: 2
+Sphere: Dread
+Range: 0
+Duration: 5 rounds
+Casting Time: 5
+Area of Effect: One creature
+Saving Throw: None
+
+This spell bestows a curse upon a single recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a -4 penalty to its Saving Throws. This spell will cancel the effects of Favor of Tymora.
+
+---
+
+Misfortune
+(Enchantment/Charm)
+
+Level: 5
+Sphere: Dread
+Range: 0
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: One creature
+Saving Throw: None
+
+This spell causes the recipient to receive a -3 penalty on all Saving Throws, initiative checks, Thac0, and damage rolls as well as a -15% penalty to all thieving skill checks for the spell duration. A Black Finger of Beshaba must physically touch the recipient to cast this spell.
+
+---
+
+Beshaba's Mercy
+(Abjuration)
+
+Level: 7
+Sphere: Benediction
+Range: 0
+Duration: 5 rounds
+Casting Time: 0
+Area of Effect: The caster
+Saving Throw: None
+
+In the blink of an eye, the Black Finger can be blessed by Beshaba when asking for the Maid's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.
 
 ====================================================================================================================================================================
 
