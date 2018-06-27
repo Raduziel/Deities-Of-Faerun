@@ -2,37 +2,63 @@ Welcome and thanks for installing Deities of Faerun.
 
 INSTALLATION NOTES:
 
-This mods is fully compatible with Faiths and Powers sphere system, but not with its kits. If you want to play DoF with FnP's sphere system be aware that DoF must be installed BEFORE it. 
-If you install it after not a big deal will happen, but you'll lose the sphere designed by DoF for Tyr, Talos, Helm, Lathander and Tempus in favor of FnP's ones.
+* Deities of Faerûn should be installed after any mod that adds or alters items in the game.
 
-When it comes to kits, problems may happen, as both FnP and DoF does overhaulings that will probably conflict, so don't do it. For a more complete experience, install all Deities of Faerun components that you want and Faiths and Powers sphere system - in that order.
+* Deities of Faerûn should be installed after any mod that adds or alters spells in the game.
 
-As many kitpack mods, DoF must be installed AFTER any itempack mods.
+* Deities of Faerûn will probably misbehave with any mod component that overhauls the combat system of the game.
+
+* Deities of Faerûn will probably misbehave with any mod component that alters the strongholds quests (except for those that exclusively remove the one-stronghold limit).
+
+* Deities of Faerûn is not compatible with any mods that alters the Cleric and will break any kit added by other mods (except for the Spirit Redeemer from I Hate Undead) - this can be fixed doing the following:
+
+Add "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the kit's tpa/tp2 as the example below:
+
+.................................................
+| LAF fl#add_kit_ee                             |
+|	STR_VAR                                 |
+|		kit_name = ~KitInternalName~    |
+|		clswpbon = ~0 0 3~              |
+|		(...)                           |
+| END                                           |
+.................................................
+
+
+* Deities of Faerûn is compatible with Faiths and Powers' Sphere System. To install both, follow the steps below:
+
+
+1) Install component 1 from DoF (Base Cleric Changes (required for all components). Quit.
+
+2) Install FnP (everything you want but the cleric/acolyte kits). Quit.
+
+3) Install everything else you want from DoF.
+
+
 
 KNOWN ISSUES:
 
-Anomen will be able to get proficiencies as a kitless Fighter (5 slots in every weapon). There is nothing I can do about it. He is still bounded to equipment restriction, so be aware that a Watcher of Helm can only use bludgeoning weapons.
+Anomen will be able to get proficiencies as a kitless Fighter (5 slots in every weapon). There is nothing I can do about it. He is still bounded to equipment restriction, so be aware that a Watcher of Helm can only use bludgeoning weapons. Installing Kjeron's Dual-Class-Into-Kits fixes this.
+
+
 
 This mod is splitted in the following components:
+
+
 
 a) Base changes
 
 Those are needed for the rest of the mod. Basically it install all the new BAMs and removes restrictions from the base cleric, so the kits can have their weapon restrictions accordingly to PnP. These changes will affect *every* cleric, including the base class and kits introduced from other mods.
 
-But don't worry: many of the changes will be imperceptible in other cleric mods. The only one you'll perceive is the increase of APR by level. This had to be done because of the kits that gains APR as warriors (like Tempus). You can overhaul this change in other cleric mods by adding "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the mod's kit tpa/tp2 as the example below:
 
-LAF fl#add_kit_ee
-	STR_VAR
-		kit_name = ~TheKitName~
-		clswpbon = ~0 0 3~
-		(...)
-END
 
 ====================================================================================================================================================================
+
+
 
 b) Kits
 
 This component will add the kits per se. All the kits were made as close to their PnP counterpart as possible - what includes some new special abilities exclusive to a specific kit. You can have access to the spell's description by right-clicking the spell's icon at the special ability menu, inside the game. You can see a brief description of the spells at the character generation screen. The new spells are:
+
 
 1) SUNE
 
@@ -914,6 +940,7 @@ In the blink of an eye, the Black Finger can be blessed by Beshaba when asking f
 ====================================================================================================================================================================
 
 
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -926,7 +953,11 @@ Equipped abilities:
 
 Weight: 0
 
+
+
 ====================================================================================================================================================================
+
+
 
 c) Kits to NPCs
 
@@ -934,7 +965,11 @@ This component will give the kit for a NPC that follows that deity. So Viconia w
 
 This component also alters stats (raising it to the kit's minimum), alignment (altering it to the kit's restriction) and proficiencies (to be in line with what the kit allows) when necessary. Also the NPCs special abilities will be removed (as Yeslick's Dispel Magic and Branwen's Spiritual Hammer) for balance reasons.
 
+
+
 ====================================================================================================================================================================
+
+
 
 d) New strongholds possibilities
 
@@ -1006,11 +1041,17 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 Without this component the strongholds will be chosen by alignment, as the unmodded game does.
 
+
+
 ====================================================================================================================================================================
+
+
 
 e) Kits' Colors
 
 This component will make all non-magical armors, helmets and shields use the kit's assigned colors instead of those imposed by the item.
+
+
 
 ====================================================================================================================================================================
 
