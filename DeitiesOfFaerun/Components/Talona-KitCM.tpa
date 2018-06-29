@@ -9,7 +9,7 @@ INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
 
 ADD_KIT ~RATlnaCM~
     ~RATlnaCM 0 0 0 0 1 1 0 1~
-    ~RATlnaCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RATlnaCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RATlnaCM 3 3 14 3 14 3~
 	~RATlnaCM 0 0 0 0 0 0~
 	~RATlnaCM 3 3 14 3 14 3~
