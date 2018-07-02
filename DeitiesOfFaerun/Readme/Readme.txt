@@ -69,7 +69,7 @@ Sphere: Thought
 Range: 15-ft/level
 Duration: 2 turns
 Casting Time: 6
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Special
 
 This spell has two effects: when cast upon an ally it will put it on a state of bliss, raising its morale and banishing all effects of disease, fear, sleep and charm. When cast upon an enemy the target must make a Saving Throw vs. Paralyzation or become stunned during the effect of the spell.
@@ -121,7 +121,7 @@ Sphere: Thought
 Range: Touch
 Duration: Permanent
 Casting Time: 5
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Neg.
 
 Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.
@@ -151,7 +151,7 @@ Sphere: Thought
 Range: 40 ft.
 Duration: 2 turns
 Casting Time: 2
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Neg.
 
 This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber and send a hideous and unsettling vision to the recipient, causing 1d10 points of magic damage. A Saving Throw vs. Spells is allowed to avoid all the effects.
@@ -165,7 +165,7 @@ Sphere: Thought
 Range: 60 ft.
 Duration: 1 round/3 levels
 Casting Time: 6
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Neg.
 
 An eyebite spell enables the caster to merely meet the gaze of a creature and speak a single word to cause an effect. The Nightcloak selects one of four possible gaze attacks at the time the spell is cast. Every effect can be resisted with a Saving Throw vs. Spells with a -4 penalty. The four effects of the spell are as follows:
@@ -186,7 +186,7 @@ Changestaff
 (Alteration)
 
 Sphere: Plant 
-Range: Touch
+Range: 40
 Duration: 5 turns
 Casting Time: 4 
 Area of Effect: Special 
@@ -205,7 +205,7 @@ Sphere: War
 Range: 0
 Duration: Special 
 Casting Time: 10
-Area of Effect: One magical mace-like construct
+Area of Effect: One magical mace
 Saving Throw: None
 
 This spell enables a Watcher to create a magical mace in <PRO_HISHER> hand. The Mace of Odo is wielded immediately when casting is complete and protects the Watcher against all level 1 and level 2 spells.
@@ -237,7 +237,7 @@ Sphere: War
 Range: 30 ft.
 Duration: 2 turns 
 Casting Time: 7
-Area of Effect: One magical sword-like construct
+Area of Effect: Special
 Saving Throw: None
 
 This spell brings into being a shimmering blade of force that appears as a sword of any description the caster desires, typically a broad sword. The sword forms in midair and is animated by the will of the caster (who need never touch it), flashing about as it attacks. The blade can strike four times per round, doing 2d4 points of damage with each successful hit, but cannot act beyond the caster's line of sight.
@@ -252,10 +252,10 @@ Boon of Lathander
 (Conjuration/Summoning)
 
 Sphere: Benediction
-Range: 0
+Range: Touch
 Duration: 6 rounds
 Casting Time: 7
-Area of Effect: The caster
+Area of Effect: One creature
 Saving Throw: None
 
 During this spell's effect, the spell recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in faerie fire.
@@ -280,10 +280,10 @@ Sunrise
 (Evocation, Alteration)
 
 Sphere: Light
-Range: Touch
-Duration: Instant
+Range: 0
+Duration: Instantaneous
 Casting Time: 6
-Area of Effect: 1 creature
+Area of Effect: The caster
 Saving Throw: Special
 
 With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around himself. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.
@@ -296,10 +296,10 @@ Legend Lore
 (Divination)
 
 Sphere: Knowledge
-Range: 0
+Range: Touch
 Duration: Special
 Casting Time: 3
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: None
 
 With this spell, the Lorekeeper can extend  knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.
@@ -329,7 +329,7 @@ Sphere: Vigor
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
-Area of Effect: 1 creature 
+Area of Effect: One creature 
 Saving Throw: None 
 
 
@@ -365,9 +365,9 @@ Frost Dagger
 Level: 1
 Sphere: Water
 Range: 30
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 3
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Special
 
 This spell creates a dagger that flies to a target determined by the caster. This weapon hits for 1d4+5 points of cold damage and the target must make a Saving Throw vs. Death or be frozen for 1 round.
@@ -380,9 +380,9 @@ Frost Whip
 Level: 2
 Sphere: Water
 Range: 5
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 5
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Special
 
 This spell creates a whip made of pure ice that is used immediately against a target designed by the caster for 4d4 points of cold damage. The whip makes the area around the target slippery - a Saving Throw vs. Wands must be made, otherwise the target will slip three feet away from the caster.
@@ -397,7 +397,7 @@ Sphere: Water
 Range: 0
 Duration: 1 turn
 Casting Time: 4
-Area of Effect: The caster
+Area of Effect: One magical sword
 Saving Throw: None
 
 This spell creates a swirling sword-shaped formation of jagged, fast-swirling ice shards extending from the caster's hand. Weightless and nonmetallic, it is considered a +2 enchanted weapon for purposes of determining what it can hit and strikes at THACO 6, regardless of the caster's normal combat abilities. Its touch lacerates for 3d4 points of damage and chills for an additional 1d6 points of cold damage.
@@ -427,7 +427,7 @@ Dehydrate
 Level: 4
 Sphere: Water
 Range: 40
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 4
 Area of Effect: One creature
 Saving Throw: Neg.
@@ -474,7 +474,7 @@ Shooting Star
 Level: 7
 Sphere: Light
 Range: 100
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 7
 Area of Effect: 15-ft. radius
 Saving Throw: None
@@ -490,7 +490,7 @@ Poison Touch
 
 Level: 2
 Sphere: Affliction
-Range: 0
+Range: Touch
 Duration: Special
 Casting Time: 5
 Area of Effect: One creature
@@ -558,7 +558,7 @@ Touch of Torment
 
 Level: 4
 Sphere: Affliction
-Range: 0
+Range: Touch
 Duration: Special
 Casting Time: 7
 Area of Effect: One creature
@@ -622,7 +622,7 @@ Sphere: Affliction
 Range: 0
 Duration: 3 rounds
 Casting Time: 1
-Area of Effect: Special
+Area of Effect: One magical dagger
 Saving Throw: None
 
 This spell creates a dagger on the Deathstalker's hand that can't be dropped or unequipped for the duration of the spell. The dagger strikes as a +2 weapon, but does not offers a bonus for hit or damage and can be used despite the cleric's proficiency. Every time the dagger strikes, there's a chance of 1% for every two 2 levels of the caster of automatically slaying the target creature.
@@ -646,21 +646,6 @@ The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> app
 
 17) MYRKUL
 
-Hand of Myrkul
-(Necromancy)
-
-Level: 7
-Sphere: Death
-Range: Touch
-Duration: Permanent
-Casting Time: 1
-Area of Effect: 1 creature
-Saving Throw: Neg.
-
-The Gray One touches <PRO_HISHER> victim enforcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
-
----
-
 Summon Minor Death
 (Necromancy)
 
@@ -673,6 +658,21 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.
+
+---
+
+Hand of Myrkul
+(Necromancy)
+
+Level: 7
+Sphere: Death
+Range: Touch
+Duration: Permanent
+Casting Time: 1
+Area of Effect: One creature
+Saving Throw: Neg.
+
+The Gray One touches <PRO_HISHER> victim enforcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
 
 
 ====================================================================================================================================================================
@@ -813,7 +813,7 @@ Moment
 
 Level: 2
 Sphere: Benediction
-Range: 0
+Range: Touch
 Duration: 3 rounds
 Casting Time: 10
 Area of Effect: One creature
@@ -828,7 +828,7 @@ Favor of Tymora
 
 Level: 2
 Sphere: Protection
-Range: 0
+Range: Touch
 Duration: 5 rounds
 Casting Time: 5
 Area of Effect: One creature
@@ -888,7 +888,7 @@ Sphere: Dread
 Range: 15 ft.
 Duration: 3 rounds
 Casting Time: 2
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: None
 
 The recipient of this spell gains extraordinary bad luck for the next 3 rounds, receiving a -1 penalty to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as -5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is increased by 1. For example, a 6d6 fireball will do 6d7 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d4 fire damage instead.
@@ -899,7 +899,7 @@ Bane of Beshaba
 
 Level: 2
 Sphere: Dread
-Range: 0
+Range: Touch
 Duration: 5 rounds
 Casting Time: 5
 Area of Effect: One creature
@@ -914,7 +914,7 @@ Misfortune
 
 Level: 5
 Sphere: Dread
-Range: 0
+Range: Touch
 Duration: 1 turn
 Casting Time: 5
 Area of Effect: One creature
@@ -939,7 +939,43 @@ In the blink of an eye, the Black Finger can be blessed by Beshaba when asking f
 
 ====================================================================================================================================================================
 
+24) HOAR
 
+
+Hand of Hoar
+(Necromancy)
+
+Level: 4
+Sphere: Dread
+Range: Touch
+Duration: Special
+Casting Time: 7
+Area of Effect: One creature
+Saving Throw: Neg.
+
+This spell inflicts punishment upon an evil and intelligent living target that cannot be terminated by Dispel Magic.
+
+Upon casting this spell, the Doombringer must touch the spell's recipient. If the creature fails to Saving Throw vs. Death Magic and then dies during the effect of this spell, it will be raised to a Revenant cursed to the Doombringer until its destruction. 
+
+---
+
+Thunder Staff
+(Invocation/Evocation)
+
+Level: 4
+Sphere: War
+Range: 0
+Duration: Instantaneous
+Casting Time: 4
+Area of Effect: 18-ft. cone with 90-deg. arc
+Saving Throw: 1/2
+
+Upon completion of this spell, the Doombringer raps his weapon (usually a staff) on the ground and produces a thundering cone of force. All creatures wholly or partially within this cone must roll a successful saving throw or be stunned for 3 rounds. Stunned creatures are unable to think coherently or act during this time and are deafened for 4 rounds. Additionally, those who fail the save are hurled 20 feet by the wave of force, suffering 1 point of damage per two feet thrown.
+
+If the save is successful, the victim is not stunned, but is deafened for 4 rounds and is hurled only half the distance, receiving half the damage.
+
+
+====================================================================================================================================================================
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
