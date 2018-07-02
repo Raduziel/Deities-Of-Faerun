@@ -1,0 +1,127 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						 Doombringer of Hoar - Fighter/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
+
+ADD_KIT ~RAHoarFC~
+    ~RAHoarFC 0 0 0 0 1 1 0 1~
+    ~RAHoarFC 0 0 0 0 0 0 0 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHoarFC 3 10 3 3 9 3~
+	~RAHoarFC 0 0 0 0 0 0~
+	~RAHoarFC 3 10 3 3 9 3~
+    ~RAHoarFC 3 10 3 3 9 3~
+	~RAHoarFC 0 1 0 0 0 0 0 0 0~
+	~RAHoarFC 0 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RAHoarFC.2da~
+	~K_FC_H  K_FC_HE  K_FC_E  K_FC_D  K_FC_HL  K_FC_G  K_FC_HO~
+	~0x04000000 8~
+	~FC0~
+	~PLAT12 SHLD26 HELM07 * RING05 RING28 CLCK05 BOOT05 AMUL27 BRAC10 BELT06 * * * * * * WAFLAIL SW2H15 *~
+	SAY @3601
+	SAY @3602
+	SAY @3603
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHoarFC~
+		clascolr = ~14 47 63 100 93~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHoarFC~
+      kit_clab = ~RAHoarFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+ BUT_ONLY
+
+ LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 2
+	u_hammers	 		= 2
+	u_maces 	 		= 2
+	u_flails 			= 2
+	u_axes 				= 2
+	u_daggers 			= 2
+	u_short_swords		= 2
+	u_long_swords		= 2
+	u_scimitars 		= 2
+	u_katanas 			= 2
+	u_bastard_swords 	= 2
+	u_2hand_swords 		= 2
+	u_halberds 			= 2
+	u_spears 	 		= 2
+	u_darts 			= 2
+	u_slings	 		= 2
+	u_bows 				= 2
+	u_crossbows 		= 2
+
+  STR_VAR
+    clab_name 	= EVAL ~%mod_clab%~
+	class 			= ~cleric~	 
+	s_Life 			= ~x~
+	s_Death 		= ~x~
+	s_Benediction 	= ~x~
+	s_Destruction 	= ~minor~
+	s_Protection 	= ~x~
+	s_War 			= ~major~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~x~
+	s_Deception 	= ~x~
+	s_Thought 		= ~x~
+	s_Dread 		= ~major~
+	s_Vigor 		= ~x~
+	s_Affliction 	= ~minor~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~x~
+	s_Water 		= ~x~
+	s_Air 			= ~major~
+	s_Fire 			= ~x~
+	s_Light 		= ~x~
+	s_Shadow 		= ~x~
+	s_Magic 		= ~x~
+	s_Perdition     = ~major~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "DeitiesOfFaerun\Spl\RAFHoar.spl" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCHoar.itm" override SAY NAME1 @3608 SAY NAME2 @3608 SAY DESC @3609
+LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAHoarFC + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+			  power = 1
+		  END
+
+//EoF
