@@ -35,7 +35,7 @@ Sphere: Thought
 Range: 15-ft/level
 Duration: 2 turns
 Casting Time: 6
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Special
 
 This spell has two effects: when cast upon an ally it will put it on a state of bliss, raising its morale and banishing all effects of disease, fear, sleep and charm. When cast upon an enemy the target must make a Saving Throw vs. Paralyzation or become stunned during the effect of the spell.~
@@ -201,7 +201,7 @@ Sphere: Thought
 Range: Touch
 Duration: Permanent
 Casting Time: 5
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Neg.
 
 Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.~
@@ -276,7 +276,7 @@ Sphere: Thought
 Range: 40 ft.
 Duration: 2 turns
 Casting Time: 2
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Neg.
 
 This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber and send a hideous and unsettling vision to the recipient, causing 1d10 points of magic damage. A Saving Throw vs. Spells is allowed to avoid all the effects.~
@@ -289,7 +289,7 @@ Sphere: Thought
 Range: 60 ft.
 Duration: 1 round/3 levels
 Casting Time: 6
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Neg.
 
 An eyebite spell enables the caster to merely meet the gaze of a creature and speak a single word to cause an effect. The Nightcloak selects one of four possible gaze attacks at the time the spell is cast. Every effect can be resisted with a Saving Throw vs. Spells with a -4 penalty. The four effects of the spell are as follows:
@@ -431,7 +431,7 @@ The Fastpaw turns an ordinary piece of wood into a Treant that will fight by <PR
 
 Level: 7
 Sphere: Plant 
-Range: Touch
+Range: 40
 Duration: 10 turns
 Casting Time: 4 
 Area of Effect: Special 
@@ -503,7 +503,7 @@ Sphere: War
 Range: 0
 Duration: Special 
 Casting Time: 10
-Area of Effect: One magical mace-like construct
+Area of Effect: One magical mace
 Saving Throw: None
 
 This spell enables a Watcher to create a magical mace in <PRO_HISHER> hand. The Mace of Odo is wielded immediately when casting is complete and protects the Watcher against all level 1 and level 2 spells.
@@ -533,7 +533,7 @@ Sphere: War
 Range: 30 ft.
 Duration: 2 turns 
 Casting Time: 7
-Area of Effect: One magical sword-like construct
+Area of Effect: Special
 Saving Throw: None
 
 This spell brings into being a shimmering blade of force that appears as a sword of any description the caster desires, typically a broad sword. The sword forms in midair and is animated by the will of the caster (who need never touch it), flashing about as it attacks. The blade can strike four times per round, doing 2d4 points of damage with each successful hit, but cannot act beyond the caster's line of sight.
@@ -630,13 +630,13 @@ The Dawnbringer creates a light that blinds, damages and destroys (vampires only
 
 Level: 4
 Sphere: Benediction
-Range: 0
+Range: Touch
 Duration: 6 rounds
 Casting Time: 7
-Area of Effect: The caster
+Area of Effect: One creature
 Saving Throw: None
 
-During this spell's effect, the spell recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in faerie fire.~
+During this spell's effect, the recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in Faerie Fire.~
 @1006 = ~Faerie Fire~
 @1007 = ~Faerie Fire
 (Alteration)
@@ -656,13 +656,13 @@ This spell enables the caster to outline one or more objects or creatures with a
 
 Level: 3
 Sphere: Light
-Range: Touch
-Duration: Instant
+Range: 0
+Duration: Instantaneous
 Casting Time: 6
-Area of Effect: 1 creature
+Area of Effect: The caster
 Saving Throw: Special
 
-With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around himself. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.~
+With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around <PRO_HIMHER>self. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.~
 @1010 = ~Holy Symbol of Lathander~
 @1011 = ~Only the most worthy and devoted servants of the Morninglord are granted these powerful holy symbols.
 
@@ -743,13 +743,13 @@ The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip c
 
 Level: 5
 Sphere: Knowledge
-Range: 0
+Range: Touch
 Duration: Special
 Casting Time: 3
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: None
 
-With this spell, the Lorekeeper can extend <PRO_HISHER> knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.~
+With this spell, the Lorekeeper can extend someone's knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.~
 @1206 = ~Holy Symbol of Oghma~
 @1207 = ~Only the most worthy and devoted servants of the Wise God are granted these powerful holy symbols.
 
@@ -819,7 +819,7 @@ Sphere: Vigor
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
-Area of Effect: 1 creature 
+Area of Effect: One creature 
 Saving Throw: None 
 
 This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is only then taken from the real hit points of the affected being. The spell also protects the vitality of the spell recipient so that all checks of any sort against contracting diseases automatically succeed, and all other Saving Throws receive a +2 bonus.~
@@ -1086,9 +1086,9 @@ This spell conjures an Ice Elemental for 10 turns.
 Level: 1
 Sphere: Water
 Range: 30
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 3
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Special
 
 This spell creates a dagger that flies to a target determined by the caster. This weapon hits for 1d4+5 points of cold damage and the target must make a Saving Throw vs. Death or be frozen for 1 round.~
@@ -1099,9 +1099,9 @@ This spell creates a dagger that flies to a target determined by the caster. Thi
 Level: 2
 Sphere: Water
 Range: 5
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 5
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Special
 
 This spell creates a whip made of pure ice that is used immediately against a target designed by the caster for 4d4 points of cold damage. The whip makes the area around the target slippery - a Saving Throw vs. Wands must be made, otherwise the target will slip three feet away from the caster.~
@@ -1114,7 +1114,7 @@ Sphere: Water
 Range: 0
 Duration: 1 turn
 Casting Time: 4
-Area of Effect: The caster
+Area of Effect: One magical sword
 Saving Throw: None
 
 This spell creates a swirling sword-shaped formation of jagged, fast-swirling ice shards extending from the caster's hand. Weightless and nonmetallic, it is considered a +2 enchanted weapon for purposes of determining what it can hit and strikes at THACO 6, regardless of the caster's normal combat abilities. Its touch lacerates for 3d4 points of damage and chills for an additional 1d6 points of cold damage.~
@@ -1219,7 +1219,7 @@ Sphere: Vigor
 Range: Touch
 Duration: 15 rounds
 Casting Time: 8
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: None
 
 This spell imbues the target creature with animal ferocity. The target creature gains a Strength score of 19, +20 Hit Points, +20% movement rate, and a +2 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect; when enemies are within sight, <PRO_HESHE> immediately attacks in melee, using whatever is in hand. While this spell is in effect, there is a 5% chance per round that the target will go berserk, attacking friend and foe alike.~
@@ -1277,7 +1277,7 @@ The Waveservant fills the target's lungs with water, imposing heavy penalties to
 Level: 4
 Sphere: Water
 Range: 100 ft.
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: Special
@@ -1290,7 +1290,7 @@ This spell summons a 5-ft. wide wave of water that moves in the direction willed
 Level: 4
 Sphere: Water
 Range: 40
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 4
 Area of Effect: One creature
 Saving Throw: Neg.
@@ -1395,7 +1395,7 @@ Sphere: Light
 Range: 0
 Duration: 2 turns
 Casting Time: 6
-Area of Effect: The caster
+Area of Effect: One magical sword
 Saving Throw: None
 
 This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, melee bonuses from Strength do not apply.
@@ -1408,7 +1408,7 @@ The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points o
 Level: 7
 Sphere: Light
 Range: 100
-Duration: Instant
+Duration: Instantaneous
 Casting Time: 7
 Area of Effect: 15-ft. radius
 Saving Throw: None
@@ -1594,7 +1594,7 @@ A whip is created by the Pain and immediately used against a creature and impose
 
 Level: 4
 Sphere: Affliction
-Range: 0
+Range: Touch
 Duration: Special
 Casting Time: 7
 Area of Effect: One creature
@@ -1753,7 +1753,7 @@ Sphere: Affliction
 Range: 0
 Duration: 3 rounds
 Casting Time: 1
-Area of Effect: Special
+Area of Effect: One magical dagger
 Saving Throw: None
 
 This spell creates a dagger on the Deathstalker's hand that can't be dropped or unequipped for the duration of the spell. The dagger strikes as a +2 weapon, but does not offers a bonus for hit or damage and can be used despite the cleric's proficiency. Every time the dagger strikes, there's a chance of 1% for every two 2 levels of the caster of automatically slaying the target creature.~
@@ -1837,7 +1837,7 @@ Sphere: Death
 Range: Touch
 Duration: Permanent
 Casting Time: 1
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: Neg.
 
 The Gray One touches <PRO_HISHER> victim enforcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.~
@@ -2405,7 +2405,7 @@ The Luckbringer pleads for the goodwill of Tymora to <PRO_HIMHER>self, receiving
 
 Level: 2
 Sphere: Benediction
-Range: 0
+Range: Touch
 Duration: 3 rounds
 Casting Time: 10
 Area of Effect: One creature
@@ -2418,7 +2418,7 @@ By twisting Fate accordingly to <PRO_HISHER> will, the Luckbringer makes every m
 
 Level: 2
 Sphere: Protection
-Range: 0
+Range: Touch
 Duration: 5 rounds
 Casting Time: 5
 Area of Effect: One creature
@@ -2525,7 +2525,7 @@ Sphere: Dread
 Range: 15 ft.
 Duration: 3 rounds
 Casting Time: 2
-Area of Effect: 1 creature
+Area of Effect: One creature
 Saving Throw: None
 
 The recipient of this spell gains extraordinary bad luck for the next 3 rounds, receiving a -1 penalty to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as -5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is increased by 1. For example, a 6d6 fireball will do 6d7 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d4 fire damage instead.~
@@ -2535,7 +2535,7 @@ The recipient of this spell gains extraordinary bad luck for the next 3 rounds, 
 
 Level: 2
 Sphere: Dread
-Range: 0
+Range: Touch
 Duration: 5 rounds
 Casting Time: 5
 Area of Effect: One creature
@@ -2548,7 +2548,7 @@ This spell bestows a curse upon a single recipient creature that cannot be ended
 
 Level: 5
 Sphere: Dread
-Range: 0
+Range: Touch
 Duration: 1 turn
 Casting Time: 5
 Area of Effect: One creature
@@ -2570,6 +2570,88 @@ Saving Throw: None
 In the blink of an eye, the Black Finger can be blessed by Beshaba when asking for the Maid's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.~
 @3512 = ~Holy Symbol of Beshaba~
 @3513 = ~Only the most worthy and devoted servants of the Maid of Misfortune are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Doombringer of Hoar
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3601 = ~doombringer of hoar~
+@3602 = ~Doombringer of Hoar~
+@3603 = ~DOOMBRINGER OF HOAR: Hoar (HORE) the Doombringer is not often actively worshiped in set services, but his name is invoked by those seeking vengeance. When a guilty party falls prey to fate (such as when a murderer is killed accidentally just after the murder is committed, particularly if the accident—for example, slipping to his death—was initiated by the murderer himself), the hand of Hoar is given credit. Hoar has a more benign aspect in the North, where he is seen less as a god of vengeance and more as a god of poetic justice. Many bounty hunters and some assassins propitiate the Doombringer before commencing a hunt, the truly faithful among them seeking to capture their quarry in a suitably ironic style.
+
+Hoar is actually an ancient Untheric deity worshiped in the Inner Sea Lands as Assuran, Lord of Three Thunders. He and his worship were driven from that land in centuries past by priests of Ramman around the same time that Hoar battled and lost to that Untheric god of war, thunder, rains, and storms in a tumultuous conflict.
+
+Although worship of the Lord of Three Thunders dropped off rapidly in Unther (to the point where Assuran) was no longer considered part of the Untheric pantheon), the cult of the Doombringer remained strong in Chessenta for many years, particularly in the cities of Akanax and Mourktar. In the past century, Assuran's worship again declined precipitously in size when Chessentan mercenaries returning from Mulhorand brought with them the faith of Anhur. Although the officers remained faithful to Assuran, many soldiers converted to the faith of the Mulhorandi god of war.
+
+During the Time of Troubles, Hoar/Assuran took as his mortal avatar the body of King Hippartes of Akanax. After traveling to Thay to obtain a cache of weapons he had hidden in the Thaymounts (and narrowly evading the plots of a Red Wizard known as the Masked One), Hoar commanded the army of Akanax and several hired mercenary companies into wars against the neighboring cities of Cimbar, Soorenar, and Luthcheq in revenge for ancient insults. The Doombringer incited several long-simmering conflicts between those cities as well, plunging most of Chessenta into war. After a string of victories against ancient foes of Akanax and himself, he forged an alliance between Chessenta's fractious cities. He then turned Akanax's armies against Unther and against the church of Ramman in particular. Ramman's avatar met him face-to-face and toe-to-toe, and in an act of poetic justice, the Doombringer wove a powerful spell that slew Ramman by causing a bolt of lightning to rebound after the Untheric storm god's third thunderous lightning attack. However, once again Assuran lost out when, before he could seize Ramman's portfolio, the Untheric lord of war passed it on to Anhur, war god of Mulhorand, and left the Realms permanently. The revitalized Mulhorandi god of war led his troops to Unther's defense and routed the Chessentan mercenaries, many of whom defected to his side. The Doombringer was once again driven from Unther in defeat.
+
+Although his worship had been spreading slowly through the Heartlands prior to the Time of Troubles, Hoar's direct action in the Realms has not been felt since the Time of Troubles, and his sign (three deep rolls of thunder) has not been heard in the Inner Sea lands for a decade. Although some speculate that he died during the Time of Troubles, the truth is that he has retreated into himself and cut off many of his routine activities to plot his revenge against Anhur. Combined with the massive defection of worshipers from his faith in battered Chessenta, the Lord of Three Thunders has found himself reduced to demipower status throughout the Realms in the aftermath of the Godswar.
+
+Hoar is a moody power, prone to violence and with a penchant toward bitter humor. He alternately curses Tymora for his fate and attempts to unctuously wheedle her for better luck, treating her at times as an enemy and at others as a friend. He seeks to aid the Maiden of Misfortune in unleashing bad luck on the deserving. He has a dry, hollow chuckle, a haunted appearance, and a morbid fascination in the plight of doomed mortals. It is said that both Tyr and Shar contest for Hoar's tormented soul. Shar seeks to twist the Doombringer into a servant of blind vengeance and bitterness, while Tyr seeks to unlock his bittersweet humor and shift his portfolio towards irony and poetic justice, but to this date he serves no one's interests but his own.
+
+Armor: Any.
+Weapon: Any.
+
+Advantages:
+
+- May Enrage as a Berserker once per day.
+- May cast Shocking Grasp once per day as a special ability, starting at level 3.
+- May cast Lightning Bolt once per day as a special ability, starting at level 5.
+- May use the Hand of Hoar special ability once per day, starting at level 7.
+- May use the Thunder Staff special ability once per day, starting at level 10.
+- Gains permanently the benefits of Protection From Normal Missiles at level 13.
+
+HAND OF HOAR
+
+The Doombringer inflicts a punishment upon a target that may turn it into a Revenant at <PRO_HISHER> service.
+
+THUNDER STAFF
+
+This spell creates a cone of force that hurls back, stuns and deafens everyone catch in its area of effect.~
+@3604 = ~Hand of Hoar~
+@3605 = ~Hand of Hoar
+(Necromancy)
+
+Level: 4
+Sphere: Dread
+Range: Touch
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: One creature
+Saving Throw: Neg.
+
+This spell inflicts punishment upon an evil and intelligent living target that cannot be terminated by Dispel Magic.
+
+Upon casting this spell, the Doombringer must touch the spell's recipient. If the creature fails to Saving Throw vs. Death Magic and then dies during the effect of this spell, it will be raised to a Revenant cursed to the Doombringer until its destruction.~
+@3606 = ~Thunder Staff~
+@3607 = ~Thunder Staff
+(Invocation/Evocation)
+
+Level: 4
+Sphere: War
+Range: 0
+Duration: Instantaneous
+Casting Time: 4
+Area of Effect: 18-ft. cone with 90-deg. arc
+Saving Throw: 1/2
+
+Upon completion of this spell, the Doombringer raps his weapon (usually a staff) on the ground and produces a thundering cone of force. All creatures wholly or partially within this cone must roll a successful saving throw or be stunned for 3 rounds. Stunned creatures are unable to think coherently or act during this time and are deafened for 4 rounds. Additionally, those who fail the save are hurled 20 feet by the wave of force, suffering 1 point of damage per two feet thrown.
+
+If the save is successful, the victim is not stunned, but is deafened for 4 rounds and is hurled only half the distance, receiving half the damage.~
+@3608 = ~Holy Symbol of Hoar~
+@3609 = ~Only the most worthy and devoted servants of the Poet of Justice are granted these powerful holy symbols.
 	
 STATISTICS:
 
