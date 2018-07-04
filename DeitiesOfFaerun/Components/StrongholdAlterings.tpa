@@ -16,6 +16,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RACYRI~)	BEGIN	~RACYRI~ => 0	~RACYRICT~ => 0										END	//	Cyric	->	Talos, Thief
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAGARA~)	BEGIN	~RAGARA~ => 0	~RAGARAFC~ => 0										END	//	Garagos	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAHELM~)	BEGIN	~RAHELM~ => 0	~RAHELMFC~ => 0										END	//	Helm	->	Helm
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAHOAR~)	BEGIN	~RAHOAR~ => 0	~RAHOARFC~ => 0	~RAHOARCT~ => 0						END	//	Hoar	->	Helm
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAILMA~)	BEGIN	~RAILMA~ => 0	~RAILMACM~ => 0	~RAILMAFC~ => 0						END	//	Ilmater	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAKELE~)	BEGIN	~RAJERG~ => 0	~RAJERGCM~ => 0										END	//	Jergal	->	Helm
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAKELE~)	BEGIN	~RAKELE~ => 0	~RAKELEFC~ => 0										END	//	Kelemvor	->	Helm
@@ -176,6 +177,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~	RET	extend	negate	count	END	//	Cyric
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGARA~	RET	extend	negate	count	END	//	Garagos
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~	RET	extend	negate	count	END	//	Helm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHOAR~	RET	extend	negate	count	END	//	Hoar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAJERG~	RET	extend	negate	count	END	//	Jergal
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAKELE~	RET	extend	negate	count	END	//	Kelemvor
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALOVI~	RET	extend	negate	count	END	//	Loviatar
@@ -262,6 +264,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~	RET	extend	negate	count	END	//	Clangeddin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~	RET	extend	negate	count	END	//	Helm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHOAR~	RET	extend	negate	count	END	//	Hoar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAILMA~	RET	extend	negate	count	END	//	Ilmater
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAJERG~	RET	extend	negate	count	END	//	Jergal
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAKELE~	RET	extend	negate	count	END	//	Kelemvor
@@ -386,6 +389,7 @@ END
 	//	Kit Headers	Begin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~	RET	extend	negate	count	END	//	Clangeddin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~	RET	extend	negate	count	END	//	Helm
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHOAR~	RET	extend	negate	count	END	//	Hoar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAJERG~	RET	extend	negate	count	END	//	Jergal
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAKELE~	RET	extend	negate	count	END	//	Kelemvor
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAREDK~	RET	extend	negate	count	END	//	Red Knight
