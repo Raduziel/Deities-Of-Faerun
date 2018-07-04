@@ -1031,6 +1031,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
                  
 - Helm: Helm
 
+- Hoar: Helm
+
 - Ilmater: Lathander
 
 - Jergal: Helm
