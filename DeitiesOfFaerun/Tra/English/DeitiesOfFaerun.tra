@@ -114,8 +114,7 @@ Advantages:
 - May specialize in any melee weapon.
 - May Enrage as a Berserker once per day.
 - May cast Prayer once per day as a special ability, starting at level 5.
-- Hit Dice: d10.
-~
+- Hit Dice: d10.~
 @204 = ~Prayer~
 @205 = ~Prayer
 (Conjuration/Summoning)
@@ -2647,9 +2646,9 @@ Casting Time: 4
 Area of Effect: 18-ft. cone with 90-deg. arc
 Saving Throw: 1/2
 
-Upon completion of this spell, the Doombringer raps his weapon (usually a staff) on the ground and produces a thundering cone of force. All creatures wholly or partially within this cone must roll a successful saving throw or be stunned for 3 rounds. Stunned creatures are unable to think coherently or act during this time and are deafened for 4 rounds. Additionally, those who fail the save are hurled 20 feet by the wave of force, suffering 1 point of damage per two feet thrown.
+Upon completion of this spell, the Doombringer raps his weapon (usually a staff) on the ground and produces a thundering cone of force. All creatures wholly or partially within this cone must roll a successful Saving Throw vs. Spell or be stunned for 3 rounds and deafened for 4 rounds. Additionally, those who fail the save are hurled 20 feet by the wave of force, suffering 1 point of damage per two feet thrown.
 
-If the save is successful, the victim is not stunned, but is deafened for 4 rounds and is hurled only half the distance, receiving half the damage.~
+If the save is successful, the victim avoids the stun effect, and is hurled only half the distance, receiving half the damage.~
 @3608 = ~Holy Symbol of Hoar~
 @3609 = ~Only the most worthy and devoted servants of the Poet of Justice are granted these powerful holy symbols.
 	
