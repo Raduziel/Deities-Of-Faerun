@@ -955,7 +955,7 @@ Saving Throw: Neg.
 
 This spell inflicts punishment upon an evil and intelligent living target that cannot be terminated by Dispel Magic.
 
-Upon casting this spell, the Doombringer must touch the spell's recipient. If the creature fails to Saving Throw vs. Death Magic and then dies during the effect of this spell, it will be raised to a Revenant cursed to the Doombringer until its destruction. 
+Upon casting this spell, the Doombringer must touch the spell's recipient. If the creature fails to Saving Throw vs. Death Magic and then dies during the effect of this spell, it will be raised as a Revenant cursed to serve the Doombringer until its destruction. 
 
 ---
 
