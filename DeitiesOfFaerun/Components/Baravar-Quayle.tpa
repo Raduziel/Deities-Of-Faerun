@@ -24,7 +24,7 @@ ACTION_IF ((FILE_EXISTS_IN_GAME ~1xqu25.cre~) AND (GAME_IS ~bg2ee~)) THEN BEGIN
 
 			COPY_EXISTING ~%creature%.cre~ ~override~
 			SET_BG2_PROFICIENCY 112 1
-		
+			REPLACE_CRE_ITEM    ~clck15~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
 		END
 	END
 END
