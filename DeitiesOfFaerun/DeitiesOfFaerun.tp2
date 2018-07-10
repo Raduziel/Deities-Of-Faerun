@@ -8,6 +8,7 @@ ALWAYS
 	INCLUDE ~%MOD_FOLDER%/Lib/RA_VariablesDoF.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/spell_to_innate.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/CDNewIcon.tpa~
+	INCLUDE ~%MOD_FOLDER%/Lib/KjeronReplaceDLG.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/Multiclass/qd_multiclass.tpa~
   
   ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
