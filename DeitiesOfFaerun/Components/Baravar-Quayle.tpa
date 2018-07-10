@@ -30,7 +30,7 @@ ACTION_IF ((FILE_EXISTS_IN_GAME ~1xqu25.cre~) AND (GAME_IS ~bg2ee~)) THEN BEGIN
 END
 
 OUTER_SET kit = "%RABaraCM%"
-ACTION_FOR_EACH creature IN quayle quayle4 quayle6 BEGIN
+ACTION_FOR_EACH creature IN quayle quayle4 quayle6 1xqu25 BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 
@@ -86,6 +86,24 @@ Usable By:
 		SET j = glob_ex
 	END
   
+   COPY_EXISTING ~1xQUAYB.dlg~ ~override~
+	DECOMPILE_AND_PATCH	BEGIN
+		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~I'm not sure if I understood anything you said, but I deduce that you advise me to use my flail better, yes? I believe I can use it rather well!~ ~I'm not sure if I understood anything you said, but I deduce that you advise me to use my club better, yes? I believe I can use it rather well!~
+	END
+    BUT_ONLY IF_EXISTS
+  
+   COPY_EXISTING ~BKORGA25.dlg~ ~override~
+	DECOMPILE_AND_PATCH	BEGIN
+		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~Gah, I told ye tha' ye use th' flail like tha', not as if ye wer fishin'! Hold it!~ ~Gah, I told ye tha' ye use th' club like tha', not as if ye wer fishin'! Hold it!~
+	END
+    BUT_ONLY IF_EXISTS
+	
+   COPY_EXISTING ~BKORGA25.dlg~ ~override~
+	DECOMPILE_AND_PATCH	BEGIN
+		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~Yer doin' nothin' but blubberin' and chattin' all th' time! Better grab some solid steel an' teach yerself how to fight! Yer fighin' like a girl! Grab yer flail an' take a good swin'!~ ~Yer doin' nothin' but blubberin' and chattin' all th' time! Better grab some solid wood an' teach yerself how to fight! Yer fighin' like a girl! Grab yer club an' take a good swin'!~
+	END
+    BUT_ONLY IF_EXISTS
+	
   END
   
 //EoF

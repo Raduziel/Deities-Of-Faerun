@@ -16,7 +16,7 @@ ADD_KIT ~RAKitCM~
 	~RAKitCM 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAKitC.2da~
 	~~
-	~0x04000000 14~
+	~0x00000000 14~
 	~CM0~
 	~* * * * * * * * * * * * * * * * * * * *~
 	SAY ~cleric/mage~

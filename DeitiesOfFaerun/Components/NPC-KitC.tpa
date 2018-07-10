@@ -16,7 +16,7 @@ ADD_KIT ~RAKitC~
 	~RAKitC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAKitC.2da~
 	~~
-	~0x04000000 3~
+	~0x00000000 3~
 	~Cl0~
 	~* * * * * * * * * * * * * * * * * * * *~
 	SAY ~cleric~

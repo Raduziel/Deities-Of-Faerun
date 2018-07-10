@@ -16,7 +16,7 @@ ADD_KIT ~RAKitCT~
 	~RAKitCT 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAKitC.2da~
 	~~
-	~0x04000000 15~
+	~0x00000000 15~
 	~CT0~
 	~* * * * * * * * * * * * * * * * * * * *~
 	SAY ~cleric/thief~

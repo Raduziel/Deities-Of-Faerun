@@ -16,7 +16,7 @@ ADD_KIT ~RALeir~
 	~RALeir 0 0 1 1 0 0~
 	~DeitiesOfFaerun\Tables\RALeir.2da~
 	~K_C_H  K_C_HE  K_C_G~
-	~0x04000000 3~
+	~0x00000000 3~
 	~Cl0~
 	~* * * * * * * * * * * * * * * * * * * *~
 	SAY @3301

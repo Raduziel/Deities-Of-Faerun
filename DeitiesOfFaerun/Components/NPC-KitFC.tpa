@@ -16,7 +16,7 @@ ADD_KIT ~RAKitFC~
 	~RAKitFC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAKitC.2da~
 	~~
-	~0x04000000 8~
+	~0x00000000 8~
 	~FC0~
 	~* * * * * * * * * * * * * * * * * * * *~
 	SAY ~fighter/cleric~

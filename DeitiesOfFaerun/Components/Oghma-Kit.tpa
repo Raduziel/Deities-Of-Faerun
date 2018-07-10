@@ -16,7 +16,7 @@ ADD_KIT ~RAOghm~
 	~RAOghm 0 0 1 0 0 0~
 	~DeitiesOfFaerun\Tables\RAOghm.2da~
 	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D~
-	~0x04000000 3~
+	~0x00000000 3~
 	~Cl0~
 	~CHAN13 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF20 HAMM09 *~
 	SAY @1201

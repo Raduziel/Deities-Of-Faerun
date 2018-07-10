@@ -16,7 +16,7 @@ ADD_KIT ~RAGara~
 	~RAGara 1 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAGara.2da~
 	~K_C_H   K_C_HE   K_C_D   K_C_HO   K_C_HL   K_C_G   K_C_E~
-	~0x04000000 3~
+	~0x00000000 3~
 	~Cl0~
 	~PLAT18 WAFLAIL HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * SW2H09 HAMM09 *~
 	SAY @3001
