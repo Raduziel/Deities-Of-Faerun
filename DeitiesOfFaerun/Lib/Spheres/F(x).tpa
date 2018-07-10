@@ -1,0 +1,173 @@
+
+	DEFINE_PATCH_FUNCTION	VALIDATE	RET	fx_size	ab_size	pro_off	BEGIN
+		READ_ASCII	0	sign	(4)
+		PATCH_MATCH	~%sign%~	WITH
+			~SPL ~	WHEN (SOURCE_SIZE > 0x71)  AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~SPL~) BEGIN	SET	fx_size = 0x30	SET	ab_size = 0x28	SET	pro_off = 0x26	END
+			~ITM ~	WHEN (SOURCE_SIZE > 0x71)  AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~ITM~)	BEGIN	SET	fx_size = 0x30	SET	ab_size = 0x38	SET	pro_off = 0x2a	END
+			~CRE ~	WHEN (SOURCE_SIZE > 0x2d3) AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~CRE~)	BEGIN
+				SET	ab_size = 0
+				SET	pro_off = 0
+				READ_BYTE	0x33	fx_type
+				PATCH_IF	fx_type	BEGIN
+					SET	fx_size = 0x108
+				END	ELSE	BEGIN
+					SET	fx_size = 0x30
+				END
+			END
+			DEFAULT
+				SET	ab_size = 0	SET	pro_off = 0	SET	fx_size = 0
+		END
+	END
+	
+	DEFINE_PATCH_FUNCTION	ADD_EFFECT
+		INT_VAR
+			header = ~-1~
+			type = ~-1~
+			slot = ~-1~
+			level = ~-1~
+			opcode = 0
+			target = 1
+			power = 0
+			timing = 0
+			parameter1 = 0
+			parameter2 = 0
+			resist_dispel = 0
+			duration = 0
+			probability1 = 100
+			probability2 = 0
+			dicenumber = 0
+			dicesize = 0
+			savingthrow = 0
+			savebonus = 0
+			special = 0
+			insert_point = ~-1~
+		STR_VAR	
+			resource = ~~
+	BEGIN
+		LPF	VALIDATE	RET	ab_size	pro_off	END
+		PATCH_IF	ab_size	BEGIN
+			READ_LONG	0x64	ab_off						// Abilities Offset
+			READ_SHORT	0x68	ab_num						// Number of Abilities
+			READ_LONG	0x6a	fx_off						// Effects Offset
+			FOR (i = 0; i < ab_num; ++i) BEGIN	fx_add = 0
+				PATCH_IF	ab_size = 0x28	BEGIN
+					READ_SHORT (ab_off + i * ab_size + 0x10) ab_lev
+					SET	ab_slot = ~-1~
+				END
+				PATCH_IF	ab_size = 0x38	BEGIN
+					READ_BYTE	(ab_off + i * ab_size)	ab_type
+					READ_BYTE	(ab_off + i * ab_size + 0x2)	ab_slot
+					SET	ab_lev = ~-1~
+				END
+				PATCH_IF	(((ab_size = 0x28) AND (header = ~-1~) AND (level = ~-1~))
+							OR	((ab_size = 0x28) AND (header = ~-1~) AND (level = ab_lev))
+							OR	((ab_size = 0x28) AND (header = i) AND (level = ~-1~))
+							OR	((ab_size = 0x38) AND (header = ~-1~) AND (type = ~-1~) AND (slot = ~-1~))
+							OR	((ab_size = 0x38) AND (header = ~-1~) AND (type = ab_type) AND (slot = ~-1~))
+							OR	((ab_size = 0x38) AND (header = i) AND (type = ~-1~) AND (slot = ~-1~))
+							OR	((ab_size = 0x38) AND (header = ~-1~) AND (type = ~-1~) AND (slot = ab_slot))
+							OR	((ab_size = 0x38) AND (header = ~-1~) AND (type = ab_type) AND (slot = ab_slot))
+							OR	((ab_size = 0x38) AND (header = i) AND (type = ~-1~) AND (slot = ab_slot))
+							OR	((ab_size = 0x38) AND (header = i) AND (type = ab_type) AND (slot = ~-1~))
+							OR	((ab_size = 0x38) AND (header = i) AND (type = ab_type) AND (slot = ab_slot)))
+				BEGIN
+					READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+					READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+					PATCH_IF ((insert_point > fx_num) OR (insert_point < 0))	BEGIN	insert_point = fx_num	END
+					INSERT_BYTES (fx_off + (fx_idx + insert_point) * 0x30) 0x30
+						WRITE_SHORT (fx_off + (fx_idx + insert_point) * 0x30) opcode
+						WRITE_BYTE (fx_off + (fx_idx + insert_point) * 0x30 + 0x2) target
+						WRITE_BYTE (fx_off + (fx_idx + insert_point) * 0x30 + 0x3) power
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0x4) parameter1
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0x8) parameter2
+						WRITE_BYTE (fx_off + (fx_idx + insert_point) * 0x30 + 0xc) timing
+						WRITE_BYTE (fx_off + (fx_idx + insert_point) * 0x30 + 0xd) resist_dispel
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0xe) duration
+						WRITE_BYTE (fx_off + (fx_idx + insert_point) * 0x30 + 0x12) probability1
+						WRITE_BYTE (fx_off + (fx_idx + insert_point) * 0x30 + 0x13) probability2
+						WRITE_EVALUATED_ASCII (fx_off + (fx_idx + insert_point) * 0x30 + 0x14) ~%resource%~	#8
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0x1c) dicenumber
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0x20) dicesize
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0x24) savingthrow
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0x28) savebonus
+						WRITE_LONG (fx_off + (fx_idx + insert_point) * 0x30 + 0x2c) special
+					++fx_add
+					fx_num += fx_add
+					WRITE_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+					FOR (k = i + 1; k < ab_num; ++k) BEGIN
+						WRITE_SHORT (ab_off + k * ab_size + 0x20) (THIS + fx_add)
+					END
+				END
+			END
+		END
+	END
+	
+	DEFINE_PATCH_FUNCTION	ADD_GLOBAL_EFFECT
+		INT_VAR
+			opcode = 0
+			target = 1
+			power = 0
+			timing = ~-1~
+			parameter1 = 0
+			parameter2 = 0
+			resist_dispel = 0
+			duration = 0
+			probability1 = 100
+			probability2 = 0
+			dicenumber = 0
+			dicesize = 0
+			savingthrow = 0
+			savebonus = 0
+			special = 0
+			insert_point = ~-1~
+		STR_VAR	
+			resource = ~~
+	BEGIN
+		LPF	VALIDATE	RET	ab_size	pro_off	END
+		PATCH_IF	timing = ~-1~	BEGIN
+			PATCH_MATCH	ab_size WITH
+				0x28 BEGIN 	timing = 0	END
+				0x38 BEGIN	timing = 2	END
+				DEFAULT
+			END
+		END
+		PATCH_IF	ab_size	BEGIN
+			READ_LONG	0x64	ab_off						// Abilities Offset
+			READ_SHORT	0x68	ab_num						// Number of Abilities
+			READ_LONG	0x6a	fx_off						// Effects Offset
+			READ_SHORT	0x70	glob_fx						// Number of Global Effects
+			PATCH_IF	((insert_point = ~-1~) OR (insert_point > glob_fx))	BEGIN	insert_point = glob_fx	END
+			INSERT_BYTES (fx_off + insert_point * 0x30) 0x30
+				WRITE_SHORT (fx_off + insert_point * 0x30) opcode
+				WRITE_BYTE (fx_off + insert_point * 0x30 + 0x2) target
+				WRITE_BYTE (fx_off + insert_point * 0x30 + 0x3) power
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0x4) parameter1
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0x8) parameter2
+				WRITE_BYTE (fx_off + insert_point * 0x30 + 0xc) timing
+				WRITE_BYTE (fx_off + insert_point * 0x30 + 0xd) resist_dispel
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0xe) duration
+				WRITE_BYTE (fx_off + insert_point * 0x30 + 0x12) probability1
+				WRITE_BYTE (fx_off + insert_point * 0x30 + 0x13) probability2
+				WRITE_EVALUATED_ASCII (fx_off + insert_point * 0x30 + 0x14) ~%resource%~	#8
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0x1c) dicenumber
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0x20) dicesize
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0x24) savingthrow
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0x28) savebonus
+				WRITE_LONG (fx_off + insert_point * 0x30 + 0x2c) special
+			++glob_fx
+			WRITE_SHORT 0x70 glob_fx									// Increment Number of Global Effects
+			FOR (i = 0; i < ab_num; ++i) BEGIN				// Offset Effect Index for all Abilities
+				WRITE_SHORT (ab_off + i * ab_size + 0x20) (THIS + 1)
+			END
+		END
+	END
+
+
+	/*		Insert & Write ASCII		*/
+	DEFINE_PATCH_FUNCTION	INSERT_ASCII	INT_VAR	offset = SOURCE_SIZE	STR_VAR	string = ~~	RET	offset	BEGIN
+		SET	length = (STRING_LENGTH	~%string%~)
+		INSERT_BYTES	offset	length
+		WRITE_EVALUATED_ASCII	offset	~%string%~ (length)
+		SET	offset = (offset + length)
+	END
+	

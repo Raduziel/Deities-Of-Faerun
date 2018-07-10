@@ -9,7 +9,9 @@ ALWAYS
 	INCLUDE ~DeitiesOfFaerun/Lib/spell_to_innate.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/CDNewIcon.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/KjeronReplaceDLG.tpa~
+	INCLUDE ~DeitiesOfFaerun/Lib/Spheres/F(x).tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/Multiclass/qd_multiclass.tpa~
+  
   
   ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
 
@@ -25,7 +27,8 @@ README ~DeitiesOfFaerun/readme/readme-%LANGUAGE%.txt~ ~DeitiesOfFaerun/readme/re
 
 LANGUAGE ~English~
 		 ~DeitiesOfFaerun/Tra/English~
-		 ~DeitiesOfFaerun/Tra/English/setup.tra~
+		 ~DeitiesOfFaerun/Tra/English/Spheres.tra~
+		 ~DeitiesOfFaerun/Tra/English/Setup.tra~
 		 ~DeitiesOfFaerun/Tra/English/DeitiesOfFaerun.tra~
 
 //__________________________________________________________________________________
@@ -35,7 +38,7 @@ LANGUAGE ~English~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @1
+BEGIN @9999901
 INCLUDE ~DeitiesOfFaerun/Lib/DeitiesOfFaerun.tpa~
 INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitC.tpa~
 INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitCM.tpa~
@@ -50,18 +53,54 @@ INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitRC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @8
+BEGIN @9999908
 INCLUDE ~DeitiesOfFaerun/Lib/KitsColors.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//		     SPHERE SYSTEM (By Kjeron - IWDEE, EET, BGEE and BG2EE)
+//		       SPHERE SYSTEM (By Kjeron - IWDEE, EET, BGEE and BG2EE)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-//BEGIN @9
-//INCLUDE ~DeitiesOfFaerun/Components/x.tpa~
+//BEGIN @9999909
+		OUTER_SET	conversion_method = 1
+		OUTER_SET	divineSpheres = 1
+		OUTER_SET	natureSpheres = 0
+		OUTER_SET	matchLevel = 1
+		OUTER_SET	tra_level = @999901
+		OUTER_SET	tra_sphere = @999902
+		OUTER_SET	$tra(~All~) = @999903
+		OUTER_SET	$tra(~Healing~) = @999904
+		OUTER_SET	$tra(~Necromantic~) = @999905
+		OUTER_SET	$tra(~Suffering~) = @999906
+		OUTER_SET	$tra(~Animal~) = @999907
+		OUTER_SET	$tra(~Vermin~) = @999908
+		OUTER_SET	$tra(~Plant~) = @999909
+		OUTER_SET	$tra(~Protection~) = @9999010
+		OUTER_SET	$tra(~Sun~) = @9999011
+		OUTER_SET	$tra(~Moon~) = @9999012
+		OUTER_SET	$tra(~Darkness~) = @9999013
+		OUTER_SET	$tra(~Mind~) = @9999014
+		OUTER_SET	$tra(~Combat~) = @9999015
+		OUTER_SET	$tra(~Creation~) = @9999016
+		OUTER_SET	$tra(~Air~) = @9999017
+		OUTER_SET	$tra(~Water~) = @9999018
+		OUTER_SET	$tra(~Earth~) = @9999019
+		OUTER_SET	$tra(~Fire~) = @9999020
+		OUTER_SET	$tra(~Divination~) = @9999021
+		OUTER_SET	$tra(~Travelers~) = @9999022
+		OUTER_SET	$tra(~Weave~) = @9999023
+		OUTER_SET	$tra(~Trickery~) = @9999024
+		OUTER_SET	$tra(~Time~) = @9999025
+		OUTER_SET	$tra(~Vocal~) = @9999026
+		
+		OUTER_SPRINT	MOD_PREFIX	~RA~
+		OUTER_SPRINT	FILE_PATH ~Lib/Spheres~
+		
+	  //INCLUDE	    ~DeitiesOfFaerun/Lib/Spheres/IWDImport.tpa~
+	  //INCLUDE	    ~DeitiesOfFaerun/Lib/Spheres/Main.tpa~
+		
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -70,7 +109,7 @@ INCLUDE ~DeitiesOfFaerun/Lib/KitsColors.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @28
+BEGIN @99999028
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Sune-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Sune-KitCT.tpa~
@@ -83,7 +122,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Sune-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @29
+BEGIN @99999029
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Tempus-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Tempus-KitFC.tpa~
@@ -95,7 +134,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tempus-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @30
+BEGIN @99999030
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Cyric-Kit.tpa~
@@ -108,7 +147,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Cyric-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @31
+BEGIN @99999031
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Shar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Shar-KitCM.tpa~
@@ -121,7 +160,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Shar-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @32
+BEGIN @99999032
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-KitFC.tpa~
@@ -133,7 +172,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Clangeddin-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @33
+BEGIN @99999033
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Baravar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Baravar-KitCM.tpa~
@@ -146,7 +185,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baravar-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @34
+BEGIN @99999034
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Baervan-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Baervan-KitCM.tpa~
@@ -159,7 +198,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Baervan-KitRC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @35
+BEGIN @99999035
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Helm-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Helm-KitFC.tpa~
@@ -171,7 +210,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Helm-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @36
+BEGIN @99999036
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Talos-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Talos-KitCM.tpa~
@@ -184,7 +223,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Talos-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @37
+BEGIN @99999037
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Lathander-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Lathander-KitCM.tpa~
@@ -197,7 +236,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Lathander-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @38
+BEGIN @99999038
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Tyr-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Tyr-KitFC.tpa~
@@ -209,7 +248,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tyr-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @39
+BEGIN @99999039
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Oghma-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Oghma-KitCM.tpa~
@@ -221,7 +260,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Oghma-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @40
+BEGIN @99999040
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-KitCM.tpa~
@@ -234,7 +273,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Ilmater-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @41
+BEGIN @99999041
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Mystra-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Mystra-KitCM.tpa~
@@ -246,7 +285,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Mystra-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @42
+BEGIN @99999042
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Torm-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Torm-KitFC.tpa~
@@ -258,7 +297,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Torm-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @43
+BEGIN @99999043
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Mask-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Mask-KitCT.tpa~
@@ -270,7 +309,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Mask-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @44
+BEGIN @99999044
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Auril-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Auril-KitCM.tpa~
@@ -282,7 +321,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Auril-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @45
+BEGIN @99999045
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Malar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Malar-KitRC.tpa~
@@ -294,7 +333,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Malar-KitRC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @46
+BEGIN @99999046
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-KitCT.tpa~
@@ -306,7 +345,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Umberlee-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @47
+BEGIN @99999047
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Selune-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Selune-KitCM.tpa~
@@ -319,7 +358,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Selune-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @48
+BEGIN @99999048
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Talona-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Talona-KitCM.tpa~
@@ -332,7 +371,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Talona-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @49
+BEGIN @99999049
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Loviatar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Loviatar-KitCM.tpa~
@@ -345,7 +384,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Loviatar-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @50
+BEGIN @99999050
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Bane-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Bane-KitFC.tpa~
@@ -357,7 +396,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Bane-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @51
+BEGIN @99999051
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Bhaal-Kit.tpa~
@@ -370,7 +409,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Bhaal-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @52
+BEGIN @99999052
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Myrkul-Kit.tpa~
@@ -383,7 +422,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Myrkul-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @53
+BEGIN @99999053
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-Kit.tpa~
@@ -396,7 +435,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Kelemvor-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @54
+BEGIN @99999054
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Azuth-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Azuth-KitCM.tpa~
@@ -408,7 +447,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Azuth-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @55
+BEGIN @99999055
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Jergal-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Jergal-KitCM.tpa~
@@ -420,7 +459,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Jergal-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @56
+BEGIN @99999056
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/RedKnight-Kit.tpa~
@@ -433,7 +472,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/RedKnight-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @57
+BEGIN @99999057
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Garagos-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Garagos-KitFC.tpa~
@@ -445,7 +484,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Garagos-KitFC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @58
+BEGIN @99999058
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Savras-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Savras-KitCM.tpa~
@@ -457,7 +496,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Savras-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @59
+BEGIN @99999059
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Velsharoon-Kit.tpa~
@@ -470,7 +509,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Velsharoon-KitCM.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @60
+BEGIN @99999060
 REQUIRE_PREDICATE (GAME_IS ~iwdee~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Leira-Kit.tpa~
@@ -484,7 +523,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Leira-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @61
+BEGIN @99999061
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Tymora-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Tymora-KitCT.tpa~
@@ -496,7 +535,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Tymora-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @62
+BEGIN @99999062
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitFC.tpa~
@@ -510,7 +549,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Beshaba-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @63
+BEGIN @99999063
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Components/Hoar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Hoar-KitFC.tpa~
@@ -523,7 +562,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Hoar-KitCT.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @10
+BEGIN @99999010
 REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RABaer.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baervan-Aerie.tpa~
 
@@ -534,7 +573,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baervan-Aerie.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @11
+BEGIN @99999011
 REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RABara.2da~) AND ((GAME_IS ~bgee eet~) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~1xqu25.cre~)))) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Quayle.tpa~
 
@@ -545,7 +584,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Quayle.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @12
+BEGIN @99999012
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RABara.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Glint.tpa~
 
@@ -556,7 +595,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Glint.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @13
+BEGIN @99999013
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAClan.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Clangeddin-Yeslick.tpa~
 
@@ -567,7 +606,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Clangeddin-Yeslick.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @14
+BEGIN @99999014
 REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RACyri.2da~) AND ((GAME_IS ~bgee eet~) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~O#Tiax.cre~)))) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Cyric-Tiax.tpa~
 
@@ -578,7 +617,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Cyric-Tiax.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @15
+BEGIN @99999015
 REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAHelm.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Helm-Anomen.tpa~
 
@@ -589,7 +628,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Helm-Anomen.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @16
+BEGIN @99999016
 REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RATemp.2da~) AND ((GAME_IS ~bgee eet~) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~O#Bran.cre~)))) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tempus-Branwen.tpa~
 
@@ -600,7 +639,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tempus-Branwen.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @17
+BEGIN @99999017
 REQUIRE_PREDICATE ((GAME_IS ~bgee bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAShar.2da~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Shar-Viconia.tpa~
 
@@ -612,7 +651,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Shar-Viconia.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @18
+BEGIN @99999018
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAUmbe.2da~) AND (FILE_EXISTS_IN_GAME ~Tenya.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Umberlee-Tenya.tpa~
 
@@ -624,7 +663,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Umberlee-Tenya.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @19
+BEGIN @99999019
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RATyr.2da~) AND (FILE_EXISTS_IN_GAME ~c0drake.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tyr-Drake.tpa~
 
@@ -636,7 +675,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tyr-Drake.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @20
+BEGIN @99999020
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAIlma.2da~) AND (FILE_EXISTS_IN_GAME ~c0sirene.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Ilmater-Sirene.tpa~
 
@@ -648,7 +687,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Ilmater-Sirene.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @21
+BEGIN @99999021
 REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RALath.2da~) AND (((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~b!gavin.cre~)) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~b!gav08.cre~)))) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Gavin.tpa~
 
@@ -660,7 +699,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Gavin.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @22
+BEGIN @99999022
 REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (FILE_EXISTS_IN_GAME ~RAMask.2da~) AND (FILE_EXISTS_IN_GAME ~l#dusky.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Mask-Dusky.tpa~
 
@@ -672,7 +711,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Mask-Dusky.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @23
+BEGIN @99999023
 REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RASune.2da~) AND (FILE_EXISTS_IN_GAME ~yxyve1.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Sune-Yvette.tpa~
 
@@ -684,7 +723,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Sune-Yvette.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @24
+BEGIN @99999024
 REQUIRE_PREDICATE ((GAME_IS ~bgee bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAKele.2da~) AND (FILE_EXISTS_IN_GAME ~jklhel.cre~)) @5
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Kelemvor-Helarine.tpa~
 
@@ -697,7 +736,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Kelemvor-Helarine.tpa~
 //__________________________________________________________________________________
 
 
-//BEGIN @25
+//BEGIN @99999025
 //REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RADene.2da~) AND (FILE_EXISTS_IN_GAME ~sufinchi.cre~)) @5
 //INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Deneir-Finch.tpa~
 
@@ -710,7 +749,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Kelemvor-Helarine.tpa~
 //__________________________________________________________________________________
 
 
-//BEGIN @26
+//BEGIN @99999026
 //REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (FILE_EXISTS_IN_GAME ~RAMart.2da~) AND (FILE_EXISTS_IN_GAME ~yitur.cre~)) @5
 //INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Marthammor-Turald.tpa~
 
@@ -723,7 +762,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Kelemvor-Helarine.tpa~
 //__________________________________________________________________________________
 
 
-//BEGIN @27
+//BEGIN @99999027
 //REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (FILE_EXISTS_IN_GAME ~RASolo.2da~) AND (FILE_EXISTS_IN_GAME ~O#KorinC.cre~)) @5
 //INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Solonor-Korin.tpa~
 
@@ -735,7 +774,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Kelemvor-Helarine.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @7
+BEGIN @9999907
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @6
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @2
 INCLUDE  ~DeitiesOfFaerun/Lib/StrongholdAlterings.tpa~
