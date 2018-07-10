@@ -86,22 +86,34 @@ Usable By:
 		WRITE_ASCII  (ex_off + (j * 0x38) + 0x004)  ~IBLUN01~	
 		SET j = glob_ex
 	END
+	
+	//Kjeron's Replace Dialogue Function
   
    COPY_EXISTING ~1xQUAYB.dlg~ ~override~
-	DECOMPILE_AND_PATCH	BEGIN
-		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~I'm not sure if I understood anything you said, but I deduce that you advise me to use my flail better, yes? I believe I can use it rather well!~ ~I'm not sure if I understood anything you said, but I deduce that you advise me to use my club better, yes? I believe I can use it rather well!~
+	LPF	replace_dlg_text	STR_VAR
+		match =  ~but I deduce that you advise me to use my flail better, yes~
+		replace = ~but I deduce that you advise me to use my club better, yes~
 	END
     BUT_ONLY IF_EXISTS
-  
+
    COPY_EXISTING ~BKORGA25.dlg~ ~override~
-	DECOMPILE_AND_PATCH	BEGIN
-		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~Gah, I told ye tha' ye use th' flail like tha', not as if ye wer fishin'! Hold it!~ ~Gah, I told ye tha' ye use th' club like tha', not as if ye wer fishin'! Hold it!~
+	LPF	replace_dlg_text	STR_VAR
+		match =  ~Gah, I told ye tha' ye use th' flail like tha', not as if ye wer fishin'! Hold it!~
+		replace = ~Gah, I told ye tha' ye use th' club like tha', not as if ye wer fishin'! Hold it!~
 	END
     BUT_ONLY IF_EXISTS
 	
-   COPY_EXISTING ~BKORGA25.dlg~ ~override~
-	DECOMPILE_AND_PATCH	BEGIN
-		REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~Yer doin' nothin' but blubberin' and chattin' all th' time! Better grab some solid steel an' teach yerself how to fight! Yer fighin' like a girl! Grab yer flail an' take a good swin'!~ ~Yer doin' nothin' but blubberin' and chattin' all th' time! Better grab some solid wood an' teach yerself how to fight! Yer fighin' like a girl! Grab yer club an' take a good swin'!~
+   COPY_EXISTING ~BKORGAN.dlg~ ~override~
+	LPF	replace_dlg_text	STR_VAR
+		match = ~Better grab some solid steel an' teach yerself how to fight!~ 
+		replace = ~Better grab some solid wood an' teach yerself how to fight!~
+	END
+    BUT_ONLY IF_EXISTS
+	
+   COPY_EXISTING ~BKORGAN.dlg~ ~override~
+	LPF	replace_dlg_text	STR_VAR
+		match = ~Yer fighin' like a girl! Grab yer flail an' take a good swin'!~ 
+		replace = ~Yer fighin' like a girl! Grab yer club an' take a good swin'!~
 	END
     BUT_ONLY IF_EXISTS
 	
