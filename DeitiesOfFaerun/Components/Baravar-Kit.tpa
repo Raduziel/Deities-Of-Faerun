@@ -31,73 +31,10 @@ LAF fl#add_kit_ee
 		clsrcreq = ~0 0 0 0 0 1 0~
 END
 
-ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
 
- COPY_EXISTING ~kitlist.2da~ ~override~
-	COUNT_2DA_ROWS 1 rows
-	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
- BUT_ONLY
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RABARA~  clabfile = ~RABARA~	END
 
- LAF ~DEFINE_FNP_KIT_INFO~
-  INT_VAR
-	u_leather_armor 	= 1
-	u_chain_armor 		= 0
-	u_plate_armor 		= 0
-	u_club_staff	 	= 1
-	u_hammers	 		= 0
-	u_maces 	 		= 0
-	u_flails 			= 0
-	u_axes 				= 0
-	u_daggers 			= 1
-	u_short_swords		= 1
-	u_long_swords		= 0
-	u_scimitars 		= 0
-	u_katanas 			= 0
-	u_bastard_swords 	= 0
-	u_2hand_swords 		= 0
-	u_halberds 			= 0
-	u_spears 	 		= 0
-	u_darts 			= 1
-	u_slings	 		= 1
-	u_bows 				= 1
-	u_crossbows 		= 1
-
-  STR_VAR
-    clab_name 	= EVAL ~%mod_clab%~
-	class 			= ~cleric~	 
-	s_Life 			= ~major~
-	s_Death 		= ~x~
-	s_Benediction 	= ~x~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~major~
-	s_War 			= ~minor~
-	s_Exploration   = ~major~
-	s_Knowledge 	= ~minor~
-	s_Deception 	= ~major~
-	s_Thought 		= ~x~
-	s_Dread 		= ~x~
-	s_Vigor 		= ~x~
-	s_Affliction 	= ~minor~
-	s_Animal 		= ~x~
-	s_Plant 		= ~x~
-	s_Earth 		= ~minor~
-	s_Water 		= ~x~
-	s_Air 			= ~x~
-	s_Fire 			= ~x~
-	s_Light 		= ~x~
-	s_Shadow 		= ~major~
-	s_Magic 		= ~x~
-	s_Perdition     = ~x~
-END
-
-LAM ~READ_FNP_KIT_INFO~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-  LAM apply_fnp_spheres
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-  LAM apply_fnp_usability
 END
 
 COPY "DeitiesOfFaerun\Spl\RABARAF.spl" override
@@ -134,6 +71,7 @@ LPM SPELL_TO_INNATE
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
+	SET match = 0
 	PATCH_MATCH proficiency WITH 
 		89 90 92 93 94 95 97 98 99 100 101 104  BEGIN
 		  LPF ADD_ITEM_EQEFFECT
@@ -144,25 +82,24 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter2 = 9
 			  timing = 2
 			  special = RESOLVE_STR_REF (@602)
-		  END
+		END
+	SET match = 1
 		END
 		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"4A" "3A" BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+				END
+				DEFAULT
+			END
+		END
 	END
-BUT_ONLY
-
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    READ_BYTE 0x18 flags1
-    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-	READ_ASCII	0x22 animation (2)
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-END
-END
 BUT_ONLY
 
 ACTION_FOR_EACH file IN ~BARAS~ ~BARAL~ BEGIN

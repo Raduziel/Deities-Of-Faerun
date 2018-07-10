@@ -28,6 +28,13 @@ ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 anomen12 BE
 	  WRITE_BYTE    0x23b 13
       BUT_ONLY
   END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAHELM	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAHELM~	kitname2 = ~~	END
+
+  END
+  
   END
   
 ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 BEGIN

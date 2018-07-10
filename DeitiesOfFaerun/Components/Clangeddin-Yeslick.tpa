@@ -29,6 +29,13 @@ ACTION_FOR_EACH creature IN yeslic yeslic5 yeslid BEGIN
       REMOVE_KNOWN_SPELL ~SPIN112~
       BUT_ONLY
   END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RACLANFC	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RACLAN~	kitname2 = ~~	END
+
+  END
+  
   END
   
 //EoF

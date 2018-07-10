@@ -5,8 +5,6 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-INCLUDE ~DeitiesOfFaerun\Lib\Multiclass\qd_multiclass.tpa~
-
 ADD_KIT ~RAMystCM~
     ~RAMystCM 0 0 0 0 1 1 0 1~
     ~RAMystCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
@@ -41,73 +39,10 @@ LAF qd_multiclass
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
-ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
 
- COPY_EXISTING ~kitlist.2da~ ~override~
-	COUNT_2DA_ROWS 1 rows
-	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
- BUT_ONLY
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAMYSTCM%	classID = 14 STR_VAR	kitname = ~RAMYST~  END
 
- LAF ~DEFINE_FNP_KIT_INFO~
-  INT_VAR
-	u_leather_armor 	= 1
-	u_chain_armor 		= 1
-	u_plate_armor 		= 1
-	u_club_staff	 	= 1
-	u_hammers	 		= 1
-	u_maces 	 		= 1
-	u_flails 			= 1
-	u_axes 				= 0
-	u_daggers 			= 0
-	u_short_swords		= 0
-	u_long_swords		= 0
-	u_scimitars 		= 0
-	u_katanas 			= 0
-	u_bastard_swords 	= 0
-	u_2hand_swords 		= 0
-	u_halberds 			= 0
-	u_spears 	 		= 0
-	u_darts 			= 0
-	u_slings	 		= 1
-	u_bows 				= 0
-	u_crossbows 		= 0
-
-  STR_VAR
-    clab_name 	= EVAL ~%mod_clab%~
-	class 			= ~cleric~	 
-	s_Life 			= ~major~
-	s_Death 		= ~x~
-	s_Benediction 	= ~minor~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~minor~
-	s_War 			= ~x~
-	s_Exploration   = ~major~
-	s_Knowledge 	= ~major~
-	s_Deception 	= ~minor~
-	s_Thought 		= ~major~
-	s_Dread 		= ~minor~
-	s_Vigor 		= ~x~
-	s_Affliction 	= ~x~
-	s_Animal 		= ~x~
-	s_Plant 		= ~x~
-	s_Earth 		= ~x~
-	s_Water 		= ~x~
-	s_Air 			= ~x~
-	s_Fire 			= ~x~
-	s_Light 		= ~x~
-	s_Shadow 		= ~major~
-	s_Magic 		= ~major~
-	s_Perdition     = ~x~
-END
-
-LAM ~READ_FNP_KIT_INFO~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-  LAM apply_fnp_spheres
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-  LAM apply_fnp_usability
 END
 
 COPY "DeitiesOfFaerun\Spl\RAMMYST.spl" override

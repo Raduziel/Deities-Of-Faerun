@@ -1,37 +1,37 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						            Cleric/Mage
+//						            Cleric/Thief
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAKitCM~
-    ~RAKitCM 0 0 0 0 1 1 0 1~
-    ~RAKitCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAKitCM 3 3 3 3 3 3~
-	~RAKitCM 0 0 0 0 0 0~
-	~RAKitCM 3 3 3 3 3 3~
-    ~RAKitCM 3 3 3 3 3 3~
-	~RAKitCM 1 1 1 1 1 1 1 1 1~
-	~RAKitCM 0 0 0 0 0 0~
+ADD_KIT ~RAKitRC~
+    ~RAKitRC 0 0 0 0 1 1 0 1~
+    ~RAKitRC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAKitRC 3 3 3 3 3 3~
+	~RAKitRC 0 0 0 0 0 0~
+	~RAKitRC 3 3 3 3 3 3~
+    ~RAKitRC 3 3 3 3 3 3~
+	~RAKitRC 1 1 1 1 1 1 1 1 1~
+	~RAKitRC 0 0 0 0 0 0~
 	~DeitiesOfFaerun\Tables\RAKitC.2da~
 	~~
-	~0x04000000 14~
-	~CM0~
+	~0x04000000 18~
+	~CR0~
 	~* * * * * * * * * * * * * * * * * * * *~
-	SAY ~cleric/mage~
-	SAY ~Cleric/Mage~
-	SAY ~CLERIC/MAGE~
+	SAY ~ranger/cleric~
+	SAY ~Ranger/Cleric~
+	SAY ~RANGER/CLERIC~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAKitCM~
-		clswpbon = ~0 0 3~
+		kit_name = ~RAKitRC~
+		clswpbon = ~1 0 3~
 END
 
 LAF qd_multiclass
   STR_VAR 
-      kit_name = ~RAKitCM~
+      kit_name = ~RAKitRC~
       kit_clab = ~RAKitC~
       base_class = ~P~
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
@@ -39,7 +39,7 @@ END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
 
-LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAKITCM%	classID = 14 STR_VAR	kitname = ~RAKITC~  END
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAKITRC%	classID = 18 STR_VAR	kitname = ~RAKITC~  END
 
 END
 
@@ -68,7 +68,7 @@ COPY_EXISTING_REGEXP	~.*\.CRE~	override
 		READ_LONG	0x244	kit
 		PATCH_IF	(kit = 0) OR (kit = 0x40000000)	BEGIN
 			PATCH_MATCH	class	WITH
-				14	BEGIN	SET	kitid = RAKitCM + 0x4000 	WRITE_SHORT	0x246	kitid 	READ_SHORT	0x244 id 	WRITE_SHORT	0x246 id	WRITE_SHORT	0x244	0 END
+				18	BEGIN	SET	kitid = RAKitFC + 0x4000 	WRITE_SHORT	0x246	kitid 	READ_SHORT	0x244 id 	WRITE_SHORT	0x246 id	WRITE_SHORT	0x244	0	END
 			DEFAULT
 			END
 		END

@@ -45,7 +45,7 @@
 		STR_VAR	match = ~~	string = ~~
 	BEGIN
 		READ_LONG	0x8		state_num			READ_LONG	0xc		state_off
-		READ_LONG	0x10	response_num	READ_LONG	0x14	response_off
+		READ_LONG	0x10	response_num		READ_LONG	0x14	response_off
 		READ_LONG	0x18	sttr_off			READ_LONG	0x1c	sttr_num
 		READ_LONG	0x20	retr_off			READ_LONG	0x24	retr_num
 		READ_LONG	0x28	act_off				READ_LONG	0x2c	act_num

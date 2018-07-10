@@ -65,5 +65,15 @@ COPY_EXISTING_REGEXP GLOB ~.*gav13.cre$~ ~override~
 	REMOVE_KNOWN_SPELL ~SPCL742~
 	BUT_ONLY
 END
+
+  ACTION_FOR_EACH creature IN ~b!gavin~ ~b!gav08~ ~b!gav13~ BEGIN
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RALATH	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RALATH~	kitname2 = ~~	END
+
+  END
+  
+  END
   
 //EoF

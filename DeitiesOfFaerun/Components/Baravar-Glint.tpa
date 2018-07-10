@@ -31,6 +31,13 @@ ACTION_FOR_EACH creature IN glint7 BEGIN
 	  SET_BG2_PROFICIENCY 91  1
 	  BUT_ONLY
   END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RABARACT	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RABARA~	kitname2 = ~~	END
+
+  END
+  
   END
 
 //EoF

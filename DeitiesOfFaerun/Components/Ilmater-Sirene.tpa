@@ -30,6 +30,13 @@ ACTION_FOR_EACH creature IN c0sirene c02siren BEGIN
 	  REMOVE_CRE_ITEM ~PLAT04~
       BUT_ONLY
   END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAILMAFC	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAILMA~	kitname2 = ~~	END
+
+  END
+  
   END
 
 //EoF

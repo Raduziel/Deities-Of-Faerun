@@ -25,4 +25,14 @@ COPY_EXISTING_REGEXP GLOB ~.*dusky.cre$~ ~override~
 	  REMOVE_CRE_ITEM ~SHLD08~
 BUT_ONLY
 
+  ACTION_FOR_EACH creature IN dusky BEGIN
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAMASKCT	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAMASK~	kitname2 = ~~	END
+
+  END
+  
+  END
+
 //EoF

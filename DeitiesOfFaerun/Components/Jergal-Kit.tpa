@@ -31,73 +31,10 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 0 0 0 0 0 0~
 END
 
-ACTION_INCLUDE ~%MOD_FOLDER%/lib/fnp_compat.tpa~
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
 
- COPY_EXISTING ~kitlist.2da~ ~override~
-	COUNT_2DA_ROWS 1 rows
-	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
- BUT_ONLY
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAJERG~  clabfile = ~RAJERG~	END
 
- LAF ~DEFINE_FNP_KIT_INFO~
-	INT_VAR
-	u_leather_armor 	= 1
-	u_chain_armor 		= 1
-	u_plate_armor 		= 1
-	u_club_staff	 	= 1
-	u_hammers	 		= 1
-	u_maces 	 		= 1
-	u_flails 			= 1
-	u_axes 				= 0
-	u_daggers 			= 0
-	u_short_swords		= 0
-	u_long_swords		= 0
-	u_scimitars 		= 0
-	u_katanas 			= 0
-	u_bastard_swords 	= 0
-	u_2hand_swords 		= 0
-	u_halberds 			= 0
-	u_spears 	 		= 0
-	u_darts 			= 0
-	u_slings	 		= 1
-	u_bows 				= 0
-	u_crossbows 		= 0
-
-    STR_VAR
-    clab_name 	= EVAL ~%mod_clab%~
-	class 			= ~cleric~	 
-	s_Life 			= ~minor~
-	s_Death 		= ~major~
-	s_Benediction 	= ~x~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~x~
-	s_War 			= ~x~
-	s_Exploration   = ~x~
-	s_Knowledge 	= ~major~
-	s_Deception 	= ~x~
-	s_Thought 		= ~major~
-	s_Dread 		= ~minor~
-	s_Vigor 		= ~x~
-	s_Affliction 	= ~x~
-	s_Animal 		= ~x~
-	s_Plant 		= ~x~
-	s_Earth 		= ~x~
-	s_Water 		= ~x~
-	s_Air 			= ~x~
-	s_Fire 			= ~x~
-	s_Light 		= ~x~
-	s_Shadow 		= ~minor~
-	s_Magic 		= ~x~
-	s_Perdition     = ~major~
-END
-
-LAM ~READ_FNP_KIT_INFO~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-  LAM apply_fnp_spheres
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-  LAM apply_fnp_usability
 END
 
 COPY "DeitiesOfFaerun\Spl\RAJergF.spl" override

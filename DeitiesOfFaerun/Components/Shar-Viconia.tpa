@@ -17,11 +17,24 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   BUT_ONLY_IF_IT_CHANGES
 
 OUTER_SET kit = "%RAShar%"
-COPY_EXISTING_REGEXP GLOB ~^_?viconi[0-20]*.*\.cre$~ ~override~
-      WRITE_SHORT   0x244 0
+ACTION_FOR_EACH creature IN viconi viconi4 viconi6 viconi7 viconi8 viconi9 viconi11 viconi13 viconi16 BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+      
+	COPY_EXISTING ~%creature%.cre~ ~override~
+	  WRITE_SHORT   0x244 0
       WRITE_BYTE    0x246 "%kit%"
       WRITE_BYTE    0x247 0x40
 	  WRITE_BYTE    0x238 14
       BUT_ONLY
+  END
+	  
+	ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+	  
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RASHAR	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RASHAR~	kitname2 = ~~	END
+
+  END
+	  
+  END
 	  
 //EoF
