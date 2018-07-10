@@ -2,8 +2,8 @@
 	DEFINE_PATCH_FUNCTION	VALIDATE	RET	fx_size	ab_size	pro_off	BEGIN
 		READ_ASCII	0	sign	(4)
 		PATCH_MATCH	~%sign%~	WITH
-			~SPL ~	WHEN (SOURCE_SIZE > 0x71)  AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~SPL~) BEGIN	SET	fx_size = 0x30	SET	ab_size = 0x28	SET	pro_off = 0x26	END
-			~ITM ~	WHEN (SOURCE_SIZE > 0x71)  AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~ITM~)	BEGIN	SET	fx_size = 0x30	SET	ab_size = 0x38	SET	pro_off = 0x2a	END
+			~SPL ~	WHEN (SOURCE_SIZE > 0x71) AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~SPL~) BEGIN	SET	fx_size = 0x30	SET	ab_size = 0x28	SET	pro_off = 0x26	END
+			~ITM ~	WHEN (SOURCE_SIZE > 0x71) AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~ITM~)	BEGIN	SET	fx_size = 0x30	SET	ab_size = 0x38	SET	pro_off = 0x2a	END
 			~CRE ~	WHEN (SOURCE_SIZE > 0x2d3) AND (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~CRE~)	BEGIN
 				SET	ab_size = 0
 				SET	pro_off = 0

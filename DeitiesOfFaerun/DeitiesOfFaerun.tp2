@@ -63,37 +63,40 @@ INCLUDE ~DeitiesOfFaerun/Lib/KitsColors.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-//BEGIN @9999909
-	//	OUTER_SET	conversion_method = 1
-	//	OUTER_SET	divineSpheres = 1
-	//	OUTER_SET	natureSpheres = 0
-	//	OUTER_SET	matchLevel = 1
-	//	OUTER_SET	tra_level = @999901
-	//	OUTER_SET	tra_sphere = @999902
-	//	OUTER_SET	$tra(~All~) = @999903
-	//	OUTER_SET	$tra(~Healing~) = @999904
-	//	OUTER_SET	$tra(~Necromantic~) = @999905
-	//	OUTER_SET	$tra(~Suffering~) = @999906
-	//	OUTER_SET	$tra(~Animal~) = @999907
-	//	OUTER_SET	$tra(~Vermin~) = @999908
-	//	OUTER_SET	$tra(~Plant~) = @999909
-	//	OUTER_SET	$tra(~Protection~) = @9999010
-	//	OUTER_SET	$tra(~Sun~) = @9999011
-	//	OUTER_SET	$tra(~Moon~) = @9999012
-	//	OUTER_SET	$tra(~Darkness~) = @9999013
-	//	OUTER_SET	$tra(~Mind~) = @9999014
-	//	OUTER_SET	$tra(~Combat~) = @9999015
-	//	OUTER_SET	$tra(~Creation~) = @9999016
-	//	OUTER_SET	$tra(~Air~) = @9999017
-	//	OUTER_SET	$tra(~Water~) = @9999018
-	//	OUTER_SET	$tra(~Earth~) = @9999019
-	//	OUTER_SET	$tra(~Fire~) = @9999020
-	//	OUTER_SET	$tra(~Divination~) = @9999021
-	//	OUTER_SET	$tra(~Travelers~) = @9999022
-	//	OUTER_SET	$tra(~Weave~) = @9999023
-	//	OUTER_SET	$tra(~Trickery~) = @9999024
-	//	OUTER_SET	$tra(~Time~) = @9999025
-	//	OUTER_SET	$tra(~Vocal~) = @9999026
+BEGIN @9999909
+		OUTER_SET	conversion_method = 1
+		OUTER_SET	divineSpheres = 1
+		OUTER_SET	natureSpheres = 0
+		OUTER_SET	matchLevel = 1
+		OUTER_SET	tra_level = 999901
+		OUTER_SET	tra_sphere = 999902
+		OUTER_SET	$tra(~All~) = 999903
+		OUTER_SET	$tra(~Healing~) = 999904
+		OUTER_SET	$tra(~Necromantic~) = 999905
+		OUTER_SET	$tra(~Suffering~) = 999906
+		OUTER_SET	$tra(~Animal~) = 999907
+		OUTER_SET	$tra(~Vermin~) = 999908
+		OUTER_SET	$tra(~Plant~) = 999909
+		OUTER_SET	$tra(~Protection~) = 9999010
+		OUTER_SET	$tra(~Sun~) = 9999011
+		OUTER_SET	$tra(~Moon~) = 9999012
+		OUTER_SET	$tra(~Darkness~) = 9999013
+		OUTER_SET	$tra(~Mind~) = 9999014
+		OUTER_SET	$tra(~Combat~) = 9999015
+		OUTER_SET	$tra(~Creation~) = 9999016
+		OUTER_SET	$tra(~Air~) = 9999017
+		OUTER_SET	$tra(~Water~) = 9999018
+		OUTER_SET	$tra(~Earth~) = 9999019
+		OUTER_SET	$tra(~Fire~) = 9999020
+		OUTER_SET	$tra(~Divination~) = 9999021
+		OUTER_SET	$tra(~Travelers~) = 9999022
+		OUTER_SET	$tra(~Weave~) = 9999023
+		OUTER_SET	$tra(~Trickery~) = 9999024
+		OUTER_SET	$tra(~Time~) = 9999025
+		OUTER_SET	$tra(~Vocal~) = 9999026
+		OUTER_SPRINT	MOD_PREFIX	~RA~
+		OUTER_SPRINT	FILE_PATH ~Lib/Spheres~
+		INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\Main.tpa~
 		
 
 //__________________________________________________________________________________
