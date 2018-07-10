@@ -1,0 +1,38 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					   DUSKY, THE SILENTWALKER OF MASK
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAMaskCT" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAMaskCT"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAMaskCT%"
+
+COPY_EXISTING_REGEXP GLOB ~.*dusky.cre$~ ~override~
+	  WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  REMOVE_CRE_ITEM ~SHLD08~
+BUT_ONLY
+
+  ACTION_FOR_EACH creature IN dusky BEGIN
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAMASKCT	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAMASK~	kitname2 = ~~	END
+
+  END
+  
+  END
+
+//EoF

@@ -1,0 +1,47 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						   ANOMEN, THE WATCHER OF HELM
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAHelm" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAHelm"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAHelm%"
+ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 anomen12 BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_LONG    0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  WRITE_BYTE    0x23b 13
+      BUT_ONLY
+  END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAHELM	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAHELM~	kitname2 = ~~	END
+
+  END
+  
+  END
+  
+ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 BEGIN
+
+	COPY_EXISTING ~%creature%.cre~ ~override~
+      REPLACE_CRE_ITEM    ~PLAT01~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
+	  BUT_ONLY
+  END
+  
+//EoF

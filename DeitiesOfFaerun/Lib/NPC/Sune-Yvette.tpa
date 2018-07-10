@@ -1,0 +1,51 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						   YVETTE, THE HEARTWARDER OF SUNE
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RASune" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RASune"
+    END
+  END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~yxyve1.cre~ ~override~
+ WRITE_BYTE    0x23e 16
+ READ_BYTE 	  0x273 class
+ PATCH_IF (class = 3) BEGIN
+  WRITE_SHORT   0x244 0
+  WRITE_BYTE    0x246 RASune
+  WRITE_BYTE    0x247 0x40
+ END
+BUT_ONLY
+
+ACTION_FOR_EACH creature IN yxyve1 BEGIN
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RASUNE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RASUNE~	kitname2 = ~~	END
+
+  END
+  
+  END
+
+<<<<<<<< .../inlined_script.baf
+IF
+	Global("MyKit","LOCALS",0)
+	InParty(Myself)
+	Class(Myself,CLERIC)
+THEN
+	RESPONSE #100
+		SetGlobal("MyKit","LOCALS",1)
+		AddKit(RASune)
+END
+>>>>>>>>
+EXTEND_TOP ~YXYVE.BCS~ ~.../inlined_script.baf~
+
+//EoF

@@ -1,0 +1,41 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//							YESLICK, THE ALAGHAR OF CLANGEDDIN
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAClanFC" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAClanFC"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAClanFC%"
+ACTION_FOR_EACH creature IN yeslic yeslic5 yeslid BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+      REMOVE_MEMORIZED_SPELL ~SPIN112~
+      REMOVE_KNOWN_SPELL ~SPIN112~
+      BUT_ONLY
+  END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RACLANFC	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RACLAN~	kitname2 = ~~	END
+
+  END
+  
+  END
+  
+//EoF
