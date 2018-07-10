@@ -2,6 +2,8 @@ Welcome and thanks for installing Deities of Faerun.
 
 INSTALLATION NOTES:
 
+* Deities of Faerûn is not compatible with Faiths and Powers.
+
 * Deities of Faerûn should be installed after any mod that adds or alters items in the game.
 
 * Deities of Faerûn should be installed after any mod that adds or alters spells in the game.
@@ -22,17 +24,6 @@ Add "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the kit'
 |		(...)                           |
 | END                                           |
 .................................................
-
-
-* Deities of Faerûn is compatible with Faiths and Powers' Sphere System. To install both, follow the steps below:
-
-
-1) Install component 1 from DoF (Base Cleric Changes (required for all components). Quit.
-
-2) Install FnP (everything you want but the cleric/acolyte kits). Quit.
-
-3) Install everything else you want from DoF.
-
 
 
 KNOWN ISSUES:
