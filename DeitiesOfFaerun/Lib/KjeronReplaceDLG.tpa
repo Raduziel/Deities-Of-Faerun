@@ -19,9 +19,9 @@ DEFINE_PATCH_FUNCTION	replace_dlg_text
 				END
 			END
 		END
-		FOR	(i = 0; i < resp_num; ++i)	BEGIN
-			READ_LONG	(resp_off + i * 0x10)	strref
-			READ_STRREF	(resp_off + i * 0x10)	text
+FOR	(i = 0; i < resp_num; ++i)	BEGIN
+			READ_LONG	(resp_off + i * 0x20 + 0x4)	strref
+			READ_STRREF	(resp_off + i * 0x20 + 0x4)	text
 			PATCH_IF	!(~%text%~	STRING_CONTAINS_REGEXP ~%match%~)	BEGIN
 				INNER_PATCH_SAVE	text	~%text%~	BEGIN	REPLACE_TEXTUALLY CASE_SENSITIVE EXACT_MATCH ~%match%~ ~%replace%~	END
 				INNER_ACTION	BEGIN
