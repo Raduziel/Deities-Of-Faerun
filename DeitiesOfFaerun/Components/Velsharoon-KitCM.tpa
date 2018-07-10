@@ -46,7 +46,7 @@ LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAVELSCM%	classID = 14 STR_VAR	kitname 
 END
 
 COPY "DeitiesOfFaerun\Spl\RAMVels.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RACMVels.itm" override SAY NAME1 @3207 SAY NAME2 @3207 SAY DESC @3208
 LPF ADD_ITEM_EQEFFECT

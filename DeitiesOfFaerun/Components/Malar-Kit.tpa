@@ -38,7 +38,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
 END
 
 COPY "DeitiesOfFaerun\Spl\RAHSMALA.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSMALA.itm" override SAY NAME1 @1810 SAY NAME2 @1810 SAY DESC @1811
 LPF ADD_ITEM_EQEFFECT

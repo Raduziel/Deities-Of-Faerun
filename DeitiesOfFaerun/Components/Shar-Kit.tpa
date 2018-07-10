@@ -44,7 +44,7 @@ COPY "DeitiesOfFaerun\Spl\RASHARFE.eff" override
 COPY "DeitiesOfFaerun\Spl\RASHAREF.spl" override
 
 COPY "DeitiesOfFaerun\Spl\RAHSSHAR.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSSHAR.itm" override SAY NAME1 @414 SAY NAME2 @414 SAY DESC @415
 LPF ADD_ITEM_EQEFFECT

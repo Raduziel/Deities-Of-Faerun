@@ -46,7 +46,7 @@ LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RALEIRCT%	classID = 15 STR_VAR	kitname 
 END
 
 COPY "DeitiesOfFaerun\Spl\RATLeir.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@3) END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RACTLeir.itm" override SAY NAME1 @3304 SAY NAME2 @3304 SAY DESC @3305
 LPF ADD_ITEM_EQEFFECT
