@@ -57,6 +57,7 @@ ACTION_FOR_EACH creature IN quayle quayle4 quayle6 1xqu25 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~QUAB.itm~ THEN BEGIN
   
   COPY_EXISTING ~QUAB.itm~ ~override~
+	LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 319   END
 	SAY DESC ~This is Quayle's beloved weapon.  He calls it "Brainy Pins".  It is a magical club designed to stop spellcasters.  This item is particularly useful against Mind Flayers.  Quayle says he obtained it specifically to "prevent Illithids from getting to his precious brain".
 
 STATISTICS:
