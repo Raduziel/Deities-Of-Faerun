@@ -371,7 +371,7 @@
 		COPY_EXISTING_REGEXP	~^.+\.\(SPL\|ITM\)$~	override
 			PHP_EACH	convert_clone	AS oldfile => newfile	BEGIN
 				PATCH_IF	! (~%SOURCE_RES%.spl~	STRING_EQUAL_CASE ~%newfile%~)	AND ! (~?~	STRING_EQUAL_CASE ~%oldfile%~)	BEGIN
-					PATCH_IF	FILE_CONTAINS_EVALUATED (~%SOURCE_FILE%~	~%oldfile%~)	BEGIN
+					PATCH_IF	FILE_CONTAINS_EVALUATED (EVAL ~%SOURCE_FILE%~	~%oldfile%~)	BEGIN
 						LPF	CLONE_EFFECT INT_VAR	match_opcode = 206 silent = 1	STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 						LPF	CLONE_EFFECT INT_VAR	match_opcode = 321 silent = 1	STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 					END
@@ -388,20 +388,24 @@
 	ACTION_IF	divineSpheres = 1	BEGIN
 		ACTION_FOR_EACH	clabfile IN ~CLABPR01~ ~CLABPA01~	BEGIN
 			ACTION_PHP_EACH	access_spells AS sphere => file	BEGIN
-				OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN
-					FOR	(i = 1; i < 8 + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
+				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (EVAL ~%clabfile%.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
+					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN
+						FOR	(i = 1; i < 8; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
+					END
+					APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
 				END
-				APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
 			END
 		END
 	END
 	ACTION_IF	natureSpheres = 1	BEGIN
 		ACTION_FOR_EACH	clabfile IN ~CLABDR01~ ~CLABRN01~	BEGIN
 			ACTION_PHP_EACH	access_spells AS sphere => file	BEGIN
-				OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN
-					FOR	(i = 1; i < 8 + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
+				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (EVAL ~%clabfile%.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
+					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN
+						FOR	(i = 1; i < 8; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
+					END
+					APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
 				END
-				APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
 			END
 		END
 	END

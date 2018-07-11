@@ -41,7 +41,7 @@
 						BUT_ONLY
 					END
 				END
-				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (~%clabfile%.2da~ ~[ %TAB%]AP_%file%[ %TAB%]~)	BEGIN
+				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (EVAL ~%clabfile%.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
 					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~	BEGIN
 						FOR	(i = 1; i < level + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
 					END
@@ -63,7 +63,7 @@
 						BUT_ONLY
 					END
 				END
-				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (~CLABRN01.2da~ ~[ %TAB%]AP_%file%[ %TAB%]~)	BEGIN
+				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (~CLABRN01.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
 					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~	BEGIN
 						FOR	(i = 1; i < level + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
 					END
@@ -85,7 +85,7 @@
 						BUT_ONLY
 					END
 				END
-				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (~CLABPR01.2da~ ~[ %TAB%]AP_%file%[ %TAB%]~)	BEGIN
+				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (~CLABPR01.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
 					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~	BEGIN
 						FOR	(i = 1; i < level + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
 					END
