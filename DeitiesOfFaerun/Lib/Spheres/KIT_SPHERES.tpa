@@ -27,7 +27,6 @@
 	END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~TALOS~)			BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 7
@@ -54,7 +53,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~HELM~)			BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -81,7 +79,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~LATHANDER~)		BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -108,7 +105,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~OHTYR~)			BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -135,7 +131,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~OHTEMPUS~)		BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 3
@@ -162,7 +157,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~TOTEMIC_DRUID~)	BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -189,7 +183,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~BEAST_FRIEND~)	BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -216,7 +209,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~SHAPESHIFTER~)	BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -243,7 +235,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~CAVALIER~)		BEGIN
-		~All~ => 0
 		~Healing~ => 4
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -270,7 +261,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~INQUISITOR~)		BEGIN
-		~All~ => 0
 		~Healing~ => 4
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -297,7 +287,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UNDEAD_HUNTER~)	BEGIN
-		~All~ => 0
 		~Healing~ => 4
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -324,7 +313,6 @@
 	END 
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~FERALAN~)		BEGIN
-		~All~ => 0
 		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -351,7 +339,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~STALKER~)		BEGIN
-		~All~ => 0
 		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -378,7 +365,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~BEASTMASTER~)	BEGIN
-		~All~ => 0
 		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -405,7 +391,6 @@
 	END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAAURI~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 7
 		~Suffering~ => 7
@@ -432,7 +417,6 @@
 	END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAAZUT~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 7
 		~Suffering~ => 0
@@ -459,7 +443,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RABAER~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -486,7 +469,6 @@
 	END	
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RABANE~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 7
 		~Suffering~ => 7
@@ -513,7 +495,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RABARA~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 3
@@ -540,7 +521,6 @@
 	END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RABESH~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 3
 		~Suffering~ => 7
@@ -567,7 +547,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RABHAA~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 7
 		~Suffering~ => 7
@@ -594,7 +573,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RACLAN~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -621,7 +599,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RACYRI~) BEGIN
-		~All~ => 7
 		~Healing~ => 0
 		~Necromantic~ => 7
 		~Suffering~ => 7
@@ -648,7 +625,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAGARA~) BEGIN
-		~All~ => 7
 		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 3
@@ -675,7 +651,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAHELM~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -702,7 +677,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAHOAR~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 7
@@ -729,7 +703,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAILMA~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -756,7 +729,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAJERG~) BEGIN
-		~All~ => 7
 		~Healing~ => 0
 		~Necromantic~ => 7
 		~Suffering~ => 3
@@ -783,7 +755,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAKELE~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 7
 		~Suffering~ => 3
@@ -810,7 +781,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RALATH~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -837,7 +807,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RALEIR~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -864,7 +833,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RALOVI~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 3
 		~Suffering~ => 7
@@ -891,7 +859,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAMALA~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -918,7 +885,6 @@
 	END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAMASK~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -945,7 +911,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAMYRK~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 7
 		~Suffering~ => 7
@@ -972,7 +937,6 @@
 	END	
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAMYST~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 7
 		~Suffering~ => 0
@@ -999,7 +963,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAOGHM~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -1026,7 +989,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAREDK~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -1053,7 +1015,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RASAVR~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 3
 		~Suffering~ => 0
@@ -1080,7 +1041,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RASELU~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -1107,7 +1067,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RASHAR~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 7
 		~Suffering~ => 7
@@ -1134,7 +1093,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RASUNE~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -1161,7 +1119,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RATLNA~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 7
 		~Suffering~ => 7
@@ -1188,7 +1145,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RATALO~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 7
@@ -1215,7 +1171,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RATEMP~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 3
@@ -1242,7 +1197,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RATORM~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -1269,7 +1223,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RATYMO~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -1296,7 +1249,6 @@
 	END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RATYR~) BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Necromantic~ => 0
 		~Suffering~ => 0
@@ -1323,7 +1275,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAUMBE~) BEGIN
-		~All~ => 7
 		~Healing~ => 3
 		~Necromantic~ => 3
 		~Suffering~ => 7
@@ -1350,7 +1301,6 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAVELS~) BEGIN
-		~All~ => 7
 		~Healing~ => 0
 		~Necromantic~ => 7
 		~Suffering~ => 7
