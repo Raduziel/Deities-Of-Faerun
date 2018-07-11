@@ -64,7 +64,7 @@ INCLUDE ~DeitiesOfFaerun/Lib/KitsColors.tpa~
 //__________________________________________________________________________________
 
 BEGIN @9999909
-		OUTER_SET	conversion_method = 1
+		OUTER_SET	conversion_method = 3
 		OUTER_SET	divineSpheres = 1
 		OUTER_SET	natureSpheres = 0
 		OUTER_SET	matchLevel = 1
@@ -95,6 +95,12 @@ BEGIN @9999909
 		OUTER_SET	$tra(~Trickery~) = 999925
 		OUTER_SET	$tra(~Time~) = 999926
 		OUTER_SET	$tra(~Vocal~) = 999927
+		OUTER_SET	tra_lower_wizard = 999928
+		OUTER_SET	tra_mixed_wizard = 999929
+		OUTER_SET	tra_lower_mage = 999930
+		OUTER_SET	tra_mixed_mage = 999931
+		OUTER_SET	tra_lower_priest = 999932
+		OUTER_SET	tra_mixed_priest = 999933
 		OUTER_SPRINT	MOD_PREFIX	~RA~
 		OUTER_SPRINT	FILE_PATH ~Lib/Spheres~
       //INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\IWDImport.tpa~

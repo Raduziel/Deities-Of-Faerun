@@ -1,33 +1,39 @@
 /* ===================== *
  *       SPHERES         *
  * ===================== */
- 
-@999901 = ~Level:~
-@999902 = ~Sphere:~
-@999903 = ~All~
-@999904 = ~Healing~
-@999905 = ~Necromantic~
-@999906 = ~Suffering~
-@999907 = ~Animal~
-@999908 = ~Vermin~
-@999909 = ~Plant~
-@999910 = ~Protection~
-@999911 = ~Sun~
-@999912 = ~Moon~
-@999913 = ~Darkness~
-@999914 = ~Thought~
-@999915 = ~Combat~
-@999916 = ~Creation~
-@999917 = ~Summoning~
-@999918 = ~Air~
-@999919 = ~Water~
-@999920 = ~Earth~
-@999921 = ~Fire~
-@999922 = ~Divination~
-@999923 = ~Travelers~
-@999924 = ~Weave~
-@999925 = ~Trickery~
-@999926 = ~Time~
-@999927 = ~Vocal~  
+	 
+	@999901 = ~Level:~
+	@999902 = ~Sphere:~
+	@999903 = ~All~
+	@999904 = ~Healing~
+	@999905 = ~Necromantic~
+	@999906 = ~Suffering~
+	@999907 = ~Animal~
+	@999908 = ~Vermin~
+	@999909 = ~Plant~
+	@999910 = ~Protection~
+	@999911 = ~Sun~
+	@999912 = ~Moon~
+	@999913 = ~Darkness~
+	@999914 = ~Thought~
+	@999915 = ~Combat~
+	@999916 = ~Creation~
+	@999917 = ~Summoning~
+	@999918 = ~Air~
+	@999919 = ~Water~
+	@999920 = ~Earth~
+	@999921 = ~Fire~
+	@999922 = ~Divination~
+	@999923 = ~Travelers~
+	@999924 = ~Weave~
+	@999925 = ~Trickery~
+	@999926 = ~Time~
+	@999927 = ~Vocal~  
+	@999928 = ~wizard~
+	@999929 = ~Wizard~
+	@999930 = ~mage~
+	@999931 = ~Mage~
+	@999932 = ~priest~
+	@999933 = ~Priest~
 
 // EoF
