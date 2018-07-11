@@ -14,18 +14,10 @@
 		clabfile = ~~
 	BEGIN
 		ACTION_TO_UPPER	kitname
-		ACTION_PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS kit_sphere => level BEGIN
-			ACTION_IF VARIABLE_IS_SET	$access_spells(~%kit_sphere%~)	BEGIN
-				OUTER_SPRINT file EVAL $access_spells(~%kit_sphere%~)
+		ACTION_PHP_EACH	EVAL ~access_spells_%kit_sphere%~	AS sphere_id => file	BEGIN
+			ACTION_IF	NOT	VARIABLE_IS_SET	$priestspherelist(~%kitname%~ ~%sphere_id%~)	BEGIN
 				ACTION_IF	kitid != 0x4000	BEGIN
-					OUTER_FOR	(i = 1; i < level + 1; ++i)	BEGIN
-						COPY_EXISTING	~%file%%i%.spl~	override
-							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
-								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
-							END	ELSE	BEGIN
-								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
-							END
-						BUT_ONLY
+					OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
 						COPY_EXISTING	~%file%%i%X.spl~	override
 							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
 								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
@@ -33,6 +25,32 @@
 								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
 							END
 						BUT_ONLY
+					END
+				END
+			END
+		END
+		ACTION_PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS kit_sphere => level BEGIN
+			ACTION_IF VARIABLE_IS_SET	$access_spells(~%kit_sphere%~)	BEGIN
+				OUTER_SPRINT file EVAL $access_spells(~%kit_sphere%~)
+				ACTION_IF	kitid != 0x4000	BEGIN
+					OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
+						ACTION_IF	i <= level	BEGIN
+							COPY_EXISTING	~%file%%i%.spl~	override
+								PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
+									LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+								END	ELSE	BEGIN
+									LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+								END
+							BUT_ONLY
+						END	ELSE	BEGIN
+							COPY_EXISTING	~%file%%i%X.spl~	override
+								PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
+									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+								END	ELSE	BEGIN
+									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+								END
+							BUT_ONLY
+						END
 					END
 				END	ELSE	BEGIN
 					OUTER_FOR	(i = 1; i < level + 1; ++i)	BEGIN
@@ -306,6 +324,7 @@
 							SET	$count(~%level%~) -= count	//	Account for spells not removed
 						END
 					END
+					PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN	SET	kitid |= 0x4000	END
 					WRITE_LONG	0x244	kitid	READ_SHORT	0x244	one	READ_SHORT	0x246	two WRITE_SHORT	0x244	two	WRITE_SHORT	0x246	one
 					SET	count = 0	PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS array => level BEGIN	++count	END			
 					PATCH_IF	(~%kitname%~ STRING_EQUAL ~~) OR (~%kitname%~ STRING_EQUAL ~DEFAULT~)	OR (count = 0) BEGIN
