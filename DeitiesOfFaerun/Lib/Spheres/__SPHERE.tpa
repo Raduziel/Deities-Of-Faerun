@@ -20,9 +20,9 @@
 					OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
 						COPY_EXISTING	~%file%%i%X.spl~	override
 							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
-								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	duration = 1	STR_VAR	resource = EVAL ~%file%%i%X~	END
 							END	ELSE	BEGIN
-								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	duration = 1	STR_VAR	resource = EVAL ~%file%%i%X~	END
 							END
 						BUT_ONLY
 					END
@@ -37,17 +37,17 @@
 						ACTION_IF	i <= level	BEGIN
 							COPY_EXISTING	~%file%%i%.spl~	override
 								PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
-									LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
 								END	ELSE	BEGIN
-									LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
 								END
 							BUT_ONLY
 						END	ELSE	BEGIN
 							COPY_EXISTING	~%file%%i%X.spl~	override
 								PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
-									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	duration = 1	STR_VAR	resource = EVAL ~%file%%i%X~	END
 								END	ELSE	BEGIN
-									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+									LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	duration = 1	STR_VAR	resource = EVAL ~%file%%i%X~	END
 								END
 							BUT_ONLY
 						END

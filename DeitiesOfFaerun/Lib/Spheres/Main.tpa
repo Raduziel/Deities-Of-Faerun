@@ -350,9 +350,9 @@
 		OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
 			CREATE	SPL	~%file%%i%~	LPF	SETUP_INNATE_SPL	END
 			COPY_EXISTING	~%file%%i%.spl~	override
-				LPF	ADD_SPELL_EFFECT	INT_VAR opcode = 146 target = 2	parameter2 = 1	STR_VAR	resource = EVAL ~%file%%i%X~	END
 				LPF	ADD_SPELL_EFFECT	INT_VAR opcode = 177 target = 2	parameter1 = 18	parameter2 = 5	STR_VAR	resource = EVAL ~%file%%i%M~	END
-			CREATE	EFF	~%file%%i%G~	WRITE_LONG	0x10	146	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%G~
+				LPF	ADD_SPELL_EFFECT	INT_VAR opcode = 146 target = 2	parameter2 = 1	STR_VAR	resource = EVAL ~%file%%i%X~	END
+			CREATE	EFF	~%file%%i%G~	WRITE_LONG	0x10	146	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%G~	WRITE_LONG	0x90	1	WRITE_ASCIIE	0x94	~%file%%i%X~
 			CREATE	SPL	~%file%%i%G~	LPF	SETUP_INNATE_SPL	END
 			COPY_EXISTING	~%file%%i%G.spl~	override
 				LPF	ADD_SPHERE_SPL	INT_VAR	level = i	STR_VAR	array = EVAL ~%sphere%~	RET_ARRAY	convert_clone	alter_level sphere_list_dup	END	// returned more efficient intall time
