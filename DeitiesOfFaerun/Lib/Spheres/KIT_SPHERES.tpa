@@ -68,6 +68,7 @@
 		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -94,6 +95,7 @@
 		~Thought~ => 3
 		~Combat~ => 3
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -120,6 +122,7 @@
 		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -146,6 +149,7 @@
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -172,6 +176,7 @@
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
@@ -198,6 +203,7 @@
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
@@ -224,6 +230,7 @@
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
@@ -250,6 +257,7 @@
 		~Thought~ => 0
 		~Combat~ => 4
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -276,6 +284,7 @@
 		~Thought~ => 0
 		~Combat~ => 4
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -302,6 +311,7 @@
 		~Thought~ => 0
 		~Combat~ => 4
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -328,6 +338,7 @@
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -354,6 +365,7 @@
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -380,6 +392,7 @@
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -406,12 +419,13 @@
 		~Thought~ => 7
 		~Combat~ => 3
 		~Creation~ => 0
+		~Summoning~ => 3
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 0
 		~Fire~ => 0
 		~Divination~ => 0
-		~Travelers~ => 3
+		~Travelers~ => 0
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
@@ -432,6 +446,7 @@
 		~Thought~ => 7
 		~Combat~ => 0
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -458,6 +473,7 @@
 		~Thought~ => 0
 		~Combat~ => 3
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 7
@@ -483,7 +499,8 @@
 		~Darkness~ => 3
 		~Thought~ => 7
 		~Combat~ => 7
-		~Creation~ => 7
+		~Creation~ => 0
+		~Summoning~ => 7
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -510,6 +527,7 @@
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 7
@@ -529,13 +547,14 @@
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
-		~Protection~ => 3
+		~Protection~ => 0
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 7
 		~Thought~ => 7
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 3
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -555,13 +574,14 @@
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
-		~Protection~ => 3
+		~Protection~ => 0
 		~Sun~ => 0
 		~Moon~ => 0
-		~Darkness~ => 7
+		~Darkness~ => 3
 		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 3
+		~Summoning~ => 7
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -585,9 +605,10 @@
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 0
-		~Thought~ => 7
+		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 7
@@ -597,13 +618,13 @@
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
-		~Vocal~ => 3
+		~Vocal~ => 7
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RACYRI~) BEGIN
 		~Healing~ => 0
 		~Necromantic~ => 7
-		~Suffering~ => 7
+		~Suffering~ => 3
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
@@ -614,12 +635,13 @@
 		~Thought~ => 7
 		~Combat~ => 3
 		~Creation~ => 3
+		~Summoning~ => 7
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
 		~Fire~ => 0
 		~Divination~ => 3
-		~Travelers~ => 3
+		~Travelers~ => 0
 		~Weave~ => 0
 		~Trickery~ => 7
 		~Time~ => 0
@@ -640,6 +662,7 @@
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -666,6 +689,7 @@
 		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -692,6 +716,7 @@
 		~Thought~ => 7
 		~Combat~ => 7
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -718,6 +743,7 @@
 		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -744,6 +770,7 @@
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -770,6 +797,7 @@
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -796,6 +824,7 @@
 		~Thought~ => 3
 		~Combat~ => 3
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -822,6 +851,7 @@
 		~Thought~ => 7
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 7
 		~Water~ => 0
 		~Earth~ => 0
@@ -841,18 +871,19 @@
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
-		~Protection~ => 7
+		~Protection~ => 3
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 7
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 0
+		~Summoning~ => 7
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
 		~Fire~ => 3
-		~Divination~ => 3
+		~Divination~ => 0
 		~Travelers~ => 0
 		~Weave~ => 0
 		~Trickery~ => 0
@@ -874,6 +905,7 @@
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 7
@@ -900,6 +932,7 @@
 		~Thought~ => 7
 		~Combat~ => 3
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -926,6 +959,7 @@
 		~Thought~ => 0
 		~Combat~ => 3
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -952,6 +986,7 @@
 		~Thought~ => 7
 		~Combat~ => 3
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -978,6 +1013,7 @@
 		~Thought~ => 7
 		~Combat~ => 3
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1004,6 +1040,7 @@
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 0
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1030,6 +1067,7 @@
 		~Thought~ => 7
 		~Combat~ => 0
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1056,6 +1094,7 @@
 		~Thought~ => 7
 		~Combat~ => 7
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 3
 		~Water~ => 0
 		~Earth~ => 0
@@ -1071,17 +1110,18 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RASHAR~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 7
-		~Suffering~ => 7
+		~Suffering~ => 3
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
-		~Protection~ => 3
+		~Protection~ => 0
 		~Sun~ => 0
 		~Moon~ => 3
 		~Darkness~ => 7
 		~Thought~ => 7
 		~Combat~ => 0
 		~Creation~ => 3
+		~Summoning~ => 7
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1108,6 +1148,7 @@
 		~Thought~ => 7
 		~Combat~ => 3
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1122,7 +1163,7 @@
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RATLNA~) BEGIN
 		~Healing~ => 3
-		~Necromantic~ => 7
+		~Necromantic~ => 3
 		~Suffering~ => 7
 		~Animal~ => 0
 		~Vermin~ => 7
@@ -1131,14 +1172,15 @@
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 7
-		~Thought~ => 7
+		~Thought~ => 3
 		~Combat~ => 0
 		~Creation~ => 0
-		~Air~ => 3
+		~Summoning~ => 7
+		~Air~ => 7
 		~Water~ => 0
 		~Earth~ => 0
 		~Fire~ => 0
-		~Divination~ => 3
+		~Divination~ => 0
 		~Travelers~ => 0
 		~Weave~ => 0
 		~Trickery~ => 3
@@ -1187,6 +1229,7 @@
 		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1213,6 +1256,7 @@
 		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 7
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1239,6 +1283,7 @@
 		~Thought~ => 7
 		~Combat~ => 0
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1265,6 +1310,7 @@
 		~Thought~ => 3
 		~Combat~ => 7
 		~Creation~ => 3
+		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
@@ -1284,13 +1330,14 @@
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
-		~Protection~ => 7
+		~Protection~ => 3
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 3
 		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 7
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 0
@@ -1298,7 +1345,7 @@
 		~Divination~ => 0
 		~Travelers~ => 7
 		~Weave~ => 0
-		~Trickery~ => 3
+		~Trickery~ => 0
 		~Time~ => 0
 		~Vocal~ => 0
 	END
@@ -1310,13 +1357,14 @@
 		~Animal~ => 0
 		~Vermin~ => 3
 		~Plant~ => 0
-		~Protection~ => 7
+		~Protection~ => 0
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 7
 		~Thought~ => 3
 		~Combat~ => 0
 		~Creation~ => 0
+		~Summoning~ => 7
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
