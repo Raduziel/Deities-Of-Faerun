@@ -81,19 +81,20 @@ BEGIN @9999909
 		OUTER_SET	$tra(~Sun~) = 999911
 		OUTER_SET	$tra(~Moon~) = 999912
 		OUTER_SET	$tra(~Darkness~) = 999913
-		OUTER_SET	$tra(~Mind~) = 999914
+		OUTER_SET	$tra(~Thought~) = 999914
 		OUTER_SET	$tra(~Combat~) = 999915
 		OUTER_SET	$tra(~Creation~) = 999916
-		OUTER_SET	$tra(~Air~) = 999917
-		OUTER_SET	$tra(~Water~) = 999918
-		OUTER_SET	$tra(~Earth~) = 999919
-		OUTER_SET	$tra(~Fire~) = 999920
-		OUTER_SET	$tra(~Divination~) = 999921
-		OUTER_SET	$tra(~Travelers~) = 999922
-		OUTER_SET	$tra(~Weave~) = 999923
-		OUTER_SET	$tra(~Trickery~) = 999924
-		OUTER_SET	$tra(~Time~) = 999925
-		OUTER_SET	$tra(~Vocal~) = 999926
+		OUTER_SET	$tra(~Summoning~) = 999917
+		OUTER_SET	$tra(~Air~) = 999918
+		OUTER_SET	$tra(~Water~) = 999919
+		OUTER_SET	$tra(~Earth~) = 999920
+		OUTER_SET	$tra(~Fire~) = 999921
+		OUTER_SET	$tra(~Divination~) = 999922
+		OUTER_SET	$tra(~Travelers~) = 999923
+		OUTER_SET	$tra(~Weave~) = 999924
+		OUTER_SET	$tra(~Trickery~) = 999925
+		OUTER_SET	$tra(~Time~) = 999926
+		OUTER_SET	$tra(~Vocal~) = 999927
 		OUTER_SPRINT	MOD_PREFIX	~RA~
 		OUTER_SPRINT	FILE_PATH ~Lib/Spheres~
       //INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\IWDImport.tpa~

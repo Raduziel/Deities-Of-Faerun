@@ -10,26 +10,27 @@
 		OUTER_SPRINT		$access_spells(~Sun~)				~RASP09~
 		OUTER_SPRINT		$access_spells(~Moon~)				~RASP10~
 		OUTER_SPRINT		$access_spells(~Darkness~)			~RASP11~
-		OUTER_SPRINT		$access_spells(~Mind~)				~RASP12~
+		OUTER_SPRINT		$access_spells(~Thought~)			~RASP12~
 		OUTER_SPRINT		$access_spells(~Combat~)			~RASP13~
 		OUTER_SPRINT		$access_spells(~Creation~)			~RASP14~
-		OUTER_SPRINT		$access_spells(~Air~)				~RASP15~
-		OUTER_SPRINT		$access_spells(~Water~)				~RASP16~
-		OUTER_SPRINT		$access_spells(~Earth~)				~RASP17~
-		OUTER_SPRINT		$access_spells(~Fire~)				~RASP18~
-		OUTER_SPRINT		$access_spells(~Divination~)		~RASP19~
-		OUTER_SPRINT		$access_spells(~Travelers~)			~RASP20~
-		OUTER_SPRINT		$access_spells(~Weave~)				~RASP21~
-		OUTER_SPRINT		$access_spells(~Trickery~)			~RASP22~
-		OUTER_SPRINT		$access_spells(~Time~)				~RASP23~
-		OUTER_SPRINT		$access_spells(~Vocal~)				~RASP24~
+		OUTER_SPRINT		$access_spells(~Summoning~)			~RASP15~
+		OUTER_SPRINT		$access_spells(~Air~)				~RASP16~
+		OUTER_SPRINT		$access_spells(~Water~)				~RASP17~
+		OUTER_SPRINT		$access_spells(~Earth~)				~RASP18~
+		OUTER_SPRINT		$access_spells(~Fire~)				~RASP19~
+		OUTER_SPRINT		$access_spells(~Divination~)		~RASP20~
+		OUTER_SPRINT		$access_spells(~Travelers~)			~RASP21~
+		OUTER_SPRINT		$access_spells(~Weave~)				~RASP22~
+		OUTER_SPRINT		$access_spells(~Trickery~)			~RASP23~
+		OUTER_SPRINT		$access_spells(~Time~)				~RASP24~
+		OUTER_SPRINT		$access_spells(~Vocal~)				~RASP25~
 		
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_CLERIC~)	BEGIN
 		~All~ => 7
 		~Healing~ => 7
 		~Protection~ => 7
 		~Sun~ => 7
-		~Mind~ => 7
+		~Thought~ => 7
 		~Combat~ => 7
 		~Creation~ => 7
 		~Divination~ => 7

@@ -15,18 +15,19 @@
 @999911 = ~Sun~
 @999912 = ~Moon~
 @999913 = ~Darkness~
-@999914 = ~Mind~
+@999914 = ~Thought~
 @999915 = ~Combat~
 @999916 = ~Creation~
-@999917 = ~Air~
-@999918 = ~Water~
-@999919 = ~Earth~
-@999920 = ~Fire~
-@999921 = ~Divination~
-@999922 = ~Travelers~
-@999923 = ~Weave~
-@999924 = ~Trickery~
-@999925 = ~Time~
-@999926 = ~Vocal~  
+@999917 = ~Summoning~
+@999918 = ~Air~
+@999919 = ~Water~
+@999920 = ~Earth~
+@999921 = ~Fire~
+@999922 = ~Divination~
+@999923 = ~Travelers~
+@999924 = ~Weave~
+@999925 = ~Trickery~
+@999926 = ~Time~
+@999927 = ~Vocal~  
 
 // EoF
