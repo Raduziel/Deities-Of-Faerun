@@ -96,9 +96,9 @@ BEGIN @9999909
 		OUTER_SET	$tra(~Vocal~) = 9999026
 		OUTER_SPRINT	MOD_PREFIX	~RA~
 		OUTER_SPRINT	FILE_PATH ~Lib/Spheres~
+      //INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\IWDImport.tpa~
 		INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\Main.tpa~
-	  //INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\IWDImport.tpa~
-
+	  
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
