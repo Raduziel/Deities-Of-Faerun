@@ -13,16 +13,25 @@
 		kitname = ~~
 		clabfile = ~~
 	BEGIN
+		ACTION_TO_UPPER	kitname
 		ACTION_PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS kit_sphere => level BEGIN
 			ACTION_IF VARIABLE_IS_SET	$access_spells(~%kit_sphere%~)	BEGIN
 				OUTER_SPRINT file EVAL $access_spells(~%kit_sphere%~)
 				ACTION_IF	kitid != 0x4000	BEGIN
 					OUTER_FOR	(i = 1; i < level + 1; ++i)	BEGIN
 						COPY_EXISTING	~%file%%i%.spl~	override
-							LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							END	ELSE	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							END
 						BUT_ONLY
 						COPY_EXISTING	~%file%%i%X.spl~	override
-							LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+							END	ELSE	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	insert_point = 0	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%X~	END
+							END
 						BUT_ONLY
 					END
 				END	ELSE	BEGIN
@@ -46,7 +55,11 @@
 					OUTER_SPRINT file EVAL $access_spells(~%kit_sphere%~)
 					OUTER_FOR	(i = 1; i < level + 1; ++i)	BEGIN
 						COPY_EXISTING	~%file%%i%M.spl~	override
-							LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							END	ELSE	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							END
 						BUT_ONLY
 					END
 				END
@@ -64,7 +77,11 @@
 					OUTER_SPRINT file EVAL $access_spells(~%kit_sphere%~)
 					OUTER_FOR	(i = 1; i < level + 1; ++i)	BEGIN
 						COPY_EXISTING	~%file%%i%M.spl~	override
-							LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							END	ELSE	BEGIN
+								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = kitid	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
+							END
 						BUT_ONLY
 					END
 				END
@@ -86,12 +103,13 @@
 		kitname = ~~
 		clabfile = ~~
 	BEGIN
+		ACTION_TO_UPPER	kitname
 		ACTION_IF	(kitid = ~-1~)	OR (classID = ~-1~)	BEGIN	//	get kitid from KITLIST.2da if not supplied (mods)
 			ACTION_IF	FILE_CONTAINS_EVALUATED (~KITLIST.2da~ ~[ %TAB%]%kitname%[ %TAB%%WNL%%MNL%%LNL%$]~)	BEGIN
 				COPY_EXISTING	~KITLIST.2da~	override
 					READ_2DA_ENTRIES_NOW ~READ_KITLIST~ 3
 					FOR	(i = 2; i < READ_KITLIST; ++i)	BEGIN
-						READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 1 label
+						READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 1 label	TO_UPPER	label
 						PATCH_IF	~%label%~ STRING_EQUAL ~%kitname%~	BEGIN
 							PATCH_IF VARIABLE_IS_SET	EVAL ~READ_KITLIST_%i%_9~	BEGIN
 								READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 kitid
@@ -110,7 +128,7 @@
 				COPY_EXISTING	~KIT.IDS~	override
 					READ_2DA_ENTRIES_NOW ~READ_KIIDS~ 2
 					FOR	(i = 1; i < READ_KIIDS; ++i)	BEGIN
-						READ_2DA_ENTRY_FORMER	~READ_KIIDS~ i 1 label
+						READ_2DA_ENTRY_FORMER	~READ_KIIDS~ i 1 label	TO_UPPER	label
 						PATCH_IF	~%label%~ STRING_EQUAL ~%kitname%~	BEGIN
 							READ_2DA_ENTRY_FORMER	~READ_KIIDS~ i 0 kitid
 							SET	i = READ_KIIDS
@@ -173,7 +191,15 @@
 	END
 	//	Alter NPC spells to match new spheres:
 	//	This is necessary in EE's as of v2.0, as the new UI will not allow un-memorizing spells the creature doesn't have "known".
-	DEFINE_ACTION_FUNCTION	UPDATE_NPC_SPHERE	INT_VAR	kitid = ~-1~	priest = 1	STR_VAR	npc_file = ~~	kitname = ~~	BEGIN
+	DEFINE_ACTION_FUNCTION	UPDATE_NPC_SPHERE
+	INT_VAR
+		kitid = ~-1~
+		priest = 1
+	STR_VAR
+		npc_file = ~~
+		kitname = ~~
+	BEGIN
+		ACTION_TO_UPPER	kitname
 		ACTION_IF FILE_EXISTS_IN_GAME ~%npc_file%.cre~	BEGIN
 			COPY_EXISTING ~%npc_file%.cre~	override
 				READ_BYTE	0x273	class
@@ -203,7 +229,7 @@
 						COPY_EXISTING	~KITLIST.2da~	override
 							READ_2DA_ENTRIES_NOW ~READ_KITLIST~ 3
 							FOR	(i = 1; i < READ_KITLIST; ++i)	BEGIN
-								READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 1 label
+								READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 1 label	TO_UPPER	label
 								PATCH_IF	~%label%~ STRING_EQUAL ~%kitname%~	BEGIN
 									PATCH_IF VARIABLE_IS_SET	EVAL ~READ_KITLIST_%i%_9~	BEGIN
 										READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 kitid
@@ -228,7 +254,7 @@
 						COPY_EXISTING	~KIT.IDS~	override
 							READ_2DA_ENTRIES_NOW ~READ_KIIDS~ 2
 							FOR	(i = 1; i < READ_KIIDS; ++i)	BEGIN
-								READ_2DA_ENTRY_FORMER	~READ_KIIDS~ i 1 label
+								READ_2DA_ENTRY_FORMER	~READ_KIIDS~ i 1 label	TO_UPPER	label
 								PATCH_IF	~%label%~ STRING_EQUAL ~%kitname%~	BEGIN
 									READ_2DA_ENTRY_FORMER	~READ_KIIDS~ i 0 kitid
 									SET	i = READ_KIIDS
