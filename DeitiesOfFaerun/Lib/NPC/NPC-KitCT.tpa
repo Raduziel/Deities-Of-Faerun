@@ -37,9 +37,9 @@ LAF qd_multiclass
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
 
-LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAKITCT%	classID = 15 STR_VAR	kitname = ~RAKITC~  END
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAKitCT%	classID = 15 STR_VAR	kitname = ~RAKITC~  END
 
 END
 

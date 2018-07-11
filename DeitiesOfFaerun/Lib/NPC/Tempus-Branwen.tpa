@@ -34,9 +34,9 @@ ACTION_FOR_EACH creature IN branwe branwe5 ~o#bran~ ~o#bran25~ BEGIN
       BUT_ONLY
   END
   
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
 
-	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RATEMP	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RATEMP~	kitname2 = ~~	END
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RATemp	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RATEMP~	kitname2 = ~~	END
 
   END
   

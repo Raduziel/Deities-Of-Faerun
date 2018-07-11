@@ -29,9 +29,9 @@ ACTION_FOR_EACH creature IN anomen6 anomen7 anomen8 anomen9 anomen10 anomen12 BE
       BUT_ONLY
   END
   
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
 
-	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAHELM	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAHELM~	kitname2 = ~~	END
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAHelm	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAHELM~	kitname2 = ~~	END
 
   END
   

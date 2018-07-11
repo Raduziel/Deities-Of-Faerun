@@ -32,9 +32,9 @@ ACTION_FOR_EACH creature IN aerie aerie6 aerie7 aerie9 aerie10 aerie11 aerie12 B
       BUT_ONLY
   END
   
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
 
-	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RABAERCM	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RABAER~	kitname2 = ~~	END
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RABaerCM	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RABAER~	kitname2 = ~~	END
 
   END
   

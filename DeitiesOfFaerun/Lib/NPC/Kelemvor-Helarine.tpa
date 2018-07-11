@@ -28,9 +28,9 @@ ACTION_FOR_EACH creature IN jklhel BEGIN
       BUT_ONLY
   END
   
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERES.tpa~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
 
-	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAKELE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAKELE~	kitname2 = ~~	END
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAKele	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAKELE~	kitname2 = ~~	END
 
   END
   
