@@ -114,10 +114,10 @@ ABILITY1    ****        ****        ****        ****        ****        ****    
 		END
 		
 <<<<<<<< qd_blank_k_x_x_inline.2da
-2DA  V1.0
-*
-                    KIT
-1    0
+2DA V1.0
+****
+		KIT
+1		0
 >>>>>>>>
 
 		//making the multiclass K_X_X

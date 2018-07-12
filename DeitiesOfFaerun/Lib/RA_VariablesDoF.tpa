@@ -31,6 +31,9 @@ OUTER_SET RA_AbDrain = (GAME_IS ~bgee~) ? 25081 : GAME_IS ~bg2ee eet~ ? 8320 : (
 OUTER_SET RA_IntDrain = (GAME_IS ~bgee~) ? 25076 : GAME_IS ~bg2ee eet~ ? 8311 : (GAME_IS ~iwdee~) ? 37680 : 0       // Mind Flayer Drain
 OUTER_SET RA_Deaf = (GAME_IS ~bgee~) ? 25102 : GAME_IS ~bg2ee eet~ ? 54318 : (GAME_IS ~iwdee~) ? 35952 : 0          // Deaf
 
+OUTER_SET RA_Bonus = (GAME_IS ~bgee~) ? 25102 : GAME_IS ~bg2ee eet~ ? 54318 : (GAME_IS ~iwdee~) ? 35952 : 0          // Combat Bonus
+OUTER_SET RA_Penalty = (GAME_IS ~bgee~) ? 25102 : GAME_IS ~bg2ee eet~ ? 54318 : (GAME_IS ~iwdee~) ? 35952 : 0        // Combat Penalty
+
 OUTER_SET RA_DeafIc = (GAME_IS ~bgee~) ? 112 : GAME_IS ~bg2ee eet~ ? 112 : (GAME_IS ~iwdee~) ? 83 : 0	// Deafness Icon
 OUTER_SET RA_FeebIc = (GAME_IS ~bgee~) ? 54  : GAME_IS ~bg2ee eet~ ? 54  : (GAME_IS ~iwdee~) ? 48 : 0	// Feeblemind Icon
 OUTER_SET RA_NausIc = (GAME_IS ~bgee~) ? 126 : GAME_IS ~bg2ee eet~ ? 126 : (GAME_IS ~iwdee~) ? 43 : 0	// Nauseous Icon

@@ -46,5 +46,25 @@
 	@999942 = ~Miracle Mists~
 	@999943 = ~Dust Explosion~
 	@999944 = ~Force Missiles~
+	@999945 = ~Curse~
+	@999946 = ~Curse~
+	@999947 = ~Prayer~
+	@999948 = ~Prayer~ 
+	@999949 = ~Recitation~
+	@999950 = ~Recitation
+(Abjuration, Invocation/Evocation)
+
+Level: 4
+Sphere: All
+Range: 0
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: 25-ft. radius
+Saving Throw: None
+
+By reciting a sacred passage or declaration, the priest invokes <PRO_HISHER> deity's blessing upon <PRO_HIMHER>self and <PRO_HISHER> allies while sowing confusion and weakness among <PRO_HISHER> enemies. The priest's allies gain a +2 bonus to their attack rolls and Saving Throws, and the priest's enemies receive a -2 penalty to the same. Recitation does not nullify a Prayer spell—the two can be cast in tandem, and the effects are cumulative.~
+
+
+	
 
 // EoF

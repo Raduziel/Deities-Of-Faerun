@@ -1,1 +1,57 @@
-COPY_EXISTING ~SPPR305.spl~ override
+//Hold Person or Mammal
+
+COPY_EXISTING ~SPPR305.spl~	override
+	LPF	CLONE_EFFECT
+		INT_VAR
+			match_opcode = 175	
+			match_parameter2 = 3
+			match_parameter1 = 2
+			parameter1 = 1
+			silent = 1
+	END
+	LPF	CLONE_EFFECT
+		INT_VAR
+			match_opcode = 177
+			match_parameter2 = 3
+			match_parameter1 = 2
+			parameter1 = 1
+			silent = 1
+	END
+	LPF	ALTER_EFFECT
+		INT_VAR
+			match_opcode = 324
+			match_parameter2 = 8
+			parameter2 = 22
+			silent = 1
+	END
+	LPF	ALTER_EFFECT
+		INT_VAR
+			match_opcode = 318
+			match_parameter2 = 8
+			parameter2 = 22
+			silent = 1
+	END
+	
+COPY_EXISTING ~IDPRO249.pro~ override
+	WRITE_SHORT	0x3e	22
+IF_EXISTS
+
+ACTION_IF ((GAME_IS ~bgee bg2ee eet~) AND (XXX)) BEGIN
+
+//Recitation
+
+ADD_PROJECTILE ~~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/Files~ override
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@999949) STR_VAR bam_file = RECITAIC RET iconrecit = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/SPPR421.spl~ ~2~ ~4~ ~CLERIC_RECITATION~
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconrecit END
+SAY NAME1             @999949
+SAY NAME2             @999949
+SAY UNIDENTIFIED_DESC @999950
+SAY DESC              @999950
+
+END
+

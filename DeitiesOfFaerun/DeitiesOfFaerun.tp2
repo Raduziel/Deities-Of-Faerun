@@ -567,7 +567,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Hoar-KitCT.tpa~
 //__________________________________________________________________________________
 
 BEGIN @99999010
-REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RABaer.2da~)) @9999905
+REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RABaerCM.2da~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baervan-Aerie.tpa~
 
 //__________________________________________________________________________________
@@ -578,7 +578,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baervan-Aerie.tpa~
 //__________________________________________________________________________________
 
 BEGIN @99999011
-REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RABara.2da~) AND ((GAME_IS ~bgee eet~) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~1xqu25.cre~)))) @9999905
+REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RABaraCM.2da~) AND ((GAME_IS ~bgee eet~) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~1xqu25.cre~)))) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Quayle.tpa~
 
 //__________________________________________________________________________________
@@ -589,7 +589,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Quayle.tpa~
 //__________________________________________________________________________________
 
 BEGIN @99999012
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RABara.2da~)) @9999905
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RABaraCT.2da~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Glint.tpa~
 
 //__________________________________________________________________________________
@@ -600,7 +600,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Baravar-Glint.tpa~
 //__________________________________________________________________________________
 
 BEGIN @99999013
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAClan.2da~)) @9999905
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAClanFC.2da~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Clangeddin-Yeslick.tpa~
 
 //__________________________________________________________________________________
@@ -611,7 +611,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Clangeddin-Yeslick.tpa~
 //__________________________________________________________________________________
 
 BEGIN @99999014
-REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RACyri.2da~) AND ((GAME_IS ~bgee eet~) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~O#Tiax.cre~)))) @9999905
+REQUIRE_PREDICATE ((FILE_EXISTS_IN_GAME ~RACyriCT.2da~) AND ((GAME_IS ~bgee eet~) OR ((GAME_IS ~bg2ee~) AND (FILE_EXISTS_IN_GAME ~O#Tiax.cre~)))) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Cyric-Tiax.tpa~
 
 //__________________________________________________________________________________
