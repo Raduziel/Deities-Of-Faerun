@@ -30,7 +30,7 @@ ACTION_FOR_EACH creature IN yeslic yeslic5 yeslid BEGIN
       BUT_ONLY
   END
   
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAClanFC	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RACLAN~	kitname2 = ~~	END
 

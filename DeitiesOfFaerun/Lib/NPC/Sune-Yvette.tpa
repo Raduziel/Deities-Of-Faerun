@@ -27,7 +27,7 @@ BUT_ONLY
 
 ACTION_FOR_EACH creature IN yxyve1 BEGIN
   
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RASune	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RASUNE~	kitname2 = ~~	END
 

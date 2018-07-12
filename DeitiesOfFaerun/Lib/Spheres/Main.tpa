@@ -106,7 +106,7 @@
 		END
 	END
 	
-	DEFINE_ACTION_FUNCTION	ALTER_SPELL_STRING	STR_VAR	sphere = ~~	resource = ~~	BEGIN
+	DEFINE_ACTION_FUNCTION	ALTER_SPELL_STRING	STR_VAR	source = ~~	sphere = ~~	resource = ~~	BEGIN
 		COPY_EXISTING	~%resource%.spl~	override
 			READ_SHORT	0x1c	class
 			READ_LONG	UNIDENTIFIED_DESC	strref	READ_STRREF	UNIDENTIFIED_DESC	desc
@@ -114,7 +114,6 @@
 			SPRINT	trans_sphere (AT tra_sphere)
 			SET tra_list = EVAL ~%tra_%sphere%%~
 			SPRINT	list (AT tra_list)
-			PATCH_PRINT	~%resource% : %sphere% : %tra_list% : %list%~
 			PATCH_IF	! (~%desc%~	STRING_CONTAINS_REGEXP	~%trans_sphere%~)	BEGIN
 				PATCH_IF	VARIABLE_IS_SET	$sphere_list_dup(~%resource%~)	BEGIN
 					INNER_PATCH_SAVE	desc	~%desc%~	BEGIN	REPLACE_TEXTUALLY	~\(%trans_sphere%.*\)~	~\1, %list%~	END
@@ -123,6 +122,25 @@
 				END
 			END	ELSE	BEGIN
 				INNER_PATCH_SAVE	desc	~%desc%~	BEGIN	REPLACE_TEXTUALLY	~\(%trans_level%[ %TAB%]*[1-9]\)[ %TAB%]*\([%WNL%%MNL%%LNL%]+\)~	~\1\2%trans_sphere% %list%\2~	END
+			END
+			PATCH_IF	VARIABLE_IS_SET	$sphere_name_changes(~%source%~)	BEGIN
+				SET	ref = $sphere_name_changes(~%source%~)
+				SPRINT	transName (AT ref)
+				INNER_PATCH_SAVE	desc	~%desc%~	BEGIN
+					SET	index = INDEX_BUFFER	(~[%WNL%%MNL%%LNL%]~)
+					PATCH_IF	index >= 0	BEGIN
+						SET	diff = ((STRING_LENGTH ~%transName%~) - index)
+						PATCH_IF	diff > 0	BEGIN	INSERT_BYTES	0	diff	END
+						PATCH_IF	diff < 0 	BEGIN	DELETE_BYTES	0	(0 - diff)	END
+						WRITE_ASCIIE	0	~%transName%~
+					END
+				END
+				PATCH_IF	class = 2	BEGIN
+					READ_LONG	NAME1	nameref
+					INNER_ACTION	BEGIN	STRING_SET_EVALUATE	nameref	~%transName%~	END
+				END	ELSE	BEGIN
+					SAY	NAME1	~%transName%~
+				END
 			END
 			WRITE_SHORT	0x1c	2
 			PATCH_IF	class = 2	BEGIN
@@ -135,10 +153,10 @@
 				SPRINT	transLp (AT tra_lower_priest)	//	tra reference with text "priest"
 				SPRINT	transMp (AT tra_mixed_priest)	//	tra reference with text "Priest"
 				INNER_PATCH_SAVE	desc	~%desc%~	BEGIN
-					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transLw%~	~%transLp%~
-					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transMw%~	~%transMp%~
-					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transLm%~	~%transLp%~
-					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transMm%~	~%transMp%~
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~\([\\\-\+/ :^]\)%transLw%\(['s]?\)~	~\1%transLp%\2~
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~\([\\\-\+/ :^]\)%transMw%\(['s]?\)~	~\1%transMp%\2~
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~\([\\\-\+/ :^]\)%transLm%\(['s]?\)~	~\1%transLp%\2~
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~\([\\\-\+/ :^]\)%transMm%\(['s]?\)~	~\1%transMp%\2~
 				END
 				SAY	UNIDENTIFIED_DESC	~%desc%~
 			END
@@ -236,7 +254,7 @@
 								END
 							END
 							INNER_ACTION	BEGIN
-								LAF	ALTER_SPELL_STRING	STR_VAR	sphere = EVAL ~%array%~	resource = EVAL ~%spell_res%~	END
+								LAF	ALTER_SPELL_STRING	STR_VAR	source = EVAL ~%one%~	sphere = EVAL ~%array%~	resource = EVAL ~%spell_res%~	END
 							END
 							SET	$sphere_list_dup(~%spell_res%~) = 1
 							PATCH_IF	1	BEGIN
@@ -354,7 +372,7 @@
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\CLS_SPHERES.tpa~
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	END
-	INCLUDE	~override\%MOD_PREFIX%SPHERE.tpa~
+	REINCLUDE	~override\%MOD_PREFIX%SPHERE.tpa~
 	
 	ACTION_CLEAR_ARRAY	alter_level
 	ACTION_CLEAR_ARRAY	convert_clone
