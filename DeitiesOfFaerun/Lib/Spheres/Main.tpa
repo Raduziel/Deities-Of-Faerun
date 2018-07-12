@@ -84,7 +84,7 @@
 						LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 						LPF	ALTER_EFFECT	INT_VAR	match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 						LPF	ALTER_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
-						LPF	ALTER_EFFECT	INT_VAR	match_power = old_level	power = level	END
+						LPF	ALTER_EFFECT	INT_VAR silent = 1	match_power = old_level	power = level	END
 						PATCH_MATCH	~%oldfile%~	WITH
 							~SPWI420~	~SPWI710~ ~SPWI809~	~SPWI617~	~SPWI908~	BEGIN	//	contingency / sequencer
 								INNER_ACTION	BEGIN
@@ -108,11 +108,13 @@
 	
 	DEFINE_ACTION_FUNCTION	ALTER_SPELL_STRING	STR_VAR	sphere = ~~	resource = ~~	BEGIN
 		COPY_EXISTING	~%resource%.spl~	override
+			READ_SHORT	0x1c	class
 			READ_LONG	UNIDENTIFIED_DESC	strref	READ_STRREF	UNIDENTIFIED_DESC	desc
 			SPRINT	trans_level (AT tra_level)
 			SPRINT	trans_sphere (AT tra_sphere)
 			SET tra_list = EVAL ~%tra_%sphere%%~
 			SPRINT	list (AT tra_list)
+			PATCH_PRINT	~%resource% : %sphere% : %tra_list% : %list%~
 			PATCH_IF	! (~%desc%~	STRING_CONTAINS_REGEXP	~%trans_sphere%~)	BEGIN
 				PATCH_IF	VARIABLE_IS_SET	$sphere_list_dup(~%resource%~)	BEGIN
 					INNER_PATCH_SAVE	desc	~%desc%~	BEGIN	REPLACE_TEXTUALLY	~\(%trans_sphere%.*\)~	~\1, %list%~	END
@@ -122,11 +124,22 @@
 			END	ELSE	BEGIN
 				INNER_PATCH_SAVE	desc	~%desc%~	BEGIN	REPLACE_TEXTUALLY	~\(%trans_level%[ %TAB%]*[1-9]\)[ %TAB%]*\([%WNL%%MNL%%LNL%]+\)~	~\1\2%trans_sphere% %list%\2~	END
 			END
-			READ_SHORT	0x1c	class
 			WRITE_SHORT	0x1c	2
 			PATCH_IF	class = 2	BEGIN
 				INNER_ACTION	BEGIN	STRING_SET_EVALUATE	strref	~%desc%~	END
 			END	ELSE	BEGIN
+				SPRINT	transLw (AT tra_lower_wizard)	//	tra reference with text "wizard"
+				SPRINT	transMw (AT tra_mixed_wizard)	//	tra reference with text "Wizard"
+				SPRINT	transLm (AT tra_lower_mage)	//	tra reference with text "mage"
+				SPRINT	transMm (AT tra_mixed_mage)	//	tra reference with text "Mage"
+				SPRINT	transLp (AT tra_lower_priest)	//	tra reference with text "priest"
+				SPRINT	transMp (AT tra_mixed_priest)	//	tra reference with text "Priest"
+				INNER_PATCH_SAVE	desc	~%desc%~	BEGIN
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transLw%~	~%transLp%~
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transMw%~	~%transMp%~
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transLm%~	~%transLp%~
+					REPLACE_TEXTUALLY	CASE_SENSITIVE	~%transMm%~	~%transMp%~
+				END
 				SAY	UNIDENTIFIED_DESC	~%desc%~
 			END
 		BUT_ONLY	IF_EXISTS
