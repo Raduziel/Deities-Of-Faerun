@@ -4,13 +4,13 @@ VERSION ~1.8.6~
 
 ALWAYS
 
-	REINCLUDE ~DeitiesOfFaerun/Lib/fl#add_kit_ee.tpa~
+	INCLUDE ~DeitiesOfFaerun/Lib/fl#add_kit_ee.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/RA_VariablesDoF.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/spell_to_innate.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/CDNewIcon.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/KjeronReplaceDLG.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/Spheres/F(x).tpa~
-	REINCLUDE ~DeitiesOfFaerun/Lib/Multiclass/qd_multiclass.tpa~
+	INCLUDE ~DeitiesOfFaerun/Lib/Multiclass/qd_multiclass.tpa~
   
   
   ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
