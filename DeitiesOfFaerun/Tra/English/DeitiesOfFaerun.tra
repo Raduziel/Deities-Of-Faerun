@@ -15,6 +15,9 @@ Sune is said to share the waters of the Evergold, a sacred pool, with the elven 
 Armor: Any.
 Weapon: Bludgeoning, shortbow, and darts.
 
+Major: All, Healing, Protection, Sun, Thought, Fire.
+Minor: Combat, Creation, Divination, Vocal.
+
 Advantages:
 
 - May cast Dire Charm once per day as a special ability, starting at level 1.
@@ -108,6 +111,9 @@ His diametric opposite in portfolio, Eldath, he considers naive and weak. Howeve
 Armor: Any.
 Weapon: Any, except missiles.
 
+Major: All, Protection, Combat, Creation, Travelers, Vocal.
+Minor: Healing, Suffering, Divination.
+
 Advantages:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -163,6 +169,9 @@ Cyric uses his new, twisted, ever-changing home in Pandemonium, the Shattered Ke
 
 Armor: Any.
 Weapon: Bludgeoning and longswords.
+
+Major: All, Necromantic, Darkness, Thought, Summoning, Trickery.
+Minor: Suffering, Combat, Creation, Divination.
 
 Advantages:
 
@@ -236,6 +245,9 @@ During the Time of Troubles, Shar killed Ibrandul, a lesser power of caverns, du
 
 Armor: All up to and including splint mail.
 Weapon: Bludgeoning only.
+
+Major: All, Necromantic, Darkness, Thought, Summoning, Weave, Trickery.
+Minor: Healing, Suffering, Moon, Creation.
 
 Advantages:
 
@@ -334,6 +346,9 @@ Clangeddin is a resolute warrior who never backs down from danger and who refuse
 Armor: Any.
 Weapon: Any.
 
+Major: All, Protection, Combat, Creation, Earth, Vocal.
+Minor: Healing, Thought, Travelers.
+
 Advantages:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -372,6 +387,9 @@ Baravar is a crafty, vengeful power who specializes in deceptions. He is unforgi
 
 Armor: All up to and including studded leather armor.
 Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaff.
+
+Major: All, Protection, Combat, Earth, Travelers, Trickery.
+Minor: Healing, Suffering, Moon, Divination.
 
 Advantages:
 
@@ -412,6 +430,9 @@ Baervan is gentle, good-natured, and mischievous. His penchant for good-natured 
 
 Armor: All up to and including studded leather armor. No shield allowed.
 Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
+
+Major: All, Healing, Animal, Plant, Protection, Earth. 
+Minor: Combat, Creation, Travelers, Trickery.
 
 Advantages:
 
@@ -472,6 +493,9 @@ In attempting to comprehend Helm's driven nature, many mortal sages have attempt
 
 Armor: Plate mail and full plate mail only.
 Weapon: Bludgeoning only.
+
+Major: All, Healing, Protection, Combat, Creation, Divination. 
+Minor: Thought, Travelers, Vocal.
 
 Advantages:
 
@@ -569,6 +593,9 @@ Aside from his divine foes listed above, Talos counts among his enemies all thos
 Armor: Any.
 Weapon: Bludgeoning and spears.
 
+Major: All, Suffering, Combat, Summoning, Air, Water.
+Minor: Healing, Protection, Darkness, Fire.
+
 Advantages:
 
 - Gains immunity to all forms of lightning and electrical damage.
@@ -603,6 +630,9 @@ Lathander has a reputation for being sometimes overly enthusiastic, slightly vai
 
 Armor: Any.
 Weapon: Bludgeoning only.
+
+Major: All, Healing, Protection, Sun, Creation, Fire. 
+Minor: Thought, Combat, Divination, Travelers.
 
 Advantages:
 
@@ -692,6 +722,9 @@ Torm and Ilmater serve Tyr, and the three deities are sometimes called the Triad
 Armor: Any.
 Weapon: Bludgeoning, bastard sword, and longsword.
 
+Major: All, Healing, Protection, Combat, Divination, Vocal.
+Minor: Sun, Thought, Creation.
+
 Advantages:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -725,7 +758,10 @@ Weight: 0~
 Oghma is a cheerful and wise power whose ability to persuade others to his point of view he puts to endless use. He can be solemn and righteous, but he is more often quietly humorous and quick to smile. His one flaw may be his fondness for his own thoughts; he tends to implement rather convoluted plots that he has worked out first in his own mind rather than to take direct action.
 
 Armor: All up to and including splint mail. No shield allowed.
-Weapon: Bludgeoning only. 
+Weapon: Bludgeoning only.
+
+Major: All, Healing, Protection, Thought, Creation, Divination, Time.
+Minor: Sun, Combat, Travelers, Weave.
 
 Advantages:
 
@@ -779,7 +815,10 @@ Ilmater is allied to and serves Tyr, aiding the blinded god in his travels and t
 Ilmater's symbol in the early days was the blood-stained rack, but since the Godswar the use of a pair white hands bound with blood-red cord has come into almost exclusive use. This newer symbol has increased Ilmater's popularity in the world at large.
 
 Armor: None.
-Weapon: Bludgeoning only. 
+Weapon: Bludgeoning only.
+
+Major: All, Healing, Protection, Combat, Creation, Travelers. 
+Minor: Plant, Sun, Thought, Divination.
 
 Advantages:
 
@@ -852,7 +891,10 @@ In the past, Mystra contested with Talos and Gond as rivals and with both Bane, 
 Mystra is fond of Kelemvor, Lord of the Dead, who was her love during her mortal life. Whether their relationship will again blossom into love is yet to be seen. She is aided in her work by Azuth, Dornal the Watcher, and by her Chosen: Elminster, Khelben "Blackstaff" Arunsun, and the Seven Sisters. Mystra is also served by the Magister, a title borne by a single mortal worker of the magical arts chosen by victory in one-on-one spell combat to be champion of magic. The Magister is also one of the Chosen of Mystra. The current Magister, Lady Magister Noumea, was elevated to the position in 1354 DR.
 
 Armor: Any.
-Weapon: Bludgeoning only. 
+Weapon: Bludgeoning only.
+
+Major: All, Necromantic, Protection, Thought, Divination, Weave, Time. 
+Minor: Healing, Moon, Combat, Creation.
 
 Advantages:
 
@@ -899,6 +941,9 @@ Torm still frequently stalks the Realms in avatar form, as he did when he was a 
 Armor: Any.
 Weapon: Bludgeoning only. 
 
+Major: All, Protection, Combat, Creation, Travelers, Vocal. 
+Minor: Healing, Sun, Thought.
+
 Advantages:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -939,6 +984,9 @@ Mask is very self-possessed and confident—too confident for his own good. He e
 
 Armor: All up to and including studded leather armor. No shield allowed.
 Weapon: Bludgeoning, dagger, and crossbow. 
+
+Major: All, Darkness, Thought, Divination, Travelers, Trickery.
+Minor: Healing, Protection, Combat, Creation.
 
 Advantages:
 
@@ -1050,7 +1098,10 @@ Weight: 0~
 She is a fickle, vain, and evil creature whose cold divine heart remains untouched by any hint of true love, noble feeling, or honor. She often toys with those who offend her, trapping them in snow storms and then driving them insane by tantalizing them with visions of warmth and the comforts of home before she freezes them to death. Her eternal beauty is cold and deadly, the flower of womanhood preserved forever in a slab of arctic ice—with sensibilities to match the ice.
 
 Armor: All up to and including splint mail.
-Weapon: Bludgeoning and axe only. 
+Weapon: Bludgeoning and axe only.
+
+Major: All, Necromantic, Suffering, Thought, Air, Water.
+Minor: Healing, Animal, Combat, Summoning.
 
 Advantages:
 
@@ -1162,7 +1213,10 @@ During the Time of Troubles, Malar stalked the length and breadth of Faerûn. He
 In the aftermath of the Time of Troubles, Malar has been weakened by the growing strength of Talos. As a result, he has been forced to seek new worshipers among the nonhuman tribes, and now numerous humanoids have begun to venerate the Beastlord as an adjunct to their traditional pantheons. Malar has also acquired additional human worshipers from the ranks of a few beast cults by slaying their totem spirits and assuming the animal spirits' portfolios as aspects of his own. One of the first beast totems to fall to his bloody talons was Blue Bear, an Uthgardt beast cult corrupted by pervasive contact with lower planar beings and venerated in other lands as Render, the Bear God.
 
 Armor: All up to and including studded leather armor.
-Weapon: Non-missile bludgeoning and dagger only. 
+Weapon: Non-missile bludgeoning and dagger only.
+
+Major: All, Animal, Vermin, Combat, Earth, Travelers.
+Minor: Healing, Plant, Darkness.
 
 Advantages:
 
@@ -1253,6 +1307,9 @@ Umberlee spent the Time of Troubles in the Sea of Fallen Stars, wreaking destruc
 
 Armor: All up to and including studded leather armor.
 Weapon: Bludgeoning, spear, and dagger.
+
+Major: All, Suffering, Summoning, Air, Water, Travelers.
+Minor: Healing, Necromantic, Protection, Darkness.
 
 Advantages:
 
@@ -1356,6 +1413,9 @@ Selûne is served by the Shards, a group of shining female servitors. The Shards
 Armor: Any.
 Weapon: Bludgeoning only.
 
+Major: All, Healing, Protection, Moon, Thought, Combat, Divination.
+Minor: Sun, Creation, Air, Weave.
+
 Advantages:
 
 - Gains Infravision.
@@ -1447,6 +1507,9 @@ While he lived, Talona served Bhaal along with Loviatar, though Loviatar and Tal
 Armor: Any.
 Weapon: Bludgeoning only.
 
+Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
+Minor: Healing, Thought, Divination, Trickery.
+
 Advantages:
 
 - Immune to disease.
@@ -1519,6 +1582,9 @@ Loviatar is aggressive, domineering, and fearless. She has a cold and calculatin
 	
 Armor: All up to and including splint mail.
 Weapon: Bludgeoning only.
+
+Major: All, Suffering, Darkness, Combat, Summoning, Vocal.
+Minor: Healing, Necromantic, Protection, Fire.
 
 Advantages:
 
@@ -1665,6 +1731,9 @@ Although much of Bane's power was absorbed by Cyric, the Prince of Lies, when th
 Armor: Any.
 Weapon: All non-missile bludgeoning and spears.
 
+Major: All, Necromantic, Suffering, Thought, Combat, Summoning. 
+Minor: Healing, Darkness, Divination, Vocal.
+
 Advantages:
 
 - Immune to fear.
@@ -1727,6 +1796,9 @@ It is believed a fragment of Bhaal's personality remains in the jet black, foul-
 	
 Armor: All up to and including splint mail. No shield allowed.
 Weapon: Bludgeoning and piercing only.
+
+Major: All, Necromantic, Suffering, Combat, Summoning, Divination.
+Minor: Healing, Darkness, Thought, Creation.
 
 Advantages:
 
@@ -1796,6 +1868,9 @@ Myrkul had a cold, malignant intelligence, and spoke in a high whisper. He was a
 
 Armor: Any.
 Weapon: Bludgeoning and scimitar.
+
+Major: All, Necromantic, Suffering, Vermin, Protection, Darkness. 
+Minor: Healing, Combat, Creation, Divination.
 
 Advantages:
 
@@ -1872,6 +1947,9 @@ Cyric, who lost his death portfolio to Kelemvor, is Kelemvor's bitter enemy. Cyr
 Armor: All up to and including splint mail. No shield allowed.
 Weapon: Bludgeoning and piercing only.
 
+Major: All, Healing, Necromantic, Sun, Moon, Combat.  
+Minor: Protection, Creation, Divination, Vocal.
+
 Advantages:
 
 - Turns Undead as a priest two levels higher.
@@ -1945,6 +2023,9 @@ Azuth is a sober sort of father-figure deity, but he is not humorless or mean-sp
 Armor: None.
 Weapon: Bludgeoning only.
 
+Major: All, Healing, Necromantic, Protection, Thought, Divination, Weave. 
+Minor: Moon, Creation, Travelers, Time.
+
 Advantages:
 
 - Gains a bonus of +2 bonus to spellcasting time.
@@ -2003,6 +2084,9 @@ This monstrous scribe is depicted in his religion's art as a smooth gray face ho
 Armor: Any.
 Weapon: Bludgeoning only.
 
+Major: All, Necromantic, Darkness, Divination, Time.
+Minor: Suffering, Protection, Vocal.
+
 Advantages:
 
 - Turns or Commands Undead as a priest one level higher.
@@ -2060,6 +2144,9 @@ During the Time of Troubles, the Red Knight was active in Tethyr defending the s
 
 Armor: Plate mail and full plate mail only.
 Weapon: Any.
+
+Major: All, Protection, Combat, Divination, Vocal.
+Minor: Healing, Travelers.
 
 Advantages:
 
@@ -2136,6 +2223,9 @@ Garagos was even more even-tempered and less prone to explode of old, but since 
 
 Armor: Any.
 Weapon: Any.
+
+Major: All, Combat, Creation, Travelers, Vocal.
+Minor: Suffering, Darkness.
 
 Advantages:
 
@@ -2225,6 +2315,9 @@ Savras's statements are clear, precise, and rarely what the listener wants to he
 Armor: None.
 Weapon: Bludgeoning only.
 
+Major: All, Healing, Protection, Moon, Thought, Divination. 
+Minor: Necromantic, Weave, Time.
+
 Advantages:
 
 - May cast Clairvoyance once per day as a special ability, starting at level 1.
@@ -2274,6 +2367,9 @@ Velsharoon is a vain, selfish, petty, but very canny power consumed with vengean
 
 Armor: None.
 Weapon: Bludgeoning only.
+
+Major: All, Necromantic, Suffering, Darkness, Summoning, Divination.
+Minor: Vermin, Weave, Time.
 
 Advantages:
 
@@ -2337,6 +2433,9 @@ Leira was an enigma since she covered everything she did and said with layers of
 Armor: None.
 Weapon: Bludgeoning only.
 
+Major: All, Protection, Moon, Thought, Air, Travelers, Trickery.
+Minor: Healing, Darkness, Weave, Time.
+
 Advantages:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic.
@@ -2373,6 +2472,9 @@ Tymora's faith is one of the most common in the Faerûn, in particular since it 
 
 Armor: Any.
 Weapon: Bludgeoning only.
+
+Major: All, Healing, Protection, Thought, Divination, Trickery. 
+Minor: Sun, Moon, Creation, Travelers.
 
 Advantages:
 
@@ -2490,6 +2592,9 @@ Talos has recently been courting the affections of Beshaba, perhaps with an eye 
 Armor: Any.
 Weapon: Bludgeoning only.
 
+Major: All, Suffering, Darkness, Thought, Divination, Trickery.
+Minor: Healing, Necromantic, Summoning, Travelers.
+
 Advantages:
 
 - May use the Bad Luck special ability once per day, starting at level 1.
@@ -2602,6 +2707,9 @@ Hoar is a moody power, prone to violence and with a penchant toward bitter humor
 
 Armor: Any.
 Weapon: Any.
+
+Major: All, Suffering, Combat, Divination, Vocal.
+Minor: Healing, Darkness.
 
 Advantages:
 

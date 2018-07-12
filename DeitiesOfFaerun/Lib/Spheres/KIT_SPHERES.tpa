@@ -709,11 +709,11 @@
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
-		~Protection~ => 3	
+		~Protection~ => 0	
 		~Sun~ => 0
 		~Moon~ => 0
-		~Darkness~ => 7
-		~Thought~ => 7
+		~Darkness~ => 3
+		~Thought~ => 0
 		~Combat~ => 7
 		~Creation~ => 0
 		~Summoning~ => 0
@@ -721,12 +721,12 @@
 		~Water~ => 0
 		~Earth~ => 0
 		~Fire~ => 0
-		~Divination~ => 0
+		~Divination~ => 7
 		~Travelers~ => 0
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
-		~Vocal~ => 0
+		~Vocal~ => 7
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAILMA~) BEGIN
@@ -786,12 +786,12 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAKELE~) BEGIN
 		~Healing~ => 7
 		~Necromantic~ => 7
-		~Suffering~ => 3
+		~Suffering~ => 0
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
 		~Protection~ => 3
-		~Sun~ => 0
+		~Sun~ => 7
 		~Moon~ => 7
 		~Darkness~ => 0
 		~Thought~ => 0
@@ -802,7 +802,7 @@
 		~Water~ => 0
 		~Earth~ => 0
 		~Fire~ => 0
-		~Divination~ => 7
+		~Divination~ => 3
 		~Travelers~ => 0
 		~Weave~ => 0
 		~Trickery~ => 0
@@ -844,7 +844,7 @@
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
-		~Protection~ => 3
+		~Protection~ => 7
 		~Sun~ => 0
 		~Moon~ => 7
 		~Darkness~ => 3
@@ -860,7 +860,7 @@
 		~Travelers~ => 7
 		~Weave~ => 3
 		~Trickery~ => 7
-		~Time~ => 0
+		~Time~ => 3
 		~Vocal~ => 0
 	END
 	
@@ -1066,7 +1066,7 @@
 		~Darkness~ => 0
 		~Thought~ => 7
 		~Combat~ => 0
-		~Creation~ => 3
+		~Creation~ => 0
 		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
@@ -1361,7 +1361,7 @@
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 7
-		~Thought~ => 3
+		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
 		~Summoning~ => 7
