@@ -69,7 +69,7 @@ COPY_EXISTING ~SPWI413.spl~ ~override/RAAZUT4.spl~    //Otiluke's Resilient Sphe
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 5
 
-COPY_EXISTING ~SPWI510.spl~ ~override/RAAZUT5.spl~    //Spell Immunity
+COPY_EXISTING ~SPWI519.spl~ ~override/RAAZUT5.spl~    //Spell Shield
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 6
 
