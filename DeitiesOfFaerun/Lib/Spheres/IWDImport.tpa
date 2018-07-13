@@ -140,6 +140,21 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 175   parameter2 
 
 END
 
+//Cure Moderate Wounds
 
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_CURE_MODERATE_WOUNDS~) BEGIN
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CureModerateWounds/Files~ override
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CureModerateWounds/SPPR217.spl~ 1 2 CLERIC_CURE_MODERATE_WOUNDS
+SAY NAME1 @999951 SAY NAME2 @999951 SAY UNIDENTIFIED_DESC @999952 SAY DESC @999952
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CureModerateWounds/SPPR217B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CureModerateWounds/SPPR217C.BAM~	~override\%spell_res%C.BAM~
+
+END
 
 //EoF
