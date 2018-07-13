@@ -121,23 +121,8 @@ Advantages:
 - May Enrage as a Berserker once per day.
 - May cast Prayer once per day as a special ability, starting at level 5.
 - Hit Dice: d10.~
-@204 = ~Prayer~
-@205 = ~Prayer
-(Conjuration/Summoning)
-
-Level: 3
-Sphere: Combat
-Range: 0
-Duration: 1 round/level
-Casting Time: 6
-Area of Effect: 30-ft. radius
-Saving Throw: None
-
-Prayer bestows favor on the priest and <PRO_HISHER> allies, and curses their enemies. All attacks, damage, and Saving Throws by friendly characters gain a +1 bonus, while enemy attacks, damage rolls, and saves get a -1 penalty. Any creatures within the area of effect when the spell is cast will continue to be affected by the spell when they leave the area, so if the warriors want to chase down that fleeing goblin, the effects of the Prayer will follow them.~
-@206 = ~Combat Bonuses~
-@207 = ~Combat Penalties~
-@208 = ~Holy Symbol of Tempus~
-@209 = ~Only the most worthy and devoted servants of the Foehammer are granted these powerful holy symbols.
+@204 = ~Holy Symbol of Tempus~
+@205 = ~Only the most worthy and devoted servants of the Foehammer are granted these powerful holy symbols.
 
 STATISTICS:
 
