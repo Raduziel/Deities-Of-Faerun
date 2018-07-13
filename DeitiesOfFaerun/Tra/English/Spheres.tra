@@ -47,9 +47,31 @@
 	@999943 = ~Dust Explosion~
 	@999944 = ~Force Missiles~
 	@999945 = ~Curse~
-	@999946 = ~Curse~
+	@999946 = ~Curse
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: Visual range of the caster
+Duration: 6 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 	@999947 = ~Prayer~
-	@999948 = ~Prayer~ 
+	@999948 = ~Prayer
+(Conjuration/Summoning)
+
+Level: 3
+Sphere: All
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+Prayer bestows favor on the priest and <PRO_HISHER> allies, and curses their enemies. All attacks, damage, and Saving Throws by friendly characters gain a +1 bonus, while enemy attacks, damage rolls, and saves get a -1 penalty. Any creatures within the area of effect when the spell is cast will continue to be affected by the spell when they leave the area, so if the warriors want to chase down that fleeing goblin, the effects of the Prayer will follow them.~ 
 	@999949 = ~Recitation~
 	@999950 = ~Recitation
 (Abjuration, Invocation/Evocation)
