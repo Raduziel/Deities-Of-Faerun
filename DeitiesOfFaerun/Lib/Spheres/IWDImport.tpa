@@ -36,22 +36,42 @@ COPY_EXISTING ~IDPRO249.pro~ override
 	WRITE_SHORT	0x3e	22
 IF_EXISTS
 
-ACTION_IF ((GAME_IS ~bgee bg2ee eet~) AND (XXX)) BEGIN
-
 //Recitation
 
-ADD_PROJECTILE ~~
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_RECITATION~) BEGIN
+
+ACTION_IF !FILE_EXISTS ~OHVRNP.PRO~ BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/OHVRNP.PRO~
+
+END
+
+ACTION_IF !FILE_EXISTS ~OHVRPO.PRO~ BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/OHVRPO.PRO~
+
+END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/Files~ override
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@999949) STR_VAR bam_file = RECITAIC RET iconrecit = icon END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/SPPR421.spl~ ~2~ ~4~ ~CLERIC_RECITATION~
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconrecit END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/SPPR421.spl~ 1 4 CLERIC_RECITATION
 SAY NAME1             @999949
 SAY NAME2             @999949
 SAY UNIDENTIFIED_DESC @999950
 SAY DESC              @999950
 
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/#RECITEB.SPL~ override
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRNP% END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40257 parameter1 = EVAL "%RA_Penalty%" END
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@999949) STR_VAR bam_file = RAALLIC RET iconreci = icon END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/#RECITEG.SPL~ override
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40256 parameter1 = EVAL "%RA_Bonus%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 175   parameter2 = iconreci END
+
 END
 
+
+
+//EoF
