@@ -85,17 +85,16 @@ SAY NAME1 @999947 SAY NAME2 @999947 SAY UNIDENTIFIED_DESC @999948 SAY DESC @9999
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR match_resource = EVAL ~%SOURCE_RES%~ resource = EVAL ~%spell_res%~	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#RECITEB.SPL~ override
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERB.SPL~ override
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRNP% END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40257 parameter1 = EVAL "%RA_Penalty%" END
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@999947) STR_VAR bam_file = RAALLIC RET iconpray = icon END
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#RECITEG.SPL~ override
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERG.SPL~ override
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40256 parameter1 = EVAL "%RA_Bonus%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 183   parameter2 = iconpray END
@@ -125,7 +124,6 @@ SAY NAME1 @999949 SAY NAME2 @999949 SAY UNIDENTIFIED_DESC @999950 SAY DESC @9999
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR match_resource = EVAL ~%SOURCE_RES%~ resource = EVAL ~%spell_res%~	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/SPPR421B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Recitation/SPPR421C.BAM~	~override\%spell_res%C.BAM~
