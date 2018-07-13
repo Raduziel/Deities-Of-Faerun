@@ -30,7 +30,7 @@ OUTER_SET RA_Hopeless = (GAME_IS ~bgee bg2ee eet~) ? 23740 : (GAME_IS ~iwdee~) ?
 OUTER_SET RA_AbDrain = (GAME_IS ~bgee~) ? 25081 : GAME_IS ~bg2ee eet~ ? 8320 : (GAME_IS ~iwdee~) ? 37685 : 0        // Ability Score Drain
 OUTER_SET RA_IntDrain = (GAME_IS ~bgee~) ? 25076 : GAME_IS ~bg2ee eet~ ? 8311 : (GAME_IS ~iwdee~) ? 37680 : 0       // Mind Flayer Drain
 OUTER_SET RA_Deaf = (GAME_IS ~bgee~) ? 25102 : GAME_IS ~bg2ee eet~ ? 54318 : (GAME_IS ~iwdee~) ? 35952 : 0          // Deaf
-OUTER_SET RA_Cursed = (GAME_IS ~bgee bg2ee eet~ ? 17426 : (GAME_IS ~iwdee~) ? 14406 : 0                             // Cursed
+OUTER_SET RA_Cursed = (GAME_IS ~bgee bg2ee eet~) ? 17426 : (GAME_IS ~iwdee~) ? 14406 : 0                             // Cursed
 
 OUTER_SET RA_Bonus = (GAME_IS ~bgee~) ? 81649 : GAME_IS ~bg2ee eet~ ? 103226 : (GAME_IS ~iwdee~) ? 40256 : 0          // Combat Bonuses
 OUTER_SET RA_Penalty = (GAME_IS ~bgee~) ? 81650 : GAME_IS ~bg2ee eet~ ? 103227 : (GAME_IS ~iwdee~) ? 40257 : 0        // Combat Penalties
