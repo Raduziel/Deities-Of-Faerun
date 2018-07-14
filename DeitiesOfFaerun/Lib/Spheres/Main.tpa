@@ -88,7 +88,7 @@
 						PATCH_MATCH	~%oldfile%~	WITH
 							~SPWI420~	~SPWI710~ ~SPWI809~	~SPWI617~	~SPWI908~	BEGIN	//	contingency / sequencer
 								INNER_ACTION	BEGIN
-									ACTION_IF	FILE_CONTAINS	~BGEE.LUA~	~mageBookStrings~	BEGIN
+									ACTION_IF	FILE_CONTAINS_EVALUATED	(~BGEE.LUA~	~mageBookStrings~)	BEGIN
 										APPEND	~BGEE.LUA~	~mageBookStrings['%newfile%'] = mageBookStrings['%oldfile%']~	//	match UI strings to original spell
 									END	ELSE	BEGIN
 										APPEND	~UI.MENU~	~mageBookStrings['%newfile%'] = mageBookStrings['%oldfile%']~	//	match UI strings to original spell
