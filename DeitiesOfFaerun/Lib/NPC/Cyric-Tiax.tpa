@@ -17,7 +17,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   BUT_ONLY_IF_IT_CHANGES
 
 OUTER_SET kit = "%RACyriCT%"
-ACTION_FOR_EACH creature IN tiax tiax4 tiax6 tiaxd ~O#Tiax~ ~O#Tiax25~ BEGIN
+ACTION_FOR_EACH creature IN tiax tiax4 tiax6 ~O#Tiax~ ~O#Tiax25~ BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 
