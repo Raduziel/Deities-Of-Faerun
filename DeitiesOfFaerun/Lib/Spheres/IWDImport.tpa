@@ -36,6 +36,8 @@ COPY_EXISTING ~IDPRO249.pro~ override
 	WRITE_SHORT	0x3e	22
 IF_EXISTS
 
+ACTION_IF ((!GAME_IS ~iwdee~) AND ((!FILE_EXISTS ~b_IWD.itm~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
+
 //Curse
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_CURSE~) BEGIN
@@ -154,6 +156,39 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/CureModerateWounds/SPPR217B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/CureModerateWounds/SPPR217C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Circle of Bones
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_CIRCLE_OF_BONES~) BEGIN
+
+ACTION_IF !FILE_EXISTS ~SMLLARNC.PRO~ BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SMLLARNC.PRO~
+
+END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/Files~ override
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323.spl~ 1 3 CLERIC_CIRCLE_OF_BONES
+SAY NAME1 @999953 SAY NAME2 @999953 SAY UNIDENTIFIED_DESC @999954 SAY DESC @999954
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	STR_VAR	match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%D~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323D.SPL~	~override\%spell_res%D.SPL~
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %SMLLARNC% END
+LPF	ALTER_EFFECT	STR_VAR	match_resource = EVAL ~SPPR323~	resource = EVAL ~%spell_res%~	END
+LPF	ALTER_EFFECT	STR_VAR	match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%D~	END
+
+END
+
+//
 
 END
 
