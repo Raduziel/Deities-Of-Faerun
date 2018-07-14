@@ -85,6 +85,32 @@ Area of Effect: 25-ft. radius
 Saving Throw: None
 
 By reciting a sacred passage or declaration, the priest invokes <PRO_HISHER> deity's blessing upon <PRO_HIMHER>self and <PRO_HISHER> allies while sowing confusion and weakness among <PRO_HISHER> enemies. The priest's allies gain a +2 bonus to their attack rolls and Saving Throws, and the priest's enemies receive a -2 penalty to the same. Recitation does not nullify a Prayer spell—the two can be cast in tandem, and the effects are cumulative.~
+	@999951 = ~Cure Moderate Wounds~
+	@999952 = ~Cure Moderate Wounds
+(Necromancy)
+
+Level: 2
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderate Wounds heals 11 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+	@999953 = ~Circle of Bones~
+	@999954 = ~Circle of Bones
+(Necromancy)
+
+Level: 3
+Sphere: Necromantic, Creation
+Range: 0
+Duration: 3 rounds
+Casting Time: 3
+Area of Effect: 3-ft. radius
+Saving Throw: None
+
+This spell conjures forth a barrier of floating bones that spin rapidly around the caster, who cannot move for the duration of the spell. Anyone entering the path of the bones takes 1d6 crushing damage and 1d6 slashing damage per round. Circle of Bones cannot be cast by good-aligned characters.~
 
 
 	
