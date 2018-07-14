@@ -176,15 +176,16 @@ SAY NAME1 @999953 SAY NAME2 @999953 SAY UNIDENTIFIED_DESC @999954 SAY DESC @9999
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	STR_VAR	match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%D~	END
+LPF	ALTER_EFFECT	   STR_VAR	match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%~	END
+LPF	ALTER_EFFECT	   STR_VAR	match_resource = EVAL ~%SOURCE_RES%D~	resource = EVAL ~%spell_res%D~	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323C.BAM~	~override\%spell_res%C.BAM~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323D.SPL~	~override\%spell_res%D.SPL~
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %SMLLARNC% END
-LPF	ALTER_EFFECT	STR_VAR	match_resource = EVAL ~SPPR323~	resource = EVAL ~%spell_res%~	END
-LPF	ALTER_EFFECT	STR_VAR	match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%D~	END
+LPF ALTER_SPELL_HEADER 	INT_VAR projectile = %SMLLARNC% END
+LPF	ALTER_EFFECT		STR_VAR	silent = 1	match_resource = EVAL ~SPPR323~	resource = EVAL ~%spell_res%~	END
+LPF	ALTER_EFFECT		STR_VAR	match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%D~	END
 
 END
 
