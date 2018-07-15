@@ -47,7 +47,7 @@ This spell has two effects: when cast upon an ally it will put it on a state of 
 (Enchantment/Charm)
 
 Level: 4
-Sphere: Benediction/Dread
+Sphere: Combat, Darkness, Sun
 Range: Visual range of the caster
 Duration: See below
 Casting Time: 4
@@ -177,7 +177,7 @@ The Strifeleader creates an aura that helps evil-aligned and undermines good-ali
 (Alteration, Invocation/Evocation)
 
 Level: 4
-Sphere: Dread
+Sphere: Darkness
 Range: 0
 Duration: 3 turns
 Casting Time: 7
@@ -190,7 +190,7 @@ This spell creates a spherical miasma of gloom and menace centered on the caster
 (Enchantment/Charm)
 
 Level: 7
-Sphere: Thought
+Sphere: Suffering, Thought
 Range: Touch
 Duration: Permanent
 Casting Time: 5
@@ -255,7 +255,7 @@ Target is put to sleep and suffers 1d10 points of magic damage unless a Saving T
 (Alteration)
 
 Level: 1
-Sphere: Shadow
+Sphere: Darkness
 Range: 20 ft.
 Duration: 1 turn
 Casting Time: 2
@@ -268,7 +268,7 @@ This spell causes total, impenetrable darkness in the area of effect. Infravisio
 (Invocation, Illusion/Phantasm)
 
 Level: 5
-Sphere: Thought
+Sphere: Darkness, Suffering, Thought
 Range: 40 ft.
 Duration: 2 turns
 Casting Time: 2
@@ -281,7 +281,7 @@ This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber a
 (Enchantment/Charm, Illusion/Phantasm)
 
 Level: 6
-Sphere: Thought
+Sphere: Darkness, Suffering, Thought
 Range: 60 ft.
 Duration: 1 round/3 levels
 Casting Time: 6
@@ -507,7 +507,7 @@ The Watcher creates a magical sword that acts accordingly to the Helmite orders.
 (Invocation/Evocation)
 
 Level: 3
-Sphere: War 
+Sphere: Creation 
 Range: 0
 Duration: Special 
 Casting Time: 10
@@ -537,7 +537,7 @@ This spell is known as wyvern watch because of the insubstantial haze brought fo
 (Invocation/Evocation)
 
 Level: 4
-Sphere: War 
+Sphere: Creation 
 Range: 30 ft.
 Duration: 2 turns 
 Casting Time: 7
@@ -643,7 +643,7 @@ The Dawnbringer creates a light that blinds, damages and destroys (vampires only
 (Conjuration/Summoning)
 
 Level: 4
-Sphere: Benediction
+Sphere: Combat
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
@@ -656,7 +656,7 @@ During this spell's effect, the recipient receives bonuses of + 1 on attack roll
 (Alteration)
 
 Level: 2
-Sphere: Fire
+Sphere: Sun
 Range: 80 ft.
 Duration: 2 turns
 Casting Time: 4
@@ -669,7 +669,7 @@ This spell enables the caster to outline one or more objects or creatures with a
 (Evocation, Alteration)
 
 Level: 3
-Sphere: Light
+Sphere: Sun
 Range: 0
 Duration: Instantaneous
 Casting Time: 6
@@ -762,7 +762,7 @@ The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip c
 (Divination)
 
 Level: 5
-Sphere: Knowledge
+Sphere: Divination
 Range: Touch
 Duration: Special
 Casting Time: 3
@@ -825,7 +825,7 @@ This special ability doubles the target's Hit Points, grants it immunity to dise
 (Abjuration, Alteration)
 
 Level: 6
-Sphere: Vigor 
+Sphere: Protection 
 Range: 0
 Duration: 3 rounds
 Casting Time: 3
@@ -838,7 +838,7 @@ By means of this spell the Painbearer call a beneficial servant of Ilmater to po
 (Abjuration, Alteration, Necromancy)
 
 Level: 5
-Sphere: Vigor 
+Sphere: Protection 
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
@@ -992,7 +992,7 @@ The Silentwalker surrounds itself with dense shadows, completely silencing <PRO_
 (Alteration)
 
 Level: 2
-Sphere: Shadow
+Sphere: Darkness, Trickery
 Range: 0
 Duration: 1 turn
 Casting Time: 6
@@ -1119,7 +1119,7 @@ This spell conjures an Ice Elemental for 10 turns.
 (Invocation/Evocation)
 
 Level: 1
-Sphere: Water
+Sphere: Creation, Water
 Range: 30
 Duration: Instantaneous
 Casting Time: 3
@@ -1132,7 +1132,7 @@ This spell creates a dagger that flies to a target determined by the caster. Thi
 (Invocation/Evocation)
 
 Level: 2
-Sphere: Water
+Sphere: Creation, Water
 Range: 5
 Duration: Instantaneous
 Casting Time: 5
@@ -1145,7 +1145,7 @@ This spell creates a whip made of pure ice that is used immediately against a ta
 (Alteration, Evocation)
 
 Level: 4
-Sphere: Water
+Sphere: Creation, Water
 Range: 0
 Duration: 1 turn
 Casting Time: 4
@@ -1253,7 +1253,7 @@ This spell transforms the caster's arms into the claws of a mighty beast, giving
 (Enchantment)
 
 Level: 5
-Sphere: Vigor
+Sphere: Animal
 Range: Touch
 Duration: 15 rounds
 Casting Time: 8
@@ -1329,7 +1329,7 @@ This spell summons a 5-ft. wide wave of water that moves in the direction willed
 (Alteration)
 
 Level: 4
-Sphere: Water
+Sphere: Suffering, Water
 Range: 40
 Duration: Instantaneous
 Casting Time: 4
@@ -1422,7 +1422,7 @@ The Silverstar throws a shooting star upon an area, causing massive damage to al
 (Invocation)
 
 Level: 2
-Sphere: Light
+Sphere: Moon
 Range: 60
 Duration: 5 rounds
 Casting Time: 2
@@ -1435,7 +1435,7 @@ This spell can only be used outdoors. The Silverstar calls a beam of light from 
 (Invocation)
 
 Level: 3
-Sphere: Light
+Sphere: Creation, Moon
 Range: 0
 Duration: 2 turns
 Casting Time: 6
@@ -1450,7 +1450,7 @@ The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points o
 (Invocation)
 
 Level: 7
-Sphere: Light
+Sphere: Moon
 Range: 100
 Duration: Instantaneous
 Casting Time: 7
@@ -1513,7 +1513,7 @@ The Malagent delivers a maleficent poison that gets worse every round.~
 (Necromancy)
 
 Level: 4
-Sphere: Affliction
+Sphere: Suffering
 Range: Touch
 Duration: Special
 Casting Time: 5
@@ -1532,7 +1532,7 @@ On this third round, the victim must make another Saving Throw. If it succeeds, 
 (Alteration)
 
 Level: 4
-Sphere: Affliction
+Sphere: Air, Suffering
 Range: Visual range of the caster
 Duration: 4 rounds
 Casting Time: 7
@@ -1604,7 +1604,7 @@ The Pain summons an Erinyes to serve <PRO_HIMHER>. A mental battle is required t
 (Alteration)
 
 Level: 1
-Sphere: Affliction
+Sphere: Suffering
 Range: Touch
 Duration: 5 rounds
 Casting Time: 1
@@ -1617,7 +1617,7 @@ This spell is the reason why a Pain of Loviatar has this title. The touched crea
 (Invocation/Evocation)
 
 Level: 2
-Sphere: Affliction
+Sphere: Fire, Suffering
 Range: 12
 Duration: Special
 Casting Time: 5
@@ -1630,7 +1630,7 @@ The Pain creates a whip made of fire that is directed against a creature. The wh
 (Necromancy)
 
 Level: 3
-Sphere: Affliction
+Sphere: Suffering
 Range: 10
 Duration: Special
 Casting Time: 6
@@ -1643,7 +1643,7 @@ A whip is created by the Pain and immediately used against a creature and impose
 (Necromancy)
 
 Level: 4
-Sphere: Affliction
+Sphere: Suffering
 Range: Touch
 Duration: Special
 Casting Time: 7
@@ -1660,7 +1660,7 @@ At the end of the second round, the victim makes another Saving Throw vs. Spells
 (Conjuration/Summoning)
 
 Level: 7
-Sphere: Affliction
+Sphere: Suffering
 Range: Visual range of the caster
 Duration: 11 turns
 Casting Time: 3
@@ -1673,7 +1673,7 @@ All enemies within 15 ft. of the symbol of pain at the moment it is invoked must
 (Necromancy)
 
 Level: 6
-Sphere: Perdition
+Sphere: Summoning
 Range: 35
 Duration: 10 turns
 Casting Time: 9
@@ -1734,7 +1734,7 @@ The Dreadruler creates a whip that delivers electrical damage and may stun, para
 (Invocation/Evocation)
 
 Level: 5
-Sphere: War
+Sphere: Creation, Combat
 Range: 10
 Duration: Special
 Casting Time: 8
@@ -1805,7 +1805,7 @@ The Deathstalker steps into Gehenna and moves freely while others appear to be f
 (Invocation/Evocation)
 
 Level: 1
-Sphere: Affliction
+Sphere: Creation, Necromantic
 Range: 0
 Duration: 3 rounds
 Casting Time: 1
@@ -1818,7 +1818,7 @@ This spell creates a dagger on the Deathstalker's hand that can't be dropped or 
 (Alteration)
 
 Level: 6
-Sphere: Perdition
+Sphere: Travelers
 Range: 0
 Duration: 5 rounds
 Casting Time: 1
@@ -1879,7 +1879,7 @@ As the wizard spell Disintegrate, except that it has a touch range and a casting
 (Necromancy)
 
 Level: 6
-Sphere: Death
+Sphere: Necromantic
 Range: 35
 Duration: 10 turns
 Casting Time: 9
@@ -1892,7 +1892,7 @@ This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, A
 (Necromancy)
 
 Level: 7
-Sphere: Death
+Sphere: Necromantic
 Range: Touch
 Duration: Permanent
 Casting Time: 1
@@ -1955,7 +1955,7 @@ This spell summons a powerful skeleton that stays at the Doomguide's service for
 (Necromancy)
 
 Level: 6
-Sphere: Death
+Sphere: Necromantic
 Range: 35
 Duration: 10 turns
 Casting Time: 9
@@ -1968,7 +1968,7 @@ This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, 
 (Evocation, Necromancy)
 
 Level: 3
-Sphere: War
+Sphere: Creation, Combat
 Range: 0
 Duration: 1 turn 
 Casting Time: 5
@@ -2088,7 +2088,7 @@ Advantages:
 (Necromancy)
 
 Level: 5
-Sphere: Wards
+Sphere: Protection, Sun
 Range: 0
 Duration: 1 turn
 Casting Time: 7
@@ -2153,7 +2153,7 @@ The caster becomes capable of foreseeing brief moments <PRO_HIMHER> and the envi
 (Divination)
 
 Level: 3
-Sphere: Knowledge
+Sphere: Divination
 Range: 0
 Duration: 1 turn
 Casting Time: 10
@@ -2166,7 +2166,7 @@ This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> 
 (Divination)
 
 Level: 5
-Sphere: Knowledge
+Sphere: Divination
 Range: 0
 Duration: 1 turn
 Casting Time: 10
@@ -2233,7 +2233,7 @@ The caster imbues a target with the chaos of the battlefield giving it a random 
 (Invocation/Evocation)
 
 Level: 4
-Sphere: War
+Sphere: Combat
 Range: 30
 Duration: 1 turn
 Casting Time: 3
@@ -2248,7 +2248,7 @@ Unfortunately, these insights are helpful in only four-fifths (80%) of the warri
 (Alteration)
 
 Level: 4
-Sphere: War
+Sphere: Combat, Protection
 Range: 0
 Duration: 1 turn
 Casting Time: 7
@@ -2374,7 +2374,7 @@ This spell enables the Necrophant to assume the gaseous form of a vampire.~
 (Necromancy)
 
 Level: 6
-Sphere: Death
+Sphere: Necromantic
 Range: 0
 Duration: 10 turns
 Casting Time: 5
@@ -2490,7 +2490,7 @@ The Luckbringer pleads for the goodwill of Tymora to <PRO_HIMHER>self, receiving
 (Divination)
 
 Level: 2
-Sphere: Benediction
+Sphere: Divination
 Range: Touch
 Duration: 3 rounds
 Casting Time: 10
@@ -2516,7 +2516,7 @@ This spell confers a protection for a single recipient creature that cannot be e
 (Invocation/Evocation)
 
 Level: 6
-Sphere: Benediction
+Sphere: Protection
 Range: 100
 Duration: 4 rounds
 Casting Time: 9
@@ -2537,7 +2537,7 @@ Round 4: +4 bonus to damage, +2 bonus to Thac0 and +1 bonus to Saving Throws.~
 (Abjuration)
 
 Level: 7
-Sphere: Benediction
+Sphere: Protection
 Range: 0
 Duration: 5 rounds
 Casting Time: 0
@@ -2610,7 +2610,7 @@ The Black Finger supplicates for the clemency of Beshaba to <PRO_HIMHER>self, re
 (Enchantment/Charm)
 
 Level: 2
-Sphere: Dread
+Sphere: Suffering
 Range: 15 ft.
 Duration: 3 rounds
 Casting Time: 2
@@ -2623,7 +2623,7 @@ The recipient of this spell gains extraordinary bad luck for the next 3 rounds, 
 (Abjuration)
 
 Level: 2
-Sphere: Dread
+Sphere: Suffering
 Range: Touch
 Duration: 5 rounds
 Casting Time: 5
@@ -2636,7 +2636,7 @@ This spell bestows a curse upon a single recipient creature that cannot be ended
 (Enchantment/Charm)
 
 Level: 5
-Sphere: Dread
+Sphere: Suffering
 Range: Touch
 Duration: 1 turn
 Casting Time: 5
@@ -2649,7 +2649,7 @@ This spell causes the recipient to receive a -3 penalty on all Saving Throws, in
 (Abjuration)
 
 Level: 7
-Sphere: Benediction
+Sphere: Protection
 Range: 0
 Duration: 5 rounds
 Casting Time: 0
@@ -2717,7 +2717,7 @@ This spell creates a cone of force that hurls back, stuns and deafens everyone c
 (Necromancy)
 
 Level: 4
-Sphere: Dread
+Sphere: Suffering
 Range: Touch
 Duration: 1 turn
 Casting Time: 7
@@ -2732,7 +2732,7 @@ Upon casting this spell, the Doombringer must touch the spell's recipient. If th
 (Invocation/Evocation)
 
 Level: 4
-Sphere: War
+Sphere: Air, Combat
 Range: 0
 Duration: Instantaneous
 Casting Time: 4

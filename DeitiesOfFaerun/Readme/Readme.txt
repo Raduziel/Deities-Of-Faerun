@@ -70,7 +70,7 @@ This spell has two effects: when cast upon an ally it will put it on a state of 
 Emotion
 (Enchantment/Charm)
 
-Sphere: Benediction/Dread
+Sphere: Combat, Darkness, Sun
 Range: Visual range of the caster
 Duration: See below
 Casting Time: 4
@@ -94,7 +94,7 @@ HOPELESSNESS: This spell creates the emotion of hopelessness within the area of 
 Dark Aura
 (Alteration, Invocation/Evocation)
 
-Sphere: Dread
+Sphere: Darkness
 Range: 0
 Duration: 3 turns
 Casting Time: 7
@@ -108,7 +108,7 @@ This spell creates a spherical miasma of gloom and menace centered on the caster
 Instill Madness
 (Enchantment/Charm)
 
-Sphere: Thought
+Sphere: Suffering, Thought
 Range: Touch
 Duration: Permanent
 Casting Time: 5
@@ -124,7 +124,7 @@ Instill Madness causes the subject to become completely insane unless a Saving T
 Darkness
 (Alteration)
 
-Sphere: Shadow
+Sphere: Darkness
 Range: 20 ft.
 Duration: 1 turn
 Casting Time: 2
@@ -138,7 +138,7 @@ This spell causes total, impenetrable darkness in the area of effect. Infravisio
 Nightmare
 (Invocation, Illusion/Phantasm)
 
-Sphere: Thought
+Sphere: Darkness, Suffering, Thought
 Range: 40 ft.
 Duration: 2 turns
 Casting Time: 2
@@ -152,7 +152,7 @@ This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber a
 Eyebite
 (Enchantment/Charm, Illusion/Phantasm)
 
-Sphere: Thought
+Sphere: Darkness, Suffering, Thought
 Range: 60 ft.
 Duration: 1 round/3 levels
 Casting Time: 6
@@ -192,7 +192,7 @@ By means of this spell, the caster is able to change a specially prepared staff 
 Mace of Odo
 (Evocation)
 
-Sphere: War 
+Sphere: Creation 
 Range: 0
 Duration: Special 
 Casting Time: 10
@@ -224,7 +224,7 @@ This spell is known as wyvern watch because of the insubstantial haze brought fo
 Seeking Sword
 (Evocation)
 
-Sphere: War 
+Sphere: Creation 
 Range: 30 ft.
 Duration: 2 turns 
 Casting Time: 7
@@ -242,7 +242,7 @@ Although it has no attack or damage bonuses, a seeking sword is considered a +4 
 Boon of Lathander
 (Conjuration/Summoning)
 
-Sphere: Benediction
+Sphere: Combat
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
@@ -256,7 +256,7 @@ During this spell's effect, the spell recipient receives bonuses of + 1 on attac
 Faerie Fire
 (Alteration)
 
-Sphere: Fire
+Sphere: Sun
 Range: 80 ft.
 Duration: 2 turns
 Casting Time: 4
@@ -270,7 +270,7 @@ This spell enables the caster to outline one or more objects or creatures with a
 Sunrise
 (Evocation, Alteration)
 
-Sphere: Light
+Sphere: Sun
 Range: 0
 Duration: Instantaneous
 Casting Time: 6
@@ -286,7 +286,7 @@ With this spell, the caster evokes a dazzling sphere of light equal to natural s
 Legend Lore
 (Divination)
 
-Sphere: Knowledge
+Sphere: Divination
 Range: Touch
 Duration: Special
 Casting Time: 3
@@ -302,7 +302,7 @@ With this spell, the Lorekeeper can extend  knowledge immensely. The caster gain
 Martyrdom of Ilmater
 (Abjuration, Alteration)
 
-Sphere: Vigor 
+Sphere: Protection 
 Range: 0
 Duration: 3 rounds
 Casting Time: 3
@@ -316,7 +316,7 @@ By means of this spell the Painbearer call a beneficial servant of Ilmater to po
 Endurance of Ilmater
 (Abjuration, Alteration, Necromancy)
 
-Sphere: Vigor 
+Sphere: Protection
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
@@ -333,7 +333,7 @@ This spell doubles the hit points of the spell recipient for the spell duration.
 Shadowcloak
 (Alteration)
 
-Sphere: Shadow
+Sphere: Darkness, Trickery
 Range: 0
 Duration: 1 turn
 Casting Time: 6
@@ -354,7 +354,7 @@ Frost Dagger
 (Evocation)
 
 Level: 1
-Sphere: Water
+Sphere: Creation, Water
 Range: 30
 Duration: Instantaneous
 Casting Time: 3
@@ -369,7 +369,7 @@ Frost Whip
 (Evocation)
 
 Level: 2
-Sphere: Water
+Sphere: Creation, Water
 Range: 5
 Duration: Instantaneous
 Casting Time: 5
@@ -384,7 +384,7 @@ Frost Sword
 (Alteration, Evocation)
 
 Level: 4
-Sphere: Water
+Sphere: Creation, Water
 Range: 0
 Duration: 1 turn
 Casting Time: 4
@@ -416,7 +416,7 @@ Dehydrate
 (Alteration)
 
 Level: 4
-Sphere: Water
+Sphere: Suffering, Water
 Range: 40
 Duration: Instantaneous
 Casting Time: 4
@@ -448,7 +448,7 @@ Moonbeam
 (Invocation)
 
 Level: 2
-Sphere: Light
+Sphere: Moon
 Range: 60
 Duration: 5 rounds
 Casting Time: 2
@@ -463,7 +463,7 @@ Shooting Star
 (Invocation)
 
 Level: 7
-Sphere: Light
+Sphere: Moon
 Range: 100
 Duration: Instantaneous
 Casting Time: 7
@@ -480,7 +480,7 @@ Poison Touch
 (Necromancy)
 
 Level: 2
-Sphere: Affliction
+Sphere: Suffering
 Range: Touch
 Duration: Special
 Casting Time: 5
@@ -503,7 +503,7 @@ Touch of Loviatar
 (Alteration)
 
 Level: 1
-Sphere: Affliction
+Sphere: Suffering
 Range: Touch
 Duration: 5 rounds
 Casting Time: 1
@@ -518,7 +518,7 @@ Whip of Flame
 (Invocation/Evocation)
 
 Level: 2
-Sphere: Affliction
+Sphere: Fire, Suffering
 Range: 12
 Duration: Special
 Casting Time: 5
@@ -533,7 +533,7 @@ Whip of Pain
 (Necromancy)
 
 Level: 3
-Sphere: Affliction
+Sphere: Suffering
 Range: 10
 Duration: Special
 Casting Time: 6
@@ -548,7 +548,7 @@ Touch of Torment
 (Necromancy)
 
 Level: 4
-Sphere: Affliction
+Sphere: Suffering
 Range: Touch
 Duration: Special
 Casting Time: 7
@@ -567,7 +567,7 @@ Ensnarement
 (Necromancy)
 
 Level: 6
-Sphere: Perdition
+Sphere: Summoning
 Range: 35
 Duration: 10 turns
 Casting Time: 9
@@ -584,7 +584,7 @@ Mystic Lash
 (Invocation/Evocation)
 
 Level: 5
-Sphere: War
+Sphere: Creation, Combat
 Range: 10
 Duration: Special
 Casting Time: 8
@@ -609,7 +609,7 @@ Bone Dagger
 (Invocation/Evocation)
 
 Level: 1
-Sphere: Affliction
+Sphere: Creation, Necromantic
 Range: 0
 Duration: 3 rounds
 Casting Time: 1
@@ -624,7 +624,7 @@ Plane Skipping
 (Alteration)
 
 Level: 6
-Sphere: Perdition
+Sphere: Travelers
 Range: 0
 Duration: 5 rounds
 Casting Time: 1
@@ -641,9 +641,9 @@ Summon Minor Death
 (Necromancy)
 
 Level: 6
-Sphere: Death
+Sphere: Necromantic
 Range: 35
-Duration: 1 turns
+Duration: 10 turns
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
@@ -656,7 +656,7 @@ Hand of Myrkul
 (Necromancy)
 
 Level: 7
-Sphere: Death
+Sphere: Necromantic
 Range: Touch
 Duration: Permanent
 Casting Time: 1
@@ -674,7 +674,7 @@ Chilling Scythe
 (Evocation, Necromancy)
 
 Level: 3
-Sphere: War
+Sphere: Creation, Combat
 Range: 0
 Duration: 1 turn 
 Casting Time: 5
@@ -691,9 +691,9 @@ Summon Minor Death
 (Necromancy)
 
 Level: 6
-Sphere: Death
+Sphere: Necromantic
 Range: 35
-Duration: 1 turns
+Duration: 10 turns
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
@@ -709,7 +709,7 @@ Divination
 (Divination)
 
 Level: 3
-Sphere: Knowledge
+Sphere: Divination
 Range: 0
 Duration: 1 turn
 Casting Time: 10
@@ -724,7 +724,7 @@ Consequence
 (Divination)
 
 Level: 5
-Sphere: Knowledge
+Sphere: Divination
 Range: 0
 Duration: 1 turn
 Casting Time: 10
@@ -743,7 +743,7 @@ Chaotic Combat
 (Invocation/Evocation)
 
 Level: 4
-Sphere: War
+Sphere: Combat
 Range: 30
 Duration: 1 turn
 Casting Time: 3
@@ -760,7 +760,7 @@ Blood Armor
 (Alteration)
 
 Level: 4
-Sphere: War
+Sphere: Combat, Protection
 Range: 0
 Duration: 1 turn
 Casting Time: 7
@@ -781,7 +781,7 @@ Gaseous Form
 (Necromancy)
 
 Level: 6
-Sphere: Death
+Sphere: Necromantic
 Range: 0
 Duration: 10 turns
 Casting Time: 5
@@ -803,7 +803,7 @@ Moment
 (Divination)
 
 Level: 2
-Sphere: Benediction
+Sphere: Divination
 Range: Touch
 Duration: 3 rounds
 Casting Time: 10
@@ -833,7 +833,7 @@ Luckbolt
 (Invocation/Evocation)
 
 Level: 6
-Sphere: Benediction
+Sphere: Protection
 Range: 100
 Duration: 4 rounds
 Casting Time: 9
@@ -856,7 +856,7 @@ Tymora's Blessing
 (Abjuration)
 
 Level: 7
-Sphere: Benediction
+Sphere: Protection
 Range: 0
 Duration: 5 rounds
 Casting Time: 0
@@ -875,7 +875,7 @@ Bad Luck
 (Enchantment/Charm)
 
 Level: 2
-Sphere: Dread
+Sphere: Suffering
 Range: 15 ft.
 Duration: 3 rounds
 Casting Time: 2
@@ -889,7 +889,7 @@ Bane of Beshaba
 (Abjuration)
 
 Level: 2
-Sphere: Dread
+Sphere: Suffering
 Range: Touch
 Duration: 5 rounds
 Casting Time: 5
@@ -904,7 +904,7 @@ Misfortune
 (Enchantment/Charm)
 
 Level: 5
-Sphere: Dread
+Sphere: Suffering
 Range: Touch
 Duration: 1 turn
 Casting Time: 5
@@ -919,7 +919,7 @@ Beshaba's Mercy
 (Abjuration)
 
 Level: 7
-Sphere: Benediction
+Sphere: Protection
 Range: 0
 Duration: 5 rounds
 Casting Time: 0
@@ -937,7 +937,7 @@ Hand of Hoar
 (Necromancy)
 
 Level: 4
-Sphere: Dread
+Sphere: Suffering
 Range: Touch
 Duration: Special
 Casting Time: 7
@@ -954,7 +954,7 @@ Thunder Staff
 (Invocation/Evocation)
 
 Level: 4
-Sphere: War
+Sphere: Air, Combat
 Range: 0
 Duration: Instantaneous
 Casting Time: 4
@@ -1248,6 +1248,34 @@ f) Sphere System
 7 - Nature's Beauty
     Stalker
     Wither
+
+[Protection]
+
+1 - Armor of Faith
+    Protection From Evil
+    Remove Fear
+
+2 - Resist Fire & Cold
+
+3 - Glyph of Warding
+    Remove Paralysis
+    Self-Sacrifice 
+
+4 - Death Ward
+    Defensive Harmony
+    Protection From Evil 10' Radius
+
+5 - Magic Resistance
+    Shield of Divine
+    Undead Ward
+
+6 - Blade Barrier
+    Entropy Shield
+    Physical Mirror
+
+7 - Greater Shield of Divine
+    Shield of the Archons
+    
 
 [Sun]
 
