@@ -1084,6 +1084,574 @@ This component will make all non-magical armors, helmets and shields use the kit
 
 ====================================================================================================================================================================
 
+
+
+f) Sphere System
+
+[All]
+
+1 - Bless
+    Curse
+    Sanctuary
+
+2 - Chant
+
+3 - Dispel Magic
+    Prayer
+    Remove Curse
+
+4 - Recitation
+
+5 - Righteous Magic
+
+6 - Bolt of Glory
+
+7 - Holy/Unholy Word
+
+[Healing]
+
+1 - Cure Light Wounds
+
+2 - Aid
+    Cure Moderate Wounds
+    Slow Poison
+
+3 - Cure Disease
+    Cure Medium Wounds
+    Remove Paralysis
+
+4 - Cure Serious Wounds
+    Lesser Restoration
+    Neutralize Poison
+
+5 - Cure Critical Wounds
+    Mass Cure
+    Raise Dead
+
+6 - Heal
+
+7 - Greater Restoration
+    Resurrection
+
+[Necromantic]
+
+1 - Chill Touch
+    Drain Life
+
+2 - Ghoul Touch
+
+3 - Animate Dead
+    Circle of Bones
+    Vampiric Touch
+
+4 - Skull Trap
+    Spirit Armor
+
+5 - Darts of Bone
+    Slay Living
+    Summon Shadow
+
+6 - Lich Touch
+    Soul Eater
+
+7 - Energy Drain
+    Finger of Death
+    Symbol: Death
+
+[Suffering]
+
+1 - Cause Light Wounds
+
+2 - Cause Moderate Wounds
+    Doom
+
+3 - Cause Disease
+    Mold Touch
+
+4 - Cause Serious Wounds
+    Cloud of Pestilance
+    Contagion
+    Poison
+
+5 - Cause Critical Wounds
+    Cloudkill
+
+6 - Harm
+
+7 - Dolorous Decay
+    Suffocate
+    Symbol: Pain
+
+[Animal]
+
+1 - Infravision
+
+2 - Alicorn Lance
+    Beast Claw
+    Charm Person or Mammal
+
+3 - Hold Person or Mammal
+
+4 - Animal Summoning I	
+    Call Woodland Beings
+    Poison
+
+5 - Animal Rage
+    Animal Summoning II
+
+6 - Animal Summoning III
+    Conjure Animals
+    Wyvern Call
+
+7 - Nature's Beauty
+    Pixie Dust
+
+[Vermin]
+
+1 - Grease
+
+2 - Web
+
+3 - Summon Insects
+
+4 - Giant Insects
+    Poison
+    Spider Spawn
+
+5 - Insect Plague
+
+6 - Carrion Summons
+
+7 - Creeping Doom
+
+[Plant]
+
+1 - Entangle
+    Shillelagh
+
+2 - Barkskin
+    Goodberry
+    Slow Poison
+
+3 - Mold Touch
+    Spire Growth
+
+4 - Call Woodland Beings
+    Neutralize Poison
+    Poison
+    Thorn Spray
+
+5 - Regeneration
+
+6 - Fire Seeds
+
+7 - Nature's Beauty
+    Stalker
+    Wither
+
+[Sun]
+
+1 - Sunscorch
+
+2 - Flametongue
+
+3 - Hold Undead
+    Holy Smite
+
+4 - Death Ward
+    Emotion: Hope
+    Negative Plane Protection
+
+5 - Flame Strike
+    Repulse Undead
+    Sunfire
+    Undead Ward
+
+6 - False Dawn
+    Sol's Searing Orb
+
+7 - Sunray
+
+[Moon]
+
+1 - Remove Fear
+    Sleep
+
+2 - Power Word: Sleep
+    Silence 15' Radius
+
+3 - Ghost Armor
+    Moonblade
+    Wraithform
+
+4 - Negative Plane Protection
+    Spirit Armor
+    Wall of Moonlight
+
+5 - Phantom Blade
+
+6 - Invisible Stalker
+    Spiritual Lock
+
+7 - Power Word: Silence
+    Project Image
+
+[Darkness]
+
+1 - Blindness
+    Spook
+
+2 - Doom
+    Horror
+
+3 - Non-Detection
+    Unholy Blight
+
+4 - Cloak of Fear
+    Emotion: Fear	
+    Emotion: Hopelessness
+    Shadow Monster
+
+5 - Demi-Shadow Monster
+    Summon Shadow
+
+6 - Death Spell
+    Shades
+
+7 - Black Blade of Disaster
+    Symbol: Fear
+    Symbol: Hopelessness
+
+[Thought]
+
+1 - Command
+    Remove Fear
+
+2 - Charm Person or Mammal
+    Hold Person
+
+3 - Exaltation
+    Ridig Thinking
+
+4 - Blood Rage
+    Cloak of Fear
+    Mental Domination
+
+5 - Chaotic Commands
+    Greater Command
+
+6 - Hold Monster
+
+7 - Confusion
+    Impervious Sanctity of Mind
+    Nature's Beauty
+
+[Combat]
+
+1 - Armor of Faith
+    Magical Stone
+    Remove Fear
+
+2 - Aid
+    Draw Upon Holy Might
+    Spiritual Hammer
+
+3 - Holy Smite
+    Strength of One
+    Unholy Blight
+
+4 - Blood Rage
+    Defensive Harmony
+    Emotion: Courage
+    Holy Power
+
+5 - Champion's Strength
+    Righteous Wrath of the Faithful
+
+6 - Antimagic Shell
+    Blade Barrier
+
+7 - Destruction
+    Great Shout
+    Symbol: Stun
+
+[Creation]
+
+1 - Shillelagh
+
+2 - Alicorn Lance
+    Goodberry
+    Spiritual Hammer
+
+3 - Circle of Bones
+    Moonblade
+
+4 - Enchanted Weapon
+    Star Metal Cudgel
+
+5 - Phantom Blade
+
+6 - Blade Barrier
+
+7 - Black Blade of Disaster
+
+[Summoning]
+
+1 - Protection From Evil
+
+2 - Monster Summoning I
+
+3 - Animate Dead
+    Monster Summoning II
+
+4 - Monster Summoning III
+    Protection From Evil 10' Radius
+
+5 - Cacofiend
+    Summon Shadow
+
+6 - Summon Fiend
+
+7 - Gate
+
+[Air]
+
+1 - Shocking Grasp
+
+2 - Stinking Cloud
+    Writhing Fog
+
+3 - Call Lightning
+    Lightning Bolt
+    Storm Shell
+    Zone of Sweet Air
+
+4 - Cloud of Pestilance
+    Protection From Lightning
+    Static Charge
+
+5 - Chain Lightning
+    Cloudkill
+
+6 - Aerial Servant
+    Conjure Air Elemental
+    Whirlwind
+
+7 - Death Fog
+    Suffocate
+
+[Water]
+
+1 - Chill Touch
+
+2 - Snowball Swarm
+    Writhing Fog
+
+3 - Cloudburst
+    Icelance
+    Protection From Cold
+    Storm Shell
+
+4 - Ice Storm
+    Smashing Wave
+
+5 - Cone of Cold
+    Protection From Acid
+
+6 - Conjure Water Elemental
+    Freezing Sphere
+
+7 - Acid Storm
+    Miracle Mists
+
+[Earth]
+
+1 - Magical Stone
+
+2 - Dust Explosion
+
+3 - Spike Growth
+
+4 - Star Metal Cudgel
+    Stoneskin
+    Thorn Spray
+
+5 - Iron Skin
+    Spike Stones
+
+6 - Conjure Earth Elemental
+    Flesh to Stone
+    Stone to Flesh
+
+7 - Earthquake
+    Iron Body
+
+[Fire]
+
+1 - Burning Hands
+
+2 - Flameblade
+    Flametongue
+
+3 - Fireball
+    Flame Arrow
+    Protection From Fire
+
+4 - Fireshield (Red)
+    Produce Fire
+
+5 - Flame Strike
+    Shroud of Flames
+    Sunfire
+
+6 - Conjure Fire Elemental
+    Fire Seeds
+
+7 - Fire Storm
+    Incendiary Cloud
+
+[Divination]
+
+1 - Detect Evil
+
+2 - Find Traps
+    Know Alignment
+
+3 - Clairvoyance
+    Detect Illusions
+    Invisibility Purge
+
+4 - Farsight
+
+5 - True Seeing
+
+6 - Contingency
+    Wondrous Recall
+
+7 - Chain Contingency
+    Seven Eyes
+
+[Travelers]
+
+1 - Expeditious Retreat
+
+2 - Knock
+    Luck
+
+3 - Clairvoyance
+    Haste
+    Remove Paralysis
+
+4 - Dimension Door
+    Free Action
+    Unfailing Endurance
+
+5 - Teleport Field
+
+6 - Improved Haste
+
+7 - Ether Gate
+    Maze
+
+[Weave]
+
+1 - Magic Missile
+    Shield
+
+2 - Silence 15' Radius
+    Vocalize
+
+3 - Lance of Disruption
+    Miscast Magic
+    Spell Thrust
+
+4 - Force Missiles
+    Minor Globe of Invulnerability
+    Secret Word
+
+5 - Breach
+    Lower Resistance
+    Magic Resistance
+
+6 - Globe of Invulnerability
+    Pierce Magic
+    Spell Immunity
+
+7 - Pierce Shield
+    Protection From Magical Weapons
+    
+[Trickery]
+
+1 - Blindness
+    Color Spray
+    Reflect Image
+
+2 - Blur
+    Knock
+    Invisibility
+
+3 - Invisibility 10' Radius
+    Mirror Image
+
+4 - Improved Invisibility
+
+5 - Shadow Door
+
+6 - Mislead
+
+7 - Mass Invisibility
+    Prismatic Spray
+
+[Time]
+
+1 - Expeditious Retreat
+
+2 - Slow Poison
+
+3 - Haste
+    Slow
+
+4 - Minor Sequencer
+
+5 - Desintegrate
+
+6 - Improved Haste
+    Spell Sequencer
+    Wondrous Recall
+
+7 - Spell Trigger
+    Time Stop
+
+[Vocal]
+
+1 - Command
+
+2 - Deafness
+    Power Word: Sleep
+    Silence 15' Radius
+    Vocalize
+
+3 - Exaltation
+
+4 - Call Woodland Beings
+    Secret Word
+    Shout
+
+5 - Chaotic Commands
+    Greater Command
+
+6 - Power Word: Blind
+    Wyvern Call
+
+7 - Great Shout
+    Power Word: Kill
+    Power Word: Stun
+    Wail of the Banshee
+
+====================================================================================================================================================================
+
+
+
 THANKS
 
 I have a lot of people to say "Thank You".
