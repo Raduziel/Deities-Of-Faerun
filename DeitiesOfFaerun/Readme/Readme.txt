@@ -663,7 +663,7 @@ Casting Time: 1
 Area of Effect: One creature
 Saving Throw: Neg.
 
-The Gray One touches <PRO_HISHER> victim enforcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
+The Gray One touches <PRO_HISHER> victim forcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
 
 
 ====================================================================================================================================================================
