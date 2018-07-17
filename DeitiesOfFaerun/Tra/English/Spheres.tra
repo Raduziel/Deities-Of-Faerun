@@ -198,6 +198,18 @@ Saving Throw: None
 Shades is similar to Shadow Monsters and Demi-Shadow Monsters—it allows the caster to shape material from the Demiplane of Shadow into illusionary creatures. These shadows are tougher than the shadows summoned by Shadow Monsters and Demi-Shadow Monsters, and they will obey the caster until the spell expires or they are slain.~
 	@999974 = ~Umber Hulk~
 	@999975 = ~Summon Shadow~
-	@999976 = ~Summon Shadow~
+	@999976 = ~Summon Shadow
+(Conjuration/Summoning, Necromancy)
+
+Level: 5
+Sphere: Darkness, Necromantic
+Range: Visual range of the caster
+Duration: 1 round + 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons three 4-HD shadows. The shadows will obey the orders of the caster, attacking <PRO_HISHER> enemies or performing tasks until the spell expires or the shadows are slain.~
+	@999977 = ~Shadow~
 
 // EoF
