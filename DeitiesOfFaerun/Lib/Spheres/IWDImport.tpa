@@ -157,6 +157,71 @@ LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   re
 
 END
 
+//Darts of Bone
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_DARTS_OF_BONE~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/SPWI630.spl~ 2 6 WIZARD_DARTS_OF_BONE
+SAY NAME1 @999955 SAY NAME2 @999955 SAY UNIDENTIFIED_DESC @999956 SAY DESC @999956
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/SPWI630B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/SPWI630C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/DOBONE.ITM~	~override~
+SAY NAME1 @999957 SAY NAME2 @999957
+
+END
+
+//Lich Touch
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_LICH_TOUCH~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/SPWI626.spl~ 2 6 WIZARD_LICH_TOUCH
+SAY NAME1 @999958 SAY NAME2 @999958 SAY UNIDENTIFIED_DESC @999959 SAY DESC @999959
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/SPWI626B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/SPWI626C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/LTOUCH.ITM~	~override~
+SAY NAME1 @999958 SAY NAME2 @999958
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%" END
+
+END
+
+//Soul Eater
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SOUL_EATER~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/IDPRO299.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/SPWI631.spl~ 2 6 WIZARD_SOUL_EATER
+SAY NAME1 @999960 SAY NAME2 @999960 SAY UNIDENTIFIED_DESC @999961 SAY DESC @999961
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO299% END
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent =1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR 			  match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/SPWI631B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/SPWI631C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/SPWI631B.SPL~	~override\%spell_res%B.SPL~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/AD3SKLM.CRE~	~override~
+SAY NAME1 @999962 SAY NAME2 @999962
+
+END
+
 //
 
 END
