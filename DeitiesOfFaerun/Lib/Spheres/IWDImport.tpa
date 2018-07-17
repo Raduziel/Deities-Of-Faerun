@@ -348,6 +348,73 @@ SAY NAME1 @999971 SAY NAME2 @999971
 
 END
 
+//Shades
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SHADES~) BEGIN
+
+DEFINE_ACTION_FUNCTION cd_new_summon_table
+  STR_VAR descript = "foo"
+          2da_file = "foo"
+  RET     table
+  BEGIN
+
+  COPY_EXISTING ~smtables.2da~ ~override~
+    COUNT_2DA_ROWS 2 count
+    READ_2DA_ENTRY (count - 1) 0 2 table
+    INNER_PATCH_SAVE table ~%table%~ BEGIN
+      REPLACE_TEXTUALLY ~^\([0-9]+\).+$~ ~\1~
+    END
+    SET table += 1
+
+  APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
+
+
+COPY_EXISTING ~smtables.2da~ ~override~
+PRETTY_PRINT_2DA
+
+END
+
+LAF cd_new_summon_table STR_VAR descript = "SHADES" 2da_file = SHADES RET SHADES = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629.spl~ 2 6 WIZARD_SHADES
+SAY NAME1 @999968 SAY NAME2 @999968 SAY UNIDENTIFIED_DESC @999969 SAY DESC @999969
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent =1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SHADES END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SHADES.2DA~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL7.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL8.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB8.CRE~	~override~
+SAY NAME1 @999970 SAY NAME2 @999970
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB9.CRE~	~override~
+SAY NAME1 @999974 SAY NAME2 @999974
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/REG1HP2.ITM~	~override~
+SAY NAME1 @999974 SAY NAME2 @999974
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35600 parameter1 = EVAL "%RA_UndeadD%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35591 parameter1 = EVAL "%RA_Death%"   END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35592 parameter1 = EVAL "%RA_Vorpal%"  END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/CDIWDTR1.SPL~	~override~
+SAY NAME1 @999974 SAY NAME2 @999974
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35593 parameter1 = EVAL "%RA_Diseased%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 39752 parameter1 = EVAL "%RA_FoulDisease%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 36317 parameter1 = EVAL "%RA_Poison%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 37607 parameter1 = EVAL "%RA_Poisoned%" END
+
+END
+
 END
 
 //EoF
