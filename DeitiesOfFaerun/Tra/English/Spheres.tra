@@ -152,15 +152,40 @@ Saving Throw: None
 
 This spell deals 3d8 magic damage to all living creatures within a 14-ft. radius. Any creatures that die as a result of this damage are obliterated, and their essence is transformed into a 3-Hit-Dice skeleton under control of the caster. Also, for each creature that dies in this manner, the caster receives a +1 bonus to Strength, Dexterity, and Constitution for 1 turn. Soul Eater has no effect on undead, constructs, and elemental creatures.~
 	@999962 = ~Skeleton~
-	@999963 = ~Shadow Monster~
-	@999964 = ~Shadow Monster~
-	@999965 = ~Demi-shadow Monster~
-	@999966 = ~Demi-shadow Monster~
-	@999967 = ~Summon Shadow~
-	@999968 = ~Summon Shadow~
-	@999969 = ~Shades~
-	@999970 = ~Shades~
+	@999963 = ~Shadow Monsters~
+	@999964 = ~Shadow Monsters
+(Illusion/Phantasm)
 
-	
+Level: 4
+Sphere: Darkness
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None
+
+This spell shapes material from the Demiplane of Shadow into illusionary monsters. Up to six shadowy creatures can be summoned at once, but their total Hit Dice will normally not exceed the spellcaster's level.~
+	@999965 = ~Goblin~
+	@999966 = ~Lizard Man~
+	@999967 = ~Troll~
+	@999968 = ~Demi-shadow Monsters~
+	@999969 = ~Demi-Shadow Monsters
+(Illusion/Phantasm)
+
+Level: 5
+Sphere: Darkness
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell is similar to the 4th-level wizard spell Shadow Monsters, except the summoned creatures are much more powerful.~
+	@999970 = ~Goblin Elite~
+	@999971 = ~Tough Lizard Man~
+	@999972 = ~Summon Shadow~
+	@999973 = ~Summon Shadow~
+	@999974 = ~Shades~
+	@999975 = ~Shades~
 
 // EoF
