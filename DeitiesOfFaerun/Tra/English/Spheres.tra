@@ -111,7 +111,55 @@ Area of Effect: 3-ft. radius
 Saving Throw: None
 
 This spell conjures forth a barrier of floating bones that spin rapidly around the caster, who cannot move for the duration of the spell. Anyone entering the path of the bones takes 1d6 crushing damage and 1d6 slashing damage per round. Circle of Bones cannot be cast by good-aligned characters.~
+	@999955 = ~Darts of Bone~
+	@999956 = ~Darts of Bone
+(Necromancy)
 
+Level: 6
+Sphere: Necromantic
+Range: 0
+Duration: 5 rounds
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates nine darts that can be used by the caster and cannot be unequipped so long as the spell is in effect. The darts are +3, do 1d4+3 missile damage, and a creature struck by a dart must save vs. Death or take 2d6 magic damage and have its Strength reduced by 3 for 5 rounds. Strength reduction is noncumulative, and failing a save while the reduction is in effect will not extend its duration. The caster's weapon proficiency with darts (or lack thereof) has no effect on the darts' chances to hit a target.~
+	@999957 = ~Dart of Bone +3~
+	@999958 = ~Lich Touch~
+	@999959 = ~Lich Touch
+(Necromancy)
+
+Level: 6
+Sphere: Necromantic
+Range: Touch
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: Special
+
+This spell confers the powers of a lich's touch and a lich's immunities upon the caster. The wizard gains immunity to paralysis and fear while the spell is in effect, and <PRO_HISHER> hands glow with an unearthly blue radiance that does 1d10 cold damage to a target and paralyzes them unless a Save vs. Paralysis is made. This spell has no effect on undead.~
+	@999960 = ~Soul Eater~
+	@999961 = ~Soul Eater
+(Necromancy)
+
+Level: 6
+Sphere: Necromantic
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell deals 3d8 magic damage to all living creatures within a 14-ft. radius. Any creatures that die as a result of this damage are obliterated, and their essence is transformed into a 3-Hit-Dice skeleton under control of the caster. Also, for each creature that dies in this manner, the caster receives a +1 bonus to Strength, Dexterity, and Constitution for 1 turn. Soul Eater has no effect on undead, constructs, and elemental creatures.~
+	@999962 = ~Skeleton~
+	@999963 = ~Shadow Monster~
+	@999964 = ~Shadow Monster~
+	@999965 = ~Demi-shadow Monster~
+	@999966 = ~Demi-shadow Monster~
+	@999967 = ~Summon Shadow~
+	@999968 = ~Summon Shadow~
+	@999969 = ~Shades~
+	@999970 = ~Shades~
 
 	
 
