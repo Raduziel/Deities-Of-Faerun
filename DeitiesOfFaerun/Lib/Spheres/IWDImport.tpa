@@ -222,7 +222,45 @@ SAY NAME1 @999962 SAY NAME2 @999962
 
 END
 
-//
+//Shadow Monsters
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SHADOW_MONSTERS~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426.spl~ 2 4 WIZARD_SHADOW_MONSTERS
+SAY NAME1 @999963 SAY NAME2 @999963 SAY UNIDENTIFIED_DESC @999964 SAY DESC @999964
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent =1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB1.CRE~	~override~
+SAY NAME1 @999965 SAY NAME2 @999965
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB2.CRE~	~override~
+SAY NAME1 @999965 SAY NAME2 @999965
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB3.CRE~	~override~
+SAY NAME1 @999965 SAY NAME2 @999965
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ3.CRE~	~override~
+SAY NAME1 @999966 SAY NAME2 @999966
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ4.CRE~	~override~
+SAY NAME1 @999966 SAY NAME2 @999966
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL6.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL7.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL8.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+END
 
 END
 
