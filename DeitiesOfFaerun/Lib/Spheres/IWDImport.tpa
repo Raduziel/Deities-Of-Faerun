@@ -226,15 +226,41 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SHADOW_MONSTERS~) BEGIN
 
+DEFINE_ACTION_FUNCTION cd_new_summon_table
+  STR_VAR descript = "foo"
+          2da_file = "foo"
+  RET     table
+  BEGIN
+
+  COPY_EXISTING ~smtables.2da~ ~override~
+    COUNT_2DA_ROWS 2 count
+    READ_2DA_ENTRY (count - 1) 0 2 table
+    INNER_PATCH_SAVE table ~%table%~ BEGIN
+      REPLACE_TEXTUALLY ~^\([0-9]+\).+$~ ~\1~
+    END
+    SET table += 1
+
+  APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
+
+
+COPY_EXISTING ~smtables.2da~ ~override~
+PRETTY_PRINT_2DA
+
+END
+
+LAF cd_new_summon_table STR_VAR descript = "SHADOW_MONSTERS" 2da_file = SMONSTE RET SMONSTE = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426.spl~ 2 4 WIZARD_SHADOW_MONSTERS
 SAY NAME1 @999963 SAY NAME2 @999963 SAY UNIDENTIFIED_DESC @999964 SAY DESC @999964
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent =1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SMONSTE END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SMONSTE.2DA~	~override~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB1.CRE~	~override~
 SAY NAME1 @999965 SAY NAME2 @999965
