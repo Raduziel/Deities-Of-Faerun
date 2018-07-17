@@ -183,9 +183,21 @@ Saving Throw: None
 This spell is similar to the 4th-level wizard spell Shadow Monsters, except the summoned creatures are much more powerful.~
 	@999970 = ~Goblin Elite~
 	@999971 = ~Tough Lizard Man~
-	@999972 = ~Summon Shadow~
-	@999973 = ~Summon Shadow~
-	@999974 = ~Shades~
-	@999975 = ~Shades~
+	@999972 = ~Shades~
+	@999973 = ~Shades
+(Illusion/Phantasm)
+
+Level: 6
+Sphere: Darkness
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: Special
+Saving Throw: None
+
+Shades is similar to Shadow Monsters and Demi-Shadow Monsters—it allows the caster to shape material from the Demiplane of Shadow into illusionary creatures. These shadows are tougher than the shadows summoned by Shadow Monsters and Demi-Shadow Monsters, and they will obey the caster until the spell expires or they are slain.~
+	@999974 = ~Umber Hulk~
+	@999975 = ~Summon Shadow~
+	@999976 = ~Summon Shadow~
 
 // EoF
