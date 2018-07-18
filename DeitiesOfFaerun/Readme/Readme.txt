@@ -1420,7 +1420,7 @@ f) Sphere System
 
 6 - Blade Barrier
 
-7 - Resilient Sword
+7 - Magical Sword
 
 [Summoning]
 
