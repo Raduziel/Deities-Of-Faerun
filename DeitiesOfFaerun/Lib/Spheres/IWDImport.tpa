@@ -38,8 +38,6 @@ IF_EXISTS
 
 ACTION_IF ((!GAME_IS ~iwdee~) AND ((!FILE_EXISTS ~b_IWD.itm~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common~ override
-
 //Curse
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_CURSE~) BEGIN
@@ -326,24 +324,24 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = DSMONST END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/DSMONST.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/DSMONST.2DA~	    ~override~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB1.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB1.CRE~	    ~override~
 SAY NAME1 @999970 SAY NAME2 @999970
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB2.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB2.CRE~		~override~
 SAY NAME1 @999970 SAY NAME2 @999970
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB3.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB3.CRE~		~override~
 SAY NAME1 @999970 SAY NAME2 @999970
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ5.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ5.CRE~		~override~
 SAY NAME1 @999971 SAY NAME2 @999971
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ6.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ6.CRE~		~override~
 SAY NAME1 @999971 SAY NAME2 @999971
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ7.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ7.CRE~		~override~
 SAY NAME1 @999971 SAY NAME2 @999971
 
 END
@@ -386,7 +384,7 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SHADES END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SHADES.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SHADES.2DA~	    ~override~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL7.CRE~	~override~
 SAY NAME1 @999967 SAY NAME2 @999967
@@ -401,13 +399,11 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB9.CRE~	~override~
 SAY NAME1 @999974 SAY NAME2 @999974
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/REG1HP2.ITM~	~override~
-SAY NAME1 @999974 SAY NAME2 @999974
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35600 parameter1 = EVAL "%RA_UndeadD%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35591 parameter1 = EVAL "%RA_Death%"   END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35592 parameter1 = EVAL "%RA_Vorpal%"  END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/CDIWDTR1.SPL~	~override~
-SAY NAME1 @999974 SAY NAME2 @999974
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35593 parameter1 = EVAL "%RA_Diseased%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 39752 parameter1 = EVAL "%RA_FoulDisease%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 36317 parameter1 = EVAL "%RA_Poison%" END
@@ -443,7 +439,7 @@ END
 
 LAF cd_new_summon_table STR_VAR descript = "SUMMON_SHADOW" 2da_file = SSHADOW RET SSHADOW = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SPWI526.spl~ 2 5 WIZARD_SUMMON_SHADOW
-SAY NAME1 @999972 SAY NAME2 @999972 SAY UNIDENTIFIED_DESC @999973 SAY DESC @999973
+SAY NAME1 @999975 SAY NAME2 @999975 SAY UNIDENTIFIED_DESC @999976 SAY DESC @999976
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
