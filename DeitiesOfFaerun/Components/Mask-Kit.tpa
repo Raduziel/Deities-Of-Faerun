@@ -137,16 +137,6 @@ LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/TRANS20.itm~ ~override~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/SUMRING.itm~ ~override~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/P1-6.itm~ ~override~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/S1-12.itm~ ~override~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/M1D7SLSH.itm~ ~override~
-
 LAF cd_new_summon_table STR_VAR descript = "DEMI_SHADOW_MONSTERS" 2da_file = DSMONST RET DSMONST = table END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525.spl~ ~override/RAMASK5.spl~
 SAY NAME1 @999968 SAY NAME2 @999968 SAY UNIDENTIFIED_DESC @999969 SAY DESC @999969
