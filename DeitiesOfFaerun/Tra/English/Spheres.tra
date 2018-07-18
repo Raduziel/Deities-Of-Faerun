@@ -46,8 +46,9 @@
 	@999942 = ~Miracle Mists~
 	@999943 = ~Dust Explosion~
 	@999944 = ~Force Missiles~
-	@999945 = ~Curse~
-	@999946 = ~Curse
+	@999945 = ~Resilient Sword~
+	@999946 = ~Curse~
+	@999947 = ~Curse
 (Conjuration/Summoning)
 
 Level: 1
@@ -59,8 +60,8 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 When uttering the Curse spell, the caster lowers the morale of enemy creatures and any Saving Throws and attack rolls they make by 1. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
-	@999947 = ~Prayer~
-	@999948 = ~Prayer
+	@999948 = ~Prayer~
+	@999949 = ~Prayer
 (Conjuration/Summoning)
 
 Level: 3
@@ -72,8 +73,8 @@ Area of Effect: 30-ft. radius
 Saving Throw: None
 
 Prayer bestows favor on the priest and <PRO_HISHER> allies, and curses their enemies. All attacks, damage, and Saving Throws by friendly characters gain a +1 bonus, while enemy attacks, damage rolls, and saves get a -1 penalty. Any creatures within the area of effect when the spell is cast will continue to be affected by the spell when they leave the area, so if the warriors want to chase down that fleeing goblin, the effects of the Prayer will follow them.~ 
-	@999949 = ~Recitation~
-	@999950 = ~Recitation
+	@999950 = ~Recitation~
+	@999951 = ~Recitation
 (Abjuration, Invocation/Evocation)
 
 Level: 4
@@ -85,8 +86,8 @@ Area of Effect: 25-ft. radius
 Saving Throw: None
 
 By reciting a sacred passage or declaration, the priest invokes <PRO_HISHER> deity's blessing upon <PRO_HIMHER>self and <PRO_HISHER> allies while sowing confusion and weakness among <PRO_HISHER> enemies. The priest's allies gain a +2 bonus to their attack rolls and Saving Throws, and the priest's enemies receive a -2 penalty to the same. Recitation does not nullify a Prayer spell—the two can be cast in tandem, and the effects are cumulative.~
-	@999951 = ~Cure Moderate Wounds~
-	@999952 = ~Cure Moderate Wounds
+	@999952 = ~Cure Moderate Wounds~
+	@999953 = ~Cure Moderate Wounds
 (Necromancy)
 
 Level: 2
@@ -98,8 +99,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderate Wounds heals 11 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
-	@999953 = ~Circle of Bones~
-	@999954 = ~Circle of Bones
+	@999954 = ~Circle of Bones~
+	@999955 = ~Circle of Bones
 (Necromancy)
 
 Level: 3
@@ -111,8 +112,8 @@ Area of Effect: 3-ft. radius
 Saving Throw: None
 
 This spell conjures forth a barrier of floating bones that spin rapidly around the caster, who cannot move for the duration of the spell. Anyone entering the path of the bones takes 1d6 crushing damage and 1d6 slashing damage per round. Circle of Bones cannot be cast by good-aligned characters.~
-	@999955 = ~Darts of Bone~
-	@999956 = ~Darts of Bone
+	@999956 = ~Darts of Bone~
+	@999957 = ~Darts of Bone
 (Necromancy)
 
 Level: 6
@@ -124,9 +125,9 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell creates nine darts that can be used by the caster and cannot be unequipped so long as the spell is in effect. The darts are +3, do 1d4+3 missile damage, and a creature struck by a dart must save vs. Death or take 2d6 magic damage and have its Strength reduced by 3 for 5 rounds. Strength reduction is noncumulative, and failing a save while the reduction is in effect will not extend its duration. The caster's weapon proficiency with darts (or lack thereof) has no effect on the darts' chances to hit a target.~
-	@999957 = ~Dart of Bone +3~
-	@999958 = ~Lich Touch~
-	@999959 = ~Lich Touch
+	@999958 = ~Dart of Bone +3~
+	@999959 = ~Lich Touch~
+	@999960 = ~Lich Touch
 (Necromancy)
 
 Level: 6
@@ -138,8 +139,8 @@ Area of Effect: The caster
 Saving Throw: Special
 
 This spell confers the powers of a lich's touch and a lich's immunities upon the caster. The wizard gains immunity to paralysis and fear while the spell is in effect, and <PRO_HISHER> hands glow with an unearthly blue radiance that does 1d10 cold damage to a target and paralyzes them unless a Save vs. Paralysis is made. This spell has no effect on undead.~
-	@999960 = ~Soul Eater~
-	@999961 = ~Soul Eater
+	@999961 = ~Soul Eater~
+	@999962 = ~Soul Eater
 (Necromancy)
 
 Level: 6
@@ -151,9 +152,9 @@ Area of Effect: 7-ft. radius
 Saving Throw: None
 
 This spell deals 3d8 magic damage to all living creatures within a 14-ft. radius. Any creatures that die as a result of this damage are obliterated, and their essence is transformed into a 3-Hit-Dice skeleton under control of the caster. Also, for each creature that dies in this manner, the caster receives a +1 bonus to Strength, Dexterity, and Constitution for 1 turn. Soul Eater has no effect on undead, constructs, and elemental creatures.~
-	@999962 = ~Skeleton~
-	@999963 = ~Shadow Monsters~
-	@999964 = ~Shadow Monsters
+	@999963 = ~Skeleton~
+	@999964 = ~Shadow Monsters~
+	@999965 = ~Shadow Monsters
 (Illusion/Phantasm)
 
 Level: 4
@@ -165,11 +166,11 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell shapes material from the Demiplane of Shadow into illusionary monsters. Up to six shadowy creatures can be summoned at once, but their total Hit Dice will normally not exceed the spellcaster's level.~
-	@999965 = ~Goblin~
-	@999966 = ~Lizard Man~
-	@999967 = ~Troll~
-	@999968 = ~Demi-shadow Monsters~
-	@999969 = ~Demi-Shadow Monsters
+	@999966 = ~Goblin~
+	@999967 = ~Lizard Man~
+	@999968 = ~Troll~
+	@999969 = ~Demi-shadow Monsters~
+	@999970 = ~Demi-Shadow Monsters
 (Illusion/Phantasm)
 
 Level: 5
@@ -181,10 +182,10 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell is similar to the 4th-level wizard spell Shadow Monsters, except the summoned creatures are much more powerful.~
-	@999970 = ~Goblin Elite~
-	@999971 = ~Tough Lizard Man~
-	@999972 = ~Shades~
-	@999973 = ~Shades
+	@999971 = ~Goblin Elite~
+	@999972 = ~Tough Lizard Man~
+	@999973 = ~Shades~
+	@999974 = ~Shades
 (Illusion/Phantasm)
 
 Level: 6
@@ -196,9 +197,9 @@ Area of Effect: Special
 Saving Throw: None
 
 Shades is similar to Shadow Monsters and Demi-Shadow Monsters—it allows the caster to shape material from the Demiplane of Shadow into illusionary creatures. These shadows are tougher than the shadows summoned by Shadow Monsters and Demi-Shadow Monsters, and they will obey the caster until the spell expires or they are slain.~
-	@999974 = ~Umber Hulk~
-	@999975 = ~Summon Shadow~
-	@999976 = ~Summon Shadow
+	@999975 = ~Umber Hulk~
+	@999976 = ~Summon Shadow~
+	@999977 = ~Summon Shadow
 (Conjuration/Summoning, Necromancy)
 
 Level: 5
@@ -210,6 +211,6 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell summons three 4-HD shadows. The shadows will obey the orders of the caster, attacking <PRO_HISHER> enemies or performing tasks until the spell expires or the shadows are slain.~
-	@999977 = ~Shadow~
+	@999978 = ~Shadow~
 
 // EoF
