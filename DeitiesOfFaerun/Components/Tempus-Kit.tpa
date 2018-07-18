@@ -53,39 +53,43 @@ LPF ADD_ITEM_EQEFFECT
 		  
 END
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+//Prayer
 
-COPY ~DeitiesOfFaerun\Spl\Import\Tempus\Complement~ override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PRAYER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PRAYER~	RET	spell_res	END
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Tempus\Complement\PRAYB.PRO~
-
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Tempus\Complement\PRAYG.PRO~
-
-COPY "DeitiesOfFaerun\Spl\Import\Tempus\RAPR316.spl" ~override\RATEMP1.spl~ SAY NAME1 @999947 SAY UNIDENTIFIED_DESC @999948    //Prayer
+COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP1.spl~
+SAY NAME1 @999947 SAY UNIDENTIFIED_DESC @999948
 LPM ~SPELL_TO_INNATE~
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@204) STR_VAR bam_file = RAPRAYIC RET iconpray = icon END
+END ELSE BEGIN
 
-COPY "DeitiesOfFaerun\Spl\Import\Tempus\RAPRAYG.spl" override                                                                  //Prayer Good
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %PRAYG% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 183 parameter2 = iconpray END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 40256 match_opcode = 139 parameter1 = EVAL "%RA_Bonus%" END
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/OHVRNP.PRO~
 
-COPY "DeitiesOfFaerun\Spl\Import\Tempus\RAPRAYB.spl" override                                                                  //Prayer Bad
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %PRAYB% END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 40257 match_opcode = 139 parameter1 = EVAL "%RA_Penalty%" END
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/OHVRPO.PRO~
 
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316.spl~    ~override/RATEMP1.spl~
+SAY NAME1 @999947 SAY NAME2 @999947 SAY UNIDENTIFIED_DESC @999948 SAY DESC @999948
+LPM ~SPELL_TO_INNATE~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316C.BAM~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERB.SPL~ override
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRNP% END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40257 parameter1 = EVAL "%RA_Penalty%" END
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@999947) STR_VAR bam_file = RAALLIC RET iconpray = icon END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERG.SPL~ override
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40256 parameter1 = EVAL "%RA_Bonus%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 183   parameter2 = iconpray END
 
 END
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN 
+//Enrage
 
-COPY_EXISTING ~SPPR316.spl~ ~override/RATEMP1.spl~
-LPM ~SPELL_TO_INNATE~
-
-END
-
-COPY_EXISTING ~SPCL321.spl~ ~override/RATEMP2.spl~                                                           //Enrage
+COPY_EXISTING ~SPCL321.spl~ ~override/RATEMP2.spl~                                                           
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
