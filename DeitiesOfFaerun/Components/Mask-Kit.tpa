@@ -70,111 +70,211 @@ DEFINE_ACTION_FUNCTION cd_new_summon_table
 
   APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
 
-END
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-
-COPY ~DeitiesOfFaerun\Spl\Import\Mask\Complement~ override
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1GOB1.cre~ override SAY NAME1 @1614 SAY NAME2 @1614
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1GOB2.cre~ override SAY NAME1 @1614 SAY NAME2 @1614
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1GOB3.cre~ override SAY NAME1 @1614 SAY NAME2 @1614
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA2GOB1.cre~ override SAY NAME1 @1614 SAY NAME2 @1614
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA2GOB2.cre~ override SAY NAME1 @1614 SAY NAME2 @1614
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA2GOB3.cre~ override SAY NAME1 @1614 SAY NAME2 @1614
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1LIZ3.cre~ override SAY NAME1 @1615 SAY NAME2 @1615
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1LIZ4.cre~ override SAY NAME1 @1615 SAY NAME2 @1615
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA2LIZ5.cre~ override SAY NAME1 @1615 SAY NAME2 @1615
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA2LIZ6.cre~ override SAY NAME1 @1615 SAY NAME2 @1615
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA2LIZ7.cre~ override SAY NAME1 @1615 SAY NAME2 @1615
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1TRL6.cre~ override SAY NAME1 @1616 SAY NAME2 @1616
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1TRL7.cre~ override SAY NAME1 @1616 SAY NAME2 @1616
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA1TRL8.cre~ override SAY NAME1 @1616 SAY NAME2 @1616
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA3TRL7.cre~ override SAY NAME1 @1616 SAY NAME2 @1616
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA3TRL8.cre~ override SAY NAME1 @1616 SAY NAME2 @1616
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA3UMB8.cre~ override SAY NAME1 @1617 SAY NAME2 @1617
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RA3UMB9.cre~ override SAY NAME1 @1617 SAY NAME2 @1617
-
-COPY ~DeitiesOfFaerun\Cre\Mask_Summons\RASUSHAD.cre~ override SAY NAME1 @1618 SAY NAME2 @1618
-
-LAF cd_new_summon_table STR_VAR descript = "RA_SHADOW_MONSTERS" 2da_file = RA_SMO RET RASMO = table END
-COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI426.spl" override SAY NAME1 @1606 SAY UNIDENTIFIED_DESC @1607    //Shadow Monster
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RASMO END
-
-LAF cd_new_summon_table STR_VAR descript = "RA_DEMI_SHMONSTERS" 2da_file = RA_DSM RET RADSM = table END
-COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI525.spl" override SAY NAME1 @1608 SAY UNIDENTIFIED_DESC @1609    //Demi-Shadow Monsters
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RADSM END
-
-LAF cd_new_summon_table STR_VAR descript = "RA_SUMMON_SHADOW" 2da_file = RA_SDW RET RASDW = table END
-COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI526.spl" override SAY NAME1 @1610 SAY UNIDENTIFIED_DESC @1611    //Summon Shadow
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RASDW END
-
-LAF cd_new_summon_table STR_VAR descript = "RA_SHADES" 2da_file = RA_SHD RET RASHD = table END
-COPY "DeitiesOfFaerun\Spl\Import\Mask\RAWI629.spl" override SAY NAME1 @1612 SAY UNIDENTIFIED_DESC @1613    //Shades
-LPF ALTER_EFFECT INT_VAR match_opcode = 331 parameter2 = RASHD END
-
-COPY_EXISTING ~RAWI426.spl~ ~override/RAMASK4.spl~                                                         //Shadow Monsters
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~RAWI525.spl~ ~override/RAMASK5.spl~                                                         //Demi-Shadow Monsters
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~RAWI526.spl~ ~override/RAMASK6.spl~                                                         //Summon Shadow
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~RAWI629.spl~ ~override/RAMASK7.spl~                                                         //Shades
-LPM SPELL_TO_INNATE
+COPY_EXISTING ~smtables.2da~ ~override~
+PRETTY_PRINT_2DA
 
 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/SPWI426.spl~ ~override~
+
+//Shadow Monsters
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHADOW_MONSTERS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHADOW_MONSTERS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMASK4.spl~
+SAY NAME1 @999963 SAY UNIDENTIFIED_DESC @999964
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "SHADOW_MONSTERS" 2da_file = SMONSTE RET SMONSTE = table END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426.spl~ ~override/RAMASK4.spl~
+SAY NAME1 @999963 SAY NAME2 @999963 SAY UNIDENTIFIED_DESC @999964 SAY DESC @999964
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SMONSTE END
+LPM ~SPELL_TO_INNATE~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426C.BAM~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SMONSTE.2DA~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB1.CRE~	~override~
+SAY NAME1 @999965 SAY NAME2 @999965
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB2.CRE~	~override~
+SAY NAME1 @999965 SAY NAME2 @999965
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB3.CRE~	~override~
+SAY NAME1 @999965 SAY NAME2 @999965
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ3.CRE~	~override~
+SAY NAME1 @999966 SAY NAME2 @999966
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ4.CRE~	~override~
+SAY NAME1 @999966 SAY NAME2 @999966
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL6.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL7.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL8.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+END
+
+//Demi-Shadow Monsters
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DEMI_SHADOW_MONSTERS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DEMI_SHADOW_MONSTERS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMASK5.spl~
+SAY NAME1 @999968 SAY UNIDENTIFIED_DESC @999969
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/TRANS20.itm~ ~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/SUMRING.itm~ ~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/P1-6.itm~ ~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/S1-12.itm~ ~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/M1D7SLSH.itm~ ~override~
+
+LAF cd_new_summon_table STR_VAR descript = "DEMI_SHADOW_MONSTERS" 2da_file = DSMONST RET DSMONST = table END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525.spl~ ~override/RAMASK5.spl~
+SAY NAME1 @999968 SAY NAME2 @999968 SAY UNIDENTIFIED_DESC @999969 SAY DESC @999969
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = DSMONST END
+LPM ~SPELL_TO_INNATE~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525C.BAM~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/DSMONST.2DA~	    ~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB1.CRE~	    ~override~
+SAY NAME1 @999970 SAY NAME2 @999970
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB2.CRE~	    ~override~
+SAY NAME1 @999970 SAY NAME2 @999970
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB3.CRE~	    ~override~
+SAY NAME1 @999970 SAY NAME2 @999970
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ5.CRE~	    ~override~
+SAY NAME1 @999971 SAY NAME2 @999971
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ6.CRE~	    ~override~
+SAY NAME1 @999971 SAY NAME2 @999971
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ7.CRE~	    ~override~
+SAY NAME1 @999971 SAY NAME2 @999971
+
+END
+
+//Summon Shadow
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SUMMON_SHADOW[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SUMMON_SHADOW~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMASK6.spl~
+SAY NAME1 @999972 SAY UNIDENTIFIED_DESC @999973
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "SUMMON_SHADOW" 2da_file = SSHADOW RET SSHADOW = table END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SPWI526.spl~ ~override/RAMASK6.spl~
+SAY NAME1 @999975 SAY NAME2 @999975 SAY UNIDENTIFIED_DESC @999976 SAY DESC @999976
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SSHADOW END
+LPM ~SPELL_TO_INNATE~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SPWI526B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SPWI526C.BAM~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SSHADOW.2DA~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SUMSHAD.CRE~	~override~
+SAY NAME1 @999977 SAY NAME2 @999977
+
+END
+
+//Shades
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHADES[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHADES~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMASK7.spl~
+SAY NAME1 @999972 SAY UNIDENTIFIED_DESC @999973
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "SHADES" 2da_file = SHADES RET SHADES = table END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629.spl~ ~override/RAMASK7.spl~
+SAY NAME1 @999972 SAY NAME2 @999972 SAY UNIDENTIFIED_DESC @999973 SAY DESC @999973
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SHADES END
+LPM ~SPELL_TO_INNATE~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629C.BAM~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SHADES.2DA~	    ~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL7.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL8.CRE~	~override~
+SAY NAME1 @999967 SAY NAME2 @999967
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB8.CRE~	~override~
+SAY NAME1 @999974 SAY NAME2 @999974
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB9.CRE~	~override~
+SAY NAME1 @999974 SAY NAME2 @999974
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/REG1HP2.ITM~	~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35600 parameter1 = EVAL "%RA_UndeadD%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35591 parameter1 = EVAL "%RA_Death%"   END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35592 parameter1 = EVAL "%RA_Vorpal%"  END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/CDIWDTR1.SPL~	~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35593 parameter1 = EVAL "%RA_Diseased%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 39752 parameter1 = EVAL "%RA_FoulDisease%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 36317 parameter1 = EVAL "%RA_Poison%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 37607 parameter1 = EVAL "%RA_Poisoned%" END
+
+END
+
+//Darkness
 
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAMASK1.PRO~
 
 COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
 		  
-COPY "DeitiesOfFaerun\Spl\RAMASK1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405     //Darkness
+COPY "DeitiesOfFaerun\Spl\RAMASK1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405     
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAMASK1% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
 
-COPY "DeitiesOfFaerun\Spl\RAMASK2.spl" override  SAY NAME1 @1604 SAY  UNIDENTIFIED_DESC @1605   //Shadowcloak
+//Shadowcloak
 
-COPY_EXISTING ~SPWI505.spl~ ~override/RAMASK3.spl~                                              //Shadow Door
+COPY "DeitiesOfFaerun\Spl\RAMASK2.spl" override  SAY NAME1 @1604 SAY  UNIDENTIFIED_DESC @1605   
+
+//Shadow Door
+
+COPY_EXISTING ~SPWI505.spl~ ~override/RAMASK3.spl~                                              
 LPM SPELL_TO_INNATE
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN
+//Invisible Stalker
 
-COPY_EXISTING ~SPWI426.spl~ ~override/RAMASK4.spl~                                              //Shadow Monsters
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI525.spl~ ~override/RAMASK5.spl~                                              //Demi-Shadow Monsters
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI526.spl~ ~override/RAMASK6.spl~                                              //Summon Shadow
-LPM SPELL_TO_INNATE
-
-COPY_EXISTING ~SPWI629.spl~ ~override/RAMASK7.spl~                                              //Shades
-LPM SPELL_TO_INNATE
-
-END
-
-COPY_EXISTING ~SPWI601.spl~ ~override/RAMASK8.spl~                                              //Invisible Stalker
+COPY_EXISTING ~SPWI601.spl~ ~override/RAMASK8.spl~                                              
 LPM SPELL_TO_INNATE
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
