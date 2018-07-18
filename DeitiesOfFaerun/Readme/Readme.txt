@@ -1346,8 +1346,7 @@ f) Sphere System
 6 - Death Spell
     Shades
 
-7 - Black Blade of Disaster
-    Symbol: Fear
+7 - Symbol: Fear
     Symbol: Hopelessness
 
 [Thought]
@@ -1421,7 +1420,7 @@ f) Sphere System
 
 6 - Blade Barrier
 
-7 - Black Blade of Disaster
+7 - Resilient Sword
 
 [Summoning]
 
