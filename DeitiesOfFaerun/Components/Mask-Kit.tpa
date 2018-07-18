@@ -76,8 +76,6 @@ PRETTY_PRINT_2DA
 
 END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common/SPWI426.spl~ ~override~
-
 //Shadow Monsters
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHADOW_MONSTERS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
