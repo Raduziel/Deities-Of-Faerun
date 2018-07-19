@@ -246,7 +246,7 @@
 					ACTION_IF	FILE_CONTAINS_EVALUATED (~KITLIST.2da~ ~[ %TAB%]+%kitname%[ %TAB%%WNL%%MNL%%LNL%$]~)	BEGIN
 						COPY_EXISTING	~KITLIST.2da~	override
 							READ_2DA_ENTRIES_NOW ~READ_KITLIST~ 3
-							FOR	(i = 1; i < READ_KITLIST; ++i)	BEGIN
+							FOR	(i = 2; i < READ_KITLIST; ++i)	BEGIN
 								READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 1 label	TO_UPPER	label
 								PATCH_IF	~%label%~ STRING_EQUAL ~%kitname%~	BEGIN
 									PATCH_IF VARIABLE_IS_SET	EVAL ~READ_KITLIST_%i%_9~	BEGIN
@@ -257,10 +257,13 @@
 									END
 									SET	i = READ_KITLIST
 								END	ELSE	BEGIN
-									READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 id
-									PATCH_IF	kitid = id	BEGIN
-										TEXT_SPRINT	kitname ~%label%~
-										SET	i = READ_KITLIST
+									PATCH_IF VARIABLE_IS_SET	EVAL ~READ_KITLIST_%i%_9~	BEGIN
+										READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 id
+										PATCH_PRINT	~%id%~
+										PATCH_IF	kitid = id	BEGIN
+											TEXT_SPRINT	kitname ~%label%~
+											SET	i = READ_KITLIST
+										END
 									END
 								END
 							END
