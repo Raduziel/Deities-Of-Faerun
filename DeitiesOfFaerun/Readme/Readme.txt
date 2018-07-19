@@ -1406,8 +1406,7 @@ f) Sphere System
 
 1 - Shillelagh
 
-2 - Alicorn Lance
-    Goodberry
+2 - Flame Blade
     Spiritual Hammer
 
 3 - Circle of Bones
