@@ -1086,7 +1086,7 @@ This component will make all non-magical armors, helmets and shields use the kit
 
 
 
-f) Sphere System
+f1) Sphere System
 
 [All]
 
@@ -1673,6 +1673,24 @@ f) Sphere System
     Power Word: Kill
     Power Word: Stun
     Wail of the Banshee
+
+f2) Divine Casters:
+
+Paladin (access only to level 4 spells): Combat, Divination, Healing, Protection  
+
+  - Cavalier: Combat, Healing, Protection, Vocal
+
+  - Undead Hunter: Combat, Healing, Protection, Sun
+
+Druid (access to all spells from the following spheres): Healing, Animal, Vermin, Plant, Air, Water, Earth, Fire
+
+  - Totemic Druid: Healing, Vermin, Animal, Plant, Sun, Air, Water, Earth.
+
+  - Avenger: Suffering, Animal, Plant, Combat, Water, Earth, Fire, Travelers.
+
+  - Shapeshifter: Healing, Animal, Vermin, Plant, Moon, Air, Earth, Fire.
+
+Ranger (Trueclass and kits - access only to level 3 spells): Animal, Plant
 
 ====================================================================================================================================================================
 
