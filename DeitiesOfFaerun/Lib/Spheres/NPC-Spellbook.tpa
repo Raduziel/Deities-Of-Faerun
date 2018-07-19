@@ -48,7 +48,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~SHAPESHIFTER~	kitname2 = ~~	END
 
 	END
-	
+
 END
 
 //EoF
