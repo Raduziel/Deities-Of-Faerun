@@ -105,6 +105,7 @@ BEGIN @9999909
 		OUTER_SPRINT	FILE_PATH ~Lib/Spheres~
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/IWDImport.tpa~
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Main.tpa~
+		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/NPC-Spellbook.tpa~
 	  
 //__________________________________________________________________________________
 //__________________________________________________________________________________
