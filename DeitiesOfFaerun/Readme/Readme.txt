@@ -1682,13 +1682,13 @@ Paladin (access only to level 4 spells): Combat, Divination, Healing, Protection
 
   - Undead Hunter: Combat, Healing, Protection, Sun
 
-Druid (access to all spells from the following spheres): Healing, Animal, Vermin, Plant, Air, Water, Earth, Fire
+Druid (access to all spells from the following spheres): Healing, Animal, Vermin, Plant, Sun, Air, Water, Earth, Fire
 
-  - Totemic Druid: Healing, Vermin, Animal, Plant, Sun, Air, Water, Earth.
+  - Totemic Druid: Healing, Animal, Vermin, Plant, Creation, Air, Water, Earth, Fire.
 
-  - Avenger: Suffering, Animal, Plant, Combat, Water, Earth, Fire, Travelers.
+  - Avenger: Suffering, Animal, Vermin, Plant, Combat, Air, Water, Earth, Fire.
 
-  - Shapeshifter: Healing, Animal, Vermin, Plant, Moon, Air, Earth, Fire.
+  - Shapeshifter: Healing, Animal, Vermin, Plant, Moon, Air, Water, Earth, Fire.
 
 Ranger (Trueclass and kits - access only to level 3 spells): Animal, Plant
 
