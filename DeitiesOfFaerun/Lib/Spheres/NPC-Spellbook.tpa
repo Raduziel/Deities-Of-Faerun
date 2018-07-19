@@ -9,10 +9,46 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 	  
 	ACTION_FOR_EACH creature IN dorn dorn2 dorn4 dorn6 dorn7 dorn8 dorn9 dorn10 dorn12 dorn14 BEGIN
 
-	LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~BLACKGUARD~	kitname2 = ~~	END
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~BLACKGUARD~	kitname2 = ~~	END
 
-END
+	END
+	
+	ACTION_FOR_EACH creature IN minsc minsc2 minsc4 minsc6 minsc7 minsc8 minsc9 minsc10 minsc12 minsc14 BEGIN
 
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	        END
+
+	END
+	
+	ACTION_FOR_EACH creature IN kivan kivan4 kivan6 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	        END
+
+	END
+
+	ACTION_FOR_EACH creature IN faldor faldor5 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	        END
+
+	END	
+	
+	ACTION_FOR_EACH creature IN jaheir jaheir2 jaheir4 jaheir6 jaheir7 jaheir8 jaheir11 jaheir12 jahei12B jahei14 jaheird BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	END
+
+	END
+
+	ACTION_FOR_EACH creature IN valyg8 valyg9 valyg11 valyg12 valyg14 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~STALKER~	kitname2 = ~~	END
+
+	END
+	
+	ACTION_FOR_EACH creature IN cernd10 cernd12 cernd13 cernd13B cernd14 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~SHAPESHIFTER~	kitname2 = ~~	END
+
+	END
+	
 END
 
 //EoF
