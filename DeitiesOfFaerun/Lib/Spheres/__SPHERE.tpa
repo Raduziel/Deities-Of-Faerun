@@ -300,24 +300,22 @@
 					READ_LONG	0x2a0	known_off
 					READ_LONG	0x2a4	known_num
 					FOR	(i = known_num - 1; i >= 0; --i)	BEGIN
-						READ_ASCII	(known_off + i * 0xc)	resref (4)	TO_UPPER	resref
-						PATCH_MATCH ~%resref%~	WITH
-							~SPPR~	~RAWI~	BEGIN
-								PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
-									READ_ASCII	(known_off + i * 0xc) resref
-									INNER_ACTION	BEGIN
-										LAF	GET_PRIEST_TYPE	STR_VAR	resref	RET	type	END
-									END
-									PATCH_IF (divineSpheres = 1 AND !(type BAND 128)) OR (natureSpheres = 1 AND !(type BAND 64))	BEGIN
-										REMOVE_KNOWN_SPELL ~%resref%~
-										REMOVE_MEMORIZED_SPELL ~%resref%~
-									END
-								END	ELSE	BEGIN
-									READ_ASCII	(known_off + i * 0xc) resref
-									REMOVE_KNOWN_SPELL ~%resref%~
-									REMOVE_MEMORIZED_SPELL ~%resref%~
-								END
-							DEFAULT
+						READ_ASCII	(known_off + i * 0xc)	resref (4)
+						PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
+							READ_ASCII	(known_off + i * 0xc) resref
+							INNER_ACTION	BEGIN
+								LAF	GET_PRIEST_TYPE	STR_VAR	resref	RET	type	END
+							END
+							PATCH_IF (divineSpheres = 1 AND !(type BAND 128)) OR (natureSpheres = 1 AND !(type BAND 64))	BEGIN
+								REMOVE_KNOWN_SPELL ~%resref%~
+								REMOVE_MEMORIZED_SPELL ~%resref%~
+							END
+						END	ELSE	BEGIN
+							PATCH_IF ~%resref%~ STRING_EQUAL ~SPPR~	BEGIN
+								READ_ASCII	(known_off + i * 0xc) resref
+								REMOVE_KNOWN_SPELL ~%resref%~
+								REMOVE_MEMORIZED_SPELL ~%resref%~
+							END
 						END
 					END	
 					READ_LONG	0x2a8	mem_off
