@@ -43,7 +43,6 @@
 		~Protection~ => 4
 	END
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_DRUID~)	BEGIN
-	    ~All~ => 7
 		~Healing~ => 7
 		~Animal~ => 7
 		~Vermin~ => 7
