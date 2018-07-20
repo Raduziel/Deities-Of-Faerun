@@ -6,6 +6,14 @@
 //__________________________________________________________________________________
 
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+		COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLPAL.2da~ ~override~
+
+		COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
+	  
+	END	  
 	  
 	ACTION_FOR_EACH creature IN dorn dorn2 dorn4 dorn6 dorn7 dorn8 dorn9 dorn10 dorn12 dorn14 BEGIN
 
