@@ -593,7 +593,7 @@ COPY_EXISTING	~ICEGLYP.PRO~	~override~
 WRITE_SHORT 0x0214 ICGHIT
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPWI714.spl~ 1 7 CLERIC_SYMBOL_OF_PAIN
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714.spl~ 1 7 CLERIC_SYMBOL_OF_PAIN
 SAY NAME1 @999991 SAY NAME2 @999991 SAY UNIDENTIFIED_DESC @999992 SAY DESC @999992
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
@@ -603,8 +603,8 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2214) END
 LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 169 parameter2 = iconpain END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPWI714B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPWI714C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714C.BAM~	~override\%spell_res%C.BAM~
 
 END
 
