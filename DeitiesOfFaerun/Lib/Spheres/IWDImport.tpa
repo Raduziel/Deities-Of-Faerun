@@ -1,3 +1,13 @@
+//PnP Spell Progression for Icewind Dale
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLPAL.2da~ ~override~
+
+	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
+	  
+END
+
 //Hold Person or Mammal
 
 COPY_EXISTING ~SPPR305.spl~	override
