@@ -1527,21 +1527,8 @@ If the saving throw succeeds, the victim takes 1 point of damage and the corrosi
 On this second round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1 point of damage, is corroded as discussed above, and the spell ends. If this second Saving Throw fails, the victim suffers 3d6 points of additional damage, loses another 2 points of Charisma, and the third (and final) stage of the poison begins.
 
 On this third round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1d10 points of poison damage. If it fails, the victim will fall into a coma that will last for 1 turn.~
-@2106 = ~Cloud of Pestilence~
-@2107 = ~Cloud of Pestilence
-(Alteration)
-
-Level: 4
-Sphere: Air, Suffering
-Range: Visual range of the caster
-Duration: 4 rounds
-Casting Time: 7
-Area of Effect: 12-ft. radius
-Saving Throw: Neg.
-
-This spell transforms the air in a 12-ft. radius into sickening, grayish mists. The caster and non-living creatures are immune to the effects of the cloud. For every round of exposure to the disease-ridden air, a creature must save vs. Breath or suffer 3 points of magic damage, blindness, and the loss of 3 points of Strength and Dexterity. The blindness and ability score penalties last 1 turn. Cloud of Pestilence can only be cast by evil-aligned characters.~
-@2108 = ~Holy Symbol of Talona~
-@2109 = ~Only the most worthy and devoted servants of the Mother of All Plagues are granted these powerful holy symbols.
+@2106 = ~Holy Symbol of Talona~
+@2107 = ~Only the most worthy and devoted servants of the Mother of All Plagues are granted these powerful holy symbols.
 	
 STATISTICS:
 
