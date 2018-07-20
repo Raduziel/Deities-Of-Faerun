@@ -537,7 +537,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/MoldTouch/SPPR326C.BAM~	~override\%spel
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/MoldTouch/SPPR326B.spl~	~override\%spell_res%B.spl~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDMOLD% END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR326~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
 
 END
 
