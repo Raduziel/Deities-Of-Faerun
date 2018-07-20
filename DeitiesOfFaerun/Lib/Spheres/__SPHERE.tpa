@@ -178,24 +178,19 @@
 			LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname	clabfile	END
 		END	ELSE	BEGIN	//	Cleric/Ranger needs special consideration
 			ACTION_IF	divineSpheres = 1	BEGIN
-				OUTER_SPRINT	kitsub ~%kitname%~
-				OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname%_CLERIC~) AS one => two BEGIN	OUTER_SET index += 1	END
+				OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname%~) AS one => two BEGIN	OUTER_SET index += 1	END
 				ACTION_IF index = 0	BEGIN
 					PRINT ~%kitname% is a Cleric/Ranger kit and lacks Cleric sphere definitions, using default Cleric Spheres.~
 					OUTER_SPRINT	kitname ~DEFAULT_CLERIC~
-				END	ELSE	BEGIN
-					OUTER_SPRINT	kitname	~%kitsub%_CLERIC~
 				END
 				OUTER_SPRINT	clabfile ~CLABPR01~
 				LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname	clabfile	END
 			END
 			ACTION_IF	natureSpheres = 1	BEGIN
-				OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname%_RANGER~) AS one => two BEGIN	OUTER_SET index += 1	END
+				OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname%~) AS one => two BEGIN	OUTER_SET index += 1	END
 				ACTION_IF index = 0	BEGIN
 					PRINT ~%kitname% is a Cleric/Ranger kit and lacks Ranger sphere definitions, using default Ranger Spheres.~
 					OUTER_SPRINT	kitname ~DEFAULT_RANGER~
-				END	ELSE	BEGIN
-					OUTER_SPRINT	kitname	~%kitsub%_RANGER~
 				END
 				OUTER_SPRINT	clabfile ~CLABRN01~
 				LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname	clabfile	END
