@@ -86,7 +86,7 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = ic
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SYMBOL_OF_PAIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SYMBOL_OF_PAIN~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RALOVI5.spl~
+COPY_EXISTING	~%spell_res%.spl~	~override/RALovi5.spl~
 SAY NAME1 @999991 SAY UNIDENTIFIED_DESC @999992
 LPM ~SPELL_TO_INNATE~
 
@@ -100,11 +100,11 @@ COPY_EXISTING	~ICEGLYP.PRO~	~override~
 WRITE_SHORT 0x0214 ICGHIT
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714.spl~ ~override/RATLNA5.spl~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714.spl~ ~override/RALovi5.spl~
 SAY NAME1 @999991 SAY NAME2 @999991 SAY UNIDENTIFIED_DESC @999992 SAY DESC @999992
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %ICEGLYP% END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2214) END
-LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 168 parameter2 = iconpain END
+LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 169 parameter2 = iconpain END
 LPM ~SPELL_TO_INNATE~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override~
