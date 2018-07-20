@@ -318,6 +318,11 @@
 									REMOVE_MEMORIZED_SPELL ~%resref%~
 								END
 							END
+							~SPRA301~	~SPRA302~ ~SPRA303~	~SPDR101~	~SPDR201~ ~SPDR301~ ~SPDR401~	~SPDR501~	~SPDR601~	WHEN natureSpheres != 0	BEGIN
+								READ_ASCII	(known_off + i * 0xc) resref
+								REMOVE_KNOWN_SPELL ~%resref%~
+								REMOVE_MEMORIZED_SPELL ~%resref%~
+							END
 							DEFAULT
 						END
 					END	

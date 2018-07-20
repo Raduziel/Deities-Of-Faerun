@@ -234,15 +234,27 @@
 					TEXT_SPRINT	w ~[ %TAB%%WNL%%LNL%%MNL%]~	//	whitespace variable
 					PATCH_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~%w%%one%%w%~)	BEGIN
 						LPF	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = EVAL ~%one%~	RET	spell_res	END
-						PATCH_IF !	~%one%~	STRING_MATCHES_REGEXP ~WIZARD_.+~	BEGIN
-							INNER_PATCH_SAVE	newfile	~%spell_res%~	BEGIN	WRITE_ASCII	0	~RA~ #2	END
-							PATCH_IF	! FILE_EXISTS_IN_GAME ~%newfile%.spl~	BEGIN
-								INNER_ACTION	BEGIN
-									OUTER_SPRINT	$convert_clone(~%spell_res%~) ~%newfile%~
-									LAF	CLONE_WIZARD_TO_PRIEST	STR_VAR	level	newfile oldfile = EVAL ~%spell_res%~	END
+						PATCH_IF !	(~%one%~	STRING_MATCHES_REGEXP ~WIZARD_.+~)	BEGIN
+							PATCH_MATCH	~%one%~	WITH
+								~WIZARD_CHROMATIC_ORB~										WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR101~	END
+								~WIZARD_WEB~															WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR201~	END
+								~WIZARD_LIGHTNING_BOLT~										WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR301~	END
+								~WIZARD_IMPROVED_INVISIBILITY~						WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR401~	END
+								~WIZARD_CHAOS~														WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR501~	END
+								~WIZARD_CHAIN_LIGHTNING~									WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR601~	END
+								~WIZARD_HASTE~														WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA301~	END
+								~WIZARD_MINOR_SPELL_DEFLECTION~						WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA302~	END
+								~WIZARD_PROTECTION_FROM_NORMAL_MISSILES~	WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA303~	END
+							DEFAULT
+								INNER_PATCH_SAVE	newfile	~%spell_res%~	BEGIN	WRITE_ASCII	0	~RA~ #2	END
+								PATCH_IF	! FILE_EXISTS_IN_GAME ~%newfile%.spl~	BEGIN
+									INNER_ACTION	BEGIN
+										OUTER_SPRINT	$convert_clone(~%spell_res%~) ~%newfile%~
+										LAF	CLONE_WIZARD_TO_PRIEST	STR_VAR	level	newfile oldfile = EVAL ~%spell_res%~	END
+									END
 								END
+								TEXT_SPRINT	spell_res ~%newfile%~
 							END
-							TEXT_SPRINT	spell_res ~%newfile%~
 						END
 					END	ELSE	BEGIN	//	check SPELL.IDS for spell, or use resref
 						PATCH_IF	(STRING_LENGTH ~%one%~) < 8	BEGIN	TEXT_SPRINT	spell_res ~%one%~	END
@@ -301,7 +313,7 @@
 				OUTER_SPRINT	w ~[ %TAB%%WNL%%LNL%%MNL%]~	//	whitespace variable
 				ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~%w%%one%%w%~)	BEGIN
 					LAF	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = EVAL ~%one%~	RET	spell_res	END
-					ACTION_IF !	~%one%~	STRING_MATCHES_REGEXP ~WIZARD_.+~	BEGIN
+					ACTION_IF !	(~%one%~	STRING_MATCHES_REGEXP ~WIZARD_.+~)	BEGIN
 						OUTER_PATCH_SAVE	newfile	~%spell_res%~	BEGIN	WRITE_ASCII	0	~RA~ #2	END
 						ACTION_IF	! FILE_EXISTS_IN_GAME ~%newfile%.spl~	BEGIN
 							OUTER_SPRINT	$convert_clone(~%spell_res%~) ~%newfile%~
@@ -524,6 +536,11 @@
 					REMOVE_MEMORIZED_SPELL ~%res%~
 					ADD_MEMORIZED_SPELL ~%res%~	(level - 1) ~priest~ (count)
 				END
+			END
+		END
+		PATCH_FOR_EACH	res	IN ~SPRA304~	~SPRA305~ ~SPRA306~	BEGIN
+			PATCH_IF	FILE_CONTAINS_EVALUATED (EVAL ~%SOURCE_RES%.cre~	~%res%~)	BEGIN
+				REMOVE_MEMORIZED_SPELL	~%res%~
 			END
 		END
 	BUT_ONLY
