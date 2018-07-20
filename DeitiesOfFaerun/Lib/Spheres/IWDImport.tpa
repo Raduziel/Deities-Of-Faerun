@@ -601,7 +601,7 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %ICEGLYP% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2214) END
-LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 168 parameter2 = iconpain END
+LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 169 parameter2 = iconpain END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPWI714B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPWI714C.BAM~	~override\%spell_res%C.BAM~
