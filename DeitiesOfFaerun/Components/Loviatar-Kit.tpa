@@ -81,21 +81,32 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = ic
 COPY "DeitiesOfFaerun\Spl\RALovi42.spl" override
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+//Symbol, Pain (RALOVI5)
 
-COPY "DeitiesOfFaerun\Spl\Import\Loviatar\Complement" override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SYMBOL_OF_PAIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SYMBOL_OF_PAIN~	RET	spell_res	END
 
-COPY "DeitiesOfFaerun\Spl\Import\Loviatar\RAPR714.spl" ~override\RALovi5.spl~ SAY NAME1 @2212 SAY UNIDENTIFIED_DESC @2213
-LPM SPELL_TO_INNATE
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2214) END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
+COPY_EXISTING	~%spell_res%.spl~	~override/RALOVI5.spl~
+SAY NAME1 @999991 SAY UNIDENTIFIED_DESC @999992
+LPM ~SPELL_TO_INNATE~
 
-END
+END ELSE BEGIN
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/ICGHIT.PRO~
 
-COPY_EXISTING ~SPPR714.spl~ ~override\RALovi5.spl~
-LPM SPELL_TO_INNATE
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/ICEGLYP.PRO~
+WRITE_SHORT 0x0214 ICGHIT
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR726.spl~ ~override/RATLNA5.spl~
+SAY NAME1 @999991 SAY NAME2 @999991 SAY UNIDENTIFIED_DESC @999992 SAY DESC @999992
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %ICEGLYP% END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2214) END
+LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 168 parameter2 = iconpain END
+LPM ~SPELL_TO_INNATE~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR726B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR726C.BAM~	~override~
 
 END
 
