@@ -81,7 +81,7 @@ END ELSE BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/IDPRO309.PRO~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423.spl~ ~override/RATLNA5~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423.spl~ ~override/RATLNA5.spl~
 SAY NAME1 @999987 SAY NAME2 @999987 SAY UNIDENTIFIED_DESC @999988 SAY DESC @999988
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO309% END
 LPM ~SPELL_TO_INNATE~
