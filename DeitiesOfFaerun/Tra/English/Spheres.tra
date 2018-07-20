@@ -212,5 +212,108 @@ Saving Throw: None
 
 This spell summons three 4-HD shadows. The shadows will obey the orders of the caster, attacking <PRO_HISHER> enemies or performing tasks until the spell expires or the shadows are slain.~
 	@999978 = ~Shadow~
+	@999979 = ~Cause Light Wounds~
+	@999980 = ~Cause Light Wounds
+(Necromancy)
+
+Level: 1
+Sphere: Suffering
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 8 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+	@999981 = ~Cause Moderate Wounds~
+	@999982 = ~Cause Moderate Wounds
+(Necromancy)
+
+Level: 2
+Sphere: Suffering
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 11 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+	@999983 = ~Cause Disease~
+	@999984 = ~Cause Disease
+(Necromancy)
+
+Level: 3
+Sphere: Suffering
+Range: Touch
+Duration: 8 hours
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell afflicts one creature the priest touches with a disease that saps the target of 5d4 points of Strength. A successful Save vs. Spell negates the effects. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+	@999985 = ~Mold Touch~
+	@999986 = ~Mold Touch
+(Alteration)
+
+Level: 3
+Sphere: Suffering, Plant
+Range: Touch
+Duration: Special
+Casting Time: 6
+Area of Effect: 10-ft. radius
+Saving Throw: Special
+
+This spell infects the creature the caster touches with a rapidly spreading brown mold. If the infected creature fails a Save vs. Spell, the infection is severe and the creature takes magic damage as follows:
+
+1st round: 4d6 damage
+2nd round: 3d6 damage
+3rd round: 2d6 damage
+4th round: 1d6 damage
+
+If the Saving Throw is successful, the damage is reduced as follows:
+
+1st round: 2d6 damage
+2nd round: 1d6 damage
+3rd round: 1d6 damage
+
+Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again. The brown mold quickly dies once the spell expires.~
+	@999987 = ~Cloud of Pestilence~
+	@999988 = ~Cloud of Pestilence
+(Alteration)
+
+Level: 4
+Sphere: Suffering, Air
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 7
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This spell transforms the air in a 12-ft. radius into sickening, grayish mists. The caster and non-living creatures are immune to the effects of the cloud. For every round of exposure to the disease-ridden air, a creature must save vs. Breath or suffer 3 points of magic damage, blindness, and the loss of 3 points of Strength and Dexterity. The blindness and ability score penalties last 1 turn.~
+	@999989 = ~Suffocate~
+	@999990 = ~Suffocate
+(Alteration)
+
+Level: 7
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 7
+Area of Effect: 7-ft. radius
+Saving Throw: Special
+
+This spell draws the breath out of all creatures within the area of effect. Creatures that do not breathe are unaffected. Suffocating creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, half movement rate, and take 4d8 points of magic damage per round. A successful Saving Throw negates all effects but 2d8 points of damage for one round. The effects begin to fade when the creature moves out of the area of effect, although it can take a round for a character to catch their second wind.~
+	@999991 = ~Symbol, Pain~
+	@999992 = ~Symbol, Pain
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Suffering
+Range: Visual range of the caster
+Duration: 11 turns
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+All enemies within 15 ft. of the symbol of pain at the moment it is invoked must make a Save vs. Spell. Those who fail their Saving Throws are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
 
 // EoF

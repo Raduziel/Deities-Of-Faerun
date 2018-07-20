@@ -1655,21 +1655,8 @@ By touching a creature, the Pain attacks its nervous system, delivering an overw
 At the end of the first round, the victim makes a Saving Throw vs. Spells. If it succeeds, the spell ends. If it fails, 2d6 points of magic damage are delivered and the victim is incapacitated for another round. 
 
 At the end of the second round, the victim makes another Saving Throw vs. Spells. If it succeeds, the spell ends. If it fails, 1d6 points of magic damage are delivered and the victim is incapacitated for a third round, when the spell expires.~
-@2212 = ~Symbol, Pain~
-@2213 = ~Symbol, Pain
-(Conjuration/Summoning)
-
-Level: 7
-Sphere: Suffering
-Range: Visual range of the caster
-Duration: 11 turns
-Casting Time: 3
-Area of Effect: 15-ft. radius
-Saving Throw: Neg.
-
-All enemies within 15 ft. of the symbol of pain at the moment it is invoked must make a Save vs. Spell. Those who fail their Saving Throws are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
-@2214 = ~Ensnarement~
-@2215 = ~Ensnarement
+@2212 = ~Ensnarement~
+@2213 = ~Ensnarement
 (Necromancy)
 
 Level: 6
@@ -1681,11 +1668,11 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell summons an Erinyes to serve the Pain. She has 48 HP, 15 Thac0, AC 0, can only be damaged with weapons +2 or better, strikes twice per round and each hit drains one level of the target. The devil is also immune to poison, fear, stun, charm and confusion.~
-@2216 = ~Pain~
-@2217 = ~Burning~
-@2218 = ~Summoned Erinyes~ 
-@2219 = ~Holy Symbol of Loviatar~
-@2220 = ~Only the most worthy and devoted servants of the Maiden of Pain are granted these powerful holy symbols.
+@2214 = ~Pain~
+@2215 = ~Burning~
+@2216 = ~Summoned Erinyes~ 
+@2217 = ~Holy Symbol of Loviatar~
+@2218 = ~Only the most worthy and devoted servants of the Maiden of Pain are granted these powerful holy symbols.
 	
 STATISTICS:
 
