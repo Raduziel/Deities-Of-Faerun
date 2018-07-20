@@ -51,9 +51,9 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY "DeitiesOfFaerun\Spl\RALoviIC.bam" override		  
+COPY "DeitiesOfFaerun\Lib\Spheres\Import\Common\RAPAINIC.BAM" override		  
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RALOVIIC RET iconpain = icon END		  
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END		  
 COPY "DeitiesOfFaerun\Spl\RALovi1.spl" override SAY NAME1 @2204 SAY UNIDENTIFIED_DESC @2205
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2214) END
