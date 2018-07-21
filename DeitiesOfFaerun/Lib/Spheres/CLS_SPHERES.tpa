@@ -43,11 +43,11 @@
 		~Protection~ => 4
 	END
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_DRUID~)	BEGIN
-		~Healing~ => 7
+		~Healing~ => 3
 		~Animal~ => 7
 		~Vermin~ => 7
 		~Plant~ => 7
-		~Sun~ => 7
+		~Sun~ => 3
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
