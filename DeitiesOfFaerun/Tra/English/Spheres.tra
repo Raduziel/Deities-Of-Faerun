@@ -315,5 +315,22 @@ Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
 All enemies within 15 ft. of the symbol of pain at the moment it is invoked must make a Save vs. Spell. Those who fail their Saving Throws are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
+	@999993 = ~Giant Insect~
+	@999994 = ~Giant Insect
+(Alteration)
+
+Level: 4
+Sphere: Vermin
+Range: Visual range of the caster
+Duration: 8 hours
+Casting Time: 7
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons 2-3 boring beetles or bombardier beetles to the caster's side. The beetles will obey the caster until the spell expires or they are slain.~
+	@999995 = ~Boring Beetle~
+	@999996 = ~Bombardier Beetle~
+	@999997 = ~Releases Acidic Vapor~
+
 
 // EoF
