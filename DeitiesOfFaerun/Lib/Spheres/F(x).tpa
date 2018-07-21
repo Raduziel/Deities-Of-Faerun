@@ -1,4 +1,53 @@
-
+	DEFINE_ACTION_FUNCTION	ADD_PROJECTL
+		INT_VAR
+			clone = 0
+		STR_VAR
+			path = ~~
+			file = ~~
+			missile = ~Unnamed~
+		RET	EVAL ~%file%~
+	BEGIN
+		ACTION_IF	(~%file%~ STRING_EQUAL ~~)	BEGIN	FAIL	~Missing projectile file~	END	ELSE	BEGIN
+			ACTION_IF	((~%file%~ STRING_CONTAINS_REGEXP ~ ~) = 0)	BEGIN
+				FAIL	~%file%(%missile%) - Projectile name cannot have spaces~
+			END	ELSE	BEGIN
+				ACTION_IF	clone = 1	BEGIN	
+					COPY_EXISTING	~%path%\%file%.pro~	~override\%file%.pro~
+				END	ELSE	BEGIN
+					COPY	~%path%\%file%.pro~	~override\%file%.pro~
+				END
+				ACTION_IF	(clone = 0) AND (FILE_CONTAINS_EVALUATED (~PROJECTL.IDS~	~[ %TAB%]%file%[ %TAB%%WNL%%MNL%%LNL%$]~))	BEGIN
+					COPY_EXISTING ~PROJECTL.IDS~	~override~
+						COUNT_2DA_ROWS 2 num_rows
+						FOR	(cur_row = 1; cur_row < num_rows; ++cur_row)	BEGIN
+							READ_2DA_ENTRY	cur_row 1 2 pro_file
+							PATCH_IF	~%file%~ STRING_EQUAL_CASE ~%pro_file%~	BEGIN
+								READ_2DA_ENTRY cur_row 0 2 pro_ids
+								TEXT_SPRINT	EVAL ~%file%~ ~%pro_ids%~
+							END
+						END
+					BUT_ONLY
+				END	ELSE	BEGIN
+					COPY_EXISTING ~PROJECTL.IDS~	~override~
+						SET	new_ids = 0
+						COUNT_2DA_ROWS 2 num_rows
+						FOR	(cur_row = 1; cur_row < num_rows; ++cur_row)	BEGIN
+							READ_2DA_ENTRY cur_row 0 2 pro_ids
+							PATCH_IF	new_ids < pro_ids	BEGIN
+								new_ids = pro_ids
+							END
+						END
+						SET	new_ids += 1
+					BUT_ONLY
+					APPEND	~PROJECTL.IDS~	~%new_ids% %file%~
+					OUTER_SET	new_ids += 1
+					OUTER_SPRINT	EVAL ~%file%~ ~%new_ids%~
+					APPEND ~MISSILE.IDS~	~%new_ids% %missile%~
+				END
+			END
+		END
+	END
+	
 	DEFINE_PATCH_FUNCTION	VALIDATE	RET	fx_size	ab_size	pro_off	BEGIN
 		READ_ASCII	0	sign	(4)
 		PATCH_MATCH	~%sign%~	WITH

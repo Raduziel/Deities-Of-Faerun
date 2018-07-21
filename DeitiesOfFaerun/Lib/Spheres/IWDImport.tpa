@@ -526,6 +526,9 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_GIANT_INSECT~) BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/IDPRO282.PRO~
 
+COPY_EXISTING	~IDPRO282.PRO~	~override~
+WRITE_LONG 0x0030 RESOLVE_STR_REF (@999997)
+
 LAF cd_new_summon_table STR_VAR descript = "GIANT_INSECT" 2da_file = GINSECT RET GINSECT = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPPR418.spl~ 1 4 CLERIC_GIANT_INSECT
 SAY NAME1 @999993 SAY NAME2 @999993 SAY UNIDENTIFIED_DESC @999994 SAY DESC @999994
@@ -553,7 +556,71 @@ LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 paramet
 
 END
 
-//
+//Sunscorch
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_SUNSCORCH~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SUNSCOH.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115.spl~ 1 1 CLERIC_SUNSCORCH
+SAY NAME1 @999998 SAY NAME2 @999998 SAY UNIDENTIFIED_DESC @999999 SAY DESC @999999
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %SUNSCOH% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR 			   match_resource = EVAL ~%SOURCE_RES%D~  resource = EVAL ~%spell_res%D~	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37800 parameter1 = EVAL "%RA_Blinded%" END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115D.spl~	~override~
+
+END
+
+//Undead Ward
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_UNDEAD_WARD~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/UWARD.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521.spl~ 1 5 CLERIC_UNDEAD_WARD
+SAY NAME1 @9999100 SAY NAME2 @9999100 SAY UNIDENTIFIED_DESC @9999101 SAY DESC @9999101
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %UWARD% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Expeditious Retreat
+
+//Unfailing Endurance
+
+//Moonblade
+
+//Wall of Moonlight
+
+//Star Metal Cudgel
+
+//Emotion: Fear
+
+//Lance of Disruption
+
+//Force Missiles
+
+//Spike Growth
+
+//Thorn Spray
+
+//Stalker
+
+//Wither
 
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA

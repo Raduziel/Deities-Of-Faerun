@@ -14,7 +14,7 @@
 		clabfile = ~~
 	BEGIN
 		ACTION_TO_UPPER	kitname
-		ACTION_PHP_EACH	EVAL ~access_spells_%kit_sphere%~	AS sphere_id => file	BEGIN
+		ACTION_PHP_EACH	access_spells	AS sphere_id => file	BEGIN
 			ACTION_IF	NOT	VARIABLE_IS_SET	$priestspherelist(~%kitname%~ ~%sphere_id%~)	BEGIN
 				ACTION_IF	kitid != 0x4000	BEGIN
 					OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
@@ -438,5 +438,51 @@
 				BUT_ONLY IF_EXISTS
 			END
 		END
+	END
+	
+	//	Add new kit to Shaman Dialog Spell Selection
+	DEFINE_ACTION_FUNCTION	UPDATE_SHAMAN_DLG
+		INT_VAR	kitid = 0x4000
+		STR_VAR	kitname = ~DEFAULT_SHAMAN~	clabfile = ~CLABSH01~
+	BEGIN
+		OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN	SET_2DA_ENTRY	0 0 1 ~GA_%MOD_PREFIX%SHMKN~	END
+		APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
+		
+		ACTION_PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS array => level BEGIN
+			ACTION_IF VARIABLE_IS_SET	$access_spells(~%array%~)	BEGIN
+				OUTER_SPRINT file EVAL $access_spells(~%array%~)
+				OUTER_FOR	(i = 1; i <= level; ++i)	BEGIN
+					COPY_EXISTING	~%file%%i%G.spl~	override
+						READ_LONG		0x6a	fx_off
+						READ_SHORT	0x90	fx_num
+						READ_SHORT	0x92	fx_idx
+						FOR (j = 0; j < fx_num; ++j)	BEGIN
+							READ_ASCII (fx_off + (fx_idx + j) * 0x30 + 0x14)	spell_res
+							SET	$kit_spl_choice(~%spell_res%~) = 1
+						END
+					BUT_ONLY
+				END
+			END
+		END
+		ACTION_PHP_EACH	access_spells AS null => file BEGIN
+			OUTER_FOR	(i = 1; i <= level; ++i)	BEGIN
+				COPY_EXISTING	~%file%%i%G.spl~	override
+					READ_LONG		0x6a	fx_off
+					READ_SHORT	0x90	fx_num
+					READ_SHORT	0x92	fx_idx
+					FOR (j = 0; j < fx_num; ++j)	BEGIN
+						READ_ASCII (fx_off + (fx_idx + j) * 0x30 + 0x14)	spell_res
+						PATCH_IF	!VARIABLE_IS_SET	$kit_spl_choice(~%spell_res%~)	BEGIN
+							SET	$kit_spl_choice(~%spell_res%~) = 1
+							INNER_ACTION	BEGIN	COPY_EXISTING	~%MOD_PREFIX%SHMKN.dlg~	override
+								DECOMPILE_AND_PATCH	BEGIN
+									REPLACE_TEXTUALLY	EXACT_MATCH	~!HaveKnownSpellRES("%spell_res%")~	~!HaveKnownSpellRES("%spell_res%")%WNL%!Kit(Myself,%kitid%)~
+								END
+							END
+						END
+					END
+				BUT_ONLY
+			END
+		END			
 	END
 	
