@@ -239,28 +239,6 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SHADOW_MONSTERS~) BEGIN
 
-DEFINE_ACTION_FUNCTION cd_new_summon_table
-  STR_VAR descript = "foo"
-          2da_file = "foo"
-  RET     table
-  BEGIN
-
-  COPY_EXISTING ~smtables.2da~ ~override~
-    COUNT_2DA_ROWS 2 count
-    READ_2DA_ENTRY (count - 1) 0 2 table
-    INNER_PATCH_SAVE table ~%table%~ BEGIN
-      REPLACE_TEXTUALLY ~^\([0-9]+\).+$~ ~\1~
-    END
-    SET table += 1
-
-  APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
-
-
-COPY_EXISTING ~smtables.2da~ ~override~
-PRETTY_PRINT_2DA
-
-END
-
 LAF cd_new_summon_table STR_VAR descript = "SHADOW_MONSTERS" 2da_file = SMONSTE RET SMONSTE = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426.spl~ 2 4 WIZARD_SHADOW_MONSTERS
 SAY NAME1 @999964 SAY NAME2 @999964 SAY UNIDENTIFIED_DESC @999965 SAY DESC @999965
@@ -305,28 +283,6 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_DEMI_SHADOW_MONSTERS~) BEGIN
 
-DEFINE_ACTION_FUNCTION cd_new_summon_table
-  STR_VAR descript = "foo"
-          2da_file = "foo"
-  RET     table
-  BEGIN
-
-  COPY_EXISTING ~smtables.2da~ ~override~
-    COUNT_2DA_ROWS 2 count
-    READ_2DA_ENTRY (count - 1) 0 2 table
-    INNER_PATCH_SAVE table ~%table%~ BEGIN
-      REPLACE_TEXTUALLY ~^\([0-9]+\).+$~ ~\1~
-    END
-    SET table += 1
-
-  APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
-
-
-COPY_EXISTING ~smtables.2da~ ~override~
-PRETTY_PRINT_2DA
-
-END
-
 LAF cd_new_summon_table STR_VAR descript = "DEMI_SHADOW_MONSTERS" 2da_file = DSMONST RET DSMONST = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525.spl~ 2 5 WIZARD_DEMI_SHADOW_MONSTERS
 SAY NAME1 @999969 SAY NAME2 @999969 SAY UNIDENTIFIED_DESC @999970 SAY DESC @999970
@@ -364,28 +320,6 @@ END
 //Shades
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SHADES~) BEGIN
-
-DEFINE_ACTION_FUNCTION cd_new_summon_table
-  STR_VAR descript = "foo"
-          2da_file = "foo"
-  RET     table
-  BEGIN
-
-  COPY_EXISTING ~smtables.2da~ ~override~
-    COUNT_2DA_ROWS 2 count
-    READ_2DA_ENTRY (count - 1) 0 2 table
-    INNER_PATCH_SAVE table ~%table%~ BEGIN
-      REPLACE_TEXTUALLY ~^\([0-9]+\).+$~ ~\1~
-    END
-    SET table += 1
-
-  APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
-
-
-COPY_EXISTING ~smtables.2da~ ~override~
-PRETTY_PRINT_2DA
-
-END
 
 LAF cd_new_summon_table STR_VAR descript = "SHADES" 2da_file = SHADES RET SHADES = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629.spl~ 2 6 WIZARD_SHADES
@@ -429,28 +363,6 @@ END
 //Summon Shadow
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SUMMON_SHADOW~) BEGIN
-
-DEFINE_ACTION_FUNCTION cd_new_summon_table
-  STR_VAR descript = "foo"
-          2da_file = "foo"
-  RET     table
-  BEGIN
-
-  COPY_EXISTING ~smtables.2da~ ~override~
-    COUNT_2DA_ROWS 2 count
-    READ_2DA_ENTRY (count - 1) 0 2 table
-    INNER_PATCH_SAVE table ~%table%~ BEGIN
-      REPLACE_TEXTUALLY ~^\([0-9]+\).+$~ ~\1~
-    END
-    SET table += 1
-
-  APPEND ~smtables.2da~ ~%table%_%descript% %2da_file%~
-
-
-COPY_EXISTING ~smtables.2da~ ~override~
-PRETTY_PRINT_2DA
-
-END
 
 LAF cd_new_summon_table STR_VAR descript = "SUMMON_SHADOW" 2da_file = SSHADOW RET SSHADOW = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SPWI526.spl~ 2 5 WIZARD_SUMMON_SHADOW
@@ -607,6 +519,44 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override\%spe
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714C.BAM~	~override\%spell_res%C.BAM~
 
 END
+
+//Giant Insects
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_GIANT_INSECT~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/IDPRO282.PRO~
+
+LAF cd_new_summon_table STR_VAR descript = "GIANT_INSECT" 2da_file = GINSECT RET GINSECT = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPPR418.spl~ 1 4 CLERIC_GIANT_INSECT
+SAY NAME1 @999993 SAY NAME2 @999993 SAY UNIDENTIFIED_DESC @999994 SAY DESC @999994
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = GINSECT END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPPR418B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPPR418C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GINSECT.2DA~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GISBORB.CRE~	~override~
+SAY NAME1 @999995 SAY NAME2 @999995
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GISBOMB.CRE~	~override~
+SAY NAME1 @999996 SAY NAME2 @999996
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPIN191.spl~	~override~
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO282% END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 34527 parameter1 = RESOLVE_STR_REF (@999997) END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%" END
+
+END
+
+//
+
+COPY_EXISTING ~smtables.2da~ ~override~
+PRETTY_PRINT_2DA
 
 END
 
