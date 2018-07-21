@@ -1214,7 +1214,7 @@ f1) Sphere System
 
 3 - Summon Insects
 
-4 - Giant Insects
+4 - Giant Insect
     Poison
     Spider Spawn
 
