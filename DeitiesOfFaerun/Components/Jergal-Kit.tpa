@@ -59,21 +59,26 @@ LPM SPELL_TO_INNATE
 COPY_EXISTING ~SPWI313.spl~ ~override/RAJERG2.spl~    //Skull Trap
 LPM SPELL_TO_INNATE
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN
+//Undead Ward
 
-COPY_EXISTING ~SPPR521.spl~ ~override/RAJERG3.spl~    //Undead Ward
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_UNDEAD_WARD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_UNDEAD_WARD~	RET	spell_res	END
 
-END
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG3.spl~
+SAY NAME1 @999948 SAY UNIDENTIFIED_DESC @999949
+LPM ~SPELL_TO_INNATE~
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+END ELSE BEGIN
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Jergal\Complement\UWARD.PRO~
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/UWARD.PRO~
 
-COPY "DeitiesOfFaerun\Spl\Import\Jergal\RAPR521.spl" ~override/RAJERG3.spl~  SAY NAME1 @2804 SAY  UNIDENTIFIED_DESC @2805
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521.spl~  ~override/RAJERG3.spl~
+SAY NAME1 @9999100 SAY NAME2 @9999100 SAY UNIDENTIFIED_DESC @9999101 SAY DESC @9999101
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %UWARD% END
+LPM ~SPELL_TO_INNATE~
 
-COPY "DeitiesOfFaerun\Spl\Import\Jergal\Complement"  override
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override~
 
 END
 
