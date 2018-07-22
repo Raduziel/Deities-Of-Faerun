@@ -397,5 +397,18 @@ Saving Throw: None
 This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, melee bonuses from Strength do not apply.
 
 The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 1d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
+	@9999108 = ~Wall of Moonlight~
+	@9999109 = ~Wall of Moonlight
+(Invocation)
 
+Level: 4
+Sphere: Moon
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 8 ft. long, 2 ft. wide wall
+Saving Throw: None
+
+This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d10 magic damage; evil undead creatures take 5d10. A creature that has passed through the wall can only take damage from it once.~
+	
 // EoF
