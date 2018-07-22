@@ -331,6 +331,71 @@ This spell summons 2-3 boring beetles or bombardier beetles to the caster's side
 	@999995 = ~Boring Beetle~
 	@999996 = ~Bombardier Beetle~
 	@999997 = ~Releases Acidic Vapor~
+	@999998 = ~Sunscorch~
+	@999999 = ~Sunscorch
+(Invocation)
 
+Level: 1
+Sphere: Sun
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Special
+
+When this spell is cast, a brilliant ray of scorching heat slants down from the sky and strikes one target of the caster's choice. Any creature struck by the ray takes 1d6 points of damage, plus 1 point per level of the caster; however, if the target is an undead creature or a monster vulnerable to bright light, the damage is 1d6, plus 2 points per level of the caster. In addition to sustaining damage, victims are also blinded for 3 rounds. The victim is allowed a Save vs. Spell for half damage and to avoid the blindness.~
+	@9999100 = ~Undead Ward~
+	@9999101 = ~Undead Ward
+(Necromancy)
+
+Level: 5
+Sphere: Protection, Sun
+Range: 0
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 10-ft. radius
+Saving Throw: None
+
+This spell amplifies the influence a priest has over undead, though it is tied to the area surrounding the priest at the moment of its casting and does not move. Any undead creature entering the area of effect is affected as if turned by the priest that cast this spell. If the turning fails, the undead creature is immune to further turning attempts by the spell unless it leaves and reenters the area of effect.~
+	@9999102 = ~Expeditious Retreat~
+	@9999103 = ~Expeditious Retreat
+(Alteration)
+
+Level: 1
+Range: 0
+Duration: 3 rounds
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+This spell doubles the caster's normal speed for a short period of time (usually long enough to escape). Other movement-altering effects, such as Haste and Slow, cannot affect the caster while this spell is in effect. While Expeditious Retreat is active, the caster cannot attack, cast spells, or use any items or special abilities; <PRO_HESHE> can only run.~
+	@9999104 = ~Unfailing Endurance~
+	@9999105 = ~Unfailing Endurance
+(Necromancy)
+
+Level: 4
+Sphere: Necromantic
+Range: Touch
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell restores the stamina of the creature touched, eliminating any fatigue.~
+	@9999106 = ~Moonblade~
+	@9999107 = ~Moonblade
+(Invocation)
+
+Level: 3
+Sphere: Moon, Creation
+Range: 0
+Duration: 2 turns
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, melee bonuses from Strength do not apply.
+
+The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 1d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
 
 // EoF
