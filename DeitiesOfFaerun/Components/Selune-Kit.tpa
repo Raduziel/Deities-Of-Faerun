@@ -68,7 +68,7 @@ LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
-~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322.spl~    ~override/RASELU2.spl~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322.spl~    ~override/RASELU2.spl~
 SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999107 SAY DESC @9999107
 LPM ~SPELL_TO_INNATE~
 
