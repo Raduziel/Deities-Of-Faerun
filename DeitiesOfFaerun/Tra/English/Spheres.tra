@@ -423,6 +423,17 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell creates a meteoric iron magical club that deals 1d6+2 points of crushing damage, confers a +2 bonus to attack rolls, and is treated as a +4 weapon for purposes of what it can hit. Strength, proficiency, and specialization bonuses and penalties apply normally. The club deals an additional 2d6 points of crushing damage against unnatural creatures (undead, elementals, golems, outer-planar creatures, etc.).~
-	
+	@9999112 = ~Emotion, Fear~
+	@9999113 = ~Emotion, Fear
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 5 rounds
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: Neg.
+
+This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.~
 	
 // EoF
