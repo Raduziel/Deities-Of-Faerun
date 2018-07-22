@@ -696,6 +696,21 @@ END
 
 //Star Metal Cudgel
 
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_STAR_METAL_CUDGEL~) BEGIN
+
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/StarMetalCudgel/SPPR425.spl~ 1 4 CLERIC_STAR_METAL_CUDGEL
+SAY NAME1 @9999110 SAY NAME2 @9999110 SAY UNIDENTIFIED_DESC @9999111 SAY DESC @9999111
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StarMetalCudgel/SPPR425B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StarMetalCudgel/SPPR425C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StarMetalCudgel/SMCUDGE.ITM~	~override~
+SAY NAME1 @9999110 SAY NAME2 @9999110 SAY UNIDENTIFIED_DESC @9999110 SAY DESC @9999110
+
 //Emotion: Fear
 
 //Lance of Disruption
