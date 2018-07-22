@@ -585,7 +585,9 @@ LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37800 paramet
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115D.spl~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115D.spl~	~override\%spell_res%D.spl~
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR115~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%D~	END
 
 END
 
@@ -663,6 +665,34 @@ SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999106 SAY DESC @9
 END
 
 //Wall of Moonlight
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_WALL_OF_MOONLIGHT~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/WOMOON.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322.spl~ 1 4 CLERIC_WALL_OF_MOONLIGHT
+SAY NAME1 @9999108 SAY NAME2 @9999108 SAY UNIDENTIFIED_DESC @9999109 SAY DESC @9999109
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %WOMOON% END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%A~	  resource = EVAL ~%spell_res%A~	END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~	END
+
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322A.spl~	~override\%spell_res%A.spl~
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR322~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%A~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322B.spl~	~override\%spell_res%B.spl~
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR322~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
+
+END
 
 //Star Metal Cudgel
 
