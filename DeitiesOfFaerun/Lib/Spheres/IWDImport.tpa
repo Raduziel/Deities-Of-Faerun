@@ -1,3 +1,9 @@
+//Bless for non-Evil only
+
+COPY_EXISTING ~SPPR101.SPL~	override
+WRITE_LONG 0x18 (THIS BOR 0x2)
+
+
 //PnP Spell Progression for Icewind Dale
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
@@ -5,6 +11,9 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
 	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLPAL.2da~ ~override~
 
 	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
+	
+COPY_EXISTING ~SPPR116.SPL~ override
+WRITE_LONG 0x18 (THIS BOR 0x4)
 	  
 END
 
@@ -58,6 +67,7 @@ ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Curse/SPPR112.spl~ 1 1 CLERIC_CURS
 SAY NAME1 @999946 SAY NAME2 @999946 SAY UNIDENTIFIED_DESC @999947 SAY DESC @999947
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+WRITE_LONG	    0x18 (THIS BOR 0x4)
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO237% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
@@ -599,6 +609,23 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override\%spe
 END
 
 //Expeditious Retreat
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_EXPEDITIOUS_RETREAT~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ExpeditiousRetreat/SPWI126.spl~ 2 1 WIZARD_EXPEDITIOUS_RETREAT
+SAY NAME1 @9999102 SAY NAME2 @9999102 SAY UNIDENTIFIED_DESC @9999103 SAY DESC @9999103
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37787 parameter1 = EVAL "%RA_Slowed%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37638 parameter1 = EVAL "%RA_Slow%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 36035 parameter1 = EVAL "%RA_Hasted%" END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ExpeditiousRetreat/SPWI126B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ExpeditiousRetreat/SPWI126C.BAM~	~override\%spell_res%C.BAM~
+
+END
 
 //Unfailing Endurance
 
