@@ -57,21 +57,26 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EV
 COPY ~DeitiesOfFaerun\Spl\RASELU1.spl~ override SAY NAME1 @2004 SAY UNIDENTIFIED_DESC @2005
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+//Moonblade
 
-COPY ~DeitiesOfFaerun\Spl\Import\Selune\Complement~ override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MOONBLADE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MOONBLADE~	RET	spell_res	END
 
-COPY ~DeitiesOfFaerun\Spl\Import\Selune\MOONBLA.itm~ override SAY NAME1 @2006 SAY NAME2 @2006 SAY DESC @2006
+COPY_EXISTING	~%spell_res%.spl~	~override/RASELU2.spl~
+SAY NAME1 @9999106 SAY UNIDENTIFIED_DESC @9999107
+LPM ~SPELL_TO_INNATE~
 
-COPY ~DeitiesOfFaerun\Spl\Import\Selune\RAPR322.spl~ ~override/RASELU2.spl~ SAY NAME1 @2006 SAY UNIDENTIFIED_DESC @2007
-LPM SPELL_TO_INNATE
+END ELSE BEGIN
 
-END		  
+~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322.spl~    ~override/RASELU2.spl~
+SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999107 SAY DESC @9999107
+LPM ~SPELL_TO_INNATE~
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322C.BAM~	~override~
 
-COPY_EXISTING ~SPPR322.spl~ ~override\RASELU2.spl~
-LPM SPELL_TO_INNATE
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/MOONBLA.ITM~	~override~
+SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999106 SAY DESC @9999106
 
 END
 
