@@ -4,7 +4,7 @@ COPY_EXISTING ~SPPR101.SPL~	override
 WRITE_LONG 0x18 (THIS BOR 0x2)
 
 
-//PnP Spell Progression for Icewind Dale
+//PnP Spell Progression for Icewind Dale | Curse for non-Good only
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
@@ -619,7 +619,7 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37787 parameter1 = EVAL "%RA_Slowed%" END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37638 parameter1 = EVAL "%RA_Slow%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37638 parameter1 = EVAL "%RA_Slow%"   END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 36035 parameter1 = EVAL "%RA_Hasted%" END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ExpeditiousRetreat/SPWI126B.BAM~	~override\%spell_res%B.BAM~
@@ -629,7 +629,38 @@ END
 
 //Unfailing Endurance
 
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_UNFAILING_ENDURANCE~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/UnfailingEndurance/SPPR424.spl~ 1 4 CLERIC_UNFAILING_ENDURANCE
+SAY NAME1 @9999104 SAY NAME2 @9999104 SAY UNIDENTIFIED_DESC @9999105 SAY DESC @9999105
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UnfailingEndurance/SPPR424B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UnfailingEndurance/SPPR424C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
 //Moonblade
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_MOONBLADE~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322.spl~ 1 3 CLERIC_MOONBLADE
+SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999107 SAY DESC @9999107
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/MOONBLA.ITM~	~override\%spell_res%C.BAM~
+SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999106 SAY DESC @9999106
+
+END
 
 //Wall of Moonlight
 
@@ -648,6 +679,12 @@ END
 //Stalker
 
 //Wither
+
+//Seven Eyes
+
+//Produce Fire
+
+//Shroud of Flames
 
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA
