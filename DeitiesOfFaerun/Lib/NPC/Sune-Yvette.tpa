@@ -34,6 +34,8 @@ ACTION_FOR_EACH creature IN yxyve1 BEGIN
   END
   
   END
+  
+//Kit
 
 <<<<<<<< .../inlined_script.baf
 IF
@@ -47,5 +49,13 @@ THEN
 END
 >>>>>>>>
 EXTEND_TOP ~YXYVE.BCS~ ~.../inlined_script.baf~
+
+//Holy Symbol
+
+COPY_EXISTING	~YxYv25.bcs~	override
+	DECOMPILE_AND_PATCH	BEGIN
+		REPLACE_TEXTUALLY	~GiveItemCreate("YxSymb",Myself,0,0,0)~	~~
+	END
+BUT_ONLY IF_EXISTS
 
 //EoF

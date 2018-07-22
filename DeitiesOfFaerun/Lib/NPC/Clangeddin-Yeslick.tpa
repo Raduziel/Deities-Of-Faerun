@@ -38,4 +38,48 @@ ACTION_FOR_EACH creature IN yeslic yeslic5 yeslid ~lk#yesl~ ~lk#yes25~ BEGIN
   
   END
   
+//Kit - script 1
+  
+ <<<<<<<< .../inlined_script.baf
+IF
+    Global("MyKit","LOCALS",0)
+    InParty(Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("MyKit","LOCALS",1)
+    AddKit("RAClanFC")
+END
+>>>>>>>>
+EXTEND_TOP ~lk#yesl.BCS~ ~.../inlined_script.baf~
+
+//Kit - script 2
+
+ <<<<<<<< .../inlined_script.baf
+IF
+    Global("MyKit","LOCALS",0)
+    InParty(Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("MyKit","LOCALS",1)
+    AddKit("RAClanFC")
+END
+>>>>>>>>
+EXTEND_TOP ~lk#yes25.BCS~ ~.../inlined_script.baf~
+
+//Holy Symbol - script 1
+
+COPY_EXISTING	~lk#yesl.bcs~	override
+	DECOMPILE_AND_PATCH	BEGIN
+		REPLACE_TEXTUALLY	~CreateItem("lk#ysy1i",0,0,0)~	~~
+	END
+BUT_ONLY IF_EXISTS
+
+//Holy Symbol - script 2
+
+COPY_EXISTING	~lk#yes25.bcs~	override
+	DECOMPILE_AND_PATCH	BEGIN
+		REPLACE_TEXTUALLY	~CreateItem("lk#ysy1i",0,0,0)~	~~
+	END
+BUT_ONLY IF_EXISTS
+
 //EoF
