@@ -448,5 +448,42 @@ Saving Throw: None
 
 This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.~
 	@9999116 = ~Courage~
-	
+	@9999117 = ~Symbol, Hopelessness~
+	@9999118 = ~Symbol, Hopelessness
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Darkness
+Range: Visual range of the caster
+Duration: 2 turns
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Hopelessness is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Save vs. Spell with a -2 penalty or stand in place, overwhelmed by dejection and surrender. They will make no move to defend themselves from attack. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+	@9999119 = ~Emotion, Hopelessness~
+	@9999120 = ~Emotion, Hopelessness
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: Neg.
+
+This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+	@9999121 = ~Emotion, Hope~
+	@9999122 = ~Emotion, Hope
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 1 hour
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.~
+	@9999123 = ~Hope~
 // EoF
