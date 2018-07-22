@@ -1,7 +1,7 @@
 //Bless for non-Evil only
 
 COPY_EXISTING ~SPPR101.SPL~	override
-WRITE_LONG 0x18 (THIS BOR 0x2)
+WRITE_LONG 0x1e (THIS BOR 0x2)
 
 
 //PnP Spell Progression for Icewind Dale | Curse for non-Good only
@@ -13,7 +13,7 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
 	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
 	
 COPY_EXISTING ~SPPR116.SPL~ override
-WRITE_LONG 0x18 (THIS BOR 0x4)
+WRITE_LONG 0x1e (THIS BOR 0x4)
 	  
 END
 
