@@ -73,39 +73,91 @@ COPY "DeitiesOfFaerun\Spl\RASUNE4.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED
 
 COPY "DeitiesOfFaerun\Tables\RASUNE4.2da" override                                                           //Emotion 2da
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+//Fear
 
-COPY ~DeitiesOfFaerun\Spl\Import\Sune\Complement~ override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_FEAR~	RET	spell_res	END
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO255.PRO~
+APPEND ~RASune4.2da~ ~FEAR %spell_res% 3~
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Sune\Complement\IDPRO407.PRO~
+END ELSE BEGIN
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@111) STR_VAR bam_file = COURAGIC RET iconcoura = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI427.spl" override SAY NAME1 @108                                    //Emotion: Courage
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconcoura END
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/IDPRO255.PRO~
 
-COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI428.spl" override SAY NAME1 @109                                    //Emotion: Fear
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionFear/SPWI428.spl~  ~override~
+SAY NAME1 @9999112 SAY NAME2 @9999112 SAY UNIDENTIFIED_DESC @9999113 SAY DESC @9999113
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@112) STR_VAR bam_file = HOPEIC RET iconhope = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Sune\RAWI429.spl" override SAY NAME1 @110                                    //Emotion: Hope
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 186 parameter2 = iconhope END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428C.BAM~	~override~
 
-COPY_EXISTING ~SPWI411.spl~ ~override\SPWI411S.spl~                                                           //Emotion: Hopelessness (consistent radius fix)
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
-SAY UNIDENTIFIED_DESC @113
+APPEND ~RASune4.2da~ ~FEAR SPWI428 3~
 
 END
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN                                                                               //Emotion, Hopelessness (IWDEE)
+//Courage
 
-COPY_EXISTING ~SPWI411.spl~ ~override\SPWI411S.spl~
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_COURAGE~	RET	spell_res	END
+
+APPEND ~RASune4.2da~ ~COURAGE %spell_res% 3~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/IDPRO407.PRO~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999116) STR_VAR bam_file = RACOURAG RET iconcour = icon END
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427.spl~ ~override~
+SAY NAME1 @9999114 SAY NAME2 @9999114 SAY UNIDENTIFIED_DESC @9999115 SAY DESC @9999115
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
+LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconcour END
+LPF	DELETE_EFFECT	   STR_VAR match_resource = ~SPIN115~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427C.BAM~	~override~
+
+APPEND ~RASune4.2da~ ~COURAGE SPWI428 3~
 
 END
+
+//Hopelessness
+
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI411.spl~ override
+SAY NAME1 @9999119 SAY NAME2 @9999119 SAY UNIDENTIFIED_DESC @9999120 SAY DESC @9999120
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%"  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL "%RA_Hopeless%" END
+
+APPEND ~RASune4.2da~ ~HOPELESSNESS SPWI411 3~
+
+//Hope
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_HOPE~	RET	spell_res	END
+
+APPEND ~RASune4.2da~ ~HOPE %spell_res% 3~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/IDPRO407.PRO~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999123) STR_VAR bam_file = RAHOPE RET iconhope = icon END
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI429.spl~ ~override~
+SAY NAME1 @9999121 SAY NAME2 @9999121 SAY UNIDENTIFIED_DESC @9999122 SAY DESC @9999122
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
+LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 186 parameter2 = iconhope END
+LPF	DELETE_EFFECT	   STR_VAR match_resource = ~SPIN115~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429B.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429C.BAM~	~override~
+
+APPEND ~RASune4.2da~ ~HOPE SPWI428 3~
+
+END
+
+COPY_EXISTING ~RASUNE4.2da~ ~override~
+PRETTY_PRINT_2DA
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
