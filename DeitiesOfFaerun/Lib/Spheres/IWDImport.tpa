@@ -790,12 +790,14 @@ END
 
 //Emotion, Hopelessness
 
-COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI411.spl~ override
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHopelessness/IDPRO255.PRO~
+
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHopelessness/SPWI411.spl~ override
 SAY NAME1 @9999119 SAY NAME2 @9999119 SAY UNIDENTIFIED_DESC @9999120 SAY DESC @9999120
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%"  END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL "%RA_Hopeless%" END
-LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI429~ resource = ~XXWI429~ END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI429~ resource = ~XXWI429~    END
 
 //Emotion, Hope
 
