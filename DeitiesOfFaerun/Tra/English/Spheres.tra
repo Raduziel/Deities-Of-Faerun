@@ -435,5 +435,18 @@ Area of Effect: 7-ft. radius
 Saving Throw: Neg.
 
 This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.~
+	@9999114 = ~Emotion, Courage~
+	@9999115 = ~Emotion, Courage
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 1 hour
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.~
+	@9999116 = ~Courage~
 	
 // EoF
