@@ -67,7 +67,7 @@ ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Curse/SPPR112.spl~ 1 1 CLERIC_CURS
 SAY NAME1 @999946 SAY NAME2 @999946 SAY UNIDENTIFIED_DESC @999947 SAY DESC @999947
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-WRITE_LONG	    0x18 (THIS BOR 0x4)
+WRITE_LONG	    0x1e (THIS BOR 0x4)
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO237% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
@@ -713,7 +713,7 @@ SAY NAME1 @9999110 SAY NAME2 @9999110 SAY UNIDENTIFIED_DESC @9999110 SAY DESC @9
 
 END
 
-//Emotion: Fear
+//Emotion, Fear
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_EMOTION_FEAR~) BEGIN
 
@@ -721,23 +721,107 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/IDPRO255.PRO~
 
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionFear/SPWI428.spl~ 2 4 WIZARD_EMOTION_FEAR
 SAY NAME1 @9999112 SAY NAME2 @9999112 SAY UNIDENTIFIED_DESC @9999113 SAY DESC @9999113
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~WIZARD_EMOTION_FEAR~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-OUTER_SPRINT	$res_of_label(~WIZARD_EMOTION_FEAR~) ~%spell_res%~
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
 LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
-LPF	ALTER_EFFECT	   INT_VAR match_opcode = 321 STR_VAR resource = EVAL $res_of_label(~WIZARD_EMOTION_COURAGE~)	END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI427~ resource = ~XXWI427~ END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428C.BAM~	~override\%spell_res%C.BAM~
 
 END
 
-//Lance of Disruption
+//Emotion, Courage
 
-//Force Missiles
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_EMOTION_COURAGE~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/IDPRO407.PRO~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999116) STR_VAR bam_file = RACOURAG RET iconcour = icon END
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427.spl~ 2 4 WIZARD_EMOTION_COURAGE
+SAY NAME1 @9999114 SAY NAME2 @9999114 SAY UNIDENTIFIED_DESC @9999115 SAY DESC @9999115
+TEXT_SPRINT	 spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 187 parameter2 = iconcour END
+LPF	ALTER_EFFECT	   INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI428~ resource = EVAL $res_of_label(~WIZARD_EMOTION_FEAR~)	END
+LPF	DELETE_EFFECT	   STR_VAR match_resource = ~SPIN115~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING ~%res_of_label_%WIZARD_EMOTION_FEAR%.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI427~ resource = EVAL ~%spell_res%~ END
+
+//Symbol, Hopelessness
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_SYMBOL_OF_HOPELESSNESS~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/IDPRO277.PRO~
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/ICEHIT.PRO~
+
+COPY_EXISTING	~IDPRO277.PRO~	~override~
+WRITE_SHORT 0x0214 ICGHIT
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716.spl~ 1 7 CLERIC_SYMBOL_OF_HOPELESSNESS
+SAY NAME1 @9999117 SAY NAME2 @9999117 SAY UNIDENTIFIED_DESC @9999118 SAY DESC @9999118
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_SYMBOL_OF_HOPELESSNESS~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO277% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%"  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL "%RA_Hopeless%" END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Emotion, Hopelessness
+
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI411.spl~ override
+SAY NAME1 @9999119 SAY NAME2 @9999119 SAY UNIDENTIFIED_DESC @9999120 SAY DESC @9999120
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%"  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL "%RA_Hopeless%" END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI429~ resource = ~XXWI429~ END
+
+//Emotion, Hope
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_EMOTION_HOPE~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/IDPRO407.PRO~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999123) STR_VAR bam_file = RAHOPE RET iconhope = icon END
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI429.spl~ 2 4 WIZARD_EMOTION_HOPE
+SAY NAME1 @9999121 SAY NAME2 @9999121 SAY UNIDENTIFIED_DESC @9999122 SAY DESC @9999122
+TEXT_SPRINT	 spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO407% END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 186 parameter2 = iconhope END
+LPF	ALTER_EFFECT	   INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPPR716~ resource = EVAL $res_of_label(~CLERIC_SYMBOL_OF_HOPELESSNESS~)	END
+LPF	DELETE_EFFECT	   STR_VAR match_resource = ~SPIN115~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING ~SPWI411.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI429~ resource = EVAL ~%spell_res%~ END
+
+//Force Missiles - alterar Shield!
+
+//Lance of Disruption
 
 //Spike Growth
 
