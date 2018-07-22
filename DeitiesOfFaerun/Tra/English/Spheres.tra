@@ -410,5 +410,19 @@ Area of Effect: 8 ft. long, 2 ft. wide wall
 Saving Throw: None
 
 This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d10 magic damage; evil undead creatures take 5d10. A creature that has passed through the wall can only take damage from it once.~
+	@9999110 = ~Star Metal Cudgel~
+	@9999111 = ~Star Metal Cudgel
+(Conjuration)
+
+Level: 4
+Sphere: Creation
+Range: 0
+Duration: 3 turns
+Casting Time: 7
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a meteoric iron magical club that deals 1d6+2 points of crushing damage, confers a +2 bonus to attack rolls, and is treated as a +4 weapon for purposes of what it can hit. Strength, proficiency, and specialization bonuses and penalties apply normally. The club deals an additional 2d6 points of crushing damage against unnatural creatures (undead, elementals, golems, outer-planar creatures, etc.).~
+	
 	
 // EoF
