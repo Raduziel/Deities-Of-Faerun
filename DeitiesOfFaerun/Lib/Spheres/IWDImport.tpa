@@ -759,6 +759,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427C.BAM~	~override\
 COPY_EXISTING ~%res_of_label_%WIZARD_EMOTION_FEAR%.spl~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI427~ resource = EVAL ~%spell_res%~ END
 
+END
+
 //Symbol, Hopelessness
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_SYMBOL_OF_HOPELESSNESS~) BEGIN
@@ -818,6 +820,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429C.BAM~	~override\%sp
 
 COPY_EXISTING ~SPWI411.spl~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI429~ resource = EVAL ~%spell_res%~ END
+
+END
 
 //Force Missiles - alterar Shield!
 
