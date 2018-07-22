@@ -657,7 +657,7 @@ LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/MOONBLA.ITM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/MOONBLA.ITM~	~override~
 SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999106 SAY DESC @9999106
 
 END
