@@ -26,7 +26,6 @@
 		OUTER_SPRINT		$access_spells(~Vocal~)				~RASP25~
 		
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_CLERIC~)	BEGIN
-		~All~ => 7
 		~Healing~ => 7
 		~Protection~ => 7
 		~Sun~ => 7
