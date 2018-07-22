@@ -649,7 +649,7 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_MOONBLADE~) BEGIN
 
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322.spl~ 1 3 CLERIC_MOONBLADE
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/Moonblade/SPPR322.spl~ 1 3 CLERIC_MOONBLADE
 SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999107 SAY DESC @9999107
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
@@ -670,7 +670,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_WALL_OF_MOONLIGHT~) BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/WOMOON.PRO~
 
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322.spl~ 1 4 CLERIC_WALL_OF_MOONLIGHT
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR428.spl~ 1 4 CLERIC_WALL_OF_MOONLIGHT
 SAY NAME1 @9999108 SAY NAME2 @9999108 SAY UNIDENTIFIED_DESC @9999109 SAY DESC @9999109
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
@@ -681,14 +681,14 @@ LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE
 LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~	END
 
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR428B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR428C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322A.spl~	~override\%spell_res%A.spl~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR428A.spl~	~override\%spell_res%A.spl~
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR322~	      resource = EVAL ~%spell_res%~	    END
 LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%A~	END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR322B.spl~	~override\%spell_res%B.spl~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/WallofMoonlight/SPPR428B.spl~	~override\%spell_res%B.spl~
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR322~	      resource = EVAL ~%spell_res%~	    END
 LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
 
