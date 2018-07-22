@@ -719,17 +719,19 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_EMOTION_FEAR~) BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/IDPRO255.PRO~
 
-ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionFear/SPPR428.spl~ 2 4 WIZARD_EMOTION_FEAR
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionFear/SPWI428.spl~ 2 4 WIZARD_EMOTION_FEAR
 SAY NAME1 @9999112 SAY NAME2 @9999112 SAY UNIDENTIFIED_DESC @9999113 SAY DESC @9999113
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+OUTER_SPRINT	$res_of_label(~WIZARD_EMOTION_FEAR~) ~%spell_res%~
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
 LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
+LPF	ALTER_EFFECT	   INT_VAR match_opcode = 321 STR_VAR resource = EVAL $res_of_label(~WIZARD_EMOTION_COURAGE~)	END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPPR428B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPPR428C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428C.BAM~	~override\%spell_res%C.BAM~
 
 END
 
@@ -746,6 +748,10 @@ END
 //Wither
 
 //Seven Eyes
+
+//Spike Stones
+
+//Iron Body
 
 //Produce Fire
 
