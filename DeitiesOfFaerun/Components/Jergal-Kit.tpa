@@ -65,20 +65,22 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_UNDEAD_WARD[ %TAB
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_UNDEAD_WARD~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG3.spl~
-SAY NAME1 @9999100 SAY UNIDENTIFIED_DESC @9999101
 LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/UWARD.PRO~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521.spl~  ~override/RAJERG3.spl~
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521.spl~ 1 5 CLERIC_UNDEAD_WARD
 SAY NAME1 @9999100 SAY NAME2 @9999100 SAY UNIDENTIFIED_DESC @9999101 SAY DESC @9999101
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %UWARD% END
-LPM ~SPELL_TO_INNATE~
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override\%spell_res%C.BAM~
 
 END
 

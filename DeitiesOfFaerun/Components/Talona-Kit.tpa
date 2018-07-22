@@ -74,20 +74,26 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CLOUD_OF_PESTILEN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CLOUD_OF_PESTILENCE~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA5.spl~
-SAY NAME1 @999987 SAY UNIDENTIFIED_DESC @999988
 LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/IDPRO309.PRO~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423.spl~ ~override/RATLNA5.spl~
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423.spl~ 1 4 CLERIC_CLOUD_OF_PESTILENCE
 SAY NAME1 @999987 SAY NAME2 @999987 SAY UNIDENTIFIED_DESC @999988 SAY DESC @999988
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO309% END
-LPM ~SPELL_TO_INNATE~
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37800 parameter1 = EVAL "%RA_Blinded%" END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423B.BAM~	~override~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423C.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA5.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 

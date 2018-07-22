@@ -81,13 +81,12 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = ic
 COPY "DeitiesOfFaerun\Spl\RALovi42.spl" override
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
-//Symbol, Pain (RALOVI5)
+//Symbol, Pain
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SYMBOL_OF_PAIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SYMBOL_OF_PAIN~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RALovi5.spl~
-SAY NAME1 @999991 SAY UNIDENTIFIED_DESC @999992
 LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
@@ -100,15 +99,21 @@ COPY_EXISTING	~ICEGLYP.PRO~	~override~
 WRITE_SHORT 0x0214 ICGHIT
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714.spl~ ~override/RALovi5.spl~
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714.spl~ 1 7 CLERIC_SYMBOL_OF_PAIN
 SAY NAME1 @999991 SAY NAME2 @999991 SAY UNIDENTIFIED_DESC @999992 SAY DESC @999992
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %ICEGLYP% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2214) END
 LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 169 parameter2 = iconpain END
-LPM ~SPELL_TO_INNATE~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714C.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RALovi5.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 

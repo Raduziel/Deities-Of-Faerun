@@ -59,7 +59,6 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PRAYER[ %TAB%%WNL
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PRAYER~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP1.spl~
-SAY NAME1 @999948 SAY UNIDENTIFIED_DESC @999949
 LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
@@ -68,12 +67,15 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/OHVRNP.PRO~
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/OHVRPO.PRO~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316.spl~    ~override/RATEMP1.spl~
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316.spl~ 1 3 CLERIC_PRAYER
 SAY NAME1 @999948 SAY NAME2 @999948 SAY UNIDENTIFIED_DESC @999949 SAY DESC @999949
-LPM ~SPELL_TO_INNATE~
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316B.BAM~	~override~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316C.BAM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316C.BAM~	~override\%spell_res%C.BAM~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERB.SPL~ override
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRNP% END
@@ -84,6 +86,9 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERG.SPL~ override
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40256 parameter1 = EVAL "%RA_Bonus%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 183   parameter2 = iconpray END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP1.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 
