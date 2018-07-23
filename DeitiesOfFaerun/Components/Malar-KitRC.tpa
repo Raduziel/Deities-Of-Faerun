@@ -18,7 +18,7 @@ ADD_KIT ~RAMalaRC~
 	~K_CR_H K_CR_HO~
 	~0x00000000 18~
 	~CR0~
-	~LEAT21 * HELM14 * RING09 RING31 CLCK04 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * * HAMM09 *~
+	~LEAT21 * HELM14 * RING09 RING31 CLCK04 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * RAMALARA HAMM09 *~
 	SAY @1801
 	SAY @1802
 	SAY @1803
@@ -64,11 +64,13 @@ LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAMala + 0x4000)
+			  parameter1 = (RAMalaRC + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  power = 1
 END
+
+COPY "DeitiesOfFaerun\Spl\RAMALAR.spl" ~override~
 		  
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
