@@ -6,7 +6,6 @@ ALWAYS
 
 	INCLUDE ~DeitiesOfFaerun/Lib/fl#add_kit_ee.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/RA_VariablesDoF.tpa~
-	INCLUDE ~DeitiesOfFaerun/Lib/spell_to_innate.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/CDCodes.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/KjeronReplaceDLG.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/Spheres/F(x).tpa~
