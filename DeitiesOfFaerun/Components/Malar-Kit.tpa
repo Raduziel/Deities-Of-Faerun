@@ -18,7 +18,7 @@ ADD_KIT ~RAMala~
 	~K_C_H K_C_HO~
 	~0x00000000 3~
 	~Cl0~
-	~LEAT21 * HELM14 * RING09 RING31 CLCK04 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * * HAMM09 *~
+	~LEAT21 * HELM14 * RING09 RING31 CLCK04 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * RAMALACL HAMM09 *~
 	SAY @1801
 	SAY @1802
 	SAY @1803
@@ -40,7 +40,7 @@ END
 COPY "DeitiesOfFaerun\Spl\RAHSMALA.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSMALA.itm" override SAY NAME1 @1810 SAY NAME2 @1810 SAY DESC @1811
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSMALA.itm" override SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
@@ -50,6 +50,8 @@ LPF ADD_ITEM_EQEFFECT
 			  timing = 2
 			  power = 1
 END
+
+COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALACS.SPL" override
 
 COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALACL.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
 LPF ADD_ITEM_EQEFFECT
@@ -62,39 +64,69 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 END
 
-COPY "DeitiesOfFaerun\Spl\RAMALAC.spl" ~override~  SAY NAME1 @1804 SAY UNIDENTIFIED_DESC @1805
-COPY "DeitiesOfFaerun\Spl\RAMALAR.spl" ~override~  SAY NAME1 @1804 SAY UNIDENTIFIED_DESC @1805
+COPY "DeitiesOfFaerun\Spl\RAMALAC.spl" ~override~
 
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALACS.SPL" override		  
-		  
 COPY "DeitiesOfFaerun\Spl\RAMALAF.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Charmed%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-		  
-COPY "DeitiesOfFaerun\Spl\Import\Malar\Complement" override
+//Beast Claw
 
-COPY "DeitiesOfFaerun\Spl\Import\Malar\BCLAW.ITM" override SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BEAST_CLAW[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BEAST_CLAW~	RET	spell_res	END
 
-COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR219.SPL" ~override/RAMALA1.SPL~  SAY NAME1 @1806 SAY UNIDENTIFIED_DESC @1807
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA1.spl~
+LPM ~SPELL_TO_INNATE~
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1808) STR_VAR bam_file = ANRAGEIC RET iconrage = icon END
-COPY "DeitiesOfFaerun\Spl\Import\Malar\RAPR522.SPL" ~override/RAMALA2.SPL~  SAY NAME1 @1808 SAY UNIDENTIFIED_DESC @1809
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 173 parameter2 = iconrage END
-LPM SPELL_TO_INNATE
+END ELSE BEGIN
+
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/BeastClaw/SPPR219.spl~ 1 2 CLERIC_BEAST_CLAW
+SAY NAME1 @9999128 SAY NAME2 @9999128 SAY UNIDENTIFIED_DESC @9999129 SAY DESC @9999129
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/BCLAW.ITM~	~override~
+SAY NAME1 @9999128 SAY NAME2 @9999128 SAY UNIDENTIFIED_DESC @9999128 SAY DESC @9999128
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA1.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN
+//Animal Rage
 
-COPY_EXISTING ~SPPR219.spl~ ~override/RAMALA1.SPL~
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMAL_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_RAGE~	RET	spell_res	END
 
-COPY_EXISTING ~SPPR522.spl~ ~override/RAMALA2.SPL~
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999130) STR_VAR bam_file = RARAGEIC RET iconrage = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522.spl~ 1 5 CLERIC_ANIMAL_RAGE
+SAY NAME1 @9999130 SAY NAME2 @9999130 SAY UNIDENTIFIED_DESC @9999131 SAY DESC @9999131
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%B~  resource = EVAL ~%spell_res%B~	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 173   parameter2 = iconrage END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.spl~	~override\%spell_res%B.spl~
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%" END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA2.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 
@@ -167,6 +199,122 @@ COPY ~DeitiesOfFaerun\Itm\MalarClaw\%file%.bam~ ~override~
       source_file = EVAL ~DeitiesOfFaerun\Itm\MalarClaw\MOS%original_base_index%.pvrz~
     END
   END
-END	
+END
+
+ACTION_IF	GAME_IS ~bg2ee~	BEGIN
+
+<<<<<<<< .../inlined_script.baf
+IF
+	Global("RA_MALAR_IMPORT","LOCALS",0)
+		Kit(Player1,RAMALA)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALACL",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT","LOCALS",0)
+		Kit(Player1,RAMALARC)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALARA",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_2","LOCALS",0)
+		Kit(Player2,RAMALA)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_2","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALACL",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_2","LOCALS",0)
+		Kit(Player2,RAMALARC)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_2","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALARA",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_3","LOCALS",0)
+		Kit(Player3,RAMALA)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_3","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALACL",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_3","LOCALS",0)
+		Kit(Player3,RAMALARC)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_3","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALARA",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_4","LOCALS",0)
+		Kit(Player4,RAMALA)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_4","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALACL",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_4","LOCALS",0)
+		Kit(Player4,RAMALARC)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_4","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALARA",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_5","LOCALS",0)
+		Kit(Player5,RAMALA)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_5","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALACL",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_5","LOCALS",0)
+		Kit(Player5,RAMALARC)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_5","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALARA",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_6","LOCALS",0)
+		Kit(Player6,RAMALA)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_6","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALACL",0,0,0))
+		Continue()
+END
+IF
+	Global("RA_MALAR_IMPORT_6","LOCALS",0)
+		Kit(Player6,RAMALARC)
+THEN
+	RESPONSE #100
+		SetGlobal("RA_MALAR_IMPORT_6","LOCALS",1)
+		ActionOverride("Chest7",CreateItem("RAMALARA",0,0,0))
+		Continue()
+END
+
+>>>>>>>>
+EXTEND_BOTTOM ~AR0602.BCS~ ~.../inlined_script.baf~
+END
 
 //EoF
