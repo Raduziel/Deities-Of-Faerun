@@ -886,6 +886,47 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/LanceofDisruption/SPWI328C.BAM~	~overri
 
 END
 
+//Beast Claw
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_BEAST_CLAW~) BEGIN
+
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/BeastClaw/SPPR219.spl~ 1 2 CLERIC_BEAST_CLAW
+SAY NAME1 @9999128 SAY NAME2 @9999128 SAY UNIDENTIFIED_DESC @9999129 SAY DESC @9999129
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/BCLAW.ITM~	~override~
+SAY NAME1 @9999128 SAY NAME2 @9999128 SAY UNIDENTIFIED_DESC @9999128 SAY DESC @9999128
+
+END
+
+//Animal Rage
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_ANIMAL_RAGE~) BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999130) STR_VAR bam_file = RARAGEIC RET iconrage = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522.spl~ 1 5 CLERIC_ANIMAL_RAGE
+SAY NAME1 @9999130 SAY NAME2 @9999130 SAY UNIDENTIFIED_DESC @9999131 SAY DESC @9999131
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%B~  resource = EVAL ~%spell_res%B~	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 173   parameter2 = iconrage END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.spl~	~override\%spell_res%B.spl~
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%" END
+
+END
+
 //Spike Growth
 
 //Thorn Spray
