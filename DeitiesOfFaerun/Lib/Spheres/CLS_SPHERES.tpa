@@ -28,12 +28,13 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_CLERIC~)	BEGIN
 		~Healing~ => 7
 		~Protection~ => 7
-		~Sun~ => 7
+		~Sun~ => 3
+		~Moon~ => 3
 		~Thought~ => 7
 		~Combat~ => 7
-		~Creation~ => 7
+		~Creation~ => 3
 		~Divination~ => 7
-		~Travelers~ => 7
+		~Travelers~ => 3
 	END
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_PALADIN~)	BEGIN
 		~Combat~ => 4
@@ -44,13 +45,13 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_DRUID~)	BEGIN
 		~Healing~ => 3
 		~Animal~ => 7
-		~Vermin~ => 7
+		~Vermin~ => 3
 		~Plant~ => 7
 		~Sun~ => 3
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
-		~Fire~ => 7
+		~Fire~ => 3
 	END
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_RANGER~)	BEGIN
 		~Animal~ => 3

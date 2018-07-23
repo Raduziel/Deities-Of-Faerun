@@ -167,10 +167,10 @@
 		~Necromantic~ => 0
 		~Suffering~ => 0
 		~Animal~ => 7
-		~Vermin~ => 7
+		~Vermin~ => 0
 		~Plant~ => 7
 		~Protection~ => 0
-		~Sun~ => 0
+		~Sun~ => 3
 		~Moon~ => 0
 		~Darkness~ => 0
 		~Thought~ => 0
@@ -180,7 +180,7 @@
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
-		~Fire~ => 7
+		~Fire~ => 3
 		~Divination~ => 3
 		~Travelers~ => 0
 		~Weave~ => 0
@@ -204,8 +204,8 @@
 		~Combat~ => 3
 		~Creation~ => 0
 		~Summoning~ => 0
-		~Air~ => 7
-		~Water~ => 7
+		~Air~ => 3
+		~Water~ => 3
 		~Earth~ => 7
 		~Fire~ => 7
 		~Divination~ => 0
@@ -221,7 +221,7 @@
 		~Necromantic~ => 0
 		~Suffering~ => 0
 		~Animal~ => 7
-		~Vermin~ => 7
+		~Vermin~ => 3
 		~Plant~ => 7
 		~Protection~ => 0
 		~Sun~ => 0
@@ -234,7 +234,7 @@
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
-		~Fire~ => 7
+		~Fire~ => 3
 		~Divination~ => 0
 		~Travelers~ => 3
 		~Weave~ => 0

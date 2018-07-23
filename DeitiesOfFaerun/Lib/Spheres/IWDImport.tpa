@@ -825,7 +825,47 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI429~ r
 
 END
 
-//Force Missiles - alterar Shield!
+//Force Missiles - alterar Shield (SPWI114)
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_MORDENKAINENS_FORCE_MISSILES~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/MFMISS.PRO~
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SMLLAREA.PRO~
+
+LAF ADD_PROJECTL                   STR_VAR path = ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles~	file = ~MFMISS2~ missile = ~Force Missile 2~ RET mordy_2  = MFMISS2 END
+LAF ADD_PROJECTL INT_VAR clone = 1 STR_VAR path = ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles~	file = ~MFMISS2~ missile = ~Force Missile 2~ RET mordy_3  = MFMISS2 END
+LAF ADD_PROJECTL INT_VAR clone = 1 STR_VAR path = ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles~	file = ~MFMISS2~ missile = ~Force Missile 2~ RET mordy_4  = MFMISS2 END
+LAF ADD_PROJECTL INT_VAR clone = 1 STR_VAR path = ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles~	file = ~MFMISS2~ missile = ~Force Missile 2~ RET mordy_5  = MFMISS2 END
+LAF ADD_PROJECTL INT_VAR clone = 1 STR_VAR path = ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles~	file = ~MFMISS2~ missile = ~Force Missile 2~ RET mordy_6  = MFMISS2 END
+LAF ADD_PROJECTL INT_VAR clone = 1 STR_VAR path = ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles~	file = ~MFMISS2~ missile = ~Force Missile 2~ RET mordy_7  = MFMISS2 END
+
+ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430.spl~ 2 4 WIZARD_MORDENKAINENS_FORCE_MISSILES
+SAY NAME1 @9999124 SAY NAME2 @9999124 SAY UNIDENTIFIED_DESC @9999125 SAY DESC @9999125
+TEXT_SPRINT	 spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+FOR (i = 1;  i < 4; ++i)   BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = MFMISS   END END
+FOR (i = 4;  i < 7; ++i)   BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_2  END END
+FOR (i = 7;  i < 10; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_3  END END
+FOR (i = 10; i < 13; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_4  END END
+FOR (i = 13; i < 16; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_5  END END
+FOR (i = 16; i < 19; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_6  END END
+FOR (i = 19; i < 24; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_7  END END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430B.spl~    ~override\%spell_res%B.spl~
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %SMLLAREA% END
+
+COPY_EXISTING ~SPWI114.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 1 power = 1 resist_dispel = 3 duration = 30  STR_VAR resource = ~%SOURCE_RES%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 1 power = 1 resist_dispel = 3 duration = 30  STR_VAR resource = ~%SOURCE_RES%B~ END
+
+END
 
 //Lance of Disruption
 
