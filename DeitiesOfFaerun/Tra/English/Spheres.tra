@@ -536,5 +536,7 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell imbues the target creature with animal ferocity. The target creature gains a Strength score of 19, +20 Hit Points, +20% movement rate, and a +2 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect; when enemies are within sight, <PRO_HESHE> immediately attacks in melee, using whatever is in hand. While this spell is in effect, there is a 5% chance per round that the target will go berserk, attacking friend and foe alike.~ 
+	@9999132 = ~Alicorn Lance~
+	@9999133 = ~Alicorn Lance~
 
 // EoF
