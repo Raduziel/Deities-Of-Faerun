@@ -852,8 +852,8 @@ FOR (i = 10; i < 13; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i proje
 FOR (i = 13; i < 16; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_5  END END
 FOR (i = 16; i < 19; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_6  END END
 FOR (i = 19; i < 24; ++i)  BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = mordy_7  END END
-LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
-LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~ END
+LPF	ALTER_EFFECT      STR_VAR silent = 1   match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF	ALTER_EFFECT      STR_VAR silent = 1   match_resource = EVAL ~%SOURCE_RES%B~  resource = EVAL ~%spell_res%B~ END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430C.BAM~	~override\%spell_res%C.BAM~
@@ -868,6 +868,22 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" tar
 END
 
 //Lance of Disruption
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_LANCE_OF_DISRUPTION~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/LanceofDisruption/IDPRO313.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/LanceofDisruption/SPWI328.spl~ 2 4 WIZARD_LANCE_OF_DISRUPTION
+SAY NAME1 @999948 SAY NAME2 @999948 SAY UNIDENTIFIED_DESC @999949 SAY DESC @999949
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO313% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/LanceofDisruption/SPWI328B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/LanceofDisruption/SPWI328C.BAM~	~override\%spell_res%C.BAM~
+
+END
 
 //Spike Growth
 
