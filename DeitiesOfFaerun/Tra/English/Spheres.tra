@@ -498,4 +498,17 @@ Area of Effect: 2-ft. radius
 Saving Throw: Special
 
 This spell creates a brilliant globe of magical energy that streaks forth from the caster's hand to unerringly strike its target, much like a Magic Missile spell. The wizard creates one missile at 7th level and an additional missile at every third level after 7th—in other words, two missiles at 10th level, three at 13th, four at 16th, and so on, to a maximum of seven missiles at 25th level. Each missile inflicts 2d4 points of damage to the target and then bursts in a 2-ft. radius concussive blast that inflicts 1 point of damage per level of the caster—for example, a 12th-level wizard could conjure two force missiles, each of which strikes for 2d4+12 points of magic damage. Creatures taking damage can attempt a Save vs. Spell to negate the concussion damage, but the impact of the missile itself allows no Saving Throw. The 1st-level wizard spell Shield will absorb the force missiles harmlessly, including the concussion damage.~
+	@9999126 = ~Lance of Disruption~
+	@9999127 = ~Lance of Disruption
+(Invocation)
+
+Level: 3
+Range: 100 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: Special
+Saving Throw: 1/2
+
+This spell shoots a lance of force, which travels from the caster to a specified point 100 ft. in the distance. Any creatures in the lance's path take 5d4 points of crushing damage plus 2 points of damage per level of the caster (maximum of +30). Victims can save vs. Spell for half damage.~
+
 // EoF
