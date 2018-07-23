@@ -35,6 +35,8 @@ OUTER_SET RA_Slowed = (GAME_IS ~bgee~) ? 11799 : GAME_IS ~bg2ee eet~ ? 335 : (GA
 OUTER_SET RA_Slow = (GAME_IS ~bgee~) ? 12081 : GAME_IS ~bg2ee eet~ ? 11799 : (GAME_IS ~iwdee~) ? 37638 : 0          // Slow
 OUTER_SET RA_Hasted = (GAME_IS ~bgee~) ? 10954 : GAME_IS ~bg2ee eet~ ? 14023 : (GAME_IS ~iwdee~) ? 36035 : 0        // Hasted
 
+OUTER_SET RA_SpellInef = (GAME_IS ~bgee~) ? 24534 : GAME_IS ~bg2ee eet~ ? 4742 : (GAME_IS ~iwdee~) ? 4742 : 0       // Spell Ineffective
+
 OUTER_SET RA_Bonus = (GAME_IS ~bgee~) ? 81649 : GAME_IS ~bg2ee eet~ ? 103226 : (GAME_IS ~iwdee~) ? 40256 : 0        // Combat Bonuses
 OUTER_SET RA_Penalty = (GAME_IS ~bgee~) ? 81650 : GAME_IS ~bg2ee eet~ ? 103227 : (GAME_IS ~iwdee~) ? 40257 : 0      // Combat Penalties
 
