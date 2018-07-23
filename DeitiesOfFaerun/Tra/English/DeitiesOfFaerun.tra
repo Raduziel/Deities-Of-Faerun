@@ -1193,11 +1193,11 @@ Advantages:
 - Becomes immune to Charm effects, starting at level 7.
 - May cast Animal Rage once per day as a special ability, starting at level 10.
 
-CLAWS OF MALAR
+CLAW OF MALAR
 
-This weapon is a pair of magical claws that the Talon can use on <PRO_HISHER> bare hands or over a glove.~
-@1804 = ~Claws of Malar~
-@1805 = ~These claws are given by the Church of Malar to its elected Talons. They consist of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like lion's claws. Despite being uncomfortable, it is possible to wear a glove under the claws.
+This weapon is a magical claw that the Talon can use on <PRO_HISHER> bare hands or over a glove.~
+@1804 = ~Claw of Malar~
+@1805 = ~This claw is given by the Church of Malar to its elected Talons. It consists of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like lion's claws. Despite being uncomfortable, it is possible to wear a glove under the claws.
 
 STATISTICS:
 
