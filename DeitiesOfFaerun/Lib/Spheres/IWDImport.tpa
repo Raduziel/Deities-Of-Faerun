@@ -929,7 +929,23 @@ END
 
 //Alicorn Lance
 
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_ALICORN_LANCE~) BEGIN
 
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/AlicornLance/IDPRO298.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/AlicornLance/SPPR218.spl~ 1 2 CLERIC_ALICORN_LANCE
+SAY NAME1 @9999132 SAY NAME2 @9999132 SAY UNIDENTIFIED_DESC @9999133 SAY DESC @9999133
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO298%      END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 21646 parameter1 = RESOLVE_STR_REF(@9999134) END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AlicornLance/SPPR218B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AlicornLance/SPPR218C.BAM~	~override\%spell_res%C.BAM~
+
+END
 
 //Spike Growth
 
