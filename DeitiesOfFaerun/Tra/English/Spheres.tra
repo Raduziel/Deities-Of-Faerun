@@ -523,5 +523,18 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell transforms the caster's arms into the claws of a mighty beast, giving the caster 18/72 Strength and the ability to rake an opponent for 2d4 (plus Strength bonus) points of slashing damage. The caster can attack twice per round with the beast claws, with a +2 bonus to hit.~
+	@9999130 = ~Animal Rage~
+	@9999131 = ~Animal Rage
+(Enchantment)
+
+Level: 5
+Sphere: Animal
+Range: Touch
+Duration: 15 rounds
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell imbues the target creature with animal ferocity. The target creature gains a Strength score of 19, +20 Hit Points, +20% movement rate, and a +2 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect; when enemies are within sight, <PRO_HESHE> immediately attacks in melee, using whatever is in hand. While this spell is in effect, there is a 5% chance per round that the target will go berserk, attacking friend and foe alike.~ 
 
 // EoF
