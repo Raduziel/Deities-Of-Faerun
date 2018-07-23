@@ -376,14 +376,14 @@
 	ACTION_IF	FILE_EXISTS_IN_GAME	~%MOD_PREFIX%SPHERE.tpa~	BEGIN
 		COPY_EXISTING	~%MOD_PREFIX%SPHERE.tpa~	override
 			LPF	INSERT_ASCII	INT_VAR	offset = 0
-				STR_VAR	string = EVAL	"OUTER_SPRINT	MOD_PREFIX	~%MOD_PREFIX%~%WNL%OUTER_SET divineSpheres = %divineSpheres%%WNL%OUTER_SET natureSpheres = %natureSpheres%"
+				STR_VAR	string = EVAL	"%WNL%OUTER_SPRINT	MOD_PREFIX	~%MOD_PREFIX%~%WNL%OUTER_SET divineSpheres = %divineSpheres%%WNL%OUTER_SET natureSpheres = %natureSpheres%%WNL%"
 			END
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\CLS_SPHERES.tpa~
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	END	ELSE	BEGIN
 		COPY	~%MOD_FOLDER%\%FILE_PATH%\__SPHERE.tpa~	~override\%MOD_PREFIX%SPHERE.tpa~
 			LPF	INSERT_ASCII	INT_VAR	offset = 0
-				STR_VAR	string = EVAL	"OUTER_SPRINT	MOD_PREFIX	~%MOD_PREFIX%~%WNL%OUTER_SET divineSpheres = %divineSpheres%%WNL%OUTER_SET natureSpheres = %natureSpheres%"
+				STR_VAR	string = EVAL	"%WNL%OUTER_SPRINT	MOD_PREFIX	~%MOD_PREFIX%~%WNL%OUTER_SET divineSpheres = %divineSpheres%%WNL%OUTER_SET natureSpheres = %natureSpheres%%WNL%"
 			END
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\CLS_SPHERES.tpa~
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
