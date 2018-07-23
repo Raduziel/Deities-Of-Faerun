@@ -58,6 +58,8 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EV
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
 		  
+
+		  
 COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALACL.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
@@ -68,7 +70,8 @@ LPF ADD_ITEM_EQEFFECT
 			  timing = 2
 			  power = 1
 END
-		  
+
+COPY "DeitiesOfFaerun\Spl\RAMALAC.spl" ~override~  SAY NAME1 @1804 SAY UNIDENTIFIED_DESC @1805
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 		  
