@@ -510,5 +510,18 @@ Area of Effect: Special
 Saving Throw: 1/2
 
 This spell shoots a lance of force, which travels from the caster to a specified point 100 ft. in the distance. Any creatures in the lance's path take 5d4 points of crushing damage plus 2 points of damage per level of the caster (maximum of +30). Victims can save vs. Spell for half damage.~
+	@9999128 = ~Beast Claw~
+	@9999129 = ~Beast Claw
+(Alteration)
+
+Level: 2
+Sphere: Animal
+Range: 0
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transforms the caster's arms into the claws of a mighty beast, giving the caster 18/72 Strength and the ability to rake an opponent for 2d4 (plus Strength bonus) points of slashing damage. The caster can attack twice per round with the beast claws, with a +2 bonus to hit.~
 
 // EoF

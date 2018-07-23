@@ -1217,34 +1217,8 @@ Requires:
 12 Strength
 
 Weight: 5~
-@1806 = ~Beast Claw~
-@1807 = ~Beast Claw
-(Alteration)
-
-Level: 2
-Sphere: Animal
-Range: 0
-Duration: 1 turn
-Casting Time: 5
-Area of Effect: The caster
-Saving Throw: None
-
-This spell transforms the caster's arms into the claws of a mighty beast, giving the caster 18/72 Strength and the ability to rake an opponent for 2d4 (plus Strength bonus) points of slashing damage. The caster can attack twice per round with the beast claws, with a +2 bonus to hit.~
-@1808 = ~Animal Rage~
-@1809 = ~Animal Rage
-(Enchantment)
-
-Level: 5
-Sphere: Animal
-Range: Touch
-Duration: 15 rounds
-Casting Time: 8
-Area of Effect: One creature
-Saving Throw: None
-
-This spell imbues the target creature with animal ferocity. The target creature gains a Strength score of 19, +20 Hit Points, +20% movement rate, and a +2 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect; when enemies are within sight, <PRO_HESHE> immediately attacks in melee, using whatever is in hand. While this spell is in effect, there is a 5% chance per round that the target will go berserk, attacking friend and foe alike.~
-@1810 = ~Holy Symbol of Malar~
-@1811 = ~Only the most worthy and devoted servants of the Lord of the Beasts are granted these powerful holy symbols.
+@1806 = ~Holy Symbol of Malar~
+@1807 = ~Only the most worthy and devoted servants of the Lord of the Beasts are granted these powerful holy symbols.
 	
 STATISTICS:
 
