@@ -12,7 +12,7 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
 
 	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
 	
-COPY_EXISTING ~SPPR116.SPL~ override
+COPY_EXISTING ~SPPR112.SPL~ override
 WRITE_LONG 0x1e (THIS BOR 0x4)
 	  
 END
