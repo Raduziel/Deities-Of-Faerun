@@ -59,4 +59,8 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
+COMPILE ~DeitiesOfFaerun\Cre\Revenant\RAHoar4.baf~
+
+COMPILE ~DeitiesOfFaerun\Cre\Revenant\RAHoar41.baf~
+		  
 //EoF
