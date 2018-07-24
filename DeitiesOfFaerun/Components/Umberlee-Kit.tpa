@@ -53,7 +53,7 @@ LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 EN
 COPY "DeitiesOfFaerun\Spl\RAHSUMBE.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSUMBE.itm" override SAY NAME1 @1913 SAY NAME2 @1913 SAY DESC @1914
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSUMBE.itm" override SAY NAME1 @1908 SAY NAME2 @1908 SAY DESC @1909
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
