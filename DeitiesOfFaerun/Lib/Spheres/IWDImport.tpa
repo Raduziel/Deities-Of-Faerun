@@ -947,6 +947,76 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/AlicornLance/SPPR218C.BAM~	~override\%s
 
 END
 
+//Produce Fire
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_PRODUCE_FIRE~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/ProduceFire/IDPRO215.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ProduceFire/SPPR419.spl~ 1 4 CLERIC_PRODUCE_FIRE
+SAY NAME1 @9999135 SAY NAME2 @9999135 SAY UNIDENTIFIED_DESC @9999136 SAY DESC @9999136
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO215%      END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ProduceFire/SPPR419B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ProduceFire/SPPR419C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Shroud of Flames
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SHROUD_OF_FLAME~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/ShroudofFlames/IDSHROUD.PRO~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999137) STR_VAR bam_file = RAFLAMIC RET iconflam = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ShroudofFlames/SPWI524.spl~ 2 5 WIZARD_SHROUD_OF_FLAME
+SAY NAME1 @9999137 SAY NAME2 @9999137 SAY UNIDENTIFIED_DESC @9999138 SAY DESC @9999138
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 94   parameter2 = iconflam END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShroudofFlames/SPWI524B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShroudofFlames/SPWI524C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShroudofFlames/SPWI524B.spl~	~override\%spell_res%B.spl~
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDSHROUD% END
+LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
+
+END
+
+//Smashing Wave
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_SMASHING_WAVE~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SWAVE.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPWI426.spl~ 1 4 CLERIC_SMASHING_WAVE
+SAY NAME1 @9999139 SAY NAME2 @9999139 SAY UNIDENTIFIED_DESC @9999140 SAY DESC @9999140
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %SWAVE% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious" END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPWI426B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPWI426C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Conjure Water Elemental
+
+
+
+//Seven Eyes
+
 //Spike Growth
 
 //Thorn Spray
@@ -955,15 +1025,9 @@ END
 
 //Wither
 
-//Seven Eyes
-
 //Spike Stones
 
 //Iron Body
-
-//Produce Fire
-
-//Shroud of Flames
 
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA
