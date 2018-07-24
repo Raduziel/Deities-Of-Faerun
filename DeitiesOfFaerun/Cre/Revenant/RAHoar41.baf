@@ -1,0 +1,29 @@
+IF
+	!AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+IF
+	Exists("RAHoar4") 
+	StateCheck("RAHoar4",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		CreateCreatureEffect("RAHoar4","SPFEAREF",[-1.-1],S)
+		CreateCreature("RAHoar4",[-1.-1],S)
+END
+IF
+	!Exists("RAHoar4")
+THEN
+	RESPONSE #100
+		CreateCreatureEffect("RAHoar4","SPFEAREF",[-1.-1],S)
+		CreateCreature("RAHoar4",[-1.-1],S)
+END
+IF
+	True()
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+//EoF
