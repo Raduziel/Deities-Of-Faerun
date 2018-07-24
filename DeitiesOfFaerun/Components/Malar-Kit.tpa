@@ -126,6 +126,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522C.BAM~	~override\%spe
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.spl~	~override\%spell_res%B.spl~
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%" END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPPR522~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA2.spl~
 LPM ~SPELL_TO_INNATE~
