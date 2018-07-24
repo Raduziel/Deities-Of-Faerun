@@ -64,49 +64,17 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 		  
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+//Smashing Wave (RAUMBE1)
+		  
 
-COPY ~DeitiesOfFaerun\Spl\Import\Umberlee\Complement~ override
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\Import\Umberlee\Complement\RASWAVE.PRO~
+COPY ~DeitiesOfFaerun\Spl\RAUMBE2.SPL~ override SAY NAME1 @1904 SAY UNIDENTIFIED_DESC @1905
 
-COPY ~DeitiesOfFaerun\Spl\Import\Umberlee\RAPR426.SPL~ ~override/RAUMBE1.SPL~ SAY NAME1 @1904 SAY UNIDENTIFIED_DESC @1905
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASWAVE% END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 35568 match_opcode = 139 parameter1 = EVAL "%RA_Stunned%" END
-LPM SPELL_TO_INNATE
+COPY ~DeitiesOfFaerun\Spl\RAUMBE3.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907		  
 
-END
+//Conjure Water Elemental (RAUMBE4)
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN
 
-COPY ~DeitiesOfFaerun\Spl\Import\Umberlee\Complement\RAWI533b.BAM~ override
-
-COPY ~DeitiesOfFaerun\Spl\Import\Umberlee\Complement\RAWI533c.BAM~ override
-
-COPY_EXISTING ~SPPR426.SPL~ ~override/RAUMBE1.SPL~
-LPM SPELL_TO_INNATE
-
-END
-
-COPY ~DeitiesOfFaerun\Spl\RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907
-
-COPY ~DeitiesOfFaerun\Spl\RAUMBE3.SPL~ override SAY NAME1 @1908 SAY UNIDENTIFIED_DESC @1909		  
-
-COPY "DeitiesOfFaerun\Spl\RAUMBE4.spl" override SAY NAME1 @1910 SAY UNIDENTIFIED_DESC @1911
-
-COPY "DeitiesOfFaerun\Spl\RAUMB4E1.eff" override
-
-COPY "DeitiesOfFaerun\Spl\RAUMB4E2.eff" override
-
-COPY "DeitiesOfFaerun\Spl\RAUMB4E3.eff" override
-
-COPY "DeitiesOfFaerun\Cre\WaterElemental\Complement" override                                    //Water Elemental - animation, bam, sounds, itm
-
-COPY "DeitiesOfFaerun\Cre\WaterElemental\RAWatEl1.cre" override SAY NAME1 @1912 SAY NAME2 @1912  //Water Elemental - creature 12 HD
-
-COPY "DeitiesOfFaerun\Cre\WaterElemental\RAWatEl2.cre" override SAY NAME1 @1912 SAY NAME2 @1912  //Water Elemental - creature 16 HD
-
-COPY "DeitiesOfFaerun\Cre\WaterElemental\RAWatEl3.cre" override SAY NAME1 @1912 SAY NAME2 @1912  //Water Elemental - creature 24 HD
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
