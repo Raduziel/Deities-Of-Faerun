@@ -151,13 +151,86 @@ END
 
 <<<<<<<< .../inlined_script.baf
 IF
+	!AreaType(CITY)
+	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
 	Exists("RAHoar4")
 	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	!InActiveArea("RAHoar4")
-	!AreaType(CITY)
+	Global("RAHoar4_Owner","GLOBAL",1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	!TriggerOverride(Player1,InMyArea("RAHoar4"))
 THEN
 	RESPONSE #100
 		MoveGlobalObject("RAHoar4",Player1)
+		Continue()
+END
+
+IF
+	!AreaType(CITY)
+	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",2)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
+	!TriggerOverride(Player2,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player2)
+		Continue()
+END
+
+IF
+	!AreaType(CITY)
+	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",3)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
+	!TriggerOverride(Player3,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player3)
+		Continue()
+END
+
+IF
+	!AreaType(CITY)
+	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",4)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
+	!TriggerOverride(Player4,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player4)
+		Continue()
+END
+
+IF
+	!AreaType(CITY)
+	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",5)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
+	!TriggerOverride(Player5,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player5)
+		Continue()
+END
+
+IF
+	!AreaType(CITY)
+	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",6)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
+	!TriggerOverride(Player6,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player6)
 		Continue()
 END
 
