@@ -104,8 +104,6 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMAL_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_RAGE~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
-
 COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA2.spl~
 LPM ~SPELL_TO_INNATE~
 
@@ -126,8 +124,6 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522C.BAM~	~override\%spe
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.spl~	~override\%spell_res%B.spl~
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%" END
-
-COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA2.spl~
 LPM ~SPELL_TO_INNATE~
