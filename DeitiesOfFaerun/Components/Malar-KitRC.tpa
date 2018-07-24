@@ -7,7 +7,7 @@
 
 ADD_KIT ~RAMalaRC~
     ~RAMalaRC 0 0 0 0 1 1 0 1~
-    ~RAMalaRC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 2 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAMalaRC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 2 2 2 0 0 2 2 2 0 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAMalaRC 13 3 3 3 12 3~
 	~RAMalaRC 0 0 0 0 0 0~
 	~RAMalaRC 13 3 3 3 12 3~
@@ -76,7 +76,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	SET match = 0
 	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 98 99 103 104 105 106  BEGIN
+		89 90 91 92 93 94 95 98 99 103 104 105 106 107 BEGIN
 		  LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
