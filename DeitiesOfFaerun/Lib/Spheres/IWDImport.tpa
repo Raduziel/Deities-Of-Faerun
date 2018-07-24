@@ -996,7 +996,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_SMASHING_WAVE~) BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SWAVE.PRO~
 
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPWI426.spl~ 1 4 CLERIC_SMASHING_WAVE
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426.spl~ 1 4 CLERIC_SMASHING_WAVE
 SAY NAME1 @9999139 SAY NAME2 @9999139 SAY UNIDENTIFIED_DESC @9999140 SAY DESC @9999140
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
@@ -1006,8 +1006,8 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"    END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious" END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPWI426B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPWI426C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426C.BAM~	~override\%spell_res%C.BAM~
 
 END
 
