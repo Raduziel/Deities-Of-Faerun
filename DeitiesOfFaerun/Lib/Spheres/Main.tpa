@@ -84,6 +84,7 @@
 						LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 						LPF	ALTER_EFFECT	INT_VAR	match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 						LPF	ALTER_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
+						LPF	ALTER_EFFECT	INT_VAR	match_opcode = 333 silent = 1 STR_VAR match_resource = ~~ resource = EVAL ~%oldfile%B~	END
 						LPF	ALTER_EFFECT	INT_VAR silent = 1	match_power = old_level	power = level	END
 						PATCH_MATCH	~%oldfile%~	WITH
 							~SPWI420~	~SPWI710~ ~SPWI809~	~SPWI617~	~SPWI908~	BEGIN	//	contingency / sequencer
@@ -93,6 +94,14 @@
 									END	ELSE	BEGIN
 										APPEND	~UI.MENU~	~`%WNL%mageBookStrings['%newfile%'] = mageBookStrings['%oldfile%']%WNL%`~	//	match UI strings to original spell
 									END
+									COPY_EXISTING	~%oldfile%D.spl~	~override\%newfile%D.spl~
+										LPF	ALTER_EFFECT	INT_VAR silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
+										LPF	ALTER_EFFECT	INT_VAR silent = 1 STR_VAR match_resource = EVAL ~%oldfile%D~ resource = EVAL ~%newfile%D~	END
+									IF_EXISTS
+									COPY_EXISTING	~%oldfile%P.spl~	~override\%newfile%P.spl~
+										LPF	ALTER_EFFECT	INT_VAR silent = 1 STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
+										LPF	ALTER_EFFECT	INT_VAR silent = 1 STR_VAR match_resource = EVAL ~%oldfile%P~ resource = EVAL ~%newfile%P~	END
+									IF_EXISTS
 								END
 							END
 							DEFAULT
