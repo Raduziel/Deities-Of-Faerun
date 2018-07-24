@@ -575,7 +575,19 @@ Area of Effect: 5-ft. radius
 Saving Throw: Neg.
 
 This spell causes a creature to burst into flames if it fails a Save vs. Spell. The creature will burn for 2d6 points of fire damage every round, and gouts of flame erupt from the burning target, causing any creatures within 5 ft. to take 1d4 points of fire damage from the flames. Anyone hit by the victim's flames must also make a Save vs. Spell to avoid contracting the shroud themselves. The shroud of flame dissipates if the caster and target are no longer in the same area. This spell is particularly useful in dispersing packs of trolls and frost salamanders.~
+	@9999139 = ~Smashing Wave~
+	@9999140 = ~Smashing Wave
+(Invocation)
 
+Level: 4
+Sphere: Elemental Water
+Range: 100 ft.
+Duration: Instant
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 4d10 points of crushing damage; in addition, struck creatures may be either stunned (25% chance) or knocked unconscious (5% chance) for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon, the damage is reduced by half and the creature avoids being stunned or knocked unconscious.~
 
 	
 // EoF
