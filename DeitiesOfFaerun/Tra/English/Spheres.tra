@@ -588,6 +588,19 @@ Area of Effect: Special
 Saving Throw: Special
 
 This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 4d10 points of crushing damage; in addition, struck creatures may be either stunned (25% chance) or knocked unconscious (5% chance) for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon, the damage is reduced by half and the creature avoids being stunned or knocked unconscious.~
+	@9999141 = ~Conjure Water Elemental~
+	@9999142 = ~Conjure Water Elemental
+(Conjuration/Summoning)
 
+Level: 5
+Range: Visual range of the caster
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell allows the caster to summon an 8-HD elemental from the Elemental Plane of Water and bind it to <PRO_HISHER> will. This elemental will fight on behalf of the caster until the spell duration expires or the elemental is destroyed.~
+	@9999143 = ~Water Elemental~
+	
 	
 // EoF
