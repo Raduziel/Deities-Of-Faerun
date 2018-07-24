@@ -107,6 +107,8 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_RAGE~	RET	spell_r
 COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA2.spl~
 LPM ~SPELL_TO_INNATE~
 
+COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
+
 END ELSE BEGIN
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999130) STR_VAR bam_file = RARAGEIC RET iconrage = icon END
