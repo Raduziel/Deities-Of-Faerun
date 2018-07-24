@@ -174,7 +174,7 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323C.BAM~	~override\%
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/CircleofBones/SPPR323D.SPL~	~override\%spell_res%D.SPL~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %SMLLARNC% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR323~	      resource = EVAL ~%spell_res%~	    END
-LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%D~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%D~	END
 
 END
 
@@ -239,6 +239,9 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/SPWI631B.BAM~	~override\%spel
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/SPWI631C.BAM~	~override\%spell_res%C.BAM~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/SPWI631B.SPL~	~override\%spell_res%B.SPL~
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPWI631~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
+
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/AD3SKLM.CRE~	~override~
 SAY NAME1 @999963 SAY NAME2 @999963
@@ -860,6 +863,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430C.BAM~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430B.spl~    ~override\%spell_res%B.spl~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %SMLLAREA% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPWI430~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
 COPY_EXISTING ~SPWI114.spl~ override
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 1 power = 1 resist_dispel = 3 duration = 300 STR_VAR resource = EVAL ~%spell_res%~  END
@@ -924,6 +929,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522C.BAM~	~override\%spe
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.spl~	~override\%spell_res%B.spl~
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%" END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPPR522~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
 END
 
@@ -986,7 +993,9 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShroudofFlames/SPWI524C.BAM~	~override\
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShroudofFlames/SPWI524B.spl~	~override\%spell_res%B.spl~
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDSHROUD% END
-LPF	ALTER_EFFECT	   STR_VAR	           match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPWI524~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
 END
 
