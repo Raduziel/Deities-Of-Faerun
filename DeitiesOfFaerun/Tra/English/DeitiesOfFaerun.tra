@@ -1267,21 +1267,8 @@ The Waveservant removes the water from the target's body, delivering damage.
 DROWN
 
 The Waveservant fills the target's lungs with water, imposing heavy penalties to <PRO_HISHER> victim.~
-@1904 = ~Smashing Wave~
-@1905 = ~Smashing Wave
-(Invocation)
-
-Level: 4
-Sphere: Water
-Range: 100 ft.
-Duration: Instantaneous
-Casting Time: 9
-Area of Effect: Special
-Saving Throw: Special
-
-This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 4d10 points of crushing damage; in addition, struck creatures may be either stunned (25% chance) or knocked unconscious (5% chance) for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon, the damage is reduced by half and the creature avoids being stunned or knocked unconscious.~
-@1906 = ~Dehydrate~
-@1907 = ~Dehydrate
+@1904 = ~Dehydrate~
+@1905 = ~Dehydrate
 (Alteration)
 
 Level: 4
@@ -1293,8 +1280,8 @@ Area of Effect: One creature
 Saving Throw: Neg.
 
 This spell evaporates moisture from the bodies of the target creature, inflicting 1d8 points of magic damage per level of the caster (maximum 10d8) on a failed Saving Throw vs. Death.~
-@1908 = ~Drown~
-@1909 = ~Drown
+@1906 = ~Drown~
+@1907 = ~Drown
 (Alteration)
 
 Level: 6	
@@ -1306,22 +1293,8 @@ Area of Effect: One creature
 Saving Throw: Special
 
 This spell fill the lungs of the target creature with water. Creatures that do not breathe are unaffected. Drowning creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, and half movement rate during the effect of the spell. On top of that, the target takes 4d8 of crushing damage. A successful Saving Throw vs. Spells negates all effects except for the damage.~
-@1910 = ~Conjure Water Elemental~
-@1911 = ~Conjure Water Elemental
-(Conjuration/Summoning)
-
-Level: 6
-Sphere: Water
-Range: Visual range of the caster
-Duration: 10 turns
-Casting Time: 9
-Area of Effect: Special
-Saving Throw: None
-
-Upon casting a Conjure Water Elemental spell, the Waveservant opens a special gate to the Elemental Plane of Water, and a water elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.~
-@1912 = ~Water Elemental~
-@1913 = ~Holy Symbol of Umberlee~
-@1914 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
+@1908 = ~Holy Symbol of Umberlee~
+@1909 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
 	
 STATISTICS:
 
