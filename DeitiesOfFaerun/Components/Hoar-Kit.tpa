@@ -60,10 +60,15 @@ LPM SPELL_TO_INNATE
 COPY_EXISTING ~SPWI308.spl~ ~override/RAHoar3.spl~                                                           //Lightning Bolt
 LPM SPELL_TO_INNATE
 
-COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre" override
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"  override
 WRITE_LONG  0x08   RESOLVE_STR_REF (@3608)
 WRITE_LONG  0x0c   RESOLVE_STR_REF (@3608)
 
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar41.cre" override
+
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"  override
+
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.bcs"  override
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
@@ -74,6 +79,8 @@ COPY "DeitiesOfFaerun\Cre\Revenant\Revent1.itm" override
 END
 
 COPY "DeitiesOfFaerun\Spl\RAHoar41.spl"  override
+
+COPY "DeitiesOfFaerun\Spl\RAHoar4.eff"   override
 
 COPY "DeitiesOfFaerun\Spl\RAHoar4.spl"   override SAY NAME1 @3604 SAY UNIDENTIFIED_DESC @3605	             //Hand of Hoar
 
@@ -141,5 +148,18 @@ COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
     END
   END
 END
+
+<<<<<<<< .../inlined_script.baf
+IF
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	!InActiveArea("RAHoar4")
+	!AreaType(CITY)
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player1)
+		Continue()
+END
+EXTEND_BOTTOM ~baldur.bcs~	~.../inlined_script.baf~
 
 //EoF
