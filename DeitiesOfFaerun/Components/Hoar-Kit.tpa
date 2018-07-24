@@ -64,11 +64,13 @@ COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"  override
 WRITE_LONG  0x08   RESOLVE_STR_REF (@3608)
 WRITE_LONG  0x0c   RESOLVE_STR_REF (@3608)
 
-COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar41.cre" override
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar41.cre"  override
 
-COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"  override
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"   override
 
-COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.bcs"  override
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.baf"   override
+
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar41.baf"  override
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
