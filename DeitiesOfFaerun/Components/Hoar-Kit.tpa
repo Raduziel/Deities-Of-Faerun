@@ -68,10 +68,6 @@ COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar41.cre"  override
 
 COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"   override
 
-COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.baf"   override
-
-COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar41.baf"  override
-
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
 COPY "DeitiesOfFaerun\Cre\Revenant\Revent2.itm" override
