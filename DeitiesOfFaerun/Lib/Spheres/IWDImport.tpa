@@ -537,7 +537,7 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_GIANT_INSECT~) BEGIN
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/IDPRO282.PRO~
+LAF ADD_PROJECTL STR_VAR path = ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect~ file = ~IDPRO282~ missile = ~Acid Spray~ RET acidspra  = IDPRO282 END
 
 COPY_EXISTING	~IDPRO282.PRO~	~override~
 WRITE_LONG 0x0030 RESOLVE_STR_REF (@999997)
@@ -563,7 +563,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GISBOMB.CRE~	~override~
 SAY NAME1 @999996 SAY NAME2 @999996
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPIN191.spl~	~override~
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO282% END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = acidspra END
+
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 34527 parameter1 = RESOLVE_STR_REF (@999997) END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%" END
 
