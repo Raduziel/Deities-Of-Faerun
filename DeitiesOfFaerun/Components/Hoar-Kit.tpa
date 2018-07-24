@@ -160,6 +160,8 @@ THEN
 		MoveGlobalObject("RAHoar4",Player1)
 		Continue()
 END
+
+>>>>>>>>
 EXTEND_BOTTOM ~baldur.bcs~	~.../inlined_script.baf~
 
 //EoF
