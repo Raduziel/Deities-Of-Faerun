@@ -34,6 +34,7 @@ OUTER_SET RA_Cursed = (GAME_IS ~bgee bg2ee eet~) ? 17426 : (GAME_IS ~iwdee~) ? 1
 OUTER_SET RA_Slowed = (GAME_IS ~bgee~) ? 11799 : GAME_IS ~bg2ee eet~ ? 335 : (GAME_IS ~iwdee~) ? 37787 : 0          // Slowed
 OUTER_SET RA_Slow = (GAME_IS ~bgee~) ? 12081 : GAME_IS ~bg2ee eet~ ? 11799 : (GAME_IS ~iwdee~) ? 37638 : 0          // Slow
 OUTER_SET RA_Hasted = (GAME_IS ~bgee~) ? 10954 : GAME_IS ~bg2ee eet~ ? 14023 : (GAME_IS ~iwdee~) ? 36035 : 0        // Hasted
+OUTER_SET RA_Unconscious = (GAME_IS ~bgee~) ? 20438 : GAME_IS ~bg2ee eet~ ? 20438 : (GAME_IS ~iwdee~) ? 20438 : 0   // Unconscious
 
 OUTER_SET RA_SpellInef = (GAME_IS ~bgee~) ? 24534 : GAME_IS ~bg2ee eet~ ? 4742 : (GAME_IS ~iwdee~) ? 4742 : 0       // Spell Ineffective
 
