@@ -38,13 +38,12 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 END
 
 COPY "DeitiesOfFaerun\Spl\RABAERF.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 206 parameter1 = RESOLVE_STR_REF (@708) END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 206 parameter1 = RESOLVE_STR_REF (@709) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 206 parameter1 = EVAL "%RA_SpellInef%" END
 
 COPY "DeitiesOfFaerun\Spl\RAHSBAER.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSBAER.itm" override SAY NAME1 @710 SAY NAME2 @710 SAY DESC @711
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSBAER.itm" override SAY NAME1 @707 SAY NAME2 @707 SAY DESC @708
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
@@ -55,34 +54,55 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPPR602.spl~ ~override\RABAER1.spl~                                               //Animal Summoning III
-LPM SPELL_TO_INNATE
+//Animal Summoning III
 
-COPY_EXISTING ~SPPR202.spl~ ~override\RABAER2.spl~                                               //Barkskin
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMAL_SUMMONING_3[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_SUMMONING_3~	RET	spell_res	END
 
-COPY "DeitiesOfFaerun\Spl\RABAER3.spl" override SAY NAME1 @704 SAY UNIDENTIFIED_DESC  @705       //Changestaff
+COPY_EXISTING	~%spell_res%.spl~	~override/RABAER1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Barkskin
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BARKSKIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BARKSKIN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABAER2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Changestaff
+
+COPY "DeitiesOfFaerun\Spl\RABAER3.spl" override SAY NAME1 @704 SAY UNIDENTIFIED_DESC  @705       
 
 COPY "DeitiesOfFaerun\Spl\RABAER3E.eff" override 
 
-COPY_EXISTING ~SPPR410.spl~ ~override\RABAER4.spl~                                               //Call Woodland Beings
-LPM SPELL_TO_INNATE
+COPY "DeitiesOfFaerun\Cre\Changestaff\Complement"   override                                            //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
 
-COPY "DeitiesOfFaerun\Cre\Changestaff\Complement"   override                                     //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
+COPY "DeitiesOfFaerun\Cre\Changestaff\RATREANT.cre" override SAY NAME1 @706 SAY NAME2 @706              //Treant (Creature)
 
-COPY "DeitiesOfFaerun\Cre\Changestaff\RATREANT.cre" override SAY NAME1 @706 SAY NAME2 @706       //Treant (Creature)
-
-COPY "DeitiesOfFaerun\Cre\Changestaff\SMTREANT.itm" override SAY NAME1 @707 SAY NAME2 @707       //Treant (Weapon)
-
-COPY "DeitiesOfFaerun\Cre\Changestaff\RAPlant.itm" override                                      //Treant (Ring)
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_Poisoned%" END
+COPY "DeitiesOfFaerun\Cre\Changestaff\RAPlant.itm" override                                             //Treant (Ring)
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%"      END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%"   END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%"    END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_Poisoned%"  END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Paralyzed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Held%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Sleep%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Bleeding%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Held%"      END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Sleep%"     END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Bleeding%"  END
+
+//Call Woodland Beings
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CALL_WOODLAND_BEINGS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CALL_WOODLAND_BEINGS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABAER4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

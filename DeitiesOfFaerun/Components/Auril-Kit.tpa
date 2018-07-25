@@ -37,7 +37,10 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 END
 
-COPY_EXISTING ~SPWI320.spl~ ~override/RAAURIF.spl~
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_COLD~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ ~override/RAAURIF.spl~
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
@@ -49,6 +52,8 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+
+END
 
 COPY "DeitiesOfFaerun\Spl\RAHSAURI.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
@@ -93,12 +98,26 @@ COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.bam" override                       
     END
   END
 
-COPY_EXISTING ~SPWI404.spl~ ~override/RAAURI4.spl~                                             //Ice Storm
-LPM SPELL_TO_INNATE
+//Ice Storm
 
-COPY_EXISTING ~SPWI503.spl~ ~override/RAAURI5.spl~                                             //Cone of Cold
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ICE_STORM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ICE_STORM~	RET	spell_res	END
 
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAURI4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END  
+
+//Cone of Cold
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONE_OF_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONE_OF_COLD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAURI5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
+  
 COPY "DeitiesOfFaerun\Spl\RAAURI6.spl" override SAY NAME1 @1710 SAY UNIDENTIFIED_DESC @1711    //Conjure Ice Elemental
 
 COPY "DeitiesOfFaerun\Spl\RAAUR6E1.eff" override

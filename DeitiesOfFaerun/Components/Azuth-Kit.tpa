@@ -53,35 +53,92 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPWI102.spl~ ~override/RAAZUT1.spl~    //Armor
+		  
+//Armor
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ARMOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ARMOR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT1.spl~
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 2
 
-COPY_EXISTING ~SPWI217.spl~ ~override/RAAZUT2.spl~    //Agannazar's Scorcher
+END
+		  
+//Agannazar's Scorcher
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_AGANNAZAR_SCORCHER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_AGANNAZAR_SCORCHER~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT2.spl~
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 3
 
-COPY_EXISTING ~SPWI325.spl~ ~override/RAAZUT3.spl~    //Melf's Minute Meteors
+END
+
+//Melf's Minute Meteors
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MELF_METEOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MELF_METEOR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT3.spl~
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 4
 
-COPY_EXISTING ~SPWI413.spl~ ~override/RAAZUT4.spl~    //Otiluke's Resilient Sphere
+END
+
+//Otiluke's Resilient Sphere
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_OTILUKES_RESILIENT_SPHERE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_OTILUKES_RESILIENT_SPHERE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT4.spl~
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 5
 
-COPY_EXISTING ~SPWI519.spl~ ~override/RAAZUT5.spl~    //Spell Shield
+END
+
+//Spell Shield
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SPELL_SHIELD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SPELL_SHIELD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT5.spl~
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 6
 
-COPY_EXISTING ~SPWI606.spl~ ~override/RAAZUT6.spl~    //Protection From Magic Energy
+END
+
+//Protection From Magic Energy
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_MAGIC_ENERGY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_MAGIC_ENERGY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT6.spl~
 WRITE_SHORT 0x1C 2                        
 WRITE_LONG  0x34 7
 
-COPY_EXISTING ~SPWI112.spl~ ~override/RAAZUT7.spl~    //Magic Missile
-LPM SPELL_TO_INNATE
+END
 
-COPY_EXISTING ~SPWI304.spl~ ~override/RAAZUT8.spl~    //Fireball
-LPM SPELL_TO_INNATE
+//Magic Missile
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MAGIC_MISSILE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MAGIC_MISSILE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT7.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
+
+//Fireball
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FIREBALL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FIREBALL~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT8.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
