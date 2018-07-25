@@ -127,7 +127,7 @@ END
 IF
 	OR(2)
 		 AreaType(CITY)
-		!AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+		!AreaType(53)
 THEN
 	RESPONSE #100
 		Kill(Myself)

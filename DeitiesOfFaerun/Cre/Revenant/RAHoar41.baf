@@ -1,5 +1,5 @@
 IF
-	!AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	!AreaType(53)
 THEN
 	RESPONSE #100
 		DestroySelf()
