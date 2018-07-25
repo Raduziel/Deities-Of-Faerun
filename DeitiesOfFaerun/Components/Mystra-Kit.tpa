@@ -53,7 +53,7 @@ PATCH_FOR_EACH label IN
 BEGIN
 	PATCH_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]%label%[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 		LPF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = EVAL ~%label%~	RET	spell_res	END
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 	END
 END
 
