@@ -150,7 +150,7 @@ END
 <<<<<<<< .../inlined_script.baf
 IF
 	!AreaType(CITY)
-	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	AreaType(53)
 	Exists("RAHoar4")
 	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
 	Global("RAHoar4_Owner","GLOBAL",1)
@@ -161,10 +161,9 @@ THEN
 		MoveGlobalObject("RAHoar4",Player1)
 		Continue()
 END
-
 IF
 	!AreaType(CITY)
-	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	AreaType(53)
 	Exists("RAHoar4")
 	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
 	Global("RAHoar4_Owner","GLOBAL",2)
@@ -175,10 +174,9 @@ THEN
 		MoveGlobalObject("RAHoar4",Player2)
 		Continue()
 END
-
 IF
 	!AreaType(CITY)
-	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	AreaType(53)
 	Exists("RAHoar4")
 	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
 	Global("RAHoar4_Owner","GLOBAL",3)
@@ -189,10 +187,9 @@ THEN
 		MoveGlobalObject("RAHoar4",Player3)
 		Continue()
 END
-
 IF
 	!AreaType(CITY)
-	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	AreaType(53)
 	Exists("RAHoar4")
 	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
 	Global("RAHoar4_Owner","GLOBAL",4)
@@ -203,10 +200,9 @@ THEN
 		MoveGlobalObject("RAHoar4",Player4)
 		Continue()
 END
-
 IF
 	!AreaType(CITY)
-	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	AreaType(53)
 	Exists("RAHoar4")
 	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
 	Global("RAHoar4_Owner","GLOBAL",5)
@@ -217,10 +213,9 @@ THEN
 		MoveGlobalObject("RAHoar4",Player5)
 		Continue()
 END
-
 IF
 	!AreaType(CITY)
-	AreaType(OUTDOOR | WEATHER | FOREST | DUNGEON)
+	AreaType(53)
 	Exists("RAHoar4")
 	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
 	Global("RAHoar4_Owner","GLOBAL",6)
