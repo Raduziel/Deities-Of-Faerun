@@ -38,6 +38,189 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 END
 
 COPY "DeitiesOfFaerun\Spl\RACYRIF.spl" override
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_MoralFail%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Charmed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_DireCharmed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Dominated%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Berserk%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Hopeless%" END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_COMMAND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_COMMAND~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_REMOVE_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_EXALTATION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_EXALTATION~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SPIRITUAL_CLARITY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRITUAL_CLARITY~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MENTAL_DOMINATION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MENTAL_DOMINATION~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CLOAK_OF_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CLOAK_OF_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLOOD_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLOOD_RAGE~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_GREATER_COMMAND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GREATER_COMMAND~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMAL_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_RAGE~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SYMBOL_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SYMBOL_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SYMBOL_OF_HOPELESSNESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SYMBOL_OF_HOPELESSNESS~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CHARM_PERSON[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CHARM_PERSON~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SPOOK[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SPOOK~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_HORROR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HORROR~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_RESIST_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RESIST_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DIRE_CHARM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DIRE_CHARM~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_HOPELESSNESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_HOPELESSNESS~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_COURAGE~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_HOPE~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DOMINATION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DOMINATION~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SYMBOL_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SYMBOL_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~RACYRIF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+
+END
 
 COPY "DeitiesOfFaerun\Spl\RAHSCYRI.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
