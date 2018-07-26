@@ -56,19 +56,47 @@ LPF ADD_ITEM_EQEFFECT
 COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2908) STR_VAR bam_file = RAFOREIC RET iconfors = icon END
 		  
-COPY_EXISTING ~SPWI301.spl~ ~override/RASavr1.spl~    											//Clairvoyance
-LPM SPELL_TO_INNATE
+//Clairvoyance
 
-COPY_EXISTING ~SPWI425.spl~ ~override/RASavr2.spl~    											//Wizard Eye
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CLAIRVOYANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CLAIRVOYANCE~	RET	spell_res	END
 
-COPY_EXISTING ~SPPR505.spl~ ~override/RASavr3.spl~    											//True Seeing
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RASAVR1.spl~
+LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING ~SPPR415.spl~ ~override/RASavr4.spl~    											//Farsight
-LPM SPELL_TO_INNATE
+END   
 
-COPY "DeitiesOfFaerun\Spl\RASavr5.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907     //Consequence
+//Wizard Eye
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EYE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EYE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASAVR2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
+
+//True Seeing
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_TRUE_SIGHT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_TRUE_SIGHT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASAVR3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Farsight
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FAR_SIGHT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FAR_SIGHT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASAVR4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+COPY "DeitiesOfFaerun\Spl\RASAVR5.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907     //Consequence
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfors END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

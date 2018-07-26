@@ -37,9 +37,9 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAVelsF.spl" override
+COPY "DeitiesOfFaerun\Spl\RAVELSF.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RAHSVels.spl" override
+COPY "DeitiesOfFaerun\Spl\RAHSVELS.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSVels.itm" override SAY NAME1 @3207 SAY NAME2 @3207 SAY DESC @3208
@@ -53,16 +53,34 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPWI117.spl~ ~override/RAVels1.spl~    //Chill Touch
-LPM SPELL_TO_INNATE
+//Chill Touch		  
+		  
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CHILL_TOUCH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CHILL_TOUCH~	RET	spell_res	END
 
-COPY_EXISTING ~SPWI501.spl~ ~override/RAVels2.spl~    //Animate Dead
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RAVELS1.spl~
 
-COPY_EXISTING ~SPWI315.spl~ ~override/RAVels3.spl~    //Wraithform
-LPM SPELL_TO_INNATE
+END
 
-COPY ~DeitiesOfFaerun\Spl\RAVels4.spl~  ~override~ SAY NAME1 @3204 SAY UNIDENTIFIED_DESC @3205
+//Animate Dead
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMATE_DEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMATE_DEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAVELS2.spl~
+
+END
+
+//Wraithform
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_WRAITH_FORM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_WRAITH_FORM~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAVELS3.spl~
+
+END
+
+COPY ~DeitiesOfFaerun\Spl\RAVELS4.spl~  ~override~ SAY NAME1 @3204 SAY UNIDENTIFIED_DESC @3205
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Poison%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Poisoned%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Bleeding%" END
@@ -71,11 +89,23 @@ COPY ~DeitiesOfFaerun\Spl\RAVels41.spl~ ~override~ SAY NAME1 @3206 SAY UNIDENTIF
 
 COPY ~DeitiesOfFaerun\Spl\RAVelsNF.bam~ ~override~
 
-COPY_EXISTING ~SPWI914.spl~ ~override/RAVels5.spl~    //Energy Drain
-LPM SPELL_TO_INNATE
+//Energy Drain
 
-COPY_EXISTING ~SPWI913.spl~ ~override/RAVels6.spl~    //Wail of the Banshee
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ENERGY_DRAIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ENERGY_DRAIN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAVELS5.spl~
+
+END
+
+//Wail of the Banshee
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_WAIL_OF_THE_BANSHEE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_WAIL_OF_THE_BANSHEE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAVELS6.spl~
+
+END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

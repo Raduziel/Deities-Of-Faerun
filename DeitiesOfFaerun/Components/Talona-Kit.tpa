@@ -52,9 +52,15 @@ LPF ADD_ITEM_EQEFFECT
 		  END
 
 COPY "DeitiesOfFaerun\Spl\RATLNAF.spl" override		  
+
+//Poison Weapon
 		  
-COPY_EXISTING ~SPCL423.spl~ ~override/RATLNA1.spl~
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]ASSASSIN_POISON[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~ASSASSIN_POISON~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA1.spl~
+
+END
 
 COPY "DeitiesOfFaerun\Spl\RATLNA2.spl" override SAY NAME1 @2104 SAY UNIDENTIFIED_DESC @2105
 
@@ -62,11 +68,23 @@ COPY "DeitiesOfFaerun\Spl\RATLNA21.spl" override
 
 COPY "DeitiesOfFaerun\Spl\RATLNA22.spl" override
 
-COPY_EXISTING ~SPWI409.spl~ ~override/RATLNA3.spl~
-LPM SPELL_TO_INNATE
+//Contagion
 
-COPY_EXISTING ~SPPR411.spl~ ~override/RATLNA4.spl~
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONTAGION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONTAGION~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA3.spl~
+
+END
+
+//Poison
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_POISON[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_POISON~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA4.spl~
+
+END
 
 //Cloud of Pestilence
 

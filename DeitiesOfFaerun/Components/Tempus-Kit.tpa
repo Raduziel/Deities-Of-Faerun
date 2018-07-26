@@ -94,7 +94,12 @@ END
 
 //Enrage
 
-COPY_EXISTING ~SPCL321.spl~ ~override/RATEMP2.spl~                                                           
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP2.spl~
+
+END                                                           
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

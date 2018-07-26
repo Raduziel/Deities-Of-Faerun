@@ -52,17 +52,29 @@ LPF ADD_ITEM_EQEFFECT
 		  END
 
 
-COPY_EXISTING ~SPWI209.spl~ ~override/RATymo1.spl~                                                           //Luck
-LPM SPELL_TO_INNATE		  
+//Luck		  
+		  
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LUCK[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LUCK~	RET	spell_res	END
 
-COPY "DeitiesOfFaerun\Spl\RATymo2.spl"  override SAY NAME1 @3404 SAY UNIDENTIFIED_DESC @3405	             //Moment
+COPY_EXISTING	~%spell_res%.spl~	~override/RATYMO1.spl~
 
-COPY "DeitiesOfFaerun\Spl\RATymo3.spl"  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407	             //Favor of Tymora
+END		  
 
-COPY_EXISTING ~SPWI514.spl~ ~override/RATymo4.spl~                                                           //Lower Resistance
-LPM SPELL_TO_INNATE
+COPY "DeitiesOfFaerun\Spl\RATYMO2.spl"  override SAY NAME1 @3404 SAY UNIDENTIFIED_DESC @3405	             //Moment
 
-COPY "DeitiesOfFaerun\Spl\RATymo5.spl"  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409	             //Luckbolt
+COPY "DeitiesOfFaerun\Spl\RATYMO3.spl"  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407	             //Favor of Tymora
+
+//Lower Resistance
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LOWER_RESISTANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LOWER_RESISTANCE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATYMO4.spl~
+
+END	
+
+COPY "DeitiesOfFaerun\Spl\RATYMO5.spl"  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409	             //Luckbolt
 
 COPY "DeitiesOfFaerun\Spl\RATymo51.spl"  override
 
@@ -70,7 +82,7 @@ COPY "DeitiesOfFaerun\Spl\RATymo52.spl"  override
 
 COPY "DeitiesOfFaerun\Spl\RATymo53.spl"  override
 
-COPY "DeitiesOfFaerun\Spl\RATymo6.spl"  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Luckbolt
+COPY "DeitiesOfFaerun\Spl\RATYMO6.spl"  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Tymora's Blessing
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

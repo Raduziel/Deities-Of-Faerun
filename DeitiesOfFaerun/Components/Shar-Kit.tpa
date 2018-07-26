@@ -67,13 +67,27 @@ LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASHAR1% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
 
-COPY_EXISTING ~SPWI106.spl~ ~override/RASHAR2.spl~                                          //Blindness
-LPM SPELL_TO_INNATE
+//Blindness
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_BLINDNESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BLINDNESS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASHAR2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 COPY "DeitiesOfFaerun\Spl\RASHAR3.spl" override  SAY NAME1 @406 SAY UNIDENTIFIED_DESC @407  //Nightmare
 
-COPY_EXISTING ~SPWI505.spl~ ~override/RASHAR4.spl~                                          //Shadow Door
-LPM SPELL_TO_INNATE
+//Shadow Door
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHADOW_DOOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHADOW_DOOR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASHAR4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 COPY "DeitiesOfFaerun\Spl\RASHAR5.vvc" override
 
