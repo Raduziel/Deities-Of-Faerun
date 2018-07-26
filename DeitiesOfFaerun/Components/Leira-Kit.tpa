@@ -53,24 +53,65 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
+//Mirror Image
 
-COPY_EXISTING ~SPWI212.spl~ ~override/RALeir1.spl~                              //Mirror Image
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MIRROR_IMAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MIRROR_IMAGE~	RET	spell_res	END
 
-COPY_EXISTING ~SPWI201.spl~ ~override/RALeir2.spl~                              //Blur
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RALEIR1.spl~
+LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING ~SPWI426.spl~ ~override/RALeir3.spl~                              //Shadow Monsters
-LPM SPELL_TO_INNATE
+END
 
-COPY_EXISTING ~SPWI525.spl~ ~override/RALeir4.spl~                              //Demi-Shadow Monsters
-LPM SPELL_TO_INNATE
+//Blur
 
-COPY_EXISTING ~SPWI607.spl~ ~override/RALeir5.spl~                              //Mislead
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_BLUR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BLUR~	RET	spell_res	END
 
-COPY_EXISTING ~SPWI703.spl~ ~override/RALeir6.spl~                              //Project Image
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RALEIR2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Shadow Monsters
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHADOW_MONSTERS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHADOW_MONSTERS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RALEIR3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Demi-Shadow Monsters
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DEMI_SHADOW_MONSTERS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DEMI_SHADOW_MONSTERS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RALEIR4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Mislead
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MISLEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MISLEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RALEIR5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Project Image
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROJECT_IMAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROJECT_IMAGE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RALEIR6.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

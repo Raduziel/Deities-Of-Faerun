@@ -53,11 +53,25 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPWI221.spl~ ~override/RAJERG1.spl~    //Ray of Enfeeblement
-LPM SPELL_TO_INNATE
+//Ray of Enfeeblement		  
 
-COPY_EXISTING ~SPWI313.spl~ ~override/RAJERG2.spl~    //Skull Trap
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_RAY_OF_ENFEEBLEMENT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RAY_OF_ENFEEBLEMENT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Skull Trap
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SKULL_TRAP[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SKULL_TRAP~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 //Undead Ward
 
@@ -84,14 +98,35 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override\%spe
 
 END
 
-COPY_EXISTING ~SPPR413.spl~ ~override/RAJERG4.spl~    //Negative Plane Protection
-LPM SPELL_TO_INNATE
+//Negative Plane Protection
 
-COPY_EXISTING ~SPWI501.spl~ ~override/RAJERG5.spl~    //Animate Dead
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_NEGATIVE_PLANE_PROTECTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_NEGATIVE_PLANE_PROTECTION~	RET	spell_res	END
 
-COPY_EXISTING ~SPWI914.spl~ ~override/RAJERG6.spl~    //Energy Drain
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Animate Dead
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMATE_DEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMATE_DEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Energy Drain
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ENERGY_DRAIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ENERGY_DRAIN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG6.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 		  
 		  
 COPY_EXISTING_REGEXP ~.*\.itm~ override

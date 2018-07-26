@@ -73,8 +73,15 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPPR303.spl~ ~override/RAMYST1.spl~            //Dispel Magic
-LPM SPELL_TO_INNATE
+//Dispel Magic
+		  
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DISPEL_MAGIC[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DISPEL_MAGIC~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMYST1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

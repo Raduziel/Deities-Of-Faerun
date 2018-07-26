@@ -52,13 +52,34 @@ LPF ADD_ITEM_EQEFFECT
 		  END
 
 
-COPY_EXISTING ~SPCL321.spl~ ~override/RAHoar1.spl~                                                           //Enrage
+//Enrage
 
-COPY_EXISTING ~SPWI115.spl~ ~override/RAHoar2.spl~                                                           //Shocking Grasp
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
 
-COPY_EXISTING ~SPWI308.spl~ ~override/RAHoar3.spl~                                                           //Lightning Bolt
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR1.spl~
+
+END
+
+//Shocking Grasp
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHOCKING_GRASP[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHOCKING_GRASP~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Lightning Bolt
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LIGHTNING_BOLT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LIGHTNING_BOLT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"  override
 WRITE_LONG  0x08   RESOLVE_STR_REF (@3608)
@@ -76,11 +97,11 @@ COPY "DeitiesOfFaerun\Cre\Revenant\Revent1.itm" override
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHoar41.spl"  override
+COPY "DeitiesOfFaerun\Spl\RAHOAR41.spl"  override
 
 COPY "DeitiesOfFaerun\Spl\RAHoar4.eff"   override
 
-COPY "DeitiesOfFaerun\Spl\RAHoar4.spl"   override SAY NAME1 @3604 SAY UNIDENTIFIED_DESC @3605	             //Hand of Hoar
+COPY "DeitiesOfFaerun\Spl\RAHOAR4.spl"   override SAY NAME1 @3604 SAY UNIDENTIFIED_DESC @3605	             //Hand of Hoar
 
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAHoar5T.PRO~
 
@@ -89,12 +110,17 @@ ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAHoar5C.PRO~
 COPY_EXISTING ~RAHoar5C.PRO~ override
 WRITE_SHORT	0x21a %RAHoar5T%
 
-COPY "DeitiesOfFaerun\Spl\RAHoar5.spl"  override SAY NAME1 @3606 SAY UNIDENTIFIED_DESC @3607	             //Thunder Staff
+COPY "DeitiesOfFaerun\Spl\RAHOAR5.spl"  override SAY NAME1 @3606 SAY UNIDENTIFIED_DESC @3607	             //Thunder Staff
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAHoar5C% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Stunned%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 139 parameter1 = EVAL "%RA_Deaf%" END
 
-COPY_EXISTING ~SPWI311.spl~ ~override/RAHoar6.spl~                                           	             //Protection From Normal Missile
+//Protection From Normal Missile
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_NORMAL_MISSILES[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_NORMAL_MISSILES~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR6.spl~
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
@@ -108,6 +134,8 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 156 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+
+END
 
 ACTION_FOR_EACH file IN ~HOARS~ ~HOARL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
