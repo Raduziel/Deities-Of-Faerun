@@ -428,11 +428,8 @@ By means of this spell, the caster is able to change a specially prepared staff 
 
 If the staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.~
 @706 = ~Summoned Treant~
-@707 = ~Attack~
-@708 = ~Immune to Entangle~
-@709 = ~Immune to Web~
-@710 = ~Holy Symbol of Baervan Wildwanderer~
-@711 = ~Only the most worthy and devoted servants of the Masked Leaf are granted these powerful holy symbols.
+@707 = ~Holy Symbol of Baervan Wildwanderer~
+@708 = ~Only the most worthy and devoted servants of the Masked Leaf are granted these powerful holy symbols.
 
 STATISTICS:
 
@@ -865,7 +862,7 @@ Minor: Healing, Moon, Combat, Creation.
 
 Advantages:
 
-- Immune to wild and miscast magic.
+- Immune to wild, dead and miscast magic.
 - Gains a bonus of +2 bonus to <PRO_HISHER> Saving Throws vs. Spells.
 - May cast Dispel Magic as a special ability once per day, starting at level 5.
 - Gains a bonus of +2 bonus to spellcasting time, starting at level 7.
@@ -1626,7 +1623,7 @@ Advantages:
 
 - Immune to fear.
 - May cast Cloak of Fear once per day as a special ability, starting at level 5.
-- May cast Domination once per day as a special ability, starting at level 7.
+- May cast Mental Domination once per day as a special ability, starting at level 7.
 - May use the Mystic Lash special ability once per day, starting at level 10.
 
 MYSTIC LASH:
