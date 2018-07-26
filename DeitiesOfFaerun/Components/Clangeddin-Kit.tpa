@@ -51,20 +51,55 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPPR102.spl~ ~override/RACLAN1.spl~                              //Command
-LPM SPELL_TO_INNATE
+//Command
 
-COPY_EXISTING ~SPPR213.spl~ ~override/RACLAN2.spl~                              //Spiritual Hammer
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_COMMAND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_COMMAND~	RET	spell_res	END
 
-COPY_EXISTING ~SPPR312.spl~ ~override/RACLAN3.spl~                              //Strength of One
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN1.spl~
+LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING ~SPPR406.spl~ ~override/RACLAN4.spl~                              //Defensive Harmony
-LPM SPELL_TO_INNATE
+END		  
 
-COPY_EXISTING ~SPPR603.spl~ ~override/RACLAN5.spl~                              //Blade Barrier
-LPM SPELL_TO_INNATE
+//Spiritual Hammer		  
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SPIRITUAL_HAMMER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRITUAL_HAMMER~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Strength of One
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_STRENGTH_OF_ONE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STRENGTH_OF_ONE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Defensive Harmony
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DEFENSIVE_HARMONY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DEFENSIVE_HARMONY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Blade Barrier
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLADE_BARRIER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLADE_BARRIER~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 ACTION_FOR_EACH file IN ~CLANS~ ~CLANL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

@@ -58,7 +58,14 @@ LPF ADD_ITEM_EQEFFECT
 		  
 END
 
-COPY_EXISTING ~SPCL321.spl~ ~override/RAGARA1.spl~                                                           //Enrage
+//Enrage
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAGARA1.spl~
+
+END                                                           
 
 COPY "DeitiesOfFaerun\Spl\RAGARA2.spl" override SAY NAME1 @3004 SAY UNIDENTIFIED_DESC @3005    				 //Chaotic Combat
 
@@ -70,8 +77,15 @@ COPY "DeitiesOfFaerun\Spl\RAGARA2B.spl" override
 
 COPY "DeitiesOfFaerun\Spl\RAGARA3.spl" override SAY NAME1 @3006 SAY UNIDENTIFIED_DESC @3007                  //Blood Armor
 
-COPY_EXISTING ~SPPR603.spl~ ~override/RAGARA4.spl~                                                           //Blade Barrier
-LPM SPELL_TO_INNATE
+//Blade Barrier
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLADE_BARRIER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLADE_BARRIER~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAGARA4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 ACTION_FOR_EACH file IN ~GARAS~ ~GARAL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
