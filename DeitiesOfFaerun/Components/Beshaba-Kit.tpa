@@ -52,34 +52,34 @@ LPF ADD_ITEM_EQEFFECT
 		  END
 
 
-COPY "DeitiesOfFaerun\Spl\RABesh1.spl"  override SAY NAME1 @3504 SAY UNIDENTIFIED_DESC @3505	             //Bad Luck
+COPY "DeitiesOfFaerun\Spl\RABESH1.spl"  override SAY NAME1 @3504 SAY UNIDENTIFIED_DESC @3505	             //Bad Luck
 
 //Doom
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DOOM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DOOM~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RABesh2.spl~
+COPY_EXISTING	~%spell_res%.spl~	~override/RABESH2.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABesh3.spl"  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bane of Beshaba
+COPY "DeitiesOfFaerun\Spl\RABESH3.spl"  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bane of Beshaba
 
 //Lower Resistance
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LOWER_RESISTANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LOWER_RESISTANCE~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RABesh4.spl~
+COPY_EXISTING	~%spell_res%.spl~	~override/RABESH4.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABesh5.spl"  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Misfortune
+COPY "DeitiesOfFaerun\Spl\RABESH5.spl"  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Misfortune
 
 
-COPY "DeitiesOfFaerun\Spl\RABesh6.spl"  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Beshaba's Mercy
+COPY "DeitiesOfFaerun\Spl\RABESH6.spl"  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Beshaba's Mercy
 
 //Black Blade of Disaster
 
