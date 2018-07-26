@@ -38,7 +38,18 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 END
 
 COPY "DeitiesOfFaerun\Spl\RABAERF.spl" override
-LPF ALTER_EFFECT INT_VAR match_opcode = 206 parameter1 = EVAL "%RA_SpellInef%" END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 83   parameter2 = 319 target = 2 timing = 9 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 83   parameter2 = 259 target = 2 timing = 9 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 83   parameter2 = 243 target = 2 timing = 9 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~BDBOW06~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~BDIMPALE~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~BDSHAMB~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~SPIN688~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~SPPR105~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~SPWM111~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~GASP~     END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~HOLDFST~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~TALONGF~  END
 
 COPY "DeitiesOfFaerun\Spl\RAHSBAER.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
