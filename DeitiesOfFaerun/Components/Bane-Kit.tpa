@@ -64,10 +64,27 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
-COPY_EXISTING ~SPPR416.spl~ ~override/RABANE1.spl~                                                        //Cloak of Fear
-LPM SPELL_TO_INNATE
+//Cloak of Fear
 
-COPY_EXISTING ~SPWI506.spl~ ~override/RABANE2.spl~                                                        //Domination
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CLOAK_OF_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CLOAK_OF_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABANE1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+		  
+//Mental Domination
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MENTAL_DOMINATION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MENTAL_DOMINATION~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABANE2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+COPY_EXISTING ~SPWI506.spl~ ~override/RABANE2.spl~                                                        
 LPM SPELL_TO_INNATE
 
 COPY "DeitiesOfFaerun\Spl\RABANE3.spl" override SAY NAME1 @2304 SAY UNIDENTIFIED_DESC  @2305              //Mystic Lash
