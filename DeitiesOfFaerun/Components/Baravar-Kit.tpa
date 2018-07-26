@@ -53,21 +53,55 @@ LPF ADD_ITEM_EQEFFECT
 			  power = 1
 		  END
 
+//Mirror Image
 
-COPY_EXISTING ~SPWI212.spl~ ~override/RABARA1.spl~                              //Mirror Image
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MIRROR_IMAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MIRROR_IMAGE~	RET	spell_res	END
 
-COPY_EXISTING ~SPWI206.spl~ ~override/RABARA2.spl~                              //Invisibility
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RABARA1.spl~
+LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING ~SPWI402.spl~ ~override/RABARA3.spl~                              //Dimension Door
-LPM SPELL_TO_INNATE
+END
 
-COPY_EXISTING ~SPWI607.spl~ ~override/RABARA4.spl~                              //Mislead
-LPM SPELL_TO_INNATE
+//Invisibility
 
-COPY_EXISTING ~SPWI714.spl~ ~override/RABARA5.spl~                              //Prismatic Spray
-LPM SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_INVISIBILITY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_INVISIBILITY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABARA2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Dimension Door
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DIMENSION_DOOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DIMENSION_DOOR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABARA3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Mislead
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MISLEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MISLEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABARA4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Prismatic Spray
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PRISMATIC_SPRAY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PRISMATIC_SPRAY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABARA5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
