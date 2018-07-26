@@ -48,7 +48,7 @@ END
 COPY "DeitiesOfFaerun\Spl\RARBAER.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RARCBAER.itm" override SAY NAME1 @710 SAY NAME2 @710 SAY DESC @711
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RARCBAER.itm" override SAY NAME1 @707 SAY NAME2 @707 SAY DESC @708
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
