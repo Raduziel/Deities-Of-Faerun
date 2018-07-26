@@ -260,182 +260,58 @@ END
 >>>>>>>>
 EXTEND_BOTTOM ~baldur.bcs~	~.../inlined_script.baf~
 
-//Revenant's Script (SoD)
+ACTION_IF GAME_INCLUDES ~sod~ BEGIN                           //Revenant's Script (SoD)
 
-ACTION_IF GAME_INCLUDES ~sod~ BEGIN
+EXTEND_BOTTOM ~bdbaldur.bcs~	~.../inlined_script.baf~ END
 
-<<<<<<<< .../inlined_script.baf
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",1)
-	!StateCheck(Player1,STATE_REALLY_DEAD)
-	!TriggerOverride(Player1,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player1)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",2)
-	!StateCheck(Player2,STATE_REALLY_DEAD)
-	!TriggerOverride(Player2,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player2)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",3)
-	!StateCheck(Player3,STATE_REALLY_DEAD)
-	!TriggerOverride(Player3,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player3)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",4)
-	!StateCheck(Player4,STATE_REALLY_DEAD)
-	!TriggerOverride(Player4,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player4)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",5)
-	!StateCheck(Player5,STATE_REALLY_DEAD)
-	!TriggerOverride(Player5,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player5)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",6)
-	!StateCheck(Player6,STATE_REALLY_DEAD)
-	!TriggerOverride(Player6,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player6)
-		Continue()
+ACTION_IF GAME_IS ~bg2ee~ BEGIN                               //Revenant's Script (ToB)
+
+EXTEND_BOTTOM ~baldur25.bcs~	~.../inlined_script.baf~ END 
+
+//Area Patching to Fit the Script's Needs
+
+ACTION_IF GAME_IS ~bgee~ BEGIN								//BGEE + SoD
+
+	ACTION_FOR_EACH area IN AR0125 AR1501 AR1502 AR1503 AR1504 AR1805 AR1806 AR1807 AR1808 AR1809 AR1901 AR1902 AR1904 AR1906 AR1907 AR2101 AR3802 AR4101 OH3010 OH3020 THEN BEGIN
+
+		COPY_EXISTING ~%area%.are~ ~override~
+		WRITE_SHORT	0x48	(THIS BOR 0x20)
+		BUT_ONLY IF_EXISTS
+		
+	END
 END
 
->>>>>>>>
-EXTEND_BOTTOM ~bdbaldur.bcs~	~.../inlined_script.baf~
+ACTION_IF GAME_IS ~bg2ee~ BEGIN								//BG2EE
 
-END
+	ACTION_FOR_EACH area IN AR1305 AR1306 AR1307 AR1901 AR1902 AR1904 AR1905 AR2102 AR2801 AR2802 AR2803 AR2804 AR2805 AR2808 AR2809 AR2810 AR2811 AR2812 AR4500 AR6012 AR6108 AR6111 AR6200 OH5120 OH6300 OH6460 THEN BEGIN
 
-//Revenant's Script (ToB)
-
-ACTION_IF GAME_IS ~bg2ee~ BEGIN
-
-<<<<<<<< .../inlined_script.baf
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",1)
-	!StateCheck(Player1,STATE_REALLY_DEAD)
-	!TriggerOverride(Player1,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player1)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",2)
-	!StateCheck(Player2,STATE_REALLY_DEAD)
-	!TriggerOverride(Player2,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player2)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",3)
-	!StateCheck(Player3,STATE_REALLY_DEAD)
-	!TriggerOverride(Player3,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player3)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",4)
-	!StateCheck(Player4,STATE_REALLY_DEAD)
-	!TriggerOverride(Player4,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player4)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",5)
-	!StateCheck(Player5,STATE_REALLY_DEAD)
-	!TriggerOverride(Player5,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player5)
-		Continue()
-END
-IF
-	!AreaType(CITY)
-	AreaType(53)
-	Exists("RAHoar4")
-	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
-	Global("RAHoar4_Owner","GLOBAL",6)
-	!StateCheck(Player6,STATE_REALLY_DEAD)
-	!TriggerOverride(Player6,InMyArea("RAHoar4"))
-THEN
-	RESPONSE #100
-		MoveGlobalObject("RAHoar4",Player6)
-		Continue()
+		COPY_EXISTING ~%area%.are~ ~override~
+		WRITE_SHORT	0x48	(THIS BOR 0x20)
+		BUT_ONLY IF_EXISTS
+		
+	END
 END
 
->>>>>>>>
-EXTEND_BOTTOM ~baldur25.bcs~	~.../inlined_script.baf~
+ACTION_IF GAME_IS ~eet~ BEGIN								//EET
 
-END 
+	ACTION_FOR_EACH area IN BG1305 BG1306 BG1307 BG1901 BG1902 BG1904 BG1905 BG2102 BG2801 BG2802 BG2803 BG2804 BG2805 BG2808 BG2809 BG2810 BG2811 BG2812 BG4500 BG6012 BG6108 BG6111 BG6200 THEN BEGIN
+
+		COPY_EXISTING ~%area%.are~ ~override~
+		WRITE_SHORT	0x48	(THIS BOR 0x20)
+		BUT_ONLY IF_EXISTS
+		
+	END
+END
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN								//IWDEE
+
+	ACTION_FOR_EACH area IN AR1101 AR1103 AR1104 AR1105 AR1106 AR5004 AR5101 AR5102 AR5103 AR5201 AR5401 AR6005 AR6006 AR6007 AR6010 AR6011 AR6014 	AR8004 AR8010 AR8012 AR8013 AR8015 AR9603 AR9604 AR9801 THEN BEGIN
+
+		COPY_EXISTING ~%area%.are~ ~override~
+		WRITE_SHORT	0x48	(THIS BOR 0x20)
+		BUT_ONLY IF_EXISTS
+		
+	END
+END
 
 //EoF
