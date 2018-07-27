@@ -1045,19 +1045,341 @@ SAY NAME1 @9999143 SAY NAME2 @9999143
 
 END
 
-//Seven Eyes
+//Snowball Swarm
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_SNILLOCS_SNOWBALL_SWARM~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SnillocSnowballSwarm/IDPRO217.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SnillocSnowballSwarm/SPWI204.spl~ 2 2 WIZARD_SNILLOCS_SNOWBALL_SWARM
+SAY NAME1 @9999144 SAY NAME2 @9999144 SAY UNIDENTIFIED_DESC @9999145 SAY DESC @9999145
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO217% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%C~	  resource = EVAL ~%spell_res%C~	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SnillocSnowballSwarm/SPWI204B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SnillocSnowballSwarm/SPWI204C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SnillocSnowballSwarm/SPWI204B.spl~	~override\%spell_res%B.spl~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SnillocSnowballSwarm/SPWI204C.spl~	~override\%spell_res%B.spl~
+
+END
+
+//Icelance
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_ICELANCE~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Icelance/IDPRO251.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Icelance/SPWI327.spl~ 2 3 WIZARD_ICELANCE
+SAY NAME1 @9999146 SAY NAME2 @9999146 SAY UNIDENTIFIED_DESC @9999147 SAY DESC @9999147
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO251% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~SPPR321~	      resource = EVAL ~%spell_res%~	 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"      END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Icelance/SPWI327B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Icelance/SPWI327C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Cloudburst
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_CLOUDBURST~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Cloudburst/IDPRO301.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Cloudburst/SPPR325.spl~ 1 3 CLERIC_CLOUDBURST
+SAY NAME1 @9999148 SAY NAME2 @9999148 SAY UNIDENTIFIED_DESC @9999149 SAY DESC @9999149
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO301% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Cloudburst/SPPR325B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Cloudburst/SPPR325C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Storm Shell
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_STORM_SHELL~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/StormShell/SPPR327.spl~ 1 3 CLERIC_STORM_SHELL
+SAY NAME1 @9999150 SAY NAME2 @9999150 SAY UNIDENTIFIED_DESC @9999151 SAY DESC @9999151
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StormShell/SPPR327B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StormShell/SPPR327C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Freezing Sphere
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_OTILUKES_FREEZING_SPHERE~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/IDPRO269.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628.spl~ 2 6 WIZARD_OTILUKES_FREEZING_SPHERE
+SAY NAME1 @9999152 SAY NAME2 @9999152 SAY UNIDENTIFIED_DESC @9999153 SAY DESC @9999153
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO269% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Miracle Mists
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_MIST_OF_ELDATH~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/MistsofEldath/IDPRO307.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/MistsofEldath/SPPR736.spl~ 1 7 CLERIC_MIST_OF_ELDATH
+SAY NAME1 @9999154 SAY NAME2 @9999154 SAY UNIDENTIFIED_DESC @9999155 SAY DESC @9999155
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO307% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/MistsofEldath/SPPR736B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/MistsofEldath/SPPR736C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Static Charge
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_STATIC_CHARGE~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/StaticCharge/IDSTATIC.PRO~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999156) STR_VAR bam_file = RASTATIC RET iconstat = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/StaticCharge/SPPR420.spl~ 1 4 CLERIC_STATIC_CHARGE
+SAY NAME1 @9999156 SAY NAME2 @9999156 SAY UNIDENTIFIED_DESC @9999157 SAY DESC @9999157
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 42   parameter2 = iconstat END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StaticCharge/SPPR420B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StaticCharge/SPPR420C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StaticCharge/SPPR420B.spl~	~override\%spell_res%B.spl~
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDSTATIC% END
+LPF	ALTER_EFFECT	   STR_VAR match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPPR420~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 40255 parameter1 = RESOLVE_STR_REF (@9999158) END
+
+END
+
+//Whirlwind
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_WHIRLWIND~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Whirlwind/WHIRLW.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Whirlwind/SPPR617.spl~ 1 6 CLERIC_WHIRLWIND
+SAY NAME1 @9999159 SAY NAME2 @9999159 SAY UNIDENTIFIED_DESC @9999160 SAY DESC @9999160
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %WHIRLW% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"      END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Whirlwind/SPPR617B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Whirlwind/SPPR617C.BAM~	~override\%spell_res%C.BAM~
+
+END
 
 //Spike Growth
 
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_SPIKE_GROWTH~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/IDPRO300.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324.spl~ 1 3 CLERIC_SPIKE_GROWTH
+SAY NAME1 @9999161 SAY NAME2 @9999161 SAY UNIDENTIFIED_DESC @9999162 SAY DESC @9999162
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO300% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
 //Thorn Spray
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_THORN_SPRAY~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/ThornSpray/IDPRO303.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ThornSpray/SPPR427.spl~ 1 4 CLERIC_THORN_SPRAY
+SAY NAME1 @9999163 SAY NAME2 @9999163 SAY UNIDENTIFIED_DESC @9999164 SAY DESC @9999164
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO303% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ThornSpray/SPPR427B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ThornSpray/SPPR427C.BAM~	~override\%spell_res%C.BAM~
+
+END
 
 //Stalker
 
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_STALKER~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SPPR737.spl~ 1 7 CLERIC_STALKER
+SAY NAME1 @9999165 SAY NAME2 @9999165 SAY UNIDENTIFIED_DESC @9999166 SAY DESC @9999166
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SPPR737B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SPPR737C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SSHAMB.CRE~	~override~
+SAY NAME1 @9999167 SAY NAME2 @9999167
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SHMBLR.ITM~	~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 37709 parameter1 = EVAL "%RA_Entangled%" END
+
+END
+
 //Wither
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_WITHER~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740.spl~ 1 7 CLERIC_WITHER
+SAY NAME1 @9999168 SAY NAME2 @9999168 SAY UNIDENTIFIED_DESC @9999169 SAY DESC @9999169
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%~ END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 40835 parameter1 = RESOLVE_STR_REF (@9999170) END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740.EFF~	~override\%spell_res%.EFF~
+
+END
 
 //Spike Stones
 
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~CLERIC_SPIKE_STONES~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SpikeStones/IDPRO213.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SpikeStones/SPPR519.spl~ 1 5 CLERIC_SPIKE_STONES
+SAY NAME1 @9999171 SAY NAME2 @9999171 SAY UNIDENTIFIED_DESC @9999172 SAY DESC @9999172
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO213% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeStones/SPPR519B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeStones/SPPR519C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
 //Iron Body
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~WIZARD_IRON_BODY~) BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999173) STR_VAR bam_file = RAIRONIC RET iconiron = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/SPWI814.spl~ 2 8 WIZARD_IRON_BODY
+SAY NAME1 @9999173 SAY NAME2 @9999173 SAY UNIDENTIFIED_DESC @9999174 SAY DESC @9999174
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%~ END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35593 parameter1 = EVAL "%RA_Diseased%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 39752 parameter1 = EVAL "%RA_FoulDisease%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 36317 parameter1 = EVAL "%RA_Poison%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37607 parameter1 = EVAL "%RA_Poisoned%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 172   parameter2 = iconiron END
+LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206 END
+LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/SPWI814B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/SPWI814C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/IBODY.ITM~	~override~
+SAY NAME1 @9999175 SAY NAME2 @9999175 SAY UNIDENTIFIED_DESC @9999175 SAY DESC @9999175
+
+END
+
+ACTION_IF ((!GAME_IS ~iwdee~) AND (FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_IRON_BODY[ %TAB%%WNL%%LNL%%MNL%$]~)))	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_IRON_BODY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+PATCH_FOR_EACH label IN
+	~WIZARD_MALAVONS_CORROSIVE_FOG~
+	~WIZARD_ABI_DALZIMS_HORRID_WILTING~
+	~WIZARD_SUFFOCATE~
+	~WIZARD_STINKING_CLOUD~
+	~WIZARD_DEATH_FOG~
+	~WIZARD_CLOUDKILL~
+	~WIZARD_BELTYNS_BURNING_BLOOD~
+	~WIZARD_FLESH_TO_STONE~
+	~WIZARD_CONTAGION~
+	~WIZARD_INCENDIARY_CLOUD~
+	~CLERIC_MIST_OF_ELDATH~
+	~CLERIC_UNFAILING_ENDURANCE~
+	~CLERIC_CLOUD_OF_PESTILENCE~
+	~CLERIC_MOLD_TOUCH~
+	~CLERIC_POISON~
+	~CLERIC_WRITHING_FOG~
+	~CLERIC_DOLOROUS_DECAY~
+	~CLERIC_WITHER~
+	~TRAP_STINKING_CLOUD~
+	~TRAP_CLOUDKILL~
+	~TRAP_FLESH_TO_STONE~
+	~TRAP_DEATH_FOG~
+	~INNATE_BEHOLDER_FLESH_TO_STONE~
+	~INNATE_MUSTARD_JELLY_VAPOR~
+	~INNATE_INCENDIARY_CLOUD_IDLING~
+	~INNATE_INCENDIARY_CLOUD_EXPLOSION~
+	~INNATE_MYCONID_SPORES~
+	~INNATE_IRON_GOLEM_CLOUD~
+	~GOLEM_GASCLOUD~
+BEGIN
+	PATCH_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~ ~[ %TAB%]%label%[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+		LPF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = EVAL ~%label%~	RET	spell_res	END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 power = 8 resist_dispel = 3 duration = 120 STR_VAR resource = EVAL ~%spell_res%~ END
+	END
+END
+
+END
+
+//Seven Eyes
 
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA
