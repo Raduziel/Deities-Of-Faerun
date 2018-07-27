@@ -8,6 +8,8 @@ INSTALLATION NOTES:
 
 * Deities of Faerûn should be installed after any mod that adds or alters spells in the game.
 
+* Deities of Faerûn should be installed after EET.
+
 * Deities of Faerûn will probably misbehave with any mod component that overhauls the combat system of the game.
 
 * Deities of Faerûn will probably misbehave with any mod component that alters the strongholds quests (except for those that exclusively remove the one-stronghold limit).
