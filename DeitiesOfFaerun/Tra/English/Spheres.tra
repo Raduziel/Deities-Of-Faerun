@@ -601,6 +601,189 @@ Saving Throw: None
 
 This spell allows the caster to summon an 8-HD elemental from the Elemental Plane of Water and bind it to <PRO_HISHER> will. This elemental will fight on behalf of the caster until the spell duration expires or the elemental is destroyed.~
 	@9999143 = ~Water Elemental~
-	
+	@9999144 = ~Snowball Swarm~
+	@9999145 = ~Snowball Swarm
+(Evocation)
+
+Level: 2
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+This spell causes a flurry of snowballs to erupt from a point within range. These snowballs will hit everything within the area of effect, doing 1d3 points of cold damage per level, up to a maximum of 8d3 points at level 8. Against fire-using or fire-dwelling creatures, it inflicts 1d6 points of cold damage per level, up to a maximum of 8d6 points at level 8.~
+	@9999146 = ~Icelance~
+	@9999147 = ~Icelance
+(Evocation)
+
+Level: 3
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell fires a magical lance of ice at a target of the caster's choosing. It automatically hits, inflicting 5d6 points of cold damage and forcing the target to make a Save vs. Spell or be stunned for 3 rounds.~
+	@9999148 = ~Cloudburst~
+	@9999149 = ~Cloudburst
+(Invocation)
+
+Level: 3
+Sphere: Water
+Range: Visual range of the caster
+Duration: 2 rounds
+Casting Time: 6
+Area of Effect: 17-ft. radius
+Saving Throw: None
+
+This spell brings forth a magical rain that saturates the area of effect. All cold- and fire-dwelling creatures take 2d3 points of magic damage per round. In addition, all creatures in the area have a 50% chance per round of being struck by bolts of lightning that deal 2d6 electrical damage, with a Save vs. Spell for half. Flame Blade, Shroud of Flame, and salamander auras are extinguished by Cloudburst.~
+	@9999150 = ~Storm Shell~
+	@9999151 = ~Storm Shell
+(Abjuration)
+
+Level: 3
+Sphere: Air, Water
+Range: 0
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+This spell surrounds the caster with a bright sphere of disruptive energy that moves with <PRO_HIMHER>. The storm shell increases the caster's resistance to fire, cold, and electrical damage by 50%.~
+	@9999152 = ~Freezing Sphere~
+	@9999153 = ~Freezing Sphere
+(Alteration, Evocation)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster. If the target makes its Save vs. Spell, however, they have dodged the orb and avoided all damage.~
+	@9999154 = ~Miracle Mists~
+	@9999155 = ~Miracle Mists
+(Invocation)
+
+Level: 7
+Sphere: Water
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 9
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 25 Hit Points.~
+	@9999156 = ~Static Charge~
+	@9999157 = ~Static Charge
+(Alteration)
+
+Level: 4
+Sphere: Air
+Range: 0
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: Visual range of the caster
+Saving Throw: 1/2
+
+Static Charge is similar to Call Lightning, except it can be used indoors. This spell allows the caster to generate a static charge around any creature within the area of effect, dealing 2d8 points of electrical damage plus an additional 1d8 points per level of the caster (save vs. Spell for half). The charge keeps going off once every turn for the duration of the spell.~
+	@9999158 = ~Discharge of static electricity~
+	@9999159 = ~Whirlwind~
+	@9999160 = ~Whirlwind
+(Invocation)
+
+Level: 6
+Sphere: Air
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+This spell creates a small whirlwind within the caster's sight. The whirlwind will fly around randomly, harming friend and foe alike. The caster is immune to <PRO_HISHER> own spell, and elementals and other huge creatures are also unaffected. If a creature is caught in the path of the whirlwind, it takes 2d8 crushing damage, 2d8 slashing damage, and must make a Save vs. Breath Weapon or be stunned for 2 rounds. Creatures with 2 or fewer Hit Dice are automatically killed by this spell. A maximum of 8 targets can be affected, after which the whirlwind will dissipate.~
+	@9999161 = ~Spike Growth~
+	@9999162 = ~Spike Growth
+(Alteration)
+
+Level: 3
+Sphere: Plant, Earth
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell transforms the surrounding terrain into spiky plants. Any creature entering the area takes 1d4 points of piercing damage and 1d4 points of slashing damage every round until the spell expires.~
+	@9999163 = ~Thorn Spray~
+	@9999164 = ~Thorn Spray
+(Alteration)
+
+Level: 4
+Sphere: Plant, Earth
+Range: 30 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 17-ft. cone with 90-deg. arc
+Saving Throw: 1/2
+
+By means of this spell, the caster can cause a spray of barbs, spikes, thorns, and spines to spring forth from <PRO_HISHER> hand. The thorn spray covers a 17-ft.-long cone, inflicting 2d10 points of piercing damage to all creatures within the area of effect, or 1d10 points of damage if a Save vs. Death is successful.~
+	@9999165 = ~Stalker~
+	@9999166 = ~Stalker
+(Conjuration)
+
+Level: 7
+Sphere: Plant
+Range: Visual range of the caster
+Duration: 8 hours
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell creates two 11-HD shambling mounds. These creatures willingly aid the caster in combat or whatever other duties they are assigned and have the capability to carry out.~
+	@9999167 = ~Shambling Mound~
+	@9999168 = ~Wither~
+	@9999169 = ~Wither
+(Necromancy)
+
+Level: 7
+Sphere: Plant
+Range: Touch
+Duration: 1 round/2 levels
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This powerful spell causes the organs of the touched creature to cease functioning and wither away unless a Save vs. Death at a penalty of -4 is made. The creature affected will lose 3 Hit Points per second. The effect lasts for 1 round per 2 levels of the caster or until dispelled. For example, a 14th-level priest would cause the targeted creature to lose 18 Hit Points per round for 7 rounds. This spell has no effect on undead, constructs, or extraplanar creatures.~
+	@9999170 = ~Withering~
+	@9999171 = ~Spike Stones~
+	@9999172 = ~Spike Stones
+(Alteration, Enchantment)
+
+Level: 5
+Sphere: Earth
+Range: Visual range of the caster
+Duration: 12 rounds
+Casting Time: 6
+Area of Effect: 8-ft. radius
+Saving Throw: Special
+
+This spell warps the surrounding rock, reshaping the terrain into spiked projections that blend into the background. Any creature entering the area takes 2d4 Hit Points of piercing damage per round and must make a Save vs. Spell or have its movement rate reduced by 30%.~
+	@9999173 = ~Iron Body~
+	@9999174 = ~Iron Body
+(Alteration)
+
+Level: 8
+Range: 0
+Duration: 2 turns
+Casting Time: 8
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transforms the caster's body into living iron, granting <PRO_HIMHER> several powerful resistances and abilities. While the spell is in effect, the caster is 100% resistant to electricity and poison, 50% resistant to fire, and 25% resistant to crushing damage. Spells that affect respiration or the physiology of the caster are ignored. In addition, the caster's Strength is raised to 25, and the caster can attack twice per round with iron fists for 2d4 points of damage plus appropriate Strength bonuses.
+
+Unfortunately, the caster's movement becomes slow and awkward, setting <PRO_HISHER> movement rate to 25% of <PRO_HISHER> normal, and <PRO_HESHE> cannot cast spells while Iron Body is in effect.~
+	@9999175 = ~Iron Fist~
 	
 // EoF
