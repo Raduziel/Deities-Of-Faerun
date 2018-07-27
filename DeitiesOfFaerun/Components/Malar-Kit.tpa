@@ -135,6 +135,7 @@ LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%~ resource
 LPM ~SPELL_TO_INNATE~
 
 COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
+IF_EXISTS
 
 END
 
