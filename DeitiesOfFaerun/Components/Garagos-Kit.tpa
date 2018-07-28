@@ -64,6 +64,13 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAGARA1.spl~
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RAGARA1D~	END
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAGARA1~ END
+
+COPY_EXISTING	~%spell_res%D.spl~	~override/RAGARA1D.spl~
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAGARA1~ END
 
 END                                                           
 

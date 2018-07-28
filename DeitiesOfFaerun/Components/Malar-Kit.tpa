@@ -105,10 +105,14 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMAL_RAGE[ %TAB
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_RAGE~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA2.spl~
-LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~ END
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~	END
 LPM ~SPELL_TO_INNATE~
 
 COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
+IF_EXISTS
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~	END
 
 END ELSE BEGIN
 
@@ -131,11 +135,16 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPPR522~	 
 LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA2.spl~
+LPF	CLONE_EFFECT INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~	END
 LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~ END
 LPM ~SPELL_TO_INNATE~
 
 COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
 IF_EXISTS
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~	END
+LPM ~SPELL_TO_INNATE~
 
 END
 

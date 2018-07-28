@@ -72,7 +72,11 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EYE[ %TAB%%WNL%%L
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EYE~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RASAVR2.spl~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASAVR2~ END
 LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASAVR2~ END
 
 END 
 
@@ -82,7 +86,10 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_TRUE_SIGHT[ %TAB%
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_TRUE_SIGHT~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RASAVR3.spl~
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RASAVR3D~	END
 LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%D.spl~	~override/RASAVR3D.spl~
 
 END
 

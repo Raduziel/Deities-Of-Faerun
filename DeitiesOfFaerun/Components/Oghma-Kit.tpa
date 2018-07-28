@@ -79,7 +79,11 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FRIENDS[ %TAB%%WN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FRIENDS~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAOGHM2.spl~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAOGHM2~ END
 LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAOGHM2~ END
 
 END
 

@@ -91,7 +91,10 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_TRUE_SIGHT[ %TAB%
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_TRUE_SIGHT~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RASELU3.spl~
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RASELU3D~	END
 LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%D.spl~	~override/RASELU3D.spl~
 
 END
 		  

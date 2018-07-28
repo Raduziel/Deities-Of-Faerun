@@ -59,6 +59,11 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_COMMAND[ %TAB%%WN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_COMMAND~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATORM1.spl~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM1~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM1~	END
 
 END
 
@@ -68,6 +73,11 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_GREATER_COMMAND[ 
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GREATER_COMMAND~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATORM2.spl~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM2~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM2~	END
 
 END
 
@@ -77,6 +87,7 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BOLT_OF_GLORY[ %T
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BOLT_OF_GLORY~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATORM3.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 
@@ -86,6 +97,7 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_POWER_WORD_STUN[ 
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_POWER_WORD_STUN~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATORM4.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 
@@ -95,6 +107,7 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLY_WORD[ %TAB%%
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLY_WORD~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATORM5.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 

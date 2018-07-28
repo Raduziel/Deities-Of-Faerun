@@ -59,6 +59,10 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]ASSASSIN_POISON[ %TAB%%W
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~ASSASSIN_POISON~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA1.spl~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATLNA1~ END
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATLNA1~ END
 
 END
 
@@ -74,6 +78,7 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONTAGION[ %TAB%%
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONTAGION~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA3.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 
@@ -83,6 +88,7 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_POISON[ %TAB%%WNL
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_POISON~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA4.spl~
+LPM ~SPELL_TO_INNATE~
 
 END
 
