@@ -811,5 +811,20 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell enables a priest to aid and protect any one being other than the priest. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for the duration of the spell.~
+	@9999180 = ~Impervious Sanctity of Mind~
+	@9999181 = ~Impervious Sanctity of Mind
+(Abjuration)
+
+Level: 7
+Sphere: Protection
+Range: 0
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This spell steels the caster's mind against any outside influence. Charm, confusion, fear, feeblemindedness, hold, sleep, maze, berserk, and intoxication will not affect the caster as long as this spell is in effect.~
+	
+	
 	
 // EoF
