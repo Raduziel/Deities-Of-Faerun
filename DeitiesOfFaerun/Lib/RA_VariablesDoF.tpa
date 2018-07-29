@@ -26,6 +26,7 @@ OUTER_SET RA_Stunned = (GAME_IS ~bgee~) ? 26050 : GAME_IS ~bg2ee eet~ ? 1280 : (
 OUTER_SET RA_Blinded = (GAME_IS ~bgee~) ? 31786 : GAME_IS ~bg2ee eet~ ? 14674 : (GAME_IS ~iwdee~) ? 37800 : 0		// Blinded
 OUTER_SET RA_RigidThink = (GAME_IS ~bgee~) ? 26184 : GAME_IS ~bg2ee eet~ ? 14791 : (GAME_IS ~iwdee~) ? 37603 : 0    // Rigid Thinking
 OUTER_SET RA_Confused = (GAME_IS ~bgee~) ? 25807 : GAME_IS ~bg2ee eet~ ? 14782 : (GAME_IS ~iwdee~) ? 37604 : 0      // Confused
+OUTER_SET RA_Intoxicated = GAME_IS ~bgee bg2ee eet~) ? 17396 : (GAME_IS ~iwdee~) ? 37606 : 0                        // Intoxicated
 OUTER_SET RA_Hopeless = (GAME_IS ~bgee bg2ee eet~) ? 23740 : (GAME_IS ~iwdee~) ? 14980 : 0                          // Hopelessness
 OUTER_SET RA_AbDrain = (GAME_IS ~bgee~) ? 25081 : GAME_IS ~bg2ee eet~ ? 8320 : (GAME_IS ~iwdee~) ? 37685 : 0        // Ability Score Drain
 OUTER_SET RA_IntDrain = (GAME_IS ~bgee~) ? 25076 : GAME_IS ~bg2ee eet~ ? 8311 : (GAME_IS ~iwdee~) ? 37680 : 0       // Mind Flayer Drain
