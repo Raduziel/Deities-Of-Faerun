@@ -785,5 +785,31 @@ This spell transforms the caster's body into living iron, granting <PRO_HIMHER> 
 
 Unfortunately, the caster's movement becomes slow and awkward, setting <PRO_HISHER> movement rate to 25% of <PRO_HISHER> normal, and <PRO_HESHE> cannot cast spells while Iron Body is in effect.~
 	@9999175 = ~Iron Fist~
+	@9999176 = ~Blood Rage~
+	@9999177 = ~Blood Rage
+(Alteration)
+
+Level: 4
+Sphere: Combat
+Range: Visual range of the caster
+Duration: 2 turns
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell works only on player characters or allied creatures. When cast, the target of this spell goes berserk, attacking the nearest creature until that creature is dead, then moving on to the next target. While under Blood Rage, the target is immune to charm, sleep, fear, hold, stunning, confusion, emotion, symbol spells, and related effects. In addition, the target gains +2 to hit, +3 to damage, +2 to Strength, +10 to maximum Hit Points, and +2 to <PRO_HISHER> movement rate. The spell has several disadvantages, however: The Hit Points of the target are masked for the duration of the spell, and the target cannot benefit from any effect that heals Hit Points. At the end of the spell's duration, the target becomes fatigued and <PRO_HISHER> Strength drops to 3 for 2 turns. Blood Rage cannot affect creatures of lawful alignment.~
+	@9999178 = ~Exaltation~
+	@9999179 = ~Exaltation
+(Abjuration)
+
+Level: 3
+Sphere: Healing
+Range: Touch
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell enables a priest to aid and protect any one being other than the priest. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for the duration of the spell.~
 	
 // EoF
