@@ -1506,6 +1506,66 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/ImperviousSancityofMind/SPPR733C.BAM~	~
 
 END
 
+//Shout
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_SHOUT[ %TAB%%WNL%$]~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Shout/IDPRO315.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Shout/SPWI431.spl~ 2 4 WIZARD_SHOUT
+SAY NAME1 @9999182 SAY NAME2 @9999182 SAY UNIDENTIFIED_DESC @9999183 SAY DESC @9999183
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO315%      END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shout/SPWI431B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shout/SPWI431C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Power Word, Blind
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_POWER_WORD_BLIND[ %TAB%%WNL%$]~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/PowerWordBlind/IDPRO336.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/PowerWordBlind/SPWI815.spl~ 2 8 WIZARD_POWER_WORD_BLIND
+SAY NAME1 @9999184 SAY NAME2 @9999184 SAY UNIDENTIFIED_DESC @9999185 SAY DESC @9999185
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO336%      END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37800 parameter1 = EVAL "%RA_Blinded%"  		END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/PowerWordBlind/SPWI815B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/PowerWordBlind/SPWI815C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Great Shout
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_GREAT_SHOUT[ %TAB%%WNL%$]~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/GreatShout/IDPRO319.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/GreatShout/SPWI806.spl~ 2 8 WIZARD_GREAT_SHOUT
+SAY NAME1 @9999186 SAY NAME2 @9999186 SAY UNIDENTIFIED_DESC @9999187 SAY DESC @9999187
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO319%      END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%"  	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"  		END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GreatShout/SPWI806B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GreatShout/SPWI806C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
 //Seven Eyes
 
 COPY_EXISTING ~smtables.2da~ ~override~
