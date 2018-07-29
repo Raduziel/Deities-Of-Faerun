@@ -1390,27 +1390,24 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 176   parameter2 = iconbloo                END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%"   END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%"       END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37613 parameter1 = EVAL "%RA_Sleep%"       END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%" END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%"     END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37603 parameter1 = EVAL "%RA_RigidThink%"  END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37604 parameter1 = EVAL "%RA_Confused%"    END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35544 parameter1 = EVAL "%RA_Dominated%"   END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 17392 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37801 parameter1 = EVAL "%RA_Charmed%"     END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 14043 parameter1 = EVAL "%RA_Stun%" 	   END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%" 	   END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%"   END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35473 parameter1 = EVAL "%RA_Healed%" 	   END
-LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%"   	   END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35473 parameter1 = EVAL "%RA_Healed%" 		END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35544 parameter1 = EVAL "%RA_Dominated%"   END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 17392 parameter1 = EVAL "%RA_DireCharmed%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37801 parameter1 = EVAL "%RA_Charmed%"     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%"   END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%"       END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37613 parameter1 = EVAL "%RA_Sleep%"       END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%" 	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37603 parameter1 = EVAL "%RA_RigidThink%"  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37604 parameter1 = EVAL "%RA_Confused%"    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" 	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%"  		END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPPR714~ END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPPR716~ END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPWI427~ END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPWI428~ END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPWI429~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 318 target = 2 power = 4 parameter1 = 2 resist_dispel = 3 duration = 120 STR_VAR resource = ~RAWI411~ END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/BloodRage/SPPR422B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/BloodRage/SPPR422C.BAM~	~override\%spell_res%C.BAM~
@@ -1470,6 +1467,42 @@ LPF	ALTER_EFFECT	   INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Exaltation/SPPR321B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Exaltation/SPPR321C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Impervious Sanctity of Mind
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_IMPERVIOUS_SANCTITY_OF_MIND[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999180) STR_VAR bam_file = RAMINDIC RET iconmind = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ImperviousSancityofMind/SPPR733.spl~ 1 7 CLERIC_IMPERVIOUS_SANCTITY_OF_MIND
+SAY NAME1 @9999180 SAY NAME2 @9999180 SAY UNIDENTIFIED_DESC @9999181 SAY DESC @9999181
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 170   parameter2 = iconmind                END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%"   END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%"       END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37613 parameter1 = EVAL "%RA_Sleep%"       END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37606 parameter1 = EVAL "%RA_Intoxicated%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%"     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35544 parameter1 = EVAL "%RA_Dominated%"   END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 17392 parameter1 = EVAL "%RA_DireCharmed%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37801 parameter1 = EVAL "%RA_Charmed%"     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37603 parameter1 = EVAL "%RA_RigidThink%"  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37604 parameter1 = EVAL "%RA_Confused%"    END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" 	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%"  		END
+LPF	CLONE_EFFECT	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR102~ resource = ~RACLAN1~	    END
+LPF	CLONE_EFFECT	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR102~ resource = ~RATORM1~	    END
+LPF	CLONE_EFFECT	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR405~ resource = ~RABANE2~	    END
+LPF	ALTER_EFFECT	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR716~ resource = EVAL $res_of_label(~CLERIC_SYMBOL_OF_HOPELESSNESS~)	END
+LPF	ALTER_EFFECT	   INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = EVAL $res_of_label(~CLERIC_BLOOD_RAGE~)	END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ImperviousSancityofMind/SPPR733B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ImperviousSancityofMind/SPPR733C.BAM~	~override\%spell_res%C.BAM~
 
 END
 
