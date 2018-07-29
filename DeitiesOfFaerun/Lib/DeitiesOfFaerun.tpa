@@ -316,4 +316,9 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common~ override
 
 END
 
+//Solves issue for Minor Sequencer, Sequencer, Spell Trigger, Contingency and Chain Contingency
+COPY_EXISTING	~UI.MENU~	override
+	REPLACE_TEXTUALLY	~mageBookEnabled == false~ ~((mageBookEnabled == false) and not (bookMode == 1))~
+BUT_ONLY
+
 //EoF
