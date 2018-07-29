@@ -860,6 +860,45 @@ Area of Effect: 17-ft. cone with 15-deg. arc
 Saving Throw: 1/2
 
 Upon uttering the Great Shout, the caster releases a stunning force from <PRO_HISHER> mouth in a 17-ft. cone. The Great Shout is extremely taxing and dangerous to the user. The shout drains 2d4 Hit Points from the caster, and <PRO_HESHE> must make a Save vs. Spell or fall unconscious for 1 turn. Creatures 5 Hit Dice and under caught within the Great Shout instantly die. All other creatures within the area of effect must save vs. Spell. Those who fail the save are stunned for 2 rounds, deafened for 4 rounds, and suffer 4d12 points of magic damage. Those who make the save are stunned for 1 round, deafened for 2 rounds, and suffer 2d12 points of magic damage.~
-	
+	@9999188 = ~Righteous Wrath of the Faithful~
+	@9999189 = ~Righteous Wrath of the Faithful
+(Enchantment/Charm)
+
+Level: 5
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 8
+Area of Effect: 17-ft. radius
+Saving Throw: None
+
+This spell bestows a form of divine madness upon the priest's allies, improving their combat skills. All the priest's allies in the area of effect gain a +1 to attack rolls and Saving Throws, plus 8 bonus Hit Points for the duration of the spell (these Hit Points can take a target beyond <PRO_HISHER> Hit Point maximum). Allies of the same alignment, however, gain an extra attack every round (canceling haste), a +2 bonus to their attack rolls, damage rolls, and Saving Throws, and immunity to charm and hold spells. Anyone affected by Righteous Wrath of the Faithful will suffer fatigue when the spell wears off.~
+	@9999190 = ~Antimagic Shell~
+	@9999191 = ~Antimagic Shell
+(Abjuration)
+
+Level: 6
+Range: 0
+Duration: 1 turn/level
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+This spell surrounds the caster with an invisible barrier that moves with <PRO_HIMHER>. This barrier makes the wizard immune to any magical attacks, but it prevents <PRO_HIMHER> from casting spells.
+
+Antimagic Shell also dispels deafness and feeblemindedness in the caster.~
+	@9999192 = ~Destruction~
+	@9999193 = ~Destruction
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: Special
+
+This spell instantly destroys a target, blasting it into small chunks. The victim is allowed a Save vs. Death at a penalty of -4; if successful, the target takes 8d6 points of magic damage instead of being destroyed. Note that a character struck with a Destruction spell cannot be raised from the dead with a Raise Dead or Resurrection spell.~
 	
 // EoF
