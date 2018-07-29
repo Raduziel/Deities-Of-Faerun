@@ -1390,21 +1390,21 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 176   parameter2 = iconbloo                END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%"   END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%"       END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37613 parameter1 = EVAL "%RA_Sleep%"       END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%" END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%"     END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37603 parameter1 = EVAL "%RA_RigidThink%"  END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37604 parameter1 = EVAL "%RA_Confused%"    END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35544 parameter1 = EVAL "%RA_Dominated%"   END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 17392 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 37801 parameter1 = EVAL "%RA_Charmed%"     END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 14043 parameter1 = EVAL "%RA_Stun%" 		END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%" 	END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" 	END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35473 parameter1 = EVAL "%RA_Healed%" 		END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%"   		END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%"   END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%"       END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37613 parameter1 = EVAL "%RA_Sleep%"       END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%" END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%"     END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37603 parameter1 = EVAL "%RA_RigidThink%"  END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37604 parameter1 = EVAL "%RA_Confused%"    END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35544 parameter1 = EVAL "%RA_Dominated%"   END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 17392 parameter1 = EVAL "%RA_DireCharmed%" END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 37801 parameter1 = EVAL "%RA_Charmed%"     END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 14043 parameter1 = EVAL "%RA_Stun%" 	   END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%" 	   END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%"   END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35473 parameter1 = EVAL "%RA_Healed%" 	   END
+LPF ALTER_EFFECT 	   INT_VAR silent = 1 match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%"   	   END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPPR714~ END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPPR716~ END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPWI427~ END
