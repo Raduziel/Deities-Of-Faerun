@@ -824,7 +824,42 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell steels the caster's mind against any outside influence. Charm, confusion, fear, feeblemindedness, hold, sleep, maze, berserk, and intoxication will not affect the caster as long as this spell is in effect.~
-	
+	@9999182 = ~Shout~
+	@9999183 = ~Shout
+(Invocation)
+
+Level: 4
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: 17-ft. cone with 15-deg. arc
+Saving Throw: Special
+
+Shout grants the wizard tremendous vocal powers, allowing <PRO_HIMHER> to emit an earsplitting roar from <PRO_HISHER> mouth in a cone-shaped area of effect. Any creature within this area is deafened for 9 rounds and suffers 4d6 points of magic damage. A successful Save vs. Spell negates the deafness and reduces the damage by half.~
+	@9999184 = ~Power Word, Blind~
+	@9999185 = ~Power Word, Blind
+(Conjuration)
+
+Level: 8
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: 4-ft. radius
+Saving Throw: None
+
+This spell blinds all enemy creatures within the area of effect for 1 turn or until dispelled. Blind creatures suffer a -4 penalty to their Armor Class and chance to hit.~
+	@9999186 = ~Great Shout~
+	@9999187 = ~Great Shout
+(Invocation)
+
+Level: 8
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: 17-ft. cone with 15-deg. arc
+Saving Throw: 1/2
+
+Upon uttering the Great Shout, the caster releases a stunning force from <PRO_HISHER> mouth in a 17-ft. cone. The Great Shout is extremely taxing and dangerous to the user. The shout drains 2d4 Hit Points from the caster, and <PRO_HESHE> must make a Save vs. Spell or fall unconscious for 1 turn. Creatures 5 Hit Dice and under caught within the Great Shout instantly die. All other creatures within the area of effect must save vs. Spell. Those who fail the save are stunned for 2 rounds, deafened for 4 rounds, and suffer 4d12 points of magic damage. Those who make the save are stunned for 1 round, deafened for 2 rounds, and suffer 2d12 points of magic damage.~
 	
 	
 // EoF
