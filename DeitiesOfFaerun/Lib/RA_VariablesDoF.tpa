@@ -37,7 +37,7 @@ OUTER_SET RA_Slow = (GAME_IS ~bgee~) ? 12081 : GAME_IS ~bg2ee eet~ ? 11799 : (GA
 OUTER_SET RA_Hasted = (GAME_IS ~bgee~) ? 10954 : GAME_IS ~bg2ee eet~ ? 14023 : (GAME_IS ~iwdee~) ? 36035 : 0        // Hasted
 OUTER_SET RA_Unconscious = (GAME_IS ~bgee~) ? 25130 : GAME_IS ~bg2ee eet~ ? 20438 : (GAME_IS ~iwdee~) ? 37340 : 0   // Unconscious
 OUTER_SET RA_Healed = (GAME_IS ~bgee~) ? 25810 : GAME_IS ~bg2ee eet~ ? 14022 : (GAME_IS ~iwdee~) ? 35473 : 0        // Healed
-
+OUTER_SET RA_Dispel = (GAME_IS ~bgee~) ? 25820 : GAME_IS ~bg2ee eet~ ? 14056 : (GAME_IS ~iwdee~) ? 35499 : 0        // Dispel Effects
 OUTER_SET RA_SpellInef = (GAME_IS ~bgee~) ? 24534 : GAME_IS ~bg2ee eet~ ? 4742 : (GAME_IS ~iwdee~) ? 4742 : 0       // Spell Ineffective
 OUTER_SET RA_Entangled = (GAME_IS ~bgee~) ? 25144 : GAME_IS ~bg2ee eet~ ? 334 : (GAME_IS ~iwdee~) ? 37709 : 0       // Entangled
 
