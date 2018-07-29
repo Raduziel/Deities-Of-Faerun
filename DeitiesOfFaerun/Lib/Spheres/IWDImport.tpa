@@ -1629,24 +1629,15 @@ SAY NAME1 @9999190 SAY NAME2 @9999190 SAY UNIDENTIFIED_DESC @9999191 SAY DESC @9
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35499 parameter1 = EVAL "%RA_Dispel%"  		END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 93    parameter2 = iconshel END
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR324~ resource = EVAL $res_of_label(~CLERIC_SPIKE_GROWTH~)		 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR326~ resource = EVAL $res_of_label(~CLERIC_MOLD_TOUCH~)			 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR419~ resource = EVAL $res_of_label(~CLERIC_PRODUCE_FIRE~)		 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR420~ resource = EVAL $res_of_label(~CLERIC_STATIC_CHARGE~)		 END // fail -> smashing wave appearing here
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR423~ resource = EVAL $res_of_label(~CLERIC_CLOUD_OF_PESTILENCE~) END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR426~ resource = EVAL $res_of_label(~CLERIC_SMASHING_WAVE~)		 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR427~ resource = EVAL $res_of_label(~CLERIC_THORN_SPRAY~)		 END // ok 
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR428~ resource = EVAL $res_of_label(~CLERIC_WALL_OF_MOONLIGHT~)	 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR519~ resource = EVAL $res_of_label(~CLERIC_SPIKE_STONES~)		 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI524~ resource = EVAL $res_of_label(~WIZARD_SHROUD_OF_FLAME~)	 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR617~ resource = EVAL $res_of_label(~CLERIC_WHIRLWIND~)			 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI631~ resource = EVAL $res_of_label(~WIZARD_SOUL_EATER~)			 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR736~ resource = EVAL $res_of_label(~CLERIC_MIST_OF_ELDATH~)		 END // ok
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI726~ resource = EVAL $res_of_label(~WIZARD_SUFFOCATE~)			 END // ok
-																																					 //Impervious Sanctity of Mind is sneaking on this list and IDK why	
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	   END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35499 parameter1 = EVAL "%RA_Dispel%"  	   END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 93    parameter2 = iconshel                   END
+LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                  END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 145 match_parameter1 = 2 parameter1 = 3 							   END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 9  parameter2 = 1 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 11 parameter2 = 1 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 35 parameter2 = 1 END
+	
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610C.BAM~	~override\%spell_res%C.BAM~
 
