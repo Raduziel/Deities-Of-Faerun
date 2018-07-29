@@ -12,7 +12,7 @@
 				FAIL	~%file%(%missile%) - Projectile name cannot have spaces~
 			END	ELSE	BEGIN
 				ACTION_IF	clone = 1	BEGIN	
-					COPY_EXISTING	~%path%\%file%.pro~	~override\%file%.pro~
+					COPY_EXISTING	~%file%.pro~	~override\%file%.pro~
 				END	ELSE	BEGIN
 					COPY	~%path%\%file%.pro~	~override\%file%.pro~
 				END

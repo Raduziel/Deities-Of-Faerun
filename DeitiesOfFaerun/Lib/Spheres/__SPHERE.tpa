@@ -119,9 +119,11 @@
 		kitid = ~-1~
 	STR_VAR
 		kitname = ~~
+		kitname2 = ~~
 		clabfile = ~~
 	BEGIN
 		ACTION_TO_UPPER	kitname
+		ACTION_TO_UPPER	kitname2
 		ACTION_IF	(kitid = ~-1~)	OR (classID = ~-1~)	BEGIN	//	get kitid from KITLIST.2da if not supplied (mods)
 			ACTION_IF	FILE_CONTAINS_EVALUATED (~KITLIST.2da~ ~[ %TAB%]%kitname%[ %TAB%%WNL%%MNL%%LNL%$]~)	BEGIN
 				COPY_EXISTING	~KITLIST.2da~	override
@@ -166,35 +168,46 @@
 				6 WHEN divineSpheres = 1	 BEGIN	OUTER_SPRINT kitname ~DEFAULT_PALADIN~	END
 				11 16 WHEN	natureSpheres = 1	BEGIN	OUTER_SPRINT kitname ~DEFAULT_DRUID~	END
 				12 WHEN	natureSpheres = 1 BEGIN	OUTER_SPRINT kitname ~DEFAULT_RANGER~	END
+				21	WHEN natureSpheres = 1 BEGIN	OUTER_SPRINT kitname ~DEFAULT_SHAMAN~	END
 				DEFAULT
 			END
 		END
 		ACTION_MATCH	classID	WITH	//	multiclasses should use priest base for spell access
 			8 14 15 17 WHEN divineSpheres = 1 BEGIN	OUTER_SPRINT	clabfile ~CLABPR01~	END
-			16 WHEN natureSpheres = 1 BEGIN	OUTER_SPRINT	clabfile ~CLABDR01~	END
+			16	WHEN natureSpheres = 1 BEGIN	OUTER_SPRINT	clabfile ~CLABDR01~	END
+			21	BEGIN
+				LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END
+			END
 			DEFAULT
 		END
-		ACTION_IF	classID != 18	BEGIN
-			LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname	clabfile	END
-		END	ELSE	BEGIN	//	Cleric/Ranger needs special consideration
-			ACTION_IF	divineSpheres = 1	BEGIN
-				OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname%~) AS one => two BEGIN	OUTER_SET index += 1	END
-				ACTION_IF index = 0	BEGIN
-					PRINT ~%kitname% is a Cleric/Ranger kit and lacks Cleric sphere definitions, using default Cleric Spheres.~
-					OUTER_SPRINT	kitname ~DEFAULT_CLERIC~
+		ACTION_MATCH	classID	WITH
+			21	WHEN natureSpheres = 1	BEGIN	//	Shaman
+				LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END
+			END
+			18	BEGIN		//	Cleric/Ranger
+				ACTION_IF	divineSpheres = 1	BEGIN
+					OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname%~) AS one => two BEGIN	OUTER_SET index += 1	END
+					ACTION_IF index = 0	BEGIN
+						PRINT ~%kitname% is a Cleric/Ranger kit and lacks Cleric sphere definitions, using default Cleric Spheres.~
+						OUTER_SPRINT	kitname ~DEFAULT_CLERIC~
+					END
+					OUTER_SPRINT	clabfile ~CLABPR01~
+					LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname	clabfile	END
 				END
-				OUTER_SPRINT	clabfile ~CLABPR01~
+				ACTION_IF	natureSpheres = 1	BEGIN
+					OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname2%~) AS one => two BEGIN	OUTER_SET index += 1	END
+					ACTION_IF index = 0	BEGIN
+						PRINT ~%kitname2% is a Cleric/Ranger kit and lacks Ranger sphere definitions, using default Ranger Spheres.~
+						OUTER_SPRINT	kitname ~DEFAULT_RANGER~
+					END
+					OUTER_SPRINT	clabfile ~CLABRN01~
+					LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname = EVAL ~%kitname2%~	clabfile	END
+				END
+			END
+			3 6 8 11 12 14 15 16 17 21	BEGIN	//	All other Priest Casters
 				LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname	clabfile	END
 			END
-			ACTION_IF	natureSpheres = 1	BEGIN
-				OUTER_SET index = 0	ACTION_PHP_EACH $priestspherelist(~%kitname%~) AS one => two BEGIN	OUTER_SET index += 1	END
-				ACTION_IF index = 0	BEGIN
-					PRINT ~%kitname% is a Cleric/Ranger kit and lacks Ranger sphere definitions, using default Ranger Spheres.~
-					OUTER_SPRINT	kitname ~DEFAULT_RANGER~
-				END
-				OUTER_SPRINT	clabfile ~CLABRN01~
-				LAF	ADD_SPHERE_ACCESS	INT_VAR	classID	kitid	STR_VAR	kitname	clabfile	END
-			END
+			DEFAULT
 		END
 	END
 	
@@ -211,8 +224,10 @@
 	STR_VAR
 		npc_file = ~~
 		kitname = ~~
+		kitname2 = ~~
 	BEGIN
 		ACTION_TO_UPPER	kitname
+		ACTION_TO_UPPER	kitname2
 		ACTION_IF FILE_EXISTS_IN_GAME ~%npc_file%.cre~	BEGIN
 			COPY_EXISTING ~%npc_file%.cre~	override
 				READ_BYTE	0x273	class
@@ -283,7 +298,7 @@
 					READ_BYTE	0x273	class
 					READ_LONG	0x2a8	mem_off
 					READ_LONG	0x2ac	mem_num
-					FOR	(i = 0; i < 8; ++i)	BEGIN	SET	$count(~%i%~) = 0	END
+					FOR	(i = 0; i < 8; ++i)	BEGIN	SET	$count(~%i%~) = 0	SET	$shm_count(~%i%~) = 0	END
 					FOR	(i = 0; i < mem_num; ++i)	BEGIN
 						READ_SHORT	(mem_off + i * 0x10) level
 						READ_SHORT	(mem_off + i * 0x10 + 6) type
@@ -298,6 +313,13 @@
 						READ_ASCII	(known_off + i * 0xc)	resref (4)	TO_UPPER	resref
 						PATCH_MATCH ~%resref%~	WITH
 							~SPPR~	~RAWI~	BEGIN
+								PATCH_IF	class = 21	AND natureSpheres = 0	BEGIN	//	Shaman
+									READ_SHORT	(known_off + i * 0xc + 0xa) kn_type
+									READ_SHORT	(known_off + i * 0xc + 0xa) kn_lvl
+									PATCH_IF	kn_type	= 0	BEGIN
+										SET	$shm_count(~%kn_lvl%~) += 1	//	Count known spells of each level
+									END
+								END
 								PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
 									READ_ASCII	(known_off + i * 0xc) resref
 									INNER_ACTION	BEGIN
@@ -433,6 +455,12 @@
 									END
 								END
 							END
+						END
+					END
+					FOR	(i = 0; i < 8; ++i)	BEGIN
+						PATCH_IF $shm_count(~%i%~) > 0	BEGIN
+							SET	j = i + 1
+							LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 187	parameter1 = $shm_count(~%i%~)	timing = 9	special = 1	STR_VAR	effvar = EVAL ~RASHMKN%j%~	END	// Shaman spell count marker
 						END
 					END
 				BUT_ONLY IF_EXISTS

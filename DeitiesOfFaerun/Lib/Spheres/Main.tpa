@@ -430,6 +430,7 @@
 					PATCH_IF	FILE_CONTAINS_EVALUATED (EVAL ~%SOURCE_FILE%~	~%oldfile%~)	BEGIN
 						LPF	CLONE_EFFECT INT_VAR	match_opcode = 206 silent = 1	STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 						LPF	CLONE_EFFECT INT_VAR	match_opcode = 321 silent = 1	STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
+						LPF	CLONE_EFFECT INT_VAR	match_opcode = 318 silent = 1	STR_VAR match_resource = EVAL ~%oldfile%~ resource = EVAL ~%newfile%~	END
 					END
 				END
 			END
