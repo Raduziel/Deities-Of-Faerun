@@ -1629,19 +1629,19 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35499 parameter1 = EVAL "%RA_Dispel%"  		END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 93    parameter2 = iconshel END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR324~ resource = EVAL $res_of_label(~CLERIC_SPIKE_GROWTH~)		 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR326~ resource = EVAL $res_of_label(~CLERIC_MOLD_TOUCH~)			 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR419~ resource = EVAL $res_of_label(~CLERIC_PRODUCE_FIRE~)		 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR420~ resource = EVAL $res_of_label(~CLERIC_STATIC_CHARGE~)		 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR423~ resource = EVAL $res_of_label(~CLERIC_CLOUD_OF_PESTILENCE~) END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR426~ resource = EVAL $res_of_label(~CLERIC_SMASHING_WAVE~)		 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR428~ resource = EVAL $res_of_label(~CLERIC_WALL_OF_MOONLIGHT~)	 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR519~ resource = EVAL $res_of_label(~CLERIC_SPIKE_STONES~)		 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI524~ resource = EVAL $res_of_label(~WIZARD_SHROUD_OF_FLAME~)	 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR617~ resource = EVAL $res_of_label(~CLERIC_WHIRLWIND~)			 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI631~ resource = EVAL $res_of_label(~WIZARD_SOUL_EATER~)			 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR736~ resource = EVAL $res_of_label(~CLERIC_MIST_OF_ELDATH~)		 END
-LAF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI726~ resource = EVAL $res_of_label(~WIZARD_SUFFOCATE~)			 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR324~ resource = EVAL $res_of_label(~CLERIC_SPIKE_GROWTH~)		 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR326~ resource = EVAL $res_of_label(~CLERIC_MOLD_TOUCH~)			 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR419~ resource = EVAL $res_of_label(~CLERIC_PRODUCE_FIRE~)		 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR420~ resource = EVAL $res_of_label(~CLERIC_STATIC_CHARGE~)		 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR423~ resource = EVAL $res_of_label(~CLERIC_CLOUD_OF_PESTILENCE~) END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR426~ resource = EVAL $res_of_label(~CLERIC_SMASHING_WAVE~)		 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR428~ resource = EVAL $res_of_label(~CLERIC_WALL_OF_MOONLIGHT~)	 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR519~ resource = EVAL $res_of_label(~CLERIC_SPIKE_STONES~)		 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI524~ resource = EVAL $res_of_label(~WIZARD_SHROUD_OF_FLAME~)	 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR617~ resource = EVAL $res_of_label(~CLERIC_WHIRLWIND~)			 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI631~ resource = EVAL $res_of_label(~WIZARD_SOUL_EATER~)			 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR736~ resource = EVAL $res_of_label(~CLERIC_MIST_OF_ELDATH~)		 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI726~ resource = EVAL $res_of_label(~WIZARD_SUFFOCATE~)			 END
 
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610B.BAM~	~override\%spell_res%B.BAM~
