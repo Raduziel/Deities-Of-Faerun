@@ -1634,6 +1634,7 @@ LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35499 paramet
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 93    parameter2 = iconshel                   END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                  END
 LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 145 match_parameter1 = 2 parameter1 = 3 							   END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 0  parameter2 = 1 END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 9  parameter2 = 1 END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 11 parameter2 = 1 END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 35 parameter2 = 1 END
