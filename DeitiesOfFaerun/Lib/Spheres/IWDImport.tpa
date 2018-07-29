@@ -1601,7 +1601,8 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/RighteousWrathoftheFaithful/SPPR518C.BA
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999188) STR_VAR bam_file = RAALLIC RET iconwrat = icon  END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/RighteousWrathoftheFaithful/SPPR518A.spl~	~override\%spell_res%A.spl~
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%A~	  resource = EVAL ~%spell_res%A~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR518~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%A~	END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 184   parameter2 = iconwrat END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 36035 parameter1 = EVAL "%RA_Hasted%"  		END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35544 parameter1 = EVAL "%RA_Dominated%"   	END
@@ -1611,6 +1612,8 @@ LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35606 paramet
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" 		END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/RighteousWrathoftheFaithful/SPPR518B.spl~	~override\%spell_res%B.spl~
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPPR518~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 184   parameter2 = iconwrat END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%B~	  resource = EVAL ~%spell_res%B~	END
 
@@ -1635,6 +1638,7 @@ LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR420~ resource = EVAL $res_of_label(~CLERIC_STATIC_CHARGE~)		 END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR423~ resource = EVAL $res_of_label(~CLERIC_CLOUD_OF_PESTILENCE~) END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR426~ resource = EVAL $res_of_label(~CLERIC_SMASHING_WAVE~)		 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR427~ resource = EVAL $res_of_label(~CLERIC_THORN_SPRAY~)		 END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR428~ resource = EVAL $res_of_label(~CLERIC_WALL_OF_MOONLIGHT~)	 END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR519~ resource = EVAL $res_of_label(~CLERIC_SPIKE_STONES~)		 END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI524~ resource = EVAL $res_of_label(~WIZARD_SHROUD_OF_FLAME~)	 END
@@ -1642,7 +1646,6 @@ LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI631~ resource = EVAL $res_of_label(~WIZARD_SOUL_EATER~)			 END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR736~ resource = EVAL $res_of_label(~CLERIC_MIST_OF_ELDATH~)		 END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPWI726~ resource = EVAL $res_of_label(~WIZARD_SUFFOCATE~)			 END
-
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610C.BAM~	~override\%spell_res%C.BAM~
