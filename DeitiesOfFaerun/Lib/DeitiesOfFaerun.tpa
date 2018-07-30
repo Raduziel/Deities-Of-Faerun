@@ -319,6 +319,8 @@ END
 //Solves issue for Minor Sequencer, Sequencer, Spell Trigger, Contingency and Chain Contingency
 COPY_EXISTING	~UI.MENU~	override
 	REPLACE_TEXTUALLY	~mageBookEnabled == false~ ~((mageBookEnabled == false) and not (bookMode == 1))~
+	REPLACE_TEXTUALLY EXACT_MATCH ~mageScreen:SequenceSpell( bookSpells[currentBookSpell].resref )~ ~mageScreen:SequenceSpell( bookSpells[currentBookSpell].resref, bookSpells[currentBookSpell].masterResref )~
+	REPLACE_TEXTUALLY EXACT_MATCH ~mageScreen:UnSequenceSpell( bottomSpells[currentBottomSpell].resref )~ ~mageScreen:UnSequenceSpell( bottomSpells[currentBottomSpell].resref, bottomSpells[currentBottomSpell].masterResref )~
 BUT_ONLY
 
 //EoF
