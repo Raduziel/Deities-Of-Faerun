@@ -583,6 +583,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SUNSCOH.PRO~
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Sunscorch/SPPR115.spl~ 1 1 CLERIC_SUNSCORCH
 SAY NAME1 @999998 SAY NAME2 @999998 SAY UNIDENTIFIED_DESC @999999 SAY DESC @999999
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_SUNSCORCH~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %SUNSCOH% END
@@ -850,6 +851,7 @@ LAF ADD_PROJECTL INT_VAR clone = 1 STR_VAR path = ~DeitiesOfFaerun/Lib/Spheres/I
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/MordenkainenForceMissiles/SPWI430.spl~ 2 4 WIZARD_MORDENKAINENS_FORCE_MISSILES
 SAY NAME1 @9999124 SAY NAME2 @9999124 SAY UNIDENTIFIED_DESC @9999125 SAY DESC @9999125
 TEXT_SPRINT	 spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~WIZARD_MORDENKAINENS_FORCE_MISSILES~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 FOR (i = 1;  i < 4; ++i)   BEGIN LPF ALTER_SPELL_HEADER INT_VAR header = i projectile = MFMISS   END END
@@ -886,6 +888,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/LanceofDisruption/IDPRO313.PR
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/LanceofDisruption/SPWI328.spl~ 2 4 WIZARD_LANCE_OF_DISRUPTION
 SAY NAME1 @9999126 SAY NAME2 @9999126 SAY UNIDENTIFIED_DESC @9999127 SAY DESC @9999127
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~WIZARD_LANCE_OF_DISRUPTION~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO313%      END
@@ -948,6 +951,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/AlicornLance/IDPRO298.PRO~
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/AlicornLance/SPPR218.spl~ 1 2 CLERIC_ALICORN_LANCE
 SAY NAME1 @9999132 SAY NAME2 @9999132 SAY UNIDENTIFIED_DESC @9999133 SAY DESC @9999133
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_ALICORN_LANCE~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO298%      END
@@ -1084,6 +1088,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Icelance/IDPRO251.PRO~
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Icelance/SPWI327.spl~ 2 3 WIZARD_ICELANCE
 SAY NAME1 @9999146 SAY NAME2 @9999146 SAY UNIDENTIFIED_DESC @9999147 SAY DESC @9999147
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~WIZARD_ICELANCE~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO251% END
@@ -1632,12 +1637,21 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	   END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35499 parameter1 = EVAL "%RA_Dispel%"  	   END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 93    parameter2 = iconshel                   END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 145 match_parameter2 = 2     parameter2 = 3 						   END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                  END
-LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 145 match_parameter1 = 2 parameter1 = 3 							   END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 0  parameter2 = 1 END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 9  parameter2 = 1 END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 11 parameter2 = 1 END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 35 parameter2 = 1 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~MELFMET~   			END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~ENEBLADE~  			END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~FBLADE~    			END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~GHOULT~    			END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~CHILLT~    			END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~PHANBLAD~  			END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~BLAKBLAD~  			END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 opcode = 321 STR_VAR resource = ~SPWI417~ END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 123 STR_VAR resource = ~STARDART~  			END
 	
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610C.BAM~	~override\%spell_res%C.BAM~
@@ -1657,6 +1671,88 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Destruction/SPPR734B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Destruction/SPPR734C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Self-Sacrifice
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_FAVOR_OF_ILMATER[ %TAB%%WNL%$]~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/FavorofIlmater/SPARKLPU.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FavorofIlmater/SPPR331.spl~ 1 3 CLERIC_FAVOR_OF_ILMATER
+SAY NAME1 @9999194 SAY NAME2 @9999194 SAY UNIDENTIFIED_DESC @9999195 SAY DESC @9999195
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %SPARKLPU%      END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/FavorofIlmater/SPPR331B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/FavorofIlmater/SPPR331C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Shield of Divine
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_SHIELD_OF_LATHANDER[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999194) STR_VAR bam_file = RADIVIIC RET icondivi = icon  END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ShieldofLathander/SPPR520.spl~ 1 5 CLERIC_SHIELD_OF_LATHANDER
+SAY NAME1 @9999194 SAY NAME2 @9999194 SAY UNIDENTIFIED_DESC @9999195 SAY DESC @9999195
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 164   parameter2 = icondivi                  END
+LPF	DELETE_EFFECT	   STR_VAR match_opcode = 324                                                                 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShieldofLathander/SPPR520B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShieldofLathander/SPPR520C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Greater Shield of Divine
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_GREATER_SHIELD_OF_LATHANDER[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999196) STR_VAR bam_file = RADIV2IC RET icondiv2 = icon  END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/GreaterShieldofLathander/SPPR735.spl~ 1 7 CLERIC_GREATER_SHIELD_OF_LATHANDER
+SAY NAME1 @9999196 SAY NAME2 @9999196 SAY UNIDENTIFIED_DESC @9999197 SAY DESC @9999197
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 165   parameter2 = icondiv2                  END
+LPF	DELETE_EFFECT	   STR_VAR match_opcode = 324                                                                 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GreaterShieldofLathander/SPPR735B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GreaterShieldofLathander/SPPR735C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
+//Entropy Shield
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_ENTROPY_SHIELD[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999198) STR_VAR bam_file = RAENTRIC RET iconentr = icon  END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/EntropyShield/SPPR615.spl~ 1 6 CLERIC_ENTROPY_SHIELD
+SAY NAME1 @9999198 SAY NAME2 @9999198 SAY UNIDENTIFIED_DESC @9999199 SAY DESC @9999199
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 								 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 56   parameter2 = iconentr                  								 END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPWI327~ resource = EVAL $res_of_label(~WIZARD_ICELANCE~)			 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE2~		 								 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~SPPR503~		 								 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_LANCE_OF_DISRUPTION~) 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~CLERIC_ALICORN_LANCE~) 		 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~CLERIC_SUNSCORCH~) 		 	 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_MORDENKAINENS_FORCE_MISSILES~) END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EntropyShield/SPPR615B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EntropyShield/SPPR615C.BAM~	~override\%spell_res%C.BAM~
 
 END
 
