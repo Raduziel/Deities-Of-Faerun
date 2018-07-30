@@ -900,5 +900,59 @@ Area of Effect: The caster
 Saving Throw: Special
 
 This spell instantly destroys a target, blasting it into small chunks. The victim is allowed a Save vs. Death at a penalty of -4; if successful, the target takes 8d6 points of magic damage instead of being destroyed. Note that a character struck with a Destruction spell cannot be raised from the dead with a Raise Dead or Resurrection spell.~
+	@9999194 = ~Self-Sacrifice~
+	@9999195 = ~Self-Sacrifice
+(Necromancy)
+
+Level: 3
+Sphere: Protection
+Range: 30 ft.
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: None
+
+By invoking this spell, the caster switches <PRO_HISHER> own life force with that of the recipient, exchanging all physical injuries. The spell will only function if the caster has more Hit Points than the target before the switch is attempted. This switch is permanent until the caster uses normal methods to heal the damage. The exchange can be done from a distance so long as the spell range is not exceeded. Only the Hit Points are exchanged; the caster cannot take on other conditions from the target such as disease, poison, intoxication, and similar afflictions. 
+
+This spell cannot be cast by evil-aligned characters. It has no effect on undead, constructs, or extraplanar creatures.~
+	@9999196 = ~Shield of Divine~
+	@9999197 = ~Shield of Divine
+(Conjuration)
+
+Level: 5
+Sphere: Protection
+Range: Touch
+Duration: 2 rounds
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell grants the recipient immunity to damage for the duration of the spell.~
+	@9999196 = ~Greater Shield of Divine~
+	@9999197 = ~Greater Shield of Divine
+(Conjuration)
+
+Level: 7
+Sphere: Protection
+Range: Touch
+Duration: 3 rounds
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell grants the recipient 100% Magic Resistance and immunity to damage for the duration of the spell.~
+	@9999198 = ~Entropy Shield~
+	@9999199 = ~Entropy Shield
+(Abjuration)
+
+Level: 6
+Sphere: Protection
+Range: 0
+Duration: 1 round/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+When cast, this spell surrounds the caster with a defensive maelstrom of energy that blocks or deflects many attacks. This gives the priest a +6 bonus to Armor Class, a +2 bonus to Saving Throws, and +50% resistance to electricity, fire, cold, and acid. The priest is also immune to Flamestrike and all missile-based attacks, including missiles created by spells such as Magic Missile.~
 	
 // EoF
