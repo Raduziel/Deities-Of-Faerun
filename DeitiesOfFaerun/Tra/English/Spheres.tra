@@ -1022,5 +1022,6 @@ It may alternatively be expended as the 4th-level wizard spell Shout, dealing 4d
 This eye shields the caster from a single petrification attack.
 
 It can also be used as the 3rd-level wizard spell Hold Person, rendering humanoids of man-size or smaller immobile for 1 round/level (Save vs. Spell negates).~
+	@9999216 = ~You cannot cast this spell until the current casting has run out.~
 	
 // EoF
