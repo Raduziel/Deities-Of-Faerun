@@ -1534,6 +1534,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Shout/IDPRO315.PRO~
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Shout/SPWI431.spl~ 2 4 WIZARD_SHOUT
 SAY NAME1 @9999182 SAY NAME2 @9999182 SAY UNIDENTIFIED_DESC @9999183 SAY DESC @9999183
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~WIZARD_SHOUT~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO315%      END
@@ -1665,6 +1666,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_DESTRUCTION[ %TAB
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Destruction/SPPR734.spl~ 1 7 CLERIC_DESTRUCTION
 SAY NAME1 @9999192 SAY NAME2 @9999192 SAY UNIDENTIFIED_DESC @9999193 SAY DESC @9999193
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_DESTRUCTION~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
@@ -1745,6 +1747,7 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 56   parameter2 = iconentr                  								 END
 LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPWI327~ resource = EVAL $res_of_label(~WIZARD_ICELANCE~)			 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE2~		 								 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RAAURI1~		 								 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~SPPR503~		 								 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_LANCE_OF_DISRUPTION~) 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~CLERIC_ALICORN_LANCE~) 		 		  END
@@ -1757,6 +1760,154 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/EntropyShield/SPPR615C.BAM~	~override\%
 END
 
 //Seven Eyes
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_SEVEN_EYES[ %TAB%%WNL%$]~) BEGIN
+
+//Eye of Mind
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN107.spl~ 3 1 SEVEN_EYES_MIND
+SAY NAME1 @9999202 SAY NAME2 @9999202 SAY UNIDENTIFIED_DESC @9999203 SAY DESC @9999203
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~SEVEN_EYES_MIND~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN107B.BAM~	~override\%spell_res%B.BAM~
+
+//Eye of Sword
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN108.spl~ 3 1 SEVEN_EYES_SWORD
+SAY NAME1 @9999204 SAY NAME2 @9999204 SAY UNIDENTIFIED_DESC @9999205 SAY DESC @9999205
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~SEVEN_EYES_SWORD~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT 	   STR_VAR match_resource = ~SPWI112~ resource = ~RAWI112~									END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN108B.BAM~	~override\%spell_res%B.BAM~
+
+//Eye of Mage
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN109.spl~ 3 1 SEVEN_EYES_MAGE
+SAY NAME1 @9999206 SAY NAME2 @9999206 SAY UNIDENTIFIED_DESC @9999207 SAY DESC @9999207
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~SEVEN_EYES_MAGE~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT 	   STR_VAR match_resource = ~SPWI308~ resource = ~SPDR301~									END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN109B.BAM~	~override\%spell_res%B.BAM~
+
+//Eye of Venom
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN110.spl~ 3 1 SEVEN_EYES_VENOM
+SAY NAME1 @9999208 SAY NAME2 @9999208 SAY UNIDENTIFIED_DESC @9999209 SAY DESC @9999209
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~SEVEN_EYES_VENOM~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN110B.BAM~	~override\%spell_res%B.BAM~
+
+//Eye of Spirit
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN111.spl~ 3 1 SEVEN_EYES_SPIRIT
+SAY NAME1 @9999210 SAY NAME2 @9999210 SAY UNIDENTIFIED_DESC @9999211 SAY DESC @9999211
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~SEVEN_EYES_SPIRIT~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN111B.BAM~	~override\%spell_res%B.BAM~
+
+//Eye of Fortitude
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN112.spl~ 3 1 SEVEN_EYES_FORTITUDE
+SAY NAME1 @9999212 SAY NAME2 @9999212 SAY UNIDENTIFIED_DESC @9999213 SAY DESC @9999213
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~SEVEN_EYES_FORTITUDE~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT 	   STR_VAR match_resource = ~SPWI431~ resource = EVAL $res_of_label(~WIZARD_SHOUT~)			END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN112B.BAM~	~override\%spell_res%B.BAM~
+
+//Eye of Stone
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN113.spl~ 3 1 SEVEN_EYES_SPIRIT
+SAY NAME1 @9999214 SAY NAME2 @9999214 SAY UNIDENTIFIED_DESC @9999215 SAY DESC @9999215
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~SEVEN_EYES_SPIRIT~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN113B.BAM~	~override\%spell_res%B.BAM~
+
+ACTION_IF !FILE_EXISTS_IN_GAME ~7EYES.2da~	BEGIN
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/7EYES.2da~	~override~
+
+OUTER_SET index = 0
+
+END ELSE BEGIN
+
+COPY_EXISTING ~7EYES.2da~ override COUNT_2DA_ROWS 1 index index -= 3 BUT_ONLY
+
+END
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPWI725.spl~ 2 7 WIZARD_SEVEN_EYES
+SAY NAME1 @9999200 SAY NAME2 @9999200 SAY UNIDENTIFIED_DESC @9999201 SAY DESC @9999201
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+FOR	(i = 0; i < 7; ++i)	BEGIN
+	LPF	ALTER_EFFECT INT_VAR match_opcode = 335 match_parameter1 = (48 + i) parameter2 = (index + i)  			END
+END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_parameter1 = 48 resource = EVAL $res_of_label(~SEVEN_EYES_MIND~) 		END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_parameter1 = 49 resource = EVAL $res_of_label(~SEVEN_EYES_SWORD~) 	END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_parameter1 = 50 resource = EVAL $res_of_label(~SEVEN_EYES_MAGE~) 		END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_parameter1 = 51 resource = EVAL $res_of_label(~SEVEN_EYES_VENOM~) 	END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_parameter1 = 52 resource = EVAL $res_of_label(~SEVEN_EYES_SPIRIT~) 	END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_parameter1 = 53 resource = EVAL $res_of_label(~SEVEN_EYES_FORTITUDE~) END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_parameter1 = 54 resource = EVAL $res_of_label(~SEVEN_EYES_STONE~) 	END
+LPF	ALTER_EFFECT INT_VAR match_parameter1 = 36022 parameter1 = RESOLVE_STR_REF(@9999216) END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPWI725B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPWI725C.BAM~	~override\%spell_res%C.BAM~
+
+OUTER_SET strref = RESOLVE_STR_REF(@9999202)
+APPEND ~7EYES.2da~ ~EYEMIND 48 %strref% 3 5 24 76 128 SPWI411 SPPR102 SPPR311 %res_of_label_CLERIC_SYMBOL_OF_HOPELESSNESS%~
+
+OUTER_SET strref = RESOLVE_STR_REF(@9999204)
+APPEND ~7EYES.2da~ ~EYESWORD 49 %strref% 12*0 12*0x800000 12*0x100000 12*0x1000000 12*0x8000000 * * * *~
+
+OUTER_SET strref = RESOLVE_STR_REF(@9999206)
+APPEND ~7EYES.2da~ ~EYEMAGE 50 %strref% 12*0x80000 12*0x40000 12*0x20000 12*0x10000 12*0x400000 * * * *~
+
+OUTER_SET strref = RESOLVE_STR_REF(@9999208)
+APPEND ~7EYES.2da~ ~EYEVENOM 51 %strref% 12*0x200000 25 * * * * * * *~
+
+OUTER_SET strref = RESOLVE_STR_REF(@9999210)
+APPEND ~7EYES.2da~ ~EYESPIRIT 52 %strref% SPWI605 SPWI713 SPWI912 SPPR511 %res_of_label_CLERIC_DESTRUCTION% * * * *~
+
+OUTER_SET strref = RESOLVE_STR_REF(@9999212)
+APPEND ~7EYES.2da~ ~EYEFORTITUDE 53 %strref% 38 45 74 80 109 175 210 * *~
+
+OUTER_SET strref = RESOLVE_STR_REF(@9999214)
+APPEND ~7EYES.2da~ ~EYESTONE 54 %strref% 134 * * * * * * * *~
+
+COPY_EXISTING ~7EYES.2da~ ~override~
+PRETTY_PRINT_2DA
+
+END
 
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA
