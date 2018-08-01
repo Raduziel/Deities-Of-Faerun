@@ -378,9 +378,10 @@ END
 		BUT_ONLY
 	//	Remove Kits from Helm's quest-line (dialogue)
 		COPY_EXISTING ~BHOISIG.DLG~ override
-			LPF	EXTEND_TRIGGER	INT_VAR	state = 0	index = 0	section = 1			STR_VAR	match = ~append~	string = EVAL ~%negate%~	END
-			LPF	EXTEND_TRIGGER	INT_VAR	state = 26	index = 2	section = 1			STR_VAR	match = ~append~	string = EVAL ~%negate%~	END
-			LPF	EXTEND_TRIGGER	INT_VAR	state = 30	index = 0	section = 1	or = 1	STR_VAR	match = ~append~	string = EVAL ~%negate%~	END
+			LPF	EXTEND_TRIGGER	INT_VAR	state = 4	index = 0	section = 0			STR_VAR	match = ~Alignment(Player1,NEUTRAL)~	string = EVAL ~%extend%~	END
+			LPF	EXTEND_TRIGGER	INT_VAR	state = 5	index = 0	section = 0			STR_VAR	match = ~Alignment(Player1,NEUTRAL)~	string = EVAL ~%extend%~	END
+			LPF	EXTEND_TRIGGER	INT_VAR	state = 26	index = 2	section = 1			STR_VAR	match = ~append~						string = EVAL ~%negate%~	END
+			LPF	EXTEND_TRIGGER	INT_VAR	state = 30	index = 0	section = 1	or = 1	STR_VAR	match = ~append~						string = EVAL ~%negate%~	END
 		BUT_ONLY
 	END
 	
