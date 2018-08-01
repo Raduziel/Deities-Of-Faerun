@@ -1107,6 +1107,7 @@ f1) Sphere System
 5 - Righteous Magic
 
 6 - Bolt of Glory
+    Spiritual Wrath
 
 7 - Holy/Unholy Word
 
@@ -1127,7 +1128,7 @@ f1) Sphere System
     Neutralize Poison
 
 5 - Cure Critical Wounds
-    Mass Cure
+    Mass Cure Light Wounds
     Raise Dead
 
 6 - Heal
@@ -1167,7 +1168,8 @@ f1) Sphere System
 2 - Cause Moderate Wounds
     Doom
 
-3 - Cause Disease
+3 - Cause Medium Wounds
+    Cause Disease
     Mold Touch
 
 4 - Cause Serious Wounds
@@ -1175,7 +1177,8 @@ f1) Sphere System
     Contagion
     Poison
 
-5 - Cause Critical Wounds
+5 - Mass Cause Light Wounds
+    Cause Critical Wounds
     Cloudkill
 
 6 - Harm
