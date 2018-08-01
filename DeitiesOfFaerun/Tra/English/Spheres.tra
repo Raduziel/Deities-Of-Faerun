@@ -111,7 +111,7 @@ Casting Time: 3
 Area of Effect: 3-ft. radius
 Saving Throw: None
 
-This spell conjures forth a barrier of floating bones that spin rapidly around the caster, who cannot move for the duration of the spell. Anyone entering the path of the bones takes 1d6 crushing damage and 1d6 slashing damage per round. Circle of Bones cannot be cast by good-aligned characters.~
+This spell conjures forth a barrier of floating bones that spin rapidly around the caster, who cannot move for the duration of the spell. Anyone entering the path of the bones takes 1d6 crushing damage and 1d6 slashing damage per round.~
 	@999956 = ~Darts of Bone~
 	@999957 = ~Darts of Bone
 (Necromancy)
@@ -224,7 +224,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 8 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+By casting this spell and touching a creature, the priest deals 8 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
 	@999981 = ~Cause Moderate Wounds~
 	@999982 = ~Cause Moderate Wounds
 (Necromancy)
@@ -237,7 +237,7 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-By casting this spell and touching a creature, the priest deals 11 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+By casting this spell and touching a creature, the priest deals 11 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
 	@999983 = ~Cause Disease~
 	@999984 = ~Cause Disease
 (Necromancy)
@@ -1023,5 +1023,44 @@ This eye shields the caster from a single petrification attack.
 
 It can also be used as the 3rd-level wizard spell Hold Person, rendering humanoids of man-size or smaller immobile for 1 round/level (Save vs. Spell negates).~
 	@9999216 = ~You cannot cast this spell until the current casting has run out.~
+	@9999217 = ~Spiritual Wrath~
+	@9999218 = ~Spiritual Wrath
+(Invocation)
+
+Level: 6
+Sphere: Combat
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 2
+Area of Effect: Special
+Saving Throw: 1/2
+
+Upon completion of this spell, the priest becomes a focus of spiritual energy, which then shoots out from the caster in four directions, like lightning bolts. All creatures in the bolts' paths take 4d10 points of magic damage (save vs. Spell for half). Creatures of the same moral alignment (good, neutral, evil) as the caster are unaffected by the spell.~
+	@9999219 = ~Cause Medium Wounds~
+	@9999220 = ~Cause Medium Wounds
+(Necromancy)
+
+Level: 3
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and touching a creature, the priest deals 14 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
+	@9999221 = ~Mass Cause Light Wounds~
+	@9999222 = ~Mass Cause Light Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+By casting this spell, the priest deals 1d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
 	
 // EoF
