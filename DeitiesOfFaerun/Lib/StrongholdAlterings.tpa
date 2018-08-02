@@ -150,8 +150,8 @@
 	STR_VAR	kit = ~~	extend = ~~	negate = ~~
 	RET	extend	negate	count
 	BEGIN
-		ACTION_IF	FILE_EXISTS_IN_GAME	~%kit%.2da~	BEGIN
-			ACTION_PHP_EACH EVAL $SH(~%kit%~)	AS	id => nil	BEGIN
+		ACTION_PHP_EACH EVAL $SH(~%kit%~)	AS	id => nil	BEGIN
+			ACTION_IF	FILE_CONTAINS_EVALUATED	(~KITLIST.2da~ ~^[^ %TAB%]+[ %TAB]+%id%[ %TAB%]~)	BEGIN
 				OUTER_SPRINT	extend ~%extend%%LNL%Kit(Player1,%id%)~
 				OUTER_SPRINT	negate ~%negate%%LNL%!Kit(Player1,%id%)~
 				OUTER_SET	count += 1
@@ -241,9 +241,22 @@ THEN
 		SetGlobal("GaalSpoke","AR0900",2)
 END
 >>>>>>>>
+<<<<<<<< RASarles.baf
+IF
+	Global("SainSpawn","GLOBAL",0)
+	%orblock%
+	%extend%
+THEN
+	RESPONSE #100
+		SetGlobal("SainSpawn","GLOBAL",1)
+		CreateCreature("SCSAIN",[642.627],S)  // Dawnbringer Sain
+END
+>>>>>>>>
 	ACTION_IF count > 0 BEGIN
 		//	Add Kits from Lathander's quest-line (script)
 		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+		//	Add Kits from Lathander's Sir Sarles quest-line (script)
+		EXTEND_BOTTOM ~AR0902.bcs~	~RASarles.baf~ EVAL
 		//	Add Kits from Lathander's quest-line (dialogue)
 		COPY_EXISTING ~BHOISIG.DLG~ override
 			LPF	EXTEND_TRIGGER	INT_VAR	state = 3	index = 1	section = 1	or = 1	STR_VAR	match = ~Alignment(Player1,NEUTRAL)~	string = EVAL ~%extend%~	END
@@ -323,9 +336,22 @@ THEN
 		SetGlobal("GaalSpoke","AR0900",2)
 END
 >>>>>>>>
+<<<<<<<< RASarles.baf
+IF
+	Global("YarrylSpawn","GLOBAL",0)
+	%orblock%
+	%extend%
+THEN
+	RESPONSE #100
+		SetGlobal("YarrylSpawn","GLOBAL",1)
+		CreateCreature("SCYARRYL",[341.323],SE)  // Talon Yarryl
+END
+>>>>>>>>
 	ACTION_IF count > 0 BEGIN
 	//	Add Kits to Talo's quest-line	(script)
 		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+		//	Add Kits from Talo's Sir Sarles quest-line (script)
+		EXTEND_BOTTOM ~AR0904.bcs~	~RASarles.baf~ EVAL
 	//	Add Kits to Talo's quest-line	(dialogue)
 		COPY_EXISTING ~BHNALLA.DLG~ override
 			LPF	EXTEND_TRIGGER	INT_VAR	state = 0	index = 0	section = 0	or = 1	STR_VAR	match = ~Kit(Player1,GODTALOS)~		string = EVAL ~%extend%~	END
@@ -411,9 +437,22 @@ THEN
 		SetGlobal("GaalSpoke","AR0900",2)
 END
 >>>>>>>>
+<<<<<<<< RASarles.baf
+IF
+	Global("TelwynSpawn","GLOBAL",0)
+	%orblock%
+	%extend%
+THEN
+	RESPONSE #100
+		SetGlobal("TelwynSpawn","GLOBAL",1)
+		CreateCreature("SCTELWYN",[705.711],W)  // Guardian Telwyn
+END
+>>>>>>>>
 	ACTION_IF count > 0 BEGIN
 	//	Add Kits to Helm's quest-line (script)
 		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+		//	Add Kits from Helm's Sir Sarles quest-line (script)
+		EXTEND_BOTTOM ~AR0901.bcs~	~RASarles.baf~ EVAL
 	//	Add Kits to Helm's quest-line (dialogue)
 		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdArval.d~
 		COPY_EXISTING ~BHARVAL.DLG~ override
@@ -455,9 +494,22 @@ THEN
 		SetGlobal("GaalSpoke","AR0900",2)
 END
 >>>>>>>>
+<<<<<<<< RASarles.baf
+IF
+	Global("TelwynSpawn","GLOBAL",0)
+	%orblock%
+	%extend%
+THEN
+	RESPONSE #100
+		SetGlobal("TelwynSpawn","GLOBAL",1)
+		CreateCreature("SCTELWYN",[705.711],W)  // Guardian Telwyn
+END
+>>>>>>>>
 	ACTION_IF count > 0 BEGIN
 	//	Add Kits to non-Cleric quest-line (scripts)
 		EXTEND_BOTTOM ~AR0900.bcs~	~RAStrong.baf~ EVAL
+		//	Add Kits non-Cleric Helm's Sir Sarles quest-line (script)
+		EXTEND_BOTTOM ~AR0901.bcs~	~RASarles.baf~ EVAL
 	//	Add Kits to non-Cleric quest-line (dialogue)
 		COMPILE EVAL ~DeitiesOfFaerun\Dlg\StrongholdArval.d~
 		COPY_EXISTING ~BHOISIG.DLG~ override
