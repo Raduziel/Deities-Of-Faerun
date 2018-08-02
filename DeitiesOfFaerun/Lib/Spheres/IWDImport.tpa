@@ -1763,6 +1763,18 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_SEVEN_EYES[ %TAB%%WNL%$]~) BEGIN
 
+ACTION_IF !FILE_EXISTS_IN_GAME ~7EYES.2da~	BEGIN
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/7EYES.2da~	~override~
+
+OUTER_SET index = 0
+
+END ELSE BEGIN
+
+COPY_EXISTING ~7EYES.2da~ override COUNT_2DA_ROWS 1 index index -= 3 BUT_ONLY
+
+END
+
 //Eye of Mind
 
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN107.spl~ 3 1 SEVEN_EYES_MIND
@@ -1772,6 +1784,7 @@ TEXT_SPRINT	$res_of_label(~SEVEN_EYES_MIND~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 337 parameter1 = (index + 0)	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN107B.BAM~	~override\%spell_res%B.BAM~
 
@@ -1785,6 +1798,7 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
 LPF	ALTER_EFFECT 	   STR_VAR match_resource = ~SPWI112~ resource = ~RAWI112~									END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 337 parameter1 = (index + 1)	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN108B.BAM~	~override\%spell_res%B.BAM~
 
@@ -1798,6 +1812,7 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
 LPF	ALTER_EFFECT 	   STR_VAR match_resource = ~SPWI308~ resource = ~SPDR301~									END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 337 parameter1 = (index + 2)	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN109B.BAM~	~override\%spell_res%B.BAM~
 
@@ -1810,6 +1825,7 @@ TEXT_SPRINT	$res_of_label(~SEVEN_EYES_VENOM~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 337 parameter1 = (index + 3)	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN110B.BAM~	~override\%spell_res%B.BAM~
 
@@ -1822,6 +1838,7 @@ TEXT_SPRINT	$res_of_label(~SEVEN_EYES_SPIRIT~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 337 parameter1 = (index + 4)	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN111B.BAM~	~override\%spell_res%B.BAM~
 
@@ -1835,6 +1852,7 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
 LPF	ALTER_EFFECT 	   STR_VAR match_resource = ~SPWI431~ resource = EVAL $res_of_label(~WIZARD_SHOUT~)			END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 337 parameter1 = (index + 5)	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN112B.BAM~	~override\%spell_res%B.BAM~
 
@@ -1847,20 +1865,9 @@ TEXT_SPRINT	$res_of_label(~SEVEN_EYES_SPIRIT~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 337 parameter1 = (index + 6)	END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPIN113B.BAM~	~override\%spell_res%B.BAM~
-
-ACTION_IF !FILE_EXISTS_IN_GAME ~7EYES.2da~	BEGIN
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/7EYES.2da~	~override~
-
-OUTER_SET index = 0
-
-END ELSE BEGIN
-
-COPY_EXISTING ~7EYES.2da~ override COUNT_2DA_ROWS 1 index index -= 3 BUT_ONLY
-
-END
 
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/SPWI725.spl~ 2 7 WIZARD_SEVEN_EYES
 SAY NAME1 @9999200 SAY NAME2 @9999200 SAY UNIDENTIFIED_DESC @9999201 SAY DESC @9999201
