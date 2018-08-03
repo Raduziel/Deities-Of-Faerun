@@ -1062,5 +1062,16 @@ Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
 By casting this spell, the priest deals 1d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
-	
+	@9999225 = ~Identify
+(Divination)
+
+Level: 1
+Range: 0
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+Through this spell, the caster may identify any item <PRO_HESHE> analyses with a 100% success rate, allowing the caster to know the item's name, what it does, and if it is cursed.~
+
 // EoF
