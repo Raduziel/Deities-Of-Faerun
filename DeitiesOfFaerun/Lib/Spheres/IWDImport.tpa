@@ -1,3 +1,9 @@
+//Identify only through UI
+
+COPY_EXISTING	~SPWI110.SPL~	override
+	LPF	ALTER_SPELL_HEADER	INT_VAR	 location = 0	END
+BUT_ONLY IF_EXISTS
+
 //Bless for non-Evil only
 
 COPY_EXISTING ~SPPR101.SPL~	override
