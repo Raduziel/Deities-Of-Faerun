@@ -1635,24 +1635,24 @@ SAY NAME1 @9999190 SAY NAME2 @9999190 SAY UNIDENTIFIED_DESC @9999191 SAY DESC @9
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	   END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35499 parameter1 = EVAL "%RA_Dispel%"  	   END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 93    parameter2 = iconshel                   END
-LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 145 match_parameter2 = 2     parameter2 = 3 						   END
-LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 0  parameter2 = 1 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 9  parameter2 = 1 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 11 parameter2 = 1 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 35 parameter2 = 1 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~MELFMET~   			END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~ENEBLADE~  			END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~FBLADE~    			END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~GHOULT~    			END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~CHILLT~    			END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~PHANBLAD~  			END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR resource = ~BLAKBLAD~  			END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 opcode = 321 STR_VAR resource = ~SPWI417~ END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 123 STR_VAR resource = ~STARDART~  			END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35499 parameter1 = EVAL "%RA_Dispel%"  	     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 93    parameter2 = iconshel                     END
+LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 145 match_parameter2 = 2     parameter2 = 3 						     END
+LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                    END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 0  parameter2 = 1   END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 9  parameter2 = 1   END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 11 parameter2 = 1   END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 35 parameter2 = 1   END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~MELFMET~   		     END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~ENEBLADE~  			 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~FBLADE~    			 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~GHOULT~    			 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~CHILLT~    			 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~PHANBLAD~  			 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~BLAKBLAD~  			 END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 opcode = 321 STR_VAR match_resource = ~BCLAW~ resource = ~SPWI417~ END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 123 STR_VAR match_resource = ~FSEEDS~ resource = ~STARDART~  			 END
 	
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/AntimagicShell/SPWI610C.BAM~	~override\%spell_res%C.BAM~
