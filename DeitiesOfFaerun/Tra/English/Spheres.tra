@@ -486,8 +486,8 @@ Saving Throw: None
 
 This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.~
 	@9999123 = ~Hope~
-	@9999124 = ~Force Missiles~
-	@9999125 = ~Force Missiles
+	@9999124 = ~Mordenkainen's Force Missiles~
+	@9999125 = ~Mordenkainen's Force Missiles
 (Invocation)
 
 Level: 4
@@ -601,8 +601,8 @@ Saving Throw: None
 
 This spell allows the caster to summon an 8-HD elemental from the Elemental Plane of Water and bind it to <PRO_HISHER> will. This elemental will fight on behalf of the caster until the spell duration expires or the elemental is destroyed.~
 	@9999143 = ~Water Elemental~
-	@9999144 = ~Snowball Swarm~
-	@9999145 = ~Snowball Swarm
+	@9999144 = ~Snilloc's Snowball Swarm~
+	@9999145 = ~Snilloc's Snowball Swarm
 (Evocation)
 
 Level: 2
@@ -651,8 +651,8 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell surrounds the caster with a bright sphere of disruptive energy that moves with <PRO_HIMHER>. The storm shell increases the caster's resistance to fire, cold, and electrical damage by 50%.~
-	@9999152 = ~Freezing Sphere~
-	@9999153 = ~Freezing Sphere
+	@9999152 = ~Otiluke's Freezing Sphere~
+	@9999153 = ~Otiluke's Freezing Sphere
 (Alteration, Evocation)
 
 Level: 6
@@ -663,8 +663,8 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster. If the target makes its Save vs. Spell, however, they have dodged the orb and avoided all damage.~
-	@9999154 = ~Miracle Mists~
-	@9999155 = ~Miracle Mists
+	@9999154 = ~Mists of Eldath~
+	@9999155 = ~Mists of Eldath
 (Invocation)
 
 Level: 7
@@ -900,8 +900,8 @@ Area of Effect: The caster
 Saving Throw: Special
 
 This spell instantly destroys a target, blasting it into small chunks. The victim is allowed a Save vs. Death at a penalty of -4; if successful, the target takes 8d6 points of magic damage instead of being destroyed. Note that a character struck with a Destruction spell cannot be raised from the dead with a Raise Dead or Resurrection spell.~
-	@9999194 = ~Self-Sacrifice~
-	@9999195 = ~Self-Sacrifice
+	@9999194 = ~Favor of Ilmater~
+	@9999195 = ~Favor of Ilmater
 (Necromancy)
 
 Level: 3
@@ -914,9 +914,9 @@ Saving Throw: None
 
 By invoking this spell, the caster switches <PRO_HISHER> own life force with that of the recipient, exchanging all physical injuries. The spell will only function if the caster has more Hit Points than the target before the switch is attempted. This switch is permanent until the caster uses normal methods to heal the damage. The exchange can be done from a distance so long as the spell range is not exceeded. Only the Hit Points are exchanged; the caster cannot take on other conditions from the target such as disease, poison, intoxication, and similar afflictions. 
 
-This spell cannot be cast by evil-aligned characters. It has no effect on undead, constructs, or extraplanar creatures.~
-	@9999196 = ~Shield of Divine~
-	@9999197 = ~Shield of Divine
+It has no effect on undead, constructs, or extraplanar creatures.~
+	@9999196 = ~Shield of Lathander~
+	@9999197 = ~Shield of Lathander
 (Conjuration)
 
 Level: 5
@@ -928,8 +928,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell grants the recipient immunity to damage for the duration of the spell.~
-	@9999196 = ~Greater Shield of Divine~
-	@9999197 = ~Greater Shield of Divine
+	@9999198 = ~Greater Shield of Lathander~
+	@9999199 = ~Greater Shield of Lathander
 (Conjuration)
 
 Level: 7
@@ -941,8 +941,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell grants the recipient 100% Magic Resistance and immunity to damage for the duration of the spell.~
-	@9999198 = ~Entropy Shield~
-	@9999199 = ~Entropy Shield
+	@9999200 = ~Entropy Shield~
+	@9999201 = ~Entropy Shield
 (Abjuration)
 
 Level: 6
@@ -954,8 +954,8 @@ Area of Effect: The caster
 Saving Throw: None
 
 When cast, this spell surrounds the caster with a defensive maelstrom of energy that blocks or deflects many attacks. This gives the priest a +6 bonus to Armor Class, a +2 bonus to Saving Throws, and +50% resistance to electricity, fire, cold, and acid. The priest is also immune to Flamestrike and all missile-based attacks, including missiles created by spells such as Magic Missile.~
-	@9999200 = ~Seven Eyes~
-	@9999201 = ~Seven Eyes
+	@9999202 = ~Seven Eyes~
+	@9999203 = ~Seven Eyes
 (Abjuration)
 
 Level: 7
@@ -980,51 +980,51 @@ Eye of the Spirit: This eye blocks one instant-death magic attack (Death Spell; 
 Eye of Fortitude: This eye blocks one stunning, deafness, blindness, or silence effect. It may alternatively be expended as the 4th-level wizard spell Shout, dealing 4d6 magic damage and deafening creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).
 
 Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 3rd-level wizard spell Hold Person, rendering humanoids of man-size or smaller immobile for 1 round/level (Save vs. Spell negates).~
-	@9999202 = ~Eye of the Mind~
-	@9999203 = ~Eye of the Mind
+	@9999204 = ~Eye of the Mind~
+	@9999205 = ~Eye of the Mind
 
 This orb protects the caster against mental attacks such as charm, emotion, and fear.
 
 The eye can be expended as the 1st-level wizard spell Charm Person, bringing a humanoid creature under the caster's control for 1 turn (Save vs. Spell negates).~
-	@9999204 = ~Eye of the Sword~
-	@9999205 = ~Eye of the Sword
+	@9999206 = ~Eye of the Sword~
+	@9999207 = ~Eye of the Sword
 
 This eye deflects the first physical damaging attack that strikes the caster.
 
 The eye may be expended as the 1st-level wizard spell Magic Missile, creating up to 5 missiles (one for every two levels of experience besides the first) that each strike a target for 1d4+1 magic damage.~
-	@9999206 = ~Eye of the Mage~
-	@9999207 = ~Eye of the Mage
+	@9999208 = ~Eye of the Mage~
+	@9999209 = ~Eye of the Mage
 
 This eye absorbs one manifestation of fire, electrical, cold, or acid damage.
 
 The eye can also be expended as the 3rd-level wizard spell Lightning Bolt, dealing 1d6 electrical damage per level (capped at 10d6) to all creatures in its path.~
-	@9999208 = ~Eye of Venom~
-	@9999209 = ~Eye of Venom
+	@9999210 = ~Eye of Venom~
+	@9999211 = ~Eye of Venom
 
 This eye halts any one attack or effect that could poison the caster.
 
 The eye can also be expended as the 4th-level priest spell Poison, dealing 20 points of damage to one creature over a period of 20 seconds (Save vs. Poison negates).~
-	@9999210 = ~Eye of the Spirit~
-	@9999211 = ~Eye of the Spirit
+	@9999212 = ~Eye of the Spirit~
+	@9999213 = ~Eye of the Spirit
 
 This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction).
 
 The wizard may instead choose to expend the eye's power as the 2nd-level wizard spell Ray of Enfeeblement, dropping a target's Strength to 5 (Save vs. Spell negates).~
-	@9999212 = ~Eye of Fortitude~
-	@9999213 = ~Eye of Fortitude
+	@9999214 = ~Eye of Fortitude~
+	@9999215 = ~Eye of Fortitude
 
 This eye blocks one stunning, deafness, blindness, or silence effect.
 
 It may alternatively be expended as the 4th-level wizard spell Shout, dealing 4d6 magic damage and deafening creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).~
-	@9999214 = ~Eye of Stone~
-	@9999215 = ~Eye of Stone
+	@9999216 = ~Eye of Stone~
+	@9999217 = ~Eye of Stone
 
 This eye shields the caster from a single petrification attack.
 
 It can also be used as the 3rd-level wizard spell Hold Person, rendering humanoids of man-size or smaller immobile for 1 round/level (Save vs. Spell negates).~
-	@9999216 = ~You cannot cast this spell until the current casting has run out.~
-	@9999217 = ~Spiritual Wrath~
-	@9999218 = ~Spiritual Wrath
+	@9999218 = ~You cannot cast this spell until the current casting has run out.~
+	@9999219 = ~Spiritual Wrath~
+	@9999220 = ~Spiritual Wrath
 (Invocation)
 
 Level: 6
@@ -1036,8 +1036,8 @@ Area of Effect: Special
 Saving Throw: 1/2
 
 Upon completion of this spell, the priest becomes a focus of spiritual energy, which then shoots out from the caster in four directions, like lightning bolts. All creatures in the bolts' paths take 4d10 points of magic damage (save vs. Spell for half). Creatures of the same moral alignment (good, neutral, evil) as the caster are unaffected by the spell.~
-	@9999219 = ~Cause Medium Wounds~
-	@9999220 = ~Cause Medium Wounds
+	@9999221 = ~Cause Medium Wounds~
+	@9999222 = ~Cause Medium Wounds
 (Necromancy)
 
 Level: 3
@@ -1049,8 +1049,8 @@ Area of Effect: 1 creature
 Saving Throw: 1/2
 
 By casting this spell and touching a creature, the priest deals 14 points of damage (save vs. Spell for half) to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
-	@9999221 = ~Mass Cause Light Wounds~
-	@9999222 = ~Mass Cause Light Wounds
+	@9999223 = ~Mass Cause Light Wounds~
+	@9999224 = ~Mass Cause Light Wounds
 (Necromancy)
 
 Level: 5
