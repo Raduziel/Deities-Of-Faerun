@@ -7,9 +7,9 @@ LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999225) STR_VAR bam_
 COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999226 SAY DESC @9999226	
 LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
-LPF ALTER_EFFECT  		INT_VAR match_opcode = 21 target = 2   timing = 0 duration = 60 parameter1 = 500 parameter2 = 1 END
-LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 142 parameter1 = 0   parameter2 = iconiden 				    END
-LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 174 timing = 4 duration = 60 parameter1 = 0   parameter2 = 0 STR_VAR resource = ~EFF_E04~ END
+LPF ALTER_EFFECT  		INT_VAR match_opcode = 21 target = 2   timing = 0 duration = 60 parameter1 = 500 parameter2 = 1 resist_dispel = 3 END
+LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 142 parameter1 = 0   parameter2 = iconiden resist_dispel = 3 				  END
+LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 174 timing = 4 duration = 60 parameter1 = 0   parameter2 = 0 resist_dispel = 3 STR_VAR resource = ~EFF_E04~ END
 
 END
 
