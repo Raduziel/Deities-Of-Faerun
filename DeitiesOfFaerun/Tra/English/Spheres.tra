@@ -1062,7 +1062,8 @@ Area of Effect: 15-ft. radius
 Saving Throw: 1/2
 
 By casting this spell, the priest deals 1d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage. This spell has no effect on undead, constructs, or extraplanar creatures.~
-	@9999225 = ~Identify
+	@9999225 = ~Identify~
+	@9999226 = ~Identify
 (Divination)
 
 Level: 1
