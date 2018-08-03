@@ -1,4 +1,4 @@
-//Identify only through UI
+//Identify Through UI only
 
 COPY_EXISTING	~SPWI110.SPL~	override
 	LPF	ALTER_SPELL_HEADER	INT_VAR	 location = 0	END
