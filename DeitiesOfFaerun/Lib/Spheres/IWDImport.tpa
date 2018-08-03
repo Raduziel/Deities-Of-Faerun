@@ -1,8 +1,9 @@
-//Identify Through UI only
+//Identify Changes
 
 COPY_EXISTING	~SPWI110.SPL~	override
-	LPF	ALTER_SPELL_HEADER	INT_VAR	 location = 0	END
-BUT_ONLY IF_EXISTS
+SAY UNIDENTIFIED_DESC @9999225 SAY DESC @9999225	
+LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
+LPF ALTER_SPELL_EFFECT  INT_VAR target = 2 match_opcode = 21 timing = 0 duration = 60 parameter1 = 500 parameter2 = 1 END
 
 //Bless for non-Evil only
 
