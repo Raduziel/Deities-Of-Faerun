@@ -1,17 +1,38 @@
 //Identify Changes
 
-COPY_EXISTING	~SPWI110.SPL~	override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_IDENTIFY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_IDENTIFY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999225 SAY DESC @9999225	
 LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
 LPF ALTER_SPELL_EFFECT  INT_VAR target = 2 match_opcode = 21 timing = 0 duration = 60 parameter1 = 500 parameter2 = 1 END
 
+END
+
 //Bless for non-Evil only
 
-COPY_EXISTING ~SPPR101.SPL~	override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
 WRITE_LONG 0x1e (THIS BOR 0x2)
+IF_EXISTS
 
+END
 
-//PnP Spell Progression for Icewind Dale | Curse for non-Good only
+//Curse for non-Good only
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CURSE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURSE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
+WRITE_LONG 0x1e (THIS BOR 0x4)
+IF_EXISTS
+
+END
+
+//PnP Spell Progression for Icewind Dale
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
@@ -19,14 +40,14 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
 
 	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
 	
-COPY_EXISTING ~SPPR112.SPL~ override
-WRITE_LONG 0x1e (THIS BOR 0x4)
-	  
 END
 
-//Hold Person or Mammal
+//Hold Animal -> Hold Person or Mammal
 
-COPY_EXISTING ~SPPR305.spl~	override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLD_ANIMAL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLD_ANIMAL~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override~
 	LPF	CLONE_EFFECT
 		INT_VAR
 			match_opcode = 175	
@@ -61,6 +82,8 @@ COPY_EXISTING ~SPPR305.spl~	override
 COPY_EXISTING ~IDPRO249.pro~ override
 	WRITE_SHORT	0x3e	22
 IF_EXISTS
+
+END
 
 ACTION_IF ((!GAME_IS ~iwdee~) AND ((!FILE_EXISTS ~b_IWD.itm~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
 
