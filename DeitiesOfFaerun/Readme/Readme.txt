@@ -1544,6 +1544,7 @@ f1) Sphere System
 [Divination]
 
 1 - Detect Evil
+    Identify
 
 2 - Find Traps
     Know Alignment
