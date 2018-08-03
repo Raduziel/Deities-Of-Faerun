@@ -847,7 +847,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_HOPE[ %TA
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/IDPRO407.PRO~
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999123) STR_VAR bam_file = RAHOPE RET iconhope = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999123) STR_VAR bam_file = RAHOPEIC RET iconhope = icon END
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI429.spl~ 2 4 WIZARD_EMOTION_HOPE
 SAY NAME1 @9999121 SAY NAME2 @9999121 SAY UNIDENTIFIED_DESC @9999122 SAY DESC @9999122
 TEXT_SPRINT	 spell_res	~%DEST_RES%~	TO_UPPER	spell_res
