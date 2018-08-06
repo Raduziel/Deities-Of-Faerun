@@ -16,13 +16,13 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~ov
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	~override~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES12WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	~override~
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES16WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	~override~
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES24WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	~override~
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
 END
@@ -45,13 +45,13 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2C.BAM~	~over
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	~override~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/ES12AIR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	~override~
 SAY NAME1 @9999230 SAY NAME2 @9999230
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/ES16AIR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	~override~
 SAY NAME1 @9999230 SAY NAME2 @9999230
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/ES24AIR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	~override~
 SAY NAME1 @9999230 SAY NAME2 @9999230
 
 END
@@ -61,8 +61,8 @@ END
                             /*Air Elemental*/
 							
 COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
-	READ_BYTE	0x273	class
-		PATCH_IF class = 186 BEGIN
+	READ_LONG	0x028	animation
+		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN
 			WRITE_BYTE 0x063  50
 			WRITE_BYTE 0x05b  50
 			WRITE_BYTE 0x05a  50
@@ -73,8 +73,8 @@ BUT_ONLY_IF_IT_CHANGES
                             /*Earth Elemental*/
 							
 COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
-	READ_BYTE	0x273	class
-		PATCH_IF class = 188 BEGIN
+	READ_LONG	0x028	animation
+		PATCH_IF (animation = 29440) OR (animation = 29441) OR (animation = 57931) BEGIN
 			WRITE_BYTE 0x05b 100
 		END
 BUT_ONLY_IF_IT_CHANGES		
@@ -82,8 +82,8 @@ BUT_ONLY_IF_IT_CHANGES
                             /*Water Elemental*/
 							
 COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
-	READ_BYTE	0x273	class
-		PATCH_IF class = 219 BEGIN
+	READ_LONG	0x028	animation
+		PATCH_IF (animation = 57933) OR (animation = 57964) BEGIN
 			WRITE_BYTE 0x05b  ~-100~
 			WRITE_BYTE 0x05a    50
 			WRITE_BYTE 0x05f    50
