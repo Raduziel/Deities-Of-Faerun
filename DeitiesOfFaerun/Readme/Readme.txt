@@ -403,7 +403,7 @@ Conjure Ice Elemental
 Level: 6
 Sphere: Water
 Range: Visual range of the caster
-Duration: 10 turns
+Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
