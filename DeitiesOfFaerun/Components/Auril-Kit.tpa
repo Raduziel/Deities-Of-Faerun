@@ -116,23 +116,27 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONE_OF_COLD~	RET	spell_
 COPY_EXISTING	~%spell_res%.spl~	~override/RAAURI5.spl~
 LPM ~SPELL_TO_INNATE~
 
-END 
-  
-COPY "DeitiesOfFaerun\Spl\RAAURI6.spl" override SAY NAME1 @1710 SAY UNIDENTIFIED_DESC @1711    //Conjure Ice Elemental
+END
 
-COPY "DeitiesOfFaerun\Spl\RAAUR6E1.eff" override
+//Conjure Ice Elemental
 
-COPY "DeitiesOfFaerun\Spl\RAAUR6E2.eff" override
+LAF cd_new_summon_table STR_VAR descript = "ICE_ELEMENTAL_RADUZIEL" 2da_file = RAELEMI RET RAELEMI = table END  
+COPY "DeitiesOfFaerun\Spl\RAAURI6.spl" override SAY NAME1 @1710 SAY UNIDENTIFIED_DESC @1711   //Conjure Ice Elemental
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMI END
+LPM ~SPELL_TO_INNATE~
 
-COPY "DeitiesOfFaerun\Spl\RAAUR6E3.eff" override
+COPY_EXISTING ~smtables.2da~ ~override~
+PRETTY_PRINT_2DA
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\Complement" override                                    //Ice Elemental - animation, bam, sounds, itm
+COPY "DeitiesOfFaerun\Cre\IceElemental\Complement"  override                                  //Ice Elemental - animation, bam, sounds, itm
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\RAIceEl1.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 12 HD
+COPY "DeitiesOfFaerun\Cre\IceElemental\RAELEMI.2DA" override                                  //Ice Elemental - 2da
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\RAIceEl2.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 16 HD
+COPY "DeitiesOfFaerun\Cre\IceElemental\RA12ice.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 12 HD
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\RAIceEl3.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 24 HD
+COPY "DeitiesOfFaerun\Cre\IceElemental\RA16ice.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 16 HD
+
+COPY "DeitiesOfFaerun\Cre\IceElemental\RA24ice.cre" override SAY NAME1 @1712 SAY NAME2 @1712  //Ice Elemental - creature 24 HD
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
