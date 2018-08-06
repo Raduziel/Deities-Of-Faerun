@@ -1089,5 +1089,19 @@ Saving Throw: None
 When a priest casts this powerful spell upon a creature, an outer skin of iron will move up from the ground, completely covering the target. This skin is, of course, magical and will hinder the target in no way. The effect of this is to protect the creature from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting.
 
 The skins will remain until the creature is affected by Dispel Magic, all of the skins are removed due to physical attacks, or the spell's duration expires. It is important to note that this will not protect the target from any area attacks, such as Fireball.~
+	@9999228 = ~Conjure Air Elemental~
+	@9999229 = ~Conjure Air Elemental 
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Elemental (Air), Summoning
+Range: Visual range of the caster
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+Upon casting a Conjure Air Elemental spell, the caster opens a special gate to the Elemental Plane of Air, and an air elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears, a 35% chance that a 16-Hit-Dice elemental appears, and a 5% chance that a 24-Hit-Dice elemental appears. All of the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication, and it is not necessary to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their summoned elemental.~
+	@9999230 = ~Air Elemental~
 
 // EoF
