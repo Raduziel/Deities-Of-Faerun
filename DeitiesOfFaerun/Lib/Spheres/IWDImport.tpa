@@ -1,3 +1,47 @@
+//Conjure Water Elemental - Raduziel
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 RADUZIEL_CONJURE_WATER_ELEMENTAL
+SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	~override~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES12WATR.CRE~	~override~
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES16WATR.CRE~	~override~
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES24WATR.CRE~	~override~
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+END
+
+//Iron Skin Changes
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_IRONSKIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_IRONSKIN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	override
+SAY UNIDENTIFIED_DESC @9999227 SAY DESC @9999227	
+LPF	ALTER_SPELL_HEADER	INT_VAR	target = 1 END
+LPF ALTER_EFFECT  		INT_VAR match_opcode = 218 target = 2 END
+LPF ALTER_EFFECT  		INT_VAR match_opcode = 215 target = 2 END
+LPF ALTER_EFFECT  		INT_VAR match_opcode = 174 target = 2 END
+LPF ALTER_EFFECT  		INT_VAR match_opcode = 50  target = 2 END
+
+END
+
 //Identify Changes
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_IDENTIFY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -1062,29 +1106,6 @@ LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 paramet
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426C.BAM~	~override\%spell_res%C.BAM~
-
-END
-
-//Conjure Water Elemental
-
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
-
-LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_WIZ" 2da_file = CWELEMW RET CWELEMW = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPWI533.spl~ 2 5 WIZARD_CONJURE_WATER_ELEMENTAL
-SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = CWELEMW END
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPWI533B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPWI533C.BAM~	~override\%spell_res%C.BAM~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/CWELEMW.2DA~	~override~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES8WATR.CRE~	~override~
-SAY NAME1 @9999143 SAY NAME2 @9999143
 
 END
 
