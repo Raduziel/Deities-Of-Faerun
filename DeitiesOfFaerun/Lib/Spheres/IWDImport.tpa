@@ -56,6 +56,41 @@ SAY NAME1 @9999230 SAY NAME2 @9999230
 
 END
 
+//Elemental Changes
+
+                            /*Air Elemental*/
+							
+COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
+	READ_BYTE	0x273	class
+		PATCH_IF class = 186 BEGIN
+			WRITE_BYTE 0x063  50
+			WRITE_BYTE 0x05b  50
+			WRITE_BYTE 0x05a  50
+			WRITE_BYTE 0x05f  50
+		END
+BUT_ONLY_IF_IT_CHANGES
+
+                            /*Earth Elemental*/
+							
+COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
+	READ_BYTE	0x273	class
+		PATCH_IF class = 188 BEGIN
+			WRITE_BYTE 0x05b 100
+		END
+BUT_ONLY_IF_IT_CHANGES		
+
+                            /*Water Elemental*/
+							
+COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
+	READ_BYTE	0x273	class
+		PATCH_IF class = 219 BEGIN
+			WRITE_BYTE 0x05b  (0-100)
+			WRITE_BYTE 0x05a    50
+			WRITE_BYTE 0x05f    50
+			WRITE_BYTE 0x05c    50
+		END
+BUT_ONLY_IF_IT_CHANGES
+
 //Iron Skin Changes
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_IRONSKIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
