@@ -107,30 +107,35 @@ COPY ~DeitiesOfFaerun\Spl\RAUMBE3.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED
 
 //Conjure Water Elemental
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONJURE_WATER_ELEMENTAL~	RET	spell_res	END
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~RADUZIEL_CONJURE_WATER_ELEMENTAL~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE4.spl~
 LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
-LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_WIZ" 2da_file = CWELEMW RET CWELEMW = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPWI533.spl~ 2 5 WIZARD_CONJURE_WATER_ELEMENTAL
+LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 RADUZIEL_CONJURE_WATER_ELEMENTAL
 SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = CWELEMW END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPWI533B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPWI533C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/CWELEMW.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	~override~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES8WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES12WATR.CRE~	~override~
 SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES16WATR.CRE~	~override~
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES24WATR.CRE~	~override~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE4.spl~
 LPM ~SPELL_TO_INNATE~
