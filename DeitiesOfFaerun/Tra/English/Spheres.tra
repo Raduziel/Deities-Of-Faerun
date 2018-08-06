@@ -589,17 +589,18 @@ Saving Throw: Special
 
 This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 4d10 points of crushing damage; in addition, struck creatures may be either stunned (25% chance) or knocked unconscious (5% chance) for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon, the damage is reduced by half and the creature avoids being stunned or knocked unconscious.~
 	@9999141 = ~Conjure Water Elemental~
-	@9999142 = ~Conjure Water Elemental
+	@9999142 = ~Conjure Water Elemental 
 (Conjuration/Summoning)
 
-Level: 5
+Level: 7
+Sphere: Elemental (Water), Summoning
 Range: Visual range of the caster
 Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell allows the caster to summon an 8-HD elemental from the Elemental Plane of Water and bind it to <PRO_HISHER> will. This elemental will fight on behalf of the caster until the spell duration expires or the elemental is destroyed.~
+Upon casting a Conjure Water Elemental spell, the caster opens a special gate to the Elemental Plane of Water, and a water elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears, a 35% chance that a 16-Hit-Dice elemental appears, and a 5% chance that a 24-Hit-Dice elemental appears. All of the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication, and it is not necessary to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their summoned elemental.~
 	@9999143 = ~Water Elemental~
 	@9999144 = ~Snilloc's Snowball Swarm~
 	@9999145 = ~Snilloc's Snowball Swarm
@@ -896,7 +897,7 @@ Sphere: Healing
 Range: Touch
 Duration: Instant
 Casting Time: 9
-Area of Effect: The caster
+Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell instantly destroys a target, blasting it into small chunks. The victim is allowed a Save vs. Death at a penalty of -4; if successful, the target takes 8d6 points of magic damage instead of being destroyed. Note that a character struck with a Destruction spell cannot be raised from the dead with a Raise Dead or Resurrection spell.~
@@ -1074,5 +1075,19 @@ Area of Effect: The caster
 Saving Throw: None
 
 Through this spell, the caster may identify any item <PRO_HESHE> analyses with a 100% success rate, allowing the caster to know the item's name, what it does, and if it is cursed.~
+	@9999227 = ~Iron Skins
+(Alteration)
+
+Level: 5
+Sphere: Earth
+Range: Touch
+Duration: 12 hours
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When a priest casts this powerful spell upon a creature, an outer skin of iron will move up from the ground, completely covering the target. This skin is, of course, magical and will hinder the target in no way. The effect of this is to protect the creature from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting.
+
+The skins will remain until the creature is affected by Dispel Magic, all of the skins are removed due to physical attacks, or the spell's duration expires. It is important to note that this will not protect the target from any area attacks, such as Fireball.~
 
 // EoF

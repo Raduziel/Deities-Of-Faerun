@@ -38,7 +38,7 @@ Sphere: Thought
 Range: 15-ft/level
 Duration: 2 turns
 Casting Time: 6
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell has two effects: when cast upon an ally it will put it on a state of bliss, raising its morale and banishing all effects of disease, fear, sleep and charm. When cast upon an enemy the target must make a Saving Throw vs. Paralyzation or become stunned during the effect of the spell.~
@@ -176,7 +176,7 @@ Sphere: Suffering, Thought
 Range: Touch
 Duration: Permanent
 Casting Time: 5
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.~
@@ -254,7 +254,7 @@ Sphere: Darkness, Suffering, Thought
 Range: 40 ft.
 Duration: 2 turns
 Casting Time: 2
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber and send a hideous and unsettling vision to the recipient, causing 1d10 points of magic damage. A Saving Throw vs. Spells is allowed to avoid all the effects.~
@@ -267,7 +267,7 @@ Sphere: Darkness, Suffering, Thought
 Range: 60 ft.
 Duration: 1 round/3 levels
 Casting Time: 6
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 An eyebite spell enables the caster to merely meet the gaze of a creature and speak a single word to cause an effect. The Nightcloak selects one of four possible gaze attacks at the time the spell is cast. Every effect can be resisted with a Saving Throw vs. Spells with a -4 penalty. The four effects of the spell are as follows:
@@ -626,7 +626,7 @@ Sphere: Combat
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 During this spell's effect, the recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in Faerie Fire.~
@@ -745,7 +745,7 @@ Sphere: Divination
 Range: Touch
 Duration: Special
 Casting Time: 3
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 With this spell, the Lorekeeper can extend someone's knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.~
@@ -821,7 +821,7 @@ Sphere: Protection
 Range: Touch
 Duration: 6 rounds
 Casting Time: 7
-Area of Effect: One creature 
+Area of Effect: 1 creature 
 Saving Throw: None 
 
 This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is only then taken from the real hit points of the affected being. The spell also protects the vitality of the spell recipient so that all checks of any sort against contracting diseases automatically succeed, and all other Saving Throws receive a +2 bonus.~
@@ -1102,7 +1102,7 @@ Sphere: Creation, Water
 Range: 30
 Duration: Instantaneous
 Casting Time: 3
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell creates a dagger that flies to a target determined by the caster. This weapon hits for 1d4+5 points of cold damage and the target must make a Saving Throw vs. Death or be frozen for 1 round.~
@@ -1115,7 +1115,7 @@ Sphere: Creation, Water
 Range: 5
 Duration: Instantaneous
 Casting Time: 5
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell creates a whip made of pure ice that is used immediately against a target designed by the caster for 4d4 points of cold damage. The whip makes the area around the target slippery - a Saving Throw vs. Wands must be made, otherwise the target will slip three feet away from the caster.~
@@ -1273,7 +1273,7 @@ Sphere: Suffering, Water
 Range: 40
 Duration: Instantaneous
 Casting Time: 4
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell evaporates moisture from the bodies of the target creature, inflicting 1d8 points of magic damage per level of the caster (maximum 10d8) on a failed Saving Throw vs. Death.~
@@ -1286,7 +1286,7 @@ Sphere: Water
 Range: 30
 Duration: 1 turn
 Casting Time: 6
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell fill the lungs of the target creature with water. Creatures that do not breathe are unaffected. Drowning creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, and half movement rate during the effect of the spell. On top of that, the target takes 4d8 of crushing damage. A successful Saving Throw vs. Spells negates all effects except for the damage.~
@@ -1352,7 +1352,7 @@ Sphere: Moon
 Range: 60
 Duration: 5 rounds
 Casting Time: 2
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell can only be used outdoors. The Silverstar calls a beam of light from the sky and directs it to a target blinding it and turning it incapable of becoming invisible for the duration of the spell. A successful Saving Throw vs. Breath avoids all the effects.~
@@ -1443,7 +1443,7 @@ Sphere: Suffering
 Range: Touch
 Duration: Special
 Casting Time: 5
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell creates a deadly poison in the caster's hand or another chosen limb. Touching a creature will deliver this poison immediately and enforce a Saving Throw vs. Poison.
@@ -1521,7 +1521,7 @@ Sphere: Suffering
 Range: Touch
 Duration: 5 rounds
 Casting Time: 1
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and and a -2 to its AC.~
@@ -1534,7 +1534,7 @@ Sphere: Fire, Suffering
 Range: 12
 Duration: Special
 Casting Time: 5
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 The Pain creates a whip made of fire that is directed against a creature. The whip damages the target with fire by 1d8 and imposes a Saving Throw vs. Breath Weapons. A failure means that the target is burning and will keep receiving 3 points of fire damage per round until succeeds on the saving throw.~
@@ -1547,7 +1547,7 @@ Sphere: Suffering
 Range: 10
 Duration: Special
 Casting Time: 6
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 A whip is created by the Pain and immediately used against a creature and imposes a Saving Throw vs. Spells. If succeeds, the target only gets 2d4 points of slashing damage. If it fails, the target gets 4d4 points of slashing damage and suffers a huge pain that gives a -2 penalty to its attack rolls, a -1 penalty to its AC and makes impossible to concentrate enough to cast spells.~
@@ -1560,7 +1560,7 @@ Sphere: Suffering
 Range: Touch
 Duration: Special
 Casting Time: 7
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 By touching a creature, the Pain attacks its nervous system, delivering an overwhelming pain, causing 4d6 points of magic damage and completely incapacitating the target.
@@ -1638,7 +1638,7 @@ Sphere: Creation, Combat
 Range: 10
 Duration: Special
 Casting Time: 8
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Special
 
 Casting this spell creates a long whip of ghostly, glowing red force that emanates from the priest's hand. A mystic lash does 2d8 points of electrical damage. Targets who are hit by the lash are entitled to a Saving Throw vs. Spells to take half damage. The strike of the lash also has a magical effect randomly chosen from the list below:
@@ -1796,7 +1796,7 @@ Sphere: Necromantic
 Range: Touch
 Duration: Permanent
 Casting Time: 1
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 The Gray One touches <PRO_HISHER> victim forcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.~
@@ -2137,7 +2137,7 @@ Sphere: Combat
 Range: 30
 Duration: 1 turn
 Casting Time: 3
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 When chaotic combat is cast on a creature, it is inspired beyond his years of training and is suddenly struck with numerous insights for variations on the standard moves of attack and defense.
@@ -2394,7 +2394,7 @@ Sphere: Divination
 Range: Touch
 Duration: 3 rounds
 Casting Time: 10
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 By twisting Fate accordingly to <PRO_HISHER> will, the Luckbringer makes every moment of a combat favorable to the target of this spell, granting a +2 bonus to Thac0, Speed Factor and to its critical hit range.~
@@ -2407,7 +2407,7 @@ Sphere: Protection
 Range: Touch
 Duration: 5 rounds
 Casting Time: 5
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 This spell confers a protection for a single recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a +4 bonus to its Saving Throws. This spell will cancel the effects of Bane of Beshaba.~
@@ -2420,7 +2420,7 @@ Sphere: Protection
 Range: 100
 Duration: 4 rounds
 Casting Time: 9
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 This spell can be used by the caster directly or fired at a chosen creature as a bolt that cannot miss. If the recipient being is not the caster, the recipient must be viewed by the caster, either directly or through some means of scrying, as the Luckbolt is cast. The spell affects the target as follows:
@@ -2514,7 +2514,7 @@ Sphere: Suffering
 Range: 15 ft.
 Duration: 3 rounds
 Casting Time: 2
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 The recipient of this spell gains extraordinary bad luck for the next 3 rounds, receiving a -1 penalty to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as -5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is increased by 1. For example, a 6d6 fireball will do 6d7 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d4 fire damage instead.~
@@ -2527,7 +2527,7 @@ Sphere: Suffering
 Range: Touch
 Duration: 5 rounds
 Casting Time: 5
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 This spell bestows a curse upon a single recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a -4 penalty to its Saving Throws. This spell will cancel the effects of Favor of Tymora.~
@@ -2540,7 +2540,7 @@ Sphere: Suffering
 Range: Touch
 Duration: 1 turn
 Casting Time: 5
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: None
 
 This spell causes the recipient to receive a -3 penalty on all Saving Throws, initiative checks, Thac0, and damage rolls as well as a -15% penalty to all thieving skill checks for the spell duration. A Black Finger of Beshaba must physically touch the recipient to cast this spell.~
@@ -2621,7 +2621,7 @@ Sphere: Suffering
 Range: Touch
 Duration: 1 turn
 Casting Time: 7
-Area of Effect: One creature
+Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell inflicts punishment upon an evil and intelligent living target that cannot be terminated by Dispel Magic.
