@@ -58,32 +58,18 @@ END
 
 //Elemental Changes
 
-                            /*Air Elemental*/
-							
 COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
 	READ_LONG	0x028	animation
-		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN
+		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN /*Air Elemental*/
 			WRITE_BYTE 0x063  50
 			WRITE_BYTE 0x05b  50
 			WRITE_BYTE 0x05a  50
 			WRITE_BYTE 0x05f  50
 		END
-BUT_ONLY_IF_IT_CHANGES
-
-                            /*Earth Elemental*/
-							
-COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
-	READ_LONG	0x028	animation
-		PATCH_IF (animation = 29440) OR (animation = 29441) OR (animation = 57931) BEGIN
+		PATCH_IF (animation = 29440) OR (animation = 29441) OR (animation = 57931) BEGIN /*Earth Elemental*/
 			WRITE_BYTE 0x05b 100
 		END
-BUT_ONLY_IF_IT_CHANGES		
-
-                            /*Water Elemental*/
-							
-COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
-	READ_LONG	0x028	animation
-		PATCH_IF (animation = 57933) OR (animation = 57964) BEGIN
+		PATCH_IF (animation = 57933) OR (animation = 57964) BEGIN /*Water Elemental*/
 			WRITE_BYTE 0x05b  ~-100~
 			WRITE_BYTE 0x05a    50
 			WRITE_BYTE 0x05f    50
