@@ -53,6 +53,7 @@ WRITE_ASCII 0x058 ~MALAL~
 //Malar Claw
 
 COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALACS.SPL" override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Poison%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Bleeding%" END
 
 COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALACL.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
