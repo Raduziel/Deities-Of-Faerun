@@ -52,20 +52,6 @@ WRITE_ASCII 0x058 ~CLANL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAHSCLAN.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSCLAN.itm" override 
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAClan + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
-
 //Command
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_COMMAND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
