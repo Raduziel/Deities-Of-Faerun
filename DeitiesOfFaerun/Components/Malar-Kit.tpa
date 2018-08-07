@@ -58,8 +58,8 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALACL.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMala + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.spl" ~override/RAMALAC~
-LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAMALACL~ END
+COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.spl" ~override/RAMALAC.spl~
+LPF ALTER_EFFECT INT_VAR match_opcode = 122 STR_VAR resource = ~RAMALACL~ END
 
 //Spells
 
