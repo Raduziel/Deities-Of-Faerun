@@ -31,27 +31,28 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RALATH~  clabfile = ~RALATH~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RALATHF.spl" override
+//Holy Symbol
 
-COPY "DeitiesOfFaerun\Spl\RAHSLATH.spl" override
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSLATH.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSLATH~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSLATH.itm" override SAY NAME1 @1010 SAY NAME2 @1010 SAY DESC @1011
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALath~)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLATH.itm~ SAY NAME1 @1010 SAY NAME2 @1010 SAY DESC @1011
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALath + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~LATHS~
+WRITE_ASCII 0x058 ~LATHL~
+
+//Spells
+
+COPY "DeitiesOfFaerun\Spl\RALATHF.spl" override
 
 COPY "DeitiesOfFaerun\Spl\RALATH1.spl" override SAY NAME1 @1004 SAY UNIDENTIFIED_DESC  @1005   //Boon of Lathander
 
@@ -68,6 +69,8 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RALATH4.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -86,6 +89,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~LATHS~ ~LATHL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

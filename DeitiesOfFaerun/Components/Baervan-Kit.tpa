@@ -31,11 +31,26 @@ LAF fl#add_kit_ee
 		clsrcreq = ~0 0 0 0 0 1 0~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RABAER~  clabfile = ~RABAER~	END
 
 END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSBAER.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBAER~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBAER.itm~ SAY NAME1 @707 SAY NAME2 @707 SAY DESC @708
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABaer + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~BAERS~
+WRITE_ASCII 0x058 ~BAERL~
+
+//Spells
 
 COPY "DeitiesOfFaerun\Spl\RABAERF.spl" override
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 83   parameter2 = 319 target = 2 timing = 9 END
@@ -50,20 +65,6 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR res
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~GASP~     END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~HOLDFST~  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~TALONGF~  END
-
-COPY "DeitiesOfFaerun\Spl\RAHSBAER.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSBAER.itm" override SAY NAME1 @707 SAY NAME2 @707 SAY DESC @708
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RABaer + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
 
 //Animal Summoning III
 
@@ -115,6 +116,8 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Restrictions
+
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	SET match = 0
@@ -147,6 +150,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		END
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~BAERS~ ~BAERL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

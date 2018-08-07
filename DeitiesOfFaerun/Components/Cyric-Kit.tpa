@@ -31,11 +31,26 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RACYRI~  clabfile = ~RACYRI~	END
 
 END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSCYRI.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSCYRI~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSCYRI.itm~ SAY NAME1 @308 SAY NAME2 @308 SAY DESC @309
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RACyri + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~CYRIS~
+WRITE_ASCII 0x058 ~CYRIL~
+
+//Spells
 
 COPY "DeitiesOfFaerun\Spl\RACYRIF.spl" override
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Panic%" END
@@ -113,20 +128,6 @@ BEGIN
 	END
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSCYRI.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSCYRI.itm" override SAY NAME1 @308 SAY NAME2 @308 SAY DESC @309
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RACyri + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
-
 COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @304 SAY UNIDENTIFIED_DESC @305 //Dark Aura
 
 COPY "DeitiesOfFaerun\Spl\RACYRIE.spl" override                                           //Bonuses for Evil-aligned
@@ -135,6 +136,8 @@ COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                 
 
 COPY "DeitiesOfFaerun\Spl\RACYRI2.spl" override SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307 //Instill Madness
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@310) END
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -153,6 +156,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~CYRIS~ ~CYRIL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

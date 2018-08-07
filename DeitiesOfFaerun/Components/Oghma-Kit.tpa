@@ -31,11 +31,26 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 0~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAOGHM~  clabfile = ~RAOGHM~	END
 
 END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSOGHM.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSOGHM~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSOGHM.itm~ SAY NAME1 @1206 SAY NAME2 @1206 SAY DESC @1207
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAOghm + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~OGHMS~
+WRITE_ASCII 0x058 ~OGHML~
+
+//Spells
 
 //Free Action (Feature)
 
@@ -57,20 +72,6 @@ LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 EN
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSOGHM.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSOGHM.itm" override SAY NAME1 @1206 SAY NAME2 @1206 SAY DESC @1207
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAOghm + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
-
 COPY "DeitiesOfFaerun\Spl\RAOGHM1.spl" override SAY NAME1 @1204 SAY UNIDENTIFIED_DESC @1205 //Legend Lore
 
 //Friends
@@ -87,23 +88,7 @@ LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = 
 
 END
 
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAOghm + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  special = RESOLVE_STR_REF (@1202)
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -137,6 +122,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		END
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~OGHMS~ ~OGHML~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

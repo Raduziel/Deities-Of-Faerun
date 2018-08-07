@@ -31,11 +31,26 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RATALO~  clabfile = ~RATALO~	END
 
 END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSTALO.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTALO~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSTALO.itm~ SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATalo + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~TALOS~
+WRITE_ASCII 0x058 ~TALOL~
+
+//Spells
 
 COPY_EXISTING ~SPWI512.spl~ ~override/RATALOF.spl~
 WRITE_SHORT 0x1C 4                                                    
@@ -49,20 +64,6 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
-
-COPY "DeitiesOfFaerun\Spl\RAHSTALO.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSTALO.itm" override SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATalo~)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
 
 //Lightning Bolt
 		  
@@ -104,6 +105,8 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Restrictions
+
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
@@ -121,6 +124,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~TALOS~ ~TALOL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

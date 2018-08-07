@@ -31,27 +31,28 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RALOVI~  clabfile = ~RALOVI~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSLOVI.spl" override
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSLOVI.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSLOVI~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSLOVI.itm" override SAY NAME1 @2217 SAY NAME2 @2217 SAY DESC @2218
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RALovi + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLOVI.itm~ SAY NAME1 @2217 SAY NAME2 @2217 SAY DESC @2218
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALovi + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~LOVIS~
+WRITE_ASCII 0x058 ~LOVIL~
 
-COPY "DeitiesOfFaerun\Lib\Spheres\Import\Common\RAPAINIC.BAM" override		  
+//Spells
+
+COPY "DeitiesOfFaerun\Lib\Spheres\Import\Common\RAPAINIC.BAM" override	
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END		  
 COPY "DeitiesOfFaerun\Spl\RALovi1.spl" override SAY NAME1 @2204 SAY UNIDENTIFIED_DESC @2205
@@ -143,6 +144,7 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 9 parameter1 = EV
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 10 parameter1 = EVAL "%RA_RigidThink%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 11 parameter1 = EVAL "%RA_Confused%" END
 
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -161,6 +163,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~LOVIS~ ~LOVIL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

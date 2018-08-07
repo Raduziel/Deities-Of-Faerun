@@ -31,26 +31,26 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAHOAR~  clabfile = ~RAHOAR~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSHoar.spl" override
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSHOAR.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSHOAR~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSHoar.itm" override SAY NAME1 @3609 SAY NAME2 @3609 SAY DESC @3610
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAHoar + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSHOAR.itm~ SAY NAME1 @3609 SAY NAME2 @3609 SAY DESC @3610
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAHoar + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~HOARS~
+WRITE_ASCII 0x058 ~HOARL~
 
+//Spells
 
 //Enrage
 
@@ -143,6 +143,8 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 156 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
 
 END
+
+//BAM
 
 ACTION_FOR_EACH file IN ~HOARS~ ~HOARL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

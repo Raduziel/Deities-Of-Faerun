@@ -31,11 +31,26 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RABANE~  clabfile = ~RABANE~	END
 
 END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSBANE.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBANE~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBANE.itm~ SAY NAME1 @2306 SAY NAME2 @2306 SAY DESC @2307
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABane + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~BANES~
+WRITE_ASCII 0x058 ~BANEL~
+
+//Spells
 
 COPY_EXISTING ~SPPR108.spl~ ~override/RABANEF.spl~
 WRITE_SHORT 0x1C 4                                                    
@@ -49,20 +64,6 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
-
-COPY "DeitiesOfFaerun\Spl\RAHSBANE.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSBANE.itm" override SAY NAME1 @2306 SAY NAME2 @2306 SAY DESC @2307
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABane~)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
 
 //Cloak of Fear
 
@@ -84,9 +85,6 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY_EXISTING ~SPWI506.spl~ ~override/RABANE2.spl~                                                        
-LPM SPELL_TO_INNATE
-
 COPY "DeitiesOfFaerun\Spl\RABANE3.spl" override SAY NAME1 @2304 SAY UNIDENTIFIED_DESC  @2305              //Mystic Lash
 
 COPY "DeitiesOfFaerun\Spl\RABANE31.spl" override													      //Stun Effect
@@ -96,6 +94,8 @@ COPY "DeitiesOfFaerun\Spl\RABANE32.spl" override                                
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL "%RA_Paralyzed%" END
 
 COPY "DeitiesOfFaerun\Spl\RABANE33.spl" override
+
+//Restrictions
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -114,6 +114,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~BANES~ ~BANEL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

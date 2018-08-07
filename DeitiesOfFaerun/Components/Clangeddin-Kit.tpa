@@ -31,16 +31,31 @@ LAF fl#add_kit_ee
 		clsrcreq = ~0 0 0 1 0 0 0~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RACLAN~  clabfile = ~RACLAN~	END
 
 END
 
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSCLAN.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSCLAN~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSCLAN.itm~ SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAClan + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~CLANS~
+WRITE_ASCII 0x058 ~CLANL~
+
+//Spells
+
 COPY "DeitiesOfFaerun\Spl\RAHSCLAN.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSCLAN.itm" override SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSCLAN.itm" override 
 LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
@@ -108,6 +123,8 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN5.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
+
+//BAM
 
 ACTION_FOR_EACH file IN ~CLANS~ ~CLANL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

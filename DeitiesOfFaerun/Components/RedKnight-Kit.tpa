@@ -31,28 +31,29 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAREDK~  clabfile = ~RAREDK~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RARedKF.spl" override
+//Holy Symbol
 
-COPY "DeitiesOfFaerun\Spl\RAHSREDK.spl" override
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSREDK.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSREDK~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSREDK.itm" override SAY NAME1 @2909 SAY NAME2 @2909 SAY DESC @2910
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RARedK~)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
-		  
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSREDK.itm~ SAY NAME1 @2909 SAY NAME2 @2909 SAY DESC @2910
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RARedK + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~REDKS~
+WRITE_ASCII 0x058 ~REDKL~
+
+//Spells
+
+COPY "DeitiesOfFaerun\Spl\RARedKF.spl" override
+ 
 COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2908) STR_VAR bam_file = RAFOREIC RET iconforr = icon END
 
@@ -82,6 +83,8 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Restrictions
+
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 		READ_BYTE 0x18 flags1
@@ -97,6 +100,8 @@ PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 		END
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~REDKS~ ~REDKL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

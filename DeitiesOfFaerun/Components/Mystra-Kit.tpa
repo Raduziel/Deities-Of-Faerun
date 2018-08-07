@@ -31,11 +31,26 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 0 0 1 0~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAMYST~  clabfile = ~RAMYST~	END
 
 END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMYST.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMYST~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMYST.itm~ SAY NAME1 @1404 SAY NAME2 @1404 SAY DESC @1405
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMyst + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MYSTS~
+WRITE_ASCII 0x058 ~MYSTL~
+
+//Spells
 
 COPY "DeitiesOfFaerun\Spl\RAMYSTF.spl" override
 PATCH_FOR_EACH label IN
@@ -87,20 +102,6 @@ LPF ADD_SPELL_EFFECT INT_VAR header = 3	opcode = 206 target = 2 power = 0 resist
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAHSMYST.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSMYST.itm" override SAY NAME1 @1404 SAY NAME2 @1404 SAY DESC @1405
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAMyst + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
-
 //Dispel Magic
 		  
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DISPEL_MAGIC[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -110,6 +111,8 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RAMYST1.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -128,6 +131,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~MYSTS~ ~MYSTL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

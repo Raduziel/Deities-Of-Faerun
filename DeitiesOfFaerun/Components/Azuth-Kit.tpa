@@ -31,29 +31,29 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 0 0 1 0~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAAZUT~  clabfile = ~RAAZUT~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAAZUTF.spl" override
+//Holy Symbol
 
-COPY "DeitiesOfFaerun\Spl\RAHSAZUT.spl" override
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSAZUT.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSAZUT~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSAZUT.itm" override SAY NAME1 @2704 SAY NAME2 @2704 SAY DESC @2705
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzut~)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSAZUT.itm~ SAY NAME1 @2704 SAY NAME2 @2704 SAY DESC @2705
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAAzut + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~AZUTS~
+WRITE_ASCII 0x058 ~AZUTL~
 
-		  
+//Spells
+
+COPY "DeitiesOfFaerun\Spl\RAAZUTF.spl" override
+  
 //Armor
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ARMOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -138,7 +138,9 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FIREBALL~	RET	spell_res	
 COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT8.spl~
 LPM ~SPELL_TO_INNATE~
 
-END 
+END
+
+//Restrictions
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -173,6 +175,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 	END
 BUT_ONLY
 
+//BAM
 
 ACTION_FOR_EACH file IN ~AZUTS~ ~AZUTL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

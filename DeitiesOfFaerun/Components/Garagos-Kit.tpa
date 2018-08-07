@@ -32,31 +32,31 @@ LAF fl#add_kit_ee
 		hpclass = ~HPWAR~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAGARA~  clabfile = ~RAGARA~	END
 
 END
 
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSGARA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSGARA~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSGARA.itm~ SAY NAME1 @3008 SAY NAME2 @3008 SAY DESC @3009
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAGara + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~GARAS~
+WRITE_ASCII 0x058 ~GARAL~
+
+//Spells
+
 COPY "DeitiesOfFaerun\Spl\RAGARAF.spl" override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Charmed%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
-
-COPY "DeitiesOfFaerun\Spl\RAHSGARA.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
-
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSGARA.itm" override SAY NAME1 @3008 SAY NAME2 @3008 SAY DESC @3009
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAGara~)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  
-END
 
 //Enrage
 
@@ -93,6 +93,8 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RAGARA4.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
+
+//BAM
 
 ACTION_FOR_EACH file IN ~GARAS~ ~GARAL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~

@@ -31,27 +31,28 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 0 0 1 0~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RASAVR~  clabfile = ~RASAVR~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RASavrF.spl" override
+//Holy Symbol
 
-COPY "DeitiesOfFaerun\Spl\RAHSSAVR.spl" override
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSAVR.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSAVR~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHSSAVR.itm" override SAY NAME1 @3104 SAY NAME2 @3104 SAY DESC @3105
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASavr~)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSAVR.itm~ SAY NAME1 @3104 SAY NAME2 @3104 SAY DESC @3105
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASavr + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~SAVRS~
+WRITE_ASCII 0x058 ~SAVRL~
+
+//Spells
+
+COPY "DeitiesOfFaerun\Spl\RASAVRF.spl" override
 
 COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2908) STR_VAR bam_file = RAFOREIC RET iconfors = icon END
@@ -106,6 +107,8 @@ END
 COPY "DeitiesOfFaerun\Spl\RASAVR5.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907     //Consequence
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfors END
 
+//Restrictions
+
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	SET match = 0
@@ -138,6 +141,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		END
 	END
 BUT_ONLY
+
+//BAM
 
 ACTION_FOR_EACH file IN ~SAVRS~ ~SAVRL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
