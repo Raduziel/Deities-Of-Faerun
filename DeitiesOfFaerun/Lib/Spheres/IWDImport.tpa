@@ -105,6 +105,8 @@ LPF ALTER_EFFECT  		INT_VAR match_opcode = 21 target = 2   timing = 0 duration =
 LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 142 parameter1 = 0   parameter2 = iconiden resist_dispel = 3 				  END
 LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 174 timing = 4 duration = 60 parameter1 = 0   parameter2 = 0 resist_dispel = 3 STR_VAR resource = ~EFF_E04~ END
 
+COPY "DeitiesOfFaerun\Lib\Spheres\Import\Common\RAIDENIC.BAM" override
+
 END
 
 //Bless for non-Evil only
