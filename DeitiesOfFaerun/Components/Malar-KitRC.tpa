@@ -39,38 +39,34 @@ LAF qd_multiclass
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAMalaRC%	classID = 18 STR_VAR	kitname = ~RAMALA~ kitname2 = ~RAMALA~  END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RARMALA.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+//Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RARCMALA.itm" override SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAMalaRC + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RARMALA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RARCMALA~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RARCMALA.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMalaRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MALAS~
+WRITE_ASCII 0x058 ~MALAL~
+
+//Malar Claw
 
 COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALARA.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAMalaRC + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-END
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMalaRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 
-COPY "DeitiesOfFaerun\Spl\RAMALAR.spl" ~override~
+COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.spl" ~override/RAMALAR~
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAMALARA~ END
+
+//Restrictions
 		  
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
