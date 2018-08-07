@@ -39,24 +39,23 @@ LAF qd_multiclass
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAClanFC%	classID = 8 STR_VAR	kitname = ~RACLAN~  END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAFCLAN.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+//Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCCLAN.itm" override SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAClanFC + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFCLAN.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCCLAN~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCCLAN.itm~ SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAClanFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~CLANS~
+WRITE_ASCII 0x058 ~CLANL~
 
 //EoF

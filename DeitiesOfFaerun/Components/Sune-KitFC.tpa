@@ -39,25 +39,26 @@ LAF qd_multiclass
 	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
 END
 
+//Sphere
+
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RASuneFC%	classID = 8 STR_VAR	kitname = ~RASUNE~  END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAFSUNE.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (9999903) END
+//Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAFCSUNE.itm" override SAY NAME1 @108 SAY NAME2 @108 SAY DESC @109
-LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RASuneFC + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-			  power = 1
-		  END
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFSUNE.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCSUNE~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCSUNE.itm~ SAY NAME1 @108 SAY NAME2 @108 SAY DESC @109
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASuneFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~SUNES~
+WRITE_ASCII 0x058 ~SUNEL~
+
+//Restrictions
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
