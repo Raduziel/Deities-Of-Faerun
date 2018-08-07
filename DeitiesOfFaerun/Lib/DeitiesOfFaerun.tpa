@@ -310,7 +310,11 @@ BUT_ONLY_IF_IT_CHANGES
 
 //Several files for kit's special abilities
 
+ACTION_IF ((!GAME_IS ~iwdee~) AND ((!FILE_EXISTS ~b_IWD.itm~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
+
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common~ override
+
+END
 
 //Solves issue for Minor Sequencer, Sequencer, Spell Trigger, Contingency and Chain Contingency
 COPY_EXISTING	~UI.MENU~	override
