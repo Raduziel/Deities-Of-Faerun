@@ -126,9 +126,7 @@ COPY "DeitiesOfFaerun\Cre\LoviDevil\LoviDevi.cre" override SAY NAME1 @2216 SAY N
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\BDERINYE.itm" override
 
-COPY "DeitiesOfFaerun\Cre\LoviDevil\IMMUNE2.itm" override
-
-COPY "DeitiesOfFaerun\Cre\LoviDevil\DemSuc01.itm" override
+COPY "DeitiesOfFaerun\Cre\LoviDevil\LoviDevi.itm" override
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL "%RA_Drain1%" END
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\RABDTRAI.itm" override
