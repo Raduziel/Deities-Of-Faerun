@@ -1700,7 +1700,93 @@ Ranger (Trueclass and kits - access only to level 3 spells): Animal, Plant.
 
 ====================================================================================================================================================================
 
+g) Bestiary
 
+g1) Elementals
+
+12HD:  96 HP | AC 2 | Thac0 9 | Attacks per Round 1 | Paralyze/Poison/Death 7; Rod/Staff/Wand 9; Petrify/Polymorph 8; Breath Weapons 8; Spells 10
+
+16HD: 128 HP | AC 2 | Thac0 5 | Attacks per Round 1 | Paralyze/Poison/Death 4; Rod/Staff/Wand 6; Petrify/Polymorph 5; Breath Weapons 4; Spells 7
+
+24HD: 192 HP | AC 2 | Thac0 0 | Attacks per Round 1 | Paralyze/Poison/Death 3; Rod/Staff/Wand 5; Petrify/Polymorph 4; Breath Weapons 4; Spells 6
+
+g1.1) Ice Elemental
+
+Damage: 3d8 (crushing) + 1d6 (cold)
+
+Resistances (%): -100 Fire; 100 Cold; 50 Slashing; -50 Crushing; 50 Piercing; 50 Missile
+
+g1.2) Air Elemental
+
+Damage: 1d8 (crushing)
+
+Resistances (%): 50 Cold; 50 Electricity; 50 Missile
+
+g1.3) Water Elemental
+
+Damage: 2d8 (crushing)
+
+Resistances (%): 50 Cold; -100 Electricity; 50 Acid
+
+g1.4) Earth Elemental
+
+Damage: 4d8 (crushing)
+
+Resistances (%): 100 Electricity
+
+---
+
+g2) Treant (Changestaff)
+
+12HD | 96 HP | AC 0 | Thac0 9 | Attacks per Round 2 | Paralyze/Poison/Death 7; Rod/Staff/Wand 9; Petrify/Polymorph 8; Breath Weapons 8; Spells 10
+
+Damage: 4d6 (crushing)
+
+Resistances (%): -25 Fire | Immune to Paralyze, Stun, Sleep and Poison
+
+---
+
+g3) Erinyes (Ensnarement)
+
+6HD | 48 HP | AC 2 | Thac0 13 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
+
+Damage: 1d3 (crushing)
+
+Resistances (%): 100 Fire; 50 Cold; 30 Magic | Immune to Stun, Charm, Confusion, Poison and Fear.
+
+Every hit drains one level of the target
+
+---
+
+g4) Minor Death
+
+8HD | 64 HP | AC -4 | Thac0 1 | Attacks per Round 2 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
+
+Damage: 2d8 (slashing)
+
+Resistances (%): 100 Fire; 100 Cold; 100 Electricity | Immune to Stun, Charm, Sleep, Berserker, Poison, Disease, Energy Drain, Ability Score Drain, Deafness, Blindness and Fear.
+
+---
+
+g5) Revenant (Hand of Hoar)
+
+8HD | 64 HP | AC 10 | Thac0 13 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
+
+Damage: 2d8 (crushing)
+
+Resistances (%): -25 Fire; 85 Cold; 40 Electricity, 100 Acid, 20 Slashing, 25 Crushing, 20 Piercing, 80 Missile | Immune to Stun, Charm, Sleep, Berserker, Poison, Disease, Energy Drain, Ability Score Drain, Deafness, Blindness and Fear. Can only be hurt by weapons +1 or better. Regenerates 6 HP/round.
+
+---
+
+g6) Seeking Sword
+
+6HD | 48 HP | AC 5 | Thac0 15 | Attacks per Round 4 | Paralyze/Poison/Death 11; Rod/Staff/Wand 13; Petrify/Polymorph 12; Breath Weapons 13; Spells 14
+
+Damage: 4d8 (slashing)
+
+Resistances (%): 100 Cold; 100 Slashing, 100 Piercing, 100 Missile | Immune to Stun, Charm, Poison, Disease, Blindness and Fear. Can only be hurt by weapons +1 or better.
+
+====================================================================================================================================================================
 
 THANKS
 
