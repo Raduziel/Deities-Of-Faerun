@@ -184,6 +184,8 @@ IF_EXISTS
 
 END
 
+/* Importing IWD Spells */
+
 ACTION_IF ((!GAME_IS ~iwdee~) AND ((!FILE_EXISTS ~b_IWD.itm~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
 
 //Curse
@@ -2086,9 +2088,22 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/MassCauseLightWounds/SPPR523C.BAM~	~ove
 
 END
 
+END
+
+//Respecting my OCD for aligned things
+
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA
 
-END
+//Fixing a bug that touches a lot of spells (Nature's Beauty, Glyph of Warding, Skull Trap and others...)
+
+ADD_PROJECTILE	~DeitiesOfFaerun\Spl\RAFix.pro~
+
+COPY_EXISTING_REGEXP	~^.+\.pro$~ override
+	READ_SHORT	0x21a	projectile ELSE 0
+	PATCH_IF	projectile = 79	BEGIN
+	WRITE_SHORT	0x21a	%RAFix%
+	END
+BUT_ONLY
 
 //EoF
