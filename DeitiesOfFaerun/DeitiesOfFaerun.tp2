@@ -679,9 +679,9 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tyr-Drake.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @99999020
+/*BEGIN @99999020
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAIlma.2da~) AND (FILE_EXISTS_IN_GAME ~c0sirene.cre~)) @9999905
-INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Ilmater-Sirene.tpa~
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Ilmater-Sirene.tpa~*/
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
