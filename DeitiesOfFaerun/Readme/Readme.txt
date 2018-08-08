@@ -180,12 +180,12 @@ Changestaff
 
 Sphere: Plant 
 Range: 40
-Duration: 5 turns
+Duration: 1 turn/level
 Casting Time: 4 
 Area of Effect: Special 
 Saving Throw: None
 
-By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature with 12 Hit Dice, 80 hit points, and Armor Class 0. It attacks twice per round, inflicting 4d6 points of damage with every successful attack. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for as many turns as the caster has experience levels or until the staff is destroyed, whichever occurs first. If the staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.
+By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for as many turns as the caster has experience levels or until the staff is destroyed, whichever occurs first. If the staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.
 
 ====================================================================================================================================================================
 
@@ -1738,11 +1738,11 @@ Resistances (%): 100 Electricity
 
 g2) Treant (Changestaff)
 
-12HD | 96 HP | AC 0 | Thac0 9 | Attacks per Round 2 | Paralyze/Poison/Death 7; Rod/Staff/Wand 9; Petrify/Polymorph 8; Breath Weapons 8; Spells 10
+12HD | 40 HP | AC 0 | Thac0 9 | Attacks per Round 2 | Paralyze/Poison/Death 7; Rod/Staff/Wand 9; Petrify/Polymorph 8; Breath Weapons 8; Spells 10
 
 Damage: 4d6 (crushing)
 
-Resistances (%): -25 Fire | Immune to Paralyze, Stun, Sleep and Poison
+Resistances (%): -20 Fire | Immune to Paralyze, Stun, Sleep and Poison
 
 ---
 
