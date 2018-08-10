@@ -473,7 +473,7 @@
 		INT_VAR	kitid = 0x4000
 		STR_VAR	kitname = ~DEFAULT_SHAMAN~	clabfile = ~CLABSH01~
 	BEGIN
-		OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN	SET_2DA_ENTRY	0 0 1 ~GA_%MOD_PREFIX%SHMKN~	END
+		OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN	SET_2DA_ENTRY	0 1 1 ~GA_%MOD_PREFIX%SHMKN~	END
 		APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
 		
 		ACTION_PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS array => level BEGIN

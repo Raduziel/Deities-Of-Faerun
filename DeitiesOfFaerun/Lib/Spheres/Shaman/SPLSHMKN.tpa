@@ -1,0 +1,152 @@
+
+	COMPILE EVAL ~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.d~
+	COPY	~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.cre~	~override\%MOD_PREFIX%SHMKN.cre~
+				~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.spl~	~override\%MOD_PREFIX%SHMKN.spl~
+				~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.eff~	~override\%MOD_PREFIX%SHMKN.eff~
+				~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.bcs~	~override\%MOD_PREFIX%SHMKN.bcs~
+			REPLACE_TEXTUALLY	~__~	~%MOD_PREFIX%~
+	OUTER_SET	yes_ref = RESOLVE_STR_REF ((AT tra_learn))	OUTER_SET	no_ref = RESOLVE_STR_REF ((AT tra_back))
+	OUTER_SET	ref_1 = RESOLVE_STR_REF ((AT tra_level_1))	OUTER_SET	ref2_1 = RESOLVE_STR_REF ((AT tra_level_1_ex))
+	OUTER_SET	ref_2 = RESOLVE_STR_REF ((AT tra_level_2))	OUTER_SET	ref2_2 = RESOLVE_STR_REF ((AT tra_level_2_ex))
+	OUTER_SET	ref_3 = RESOLVE_STR_REF ((AT tra_level_3))	OUTER_SET	ref2_3 = RESOLVE_STR_REF ((AT tra_level_3_ex))
+	OUTER_SET	ref_4 = RESOLVE_STR_REF ((AT tra_level_4))	OUTER_SET	ref2_4 = RESOLVE_STR_REF ((AT tra_level_4_ex))
+	OUTER_SET	ref_5 = RESOLVE_STR_REF ((AT tra_level_5))	OUTER_SET	ref2_5 = RESOLVE_STR_REF ((AT tra_level_5_ex))
+	OUTER_SET	ref_6 = RESOLVE_STR_REF ((AT tra_level_6))	OUTER_SET	ref2_6 = RESOLVE_STR_REF ((AT tra_level_6_ex))
+	OUTER_SET	ref_7 = RESOLVE_STR_REF ((AT tra_level_7))	OUTER_SET	ref2_7 = RESOLVE_STR_REF ((AT tra_level_7_ex))
+
+	COPY_EXISTING	~HIDESPL.2da~	override
+		COUNT_2DA_COLS	cols
+		READ_2DA_ENTRIES_NOW	~READ_HIDESPL~	cols
+		FOR	(i = 0; i < READ_HIDESPL; ++i)	BEGIN
+			READ_2DA_ENTRY_FORMER	~READ_HIDESPL~	i 0	resource
+			SNPRINT	4	4res ~%resource%~
+			PATCH_IF	(~%4res%~ STRING_EQUAL_CASE ~SPPR~)	BEGIN
+				PATCH_IF	VARIABLE_IS_SET	EVAL ~READ_HIDESPL_%i%_1~ BEGIN
+					PATCH_IF	(EVAL ~%READ_HIDESPL_%i%_1%~ = 1)	BEGIN
+						SET	$shm_spl_ignore(~%resource%~) = 1
+					END
+				END
+			END
+		END
+	BUT_ONLY
+	OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
+		OUTER_SET	$spl_num(~%i%~) = 0
+	END
+	ACTION_PHP_EACH	access_spells AS null => file BEGIN
+		OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
+			COPY_EXISTING	~%file%%i%G.spl~	override
+				READ_LONG		0x6a	fx_off
+				READ_SHORT	0x90	fx_num
+				READ_SHORT	0x92	fx_idx
+				FOR (j = 0; j < fx_num; ++j)	BEGIN
+					READ_ASCII (fx_off + (fx_idx + j) * 0x30 + 0x14)	spell_res
+					PATCH_IF	!VARIABLE_IS_SET	$shm_spl_choice(~%spell_res%~)	BEGIN
+						INNER_ACTION	BEGIN
+							COPY_EXISTING	~%spell_res%.spl~	override	//	Get the spells current level (if another mod changes it later, it's on them to update CRE files)
+								READ_BYTE	0x34	lev
+								READ_BYTE	0x1e	alignment	SET	alignment &= 63
+								READ_LONG	NAME1 name_ref
+								READ_LONG	UNIDENTIFIED_DESC desc_ref
+							BUT_ONLY
+						END
+						TEXT_SPRINT	$resource(~%lev%~ EVAL $spl_num(~%lev%~))	~%spell_res%~
+						SET	$alignment(~%lev%~ EVAL $spl_num(~%lev%~)) = alignment
+						SET	$name_ref(~%lev%~ EVAL $spl_num(~%lev%~)) = name_ref
+						SET	$desc_ref(~%lev%~ EVAL $spl_num(~%lev%~)) = desc_ref
+						SET	$chaos(~%lev%~ EVAL $spl_num(~%lev%~)) = (alignment BAND 1)
+						SET	$evil(~%lev%~ EVAL $spl_num(~%lev%~)) = (alignment BAND 2)
+						SET	$good(~%lev%~ EVAL $spl_num(~%lev%~)) = (alignment BAND 4)
+						SET	$lcnt(~%lev%~ EVAL $spl_num(~%lev%~)) = (alignment BAND 8)
+						SET	$lawful(~%lev%~ EVAL $spl_num(~%lev%~)) = (alignment BAND 16)
+						SET	$gent(~%lev%~ EVAL $spl_num(~%lev%~)) = (alignment BAND 32)
+						SET	$spl_num(~%lev%~) += 1
+					END
+					SET	$shm_spl_choice(~%spell_res%~) = 1
+				END
+			BUT_ONLY IF_EXISTS
+		END
+	END
+		
+	COPY_EXISTING	~SPLSHMKN.2da~	override
+		COUNT_2DA_COLS	col
+		COUNT_2DA_ROWS	col	num_rows
+		FOR	(i = 1; i < 8; ++i)	BEGIN
+			SET	$known(~%i%~ ~0~) = 0
+			SET	level = 0	SET	new_kn = 0
+			FOR(j = 0; j < num_rows; ++j)	BEGIN
+				READ_2DA_ENTRY	j i col new_kn
+				READ_2DA_ENTRY	j 0 col level
+				SET	$known(~%i%~ ~%level%~) = new_kn
+				SET_2DA_ENTRY	j i col ~0~
+			END
+			SET	$max_lvl(~%i%~) = level
+		END
+	BUT_ONLY
+	INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\DIALOGUE.tpa~
+	COPY_EXISTING	~%MOD_PREFIX%SHMKN.dlg~	override
+		LPF	ADD_S_TRIGGER	STR_VAR trigger = ~False()~	END
+		FOR	(i = 1; i < 8; ++i)	BEGIN
+		old_kn = EVAL $known(~%i%~ ~1~)	old_lvl = 0
+			LPF	ADD_STATE		INT_VAR	text = EVAL $ref2(~%i%~)	RET	$state(~%i%~) = index	END
+			FOR	(j = 1; j <= EVAL $max_lvl(~%i%~); ++j)	BEGIN
+				new_kn = EVAL $known(~%i%~ ~%j%~)
+	 			PATCH_IF	((new_kn > old_kn) OR (j = EVAL $max_lvl(~%i%~)))	BEGIN	
+					PATCH_IF	j = EVAL $max_lvl(~%i%~) BEGIN
+						TEXT_SPRINT	trigger	~GlobalLT("%MOD_PREFIX%SHMKN%i%","LOCALS",%old_kn%)%WNL%LevelGT(Myself,%old_lvl%)%WNL%~
+					END	ELSE	BEGIN
+						TEXT_SPRINT	trigger	~GlobalLT("%MOD_PREFIX%SHMKN%i%","LOCALS",%old_kn%)%WNL%LevelLT(Myself,%j%)%WNL%LevelGT(Myself,%old_lvl%)%WNL%~
+					END
+					SET	old_lvl = j - 1
+					SET	old_kn = new_kn
+					READ_LONG	0x24	rst_num	READ_LONG	0x2c	act_num
+					LPF	ADD_RESPONSE	INT_VAR	state = 0 text = EVAL $ref(~%i%~)	trigger = rst_num	next_state = EVAL $state(~%i%~)	STR_VAR	next_dlg = EVAL ~%SOURCE_RES%~		END
+					LPF	ADD_R_TRIGGER	STR_VAR trigger = EVAL ~%trigger%~	END
+				END
+			END
+			FOR	(j = 0; j < EVAL $spl_num(~%i%~); ++j)	BEGIN
+				TEXT_SPRINT	resource EVAL $resource(~%i%~ ~%j%~)					
+				TEXT_SPRINT	trigger	~!HaveKnownSpellRES("%resource%")%WNL%~				
+				PATCH_IF (EVAL $alignment(~%i%~ ~%j%~) > 0)	AND sphere_shm_align = 1	BEGIN
+					PATCH_IF (EVAL $lawful(~%i%~ ~%j%~) = 0)	BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,16)%WNL%~	END
+					PATCH_IF (EVAL $lcnt(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,32)%WNL%~	END
+					PATCH_IF (EVAL $chaos(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,48)%WNL%~	END
+					PATCH_IF (EVAL $good(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,1)%WNL%~	END
+					PATCH_IF (EVAL $gent(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,2)%WNL%~	END	
+					PATCH_IF (EVAL $evil(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,3)%WNL%~	END
+				END
+				TEXT_SPRINT	action	~AddSpecialAbility("%resource%")%WNL%IncrementGlobal("%MOD_PREFIX%SHMKN%i%","LOCALS",1)%WNL%~
+				READ_LONG	0x24	rst_num	READ_LONG	0x2c	act_num
+				LPF	ADD_STATE		INT_VAR	text = EVAL $desc_ref(~%i%~ ~%j%~)	RET	sub_state = index	END
+				LPF	ADD_RESPONSE	INT_VAR	state = EVAL $state(~%i%~) index = j	text = EVAL $name_ref(~%i%~ ~%j%~)	trigger = rst_num	next_state = sub_state	STR_VAR	next_dlg = EVAL ~%SOURCE_RES%~	END
+				LPF	ADD_RESPONSE	INT_VAR	state = sub_state	text = yes_ref	action = act_num	END
+				LPF	ADD_RESPONSE	INT_VAR	state = sub_state	text = no_ref	STR_VAR	next_dlg = EVAL ~%SOURCE_RES%~	END
+				LPF	ADD_R_TRIGGER	INT_VAR state = sub_state	STR_VAR	trigger = EVAL ~%trigger%~	END
+				LPF	ADD_ACTION		INT_VAR state = sub_state	STR_VAR	action = EVAL ~%action%~	END
+			END
+		END
+	BUT_ONLY
+	
+	LAF	UPDATE_SHAMAN_DLG	END	//	Trueclass Shaman
+	
+	COPY_EXISTING	~KITLIST.2da~	override
+		READ_2DA_ENTRIES_NOW ~READ_KITLIST~ 3
+		FOR	(i = 2; i < READ_KITLIST; ++i)	BEGIN
+			READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 8 classID
+			PATCH_IF	classID = 21	BEGIN
+				READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 5	clabfile
+				PATCH_IF FILE_EXISTS_IN_GAME ~%clabfile%.2da~	BEGIN
+					READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 1	kitname
+					TO_UPPER	kitname
+					SET	kitid = 0x4000
+					PATCH_IF VARIABLE_IS_SET $READ_KITLIST(~%i%~ ~9~)	BEGIN
+						READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 kitid
+					END
+					INNER_ACTION	BEGIN
+						LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END	//	Shaman kits
+					END
+				END
+			END
+		END
+	BUT_ONLY
+	
+	

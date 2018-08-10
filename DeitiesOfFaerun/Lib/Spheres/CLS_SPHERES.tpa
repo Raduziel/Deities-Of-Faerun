@@ -45,13 +45,24 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_DRUID~)	BEGIN
 		~Healing~ => 3
 		~Animal~ => 7
-		~Vermin~ => 3
+		~Vermin~ => 7
 		~Plant~ => 7
 		~Sun~ => 3
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
-		~Fire~ => 3
+		~Fire~ => 7
+	END
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_SHAMAN~)	BEGIN
+		~Healing~ => 3
+		~Animal~ => 7
+		~Vermin~ => 7
+		~Plant~ => 7
+		~Sun~ => 3
+		~Air~ => 7
+		~Water~ => 7
+		~Earth~ => 7
+		~Fire~ => 7
 	END
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_RANGER~)	BEGIN
 		~Animal~ => 3
