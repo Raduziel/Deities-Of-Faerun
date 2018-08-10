@@ -513,22 +513,20 @@ Saving Throw: Neg.
 This spell is known as wyvern watch because of the insubstantial haze brought forth by its casting, which vaguely resembles a wyvern. It is typically used to guard some area against intrusion. Any creature that approaches the guarded area may be affected by the "wyvern" and must roll a successful Saving Throw vs. Spells or stand paralyzed for one round per level of the caster, until freed by the Watcher, by a dispel magic spell, or by a remove paralysis spell. A successful saving throw indicates that the subject creature was missed by the attack of the wyvern-form, and the intruder was not affected.~
 @808 = ~Seeking Sword~
 @809 = ~Seeking Sword
-(Invocation/Evocation)
+(Evocation)
 
-Level: 4
 Sphere: Creation 
 Range: 30 ft.
-Duration: 2 turns 
+Duration: 2 rounds/level
 Casting Time: 7
 Area of Effect: Special
 Saving Throw: None
 
 This spell brings into being a shimmering blade of force that appears as a sword of any description the caster desires, typically a broad sword. The sword forms in midair and is animated by the will of the caster (who need never touch it), flashing about as it attacks. The blade can strike four times per round, doing 2d4 points of damage with each successful hit, but cannot act beyond the caster's line of sight.
 
-Although it has no attack or damage bonuses, a seeking sword is considered a +4 magical weapon for determining what sorts of beings it can strike. It can only be harmed by fire, magic, acid or crushing damage. Other spell casting is impossible while maintaining the spell, though the caster may move at half his or her normal movement rate per round while doing so.~
-@810 = ~Attack~
-@811 = ~Holy Symbol of Helm~
-@812 = ~Only the most worthy and devoted servants of the Vigilant One are granted these powerful holy symbols.
+Although it has no attack or damage bonuses, a Seeking Sword is considered a +4 magical weapon for determining what sorts of beings it can strike and can only be harmed by fire, electricity, magic, acid or crushing damage. Other spell casting is impossible while maintaining the spell, though the caster may move at half his or her normal movement rate per round while doing so.~
+@810 = ~Holy Symbol of Helm~
+@811 = ~Only the most worthy and devoted servants of the Vigilant One are granted these powerful holy symbols.
 
 STATISTICS:
 
@@ -1583,9 +1581,11 @@ Saving Throw: None
 This spell summons an Erinyes to serve the Pain.~
 @2214 = ~Pain~
 @2215 = ~Burning~
-@2216 = ~Summoned Erinyes~ 
-@2217 = ~Holy Symbol of Loviatar~
-@2218 = ~Only the most worthy and devoted servants of the Maiden of Pain are granted these powerful holy symbols.
+@2216 = ~Summoned Erinyes~
+@2217 = ~Dismissal~
+@2218 = ~This spell will immediately dismiss the Erinyes.~
+@2219 = ~Holy Symbol of Loviatar~
+@2220 = ~Only the most worthy and devoted servants of the Maiden of Pain are granted these powerful holy symbols.
 	
 STATISTICS:
 
