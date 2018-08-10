@@ -10,6 +10,10 @@ INSTALLATION NOTES:
 
 * Deities of Faerûn should be installed after EET (but ALWAYS before EET_End).
 
+* DoF should be installed after mods that introduce NPCs that receives a kit from DoF.
+
+* DoF should be installed after mods that introduce Kits that will use the Sphere System.
+
 * Deities of Faerûn will probably misbehave with any mod component that overhauls the combat system of the game.
 
 * Deities of Faerûn will probably misbehave with any mod component that alters the strongholds quests (except for those that exclusively remove the one-stronghold limit).
@@ -1690,13 +1694,13 @@ Paladin (access only to level 4 spells): Combat, Divination, Healing, Protection
 
   - Undead Hunter: Combat, Healing, Protection, Sun.
 
-Druid (access to all spells from the following spheres): Major: Animal, Plant, Air, Water, Earth | Minor: Healing, Vermin, Sun, Fire.
+Druid/Shaman Major: Animal, Plant, Vermin, Air, Water, Earth, Fire. | Minor: Healing, Sun.
 
-  - Totemic Druid: Major: Animal, Plant, Air, Water, Earth | Minor: Healing, Sun, Fire, Divination.
+  - Totemic Druid: Major: Animal, Plant, Moon, Air, Water, Earth, Fire | Minor: Healing, Divination.
 
-  - Avenger: Major: Animal, Vermin, Plant, Earth, Fire | Minor: Suffering, Combat, Air, Water.
+  - Avenger: Major: Suffering, Combat, Vermin, Air, Water, Earth, Fire | Minor: Animal, Plant.
 
-  - Shapeshifter: Major: Animal, Plant, Air, Water, Earth | Minor: Healing, Vermin, Fire, Travelers.
+  - Shapeshifter: Major: Animal, Travelers, Vermin, Air, Moon, Earth, Fire | Minor: Healing, Plant.
 
 Ranger (Trueclass and kits - access only to level 3 spells): Animal, Plant.
 
@@ -1756,7 +1760,7 @@ Damage: per weapon. Erineyes may use a Shortbow +1 with Arrows of Biting or a Sh
 
 Resistances (%): 100 Fire; 50 Cold; 30 Magic. Immunities as any devil. Can only be hurt by weapons +1 or better.
 
-Special: Erinyes may cast Charm Person, Spook, Detect Invisibility, Invisibility, Dimension Door and Gate. 
+Special: Erinyes may cast Charm Person, Spook, Detect Invisibility, Invisibility, Dimension Door at will and Gate once per day. 
 
 ---
 
