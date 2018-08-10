@@ -1752,11 +1752,11 @@ g3) Erinyes (Ensnarement)
 
 6HD | 48 HP | AC 2 | Thac0 13 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
-Damage: per weapon. Erineyes may use a shortbow (with Arrows of Biting, Arrows +2 or Arrows of Detonation) or a Shortsword +2.
+Damage: per weapon. Erineyes may use a Shortbow +1 with Arrows of Biting or a Shortsword +2.
 
 Resistances (%): 100 Fire; 50 Cold; 30 Magic. Immunities as any devil. Can only be hurt by weapons +1 or better.
 
-Special: Erinyes may cast Charm Person, Spook, Detect Invisibility, Invisibility and Produce Fire at will. 
+Special: Erinyes may cast Charm Person, Spook, Detect Invisibility, Invisibility, Dimension Door and Gate. 
 
 ---
 
