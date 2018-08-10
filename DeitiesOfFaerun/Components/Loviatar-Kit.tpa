@@ -126,7 +126,17 @@ COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.spl" override SAY NAME1 @2217 SAY U
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\RAERINYE.itm" override
 
+COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIINFI.spl" override
+
 COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.cre" override SAY NAME1 @2216 SAY NAME2 @2216
+LPF ADD_CRE_EFFECT INT_VAR opcode = 232 target = 1 parameter2 = 20 timing = 9 special = 102 STR_VAR resource = ~LOVIINFI~ END
+ADD_MEMORIZED_SPELL ~SPWI104~ #0 ~wizard~ (1)
+ADD_MEMORIZED_SPELL ~SPWI125~ #0 ~wizard~ (1)
+ADD_MEMORIZED_SPELL ~SPWI203~ #1 ~wizard~ (1)
+ADD_MEMORIZED_SPELL ~SPWI206~ #1 ~wizard~ (1)
+ADD_MEMORIZED_SPELL ~SPWI402~ #3 ~wizard~ (1)
+ADD_MEMORIZED_SPELL ~SPWI905~ #8 ~wizard~ (1)
+
 
 //Restriction
 
