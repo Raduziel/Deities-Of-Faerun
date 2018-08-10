@@ -1,10 +1,11 @@
 
 	COMPILE EVAL ~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.d~
 	COPY	~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.cre~	~override\%MOD_PREFIX%SHMKN.cre~
-				~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.spl~	~override\%MOD_PREFIX%SHMKN.spl~
 				~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.eff~	~override\%MOD_PREFIX%SHMKN.eff~
 				~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.bcs~	~override\%MOD_PREFIX%SHMKN.bcs~
 			REPLACE_TEXTUALLY	~__~	~%MOD_PREFIX%~
+	COPY	~%MOD_FOLDER%\%FILE_PATH%\SHAMAN\__SHMKN.spl~	~override\%MOD_PREFIX%SHMKN.spl~ REPLACE_TEXTUALLY	~__~	~%MOD_PREFIX%~
+		SAY NAME1	(AT tra_shaman_spl_name)	SAY	UNIDENTIFIED_DESC	(AT tra_shaman_spl_desc)
 	OUTER_SET	yes_ref = RESOLVE_STR_REF ((AT tra_learn))	OUTER_SET	no_ref = RESOLVE_STR_REF ((AT tra_back))
 	OUTER_SET	ref_1 = RESOLVE_STR_REF ((AT tra_level_1))	OUTER_SET	ref2_1 = RESOLVE_STR_REF ((AT tra_level_1_ex))
 	OUTER_SET	ref_2 = RESOLVE_STR_REF ((AT tra_level_2))	OUTER_SET	ref2_2 = RESOLVE_STR_REF ((AT tra_level_2_ex))
@@ -125,7 +126,10 @@
 			END
 		END
 	BUT_ONLY
-	
+<<<<<<<< ...inlined/dialog.d
+	EXTEND_BOTTOM	RASHMKN	0	IF	~True()~	THEN	REPLY	(AT %tra_quit%)	DO	~~	EXIT	END
+>>>>>>>>
+	COMPILE	EVAL ~...inlined/dialog.d~
 	LAF	UPDATE_SHAMAN_DLG	END	//	Trueclass Shaman
 	
 	COPY_EXISTING	~KITLIST.2da~	override
