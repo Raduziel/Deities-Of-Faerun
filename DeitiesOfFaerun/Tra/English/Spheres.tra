@@ -1103,5 +1103,23 @@ Saving Throw: None
 
 Upon casting a Conjure Air Elemental spell, the caster opens a special gate to the Elemental Plane of Air, and an air elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears, a 35% chance that a 16-Hit-Dice elemental appears, and a 5% chance that a 24-Hit-Dice elemental appears. All of the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication, and it is not necessary to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their summoned elemental.~
 	@9999230 = ~Air Elemental~
-
+	@9999231 = ~Shaman spell selection options:~
+	@9999232 = ~Level 1~
+	@9999233 = ~Level 2~
+	@9999234 = ~Level 3~
+	@9999235 = ~Level 4~
+	@9999236 = ~Level 5~
+	@9999237 = ~Level 6~
+	@9999238 = ~Level 7~
+	@9999239 = ~Learn~
+	@9999240 = ~Quit~
+	@9999241 = ~Level 1 spells available to learn~
+	@9999242 = ~Level 2 spells available to learn~
+	@9999243 = ~Level 3 spells available to learn~
+	@9999244 = ~Level 4 spells available to learn~
+	@9999245 = ~Level 5 spells available to learn~
+	@9999246 = ~Level 6 spells available to learn~
+	@9999247 = ~Level 7 spells available to learn~
+	@9999248 = ~Back~
+	
 // EoF
