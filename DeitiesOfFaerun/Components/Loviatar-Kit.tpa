@@ -118,13 +118,15 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RALovi6.spl" override SAY NAME1 @2212 SAY UNIDENTIFIED_DESC @2213
+COPY "DeitiesOfFaerun\Spl\RALovi6.spl" override SAY NAME1 @2212 SAY UNIDENTIFIED_DESC @2213             //Ensnarement
 
 COPY "DeitiesOfFaerun\Spl\RALovi6.eff" override
 
-COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.cre" override SAY NAME1 @2216 SAY NAME2 @2216
+COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.spl" override SAY NAME1 @2217 SAY UNIDENTIFIED_DESC @2218
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\RAERINYE.itm" override
+
+COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.cre" override SAY NAME1 @2216 SAY NAME2 @2216
 
 //Restriction
 
