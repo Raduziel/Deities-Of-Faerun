@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSLOVI.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSLOVI~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLOVI.itm~ SAY NAME1 @2217 SAY NAME2 @2217 SAY DESC @2218
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLOVI.itm~ SAY NAME1 @2219 SAY NAME2 @2219 SAY DESC @2220
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALovi + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~LOVIS~
 WRITE_ASCII 0x058 ~LOVIL~
@@ -122,25 +122,9 @@ COPY "DeitiesOfFaerun\Spl\RALovi6.spl" override SAY NAME1 @2212 SAY UNIDENTIFIED
 
 COPY "DeitiesOfFaerun\Spl\RALovi6.eff" override
 
-COPY "DeitiesOfFaerun\Cre\LoviDevil\LoviDevi.cre" override SAY NAME1 @2216 SAY NAME2 @2216
+COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.cre" override SAY NAME1 @2216 SAY NAME2 @2216
 
-COPY "DeitiesOfFaerun\Cre\LoviDevil\BDERINYE.itm" override
-
-COPY "DeitiesOfFaerun\Cre\LoviDevil\LoviDevi.itm" override
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL "%RA_Drain1%" END
-
-COPY "DeitiesOfFaerun\Cre\LoviDevil\RABDTRAI.itm" override
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Stun%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Stunned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Poison%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_Poisoned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Charmed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Dominated%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_Panic%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 9 parameter1 = EVAL "%RA_MoralFail%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 10 parameter1 = EVAL "%RA_RigidThink%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 11 parameter1 = EVAL "%RA_Confused%" END
+COPY "DeitiesOfFaerun\Cre\LoviDevil\RAERINYE.itm" override
 
 //Restriction
 
