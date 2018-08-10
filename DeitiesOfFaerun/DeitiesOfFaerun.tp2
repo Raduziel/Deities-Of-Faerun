@@ -104,6 +104,18 @@ BEGIN @9999909
 		OUTER_SPRINT	FILE_PATH ~Lib/Spheres~
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/IWDImport.tpa~
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Main.tpa~
+		OUTER_SET	tra_start	= 9999231	OUTER_SET	tra_level_1_ex = 9999241
+		OUTER_SET	tra_level_1 = 9999232	OUTER_SET	tra_level_2_ex = 9999242
+		OUTER_SET	tra_level_2 = 9999233	OUTER_SET	tra_level_3_ex = 9999243
+		OUTER_SET	tra_level_3 = 9999234	OUTER_SET	tra_level_4_ex = 9999244
+		OUTER_SET	tra_level_4 = 9999235	OUTER_SET	tra_level_5_ex = 9999245
+		OUTER_SET	tra_level_5 = 9999236	OUTER_SET	tra_level_6_ex = 9999246
+		OUTER_SET	tra_level_6 = 9999237	OUTER_SET	tra_level_7_ex = 9999247
+		OUTER_SET	tra_level_7 = 9999238	OUTER_SET	tra_back = 9999248
+		OUTER_SET	tra_learn	= 9999239	OUTER_SET   tra_shaman_spl_name = 9999249
+		OUTER_SET	tra_quit    = 9999240	OUTER_SET   tra_shaman_spl_desc = 9999250
+		OUTER_SET	sphere_shm_align = 1
+		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Shaman/SplShmkn.tpa~
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/NPC-Spellbook.tpa~
 	  
 //__________________________________________________________________________________
