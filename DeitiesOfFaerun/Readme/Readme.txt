@@ -228,14 +228,14 @@ Seeking Sword
 
 Sphere: Creation 
 Range: 30 ft.
-Duration: 2 turns 
+Duration: 2 rounds/level
 Casting Time: 7
 Area of Effect: Special
 Saving Throw: None
 
 This spell brings into being a shimmering blade of force that appears as a sword of any description the caster desires, typically a broad sword. The sword forms in midair and is animated by the will of the caster (who need never touch it), flashing about as it attacks. The blade can strike four times per round, doing 2d4 points of damage with each successful hit, but cannot act beyond the caster's line of sight.
 
-Although it has no attack or damage bonuses, a seeking sword is considered a +4 magical weapon for determining what sorts of beings it can strike. It has 15 Thac0, 30 Hit Points, 5 AC and can only be harmed by fire, magic, acid or crushing damage. Other spell casting is impossible while maintaining the spell, though the caster may move at half his or her normal movement rate per round while doing so.
+Although it has no attack or damage bonuses, a Seeking Sword is considered a +4 magical weapon for determining what sorts of beings it can strike and can only be harmed by fire, electricity, magic, acid or crushing damage. Other spell casting is impossible for the duration of the spell.
 
 ====================================================================================================================================================================
 
@@ -571,12 +571,12 @@ Ensnarement
 Level: 6
 Sphere: Summoning
 Range: 35
-Duration: 10 turns
+Duration: Special
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell summons an Erinyes to serve the Pain. She has 48 HP, 15 Thac0, AC 0, can only be damaged with weapons +2 or better, strikes twice per round and each hit drains one level of the target. The devil is also immune to poison, fear, stun, charm and confusion.
+This spell summons an Erinyes to serve the Pain. While summoned, there's a chance that the devil will escape from the summoner's control and turn against <PRO_HIMHER>, unless <PRO_HESHE>'s under the effect of Protection From Evil. This chance starts at 5% and increases by another 5% every turn until it reaches 100% after 20 turns, when the spell expires. Only one Erinyes can be summoned at time.
 
 ====================================================================================================================================================================
 
@@ -1742,7 +1742,7 @@ g2) Treant (Changestaff)
 
 Damage: 4d6 (crushing)
 
-Resistances (%): -20 Fire | Immune to Paralyze, Stun, Sleep and Poison
+Resistances (%): -20 Fire.  Immunities as any plant.
 
 ---
 
@@ -1750,11 +1750,11 @@ g3) Erinyes (Ensnarement)
 
 6HD | 48 HP | AC 2 | Thac0 13 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
-Damage: 1d3 (crushing)
+Damage: per weapon. Erineyes may use a shortbow (with Arrows of Biting, Arrows +2 or Arrows of Detonation) or a Shortsword +2.
 
-Resistances (%): 100 Fire; 50 Cold; 30 Magic | Immune to Stun, Charm, Confusion, Poison and Fear.
+Resistances (%): 100 Fire; 50 Cold; 30 Magic. Immunities as any devil. Can only be hurt by weapons +1 or better.
 
-Every hit drains one level of the target
+Special: Erinyes may cast Charm Person, Spook, Detect Invisibility, Invisibility and Produce Fire at will. 
 
 ---
 
@@ -1764,7 +1764,7 @@ g4) Minor Death
 
 Damage: 2d8 (slashing)
 
-Resistances (%): 100 Fire; 100 Cold; 100 Electricity | Immune to Stun, Charm, Sleep, Berserker, Poison, Disease, Energy Drain, Ability Score Drain, Deafness, Blindness and Fear.
+Resistances (%): 100 Fire; 100 Cold; 100 Electricity.
 
 ---
 
@@ -1774,7 +1774,7 @@ g5) Revenant (Hand of Hoar)
 
 Damage: 2d8 (crushing)
 
-Resistances (%): -25 Fire; 85 Cold; 40 Electricity, 100 Acid, 20 Slashing, 25 Crushing, 20 Piercing, 80 Missile | Immune to Stun, Charm, Sleep, Berserker, Poison, Disease, Energy Drain, Ability Score Drain, Deafness, Blindness and Fear. Can only be hurt by weapons +1 or better. Regenerates 6 HP/round.
+Resistances (%): -25 Fire; 85 Cold; 40 Electricity, 100 Acid, 20 Slashing, 25 Crushing, 20 Piercing, 80 Missile | Can only be hurt by weapons +1 or better. Regenerates 6 HP/round.
 
 ---
 
@@ -1782,9 +1782,9 @@ g6) Seeking Sword
 
 6HD | 48 HP | AC 5 | Thac0 15 | Attacks per Round 4 | Paralyze/Poison/Death 11; Rod/Staff/Wand 13; Petrify/Polymorph 12; Breath Weapons 13; Spells 14
 
-Damage: 4d8 (slashing)
+Damage: 2d4 (slashing)
 
-Resistances (%): 100 Cold; 100 Slashing, 100 Piercing, 100 Missile | Immune to Stun, Charm, Poison, Disease, Blindness and Fear. Can only be hurt by weapons +1 or better.
+Resistances (%): 100 Cold; 100 Slashing, 100 Piercing, 100 Missile. Immunities as any construct.
 
 ====================================================================================================================================================================
 
