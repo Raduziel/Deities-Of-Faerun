@@ -576,7 +576,9 @@ Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
 
-This spell summons an Erinyes to serve the Pain. While summoned, there's a chance that the devil will escape from the summoner's control and turn against <PRO_HIMHER>, unless <PRO_HESHE>'s under the effect of Protection From Evil. This chance starts at 5% and increases by another 5% every turn until it reaches 100% after 20 turns, when the spell expires. Only one Erinyes can be summoned at time.
+This spell summons an Erinyes to serve the Pain. While summoned, there's a chance that the devil will escape from the summoner's control and turn against <PRO_HIMHER>, unless <PRO_HESHE>'s under the effect of Protection From Evil. This chance starts at 5% and increases by another 5% every turn until it reaches 100% after 20 turns, when the spell expires. Only one Erinyes can be summoned at time. Unless the devil goes hostile, the summoner may dismiss the Erinyes whenever <PRO_HESHE> wants.
+
+To dismiss the Erinyes, go to the creature's special abilities and press "Dismiss".
 
 ====================================================================================================================================================================
 
