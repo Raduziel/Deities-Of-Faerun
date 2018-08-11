@@ -1770,7 +1770,7 @@ g4) Minor Death
 
 Damage: 2d8 (slashing)
 
-Resistances (%): 100 Fire; 100 Cold; 100 Electricity. Immunities as any undead. Cannot be turned. Can only be hurt by weapons +1 or better. Movement 18.
+Resistances (%): 100 Fire; 100 Cold; 100 Electricity 100 Poison. Immunities as any undead. Cannot be turned. Can only be hurt by weapons +1 or better. Movement 18. Bonus to Initiative (+10). Immune to Enchantment/Charm.
 
 ---
 
