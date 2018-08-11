@@ -113,8 +113,6 @@ COPY "DeitiesOfFaerun\Spl\RABAER3.spl" override SAY NAME1 @704 SAY UNIDENTIFIED_
 	END
 
 
-COPY "DeitiesOfFaerun\Spl\RABAER3.eff" override 
-
 COPY "DeitiesOfFaerun\Cre\Changestaff\Complement"   override                                            //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
 
 COPY "DeitiesOfFaerun\Cre\Changestaff\RATREANT.cre" override SAY NAME1 @706 SAY NAME2 @706              //Treant (Creature)
