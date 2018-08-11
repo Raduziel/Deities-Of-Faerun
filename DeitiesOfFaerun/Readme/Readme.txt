@@ -1766,11 +1766,11 @@ Special: Erinyes may cast Charm Person, Spook, Detect Invisibility, Invisibility
 
 g4) Minor Death
 
-8HD | 64 HP | AC -4 | Thac0 1 | Attacks per Round 2 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
+8HD | 64 HP | AC -4 | Thac0 1 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
 Damage: 2d8 (slashing)
 
-Resistances (%): 100 Fire; 100 Cold; 100 Electricity.
+Resistances (%): 100 Fire; 100 Cold; 100 Electricity. Immunities as any undead. Cannot be turned. Can only be hurt by weapons +1 or better. Movement 18.
 
 ---
 
@@ -1780,7 +1780,7 @@ g5) Revenant (Hand of Hoar)
 
 Damage: 2d8 (crushing) + STR (18/00). May paralyze (Save vs. Death negates).
 
-Resistances (%): 100 Acid. Immunities as any undead. Can only be hurt by weapons +1 or better. 
+Resistances (%): 100 Acid. Immunities as any undead. Cannot be turned. Can only be hurt by weapons +1 or better. Movement 9.
 
 ---
 
