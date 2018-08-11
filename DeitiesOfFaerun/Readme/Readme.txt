@@ -8,11 +8,13 @@ INSTALLATION NOTES:
 
 * Deities of Faerûn should be installed after any mod that adds or alters spells in the game.
 
+* Deities of Faerûn should be installed after mods that introduce NPCs that receives a kit from DoF.
+
+* Deities of Faerûn should be installed after mods that introduce Kits that will use the Sphere System.
+
+* Deities of Faerûn should be installed before Improved Shamanic Dance.
+
 * Deities of Faerûn should be installed after EET (but ALWAYS before EET_End).
-
-* DoF should be installed after mods that introduce NPCs that receives a kit from DoF.
-
-* DoF should be installed after mods that introduce Kits that will use the Sphere System.
 
 * Deities of Faerûn will probably misbehave with any mod component that overhauls the combat system of the game.
 
