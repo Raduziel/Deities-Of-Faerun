@@ -88,7 +88,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"  override
+COPY "DeitiesOfFaerun\Spl\RAHOAR4.spl"   override SAY NAME1 @3604 SAY UNIDENTIFIED_DESC @3605	             //Hand of Hoar
+
+COPY "DeitiesOfFaerun\Spl\RAHoar4.eff"   override
+
+COPY "DeitiesOfFaerun\Spl\RAHOAR41.spl"  override
+
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"   override
 WRITE_LONG  0x08   RESOLVE_STR_REF (@3608)
 WRITE_LONG  0x0c   RESOLVE_STR_REF (@3608)
 
@@ -96,19 +102,8 @@ COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar41.cre"  override
 
 COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.cre"   override SAY NAME1 @3608 SAY NAME2 @3608
 
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-
-COPY "DeitiesOfFaerun\Cre\Revenant\Revent2.itm" override
-
-COPY "DeitiesOfFaerun\Cre\Revenant\Revent1.itm" override
-
-END
-
-COPY "DeitiesOfFaerun\Spl\RAHOAR41.spl"  override
-
-COPY "DeitiesOfFaerun\Spl\RAHoar4.eff"   override
-
-COPY "DeitiesOfFaerun\Spl\RAHOAR4.spl"   override SAY NAME1 @3604 SAY UNIDENTIFIED_DESC @3605	             //Hand of Hoar
+COPY "DeitiesOfFaerun\Cre\Revenant\RAHoar4.itm"   override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Held%" END
 
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAHoar5T.PRO~
 
