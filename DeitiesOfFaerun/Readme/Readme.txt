@@ -1720,25 +1720,25 @@ g1) Elementals
 
 g1.1) Ice Elemental
 
-Damage: 3d8 (crushing) + 1d6 (cold)
+Damage: 3d8 (crushing) + 1d6 (cold) - strikes as +4
 
 Resistances (%): -100 Fire; 100 Cold; 50 Slashing; -50 Crushing; 50 Piercing; 50 Missile
 
 g1.2) Air Elemental
 
-Damage: 1d8 (crushing)
+Damage: 1d8 (crushing) - strikes as +4
 
 Resistances (%): 50 Cold; 50 Electricity; 50 Missile
 
 g1.3) Water Elemental
 
-Damage: 2d8 (crushing)
+Damage: 2d8 (crushing) - strikes as +4
 
 Resistances (%): 50 Cold; -100 Electricity; 50 Acid
 
 g1.4) Earth Elemental
 
-Damage: 4d8 (crushing)
+Damage: 4d8 (crushing) - strikes as +4
 
 Resistances (%): 100 Electricity
 
@@ -1748,7 +1748,7 @@ g2) Treant (Changestaff)
 
 12HD | 40 HP | AC 0 | Thac0 9 | Attacks per Round 2 | Paralyze/Poison/Death 7; Rod/Staff/Wand 9; Petrify/Polymorph 8; Breath Weapons 8; Spells 10
 
-Damage: 4d6 (crushing)
+Damage: 4d6 (crushing) - strikes as +3
 
 Resistances (%): -20 Fire.  Immunities as any plant.
 
@@ -1758,7 +1758,7 @@ g3) Erinyes (Ensnarement)
 
 6HD | 48 HP | AC 2 | Thac0 13 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
-Damage: per weapon. Erineyes may use a Shortbow +1 with Arrows of Biting or a Shortsword +2.
+Damage: per weapon. Erineyes uses a Shortbow +1 with Arrows of Biting and a Shortsword +2.
 
 Resistances (%): 100 Fire; 50 Cold; 30 Magic. Immunities as any devil. Can only be hurt by weapons +1 or better.
 
@@ -1770,7 +1770,7 @@ g4) Minor Death
 
 8HD | 64 HP | AC -4 | Thac0 1 | Attacks per Round 2 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
-Damage: 2d8 (slashing)
+Damage: 2d8 (slashing) - strikes as +3
 
 Resistances (%): 100 Fire; 100 Cold; 100 Electricity 100 Poison. Immunities as any undead. Cannot be turned. Can only be hurt by weapons +1 or better. Movement 18. Bonus to Initiative (+10). Immune to Enchantment/Charm.
 
@@ -1780,7 +1780,7 @@ g5) Revenant (Hand of Hoar)
 
 8HD | 64 HP | AC 10 | Thac0 13 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
-Damage: 2d8 (crushing) + STR (18/00). May paralyze (Save vs. Death negates).
+Damage: 2d8 (crushing) + STR (18/00) - strikes as +1 and may paralyze (Save vs. Death negates).
 
 Resistances (%): 100 Acid. Immunities as any undead. Cannot be turned. Can only be hurt by weapons +1 or better. Movement 9.
 
@@ -1790,7 +1790,7 @@ g6) Seeking Sword
 
 6HD | 48 HP | AC 5 | Thac0 15 | Attacks per Round 4 | Paralyze/Poison/Death 11; Rod/Staff/Wand 13; Petrify/Polymorph 12; Breath Weapons 13; Spells 14
 
-Damage: 2d4 (slashing)
+Damage: 2d4 (slashing) - strikes as +4
 
 Resistances (%): 100 Cold; 100 Slashing, 100 Piercing, 100 Missile. Immunities as any construct.
 
