@@ -53,6 +53,32 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	END
 
+	
+		ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+      
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SUNSCORCH~ 	RET	spell_1 = spell_res	END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_GREASE~		RET	spell_2				END
+			INNER_PATCH_SAVE	spell_2	~%spell_2%~	BEGIN	WRITE_ASCII	0 ~RA~								END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BURNING_HANDS~	RET	spell_3				END
+			INNER_PATCH_SAVE	spell_3	~%spell_3%~	BEGIN	WRITE_ASCII	0 ~RA~								END
+	  
+			COPY_EXISTING ~%creature%.cre~ ~override~
+			REMOVE_MEMORIZED_SPELL ~SPPR101~
+			REMOVE_KNOWN_SPELL ~SPPR101~
+			REMOVE_MEMORIZED_SPELL ~SPPR111~
+			REMOVE_KNOWN_SPELL ~SPPR111~
+	        REMOVE_MEMORIZED_SPELL ~SPPR113~
+			REMOVE_KNOWN_SPELL ~SPPR113~
+			ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~priest~    //Sunscorch
+			ADD_KNOWN_SPELL ~%spell_1%~		#0 ~priest~
+			ADD_MEMORIZED_SPELL ~%spell_2%~ #0 ~priest~    //Grease
+			ADD_KNOWN_SPELL ~%spell_2%~		#0 ~priest~
+			ADD_MEMORIZED_SPELL ~%spell_3%~ #0 ~priest~    //Burning Hands
+			ADD_KNOWN_SPELL ~%spell_3%~		#0 ~priest~		
+			BUT_ONLY
+		END	
+		
+		
 	END
 
 END
