@@ -107,10 +107,10 @@ COPY "DeitiesOfFaerun\Spl\RAMYRK3.eff" override
 COPY "DeitiesOfFaerun\Spl\RAMYRK4.spl" override  SAY NAME1 @2507 SAY  UNIDENTIFIED_DESC @2508 //Hand of Myrkul
 
 COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2504 SAY NAME2 @2504   //Minor Death - creature
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL "%RA_Poison%"   END
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL "%RA_Poisoned%" END
 
 COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.itm" override                                   //Minor Death - weapon/immunities 
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL "%RA_Poison%"       END
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL "%RA_Poisoned%"     END
 
 //Restriction
 	
