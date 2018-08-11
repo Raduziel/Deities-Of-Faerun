@@ -1778,9 +1778,9 @@ g5) Revenant (Hand of Hoar)
 
 8HD | 64 HP | AC 10 | Thac0 13 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
-Damage: 2d8 (crushing)
+Damage: 2d8 (crushing) + STR (18/00). May paralyze (Save vs. Death negates).
 
-Resistances (%): -25 Fire; 85 Cold; 40 Electricity, 100 Acid, 20 Slashing, 25 Crushing, 20 Piercing, 80 Missile | Can only be hurt by weapons +1 or better. Regenerates 6 HP/round.
+Resistances (%): 100 Acid. Immunities as any undead. Can only be hurt by weapons +1 or better. 
 
 ---
 
