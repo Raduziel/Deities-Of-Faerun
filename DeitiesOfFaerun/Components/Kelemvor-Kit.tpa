@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSKELE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSKELE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSKELE.itm~ SAY NAME1 @2607 SAY NAME2 @2607 SAY DESC @2608
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSKELE.itm~ SAY NAME1 @2608 SAY NAME2 @2608 SAY DESC @2609
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAKele + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~KELES~
 WRITE_ASCII 0x058 ~KELEL~
@@ -54,9 +54,9 @@ WRITE_ASCII 0x058 ~KELEL~
 
 COPY "DeitiesOfFaerun\Spl\RAKELEF.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RAKELE1.spl" override SAY NAME1 @2605 SAY UNIDENTIFIED_DESC @2606          //Chilling Scythe
+COPY "DeitiesOfFaerun\Spl\RAKELE1.spl" override SAY NAME1 @2606 SAY UNIDENTIFIED_DESC @2607          //Chilling Scythe
 
-COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESCYT.itm" override SAY NAME1 @2605 SAY NAME2 @2605      //Chilling Scythe (Itm)
+COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESCYT.itm" override SAY NAME1 @2606 SAY NAME2 @2606      //Chilling Scythe (Itm)
 
 COPY "DeitiesOfFaerun\Itm\ChillingScythe\KELESBLD.spl" override                                      //Chilling Scythe (Spl)
 
@@ -90,7 +90,7 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
 		  
-COPY "DeitiesOfFaerun\Spl\RAKELE3.spl" override  SAY NAME1 @2505 SAY  UNIDENTIFIED_DESC @2607 //Summon Minor Death
+COPY "DeitiesOfFaerun\Spl\RAKELE3.spl" override  SAY NAME1 @2604 SAY  UNIDENTIFIED_DESC @2605 //Summon Minor Death
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
