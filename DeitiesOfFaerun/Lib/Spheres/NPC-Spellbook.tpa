@@ -1,0 +1,86 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        NPC SPELLBOOK
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+ 
+	ACTION_FOR_EACH creature IN dorn dorn2 dorn4 dorn6 dorn7 dorn8 dorn9 dorn10 dorn12 dorn14 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~BLACKGUARD~	kitname2 = ~~	END
+
+	END
+	
+	ACTION_FOR_EACH creature IN minsc minsc2 minsc4 minsc6 minsc7 minsc8 minsc9 minsc10 minsc12 minsc14 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	        END
+
+	END
+	
+	ACTION_FOR_EACH creature IN kivan kivan4 kivan6 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	        END
+
+	END
+
+	ACTION_FOR_EACH creature IN faldor faldor5 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	        END
+
+	END	
+	
+	ACTION_FOR_EACH creature IN jaheir jaheir2 jaheir4 jaheir6 jaheir7 jaheir8 jaheir11 jaheir12 jahei12B jahei14 jaheird BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	END
+
+	END
+
+	ACTION_FOR_EACH creature IN valyg8 valyg9 valyg11 valyg12 valyg14 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~STALKER~	kitname2 = ~~	END
+
+	END
+	
+	ACTION_FOR_EACH creature IN cernd10 cernd12 cernd13 cernd13B cernd14 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~SHAPESHIFTER~	kitname2 = ~~	END
+
+	END
+	
+	ACTION_FOR_EACH creature IN bdmkhi7 BEGIN
+
+		LAF	UPDATE_NPC_SPHERE	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~~	kitname2 = ~~	END
+
+	
+		ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+      
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SUNSCORCH~ 	RET	spell_1 = spell_res	END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_GREASE~		RET	spell_2	= spell_res	END
+			OUTER_PATCH_SAVE	spell_2	~%spell_2%~	BEGIN	WRITE_ASCII	0 ~RA~								END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BURNING_HANDS~	RET	spell_3	= spell_res	END
+			OUTER_PATCH_SAVE	spell_3	~%spell_3%~	BEGIN	WRITE_ASCII	0 ~RA~								END
+	  
+			COPY_EXISTING ~%creature%.cre~ ~override~
+			REMOVE_MEMORIZED_SPELL ~SPPR101~
+			REMOVE_KNOWN_SPELL ~SPPR101~
+			REMOVE_MEMORIZED_SPELL ~SPPR111~
+			REMOVE_KNOWN_SPELL ~SPPR111~
+	        REMOVE_MEMORIZED_SPELL ~SPPR113~
+			REMOVE_KNOWN_SPELL ~SPPR113~
+			ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~priest~    //Sunscorch
+			ADD_KNOWN_SPELL ~%spell_1%~		#0 ~priest~
+			ADD_MEMORIZED_SPELL ~%spell_2%~ #0 ~priest~    //Grease
+			ADD_KNOWN_SPELL ~%spell_2%~		#0 ~priest~
+			ADD_MEMORIZED_SPELL ~%spell_3%~ #0 ~priest~    //Burning Hands
+			ADD_KNOWN_SPELL ~%spell_3%~		#0 ~priest~		
+			BUT_ONLY
+		END	
+		
+		
+	END
+
+END
+
+//EoF
