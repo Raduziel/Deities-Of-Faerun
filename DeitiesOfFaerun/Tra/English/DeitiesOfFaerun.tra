@@ -419,7 +419,7 @@ The Fastpaw turns an ordinary piece of wood into a Treant that will fight by <PR
 Level: 7
 Sphere: Plant 
 Range: 40
-Duration: 10 turns
+Duration: 1 turn/level
 Casting Time: 4 
 Area of Effect: Special 
 Saving Throw: None
