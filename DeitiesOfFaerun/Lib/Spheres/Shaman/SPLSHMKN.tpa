@@ -146,7 +146,11 @@
 						READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 kitid
 					END
 					INNER_ACTION	BEGIN
-						LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END	//	Shaman kits
+						ACTION_IF	VARIABLE_IS_SET	$priestspherelist(~%kitname%~)	BEGIN
+							LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END	//	Shaman kits
+						END	ELSE	BEGIN
+							LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	clabfile	END	//	Shaman kits
+						END
 					END
 				END
 			END
