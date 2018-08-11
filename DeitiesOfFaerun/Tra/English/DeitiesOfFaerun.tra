@@ -1853,7 +1853,8 @@ Through this spell the Doomguide creates a magical scythe especially effective a
 SUMMON MINOR DEATH:
 
 This spell summons a powerful skeleton that stays at the Doomguide's service for 1 turns.~
-@2604 = ~Summon Minor Death
+@2604 = ~Summon Minor Death~
+@2605 = ~Summon Minor Death
 (Necromancy)
 
 Level: 6
@@ -1865,8 +1866,8 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.~
-@2605 = ~Chilling Scythe~
-@2606 = ~Chilling Scythe
+@2606 = ~Chilling Scythe~
+@2607 = ~Chilling Scythe
 (Evocation, Necromancy)
 
 Level: 3
@@ -1880,8 +1881,8 @@ Saving Throw: None
 This spell creates an over-sized but weightless scythe that can be wielded by the Doomguide as a weapon. The scythe is a two-handed, 7-foot-long device that is a +2 enchanted weapon dealing 2d4+2 points of slashing damage plus chilling for a further 1d4 points of magic damage - this chilling damage is caused by draining of life force, not cold. A Chilling Scythe has a speed factor of 5 and the Doomguide wields it as if <PRO_HESHE> is proficient.
 
 If a Chilling Scythe even touches an undead creature it delivers 4d6 points of magic damage to the undead and hurls it helplessly 20 feet away from the Doomguide.~
-@2607 = ~Holy Symbol of Kelemvor~
-@2608 = ~Only the most worthy and devoted servants of the Judge of the Damned are granted these powerful holy symbols.
+@2608 = ~Holy Symbol of Kelemvor~
+@2609 = ~Only the most worthy and devoted servants of the Judge of the Damned are granted these powerful holy symbols.
 	
 STATISTICS:
 
