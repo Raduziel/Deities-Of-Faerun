@@ -651,7 +651,7 @@ Summon Minor Death
 Level: 6
 Sphere: Necromantic
 Range: 35
-Duration: 10 turns
+Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
@@ -701,7 +701,7 @@ Summon Minor Death
 Level: 6
 Sphere: Necromantic
 Range: 35
-Duration: 10 turns
+Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
@@ -1766,7 +1766,7 @@ Special: Erinyes may cast Charm Person, Spook, Detect Invisibility, Invisibility
 
 g4) Minor Death
 
-8HD | 64 HP | AC -4 | Thac0 1 | Attacks per Round 1 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
+8HD | 64 HP | AC -4 | Thac0 1 | Attacks per Round 2 | Paralyze/Poison/Death 10; Rod/Staff/Wand 12; Petrify/Polymorph 11; Breath Weapons 12; Spells 13
 
 Damage: 2d8 (slashing)
 
