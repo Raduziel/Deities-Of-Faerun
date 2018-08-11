@@ -232,8 +232,8 @@
 			COPY_EXISTING ~%npc_file%.cre~	override
 				READ_BYTE	0x273	class
 				PATCH_MATCH	class	WITH
-					3	8 14 15 17 6 18	WHEN divineSpheres = 1 BEGIN	END
-					6 11 16 12 18	WHEN natureSpheres = 1 BEGIN	END
+					3  8 14 15 17  6 18	WHEN divineSpheres = 1 BEGIN	END
+					6 11 16 12 18 21    WHEN natureSpheres = 1 BEGIN	END
 					DEFAULT	SET	priest = 0	//	abort
 				END
 			BUT_ONLY
@@ -312,27 +312,29 @@
 					FOR	(i = known_num - 1; i >= 0; --i)	BEGIN
 						READ_ASCII	(known_off + i * 0xc)	resref (4)	TO_UPPER	resref
 						PATCH_MATCH ~%resref%~	WITH
+							~SPPR150~ ~SPPR250~ ~SPPR350~ ~SPPR450~ ~SPPR550~ ~SPPR650~ ~SPPR750~	WHEN	class = 21	AND natureSpheres = 1 AND kitid = 0x4000	BEGIN	END
 							~SPPR~	~RAWI~	BEGIN
-								PATCH_IF	class = 21	AND natureSpheres = 0	BEGIN	//	Shaman
+								PATCH_IF	class = 21	AND natureSpheres = 1	BEGIN	//	Shaman
 									READ_SHORT	(known_off + i * 0xc + 0xa) kn_type
-									READ_SHORT	(known_off + i * 0xc + 0xa) kn_lvl
+									READ_SHORT	(known_off + i * 0xc + 0x8) kn_lvl
 									PATCH_IF	kn_type	= 0	BEGIN
 										SET	$shm_count(~%kn_lvl%~) += 1	//	Count known spells of each level
 									END
-								END
-								PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
-									READ_ASCII	(known_off + i * 0xc) resref
-									INNER_ACTION	BEGIN
-										LAF	GET_PRIEST_TYPE	STR_VAR	resref	RET	type	END
-									END
-									PATCH_IF (divineSpheres = 1 AND !(type BAND 128)) OR (natureSpheres = 1 AND !(type BAND 64))	BEGIN
+								END	ELSE	BEGIN
+									PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
+										READ_ASCII	(known_off + i * 0xc) resref
+										INNER_ACTION	BEGIN
+											LAF	GET_PRIEST_TYPE	STR_VAR	resref	RET	type	END
+										END
+										PATCH_IF (divineSpheres = 1 AND !(type BAND 128)) OR (natureSpheres = 1 AND !(type BAND 64))	BEGIN
+											REMOVE_KNOWN_SPELL ~%resref%~
+											REMOVE_MEMORIZED_SPELL ~%resref%~
+										END
+									END	ELSE	BEGIN
+										READ_ASCII	(known_off + i * 0xc) resref
 										REMOVE_KNOWN_SPELL ~%resref%~
 										REMOVE_MEMORIZED_SPELL ~%resref%~
 									END
-								END	ELSE	BEGIN
-									READ_ASCII	(known_off + i * 0xc) resref
-									REMOVE_KNOWN_SPELL ~%resref%~
-									REMOVE_MEMORIZED_SPELL ~%resref%~
 								END
 							END
 							~SPRA301~	~SPRA302~ ~SPRA303~	~SPDR101~	~SPDR201~ ~SPDR301~ ~SPDR401~	~SPDR501~	~SPDR601~	WHEN natureSpheres != 0	BEGIN
@@ -377,6 +379,7 @@
 							DEFAULT	TEXT_SPRINT	kitname ~~
 						END
 					END
+					PATCH_IF	class = 21	BEGIN	TEXT_SPRINT	kitname ~~	END	//	do not update shaman spells
 					PATCH_IF ! (~%kitname%~ STRING_EQUAL ~~)	BEGIN
 						PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS array => level BEGIN
 							PATCH_IF VARIABLE_IS_SET	$access_spells(~%array%~)	BEGIN
