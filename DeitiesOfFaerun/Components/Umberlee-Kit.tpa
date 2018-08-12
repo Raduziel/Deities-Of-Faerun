@@ -130,13 +130,13 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~ov
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	~override~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES12WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	~override~
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES16WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	~override~
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/ES24WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	~override~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE4.spl~
 LPM ~SPELL_TO_INNATE~
