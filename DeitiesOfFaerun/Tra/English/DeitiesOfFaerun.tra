@@ -1509,7 +1509,7 @@ The target gets damage and is afflicted by an incapacitating pain.
 
 ENSNAREMENT:
 
-The Pain summons an Erinyes to serve <PRO_HIMHER>. A mental battle is required to control the devil.~
+The Pain summons an Erinyes to serve <PRO_HIMHER>.~
 @2204 = ~Touch of Loviatar~
 @2205 = ~Touch of Loviatar
 (Alteration)
@@ -1573,7 +1573,7 @@ At the end of the second round, the victim makes another Saving Throw vs. Spells
 Level: 6
 Sphere: Summoning
 Range: 35
-Duration: Special
+Duration: 20 turns
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None

@@ -577,7 +577,7 @@ Ensnarement
 Level: 6
 Sphere: Summoning
 Range: 35
-Duration: Special
+Duration: 20 turns
 Casting Time: 9
 Area of Effect: Special
 Saving Throw: None
