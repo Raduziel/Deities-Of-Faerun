@@ -65,8 +65,8 @@ Rapture
 (Enchantment/Charm)
 
 Sphere: Thought
-Range: 15-ft/level
-Duration: 2 turns
+Range: 75 ft.
+Duration: 1 round/level
 Casting Time: 6
 Area of Effect: One creature
 Saving Throw: Special
@@ -104,7 +104,7 @@ Dark Aura
 
 Sphere: Darkness
 Range: 0
-Duration: 3 turns
+Duration: 1 round/level
 Casting Time: 7
 Area of Effect: A sphere of 15-ft radius
 Saving Throw: None

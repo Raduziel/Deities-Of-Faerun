@@ -35,8 +35,8 @@ The Heartwarder either charms an ally, curing it of fear, disease and charm effe
 
 Level: 3
 Sphere: Thought
-Range: 15-ft/level
-Duration: 2 turns
+Range: 75 ft.
+Duration: 1 round/level
 Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: Special
@@ -161,7 +161,7 @@ The Strifeleader creates an aura that helps evil-aligned and undermines good-ali
 Level: 4
 Sphere: Darkness
 Range: 0
-Duration: 3 turns
+Duration: 1 round/level
 Casting Time: 7
 Area of Effect: A sphere of 15-ft. radius
 Saving Throw: None
