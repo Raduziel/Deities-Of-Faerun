@@ -236,7 +236,7 @@ Target is put to sleep and suffers 1d10 points of magic damage unless a Saving T
 @405 = ~Darkness
 (Alteration)
 
-Level: 1
+Level: 2
 Sphere: Darkness
 Range: 20 ft.
 Duration: 1 turn
@@ -252,7 +252,7 @@ This spell causes total, impenetrable darkness in the area of effect. Infravisio
 Level: 5
 Sphere: Darkness, Suffering, Thought
 Range: 40 ft.
-Duration: 2 turns
+Duration: 1 turn
 Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
@@ -472,7 +472,7 @@ Advantages:
 
 MACE OF ODO
 
-Through this spell the Watcher creates a mace that deals 3d6 damage per hit (4d6 versus undead) for 3 rounds.
+Through this spell the Watcher creates a mace that deals 3d6 damage per hit (4d6 versus undead) for 4 rounds.
 
 WYVERN WATCH
 
@@ -488,7 +488,7 @@ The Watcher creates a magical sword that acts accordingly to the Helmite orders.
 Level: 3
 Sphere: Creation 
 Range: 0
-Duration: Special 
+Duration: 4 rounds 
 Casting Time: 10
 Area of Effect: One magical mace
 Saving Throw: None
@@ -497,7 +497,7 @@ This spell enables a Watcher to create a magical mace in <PRO_HISHER> hand. The 
 
 A Mace of Odo strikes as a +5 weapon and does 3d6+5 points of damage. Creatures of 2 HD or less must make a successful Saving Throw vs. Paralyzation when struck by the mace or be paralyzed for 3 turns.
 
-The mace vanishes after one strike or after 3 rounds.~
+The mace vanishes after one strike or after 4 rounds.~
 @806 = ~Wyvern Watch~
 @807 = ~Wyvern Watch
 (Abjuration, Evocation)
@@ -505,7 +505,7 @@ The mace vanishes after one strike or after 3 rounds.~
 Level: 2
 Sphere: Protection 
 Range: 30 ft.
-Duration: Special 
+Duration: Special
 Casting Time: 5
 Area of Effect: 30-ft. radius
 Saving Throw: Neg.
@@ -635,7 +635,7 @@ During this spell's effect, the recipient receives bonuses of + 1 on attack roll
 Level: 2
 Sphere: Sun
 Range: 80 ft.
-Duration: 2 turns
+Duration: 4 rounds/level
 Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
@@ -804,7 +804,7 @@ This special ability doubles the target's Hit Points, grants it immunity to dise
 Level: 6
 Sphere: Protection 
 Range: 0
-Duration: 3 rounds
+Duration: 5 rounds
 Casting Time: 3
 Area of Effect: The caster 
 Saving Throw: None 
@@ -817,7 +817,7 @@ By means of this spell the Painbearer call a beneficial servant of Ilmater to po
 Level: 5
 Sphere: Protection 
 Range: Touch
-Duration: 6 rounds
+Duration: 1 round + 1 round/level
 Casting Time: 7
 Area of Effect: 1 creature 
 Saving Throw: None 
@@ -971,7 +971,7 @@ The Silentwalker surrounds itself with dense shadows, completely silencing <PRO_
 Level: 2
 Sphere: Darkness, Trickery
 Range: 0
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
@@ -980,62 +980,9 @@ This spell creates a semisolid fog of amorphous shape that engulfs the caster an
 
 A shadowcloak both confuses attackers with its swirling, smoky chaos, and slows strikes, so that all attacks against the shadowcloak-user occur at a -3 attack penalty and a damage penalty of-1 point per die. The shadowcloak also muffles all sounds made by the cloaked being (regardless of that being's desires), so that even shouted speech seems faint and distant, and all sounds short of breakage or metallic ringing or clinking are very likely to be completely blanked out.
 
-The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently, a 50% bonus do Hide in Shadows and puts the caster under the effect of Silence.~
-@1606 = ~Shadow Monsters~
-@1607 = ~Shadow Monsters
-(Illusion/Phantasm)
-
-Level: 4
-Range: Visual range of the caster
-Duration: 1 round/level
-Casting Time: 4
-Area of Effect: Special
-Saving Throw: None
-
-This spell shapes material from the Demiplane of Shadow into illusionary monsters. Up to six shadowy creatures can be summoned at once, but their total Hit Dice will normally not exceed the spellcaster's level.~
-@1608 = ~Demi-shadow Monsters~
-@1609 = ~Demi-Shadow Monsters
-(Illusion/Phantasm)
-
-Level: 5
-Range: Visual range of the caster
-Duration: 1 round/level
-Casting Time: 5
-Area of Effect: Special
-Saving Throw: None
-
-This spell is similar to the 4th-level wizard spell Shadow Monsters, except the summoned creatures are much more powerful.~
-@1610 = ~Summon Shadows~
-@1611 = ~Summon Shadows
-(Conjuration/Summoning, Necromancy)
-
-Level: 5
-Range: Visual range of the caster
-Duration: 1 round + 1 round/level
-Casting Time: 5
-Area of Effect: Special
-Saving Throw: None
-
-This spell summons three 4-HD shadows. The shadows will obey the orders of the caster, attacking <PRO_HISHER> enemies or performing tasks until the spell expires or the shadows are slain.~
-@1612 = ~Shades~
-@1613 = ~Shades
-(Illusion/Phantasm)
-
-Level: 6
-Range: Visual range of the caster
-Duration: 1 round/level
-Casting Time: 6
-Area of Effect: Special
-Saving Throw: None
-
-Shades is similar to Shadow Monsters and Demi-Shadow Monsters - it allows the caster to shape material from the Demiplane of Shadow into illusionary creatures. These shadows are tougher than the shadows summoned by Shadow Monsters and Demi-Shadow Monsters, and they will obey the caster until the spell expires or they are slain.~
-@1614 = ~Shadow Goblin~
-@1615 = ~Shadow Lizard Man~
-@1616 = ~Shadow Troll~
-@1617 = ~Shadow Umber Hulk~
-@1618 = ~Summoned Shadow~
-@1619 = ~Holy Symbol of Mask~
-@1620 = ~Only the most worthy and devoted servants of the Shadowlord are granted these powerful holy symbols.
+The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently and a 50% bonus do Hide in Shadows.~
+@1606 = ~Holy Symbol of Mask~
+@1607 = ~Only the most worthy and devoted servants of the Shadowlord are granted these powerful holy symbols.
 
 STATISTICS:
 
@@ -1124,7 +1071,7 @@ This spell creates a whip made of pure ice that is used immediately against a ta
 Level: 4
 Sphere: Creation, Water
 Range: 0
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 4
 Area of Effect: One magical sword
 Saving Throw: None
@@ -1348,29 +1295,14 @@ The Silverstar throws a shooting star upon an area, causing massive damage to al
 Level: 2
 Sphere: Moon
 Range: 60
-Duration: 5 rounds
+Duration: 1 round/level
 Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell can only be used outdoors. The Silverstar calls a beam of light from the sky and directs it to a target blinding it and turning it incapable of becoming invisible for the duration of the spell. A successful Saving Throw vs. Breath avoids all the effects.~
-@2006 = ~Moonblade~
-@2007 = ~Moonblade
-(Invocation)
-
-Level: 3
-Sphere: Creation, Moon
-Range: 0
-Duration: 2 turns
-Casting Time: 6
-Area of Effect: One magical sword
-Saving Throw: None
-
-This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, melee bonuses from Strength do not apply.
-
-The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 1d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
-@2008 = ~Shooting Star~
-@2009 = ~Shooting Star
+@2006 = ~Shooting Star~
+@2007 = ~Shooting Star
 (Invocation)
 
 Level: 7
@@ -1382,8 +1314,8 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 A priest casting shooting stars creates a violent turbulence in the air above the area of effect, from which a number of magically-charged miniature starts to erupt and shower onto the ground. Within the area of effect, all creatures suffer 6d10 points of magical damage and 48 points of crushing damage. A successful Saving Throw vs. Spells at a -4 penalty indicates half damage.~
-@2010 = ~Holy Symbol of Selûne~
-@2011 = ~Only the most worthy and devoted servants of the Moonmaiden are granted these powerful holy symbols.
+@2008 = ~Holy Symbol of Selûne~
+@2009 = ~Only the most worthy and devoted servants of the Moonmaiden are granted these powerful holy symbols.
 	
 STATISTICS:
 
@@ -1517,7 +1449,7 @@ The Pain summons an Erinyes to serve <PRO_HIMHER>.~
 Level: 1
 Sphere: Suffering
 Range: Touch
-Duration: 5 rounds
+Duration: 1 round/level
 Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: Neg.
@@ -1543,7 +1475,7 @@ The Pain creates a whip made of fire that is directed against a creature. The wh
 Level: 3
 Sphere: Suffering
 Range: 10
-Duration: Special
+Duration: 1 round/level
 Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: Special
@@ -1556,7 +1488,7 @@ A whip is created by the Pain and immediately used against a creature and impose
 Level: 4
 Sphere: Suffering
 Range: Touch
-Duration: Special
+Duration: 3 rounds
 Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: Special
@@ -1709,7 +1641,7 @@ The Deathstalker steps into Gehenna and moves freely while others appear to be f
 Level: 1
 Sphere: Creation, Necromantic
 Range: 0
-Duration: 3 rounds
+Duration: 1 round/level
 Casting Time: 1
 Area of Effect: One magical dagger
 Saving Throw: None
@@ -1873,7 +1805,7 @@ This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, 
 Level: 3
 Sphere: Creation, Combat
 Range: 0
-Duration: 1 turn 
+Duration: 1 round/level
 Casting Time: 5
 Area of Effect: One magical scythe
 Saving Throw: None
@@ -1986,21 +1918,8 @@ Advantages:
 - May cast Negative Plane Protection once per day as a special ability, starting at level 5.
 - May cast Animate Dead once per day as a special ability, starting at level 10.
 - May cast Energy Drain once per day as a special ability, starting at level 20.~
-@2804 = ~Undead Ward~
-@2805 = ~Undead Ward
-(Necromancy)
-
-Level: 5
-Sphere: Protection, Sun
-Range: 0
-Duration: 1 turn
-Casting Time: 7
-Area of Effect: 10-ft. radius
-Saving Throw: None
-
-This spell amplifies the influence a priest has over undead, though it is tied to the area surrounding the priest at the moment of its casting and does not move. Any undead creature entering the area of effect is affected as if turned by the priest that cast this spell. If the turning fails, the undead creature is immune to further turning attempts by the spell unless it leaves and reenters the area of effect.~
-@2806 = ~Holy Symbol of Jergal~
-@2807 = ~Only the most worthy and devoted servants of the Lord of the End of Everything are granted these powerful holy symbols.
+@2804 = ~Holy Symbol of Jergal~
+@2805 = ~Only the most worthy and devoted servants of the Lord of the End of Everything are granted these powerful holy symbols.
 	
 STATISTICS:
 
@@ -2138,7 +2057,7 @@ The caster imbues a target with the chaos of the battlefield giving it a random 
 Level: 4
 Sphere: Combat
 Range: 30
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
@@ -2153,7 +2072,7 @@ Unfortunately, these insights are helpful in only four-fifths (80%) of the warri
 Level: 4
 Sphere: Combat, Protection
 Range: 0
-Duration: 1 turn
+Duration: 5 rounds/level
 Casting Time: 7
 Area of Effect: The caster
 Saving Throw: None
@@ -2279,7 +2198,7 @@ This spell enables the Necrophant to assume the gaseous form of a vampire.~
 Level: 6
 Sphere: Necromantic
 Range: 0
-Duration: 10 turns
+Duration: 1 turn/level
 Casting Time: 5
 Area of Effect: The caster
 Saving Throw: None
@@ -2395,7 +2314,7 @@ The Luckbringer pleads for the goodwill of Tymora to <PRO_HIMHER>self, receiving
 Level: 2
 Sphere: Divination
 Range: Touch
-Duration: 3 rounds
+Duration: 1 round/level
 Casting Time: 10
 Area of Effect: 1 creature
 Saving Throw: None
@@ -2541,7 +2460,7 @@ This spell bestows a curse upon a single recipient creature that cannot be ended
 Level: 5
 Sphere: Suffering
 Range: Touch
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None

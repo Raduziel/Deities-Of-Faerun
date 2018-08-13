@@ -148,7 +148,7 @@ Nightmare
 
 Sphere: Darkness, Suffering, Thought
 Range: 40 ft.
-Duration: 2 turns
+Duration: 1 turn
 Casting Time: 2
 Area of Effect: One creature
 Saving Throw: Neg.
@@ -202,7 +202,7 @@ Mace of Odo
 
 Sphere: Creation 
 Range: 0
-Duration: Special 
+Duration: 4 rounds 
 Casting Time: 10
 Area of Effect: One magical mace
 Saving Throw: None
@@ -211,7 +211,7 @@ This spell enables a Watcher to create a magical mace in <PRO_HISHER> hand. The 
 
 A Mace of Odo strikes as a +5 weapon and does 3d6+5 points of damage. Creatures of 2 HD or less must make a successful Saving Throw vs. Paralyzation when struck by the mace or be paralyzed for 3 turns.
 
-The mace vanishes after one strike or after 3 rounds.
+The mace vanishes after one strike or after 4 rounds.
 
 ---
 
@@ -266,7 +266,7 @@ Faerie Fire
 
 Sphere: Sun
 Range: 80 ft.
-Duration: 2 turns
+Duration: 4 rounds/level
 Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
@@ -312,7 +312,7 @@ Martyrdom of Ilmater
 
 Sphere: Protection 
 Range: 0
-Duration: 3 rounds
+Duration: 5 rounds
 Casting Time: 3
 Area of Effect: The caster 
 Saving Throw: None 
@@ -326,7 +326,7 @@ Endurance of Ilmater
 
 Sphere: Protection
 Range: Touch
-Duration: 6 rounds
+Duration: 1 round + 1 round/level
 Casting Time: 7
 Area of Effect: One creature 
 Saving Throw: None 
@@ -343,7 +343,7 @@ Shadowcloak
 
 Sphere: Darkness, Trickery
 Range: 0
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
@@ -352,7 +352,7 @@ This spell creates a semisolid fog of amorphous shape that engulfs the caster an
 
 A shadowcloak both confuses attackers with its swirling, smoky chaos, and slows strikes, so that all attacks against the shadowcloak-user occur at a -3 attack penalty and a damage penalty of-1 point per die. The shadowcloak also muffles all sounds made by the cloaked being (regardless of that being's desires), so that even shouted speech seems faint and distant, and all sounds short of breakage or metallic ringing or clinking are very likely to be completely blanked out.
 
-The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently, a 50% bonus do Hide in Shadows and puts the caster under the effect of Silence.
+The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently and a 50% bonus do Hide in Shadows.
 
 ====================================================================================================================================================================
 
@@ -394,7 +394,7 @@ Frost Sword
 Level: 4
 Sphere: Creation, Water
 Range: 0
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 4
 Area of Effect: One magical sword
 Saving Throw: None
@@ -458,7 +458,7 @@ Moonbeam
 Level: 2
 Sphere: Moon
 Range: 60
-Duration: 5 rounds
+Duration: 1 round/level
 Casting Time: 2
 Area of Effect: One creature
 Saving Throw: Neg.
@@ -513,12 +513,12 @@ Touch of Loviatar
 Level: 1
 Sphere: Suffering
 Range: Touch
-Duration: 5 rounds
+Duration: 1 round/level
 Casting Time: 1
 Area of Effect: One creature
 Saving Throw: Neg.
 
-This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and reduce its Dexterity by 2.
+This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives -4 penalty to its attack rolls and and a -2 to its AC.
 
 ---
 
@@ -543,7 +543,7 @@ Whip of Pain
 Level: 3
 Sphere: Suffering
 Range: 10
-Duration: Special
+Duration: 1 round/level
 Casting Time: 6
 Area of Effect: One creature
 Saving Throw: Special
@@ -558,7 +558,7 @@ Touch of Torment
 Level: 4
 Sphere: Suffering
 Range: Touch
-Duration: Special
+Duration: 3 rounds
 Casting Time: 7
 Area of Effect: One creature
 Saving Throw: Special
@@ -621,7 +621,7 @@ Bone Dagger
 Level: 1
 Sphere: Creation, Necromantic
 Range: 0
-Duration: 3 rounds
+Duration: 1 round/level
 Casting Time: 1
 Area of Effect: One magical dagger
 Saving Throw: None
@@ -686,7 +686,7 @@ Chilling Scythe
 Level: 3
 Sphere: Creation, Combat
 Range: 0
-Duration: 1 turn 
+Duration: 1 round/level
 Casting Time: 5
 Area of Effect: One magical scythe
 Saving Throw: None
@@ -755,7 +755,7 @@ Chaotic Combat
 Level: 4
 Sphere: Combat
 Range: 30
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 3
 Area of Effect: One creature
 Saving Throw: None
@@ -772,7 +772,7 @@ Blood Armor
 Level: 4
 Sphere: Combat, Protection
 Range: 0
-Duration: 1 turn
+Duration: 5 rounds/level
 Casting Time: 7
 Area of Effect: The caster
 Saving Throw: None
@@ -793,7 +793,7 @@ Gaseous Form
 Level: 6
 Sphere: Necromantic
 Range: 0
-Duration: 10 turns
+Duration: 1 turn/level
 Casting Time: 5
 Area of Effect: The caster
 Saving Throw: None
@@ -815,7 +815,7 @@ Moment
 Level: 2
 Sphere: Divination
 Range: Touch
-Duration: 3 rounds
+Duration: 1 round/level
 Casting Time: 10
 Area of Effect: One creature
 Saving Throw: None
@@ -916,7 +916,7 @@ Misfortune
 Level: 5
 Sphere: Suffering
 Range: Touch
-Duration: 1 turn
+Duration: 1 round/level
 Casting Time: 5
 Area of Effect: One creature
 Saving Throw: None
