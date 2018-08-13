@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMASK.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMASK~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMASK.itm~ SAY NAME1 @1619 SAY NAME2 @1619 SAY DESC @1620
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMASK.itm~ SAY NAME1 @1606 SAY NAME2 @1606 SAY DESC @1607
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMask + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~MASKS~
 WRITE_ASCII 0x058 ~MASKL~
@@ -61,11 +61,32 @@ COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
 COPY "DeitiesOfFaerun\Spl\RAMASK1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405     
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAMASK1% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
 
 //Shadowcloak
 
 COPY "DeitiesOfFaerun\Spl\RAMASK2.spl" override  SAY NAME1 @1604 SAY  UNIDENTIFIED_DESC @1605   
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 3; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 2) match_duration = 6 duration = (6 * i) END
+	END
 
 //Shadow Door
 

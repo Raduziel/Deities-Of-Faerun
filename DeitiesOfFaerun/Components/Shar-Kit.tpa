@@ -63,9 +63,8 @@ ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASHAR1.PRO~
 COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
 
 COPY "DeitiesOfFaerun\Spl\RASHAR1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405 //Darkness
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASHAR1% END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASHAR1% END	
+LPF ALTER_EFFECT   	   INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
 
 //Blindness
 
@@ -78,6 +77,7 @@ LPM ~SPELL_TO_INNATE~
 END
 
 COPY "DeitiesOfFaerun\Spl\RASHAR3.spl" override  SAY NAME1 @406 SAY UNIDENTIFIED_DESC @407  //Nightmare
+
 
 //Shadow Door
 
@@ -95,15 +95,19 @@ COPY "DeitiesOfFaerun\Spl\RASHAR5.spl" override  SAY NAME1 @408 SAY UNIDENTIFIED
 
 COPY "DeitiesOfFaerun\Spl\RASHARE1.spl" override SAY NAME1 @410 SAY UNIDENTIFIED_DESC @410  //Charm Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Dominated%" END
+LPF CLONE_EFFECT INT_VAR match_opcode = 5  opcode = 142 parameter1 = 0 parameter2 = 43 END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE2.spl" override SAY NAME1 @411 SAY UNIDENTIFIED_DESC @411  //Fear Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
+LPF CLONE_EFFECT INT_VAR match_opcode = 24 opcode = 142 parameter1 = 0 parameter2 = 36 END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE3.spl" override SAY NAME1 @412 SAY UNIDENTIFIED_DESC @412  //Sicken Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_FoulDisease%" END
+LPF CLONE_EFFECT INT_VAR match_opcode = 78 opcode = 142 parameter1 = 0 parameter2 = 7  END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE4.spl" override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413  //Sleep Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Sleep%" END
+LPF CLONE_EFFECT INT_VAR match_opcode = 39 opcode = 142 parameter1 = 0 parameter2 = 14 END
 
 COPY "DeitiesOfFaerun\Tables\RASHAR5.2da" override
 
