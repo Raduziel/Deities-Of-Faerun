@@ -1295,7 +1295,7 @@ Disadvantages:
 – May not use the Charm Animal ability.~
 	@9999259 = ~STALKER: Stalkers serve as covert intelligence-gatherers, comfortable in both wilderness and urban settings. They are spies, informants, and interrogators, and their mastery of stealth makes them deadly opponents.
 
-Sphere Access: All, Moon, Travelers.	
+Sphere Access: All, Moon, Trickery.	
 	
 Advantages:
 – +20% to Move Silently and Hide In Shadows.
@@ -1303,7 +1303,7 @@ Advantages:
   Level 1-8: x2
   Level 9-16: x3
   Level 17+: x4
-– 12th level: May memorize 2 Mage spells: Protection From Normal Missiles and Minor Spell Deflection.
+– 12th level: May memorize three Mage spells: Haste, Protection From Normal Missiles and Minor Spell Deflection.
 
 Disadvantages:
 – May not wear armor heavier than studded leather.~
@@ -1393,8 +1393,8 @@ Disadvantages:
 – Cannot use shapeshift.~
 	@9999265 = ~SHAPESHIFTER: This Druid is not called Shapeshifter because <PRO_HESHE> has access to a great variety of forms, but rather because of <PRO_HISHER> complete dedication to a single alternate form. This Druid has willingly allowed <PRO_HIMHER>self to become infected with lycanthropy, but due to intense study and training <PRO_HESHE> has the ability to control <PRO_HISHER> affliction. The creature <PRO_HESHE> becomes is that of the werewolf, the most famous of the lycanthrope shape changers.
 
-Major: All, Animal, Plant, Moon, Air, Water, Earth.
-Minor: Healing, Fire, Divination.	
+Major: All, Animal, Travelers, Vermin, Moon, Earth, Fire.
+Minor: Healing, Plant, Air.
 	
 Advantages:
 – May shapeshift into the form of a werewolf once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
@@ -1424,7 +1424,7 @@ Disadvantages:
 – Incurs a -2 penalty to Strength and Constitution.~
 	@9999267 = ~STALKER: Stalkers serve as covert intelligence-gatherers, comfortable in both wilderness and urban settings. They are spies, informants, and interrogators, and their mastery of stealth makes them deadly opponents.
 
-Sphere Access: All, Moon, Travelers.	
+Sphere Access: All, Moon, Trickery.	
 	
 Advantages:
 – +20% to Move Silently and Hide In Shadows.
@@ -1441,7 +1441,7 @@ Advantages:
   Level 10-17: -1 to target's hit and damage rolls
   Level 18-25: -2 to target's hit and damage rolls
   Level 26-30: -3 to target's hit and damage rolls
-–12th level: May cast two arcane spells: Protection From Normal Missiles and Minor Spell Deflection.
+–12th level: May cast three arcane spells: Haste, Protection From Normal Missiles and Minor Spell Deflection.
 
 Disadvantages:
 – May not wear armor heavier than studded leather.~
