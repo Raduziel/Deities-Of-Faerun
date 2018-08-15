@@ -1698,6 +1698,8 @@ Paladin (access only to level 4 spells): All, Combat, Divination, Healing, Prote
 
   - Inquisidor: All, Combat, Protection, Creation, Vocal.
 
+  - Blackguard: All, Combat, Darkness, Necromantic, Suffering.
+
 Druid/Shaman Major: All, Animal, Plant, Vermin, Air, Water, Earth. | Minor: Healing, Fire, Sun.
 
   - Totemic Druid: Major: All, Animal, Plant, Moon, Air, Water, Earth. | Minor: Healing, Fire, Divination.
