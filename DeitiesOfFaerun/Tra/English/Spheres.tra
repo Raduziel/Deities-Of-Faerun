@@ -1123,5 +1123,156 @@ Upon casting a Conjure Air Elemental spell, the caster opens a special gate to t
 	@9999248 = ~Back~
 	@9999249 = ~Spell Selection~
 	@9999250 = ~Use this ability to select the Shaman's spells.~
+	@9999251 = ~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
+
+CLASS FEATURES:
+
+Major: All, Animal, Plant, Vermin, Air, Water, Earth.
+Minor: Healing, Fire, Sun.
+
+– May only wear non-metallic armor.
+– May only equip bucklers and non-metallic shields.
+– May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
+– May only become Proficient (one slot) in any weapon class.
+– May only become Proficient (one slot) in any fighting style.
+– 7th level: May Shapeshift into a wolf, black bear, or brown bear once per day.
+– 15th level: Becomes immune to poison.
+– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
+– Alignment restricted to true neutral.
+– Hit Die: d8
+
+Prime Requisites For Dual-Classing: Wisdom, Charisma~
+	@9999252 = ~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
+
+CLASS FEATURES:
+
+Major: All, Animal, Plant, Vermin, Air, Water, Earth.
+Minor: Healing, Fire, Sun.
+
+– May only wear non-metallic armor.
+– May only equip bucklers and non-metallic shields.
+– May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
+– May only become Proficient (one slot) in any weapon class.
+– May only become Proficient (one slot) in any fighting style.
+– 5th level: May shapeshift into a winter wolf once per day.
+– 7th level: May shapeshift into a boring beetle once per day.
+– 9th level: Becomes immune to poison. May shapeshift into a polar bear once per day.
+– 11th level: Gains the ability to transform into a fire elemental once per day.
+– 13th level: Gains the ability to transform into an earth elemental once per day.
+– 15th level: Gains the Timeless Body ability, becoming immune to fatigue. Gains the ability to transform into a water elemental once per day.
+– Alignment restricted to true neutral.
+– Hit Die: d8
+
+Prime Requisites For Dual-Classing: Wisdom, Charisma~
+	@9999253 = ~PALADIN: A Paladin is a warrior bold and pure, the exemplar of everything good and true. Like the Fighter, the Paladin is a person of action and combat. However, the Paladin lives for the ideals of righteousness, justice, honesty, piety, and chivalry and strives to be a living example of these virtues so that others may learn from <PRO_HIMHER> as well as gain by <PRO_HISHER> actions.
+
+CLASS FEATURES:
+
+Sphere Access: Combat, Divination, Healing, Protection.
+
+– May wear helmets.
+– May wear any armor and use any weapon.
+– May not exceed Specialization (two slots) in any weapon class.
+– May achieve Specialization (two slots) in any fighting style and allocate three slots in Two-Weapon Style.
+– May use Lay On Hands ability once per day to heal a target for 2 Hit Points per level of the Paladin.
+– May cast Detect Evil once per day per level (starts at 1st level with 4 uses).
+– May cast Protection From Evil once per day per level (starts at 1st level with one use).
+– May Turn Undead as a Cleric two levels lower, starting at level 3.
+– May cast divine spells starting at level 9 (up to the fourth circle).
+– Receives a +2 bonus to all Saving Throws.
+– Alignment restricted to lawful good.
+– Hit Die: d10~
+	@9999254 = ~PALADIN: A Paladin is a warrior bold and pure, the exemplar of everything good and true. Like the Fighter, the Paladin is a person of action and combat. However, the Paladin lives for the ideals of righteousness, justice, honesty, piety, and chivalry and strives to be a living example of these virtues so that others may learn from <PRO_HIMHER> as well as gain by <PRO_HISHER> actions.
+
+CLASS FEATURES:
+
+Sphere Access: Combat, Divination, Healing, Protection.
+
+– May wear helmets.
+– May wear any armor and use any weapon.
+– May not exceed Specialization (two slots) in any weapon class.
+– May achieve Specialization (two slots) in any fighting style and allocate three slots in Two-Weapon Style.
+– May use Lay On Hands ability once per day to heal a target for 2 Hit Points per level of the Paladin.
+– May use the Cure Disease ability once per day.
+– May use the Detect Evil ability at will (once per round).
+– May cast a special version of Protection From Evil once per day. This ability only affects the Paladin and lasts for 24 turns.
+– May use the Smite Evil ability once per day to deal 1d6 + 1d6 points of damage for every 3 levels of the paladin to a single, evil-aligned opponent.
+– May Turn Undead as a Cleric two levels lower, starting at level 3.
+– May cast divine spells starting at level 9 (up to the fourth circle).
+– 3rd level: Gains the Divine Courage ability becoming immune to fear.
+– Receives a +2 bonus to all Saving Throws.
+– Paladins are completely immune to all forms of disease, magical or mundane.
+– Alignment restricted to lawful good.
+– Hit Die: d10~
+	@9999255 = ~RANGER: The Ranger is a warrior and a woods<PRO_MANWOMAN> who is skilled with weapons and is knowledgeable in the ways of the forest. The Ranger often protects and guides lost travelers and honest peasant-folk. A Ranger needs to be strong and wise to the ways of nature to live a full life.
+
+CLASS FEATURES:
+
+Sphere Access: Animal, Plant.
+
+– May wear helmets.
+– May wear any armor and use any weapon.
+– May not exceed Specialization (two slots) in any weapon class.
+– May achieve Specialization (two slots) in any fighting style.
+– Begins Specialized (two slots) in Two-Weapon Style and may place a third slot into it. 
+– May select a racial enemy, which grants a +4 bonus to hit and damage rolls against the selected enemy race.
+– May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
+– May use the Hide In Shadows ability while wearing no armor, leather armor, or studded leather armor.
+– May cast divine spells starting at level 8 (up to the third circle).
+– Alignment restricted to good.
+– Hit Die: d10
+
+Prime Requisites For Dual-Classing: Strength, Dexterity, Wisdom~
+	@9999256 = ~RANGER: The Ranger is a warrior and a woods<PRO_MANWOMAN> who is skilled with weapons and is knowledgeable in the ways of the forest. The Ranger often protects and guides lost travelers and honest peasant-folk. A Ranger needs to be strong and wise to the ways of nature to live a full life.
+
+CLASS FEATURES:
+
+Sphere Access: Animal, Plant.
+
+– May wear helmets.
+– May wear any armor and use any weapon.
+– May not exceed Specialization (two slots) in any weapon class.
+– May achieve Specialization (two slots) in any fighting style.
+– Begins Specialized (two slots) in Two-Weapon Style and may place a third slot into it. 
+– May select a racial enemy, which grants a +4 bonus to damage rolls against the selected enemy race.
+– May use Tracking ability at will (once per round).
+
+TRACKING: The ranger can attempt to look for tracks and gain information on what type of creatures, if any, have passed through the area. Potential information that can be gained from tracking includes the number of creatures, the direction they were traveling in, and how long ago the tracks were made.
+
+– May use Charm Animal ability once per day every 2 levels (starts at 1st level with one use).
+– May Hide in Shadows while wearing no armor, leather armor, or studded leather armor.
+– May cast divine spells starting at level 8 (up to the third circle).
+– Alignment restricted to good.
+– Hit Die: d10
+
+Prime Requisites For Dual-Classing: Strength, Dexterity, Wisdom~
+	@9999257 = ~SHAMAN: Shamans forge a divine connection with the natural world, similar to the way Druids commune with nature, but Shamans are more spiritual than primal. They directly tap into the energies that flow through the earth and air, through plants and animals, and even through the dead, and shape these energies to obey their will. Nowhere is this more evident than in their ability to summon powerful spirits as guardians and defenders. A being of two worlds, Shamans value balance over dominance.
+
+CLASS FEATURES:
+
+Major: Animal, Plant, Vermin, Air, Water, Earth.
+Minor: Healing, Fire, Sun.
+
+– May only wear leather, studded leather, and hide armor.
+– May not equip shields larger than bucklers.
+– May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and shortbow.
+– May only become Proficient (one slot) in any weapon class.
+– May only become Proficient (one slot) in any fighting style.
+– Does not automatically learn all spells of a given level as Druids do. Instead, Shamans select new spells to learn at each level, which they can cast daily without memorization.
+– Gains immediate access to a number of Shaman-specific spells, which can be cast like any other: Spirit Ward, Writhing Fog, Spiritual Clarity, Spirit Fire, Recall Spirit, Spiritual Lock, and Ether Gate.
+– Gains use of the Detect Illusion skill with 20% points as a base and an 4 points per level, up to a maximum of 100% at level 20.
+– May use Shamanic Dance at will.
+
+SHAMANIC DANCE: Shamans can summon spirit allies by performing a ritualistic dance. While dancing, the Shaman takes a -4 penalty to Armor Class and cannot move, attack, cast spells, use items and special abilities, or perform any other activity. Each round while the Shaman dances, there is a 35% base chance plus 2% for each level of the Shaman that a spirit will answer the call, up to a maximum of 75% at level 20. Any summoned spirits will disappear if the Shaman moves, stops dancing, or if the spirits leave visual range. The spirits grow in power as the Shaman gains additional levels:
+  Level 1: Minor animal spirits (snake, fox, hound), up to 2 spirits at the same time.
+  Level 6: Major animal spirits (bear, panther, boar), up to 3 spirits at the same time.
+  Level 12: Minor nature spirits (lesser air spirit, lesser earth spirit, lesser fire spirit), up to 4 spirits at the same time.
+  Level 18: Major nature spirits (air spirit, earth spirit, fire spirit), up to 5 spirits at the same time.
+The type of the summoned spirit is randomly determined from all the spirits available at the Shaman's level. For example, a level 12 Shaman will summon either a minor nature spirit, a major animal spirit, or a minor animal spirit, but cannot choose which one appears. Spirits will do their best to protect the Shaman but are not controlled directly.
+
+– Does not gain bonus spells per day from high Wisdom.
+– Alignment restricted to neutral good, true neutral, and neutral evil.
+– Ineligible for any stronghold.
+– Hit Die: d8~
 	
 // EoF
