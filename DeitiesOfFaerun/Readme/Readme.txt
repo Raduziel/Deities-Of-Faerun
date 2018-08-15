@@ -431,7 +431,7 @@ Casting Time: 4
 Area of Effect: One creature
 Saving Throw: Neg.
 
-This spell evaporates moisture from the bodies of the target creature, inflicting 1d8 points of magic damage per level of the caster (maximum 10d8) on a failed Saving Throw vs. Death.
+This spell evaporates moisture from the bodies of the target creature, inflicting 1d8 points of magic damage per level of the caster on a failed Saving Throw vs. Death.
 
 ---
 
@@ -1696,7 +1696,7 @@ Paladin (access only to level 4 spells): Combat, Divination, Healing, Protection
 
   - Undead Hunter: Combat, Healing, Protection, Sun.
 
-Druid/Shaman Major: Animal, Plant, Vermin, Air, Water, Earth, Fire. | Minor: Healing, Sun.
+Druid/Shaman Major: Animal, Plant, Vermin, Air, Water, Earth. | Minor: Healing, Fire, Sun.
 
   - Totemic Druid: Major: Animal, Plant, Moon, Air, Water, Earth, Fire | Minor: Healing, Divination.
 
