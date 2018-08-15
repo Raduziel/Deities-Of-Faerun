@@ -1274,5 +1274,215 @@ The type of the summoned spirit is randomly determined from all the spirits avai
 – Alignment restricted to neutral good, true neutral, and neutral evil.
 – Ineligible for any stronghold.
 – Hit Die: d8~
+	@9999258 = ~ARCHER: The Archer is the epitome of skill with the bow—the ultimate marks<PRO_MANWOMAN>, able to make almost any shot, no matter how difficult. To become so skilled with the bow, the Archer has had to sacrifice some of <PRO_HISHER> proficiency with melee weapons and armor.
+
+Sphere Access: All, Combat, Air.	
+	
+Advantages:
+– +1 to hit and damage rolls with any missile weapon every 3 levels.
+– May achieve Grand Mastery (5 slots) in longbows, shortbows, and crossbows.
+– May use the Called Shot ability once per day. Gains one use at level 4 and an additional use every 4 levels thereafter.
+
+CALLED SHOT: All successful ranged attacks within the next 10 seconds have the following cumulative effects besides normal damage, according to the level of the Archer:
+ 4th level: -1 penalty to target's THAC0.
+ 8th level: -1 penalty to target's Saving Throws vs. Spell.
+ 12th level: -1 penalty to the target's Strength score.
+ 16th level: +2 bonus to damage roll.
+
+Disadvantages:
+– May only wear leather, studded leather, and hide armor.
+– May only become Proficient (one slot) with melee weapons.
+– May not use the Charm Animal ability.~
+	@9999259 = ~STALKER: Stalkers serve as covert intelligence-gatherers, comfortable in both wilderness and urban settings. They are spies, informants, and interrogators, and their mastery of stealth makes them deadly opponents.
+
+Sphere Access: All, Moon, Travelers.	
+	
+Advantages:
+– +20% to Move Silently and Hide In Shadows.
+– May use Backstab ability, although for a lower damage multiplier than Thieves:
+  Level 1-8: x2
+  Level 9-16: x3
+  Level 17+: x4
+– 12th level: May memorize 2 Mage spells: Protection From Normal Missiles and Minor Spell Deflection.
+
+Disadvantages:
+– May not wear armor heavier than studded leather.~
+	@9999260 = ~BEAST MASTER: This Ranger is a wanderer and is not comfortable in civilized lands. Therefore, <PRO_HESHE> maintains a natural affinity for animals; they are <PRO_HISHER> friends and comrades-in-arms, and the Beast Master has a limited form of telepathic communication with them.
+
+Sphere Access: All, Animal, Thought.	
+	
+Advantages:
+– +15% to Move Silently and Hide In Shadows.
+– May use Find Familiar ability to summon a pseudo dragon (if lawful or neutral good) or fairy dragon (if chaotic good) companion.
+– 8th level: May cast Animal Summoning I.
+– 10th level: May cast Animal Summoning II.
+– 12th level: May cast Animal Summoning III.
+
+Disadvantages:
+– May not use any metal weapons (for example: swords, halberds, war hammers, or morning stars).
+– May not wear armor heavier than studded leather.~
+	@9999261 = ~CAVALIER: This class represents the most common picture of the knight: the chivalrous warrior who epitomizes honor, courage, and loyalty. The cavalier is specialized in battling "classical" evil monsters such as demons and dragons.
+
+Sphere Access: All, Healing, Protection, Combat, Vocal.
+	
+Advantages:
+– +3 bonus to hit and damage rolls against all fiendish and draconic creatures.
+– May cast Remove Fear once per day per level.
+– Immune to charm, fear, poison, and morale failure.
+– 20% resistance to fire and acid.
+
+Disadvantages:
+– May not use missile weapons.~
+	@9999262 = ~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
+
+Sphere Access: All, Healing, Protection, Sun, Combat.	
+	
+Advantages:
+– +3 bonus to hit and damage rolls against undead creatures.
+– Immune to hold and level drain.
+
+Disadvantages:
+– May not use Lay On Hands ability.~
+	@9999263 = ~BLACKGUARD: The Blackguard epitomizes evil and is nothing short of a mortal fiend. The quintessential black knight, this villain carries a reputation of the foulest sort that is very well deserved. Consorting with demons and devils and serving dark deities, the Blackguard is hated and feared by all. Some people call these villains "anti-paladins" due to their completely evil nature.
+
+Sphere Access: All, Necromantic, Suffering, Darkness, Combat.		
+	
+Advantages:
+– Immune to level drain and fear.
+– May turn undead as a Paladin of the same level.
+– May use the Absorb Health ability once per day.
+
+ABSORB HEALTH:
+Deals 2 points of damage per level to an enemy, healing the Blackguard the same number of Hit Points.
+
+– May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
+
+POISON WEAPON:
+Each successful hit within the next 5 rounds will inject poison into the target. Each target can only be affected once per round. The amount of poison damage depends on the character's level:
+
+1st - Target suffers 1 poison damage per second for 6 seconds (Save vs. Death at +1 negates)
+5th - Target suffers 1 poison damage per second for 12 seconds (Save vs. Death negates), and also immediately suffers 2 poison damage (no save)
+9th - Target suffers 1 poison damage per second for 18 seconds (Save vs. Death at -1 negates), and also immediately suffers 4 poison damage (no save)
+13th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -2 negates), and also immediately suffers 6 poison damage (no save)
+
+– 3rd level: May use the Aura of Despair ability once per day.
+
+AURA OF DESPAIR:
+When this ability is activated, all enemies within 30 feet of the Blackguard suffer ill effects based on the Blackguard's level:
+  3rd - All enemies suffer a -1 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  6th - All enemies suffer a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  15th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 8 or fewer Hit Dice are panicked as well.
+  20th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 18 or fewer Hit Dice are panicked as well.
+
+Disadvantages:
+– Alignment restricted to evil.
+– May not cast Detect Evil.
+– May not cast Protection From Evil as an innate ability.
+– May not use the Lay on Hands ability.~
+	@9999264 = ~TOTEMIC DRUID: This Druid closely identifies with a particular animal, an animal that <PRO_HESHE> feels represents <PRO_HISHER> spirit. This grants <PRO_HIMHER> a special connection to the animal kingdom, and <PRO_HESHE> is able to call upon their spirits to aid <PRO_HIMHER>.
+
+Major: All, Animal, Plant, Moon, Air, Water, Earth.
+Minor: Healing, Fire, Divination.	
+	
+Advantages:
+– May use the Summon Spirit Animal ability once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+SUMMON SPIRIT ANIMAL: The Totemic Druid summons a special spirit animal (spirit bear, spirit wolf, spirit lion, or spirit snake) to aid <PRO_HIMHER> for 6 turns. The spirit animal has 1 HD at level 1, 3 HD at level 3, 5 HD at level 5, 7 HD at level 7, and 10 HD at level 10.
+
+Disadvantages:
+– Cannot use shapeshift.~
+	@9999265 = ~SHAPESHIFTER: This Druid is not called Shapeshifter because <PRO_HESHE> has access to a great variety of forms, but rather because of <PRO_HISHER> complete dedication to a single alternate form. This Druid has willingly allowed <PRO_HIMHER>self to become infected with lycanthropy, but due to intense study and training <PRO_HESHE> has the ability to control <PRO_HISHER> affliction. The creature <PRO_HESHE> becomes is that of the werewolf, the most famous of the lycanthrope shape changers.
+
+Major: All, Animal, Plant, Moon, Air, Water, Earth.
+Minor: Healing, Fire, Divination.	
+	
+Advantages:
+– May shapeshift into the form of a werewolf once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
+– 13th level: May shapeshift into a greater werewolf once per day.
+
+Disadvantages:
+– May not wear any armor.
+– No other shapeshifting abilities due to the effort required in maintaining balance in <PRO_HISHER> primary forms.~
+	@9999266 = ~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not—additional abilities that have been earned through extensive rituals, a process that is very physically draining.
+
+Major: All, Animal, Suffering, Combat, Water, Earth, Fire.
+Minor: Travelers, Plant, Healing.	
+	
+Advantages:
+– May Shapeshift into the form of a sword spider, baby wyvern, and fire salamander in addition to the normal shapeshifting abilities.
+– 19th level: Gains an additional use of Shapeshift.
+– Six arcane spells are added to <PRO_HISHER> repertoire, all the way up to the 6th level. These are listed below:
+  1st level: Chromatic Orb.
+  2nd level: Web.
+  3rd level: Lightning Bolt.
+  4th level: Improved Invisibility.
+  5th level: Chaos.
+  6th level: Chain Lightning.
+
+Disadvantages:
+– May not wear heavier armor than leather.
+– Incurs a -2 penalty to Strength and Constitution.~
+	@9999267 = ~STALKER: Stalkers serve as covert intelligence-gatherers, comfortable in both wilderness and urban settings. They are spies, informants, and interrogators, and their mastery of stealth makes them deadly opponents.
+
+Sphere Access: All, Moon, Travelers.	
+	
+Advantages:
+– +20% to Move Silently and Hide In Shadows.
+– May backstab, although for a lower damage multiplier than Thieves:
+  Level 1-8: x2
+  Level 9-16: x3
+  Level 17+: x4
+– If 3E Sneak Attack is enabled, may sneak attack instead of backstab for increased damage:
+  Level 1-7: +1d6
+  Level 8-15: +2d6
+  Level 16-23: +3d6
+  Level 24-30: +4d6
+– If 3E Sneak Attack is enabled, may deal crippling strikes upon successful sneak attacks. Crippling strikes last for 1 turn and have the following effects:
+  Level 10-17: -1 to target's hit and damage rolls
+  Level 18-25: -2 to target's hit and damage rolls
+  Level 26-30: -3 to target's hit and damage rolls
+–12th level: May cast two arcane spells: Protection From Normal Missiles and Minor Spell Deflection.
+
+Disadvantages:
+– May not wear armor heavier than studded leather.~
+	@9999268 = ~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
+
+Sphere Access: All, Healing, Protection, Sun, Combat.	
+	
+Advantages:
+– +3 bonus to hit and damage rolls against undead creatures.
+– Immune to hold and level drain.
+
+Disadvantages:
+– May not use Lay On Hands ability.
+– May not use Cure Disease ability.~
+	@9999269 = ~BLACKGUARD: The Blackguard epitomizes evil and is nothing short of a mortal fiend. The quintessential black knight, this villain carries a reputation of the foulest sort that is very well deserved. Consorting with demons and devils and serving dark deities, the Blackguard is hated and feared by all. Some people call these villains "anti-paladins" due to their completely evil nature.
+
+Sphere Access: All, Necromantic, Suffering, Darkness, Combat.	
+	
+Advantages:
+– Immune to level drain and fear.
+– May turn undead as a Paladin of the same level.
+– May use the Absorb Health ability once per day.
+
+ABSORB HEALTH: Deals 2 points of damage per level to an enemy, healing the Blackguard the same number of Hit Points. This ability has no effect on undead, constructs, or extraplanar creatures.
+
+– May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
+
+POISON WEAPON: Each successful hit within the next 5 rounds will inject poison into the target, dealing an extra 2 points of damage per second with no Saving Throw (up to a maximum of 12 points of damage per hit). Moreover, if the target fails a Saving Throw vs. Poison, he will suffer 1 additional point of damage per round for 4 rounds.
+
+– 3rd level: May use the Aura of Despair ability once per day, with effects that improve based on level:
+  3rd level: Enemies within 15 ft. receive a -1 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  6th level: Enemies within 15 ft. receive a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  15th level: Enemies within 15 ft. receive a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; causes fear in enemies of level 8 or below.
+  20th Level: Enemies within 15 ft. receive a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; causes fear in enemies level 18 or below.
+
+Disadvantages:
+– Alignment restricted to evil.
+– May not cast Detect Evil.
+– May not cast Protection From Evil as an innate ability.
+– May not use the Lay on Hands ability.
+– May not use the Cure Disease ability.
+– Does not gain immunity to disease.~
 	
 // EoF

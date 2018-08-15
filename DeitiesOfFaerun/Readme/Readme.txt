@@ -1704,7 +1704,7 @@ Druid/Shaman Major: All, Animal, Plant, Vermin, Air, Water, Earth. | Minor: Heal
 
   - Totemic Druid: Major: All, Animal, Plant, Moon, Air, Water, Earth. | Minor: Healing, Fire, Divination.
 
-  - Avenger: Major: All, Suffering, Combat, Vermin, Air, Earth, Fire | Minor: Animal, Plant, Water.
+  - Avenger: Major: All, Animal, Suffering, Combat, Water, Earth, Fire | Minor: Travelers, Plant, Healing.
 
   - Shapeshifter: Major: All, Animal, Travelers, Vermin, Moon, Earth, Fire | Minor: Healing, Air, Plant.
 
