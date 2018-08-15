@@ -1696,16 +1696,23 @@ Paladin (access only to level 4 spells): All, Combat, Divination, Healing, Prote
 
   - Undead Hunter: All, Combat, Healing, Protection, Sun.
 
+  - Inquisidor: All, Combat, Protection, Creation, Vocal.
+
 Druid/Shaman Major: All, Animal, Plant, Vermin, Air, Water, Earth. | Minor: Healing, Fire, Sun.
 
-  - Totemic Druid: Major: All, Animal, Plant, Moon, Air, Water, Earth, Fire | Minor: Healing, Divination.
+  - Totemic Druid: Major: All, Animal, Plant, Moon, Air, Water, Earth. | Minor: Healing, Fire, Divination.
 
-  - Avenger: Major: All, Suffering, Combat, Vermin, Air, Water, Earth, Fire | Minor: Animal, Plant.
+  - Avenger: Major: All, Suffering, Combat, Vermin, Air, Earth, Fire | Minor: Animal, Plant, Water.
 
-  - Shapeshifter: Major: All, Animal, Travelers, Vermin, Air, Moon, Earth, Fire | Minor: Healing, Plant.
+  - Shapeshifter: Major: All, Animal, Travelers, Vermin, Moon, Earth, Fire | Minor: Healing, Air, Plant.
 
-Ranger (Trueclass and kits - access only to level 3 spells): All, Animal, Plant.
+Ranger (access only to level 3 spells): All, Animal, Plant.
 
+  - Archer: All, Combat, Air.
+
+  - Stalker: All, Moon, Travelers.
+
+  - Beastmaster: All, Animal, Thought.
 ====================================================================================================================================================================
 
 g) Bestiary
