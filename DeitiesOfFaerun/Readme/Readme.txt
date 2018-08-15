@@ -1690,21 +1690,21 @@ f1) Sphere System
 
 f2) Divine Casters:
 
-Paladin (access only to level 4 spells): Combat, Divination, Healing, Protection.
+Paladin (access only to level 4 spells): All, Combat, Divination, Healing, Protection.
 
-  - Cavalier: Combat, Healing, Protection, Vocal.
+  - Cavalier: All, Combat, Healing, Protection, Vocal.
 
-  - Undead Hunter: Combat, Healing, Protection, Sun.
+  - Undead Hunter: All, Combat, Healing, Protection, Sun.
 
-Druid/Shaman Major: Animal, Plant, Vermin, Air, Water, Earth. | Minor: Healing, Fire, Sun.
+Druid/Shaman Major: All, Animal, Plant, Vermin, Air, Water, Earth. | Minor: Healing, Fire, Sun.
 
-  - Totemic Druid: Major: Animal, Plant, Moon, Air, Water, Earth, Fire | Minor: Healing, Divination.
+  - Totemic Druid: Major: All, Animal, Plant, Moon, Air, Water, Earth, Fire | Minor: Healing, Divination.
 
-  - Avenger: Major: Suffering, Combat, Vermin, Air, Water, Earth, Fire | Minor: Animal, Plant.
+  - Avenger: Major: All, Suffering, Combat, Vermin, Air, Water, Earth, Fire | Minor: Animal, Plant.
 
-  - Shapeshifter: Major: Animal, Travelers, Vermin, Air, Moon, Earth, Fire | Minor: Healing, Plant.
+  - Shapeshifter: Major: All, Animal, Travelers, Vermin, Air, Moon, Earth, Fire | Minor: Healing, Plant.
 
-Ranger (Trueclass and kits - access only to level 3 spells): Animal, Plant.
+Ranger (Trueclass and kits - access only to level 3 spells): All, Animal, Plant.
 
 ====================================================================================================================================================================
 
