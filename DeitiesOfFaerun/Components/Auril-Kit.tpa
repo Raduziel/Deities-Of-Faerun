@@ -146,7 +146,28 @@ END
 LAF cd_new_summon_table STR_VAR descript = "ICE_ELEMENTAL_RADUZIEL" 2da_file = RAELEMI RET RAELEMI = table END  
 COPY "DeitiesOfFaerun\Spl\RAAURI6.spl" override SAY NAME1 @1710 SAY UNIDENTIFIED_DESC @1711
 LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMI END
-LPM ~SPELL_TO_INNATE~
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 13; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 12; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 12) match_duration = 60 duration = (60 * i) END
+	END
 
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA
