@@ -172,15 +172,26 @@ COPY "DeitiesOfFaerun\Cre\LoviDevil\RAERINYE.itm" override
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIINFI.spl" override
 
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SPOOK~ 				RET	spell_1 = spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CHARM_PERSON~			RET	spell_2	= spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_INVISIBILITY~			RET	spell_3	= spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DETECT_INVISIBILITY~	RET	spell_4	= spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DIMENSION_DOOR~		RET	spell_5	= spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_GATE~					RET	spell_6	= spell_res	END
+
 COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.cre" override SAY NAME1 @2216 SAY NAME2 @2216
 LPF ADD_CRE_EFFECT INT_VAR opcode = 232 target = 1 parameter2 = 20 timing = 9 special = 102 STR_VAR resource = ~LOVIINFI~ END
-ADD_MEMORIZED_SPELL ~SPWI104~  #0 ~wizard~ (2)
-ADD_MEMORIZED_SPELL ~SPWI125~  #0 ~wizard~ (2)
-ADD_MEMORIZED_SPELL ~SPWI203~  #1 ~wizard~ (2)
-ADD_MEMORIZED_SPELL ~SPWI206~  #1 ~wizard~ (2)
-ADD_MEMORIZED_SPELL ~SPWI402~  #3 ~wizard~ (2)
-ADD_MEMORIZED_SPELL ~SPWI905~  #8 ~wizard~ (1)
-ADD_MEMORIZED_SPELL ~LOVIDEVI~ #0 ~innate~ (1)
+ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~wizard~ (2)
+ADD_MEMORIZED_SPELL ~%spell_2%~ #0 ~wizard~ (2)
+ADD_MEMORIZED_SPELL ~%spell_3%~ #1 ~wizard~ (2)
+ADD_MEMORIZED_SPELL ~%spell_4%~ #1 ~wizard~ (2)
+ADD_MEMORIZED_SPELL ~%spell_5%~ #3 ~wizard~ (2)
+ADD_MEMORIZED_SPELL ~%spell_6%~ #8 ~wizard~ (1)
+ADD_MEMORIZED_SPELL ~LOVIDEVI~  #0 ~innate~ (1)
+
+COPY "DeitiesOfFaerun\Cre\LoviDevil\RALOVI6C.bcs" override
+
+COPY "DeitiesOfFaerun\Cre\LoviDevil\RALOVI6S.bcs" override
 
 //Restriction
 
