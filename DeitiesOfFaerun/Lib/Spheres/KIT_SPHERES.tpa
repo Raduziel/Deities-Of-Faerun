@@ -398,9 +398,9 @@
 		~Earth~ => 0
 		~Fire~ => 0
 		~Divination~ => 0
-		~Travelers~ => 3
+		~Travelers~ => 0
 		~Weave~ => 0
-		~Trickery~ => 0
+		~Trickery~ => 3
 		~Time~ => 0
 		~Vocal~ => 0
 	END
