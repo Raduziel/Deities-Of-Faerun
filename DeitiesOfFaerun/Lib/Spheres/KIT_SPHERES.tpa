@@ -180,7 +180,7 @@
 		~Air~ => 7
 		~Water~ => 7
 		~Earth~ => 7
-		~Fire~ => 7
+		~Fire~ => 3
 		~Divination~ => 3
 		~Travelers~ => 0
 		~Weave~ => 0
@@ -190,11 +190,11 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~BEAST_FRIEND~)	BEGIN
-		~Healing~ => 0
+		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 7
-		~Animal~ => 3
-		~Vermin~ => 7
+		~Animal~ => 7
+		~Vermin~ => 0
 		~Plant~ => 3
 		~Protection~ => 0
 		~Sun~ => 0
@@ -204,12 +204,12 @@
 		~Combat~ => 7
 		~Creation~ => 0
 		~Summoning~ => 0
-		~Air~ => 7
+		~Air~ => 0
 		~Water~ => 7
 		~Earth~ => 7
 		~Fire~ => 7
 		~Divination~ => 0
-		~Travelers~ => 0
+		~Travelers~ => 3
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
@@ -231,7 +231,7 @@
 		~Combat~ => 0
 		~Creation~ => 0
 		~Summoning~ => 0
-		~Air~ => 7
+		~Air~ => 3
 		~Water~ => 0
 		~Earth~ => 7
 		~Fire~ => 7
@@ -271,7 +271,7 @@
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~INQUISITOR~)		BEGIN
-		~Healing~ => 4
+		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 0
 		~Animal~ => 0
@@ -283,18 +283,18 @@
 		~Darkness~ => 0
 		~Thought~ => 0
 		~Combat~ => 4
-		~Creation~ => 0
+		~Creation~ => 4
 		~Summoning~ => 0
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 0
 		~Fire~ => 0
-		~Divination~ => 4
+		~Divination~ => 0
 		~Travelers~ => 0
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
-		~Vocal~ => 0
+		~Vocal~ => 4
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UNDEAD_HUNTER~)	BEGIN
@@ -324,7 +324,7 @@
 		~Vocal~ => 0
 	END
 	
-		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~BLACKGUARD~)	BEGIN
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~BLACKGUARD~)	BEGIN
 		~Healing~ => 0
 		~Necromantic~ => 4
 		~Suffering~ => 4
@@ -355,18 +355,18 @@
 		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 0
-		~Animal~ => 3
+		~Animal~ => 0
 		~Vermin~ => 0
-		~Plant~ => 3
+		~Plant~ => 0
 		~Protection~ => 0
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 0
 		~Thought~ => 0
-		~Combat~ => 0
+		~Combat~ => 3
 		~Creation~ => 0
 		~Summoning~ => 0
-		~Air~ => 0
+		~Air~ => 3
 		~Water~ => 0
 		~Earth~ => 0
 		~Fire~ => 0
@@ -382,14 +382,41 @@
 		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 0
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 0
+		~Sun~ => 0
+		~Moon~ => 3
+		~Darkness~ => 0
+		~Thought~ => 0
+		~Combat~ => 0
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 0
+		~Fire~ => 0
+		~Divination~ => 0
+		~Travelers~ => 3
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 0
+	END
+	
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~BEASTMASTER~)	BEGIN
+		~Healing~ => 0
+		~Necromantic~ => 0
+		~Suffering~ => 0
 		~Animal~ => 3
 		~Vermin~ => 0
-		~Plant~ => 3
+		~Plant~ => 0
 		~Protection~ => 0
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 0
-		~Thought~ => 0
+		~Thought~ => 3
 		~Combat~ => 0
 		~Creation~ => 0
 		~Summoning~ => 0
@@ -405,32 +432,43 @@
 		~Vocal~ => 0
 	END
 	
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~BEASTMASTER~)	BEGIN
-		~Healing~ => 0
-		~Necromantic~ => 0
-		~Suffering~ => 0
-		~Animal~ => 3
-		~Vermin~ => 0
-		~Plant~ => 3
-		~Protection~ => 0
-		~Sun~ => 0
-		~Moon~ => 0
-		~Darkness~ => 0
-		~Thought~ => 0
-		~Combat~ => 0
-		~Creation~ => 0
-		~Summoning~ => 0
-		~Air~ => 0
-		~Water~ => 0
-		~Earth~ => 0
-		~Fire~ => 0
-		~Divination~ => 0
-		~Travelers~ => 0
-		~Weave~ => 0
-		~Trickery~ => 0
-		~Time~ => 0
-		~Vocal~ => 0
-	END
+//Display Spheres' list at the kits' description	
+	
+ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+  STRING_SET ~24298~  @9999258 //Archer
+  STRING_SET ~24299~  @9999259 //Stalker
+  STRING_SET ~24300~  @9999260 //Beast Master
+  STRING_SET ~24287~  @9999261 //Cavalier
+  STRING_SET ~24289~  @9999262 //Undead Hunter
+  STRING_SET ~28606~  @9999263 //Blackguard
+  STRING_SET ~24310~  @9999264 //Totemic Druid
+  STRING_SET ~24311~  @9999265 //Shapeshifter
+  STRING_SET ~24312~  @9999266 //Avenger
+END
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  STRING_SET ~25209~  @9999258 //Archer
+  STRING_SET ~25211~  @9999259 //Stalker
+  STRING_SET ~25212~  @9999260 //Beast Master
+  STRING_SET ~25206~  @9999261 //Cavalier
+  STRING_SET ~25208~  @9999262 //Undead Hunter
+  STRING_SET ~77514~  @9999263 //Blackguard
+  STRING_SET ~25224~  @9999264 //Totemic Druid
+  STRING_SET ~25225~  @9999265 //Shapeshifter
+  STRING_SET ~25227~  @9999266 //Avenger
+END
+
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+  STRING_SET ~37111~  @9999258 //Archer
+  STRING_SET ~37114~  @9999267 //Stalker
+  STRING_SET ~37117~  @9999260 //Beast Master
+  STRING_SET ~37133~  @9999261 //Cavalier
+  STRING_SET ~37141~  @9999268 //Undead Hunter
+  STRING_SET ~37145~  @9999269 //Blackguard
+  STRING_SET ~37180~  @9999264 //Totemic Druid
+  STRING_SET ~37183~  @9999265 //Shapeshifter
+  STRING_SET ~37186~  @9999266 //Avenger
+END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAAURI~) BEGIN
 		~Healing~ => 3
