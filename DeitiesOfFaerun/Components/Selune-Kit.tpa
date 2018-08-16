@@ -128,7 +128,18 @@ COPY "DeitiesOfFaerun\Spl\UB!SSta1.bam" override
 COPY "DeitiesOfFaerun\Spl\RASELU4.spl" override SAY NAME1 @2008 SAY UNIDENTIFIED_DESC @2009    //Shooting Star
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASELU4% END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RASelu.2da~ ~override/RASeluFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFSELU~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RASelu.2da~ ~override/RASeluCM.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAMSELU~
+SET_2DA_ENTRY 6  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

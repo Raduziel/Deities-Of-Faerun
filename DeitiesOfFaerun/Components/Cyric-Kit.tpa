@@ -211,6 +211,12 @@ LPM ~SPELL_TO_INNATE~
 
 END	
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RACyri.2da~ ~override/RACyriCT.2da~
+SET_2DA_ENTRY 4 25 50 ~AP_RATCYRI~
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

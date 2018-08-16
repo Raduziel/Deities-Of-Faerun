@@ -135,6 +135,16 @@ LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 EN
 
 END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAHoar.2da~ ~override/RAHoarFC.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RAFHOAR~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RAHoar.2da~ ~override/RAHoarCT.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RATHOAR~
+PRETTY_PRINT_2DA
+
 //BAM
 
 ACTION_FOR_EACH file IN ~HOARS~ ~HOARL~ BEGIN

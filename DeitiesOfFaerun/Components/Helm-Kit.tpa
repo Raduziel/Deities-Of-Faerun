@@ -145,6 +145,12 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAHelm.2da~ ~override/RAHelmFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFHELM~
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

@@ -14,7 +14,7 @@ ADD_KIT ~RABeshCM~
     ~RABeshCM 3 3 3 3 10 3~
 	~RABeshCM 0 0 0 0 0 0 0 0 1~
 	~RABeshCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RABeshCM.2da~
+	~override\RABeshCM.2da~
 	~K_CM_H   K_CM_HE   K_CM_HL   K_CM_G   K_CM_HO~
 	~0x00000000 14~
 	~CM0~

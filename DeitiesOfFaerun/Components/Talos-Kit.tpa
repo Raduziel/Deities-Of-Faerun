@@ -105,7 +105,18 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RATalo.2da~ ~override/RATaloFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFTALO~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RATalo.2da~ ~override/RATaloCM.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAMTALO~
+SET_2DA_ENTRY 6  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

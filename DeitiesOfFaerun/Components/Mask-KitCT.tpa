@@ -14,7 +14,7 @@ ADD_KIT ~RAMaskCT~
     ~RAMaskCT 14 3 3 3 12 3~
 	~RAMaskCT 0 0 0 0 0 1 0 0 0~
 	~RAMaskCT 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAMaskCT.2da~
+	~override\RAMaskCT.2da~
 	~K_CT_H   K_CT_HE   K_CT_E   K_CT_G   K_CT_HO   K_CT_HL   K_CT_D~
 	~0x00000000 15~
 	~CT0~

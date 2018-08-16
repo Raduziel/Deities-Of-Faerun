@@ -111,7 +111,14 @@ END
 COPY "DeitiesOfFaerun\Spl\RASAVR5.spl" override SAY NAME1 @2908 SAY UNIDENTIFIED_DESC @2909     //Consequence
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RASavr.2da~ ~override/RASavrCM.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAMSAVR~
+SET_2DA_ENTRY 7  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

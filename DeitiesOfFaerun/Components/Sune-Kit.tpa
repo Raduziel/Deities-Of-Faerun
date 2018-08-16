@@ -225,7 +225,17 @@ END
 COPY_EXISTING ~RASUNE4.2da~ ~override~
 PRETTY_PRINT_2DA
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RASune.2da~ ~override/RASuneFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFSUNE~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RASune.2da~ ~override/RASuneCT.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RATSUNE~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

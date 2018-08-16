@@ -14,7 +14,7 @@ ADD_KIT ~RAMystCM~
     ~RAMystCM 3 3 3 14 12 3~
 	~RAMystCM 0 1 0 1 0 0 0 1 0~
 	~RAMystCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAMystCM.2da~
+	~override\RAMystCM.2da~
 	~K_CM_H K_CM_HE K_CM_E K_CM_G~
 	~0x00000000 14~
 	~CM0~

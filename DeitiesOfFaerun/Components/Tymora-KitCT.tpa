@@ -14,7 +14,7 @@ ADD_KIT ~RATymoCT~
     ~RATymoCT 3 14 3 3 15 3~
 	~RATymoCT 0 0 0 0 0 0 1 0 0~
 	~RATymoCT 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RATymoCT.2da~
+	~override\RATymoCT.2da~
 	~K_CT_H   K_CT_HE   K_CT_HL~
 	~0x00000000 15~
 	~CT0~

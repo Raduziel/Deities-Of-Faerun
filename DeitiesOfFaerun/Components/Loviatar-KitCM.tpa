@@ -14,7 +14,7 @@ ADD_KIT ~RALoviCM~
     ~RALoviCM 3 3 15 3 15 3~
 	~RALoviCM 0 0 1 0 0 0 0 0 0~
 	~RALoviCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RALoviCM.2da~
+	~override\RALoviCM.2da~
 	~K_CM_H   K_CM_HE   K_CM_E   K_CM_G   K_CM_HL   K_CM_D   K_CM_HO~
 	~0x00000000 14~
 	~CM0~

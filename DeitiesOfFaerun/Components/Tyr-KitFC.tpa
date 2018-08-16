@@ -14,7 +14,7 @@ ADD_KIT ~RATyrFC~
     ~RATyrFC 9 3 3 3 9 3~
 	~RATyrFC 1 0 0 0 0 0 0 0 0~
 	~RATyrFC 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RATyrFC.2da~
+	~override\RATyrFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
 	~0x00000000 8~
 	~FC0~

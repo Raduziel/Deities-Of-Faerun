@@ -14,7 +14,7 @@ ADD_KIT ~RAJergCM~
     ~RAJergCM 3 3 3 11 9 3~
 	~RAJergCM 0 1 1 0 0 0 0 0 0~
 	~RAJergCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAJergCM.2da~
+	~override\RAJergCM.2da~
 	~K_CM_H~
 	~0x00000000 14~
 	~CM0~

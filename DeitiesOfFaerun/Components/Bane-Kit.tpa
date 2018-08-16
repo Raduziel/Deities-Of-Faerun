@@ -95,7 +95,13 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EV
 
 COPY "DeitiesOfFaerun\Spl\RABANE33.spl" override
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RABane.2da~ ~override/RABaneFC.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RAFBANE~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

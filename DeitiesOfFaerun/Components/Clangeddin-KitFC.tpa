@@ -14,7 +14,7 @@ ADD_KIT ~RAClanFC~
     ~RAClanFC 15 3 3 3 9 3~
 	~RAClanFC 1 1 0 0 0 0 0 0 0~
 	~RAClanFC 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAClanFC.2da~
+	~override\RAClanFC.2da~
 	~K_FC_D~
 	~0x00000000 8~
 	~FC0~

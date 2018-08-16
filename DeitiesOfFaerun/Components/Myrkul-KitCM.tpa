@@ -14,7 +14,7 @@ ADD_KIT ~RAMyrkCM~
     ~RAMyrkCM 14 3 3 14 14 3~
 	~RAMyrkCM 0 0 0 0 0 1 0 0 0~
 	~RAMyrkCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAMyrkCM.2da~
+	~override\RAMyrkCM.2da~
 	~K_CM_H~
 	~0x00000000 14~
 	~CM0~

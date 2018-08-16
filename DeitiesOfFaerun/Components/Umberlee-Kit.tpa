@@ -165,7 +165,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RAUmbe.2da~ ~override/RAUmbeCT.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RATUMBE~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

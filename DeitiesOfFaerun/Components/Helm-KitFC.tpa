@@ -14,7 +14,7 @@ ADD_KIT ~RAHelmFC~
     ~RAHelmFC 14 3 3 3 13 3~
 	~RAHelmFC 0 1 0 0 0 0 0 0 0~
 	~RAHelmFC 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAHelmFC.2da~
+	~override\RAHelmFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
 	~0x00000000 8~
 	~FC0~

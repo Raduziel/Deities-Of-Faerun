@@ -14,7 +14,7 @@ ADD_KIT ~RASavrCM~
     ~RASavrCM 3 3 3 11 14 3~
 	~RASavrCM 0 1 0 0 0 0 0 0 0~
 	~RASavrCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RASavrCM.2da~
+	~override\RASavrCM.2da~
 	~K_CM_H K_CM_HE K_CM_E~
 	~0x00000000 14~
 	~CM0~

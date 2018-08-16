@@ -122,7 +122,18 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RATlna.2da~ ~override/RATlnaCT.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RATTLNA~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RATlna.2da~ ~override/RATlnaCM.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAMTLNA~
+SET_2DA_ENTRY 7  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

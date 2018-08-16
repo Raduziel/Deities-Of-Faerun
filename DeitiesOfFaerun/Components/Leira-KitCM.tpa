@@ -14,7 +14,7 @@ ADD_KIT ~RALeirCM~
     ~RALeirCM 3 11 3 12 14 3~
 	~RALeirCM 0 0 0 0 0 0 0 1 1~
 	~RALeirCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RALeirCM.2da~
+	~override\RALeirCM.2da~
 	~K_CM_H  K_CM_HE  K_CM_G~
 	~0x00000000 14~
 	~CM0~

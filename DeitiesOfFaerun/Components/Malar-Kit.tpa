@@ -145,6 +145,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAMala.2da~ ~override/RAMalaRC.2da~
+SET_2DA_ENTRY 4 25 50 ~AP_RARMALA~
+SET_2DA_ENTRY 1  1 50 ~AP_RAMALAR~
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

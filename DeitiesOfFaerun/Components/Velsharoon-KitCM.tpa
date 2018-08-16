@@ -14,7 +14,7 @@ ADD_KIT ~RAVelsCM~
     ~RAVelsCM 3 3 3 11 16 3~
 	~RAVelsCM 0 0 1 0 0 1 0 0 1~
 	~RAVelsCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAVelsCM.2da~
+	~override\RAVelsCM.2da~
 	~K_CM_H~
 	~0x00000000 14~
 	~CM0~

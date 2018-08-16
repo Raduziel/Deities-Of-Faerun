@@ -14,7 +14,7 @@ ADD_KIT ~RALeirCT~
     ~RALeirCT 3 11 3 12 14 3~
 	~RALeirCT 0 0 0 0 0 0 0 1 1~
 	~RALeirCT 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RALeirCT.2da~
+	~override\RALeirCT.2da~
 	~K_CT_H  K_CT_HE  K_CT_G~
 	~0x00000000 15~
 	~CT0~

@@ -112,7 +112,13 @@ COPY "DeitiesOfFaerun\Spl\RATymo53.spl"  override
 
 COPY "DeitiesOfFaerun\Spl\RATYMO6.spl"  override SAY NAME1 @3412 SAY UNIDENTIFIED_DESC @3413	             //Tymora's Blessing
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RATymo.2da~ ~override/RATymoCT.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RATTYMO~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

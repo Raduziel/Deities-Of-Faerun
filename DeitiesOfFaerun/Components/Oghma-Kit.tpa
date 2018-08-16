@@ -88,6 +88,13 @@ LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = 
 
 END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAOghm.2da~ ~override/RAOghmCM.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAMOGHM~
+SET_2DA_ENTRY 6  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

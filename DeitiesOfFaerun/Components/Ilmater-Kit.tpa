@@ -111,6 +111,16 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EV
 		LPF	ALTER_EFFECT INT_VAR header = (i - 7) match_duration = 6 duration = ((6 * i)+6) END
 	END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAIlma.2da~ ~override/RAIlmaFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFILMA~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RAIlma.2da~ ~override/RAIlmaCM.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAMILMA~
+SET_2DA_ENTRY 6  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
 
 //Restriction
 

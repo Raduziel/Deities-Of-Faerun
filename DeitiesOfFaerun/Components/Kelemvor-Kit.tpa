@@ -144,6 +144,12 @@ COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2508 SAY 
 
 COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.itm" override                                   //Minor Death - weapon/immunities 
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAKele.2da~ ~override/RAKeleFC.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RAFKELE~
+PRETTY_PRINT_2DA
+
 //Restriction
 	
 COPY_EXISTING_REGEXP ~.*\.itm~ override

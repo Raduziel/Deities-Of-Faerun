@@ -87,7 +87,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RARedK.2da~ ~override/RARedKFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFREDK~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 PATCH_IF (SOURCE_SIZE > 0x71) BEGIN

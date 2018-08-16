@@ -135,7 +135,14 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RAVels.2da~ ~override/RAVelsCM.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RAMVELS~
+SET_2DA_ENTRY 8  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

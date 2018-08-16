@@ -299,6 +299,14 @@ END
 COPY_EXISTING ~smtables.2da~ ~override~
 PRETTY_PRINT_2DA
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAMask.2da~ ~override/RAMaskCT.2da~
+SET_2DA_ENTRY 9 25 50 ~AP_RATMASK~
+PRETTY_PRINT_2DA
+
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

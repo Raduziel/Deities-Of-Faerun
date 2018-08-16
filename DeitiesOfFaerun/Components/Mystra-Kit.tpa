@@ -112,6 +112,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAMyst.2da~ ~override/RAMystCM.2da~
+SET_2DA_ENTRY 3 25 50 ~AP_RAMMYST~
+SET_2DA_ENTRY 3  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

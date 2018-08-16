@@ -115,7 +115,18 @@ LPF CLONE_EFFECT INT_VAR match_opcode = 39 opcode = 142 parameter1 = 0 parameter
 
 COPY "DeitiesOfFaerun\Tables\RASHAR5.2da" override
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RAShar.2da~ ~override/RASharCT.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RATSHAR~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RAShar.2da~ ~override/RASharCM.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAMSHAR~
+SET_2DA_ENTRY 7  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

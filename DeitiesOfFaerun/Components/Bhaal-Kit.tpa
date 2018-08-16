@@ -106,6 +106,12 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RABhaa.2da~ ~override/RABhaaCT.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RATBHAA~
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

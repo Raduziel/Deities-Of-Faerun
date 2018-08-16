@@ -14,7 +14,7 @@ ADD_KIT ~RAAuriCM~
     ~RAAuriCM 3 3 13 3 12 3~
 	~RAAuriCM 0 0 0 0 0 1 0 0 0~
 	~RAAuriCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAAuriCM.2da~
+	~override\RAAuriCM.2da~
 	~K_CM_H K_CM_HO K_CM_HE K_CM_D~
 	~0x00000000 14~
 	~CM0~

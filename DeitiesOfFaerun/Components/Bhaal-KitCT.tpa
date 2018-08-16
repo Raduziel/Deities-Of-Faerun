@@ -14,7 +14,7 @@ ADD_KIT ~RABhaaCT~
     ~RABhaaCT 3 3 12 3 14 3~
 	~RABhaaCT 0 0 1 0 0 0 0 0 0~
 	~RABhaaCT 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RABhaaCT.2da~
+	~override\RABhaaCT.2da~
 	~K_CT_H K_CT_HE K_CT_D K_CT_HO K_CT_E K_CT_HL K_CT_G~
 	~0x00000000 15~
 	~CT0~

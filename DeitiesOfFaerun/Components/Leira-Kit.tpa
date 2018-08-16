@@ -118,8 +118,18 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Restriction
+//Multiclass CLAB
 
+COPY_EXISTING ~RALeir.2da~ ~override/RALeirCT.2da~
+SET_2DA_ENTRY 10 25 50 ~AP_RATLEIR~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RALeir.2da~ ~override/RALeirCM.2da~
+SET_2DA_ENTRY 10 25 50 ~AP_RAMLEIR~
+SET_2DA_ENTRY 10  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	SET match = 0

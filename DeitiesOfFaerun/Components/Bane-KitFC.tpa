@@ -14,7 +14,7 @@ ADD_KIT ~RABaneFC~
     ~RABaneFC 12 3 3 3 10 3~
 	~RABaneFC 0 0 1 0 0 0 0 0 0~
 	~RABaneFC 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RABaneFC.2da~
+	~override\RABaneFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
 	~0x00000000 8~
 	~FC0~

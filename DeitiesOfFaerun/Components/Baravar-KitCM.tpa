@@ -14,7 +14,7 @@ ADD_KIT ~RABaraCM~
     ~RABaraCM 3 15 3 15 9 3~
 	~RABaraCM 0 0 0 1 0 0 0 0 0~
 	~RABaraCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RABaraCM.2da~
+	~override\RABaraCM.2da~
 	~K_CM_G~
 	~0x00000000 14~
 	~CM0~

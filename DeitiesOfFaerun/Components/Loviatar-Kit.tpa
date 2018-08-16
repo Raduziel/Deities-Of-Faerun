@@ -193,6 +193,17 @@ COPY "DeitiesOfFaerun\Cre\LoviDevil\RALOVI6C.bcs" override
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\RALOVI6S.bcs" override
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RALovi.2da~ ~override/RALoviFC.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAFLOVI~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RALovi.2da~ ~override/RALoviCM.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAMLOVI~
+SET_2DA_ENTRY 7  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override

@@ -14,7 +14,7 @@ ADD_KIT ~RAAzutCM~
     ~RAAzutCM 3 3 3 13 14 3~
 	~RAAzutCM 0 1 0 0 0 0 0 0 0~
 	~RAAzutCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAAzutCM.2da~
+	~override\RAAzutCM.2da~
 	~K_CM_H K_CM_HE K_CM_E K_CM_G~
 	~0x00000000 14~
 	~CM0~

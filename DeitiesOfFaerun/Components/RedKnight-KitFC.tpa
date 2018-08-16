@@ -14,7 +14,7 @@ ADD_KIT ~RARedKFC~
     ~RARedKFC 3 3 3 13 13 10~
 	~RARedKFC 0 1 0 0 0 0 0 0 0~
 	~RARedKFC 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RARedKFC.2da~
+	~override\RARedKFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
 	~0x00000000 8~
 	~FC0~

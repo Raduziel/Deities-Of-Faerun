@@ -14,7 +14,7 @@ ADD_KIT ~RASeluCM~
     ~RASeluCM 3 3 12 3 14 3~
 	~RASeluCM 0 0 0 0 0 0 1 0 0~
 	~RASeluCM 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RASeluCM.2da~
+	~override\RASeluCM.2da~
 	~K_CM_H K_CM_HO K_CM_HE K_CM_D K_CM_HL K_CM_G K_CM_E~
 	~0x00000000 14~
 	~CM0~
