@@ -124,7 +124,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RATorm + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1502)
 		  END
 		END
 		DEFAULT

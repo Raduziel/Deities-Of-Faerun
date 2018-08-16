@@ -53,14 +53,14 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RARMALA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RARCMALA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RARCMALA.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RARCMALA.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMalaRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~MALAS~
 WRITE_ASCII 0x058 ~MALAL~
 
 //Malar Claw
 
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALARA.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
+COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALARA.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMalaRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 
 COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.spl" ~override/RAMALAR.spl~

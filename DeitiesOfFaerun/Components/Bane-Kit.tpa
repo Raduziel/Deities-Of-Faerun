@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSBANE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBANE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBANE.itm~ SAY NAME1 @2306 SAY NAME2 @2306 SAY DESC @2307
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBANE.itm~ SAY NAME1 @2304 SAY NAME2 @2304 SAY DESC @2305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABane + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~BANES~
 WRITE_ASCII 0x058 ~BANEL~
@@ -85,7 +85,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABANE3.spl" override SAY NAME1 @2304 SAY UNIDENTIFIED_DESC  @2305              //Mystic Lash
+COPY "DeitiesOfFaerun\Spl\RABANE3.spl" override SAY NAME1 @2306 SAY UNIDENTIFIED_DESC  @2307              //Mystic Lash
 
 COPY "DeitiesOfFaerun\Spl\RABANE31.spl" override													      //Stun Effect
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL "%RA_Stunned%" END 
@@ -108,7 +108,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABane~)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@2302)
 		END
 		END
 		DEFAULT

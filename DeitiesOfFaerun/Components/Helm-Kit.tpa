@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSHELM.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSHELM~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSHELM.itm~ SAY NAME1 @810 SAY NAME2 @810 SAY DESC @811
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSHELM.itm~ SAY NAME1 @804 SAY NAME2 @804 SAY DESC @805
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAHelm + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~HELMS~
 WRITE_ASCII 0x058 ~HELML~
@@ -54,9 +54,9 @@ WRITE_ASCII 0x058 ~HELML~
 
 COPY "DeitiesOfFaerun\Spl\RAHELMF.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RAHELM1.spl" override SAY NAME1 @804 SAY UNIDENTIFIED_DESC @805              //Mace of Odo
+COPY "DeitiesOfFaerun\Spl\RAHELM1.spl" override SAY NAME1 @806 SAY UNIDENTIFIED_DESC @807              //Mace of Odo
 
-COPY "DeitiesOfFaerun\Itm\MaceofOdo\RAHELM1.itm" override SAY NAME1 @804 SAY NAME2 @804                //Mace of Odo (Itm)
+COPY "DeitiesOfFaerun\Itm\MaceofOdo\RAHELM1.itm" override SAY NAME1 @806 SAY NAME2 @806                //Mace of Odo (Itm)
 
 COPY "DeitiesOfFaerun\Itm\MaceofOdo\RAHELM1.bam" override                                              //Mace of Odo (Bam)
     LPF UPDATE_PVRZ_INDICES
@@ -79,7 +79,7 @@ COPY "DeitiesOfFaerun\Spl\RAHELM2.BAM" override                                 
   
 ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAHELM2.PRO~                                                       //Wyvern Watch (Projectile)
 
-COPY "DeitiesOfFaerun\Spl\RAHELM2.spl" override SAY NAME1 @806 SAY UNIDENTIFIED_DESC @807              //Wyvern Watch
+COPY "DeitiesOfFaerun\Spl\RAHELM2.spl" override SAY NAME1 @808 SAY UNIDENTIFIED_DESC @809              //Wyvern Watch
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -105,7 +105,7 @@ COPY "DeitiesOfFaerun\Spl\RAHELM2.spl" override SAY NAME1 @806 SAY UNIDENTIFIED_
 	END
 
 
-COPY "DeitiesOfFaerun\Spl\RAHELM3.spl" override SAY NAME1 @808 SAY UNIDENTIFIED_DESC @809              //Seeking Sword
+COPY "DeitiesOfFaerun\Spl\RAHELM3.spl" override SAY NAME1 @810 SAY UNIDENTIFIED_DESC @811              //Seeking Sword
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -131,9 +131,9 @@ COPY "DeitiesOfFaerun\Spl\RAHELM3.spl" override SAY NAME1 @808 SAY UNIDENTIFIED_
 
 COPY "DeitiesOfFaerun\Spl\RAHELM3.eff" override                                                        //Seeking Sword (Eff)
 
-COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.itm" override SAY NAME1 @808 SAY NAME2 @808             //Seeking Sword (Itm)
+COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.itm" override SAY NAME1 @810 SAY NAME2 @810             //Seeking Sword (Itm)
 
-COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.cre" override SAY NAME1 @808 SAY NAME2 @808             //Seeking Sword (Cre)
+COPY "DeitiesOfFaerun\Cre\SeekingSword\RAHELM3.cre" override SAY NAME1 @810 SAY NAME2 @810             //Seeking Sword (Cre)
 
 //Glyph of Warding
 
@@ -159,7 +159,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RAHelm + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@802)
 		END
 	SET match = 1
 		END
@@ -172,7 +171,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"3A" "2A" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~) parameter2 = 9 special = RESOLVE_STR_REF (@802) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

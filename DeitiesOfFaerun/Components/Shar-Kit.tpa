@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSHAR.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSHAR~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSHAR.itm~ SAY NAME1 @414 SAY NAME2 @414 SAY DESC @415
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSHAR.itm~ SAY NAME1 @404 SAY NAME2 @404 SAY DESC @405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAShar + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SHARS~
 WRITE_ASCII 0x058 ~SHARL~
@@ -58,12 +58,16 @@ COPY "DeitiesOfFaerun\Spl\RASHARFE.eff" override
 
 COPY "DeitiesOfFaerun\Spl\RASHAREF.spl" override
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASHAR1.PRO~
+ACTION_IF !FILE_EXISTS_IN_GAME ~RAMask.2da~ BEGIN
+
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RADARK.PRO~
 
 COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
 
-COPY "DeitiesOfFaerun\Spl\RASHAR1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405 //Darkness
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASHAR1% END	
+END
+
+COPY "DeitiesOfFaerun\Spl\RASHAR1.spl" override  SAY NAME1 @406 SAY  UNIDENTIFIED_DESC @407 //Darkness
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RADARK% END	
 LPF ALTER_EFFECT   	   INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
 
 //Blindness
@@ -76,7 +80,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RASHAR3.spl" override  SAY NAME1 @406 SAY UNIDENTIFIED_DESC @407  //Nightmare
+COPY "DeitiesOfFaerun\Spl\RASHAR3.spl" override  SAY NAME1 @408 SAY UNIDENTIFIED_DESC @409  //Nightmare
 
 
 //Shadow Door
@@ -91,21 +95,21 @@ END
 
 COPY "DeitiesOfFaerun\Spl\RASHAR5.vvc" override
 
-COPY "DeitiesOfFaerun\Spl\RASHAR5.spl" override  SAY NAME1 @408 SAY UNIDENTIFIED_DESC @409  //Eyebite
+COPY "DeitiesOfFaerun\Spl\RASHAR5.spl" override  SAY NAME1 @410 SAY UNIDENTIFIED_DESC @411  //Eyebite
 
-COPY "DeitiesOfFaerun\Spl\RASHARE1.spl" override SAY NAME1 @410 SAY UNIDENTIFIED_DESC @410  //Charm Gaze
+COPY "DeitiesOfFaerun\Spl\RASHARE1.spl" override SAY NAME1 @412 SAY UNIDENTIFIED_DESC @412  //Charm Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Dominated%" END
 LPF CLONE_EFFECT INT_VAR match_opcode = 5  opcode = 142 parameter1 = 0 parameter2 = 43 END
 
-COPY "DeitiesOfFaerun\Spl\RASHARE2.spl" override SAY NAME1 @411 SAY UNIDENTIFIED_DESC @411  //Fear Gaze
+COPY "DeitiesOfFaerun\Spl\RASHARE2.spl" override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413  //Fear Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
 LPF CLONE_EFFECT INT_VAR match_opcode = 24 opcode = 142 parameter1 = 0 parameter2 = 36 END
 
-COPY "DeitiesOfFaerun\Spl\RASHARE3.spl" override SAY NAME1 @412 SAY UNIDENTIFIED_DESC @412  //Sicken Gaze
+COPY "DeitiesOfFaerun\Spl\RASHARE3.spl" override SAY NAME1 @414 SAY UNIDENTIFIED_DESC @414  //Sicken Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_FoulDisease%" END
 LPF CLONE_EFFECT INT_VAR match_opcode = 78 opcode = 142 parameter1 = 0 parameter2 = 7  END
 
-COPY "DeitiesOfFaerun\Spl\RASHARE4.spl" override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413  //Sleep Gaze
+COPY "DeitiesOfFaerun\Spl\RASHARE4.spl" override SAY NAME1 @415 SAY UNIDENTIFIED_DESC @415  //Sleep Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Sleep%" END
 LPF CLONE_EFFECT INT_VAR match_opcode = 39 opcode = 142 parameter1 = 0 parameter2 = 14 END
 
@@ -125,7 +129,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RAShar + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@402)
 		END
 	SET match = 1
 		END
@@ -138,7 +141,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"4A" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShar~) parameter2 = 9 special = RESOLVE_STR_REF (@402) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShar~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

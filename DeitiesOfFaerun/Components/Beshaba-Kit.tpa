@@ -45,14 +45,14 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSBESH.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBESH~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBESH.itm~ SAY NAME1 @3512 SAY NAME2 @3512 SAY DESC @3513
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBESH.itm~ SAY NAME1 @3504 SAY NAME2 @3504 SAY DESC @3505
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABesh + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~BESHS~
 WRITE_ASCII 0x058 ~BESHL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RABESH1.spl"  override SAY NAME1 @3504 SAY UNIDENTIFIED_DESC @3505	             //Bad Luck
+COPY "DeitiesOfFaerun\Spl\RABESH1.spl"  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bad Luck
 
 //Doom
 
@@ -68,7 +68,7 @@ LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = 
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABESH3.spl"  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bane of Beshaba
+COPY "DeitiesOfFaerun\Spl\RABESH3.spl"  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Bane of Beshaba
 
 //Lower Resistance
 
@@ -80,7 +80,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABESH5.spl"  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Misfortune
+COPY "DeitiesOfFaerun\Spl\RABESH5.spl"  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Misfortune
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -104,7 +104,7 @@ COPY "DeitiesOfFaerun\Spl\RABESH5.spl"  override SAY NAME1 @3508 SAY UNIDENTIFIE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 10) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RABESH6.spl"  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Beshaba's Mercy
+COPY "DeitiesOfFaerun\Spl\RABESH6.spl"  override SAY NAME1 @3512 SAY UNIDENTIFIED_DESC @3513	             //Beshaba's Mercy
 
 //Black Blade of Disaster
 
@@ -129,7 +129,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RABesh + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@3502)
 		  END
 		END
 		DEFAULT

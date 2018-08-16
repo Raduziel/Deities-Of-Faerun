@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSLATH.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSLATH~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLATH.itm~ SAY NAME1 @1010 SAY NAME2 @1010 SAY DESC @1011
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLATH.itm~ SAY NAME1 @1004 SAY NAME2 @1004 SAY DESC @1005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALath + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~LATHS~
 WRITE_ASCII 0x058 ~LATHL~
@@ -54,9 +54,9 @@ WRITE_ASCII 0x058 ~LATHL~
 
 COPY "DeitiesOfFaerun\Spl\RALATHF.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RALATH1.spl" override SAY NAME1 @1004 SAY UNIDENTIFIED_DESC  @1005   //Boon of Lathander
+COPY "DeitiesOfFaerun\Spl\RALATH1.spl" override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Boon of Lathander
 
-COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Faerie Fire
+COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Faerie Fire
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -80,7 +80,7 @@ COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1006 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 3) match_duration = 24 duration = (24 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RALATH3.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Sunrise
+COPY "DeitiesOfFaerun\Spl\RALATH3.spl" override SAY NAME1 @1010 SAY UNIDENTIFIED_DESC  @1011   //Sunrise
 
 //False Dawn
 
@@ -105,7 +105,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALath~)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1002)
 		  END
 		END
 		DEFAULT

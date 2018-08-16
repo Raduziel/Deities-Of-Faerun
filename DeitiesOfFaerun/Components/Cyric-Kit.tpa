@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSCYRI.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSCYRI~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSCYRI.itm~ SAY NAME1 @308 SAY NAME2 @308 SAY DESC @309
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSCYRI.itm~ SAY NAME1 @304 SAY NAME2 @304 SAY DESC @305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RACyri + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~CYRIS~
 WRITE_ASCII 0x058 ~CYRIL~
@@ -128,7 +128,7 @@ BEGIN
 	END
 END
 
-COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @304 SAY UNIDENTIFIED_DESC @305 //Dark Aura
+COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307 //Dark Aura
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -204,7 +204,7 @@ COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FEEBLEMIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN    //Instill Madness
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FEEBLEMIND~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RACYRI2.spl~ SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307 
+COPY_EXISTING	~%spell_res%.spl~	~override/RACYRI2.spl~ SAY NAME1 @308 SAY UNIDENTIFIED_DESC @309 
 LPF ALTER_SPELL_HEADER  INT_VAR range = 0 min_level = 15 STR_VAR icon = ~CYRIINMA~ END
 LPF CLONE_EFFECT    	INT_VAR match_opcode = 76 opcode = 139 duration = 0 parameter1 = RESOLVE_STR_REF (@310) END
 LPM ~SPELL_TO_INNATE~
@@ -224,7 +224,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RACyri + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@302)
 		  END
 		END
 		DEFAULT

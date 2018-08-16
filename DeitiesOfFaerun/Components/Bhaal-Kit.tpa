@@ -45,14 +45,14 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSBHAA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBHAA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBHAA.itm~ SAY NAME1 @2408 SAY NAME2 @2408 SAY DESC @2409
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBHAA.itm~ SAY NAME1 @2404 SAY NAME2 @2404 SAY DESC @2405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABhaa + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~BHAAS~
 WRITE_ASCII 0x058 ~BHAAL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RABHAA1.spl" override SAY NAME1 @2404 SAY UNIDENTIFIED_DESC  @2405                //Bone Dagger
+COPY "DeitiesOfFaerun\Spl\RABHAA1.spl" override SAY NAME1 @2406 SAY UNIDENTIFIED_DESC  @2407                //Bone Dagger
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -79,7 +79,7 @@ COPY "DeitiesOfFaerun\Spl\RABHAA1.spl" override SAY NAME1 @2404 SAY UNIDENTIFIED
 COPY "DeitiesOfFaerun\Spl\RABHAA11.spl" override
 
 
-COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.itm" override SAY NAME1 @2404 SAY NAME2 @2404 SAY DESC @2404
+COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.itm" override SAY NAME1 @2406 SAY NAME2 @2406 SAY DESC @2406
 
 COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.bam" override
 
@@ -94,7 +94,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABHAA3.spl" override SAY NAME1 @2406 SAY UNIDENTIFIED_DESC  @2407                //Plane Skipping
+COPY "DeitiesOfFaerun\Spl\RABHAA3.spl" override SAY NAME1 @2408 SAY UNIDENTIFIED_DESC @2409                //Plane Skipping
 
 //Aerial Servant
 
@@ -120,7 +120,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RABhaa + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@2402)
 		END
 	SET match = 1
 		END
@@ -133,7 +132,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABhaa~) parameter2 = 9 special = RESOLVE_STR_REF (@2402) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABhaa~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

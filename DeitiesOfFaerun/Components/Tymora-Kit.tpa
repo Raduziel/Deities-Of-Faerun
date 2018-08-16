@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSTYMO.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTYMO~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSTYMO.itm~ SAY NAME1 @3412 SAY NAME2 @3412 SAY DESC @3413
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSTYMO.itm~ SAY NAME1 @3404 SAY NAME2 @3404 SAY DESC @3405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATymo + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TYMOS~
 WRITE_ASCII 0x058 ~TYMOL~
@@ -66,7 +66,7 @@ LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = 
 
 END		  
 
-COPY "DeitiesOfFaerun\Spl\RATYMO2.spl"  override SAY NAME1 @3404 SAY UNIDENTIFIED_DESC @3405	             //Moment
+COPY "DeitiesOfFaerun\Spl\RATYMO2.spl"  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407	             //Moment
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -90,7 +90,7 @@ COPY "DeitiesOfFaerun\Spl\RATYMO2.spl"  override SAY NAME1 @3404 SAY UNIDENTIFIE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 3) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RATYMO3.spl"  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407	             //Favor of Tymora
+COPY "DeitiesOfFaerun\Spl\RATYMO3.spl"  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409	             //Favor of Tymora
 
 //Lower Resistance
 
@@ -102,7 +102,7 @@ LPM ~SPELL_TO_INNATE~
 
 END	
 
-COPY "DeitiesOfFaerun\Spl\RATYMO5.spl"  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409	             //Luckbolt
+COPY "DeitiesOfFaerun\Spl\RATYMO5.spl"  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Luckbolt
 
 COPY "DeitiesOfFaerun\Spl\RATymo51.spl"  override
 
@@ -110,7 +110,7 @@ COPY "DeitiesOfFaerun\Spl\RATymo52.spl"  override
 
 COPY "DeitiesOfFaerun\Spl\RATymo53.spl"  override
 
-COPY "DeitiesOfFaerun\Spl\RATYMO6.spl"  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Tymora's Blessing
+COPY "DeitiesOfFaerun\Spl\RATYMO6.spl"  override SAY NAME1 @3412 SAY UNIDENTIFIED_DESC @3413	             //Tymora's Blessing
 
 //Restrictions
 
@@ -125,7 +125,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RATymo + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@3402)
 		  END
 		END
 		DEFAULT

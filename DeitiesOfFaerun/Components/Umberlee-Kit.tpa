@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSUMBE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSUMBE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSUMBE.itm~ SAY NAME1 @1908 SAY NAME2 @1908 SAY DESC @1909
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSUMBE.itm~ SAY NAME1 @1904 SAY NAME2 @1904 SAY DESC @1905
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUmbe + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~UMBES~
 WRITE_ASCII 0x058 ~UMBEL~
@@ -102,7 +102,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun\Spl\RAUMBE2.SPL~ override SAY NAME1 @1904 SAY UNIDENTIFIED_DESC @1905  //Dehydrate
+COPY ~DeitiesOfFaerun\Spl\RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907  //Dehydrate
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -126,7 +126,7 @@ COPY ~DeitiesOfFaerun\Spl\RAUMBE2.SPL~ override SAY NAME1 @1904 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 6) match_dicenumber = 1 dicenumber = i END
 	END
 
-COPY ~DeitiesOfFaerun\Spl\RAUMBE3.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907		  
+COPY ~DeitiesOfFaerun\Spl\RAUMBE3.SPL~ override SAY NAME1 @1908 SAY UNIDENTIFIED_DESC @1909	  //Drown
 
 //Conjure Water Elemental
 
@@ -179,7 +179,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RAUmbe + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1902)
 		END
 	SET match = 1
 		END
@@ -192,7 +191,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"4A" "3A" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbe~) parameter2 = 9 special = RESOLVE_STR_REF (@1902) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbe~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

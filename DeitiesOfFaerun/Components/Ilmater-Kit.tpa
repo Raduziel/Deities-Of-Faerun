@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSILMA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSILMA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSILMA.itm~ SAY NAME1 @1308 SAY NAME2 @1308 SAY DESC @1309
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSILMA.itm~ SAY NAME1 @1304 SAY NAME2 @1304 SAY DESC @1305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAIlma + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~ILMAS~
 WRITE_ASCII 0x058 ~ILMAL~
@@ -83,9 +83,9 @@ END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAILMA3.spl" override SAY NAME1 @1304 SAY UNIDENTIFIED_DESC @1305   //Martyrdom of Ilmater
+COPY "DeitiesOfFaerun\Spl\RAILMA3.spl" override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307   //Martyrdom of Ilmater
 
-COPY "DeitiesOfFaerun\Spl\RAILMA4.spl" override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307   //Endurance of Ilmater
+COPY "DeitiesOfFaerun\Spl\RAILMA4.spl" override SAY NAME1 @1308 SAY UNIDENTIFIED_DESC @1309   //Endurance of Ilmater
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
 	READ_LONG	0x64	ab_off
@@ -126,7 +126,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RAIlma + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1302)
 		END
 	SET match = 1
 		END
@@ -139,7 +138,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"4A" "3A" "2A" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 special = RESOLVE_STR_REF (@1302) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSELU.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSELU~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSELU.itm~ SAY NAME1 @2008 SAY NAME2 @2008 SAY DESC @2009
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSELU.itm~ SAY NAME1 @2004 SAY NAME2 @2004 SAY DESC @2005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASelu + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SELUS~
 WRITE_ASCII 0x058 ~SELUL~
@@ -55,7 +55,7 @@ WRITE_ASCII 0x058 ~SELUL~
 COPY ~DeitiesOfFaerun\Spl\RASELUF.spl~ override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Blinded%" END
 
-COPY ~DeitiesOfFaerun\Spl\RASELU1.spl~ override SAY NAME1 @2004 SAY UNIDENTIFIED_DESC @2005             //Moonbeam
+COPY ~DeitiesOfFaerun\Spl\RASELU1.spl~ override SAY NAME1 @2006 SAY UNIDENTIFIED_DESC @2007             //Moonbeam
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
@@ -125,7 +125,7 @@ ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RASELU4.PRO~
 
 COPY "DeitiesOfFaerun\Spl\UB!SSta1.bam" override
 
-COPY "DeitiesOfFaerun\Spl\RASELU4.spl" override SAY NAME1 @2006 SAY UNIDENTIFIED_DESC @2007    //Shooting Star
+COPY "DeitiesOfFaerun\Spl\RASELU4.spl" override SAY NAME1 @2008 SAY UNIDENTIFIED_DESC @2009    //Shooting Star
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASELU4% END
 
 //Restrictions
@@ -141,7 +141,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RASelu + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@2002)
 		  END
 		END
 		DEFAULT

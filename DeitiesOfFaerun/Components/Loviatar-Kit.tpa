@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSLOVI.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSLOVI~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLOVI.itm~ SAY NAME1 @2219 SAY NAME2 @2219 SAY DESC @2220
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLOVI.itm~ SAY NAME1 @2204 SAY NAME2 @2204 SAY DESC @2205
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALovi + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~LOVIS~
 WRITE_ASCII 0x058 ~LOVIL~
@@ -54,10 +54,10 @@ WRITE_ASCII 0x058 ~LOVIL~
 
 COPY "DeitiesOfFaerun\Lib\Spheres\Import\Common\RAPAINIC.BAM" override	
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END		  
-COPY "DeitiesOfFaerun\Spl\RALovi1.spl" override SAY NAME1 @2204 SAY UNIDENTIFIED_DESC @2205
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2215) STR_VAR bam_file = RAPAINIC RET iconpain = icon END		  
+COPY "DeitiesOfFaerun\Spl\RALovi1.spl" override SAY NAME1 @2206 SAY UNIDENTIFIED_DESC @2207
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2214) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2215) END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -81,18 +81,18 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RALovi2.spl" override SAY NAME1 @2206 SAY UNIDENTIFIED_DESC @2207
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2215) END
+COPY "DeitiesOfFaerun\Spl\RALovi2.spl" override SAY NAME1 @2208 SAY UNIDENTIFIED_DESC @2209
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2210) END
 
 COPY "DeitiesOfFaerun\Spl\RALovi2.bam" override		  
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2215) STR_VAR bam_file = RALOVI2 RET iconburn = icon END		  
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2210) STR_VAR bam_file = RALOVI2 RET iconburn = icon END		  
 COPY "DeitiesOfFaerun\Spl\RALovi21.spl" override
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconburn END
 
-COPY "DeitiesOfFaerun\Spl\RALovi3.spl" override SAY NAME1 @2208 SAY UNIDENTIFIED_DESC @2209
+COPY "DeitiesOfFaerun\Spl\RALovi3.spl" override SAY NAME1 @2212 SAY UNIDENTIFIED_DESC @2212
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2214) END	
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2215) END	
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -116,8 +116,8 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 5) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RALovi4.spl" override SAY NAME1 @2210 SAY UNIDENTIFIED_DESC @2211
-LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2214) END
+COPY "DeitiesOfFaerun\Spl\RALovi4.spl" override SAY NAME1 @2213 SAY UNIDENTIFIED_DESC @2214
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@2215) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconpain END
 
 COPY "DeitiesOfFaerun\Spl\RALovi41.spl" override
@@ -143,7 +143,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/ICEGLYP.PRO~
 COPY_EXISTING	~ICEGLYP.PRO~	~override~
 WRITE_SHORT 0x0214 ICGHIT
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2214) STR_VAR bam_file = RAPAINIC RET iconpain = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2215) STR_VAR bam_file = RAPAINIC RET iconpain = icon END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714.spl~ 1 7 CLERIC_SYMBOL_OF_PAIN
 SAY NAME1 @999991 SAY NAME2 @999991 SAY UNIDENTIFIED_DESC @999992 SAY DESC @999992
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
@@ -151,7 +151,7 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %ICEGLYP% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2214) END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2215) END
 LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 169 parameter2 = iconpain END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override\%spell_res%B.BAM~
@@ -162,11 +162,11 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RALovi6.spl" override SAY NAME1 @2212 SAY UNIDENTIFIED_DESC @2213             //Ensnarement
+COPY "DeitiesOfFaerun\Spl\RALovi6.spl" override SAY NAME1 @2216 SAY UNIDENTIFIED_DESC @2217             //Ensnarement
 
 COPY "DeitiesOfFaerun\Spl\RALovi6.eff" override
 
-COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.spl" override SAY NAME1 @2217 SAY UNIDENTIFIED_DESC @2218
+COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.spl" override SAY NAME1 @2219 SAY UNIDENTIFIED_DESC @2220
 
 COPY "DeitiesOfFaerun\Cre\LoviDevil\RAERINYE.itm" override
 
@@ -179,7 +179,7 @@ LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DETECT_INVISIBILITY~	RET	
 LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DIMENSION_DOOR~		RET	spell_5	= spell_res	END
 LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_GATE~					RET	spell_6	= spell_res	END
 
-COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.cre" override SAY NAME1 @2216 SAY NAME2 @2216
+COPY "DeitiesOfFaerun\Cre\LoviDevil\LOVIDEVI.cre" override SAY NAME1 @2218 SAY NAME2 @2218
 LPF ADD_CRE_EFFECT INT_VAR opcode = 232 target = 1 parameter2 = 20 timing = 9 special = 102 STR_VAR resource = ~LOVIINFI~ END
 ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~wizard~ (2)
 ADD_MEMORIZED_SPELL ~%spell_2%~ #0 ~wizard~ (2)
@@ -206,7 +206,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RALovi + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@2202)
 		  END
 		END
 		DEFAULT

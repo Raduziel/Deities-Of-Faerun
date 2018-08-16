@@ -150,7 +150,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyr~)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1102)
 		  END
 		END
 		DEFAULT

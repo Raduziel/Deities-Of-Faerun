@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSKELE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSKELE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSKELE.itm~ SAY NAME1 @2608 SAY NAME2 @2608 SAY DESC @2609
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSKELE.itm~ SAY NAME1 @2604 SAY NAME2 @2604 SAY DESC @2605
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAKele + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~KELES~
 WRITE_ASCII 0x058 ~KELEL~
@@ -112,7 +112,7 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
 		  
-COPY "DeitiesOfFaerun\Spl\RAKELE3.spl" override  SAY NAME1 @2604 SAY  UNIDENTIFIED_DESC @2605 //Summon Minor Death
+COPY "DeitiesOfFaerun\Spl\RAKELE3.spl" override  SAY NAME1 @2506 SAY  UNIDENTIFIED_DESC @2608 //Summon Minor Death
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -138,7 +138,7 @@ COPY "DeitiesOfFaerun\Spl\RAKELE3.spl" override  SAY NAME1 @2604 SAY  UNIDENTIFI
 
 COPY "DeitiesOfFaerun\Spl\RAKELE3.eff" override
 
-COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2504 SAY NAME2 @2504   //Minor Death - creature
+COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2508 SAY NAME2 @2508   //Minor Death - creature
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL "%RA_Poison%"   END
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL "%RA_Poisoned%" END
 
@@ -158,7 +158,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RAKele + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@2602)
 		END
 	SET match = 1
 		END
@@ -171,7 +170,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~) parameter2 = 9 special = RESOLVE_STR_REF (@2602) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

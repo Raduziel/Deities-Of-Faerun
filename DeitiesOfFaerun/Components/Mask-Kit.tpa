@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMASK.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMASK~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMASK.itm~ SAY NAME1 @1606 SAY NAME2 @1606 SAY DESC @1607
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMASK.itm~ SAY NAME1 @1604 SAY NAME2 @1604 SAY DESC @1605
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMask + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~MASKS~
 WRITE_ASCII 0x058 ~MASKL~
@@ -54,17 +54,21 @@ WRITE_ASCII 0x058 ~MASKL~
 
 //Darkness
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAMASK1.PRO~
+ACTION_IF !FILE_EXISTS_IN_GAME ~RAShar.2da~ BEGIN
+
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RADARK.PRO~
 
 COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
+
+END
 		  
-COPY "DeitiesOfFaerun\Spl\RAMASK1.spl" override  SAY NAME1 @404 SAY  UNIDENTIFIED_DESC @405     
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAMASK1% END
+COPY "DeitiesOfFaerun\Spl\RAMASK1.spl" override  SAY NAME1 @406 SAY  UNIDENTIFIED_DESC @407     
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RADARK% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
 
 //Shadowcloak
 
-COPY "DeitiesOfFaerun\Spl\RAMASK2.spl" override  SAY NAME1 @1604 SAY  UNIDENTIFIED_DESC @1605   
+COPY "DeitiesOfFaerun\Spl\RAMASK2.spl" override  SAY NAME1 @1606 SAY  UNIDENTIFIED_DESC @1607   
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -309,7 +313,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RAMask + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@1602)
 		END
 	SET match = 1
 		END
@@ -322,7 +325,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"4A" "3A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMask~) parameter2 = 9 special = RESOLVE_STR_REF (@1602) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMask~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

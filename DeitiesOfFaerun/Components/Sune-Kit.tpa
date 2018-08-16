@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSUNE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSUNE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSUNE.itm~ SAY NAME1 @108 SAY NAME2 @108 SAY DESC @109
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSUNE.itm~ SAY NAME1 @104 SAY NAME2 @104 SAY DESC @105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASune + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SUNES~
 WRITE_ASCII 0x058 ~SUNEL~
@@ -54,7 +54,7 @@ WRITE_ASCII 0x058 ~SUNEL~
 
 COPY "DeitiesOfFaerun\Spl\RASUNEF.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RASUNE1.spl"  override SAY NAME1 @104 SAY UNIDENTIFIED_DESC @105                  //Rapture
+COPY "DeitiesOfFaerun\Spl\RASUNE1.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                  //Rapture
 
 COPY "DeitiesOfFaerun\Spl\RASUNEA.spl"  override                                                            //Effect upon allies
 LPF ALTER_EFFECT INT_VAR match_parameter2 = 999 match_opcode = 240 parameter2 = EVAL "%RA_DeafIc%" END
@@ -110,7 +110,7 @@ LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = 
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RASUNE4.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                   //Emotion
+COPY "DeitiesOfFaerun\Spl\RASUNE4.spl"  override SAY NAME1 @108 SAY UNIDENTIFIED_DESC @109                   //Emotion
 
 COPY "DeitiesOfFaerun\Tables\RASUNE4.2da" override                                                           //Emotion 2da
 
@@ -238,7 +238,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RASune + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@102)
 		  END
 		END
 		DEFAULT

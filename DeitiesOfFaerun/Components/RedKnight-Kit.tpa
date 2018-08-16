@@ -45,7 +45,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSREDK.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSREDK~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSREDK.itm~ SAY NAME1 @2909 SAY NAME2 @2909 SAY DESC @2910
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSREDK.itm~ SAY NAME1 @2904 SAY NAME2 @2904 SAY DESC @2905
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RARedK + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~REDKS~
 WRITE_ASCII 0x058 ~REDKL~
@@ -53,9 +53,13 @@ WRITE_ASCII 0x058 ~REDKL~
 //Spells
 
 COPY "DeitiesOfFaerun\Spl\RARedKF.spl" override
- 
+
+ACTION_IF !FILE_EXISTS_IN_GAME ~RASavr.2da~ BEGIN
+
 COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2908) STR_VAR bam_file = RAFOREIC RET iconforr = icon END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2910) STR_VAR bam_file = RAFOREIC RET iconfore = icon END
+
+END
 
 //Clairvoyance
 
@@ -67,11 +71,11 @@ LPM ~SPELL_TO_INNATE~
 
 END                                                  	  
 		  
-COPY "DeitiesOfFaerun\Spl\RAREDK2.spl" override SAY NAME1 @2904 SAY UNIDENTIFIED_DESC @2905              //Divination
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconforr END
+COPY "DeitiesOfFaerun\Spl\RAREDK2.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907              //Divination
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
-COPY "DeitiesOfFaerun\Spl\RAREDK3.spl" override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907              //Consequence
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconforr END
+COPY "DeitiesOfFaerun\Spl\RAREDK3.spl" override SAY NAME1 @2908 SAY UNIDENTIFIED_DESC @2909              //Consequence
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
 //Mass Invisibility
 
@@ -93,7 +97,7 @@ PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"3A" "2A" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RARedK~) parameter2 = 9 special = RESOLVE_STR_REF (@2902) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RARedK~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

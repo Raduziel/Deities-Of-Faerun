@@ -118,7 +118,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RABara + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@602)
 		END
 	SET match = 1
 		END
@@ -131,7 +130,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
 				"4A" "3A" BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 END
 				END
 				DEFAULT
 			END

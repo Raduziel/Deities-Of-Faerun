@@ -46,7 +46,7 @@ COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSGARA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSGARA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSGARA.itm~ SAY NAME1 @3008 SAY NAME2 @3008 SAY DESC @3009
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSGARA.itm~ SAY NAME1 @3004 SAY NAME2 @3004 SAY DESC @3005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAGara + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~GARAS~
 WRITE_ASCII 0x058 ~GARAL~
@@ -74,7 +74,7 @@ LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = 
 
 END                                                           
 
-COPY "DeitiesOfFaerun\Spl\RAGARA2.spl" override SAY NAME1 @3004 SAY UNIDENTIFIED_DESC @3005    				 //Chaotic Combat
+COPY "DeitiesOfFaerun\Spl\RAGARA2.spl" override SAY NAME1 @3006 SAY UNIDENTIFIED_DESC @3007    				 //Chaotic Combat
 
 COPY "DeitiesOfFaerun\Spl\RAGARA22.spl" override
 
@@ -82,7 +82,7 @@ COPY "DeitiesOfFaerun\Spl\RAGARA2A.spl" override
 
 COPY "DeitiesOfFaerun\Spl\RAGARA2B.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RAGARA3.spl" override SAY NAME1 @3006 SAY UNIDENTIFIED_DESC @3007                  //Blood Armor
+COPY "DeitiesOfFaerun\Spl\RAGARA3.spl" override SAY NAME1 @3008 SAY UNIDENTIFIED_DESC @3009                  //Blood Armor
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
