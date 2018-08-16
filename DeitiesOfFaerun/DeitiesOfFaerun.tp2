@@ -114,7 +114,7 @@ BEGIN @9999909
 		OUTER_SET	tra_level_7 = 9999238	OUTER_SET	tra_back = 9999248
 		OUTER_SET	tra_learn	= 9999239	OUTER_SET   tra_shaman_spl_name = 9999249
 		OUTER_SET	tra_quit    = 9999240	OUTER_SET   tra_shaman_spl_desc = 9999250
-		OUTER_SET	sphere_shm_align = 1
+		OUTER_SET	sphere_shm_align = 0
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Shaman/SplShmkn.tpa~
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/NPC-Spellbook.tpa~
 	  
