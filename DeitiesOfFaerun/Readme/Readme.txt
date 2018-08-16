@@ -1727,29 +1727,31 @@ g1) Elementals
 
 24HD: 192 HP | AC 2 | Thac0 0 | Attacks per Round 1 | Paralyze/Poison/Death 3; Rod/Staff/Wand 5; Petrify/Polymorph 4; Breath Weapons 4; Spells 6
 
-g1.1) Ice Elemental
+g1.1) Ice Paraelemental
 
-Damage: 3d8 (crushing) + 1d6 (cold) - strikes as +4
+Damage:  3d8 (crushing) + 1d4 (cold) - strikes as +4
 
-Resistances (%): -100 Fire; 100 Cold; 50 Slashing; -50 Crushing; 50 Piercing; 50 Missile
+Resistances (%): -100 Fire; 100 Cold. Can only be hurt by weapons +1 or better.
 
 g1.2) Air Elemental
 
-Damage: 1d8 (crushing) - strikes as +4
+Damage: 2d10 (crushing) - strikes as +4
 
-Resistances (%): 50 Cold; 50 Electricity; 50 Missile
+Resistances (%): 50 Cold; 50 Electricity; 50 Missile. Can only be hurt by weapons +2 or better.
 
 g1.3) Water Elemental
 
-Damage: 2d8 (crushing) - strikes as +4
+Damage: 5d6 (crushing) - strikes as +4
 
-Resistances (%): 50 Cold; -100 Electricity; 50 Acid
+Resistances (%): 50 Cold; -100 Electricity; 50 Acid. Can only be hurt by weapons +2 or better.
 
 g1.4) Earth Elemental
 
 Damage: 4d8 (crushing) - strikes as +4
 
-Resistances (%): 100 Electricity
+Resistances (%): 100 Electricity. Can only be hurt by weapons +2 or better.
+
+
 
 ---
 

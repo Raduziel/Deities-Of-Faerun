@@ -1020,7 +1020,7 @@ Advantages:
 - May use the Frost Sword special ability once per day, starting at level 5.
 - May cast Ice Storm once per day as a special ability, starting at level 8.
 - May cast Cone of Cold once per day as a special ability, starting at level 10.
-- May use the Conjure Ice Elemental special ability once per day, starting at level 12.
+- May use the Conjure Ice Paraelemental special ability once per day, starting at level 12.
 
 FROST DAGGER
 
@@ -1034,9 +1034,9 @@ FROST SWORD
 
 The Icevassal creates a sharp blade made of pure ice.
 
-CONJURE ICE ELEMENTAL
+CONJURE ICE PARAELEMENTAL
 
-This spell conjures an Ice Elemental for 1 turn/level.~
+This spell conjures an Ice Paraelemental for 1 turn/level.~
 @1704 = ~Holy Symbol of Auril~
 @1705 = ~Only the most worthy and devoted servants of the Frostmaiden are granted these powerful holy symbols.
 	
@@ -1089,8 +1089,8 @@ Area of Effect: One magical sword
 Saving Throw: None
 
 This spell creates a swirling sword-shaped formation of jagged, fast-swirling ice shards extending from the caster's hand. Weightless and nonmetallic, it is considered a +2 enchanted weapon for purposes of determining what it can hit and strikes at THACO 6, regardless of the caster's normal combat abilities. Its touch lacerates for 3d4 points of damage and chills for an additional 1d6 points of cold damage.~
-@1713 = ~Conjure Ice Elemental~
-@1714 = ~Conjure Ice Elemental
+@1713 = ~Conjure Ice Paraelemental~
+@1714 = ~Conjure Ice Paraelemental
 (Conjuration/Summoning)
 
 Level: 6
@@ -1102,7 +1102,7 @@ Area of Effect: Special
 Saving Throw: None
 
 Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and an ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.~
-@1715 = ~Ice Elemental~
+@1715 = ~Ice Paraelemental~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
