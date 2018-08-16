@@ -108,12 +108,12 @@
 				TEXT_SPRINT	resource EVAL $resource(~%i%~ ~%j%~)					
 				TEXT_SPRINT	trigger	~!HaveKnownSpellRES("%resource%")%WNL%~				
 				PATCH_IF (EVAL $alignment(~%i%~ ~%j%~) > 0)	AND sphere_shm_align = 1	BEGIN
-					PATCH_IF (EVAL $lawful(~%i%~ ~%j%~) = 0)	BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,16)%WNL%~	END
-					PATCH_IF (EVAL $lcnt(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,32)%WNL%~	END
-					PATCH_IF (EVAL $chaos(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,48)%WNL%~	END
-					PATCH_IF (EVAL $good(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,1)%WNL%~	END
-					PATCH_IF (EVAL $gent(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,2)%WNL%~	END	
-					PATCH_IF (EVAL $evil(~%i%~ ~%j%~) = 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,3)%WNL%~	END
+					PATCH_IF (EVAL $lawful(~%i%~ ~%j%~) != 0)	BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,16)%WNL%~	END
+					PATCH_IF (EVAL $lcnt(~%i%~ ~%j%~) != 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,32)%WNL%~	END
+					PATCH_IF (EVAL $chaos(~%i%~ ~%j%~) != 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,48)%WNL%~	END
+					PATCH_IF (EVAL $good(~%i%~ ~%j%~) != 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,1)%WNL%~	END
+					PATCH_IF (EVAL $gent(~%i%~ ~%j%~) != 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,2)%WNL%~	END	
+					PATCH_IF (EVAL $evil(~%i%~ ~%j%~) != 0)		BEGIN	TEXT_SPRINT	trigger	~%trigger%!Alignment(Myself,3)%WNL%~	END
 				END
 				TEXT_SPRINT	action	~AddSpecialAbility("%resource%")%WNL%IncrementGlobal("%MOD_PREFIX%SHMKN%i%","LOCALS",1)%WNL%~
 				READ_LONG	0x24	rst_num	READ_LONG	0x2c	act_num
