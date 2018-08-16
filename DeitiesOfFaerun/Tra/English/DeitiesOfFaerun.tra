@@ -29,8 +29,20 @@ Advantages:
 RAPTURE
 
 The Heartwarder either charms an ally, curing it of fear, disease and charm effects or awes an enemy, stunning it.~
-@104 = ~Rapture~
-@105 = ~Rapture
+@104 = ~Holy Symbol of Sune~
+@105 = ~Only the most worthy and devoted servants of the Lady Firehair are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@106 = ~Rapture~
+@107 = ~Rapture
 (Enchantment/Charm)
 
 Level: 3
@@ -42,8 +54,8 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell has two effects: when cast upon an ally it will put it on a state of bliss, raising its morale and banishing all effects of disease, fear, sleep and charm. When cast upon an enemy the target must make a Saving Throw vs. Paralyzation or become stunned during the effect of the spell.~
-@106 = ~Emotion~
-@107 = ~Emotion
+@108 = ~Emotion~
+@109 = ~Emotion
 (Enchantment/Charm)
 
 Level: 4
@@ -63,18 +75,6 @@ COURAGE: This spell creates the emotion of courage within the area of effect. Al
 FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
 
 HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
-@108 = ~Holy Symbol of Sune~
-@109 = ~Only the most worthy and devoted servants of the Lady Firehair are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -154,8 +154,20 @@ As the wizard spell Feeblemind, except that it has a touch range.
 DARK AURA:
 
 The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.~
-@304 = ~Dark Aura~
-@305 = ~Dark Aura
+@304 = ~Holy Symbol of Cyric~
+@305 = ~Only the most worthy and devoted servants of the Dark Sun are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@306 = ~Dark Aura~
+@307 = ~Dark Aura
 (Alteration, Invocation/Evocation)
 
 Level: 4
@@ -167,8 +179,8 @@ Area of Effect: A sphere of 15-ft. radius
 Saving Throw: None
 
 This spell creates a spherical miasma of gloom and menace centered on the caster. When this spell is cast, all evil aligned beings attack at a +1 bonus to their attack and damage rolls, all good-aligned creatures strike at a -1 penalty to their attack and damage rolls, and the caster is personally empowered to strike at a +3 bonus to <PRO_HISHER> attack and damage rolls. Neutral-aligned beings (with respect to good and evil) are unaffected by this spell. Once cast, the spell moves with the caster and does not need to be concentrated on to be maintained.~
-@306 = ~Instill Madness~
-@307 = ~Instill Madness
+@308 = ~Instill Madness~
+@309 = ~Instill Madness
 (Enchantment/Charm)
 
 Level: 7
@@ -180,18 +192,6 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.~
-@308 = ~Holy Symbol of Cyric~
-@309 = ~Only the most worthy and devoted servants of the Dark Sun are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 @310 = ~Insane~
 
 //__________________________________________________________________________________
@@ -232,8 +232,20 @@ The Nightcloak gazes a target and delivers one of the following effects: Charm, 
 NIGHTMARE
 
 Target is put to sleep and suffers 1d10 points of magic damage unless a Saving Throw vs. Spells is successfully made.~
-@404 = ~Darkness~
-@405 = ~Darkness
+@404 = ~Holy Symbol of Shar~
+@405 = ~Only the most worthy and devoted servants of the Mistress of the Night are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@406 = ~Darkness~
+@407 = ~Darkness
 (Alteration)
 
 Level: 2
@@ -245,8 +257,8 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 This spell causes total, impenetrable darkness in the area of effect. Infravision is useless. Neither normal nor magical light works. Every creature, foe or friend, will be blinded during the effect of this spell, unless it leaves the affected area.~
-@406 = ~Nightmare~
-@407 = ~Nightmare
+@408 = ~Nightmare~
+@409 = ~Nightmare
 (Invocation, Illusion/Phantasm)
 
 Level: 5
@@ -258,8 +270,8 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber and send a hideous and unsettling vision to the recipient, causing 1d10 points of magic damage. A Saving Throw vs. Spells is allowed to avoid all the effects.~
-@408 = ~Eyebite~
-@409 = ~Eyebite
+@410 = ~Eyebite~
+@411 = ~Eyebite
 (Enchantment/Charm, Illusion/Phantasm)
 
 Level: 6
@@ -279,22 +291,10 @@ FEAR: The Nightcloak can cause fear. The subject flees in blind terror for the d
 SICKEN: This power enables the caster to cause sudden pain and fever to sweep over the subject's body. The target will suffer a -4 penalty to Strength, Dexterity, Constitution, Armor Class, Thac0, damage and a 50% penalty to its Movement Rate.
 
 SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.~
-@410 = ~Charm Gaze~
-@411 = ~Fear Gaze~
-@412 = ~Sicken Gaze~
-@413 = ~Sleep Gaze~
-@414 = ~Holy Symbol of Shar~
-@415 = ~Only the most worthy and devoted servants of the Mistress of the Night are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
+@412 = ~Charm Gaze~
+@413 = ~Fear Gaze~
+@414 = ~Sicken Gaze~
+@415 = ~Sleep Gaze~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -412,8 +412,20 @@ Advantages:
 CHANGESTAFF
 
 The Fastpaw turns an ordinary piece of wood into a Treant that will fight by <PRO_HISHER> side until slew or the spell expires.~
-@704 = ~Changestaff~
-@705 = ~Changestaff
+@704 = ~Holy Symbol of Baervan Wildwanderer~
+@705 = ~Only the most worthy and devoted servants of the Masked Leaf are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@706 = ~Changestaff~
+@707 = ~Changestaff
 (Alteration)
 
 Level: 7
@@ -427,19 +439,7 @@ Saving Throw: None
 By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for 10 turns or until the staff is destroyed, whichever occurs first.
 
 If the staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.~
-@706 = ~Summoned Treant~
-@707 = ~Holy Symbol of Baervan Wildwanderer~
-@708 = ~Only the most worthy and devoted servants of the Masked Leaf are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
+@708 = ~Summoned Treant~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -481,8 +481,20 @@ This spell protects an area from enemies. Anyone not invited by the Watcher must
 SEEKING SWORD
 
 The Watcher creates a magical sword that acts accordingly to the Helmite orders.~
-@804 = ~Mace of Odo~
-@805 = ~Mace of Odo
+@804 = ~Holy Symbol of Helm~
+@805 = ~Only the most worthy and devoted servants of the Vigilant One are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@806 = ~Mace of Odo~
+@807 = ~Mace of Odo
 (Invocation/Evocation)
 
 Level: 3
@@ -498,8 +510,8 @@ This spell enables a Watcher to create a magical mace in <PRO_HISHER> hand. The 
 A Mace of Odo strikes as a +5 weapon and does 3d6+5 points of damage. Creatures of 2 HD or less must make a successful Saving Throw vs. Paralyzation when struck by the mace or be paralyzed for 3 turns.
 
 The mace vanishes after one strike or after 4 rounds.~
-@806 = ~Wyvern Watch~
-@807 = ~Wyvern Watch
+@808 = ~Wyvern Watch~
+@809 = ~Wyvern Watch
 (Abjuration, Evocation)
 
 Level: 2
@@ -511,8 +523,8 @@ Area of Effect: 30-ft. radius
 Saving Throw: Neg.
 
 This spell is known as wyvern watch because of the insubstantial haze brought forth by its casting, which vaguely resembles a wyvern. It is typically used to guard some area against intrusion. Any creature that approaches the guarded area may be affected by the "wyvern" and must roll a successful Saving Throw vs. Spells or stand paralyzed for one round per level of the caster, until freed by the Watcher, by a dispel magic spell, or by a remove paralysis spell. A successful saving throw indicates that the subject creature was missed by the attack of the wyvern-form, and the intruder was not affected.~
-@808 = ~Seeking Sword~
-@809 = ~Seeking Sword
+@810 = ~Seeking Sword~
+@811 = ~Seeking Sword
 (Evocation)
 
 Sphere: Creation 
@@ -525,18 +537,6 @@ Saving Throw: None
 This spell brings into being a shimmering blade of force that appears as a sword of any description the caster desires, typically a broad sword. The sword forms in midair and is animated by the will of the caster (who need never touch it), flashing about as it attacks. The blade can strike four times per round, doing 2d4 points of damage with each successful hit, but cannot act beyond the caster's line of sight.
 
 Although it has no attack or damage bonuses, a Seeking Sword is considered a +4 magical weapon for determining what sorts of beings it can strike and can only be harmed by fire, electricity, magic, acid or crushing damage. Other spell casting is impossible for the duration of the spell.~
-@810 = ~Holy Symbol of Helm~
-@811 = ~Only the most worthy and devoted servants of the Vigilant One are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -615,8 +615,20 @@ The Dawnbringer makes <PRO_HISHER> enemy glow, giving it a -2 penalty to Armor C
 SUNRISE
 
 The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.~
-@1004 = ~Boon of Lathander~
-@1005 = ~Boon of Lathander
+@1004 = ~Holy Symbol of Lathander~
+@1005 = ~Only the most worthy and devoted servants of the Morninglord are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@1006 = ~Boon of Lathander~
+@1007 = ~Boon of Lathander
 (Conjuration/Summoning)
 
 Level: 4
@@ -628,8 +640,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 During this spell's effect, the recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in Faerie Fire.~
-@1006 = ~Faerie Fire~
-@1007 = ~Faerie Fire
+@1008 = ~Faerie Fire~
+@1009 = ~Faerie Fire
 (Alteration)
 
 Level: 2
@@ -641,8 +653,8 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 This spell enables the caster to outline one or more objects or creatures with a pale glowing light. Outlined creatures are easier to strike; thus, opponents gain a +2 bonus to attack rolls. Note that outlining can render otherwise invisible creatures visible.~
-@1008 = ~Sunrise~
-@1009 = ~Sunrise
+@1010 = ~Sunrise~
+@1011 = ~Sunrise
 (Evocation, Alteration)
 
 Level: 3
@@ -654,18 +666,6 @@ Area of Effect: The caster
 Saving Throw: Special
 
 With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around <PRO_HIMHER>self. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.~
-@1010 = ~Holy Symbol of Lathander~
-@1011 = ~Only the most worthy and devoted servants of the Morninglord are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -734,8 +734,20 @@ Advantages:
 LEGEND LORE:
 
 The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip cursed items, neutralize poisons and cure diseases.~
-@1204 = ~Legend Lore~
-@1205 = ~Legend Lore
+@1204 = ~Holy Symbol of Oghma~
+@1205 = ~Only the most worthy and devoted servants of the Wise God are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@1206 = ~Legend Lore~
+@1207 = ~Legend Lore
 (Divination)
 
 Level: 5
@@ -747,18 +759,6 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 With this spell, the Lorekeeper can extend someone's knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.~
-@1206 = ~Holy Symbol of Oghma~
-@1207 = ~Only the most worthy and devoted servants of the Wise God are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -797,8 +797,20 @@ While this spell is in effect, the Painbearer is immune to physical damage, but 
 ENDURANCE OF ILMATER
 
 This special ability doubles the target's Hit Points, grants it immunity to disease and a +2 bonus to every Saving Throw. All the effects last for 3 turns.~
-@1304 = ~Martyrdom of Ilmater~
-@1305 = ~Martyrdom of Ilmater
+@1304 = ~Holy Symbol of Ilmater~
+@1305 = ~Only the most worthy and devoted servants of the One Who Endures are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@1306 = ~Martyrdom of Ilmater~
+@1307 = ~Martyrdom of Ilmater
 (Abjuration, Alteration)
 
 Level: 6
@@ -810,8 +822,8 @@ Area of Effect: The caster
 Saving Throw: None 
 
 By means of this spell the Painbearer call a beneficial servant of Ilmater to possess <PRO_HIMHER>. During this possession the priest can resist any sort of physical attacks, but can't move, cast spells or fight back.~
-@1306 = ~Endurance of Ilmater~
-@1307 = ~Endurance of Ilmater
+@1308 = ~Endurance of Ilmater~
+@1309 = ~Endurance of Ilmater
 (Abjuration, Alteration, Necromancy)
 
 Level: 5
@@ -823,18 +835,6 @@ Area of Effect: 1 creature
 Saving Throw: None 
 
 This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is only then taken from the real hit points of the affected being. The spell also protects the vitality of the spell recipient so that all checks of any sort against contracting diseases automatically succeed, and all other Saving Throws receive a +2 bonus.~
-@1308 = ~Holy Symbol of Ilmater~
-@1309 = ~Only the most worthy and devoted servants of the One Who Endures are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -964,8 +964,20 @@ Advantages:
 SHADOWCLOAK
 
 The Silentwalker surrounds itself with dense shadows, completely silencing <PRO_HISHER> sounds and being protected against physical attacks.~
-@1604 = ~Shadowcloak~
-@1605 = ~Shadowcloak
+@1604 = ~Holy Symbol of Mask~
+@1605 = ~Only the most worthy and devoted servants of the Shadowlord are granted these powerful holy symbols.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@1606 = ~Shadowcloak~
+@1607 = ~Shadowcloak
 (Alteration)
 
 Level: 2
@@ -981,18 +993,6 @@ This spell creates a semisolid fog of amorphous shape that engulfs the caster an
 A shadowcloak both confuses attackers with its swirling, smoky chaos, and slows strikes, so that all attacks against the shadowcloak-user occur at a -3 attack penalty and a damage penalty of-1 point per die. The shadowcloak also muffles all sounds made by the cloaked being (regardless of that being's desires), so that even shouted speech seems faint and distant, and all sounds short of breakage or metallic ringing or clinking are very likely to be completely blanked out.
 
 The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently and a 50% bonus do Hide in Shadows.~
-@1606 = ~Holy Symbol of Mask~
-@1607 = ~Only the most worthy and devoted servants of the Shadowlord are granted these powerful holy symbols.
-
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1036,10 +1036,21 @@ The Icevassal creates a sharp blade made of pure ice.
 
 CONJURE ICE ELEMENTAL
 
-This spell conjures an Ice Elemental for 1 turn/level.
-~
-@1704 = ~Frost Dagger~
-@1705 = ~Frost Dagger
+This spell conjures an Ice Elemental for 1 turn/level.~
+@1704 = ~Holy Symbol of Auril~
+@1705 = ~Only the most worthy and devoted servants of the Frostmaiden are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@1706 = ~Frost Dagger~
+@1707 = ~Frost Dagger
 (Invocation/Evocation)
 
 Level: 1
@@ -1051,8 +1062,9 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell creates a dagger that flies to a target determined by the caster. This weapon hits for 1d4+5 points of cold damage and the target must make a Saving Throw vs. Death or be frozen for 1 round.~
-@1706 = ~Frost Whip~
-@1707 = ~Frost Whip
+@1708 = ~Frozen~
+@1709 = ~Frost Whip~
+@1710 = ~Frost Whip
 (Invocation/Evocation)
 
 Level: 2
@@ -1064,8 +1076,8 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell creates a whip made of pure ice that is used immediately against a target designed by the caster for 4d4 points of cold damage. The whip makes the area around the target slippery - a Saving Throw vs. Wands must be made, otherwise the target will slip three feet away from the caster.~
-@1708 = ~Frost Sword~
-@1709 = ~Frost Sword
+@1711 = ~Frost Sword~
+@1712 = ~Frost Sword
 (Alteration, Evocation)
 
 Level: 4
@@ -1077,8 +1089,8 @@ Area of Effect: One magical sword
 Saving Throw: None
 
 This spell creates a swirling sword-shaped formation of jagged, fast-swirling ice shards extending from the caster's hand. Weightless and nonmetallic, it is considered a +2 enchanted weapon for purposes of determining what it can hit and strikes at THACO 6, regardless of the caster's normal combat abilities. Its touch lacerates for 3d4 points of damage and chills for an additional 1d6 points of cold damage.~
-@1710 = ~Conjure Ice Elemental~
-@1711 = ~Conjure Ice Elemental
+@1713 = ~Conjure Ice Elemental~
+@1714 = ~Conjure Ice Elemental
 (Conjuration/Summoning)
 
 Level: 6
@@ -1090,20 +1102,7 @@ Area of Effect: Special
 Saving Throw: None
 
 Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and an ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.~
-@1712 = ~Ice Elemental~
-@1713 = ~Frozen~
-@1714 = ~Holy Symbol of Auril~
-@1715 = ~Only the most worthy and devoted servants of the Frostmaiden are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
+@1715 = ~Ice Elemental~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1138,8 +1137,20 @@ Advantages:
 CLAW OF MALAR
 
 This weapon is a magical claw that the Talon can use on <PRO_HISHER> bare hands or over a glove.~
-@1804 = ~Claw of Malar~
-@1805 = ~This claw is given by the Church of Malar to its elected Talons. It consists of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like lion's claws. Despite being uncomfortable, it is possible to wear a glove under the claws.
+@1804 = ~Holy Symbol of Malar~
+@1805 = ~Only the most worthy and devoted servants of the Lord of the Beasts are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@1806 = ~Claw of Malar~
+@1807 = ~This claw is given by the Church of Malar to its elected Talons. It consists of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like lion's claws. Despite being uncomfortable, it is possible to wear a glove under the claws.
 
 STATISTICS:
 
@@ -1159,18 +1170,6 @@ Requires:
 12 Strength
 
 Weight: 5~
-@1806 = ~Holy Symbol of Malar~
-@1807 = ~Only the most worthy and devoted servants of the Lord of the Beasts are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1209,8 +1208,20 @@ The Waveservant removes the water from the target's body, delivering damage.
 DROWN
 
 The Waveservant fills the target's lungs with water, imposing heavy penalties to <PRO_HISHER> victim.~
-@1904 = ~Dehydrate~
-@1905 = ~Dehydrate
+@1904 = ~Holy Symbol of Umberlee~
+@1905 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@1906 = ~Dehydrate~
+@1907 = ~Dehydrate
 (Alteration)
 
 Level: 4
@@ -1222,8 +1233,8 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell evaporates moisture from the bodies of the target creature, inflicting 1d8 points of magic damage per level of the caster on a failed Saving Throw vs. Death.~
-@1906 = ~Drown~
-@1907 = ~Drown
+@1908 = ~Drown~
+@1909 = ~Drown
 (Alteration)
 
 Level: 6	
@@ -1235,18 +1246,6 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell fill the lungs of the target creature with water. Creatures that do not breathe are unaffected. Drowning creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, and half movement rate during the effect of the spell. On top of that, the target takes 4d8 of crushing damage. A successful Saving Throw vs. Spells negates all effects except for the damage.~
-@1908 = ~Holy Symbol of Umberlee~
-@1909 = ~Only the most worthy and devoted servants of the Bitch Queen are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1288,8 +1287,20 @@ The Silverstar call a beam of light that blinds the target and forbids it from b
 SHOOTING STAR:
 
 The Silverstar throws a shooting star upon an area, causing massive damage to all creatures within.~
-@2004 = ~Moonbeam~
-@2005 = ~Moonbeam
+@2004 = ~Holy Symbol of Selûne~
+@2005 = ~Only the most worthy and devoted servants of the Moonmaiden are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@2006 = ~Moonbeam~
+@2007 = ~Moonbeam
 (Invocation)
 
 Level: 2
@@ -1301,8 +1312,8 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell can only be used outdoors. The Silverstar calls a beam of light from the sky and directs it to a target blinding it and turning it incapable of becoming invisible for the duration of the spell. A successful Saving Throw vs. Breath avoids all the effects.~
-@2006 = ~Shooting Star~
-@2007 = ~Shooting Star
+@2008 = ~Shooting Star~
+@2009 = ~Shooting Star
 (Invocation)
 
 Level: 7
@@ -1314,18 +1325,6 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 A priest casting shooting stars creates a violent turbulence in the air above the area of effect, from which a number of magically-charged miniature starts to erupt and shower onto the ground. Within the area of effect, all creatures suffer 6d10 points of magical damage and 48 points of crushing damage. A successful Saving Throw vs. Spells at a -4 penalty indicates half damage.~
-@2008 = ~Holy Symbol of Selûne~
-@2009 = ~Only the most worthy and devoted servants of the Moonmaiden are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1364,8 +1363,20 @@ Advantages:
 POISON TOUCH:
 
 The Malagent delivers a maleficent poison that gets worse every round.~
-@2104 = ~Poison Touch~
-@2105 = ~Poison Touch
+@2104 = ~Holy Symbol of Talona~
+@2105 = ~Only the most worthy and devoted servants of the Mother of All Plagues are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@2106 = ~Poison Touch~
+@2107 = ~Poison Touch
 (Necromancy)
 
 Level: 4
@@ -1383,18 +1394,6 @@ If the saving throw succeeds, the victim takes 1 point of damage and the corrosi
 On this second round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1 point of damage, is corroded as discussed above, and the spell ends. If this second Saving Throw fails, the victim suffers 3d6 points of additional damage, loses another 2 points of Charisma, and the third (and final) stage of the poison begins.
 
 On this third round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1d10 points of poison damage. If it fails, the victim will fall into a coma that will last for 1 turn.~
-@2106 = ~Holy Symbol of Talona~
-@2107 = ~Only the most worthy and devoted servants of the Mother of All Plagues are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1442,8 +1441,20 @@ The target gets damage and is afflicted by an incapacitating pain.
 ENSNAREMENT:
 
 The Pain summons an Erinyes to serve <PRO_HIMHER>.~
-@2204 = ~Touch of Loviatar~
-@2205 = ~Touch of Loviatar
+@2204 = ~Holy Symbol of Loviatar~
+@2205 = ~Only the most worthy and devoted servants of the Maiden of Pain are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@2206 = ~Touch of Loviatar~
+@2207 = ~Touch of Loviatar
 (Alteration)
 
 Level: 1
@@ -1455,8 +1466,8 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell is the reason why a Pain of Loviatar has this title. The touched creature must make a Saving Throw vs. Spell or be afflicted by a pain that gives a -4 penalty to its attack rolls and and a -2 to its AC.~
-@2206 = ~Whip of Flame~
-@2207 = ~Whip of Flame
+@2208 = ~Whip of Flame~
+@2209 = ~Whip of Flame
 (Invocation/Evocation)
 
 Level: 2
@@ -1468,8 +1479,9 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 The Pain creates a whip made of fire that is directed against a creature. The whip damages the target with fire by 1d8 and imposes a Saving Throw vs. Breath Weapons. A failure means that the target is burning and will keep receiving 3 points of fire damage per round until succeeds on the saving throw.~
-@2208 = ~Whip of Pain~
-@2209 = ~Whip of Pain
+@2210 = ~Burning~
+@2211 = ~Whip of Pain~
+@2212 = ~Whip of Pain
 (Necromancy)
 
 Level: 3
@@ -1481,8 +1493,8 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 A whip is created by the Pain and immediately used against a creature and imposes a Saving Throw vs. Spells. If succeeds, the target only gets 2d4 points of slashing damage. If it fails, the target gets 4d4 points of slashing damage and suffers a huge pain that gives a -2 penalty to its attack rolls, a -1 penalty to its AC and makes impossible to concentrate enough to cast spells.~
-@2210 = ~Touch of Torment~
-@2211 = ~Touch of Torment
+@2213 = ~Touch of Torment~
+@2214 = ~Touch of Torment
 (Necromancy)
 
 Level: 4
@@ -1498,8 +1510,9 @@ By touching a creature, the Pain attacks its nervous system, delivering an overw
 At the end of the first round, the victim makes a Saving Throw vs. Spells. If it succeeds, the spell ends. If it fails, 2d6 points of magic damage are delivered and the victim is incapacitated for another round. 
 
 At the end of the second round, the victim makes another Saving Throw vs. Spells. If it succeeds, the spell ends. If it fails, 1d6 points of magic damage are delivered and the victim is incapacitated for a third round, when the spell expires.~
-@2212 = ~Ensnarement~
-@2213 = ~Ensnarement
+@2215 = ~Pain~
+@2216 = ~Ensnarement~
+@2217 = ~Ensnarement
 (Necromancy)
 
 Level: 6
@@ -1513,23 +1526,9 @@ Saving Throw: None
 This spell summons an Erinyes to serve the Pain. While summoned, there's a chance that the devil will escape from the summoner's control and turn against <PRO_HIMHER>. This chance starts at 5% and increases by another 5% every turn until it reaches 100% after 20 turns, when the spell expires. If the summoner is under the effect of Protection from Evil before losing control over the Devil, the Erinyes will return to Baator instead of attacking. Only one Erinyes can be summoned at time. Unless the devil goes hostile, the summoner may dismiss the Erinyes whenever <PRO_HESHE> wants.
 
 To dismiss the Erinyes, go to the creature's special abilities and press "Dismiss".~
-@2214 = ~Pain~
-@2215 = ~Burning~
-@2216 = ~Summoned Erinyes~
-@2217 = ~Dismiss~
-@2218 = ~This spell will immediately dismiss the Erinyes.~
-@2219 = ~Holy Symbol of Loviatar~
-@2220 = ~Only the most worthy and devoted servants of the Maiden of Pain are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
+@2218 = ~Summoned Erinyes~
+@2219 = ~Dismiss~
+@2220 = ~This spell will immediately dismiss the Erinyes.~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1563,8 +1562,20 @@ Advantages:
 MYSTIC LASH:
 
 The Dreadruler creates a whip that delivers electrical damage and may stun, paralyze, hurl or cut the target.~
-@2304 = ~Mystic Lash~
-@2305 = ~Mystic Lash
+@2304 = ~Holy Symbol of Bane~
+@2305 = ~Only the most worthy and devoted servants of the Black Lord are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@2306 = ~Mystic Lash~
+@2307 = ~Mystic Lash
 (Invocation/Evocation)
 
 Level: 5
@@ -1584,18 +1595,6 @@ Casting this spell creates a long whip of ghostly, glowing red force that emanat
 3: Target takes an extra 2d4 points of slashing damage
 
 4: Target is hurled 25 yards away from the Dreadruler and suffer an extra 2d6 points of bludgeoning damage.~
-@2306 = ~Holy Symbol of Bane~
-@2307 = ~Only the most worthy and devoted servants of the Black Lord are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1632,10 +1631,21 @@ The Deathstalker creates a dagger that has a slim chance of slaying any creature
 
 PLANE SKIPPING:
 
-The Deathstalker steps into Gehenna and moves freely while others appear to be frozen in time. There's a slim chance that a Pit Fiend will follow the caster.
-~
-@2404 = ~Bone Dagger~
-@2405 = ~Bone Dagger
+The Deathstalker steps into Gehenna and moves freely while others appear to be frozen in time. There's a slim chance that a Pit Fiend will follow the caster.~
+@2404 = ~Holy Symbol of Bhaal~
+@2405 = ~Only the most worthy and devoted servants of the Lord of Murder are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@2406 = ~Bone Dagger~
+@2407 = ~Bone Dagger
 (Invocation/Evocation)
 
 Level: 1
@@ -1647,8 +1657,8 @@ Area of Effect: One magical dagger
 Saving Throw: None
 
 This spell creates a dagger on the Deathstalker's hand that can't be dropped or unequipped for the duration of the spell. The dagger strikes as a +2 weapon, but does not offers a bonus for hit or damage and can be used despite the cleric's proficiency. Every time the dagger strikes, there's a chance of 1% for every two 2 levels of the caster of automatically slaying the target creature.~
-@2406 = ~Plane Skipping~
-@2407 = ~Plane Skipping
+@2408 = ~Plane Skipping~
+@2409 = ~Plane Skipping
 (Alteration)
 
 Level: 6
@@ -1660,18 +1670,6 @@ Area of Effect: The caster
 Saving Throw: None
 
 The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> appear to be frozen in time. While in the other plane, the <PRO_HESHE> can move freely for 30 seconds, but can't attack, cast spells, use items or turn undead while this spell lasts. The Deathstalker must be cautious, as there's a 5% chance of a Pit Fiend follow <PRO_HIMHER> during the Plane Skipping.~
-@2408 = ~Holy Symbol of Bhaal~
-@2409 = ~Only the most worthy and devoted servants of the Lord of Murder are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1707,9 +1705,20 @@ This spell summons a powerful skeleton that stays at the Gray One's service for 
 HAND OF MYRKUL:
 
 As the wizard spell Disintegrate, except that it has a touch range and a casting time of 1.~
-@2504 = ~Minor Death~
-@2505 = ~Summon Minor Death~
-@2506 = ~Summon Minor Death
+@2504 = ~Holy Symbol of Myrkul~
+@2505 = ~Only the most worthy and devoted servants of the Lord of Bones are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@2506 = ~Summon Minor Death~
+@2507 = ~Summon Minor Death
 (Necromancy)
 
 Level: 6
@@ -1721,8 +1730,9 @@ Area of Effect: Special
 Saving Throw: None
 
 This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.~
-@2507 = ~Hand of Myrkul~
-@2508 = ~Hand of Myrkul
+@2508 = ~Minor Death~
+@2509 = ~Hand of Myrkul~
+@2510 = ~Hand of Myrkul
 (Necromancy)
 
 Level: 7
@@ -1734,18 +1744,6 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 The Gray One touches <PRO_HISHER> victim forcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.~
-@2509 = ~Holy Symbol of Myrkul~
-@2510 = ~Only the most worthy and devoted servants of the Lord of Bones are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1785,19 +1783,18 @@ Through this spell the Doomguide creates a magical scythe especially effective a
 SUMMON MINOR DEATH:
 
 This spell summons a powerful skeleton that stays at the Doomguide's service for 1 turns.~
-@2604 = ~Summon Minor Death~
-@2605 = ~Summon Minor Death
-(Necromancy)
+@2604 = ~Holy Symbol of Kelemvor~
+@2605 = ~Only the most worthy and devoted servants of the Judge of the Damned are granted these powerful holy symbols.
+	
+STATISTICS:
 
-Level: 6
-Sphere: Necromantic
-Range: 35
-Duration: 1 turn/level
-Casting Time: 9
-Area of Effect: Special
-Saving Throw: None
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
 
-This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.~
+Weight: 0~
 @2606 = ~Chilling Scythe~
 @2607 = ~Chilling Scythe
 (Evocation, Necromancy)
@@ -1813,18 +1810,18 @@ Saving Throw: None
 This spell creates an over-sized but weightless scythe that can be wielded by the Doomguide as a weapon. The scythe is a two-handed, 7-foot-long device that is a +2 enchanted weapon dealing 2d4+2 points of slashing damage plus chilling for a further 1d4 points of magic damage - this chilling damage is caused by draining of life force, not cold. A Chilling Scythe has a speed factor of 5 and the Doomguide wields it as if <PRO_HESHE> is proficient.
 
 If a Chilling Scythe even touches an undead creature it delivers 4d6 points of magic damage to the undead and hurls it helplessly 20 feet away from the Doomguide.~
-@2608 = ~Holy Symbol of Kelemvor~
-@2609 = ~Only the most worthy and devoted servants of the Judge of the Damned are granted these powerful holy symbols.
-	
-STATISTICS:
+@2608 = ~Summon Minor Death
+(Necromancy)
 
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
+Level: 6
+Sphere: Necromantic
+Range: 35
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
 
-Weight: 0~
+This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1970,8 +1967,20 @@ The caster becomes capable of foreseeing moments about <PRO_HIMHER> in a near fu
 CONSEQUENCE
 
 The caster becomes capable of foreseeing brief moments <PRO_HIMHER> and the environment around <PRO_HIMHER> in the near future gaining a slight advantage in combat.~
-@2904 = ~Divination~
-@2905 = ~Divination
+@2904 = ~Holy Symbol of The Red Knight~
+@2905 = ~Only the most worthy and devoted servants of the Lady of Strategy are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@2906 = ~Divination~
+@2907 = ~Divination
 (Divination)
 
 Level: 3
@@ -1983,8 +1992,8 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> in the next moments. Due to this awareness, the caster becomes immune to backstabbing and gains a +2 bonus to Thac0, Armor Class and Saving Throws.~
-@2906 = ~Consequence~
-@2907 = ~Consequence
+@2908 = ~Consequence~
+@2909 = ~Consequence
 (Divination)
 
 Level: 5
@@ -1996,19 +2005,7 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> and around <PRO_HIMHER> in the next moments. Due to this awareness, the caster becomes immune to backstabbing and gains a +2 bonus to Thac0, Armor Class, Saving Throws and can to detect traps that are close.~
-@2908 = ~Foreseeing~
-@2909 = ~Holy Symbol of The Red Knight~
-@2910 = ~Only the most worthy and devoted servants of the Lady of Strategy are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
+@2910 = ~Foreseeing~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -2050,8 +2047,20 @@ The caster baths <PRO_HIMHER>self in blood, gaining protection against physical 
 CHAOTIC COMBAT
 
 The caster imbues a target with the chaos of the battlefield giving it a random bonus or penalty to AC and Thac0.~
-@3004 = ~Chaotic Combat~
-@3005 = ~Chaotic Combat
+@3004 = ~Holy Symbol of Garagos~
+@3005 = ~Only the most worthy and devoted servants of the Reaver are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@3006 = ~Chaotic Combat~
+@3007 = ~Chaotic Combat
 (Invocation/Evocation)
 
 Level: 4
@@ -2065,8 +2074,8 @@ Saving Throw: None
 When chaotic combat is cast on a creature, it is inspired beyond his years of training and is suddenly struck with numerous insights for variations on the standard moves of attack and defense.
 
 Unfortunately, these insights are helpful in only four-fifths (80%) of the warrior's attacks. In the remaining attacks, the spell actually impairs the warrior's standard performance. This spell takes effect at the beginning of each round. On a positive roll the target gains bonuses of +2 to Thac0 and Armor Class. On a negative roll, the target suffers a -2 penalty to Thac0 and Armor Class.~
-@3006 = ~Blood Armor~
-@3007 = ~Blood Armor
+@3008 = ~Blood Armor~
+@3009 = ~Blood Armor
 (Alteration)
 
 Level: 4
@@ -2080,18 +2089,6 @@ Saving Throw: None
 This spell enshrouds the priest in an armor of dense blood. Any weapon used to attack the Bloodreaver seems to impact on a iron wall as the blood momentarily coagulates to form a bulwark against the imminent attack.
 
 While protected by a Blood Armor, the cleric has a +3 bonus to <PRO_HISHER> Armor Class and a 25% resistance to cold and fire as well as a 25% vulnerability to electricity.~
-@3008 = ~Holy Symbol of Garagos~
-@3009 = ~Only the most worthy and devoted servants of the Reaver are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -2191,8 +2188,20 @@ Advantages:
 GASEOUS FORM
 
 This spell enables the Necrophant to assume the gaseous form of a vampire.~
-@3204 = ~Gaseous Form~
-@3205 = ~Gaseous Form
+@3204 = ~Holy Symbol of Velsharoon~
+@3205 = ~Only the most worthy and devoted servants of the Archmage of Necromancy are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@3206 = ~Gaseous Form~
+@3207 = ~Gaseous Form
 (Necromancy)
 
 Level: 6
@@ -2208,20 +2217,7 @@ This spell enables the Necrophant to assume the gaseous form of a vampire. No fo
 In gaseous form, the priest is all but immune to attack. Only magical fire or lightning has any effect, inflicting normal damage.
 
 The Necrophant immediately returns to his original form upon the expiration of the spell duration or by voluntarily ending the spell.~
-@3206 = ~Return to Natural Form~
-@3207 = ~Holy Symbol of Velsharoon~
-@3208 = ~Only the most worthy and devoted servants of the Archmage of Necromancy are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
-
+@3208 = ~Return to Natural Form~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -2307,8 +2303,20 @@ The Luckbringer blesses a creature or <PRO_HIMHER>self with an outbreak of luck 
 TYMORA'S BLESSING
 
 The Luckbringer pleads for the goodwill of Tymora to <PRO_HIMHER>self, receiving significant bonuses to several actions.~
-@3404 = ~Moment~
-@3405 = ~Moment
+@3404 = ~Holy Symbol of Tymora~
+@3405 = ~Only the most worthy and devoted servants of the Lady Luck are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@3406 = ~Moment~
+@3407 = ~Moment
 (Divination)
 
 Level: 2
@@ -2320,8 +2328,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By twisting Fate accordingly to <PRO_HISHER> will, the Luckbringer makes every moment of a combat favorable to the target of this spell, granting a +2 bonus to Thac0, Speed Factor and to its critical hit range.~
-@3406 = ~Favor of Tymora~
-@3407 = ~Favor of Tymora
+@3408 = ~Favor of Tymora~
+@3409 = ~Favor of Tymora
 (Abjuration)
 
 Level: 2
@@ -2333,8 +2341,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell confers a protection for a single recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a +4 bonus to its Saving Throws. This spell will cancel the effects of Bane of Beshaba.~
-@3408 = ~Luckbolt~
-@3409 = ~Luckbolt
+@3410 = ~Luckbolt~
+@3411 = ~Luckbolt
 (Invocation/Evocation)
 
 Level: 6
@@ -2354,8 +2362,8 @@ Round 2: +8 bonus to damage, +6 bonus to Thac0 and +4 bonus to Saving Throws.
 Round 3: +6 bonus to damage, +3 bonus to Thac0 and +2 bonus to Saving Throws.
 
 Round 4: +4 bonus to damage, +2 bonus to Thac0 and +1 bonus to Saving Throws.~
-@3410 = ~Tymora's Blessing~
-@3411 = ~Tymora's Blessing
+@3412 = ~Tymora's Blessing~
+@3413 = ~Tymora's Blessing
 (Abjuration)
 
 Level: 7
@@ -2367,18 +2375,6 @@ Area of Effect: The caster
 Saving Throw: None
 
 In the blink of an eye, the Luckbringer can be blessed by Tymora when asking for the Lady's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.~
-@3412 = ~Holy Symbol of Tymora~
-@3413 = ~Only the most worthy and devoted servants of the Lady Luck are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -2427,8 +2423,20 @@ The Black Finger pleads for Beshaba's curse upon an enemy, decreasing its chance
 BESHABA'S MERCY
 
 The Black Finger supplicates for the clemency of Beshaba to <PRO_HIMHER>self, receiving significant bonuses to several actions.~
-@3504 = ~Bad Luck~
-@3505 = ~Bad Luck
+@3504 = ~Holy Symbol of Beshaba~
+@3505 = ~Only the most worthy and devoted servants of the Maid of Misfortune are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@3506 = ~Bad Luck~
+@3507 = ~Bad Luck
 (Enchantment/Charm)
 
 Level: 2
@@ -2440,8 +2448,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 The recipient of this spell gains extraordinary bad luck for the next 3 rounds, receiving a -1 penalty to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as -5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is increased by 1. For example, a 6d6 fireball will do 6d7 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d4 fire damage instead.~
-@3506 = ~Bane of Beshaba~
-@3507 = ~Bane of Beshaba
+@3508 = ~Bane of Beshaba~
+@3509 = ~Bane of Beshaba
 (Abjuration)
 
 Level: 2
@@ -2453,8 +2461,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell bestows a curse upon a single recipient creature that cannot be ended by dispel magic or other magical effects. For the duration of this spell the target creature receives a -4 penalty to its Saving Throws. This spell will cancel the effects of Favor of Tymora.~
-@3508 = ~Misfortune~
-@3509 = ~Misfortune
+@3510 = ~Misfortune~
+@3511 = ~Misfortune
 (Enchantment/Charm)
 
 Level: 5
@@ -2466,8 +2474,8 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell causes the recipient to receive a -3 penalty on all Saving Throws, initiative checks, Thac0, and damage rolls as well as a -15% penalty to all thieving skill checks for the spell duration. A Black Finger of Beshaba must physically touch the recipient to cast this spell.~
-@3510 = ~Beshaba's Mercy~
-@3511 = ~Beshaba's Mercy
+@3512 = ~Beshaba's Mercy~
+@3513 = ~Beshaba's Mercy
 (Abjuration)
 
 Level: 7
@@ -2479,18 +2487,6 @@ Area of Effect: The caster
 Saving Throw: None
 
 In the blink of an eye, the Black Finger can be blessed by Beshaba when asking for the Maid's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.~
-@3512 = ~Holy Symbol of Beshaba~
-@3513 = ~Only the most worthy and devoted servants of the Maid of Misfortune are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -2534,8 +2530,20 @@ The Doombringer inflicts a punishment upon a target that may turn it into a Reve
 THUNDER STAFF
 
 This spell creates a cone of force that hurls back, stuns and deafens everyone caught in its area of effect.~
-@3604 = ~Hand of Hoar~
-@3605 = ~Hand of Hoar
+@3604 = ~Holy Symbol of Hoar~
+@3605 = ~Only the most worthy and devoted servants of the Poet of Justice are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@3606 = ~Hand of Hoar~
+@3607 = ~Hand of Hoar
 (Necromancy)
 
 Level: 4
@@ -2549,8 +2557,9 @@ Saving Throw: Neg.
 This spell inflicts punishment upon an evil and intelligent living target that cannot be terminated by Dispel Magic.
 
 Upon casting this spell, the Doombringer must touch the spell's recipient. If the creature fails to Saving Throw vs. Death Magic and then dies during the effect of this spell, it will be raised as a Revenant cursed to serve the Doombringer until its destruction.~
-@3606 = ~Thunder Staff~
-@3607 = ~Thunder Staff
+@3608 = ~Hoar's Revenant~
+@3609 = ~Thunder Staff~
+@3610 = ~Thunder Staff
 (Invocation/Evocation)
 
 Level: 4
@@ -2564,18 +2573,5 @@ Saving Throw: 1/2
 Upon completion of this spell, the Doombringer raps his weapon (usually a staff) on the ground and produces a thundering cone of force. All creatures wholly or partially within this cone must roll a successful Saving Throw vs. Spell or be stunned for 3 rounds and deafened for 4 rounds. Additionally, those who fail the save are hurled 20 feet by the wave of force, suffering 1 point of damage per two feet thrown.
 
 If the save is successful, the victim avoids the stun effect, and is hurled only half the distance, receiving half the damage.~
-@3608 = ~Hoar's Revenant~
-@3609 = ~Holy Symbol of Hoar~
-@3610 = ~Only the most worthy and devoted servants of the Poet of Justice are granted these powerful holy symbols.
-	
-STATISTICS:
-
-Equipped abilities:
-– Bless
-– Turn Undead Level: +1
-– Decrease spellcasting time by 1
-– Can memorize one extra divine spell from level 1 to 7
-
-Weight: 0~
 
 //EoF
