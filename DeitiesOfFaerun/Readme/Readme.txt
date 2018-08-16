@@ -1715,6 +1715,15 @@ Ranger (access only to level 3 spells): All, Animal, Plant.
   - Stalker: All, Moon, Trickery.
 
   - Beastmaster: All, Animal, Thought.
+
+.............................................
+| Be aware that the Shaman's spells are now |
+| selected through a special ability. Check |
+| the Special Abilities menu and locate the |
+| the "Select Spell" icon. You will need to |
+| pick one spell per use of this ability.   |
+.............................................
+
 ====================================================================================================================================================================
 
 g) Bestiary
