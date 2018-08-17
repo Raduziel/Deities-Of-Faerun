@@ -116,6 +116,21 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Multiclass CLAB
+
+COPY_EXISTING ~RAGara.2da~ ~override/RAGaraFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFGARA~
+READ_2DA_ENTRIES_NOW read 51
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		FOR (j = 0; j < read; ++j)	BEGIN
+			PATCH_IF	EVAL $read(~%j%~ ~%i%~) STRING_EQUAL ~****~ BEGIN
+				SET_2DA_ENTRY j i 51 ~AP_RAHPFIX~
+				SET	j = read
+			END
+		END
+END
+PRETTY_PRINT_2DA
+
 //BAM
 
 ACTION_FOR_EACH file IN ~GARAS~ ~GARAL~ BEGIN

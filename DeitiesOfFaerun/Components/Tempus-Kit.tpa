@@ -108,7 +108,22 @@ LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = 
 
 END
 
-//Restrictions
+//Multiclass CLAB
+
+COPY_EXISTING ~RATemp.2da~ ~override/RATempFC.2da~
+SET_2DA_ENTRY 3 25 50 ~AP_RAFTEMP~
+READ_2DA_ENTRIES_NOW read 51
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		FOR (j = 0; j < read; ++j)	BEGIN
+			PATCH_IF	EVAL $read(~%j%~ ~%i%~) STRING_EQUAL ~****~ BEGIN
+				SET_2DA_ENTRY j i 51 ~AP_RAHPFIX~
+				SET	j = read
+			END
+		END
+END
+PRETTY_PRINT_2DA
+
+//Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency

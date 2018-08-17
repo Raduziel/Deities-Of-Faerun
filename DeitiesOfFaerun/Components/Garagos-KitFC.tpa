@@ -14,7 +14,7 @@ ADD_KIT ~RAGaraFC~
     ~RAGaraFC 13 3 11 3 9 3~
 	~RAGaraFC 0 0 0 0 0 0 0 1 1~
 	~RAGaraFC 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAGaraFC.2da~
+	~override\RAGaraFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_D   K_FC_HO   K_FC_HL   K_FC_G   K_FC_E~
 	~0x00000000 8~
 	~FC0~
