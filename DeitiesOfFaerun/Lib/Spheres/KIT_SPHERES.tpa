@@ -432,44 +432,6 @@
 		~Vocal~ => 0
 	END
 	
-//Display Spheres' list at the kits' description	
-	
-ACTION_IF GAME_IS ~bgee~ THEN BEGIN
-  STRING_SET ~24298~  @9999258 //Archer
-  STRING_SET ~24299~  @9999259 //Stalker
-  STRING_SET ~24300~  @9999260 //Beast Master
-  STRING_SET ~24287~  @9999261 //Cavalier
-  STRING_SET ~24289~  @9999262 //Undead Hunter
-  STRING_SET ~28606~  @9999263 //Blackguard
-  STRING_SET ~24310~  @9999264 //Totemic Druid
-  STRING_SET ~24311~  @9999265 //Shapeshifter
-  STRING_SET ~24312~  @9999266 //Avenger
-END
-
-ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
-  STRING_SET ~25209~  @9999258 //Archer
-  STRING_SET ~25211~  @9999259 //Stalker
-  STRING_SET ~25212~  @9999260 //Beast Master
-  STRING_SET ~25206~  @9999261 //Cavalier
-  STRING_SET ~25208~  @9999262 //Undead Hunter
-  STRING_SET ~77514~  @9999263 //Blackguard
-  STRING_SET ~25224~  @9999264 //Totemic Druid
-  STRING_SET ~25225~  @9999265 //Shapeshifter
-  STRING_SET ~25227~  @9999266 //Avenger
-END
-
-ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
-  STRING_SET ~37111~  @9999258 //Archer
-  STRING_SET ~37114~  @9999267 //Stalker
-  STRING_SET ~37117~  @9999260 //Beast Master
-  STRING_SET ~37133~  @9999261 //Cavalier
-  STRING_SET ~37141~  @9999268 //Undead Hunter
-  STRING_SET ~37145~  @9999269 //Blackguard
-  STRING_SET ~37180~  @9999264 //Totemic Druid
-  STRING_SET ~37183~  @9999265 //Shapeshifter
-  STRING_SET ~37186~  @9999266 //Avenger
-END
-
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAAURI~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 7

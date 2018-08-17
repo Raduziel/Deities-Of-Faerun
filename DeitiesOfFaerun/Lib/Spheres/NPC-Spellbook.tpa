@@ -74,6 +74,56 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 		
 		
 	END
+	
+//New strings for class and kits displaying the spheres
+
+ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+  STRING_SET ~9560~   @9999251 //Druid
+  STRING_SET ~9558~   @9999253 //Paladin
+  STRING_SET ~9557~   @9999255 //Ranger
+  STRING_SET ~32341~  @9999257 //Shaman
+  STRING_SET ~24298~  @9999258 //Archer
+  STRING_SET ~24299~  @9999259 //Stalker
+  STRING_SET ~24300~  @9999260 //Beast Master
+  STRING_SET ~24287~  @9999261 //Cavalier
+  STRING_SET ~24289~  @9999262 //Undead Hunter
+  STRING_SET ~28606~  @9999263 //Blackguard
+  STRING_SET ~24310~  @9999264 //Totemic Druid
+  STRING_SET ~24311~  @9999265 //Shapeshifter
+  STRING_SET ~24312~  @9999266 //Avenger
+ END
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  STRING_SET ~9560~   @9999251 //Druid
+  STRING_SET ~9558~   @9999253 //Paladin
+  STRING_SET ~9557~   @9999255 //Ranger
+  STRING_SET ~103060~ @9999257 //Shaman
+  STRING_SET ~25209~  @9999258 //Archer
+  STRING_SET ~25211~  @9999259 //Stalker
+  STRING_SET ~25212~  @9999260 //Beast Master
+  STRING_SET ~25206~  @9999261 //Cavalier
+  STRING_SET ~25208~  @9999262 //Undead Hunter
+  STRING_SET ~77514~  @9999263 //Blackguard
+  STRING_SET ~25224~  @9999264 //Totemic Druid
+  STRING_SET ~25225~  @9999265 //Shapeshifter
+  STRING_SET ~25227~  @9999266 //Avenger
+ END
+
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+  STRING_SET ~37176~  @9999252 //Druid
+  STRING_SET ~37128~  @9999254 //Paladin
+  STRING_SET ~37106~  @9999256 //Ranger
+  STRING_SET ~40885~  @9999257 //Shaman
+  STRING_SET ~37111~  @9999258 //Archer
+  STRING_SET ~37114~  @9999267 //Stalker
+  STRING_SET ~37117~  @9999260 //Beast Master
+  STRING_SET ~37133~  @9999261 //Cavalier
+  STRING_SET ~37141~  @9999268 //Undead Hunter
+  STRING_SET ~37145~  @9999269 //Blackguard
+  STRING_SET ~37180~  @9999264 //Totemic Druid
+  STRING_SET ~37183~  @9999265 //Shapeshifter
+  STRING_SET ~37186~  @9999266 //Avenger
+END	
 
 END
 
