@@ -36,11 +36,29 @@ Add "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the kit'
 
 KNOWN ISSUES:
 
-Anomen will be able to get proficiencies as a kitless Fighter (5 slots in every weapon). There is nothing I can do about it. He is still bounded to equipment restriction, so be aware that a Watcher of Helm can only use bludgeoning weapons. Installing Kjeron's Dual-Class-Into-Kits fixes this.
+* Anomen will be able to get proficiencies as a kitless Fighter (5 slots in every weapon). There is nothing I can do about it. He is still bounded to equipment restriction, so be aware that a Watcher of Helm can only use bludgeoning weapons. Installing Kjeron's Dual-Class-Into-Kits fixes this.
 
+* The F/C or R/C versions of the kits that have as a feature "Hit Dice: d10" will have problems with its HP count. It happens because the multiclass function uses the priests standard HD (d8) to build the average HP we see in multiclasses. Having a d10 HD, the average HD for those kits should be d10 ([10+10]/2), but instead, it receives a d9 ([10+8]/2).
 
+To solve this I've created a spell that is applied every level permanently giving 1 HP to the designed character. The problem is, the opcode that does this is not read during Character Generation, so some HP is not gained. The loss is presented below:
 
-This mod is splitted in the following components:
+BGEE/BP1/IWDEE 1 HP | SoD/BG2EE</i>  6 HP | HoW/BP2 9 HP | ToB 13 HP
+
+To solve this gap you'll need to enable the console commands and enter the following code (you can Copy/Paste it) with the mouse over the designed character.
+
+........................................................................
+|                                                                      |
+|   C:Eval('ActionOverride(Myself,ApplySpellRES("RAHPFIX",Myself))')   |
+|                                                                      |
+........................................................................
+
+Every time you do this, 1 HP will be permanently added to the character. So you'll need to do this once for BGEE/BP1/IWDEE, six times for SoD/BGEE, nine times for How/BP2 and thirteen times for ToB. Seems like a lot of trouble but it is quite easy and this needs to be done just after the character creation. So if you're importing a character from BG1 to BG2 you don't need to do this (as long as you did it in BG1). The same goes for BG2 and ToB, IWD and HoW.
+
+The remaining level ups will apply this spell automatically, so this really is a one-time-thing. Sorry about that, but it is an engine issue.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This mod contains the following components:
 
 
 
