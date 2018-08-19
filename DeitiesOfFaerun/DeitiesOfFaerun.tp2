@@ -571,6 +571,72 @@ INCLUDE  ~DeitiesOfFaerun/Components/Hoar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Hoar-KitFC.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Hoar-KitCT.tpa~
 
+/*
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		          WINDWALKER OF SHAUNDAKUL (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999064
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Shaundakul-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Shaundakul-KitRC.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		           WAVETAMER OF VALKUR (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999065
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Valkur-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Valkur-KitFC.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Valkur-KitCT.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		                 DARKWALKER OF IBRANDUL (IWDEE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999066
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-KitFC.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-KitCT.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		            PACIFIST OF ELDATH (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999067
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Eldath-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Eldath-KitCM.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		          ICEGUARDIAN OF ULUTIU (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999068
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-KitRC.tpa~
+
+*/
+
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
