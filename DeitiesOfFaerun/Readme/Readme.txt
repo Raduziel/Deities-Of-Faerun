@@ -33,6 +33,33 @@ Add "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the kit'
 | END                                           |
 .................................................
 
+-- A special note about Tweaks Anthology --
+
+i) Use Character Colors Instead of Item Colors // This turns the Use Kit's Colors component redundant.
+
+ii) Multiple Strongholds - any stronghold for anyone // This turns the Stronghold Alterings component redundant.
+
+iii) Multiple Strongholds - more than one stronghold // I didn't test to see how this behaves with the Stronghold Alterings. Probably they will work fine together.
+
+iv) Universal Clubs, Weapon Styles for all // Will not break anything, but will remove part of DoF's flavor (reproduce the kits as they are in PnP).
+
+v) Alter Weapon Proficiency System // This one will probably break DoF as every kit has specific restrictions.
+
+vi) Multiclass Grandmastery // This component may turn some deities features redundant (like Alaghar of Clangeddin being able to put *** in Axes/Hammers as Clerics or F/C)
+
+vii) Alter Multiclass Restriction // This has the possibility of allowing players to make combinations that were not forecasted by DoF. This may lead to misbehaves.
+
+viii) Remove Racial Restrictions for Kits // This component will not break anything in terms of mechanics but will do so when it comes to lore. Some deities/pantheons are restricted to specific races for lore reasons.
+
+ix) Paladins Use IWD-HoW Spell Progression/Rangers Use IWD-HoW Spell Progression // This one may cause problems as DoF's Sphere System enforces BG's spell progression in IWD (because it is the one used in PnP). Due to that, the Sphere System does not embrace Rangers with a spellcasting over the third circle and Paladins with a spellcasting over the fourth circle.
+
+x) Loosen Item Restrictions for Multi- and Dual-class Clerics/Change Item Restrictions for Multi- and Dual-class Druids // As DoF uses specific items restrictions for every kit, this component may lead to unexpected behaves.
+
+xi) Everyone Gets Bonus APR from Specialization // This component will turn some deities' features redundant. In DoF, extra-APR is something precious and the kits that have access to this feature have a drawback in the form of a smaller sphere selection.
+
+xii) Allow Mages to Use Bucklers and Thieves to Use Small Shields // Some deities specifically bans shields, and some of those have C/M and C/T multiclasses. This component will remove this restriction.
+
+xiii) Give Every Class/Kit Four Weapon Slots // The warrior-like deities from DoF have as a way of balance its extra APR and sometimes specialization the fact that it gets fewer weapon slots. This component may affect the balance.
 
 KNOWN ISSUES:
 
