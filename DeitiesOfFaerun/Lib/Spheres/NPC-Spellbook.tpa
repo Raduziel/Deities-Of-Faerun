@@ -58,7 +58,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
       
 			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SUNSCORCH~ 	RET	spell_1 = spell_res	END
 			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BURNING_HANDS~	RET	spell_2	= spell_res	END
-			OUTER_PATCH_SAVE	spell_3	~%spell_3%~	BEGIN	WRITE_ASCII	0 ~RA~								END
+			OUTER_PATCH_SAVE	spell_2	~%spell_2%~	BEGIN	WRITE_ASCII	0 ~RA~								END
 	  
 			COPY_EXISTING ~%creature%.cre~ ~override~
 			REMOVE_MEMORIZED_SPELL ~SPPR111~

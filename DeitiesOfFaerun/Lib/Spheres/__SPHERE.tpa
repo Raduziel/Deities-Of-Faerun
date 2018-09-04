@@ -1,5 +1,6 @@
 
-	// Create a string to add to the CLAB files:
+// Create a string to add to the CLAB files:
+
 	OUTER_SPRINT	sphere_empty_slots ~SPHERE~
 	OUTER_FOR	(i = 0; i < 50; ++i)	BEGIN
 		OUTER_SPRINT sphere_empty_slots ~%sphere_empty_slots% ****~
@@ -310,39 +311,43 @@
 					READ_LONG	0x2a0	known_off
 					READ_LONG	0x2a4	known_num
 					FOR	(i = known_num - 1; i >= 0; --i)	BEGIN
-						READ_ASCII	(known_off + i * 0xc)	resref (4)	TO_UPPER	resref
+						READ_ASCII	(known_off + i * 0xc)	resref TO_UPPER	resref
 						PATCH_MATCH ~%resref%~	WITH
 							~SPPR150~ ~SPPR250~ ~SPPR350~ ~SPPR450~ ~SPPR550~ ~SPPR650~ ~SPPR750~	WHEN	class = 21	AND natureSpheres = 1 AND kitid = 0x4000	BEGIN	END
-							~SPPR~	~RAWI~	BEGIN
-								PATCH_IF	class = 21	AND natureSpheres = 1	BEGIN	//	Shaman
-									READ_SHORT	(known_off + i * 0xc + 0xa) kn_type
-									READ_SHORT	(known_off + i * 0xc + 0x8) kn_lvl
-									PATCH_IF	kn_type	= 0	BEGIN
-										SET	$shm_count(~%kn_lvl%~) += 1	//	Count known spells of each level
-									END
-								END	ELSE	BEGIN
-									PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
-										READ_ASCII	(known_off + i * 0xc) resref
-										INNER_ACTION	BEGIN
-											LAF	GET_PRIEST_TYPE	STR_VAR	resref	RET	type	END
-										END
-										PATCH_IF (divineSpheres = 1 AND !(type BAND 128)) OR (natureSpheres = 1 AND !(type BAND 64))	BEGIN
-											REMOVE_KNOWN_SPELL ~%resref%~
-											REMOVE_MEMORIZED_SPELL ~%resref%~
-										END
-									END	ELSE	BEGIN
-										READ_ASCII	(known_off + i * 0xc) resref
-										REMOVE_KNOWN_SPELL ~%resref%~
-										REMOVE_MEMORIZED_SPELL ~%resref%~
-									END
-								END
-							END
 							~SPRA301~	~SPRA302~ ~SPRA303~	~SPDR101~	~SPDR201~ ~SPDR301~ ~SPDR401~	~SPDR501~	~SPDR601~	WHEN natureSpheres != 0	BEGIN
 								READ_ASCII	(known_off + i * 0xc) resref
 								REMOVE_KNOWN_SPELL ~%resref%~
 								REMOVE_MEMORIZED_SPELL ~%resref%~
 							END
+						DEFAULT
+							READ_ASCII	(known_off + i * 0xc)	resref (4)	TO_UPPER	resref
+							PATCH_MATCH	~%resref%~	WITH
+								~SPPR~	~RAWI~	BEGIN
+									PATCH_IF	class = 21	AND natureSpheres = 1	BEGIN	//	Shaman
+										READ_SHORT	(known_off + i * 0xc + 0xa) kn_type
+										READ_SHORT	(known_off + i * 0xc + 0x8) kn_lvl
+										PATCH_IF	kn_type	= 0	BEGIN
+											SET	$shm_count(~%kn_lvl%~) += 1	//	Count known spells of each level
+										END
+									END	ELSE	BEGIN
+										PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
+											READ_ASCII	(known_off + i * 0xc) resref
+											INNER_ACTION	BEGIN
+												LAF	GET_PRIEST_TYPE	STR_VAR	resref	RET	type	END
+											END
+											PATCH_IF (divineSpheres = 1 AND !(type BAND 128)) OR (natureSpheres = 1 AND !(type BAND 64))	BEGIN
+												REMOVE_KNOWN_SPELL ~%resref%~
+												REMOVE_MEMORIZED_SPELL ~%resref%~
+											END
+										END	ELSE	BEGIN
+											READ_ASCII	(known_off + i * 0xc) resref
+											REMOVE_KNOWN_SPELL ~%resref%~
+											REMOVE_MEMORIZED_SPELL ~%resref%~
+										END
+									END
+								END
 							DEFAULT
+							END
 						END
 					END	
 					READ_LONG	0x2a8	mem_off
@@ -517,3 +522,4 @@
 		END			
 	END
 	
+//EoF
