@@ -571,8 +571,6 @@ INCLUDE  ~DeitiesOfFaerun/Components/Hoar-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Hoar-KitFC.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Hoar-KitCT.tpa~
 
-/*
-
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -596,7 +594,6 @@ BEGIN @99999065
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Valkur-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Valkur-KitFC.tpa~
-INCLUDE  ~DeitiesOfFaerun/Components/Valkur-KitCT.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -608,7 +605,6 @@ INCLUDE  ~DeitiesOfFaerun/Components/Valkur-KitCT.tpa~
 BEGIN @99999066
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-Kit.tpa~
-INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-KitFC.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-KitCT.tpa~
 
 //__________________________________________________________________________________
@@ -621,7 +617,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-KitCT.tpa~
 BEGIN @99999067
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Eldath-Kit.tpa~
-INCLUDE  ~DeitiesOfFaerun/Components/Eldath-KitCM.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Eldath-KitRC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -634,8 +630,6 @@ BEGIN @99999068
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-KitRC.tpa~
-
-*/
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
