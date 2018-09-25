@@ -1,0 +1,143 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Windwalker of Shaundakul
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAShau~
+    ~RAShau 1 1 1 1 1 1 1 1~
+    ~RAShau 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAShau 13 3 11 3 14 3~
+	~RAShau 0 0 0 0 0 0~
+	~RAShau 13 3 11 3 14 3~
+    ~RAShau 13 3 11 3 14 3~
+	~RAShau 0 0 0 0 0 0 1 1 0~
+	~RAShau 0 0 0 0 0 1~
+	~DeitiesOfFaerun\Tables\RAShau.2da~
+	~K_C_H K_C_HE~
+	~0x00000000 3~
+	~Cl0~
+	~LEAT21 * HELM14 * RING09 RING31 CLCK04 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * * HAMM09 *~
+	SAY @3701
+	SAY @3702
+	SAY @3703
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAShau~
+		clascolr = ~198 87 198 29 198~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 0 1 0 0 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RASHAU~  clabfile = ~RASHAU~	END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSHAU.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMALA~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSHAU.itm~ SAY NAME1 @3704 SAY NAME2 @3704 SAY DESC @3705
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAShau + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~SHAUS~
+WRITE_ASCII 0x058 ~SHAUL~
+
+//Invisibility
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_INVISIBILITY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_INVISIBILITY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASHAU1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Protection From Normal Missiles
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_NORMAL_MISSILES[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_NORMAL_MISSILES~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASHAU2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Wraithform
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_WRAITH_FORM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_WRAITH_FORM~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASHAU3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Aerial Servant
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_AERIAL_SERVANT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_AERIAL_SERVANT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASHAU4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAShau.2da~ ~override/RAShauRC.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RARSHAU~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+	READ_ASCII	0x22 animation (2)
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D4") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C6") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C2") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C1") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
+	END
+	END
+  END
+  BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~SHAUS~ ~SHAUL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
