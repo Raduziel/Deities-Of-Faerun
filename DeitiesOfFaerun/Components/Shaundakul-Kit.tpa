@@ -96,7 +96,7 @@ COPY_EXISTING ~RAShau.2da~ ~override/RAShauRC.2da~
 SET_2DA_ENTRY 5 25 50 ~AP_RARSHAU~
 PRETTY_PRINT_2DA
 
-//Restriction
+//Restrictions
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
   PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
@@ -110,9 +110,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
 	END
 	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C1") BEGIN
 	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
 	END
 	END
