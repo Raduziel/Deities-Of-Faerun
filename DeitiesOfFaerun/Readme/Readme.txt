@@ -1105,6 +1105,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Shar: Talos
 
+- Shaundakul: Ranger
+
 - Sune: Lathander, Bard
 
 - Talona: Talos                                   
@@ -1334,7 +1336,6 @@ f1) Sphere System
 7 - Greater Shield of Divine
     Shield of the Archons
     
-
 [Sun]
 
 1 - Sunscorch
