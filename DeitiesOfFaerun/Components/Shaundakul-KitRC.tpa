@@ -18,7 +18,7 @@ ADD_KIT ~RAShauRC~
 	~K_CR_H K_CR_HE~
 	~0x00000000 18~
 	~CR0~
-	~LEAT21 * HELM14 * RING09 RING31 CLCK04 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * * HAMM09 *~
+	~LEAT19 SW1H30 HELM03 * RING09 RING28 CLCK05 BOOT01 AMUL27 BRAC10 BELT06 * * * * * * * STAF15 SW1H25~
 	SAY @3701
 	SAY @3702
 	SAY @3703
@@ -26,7 +26,7 @@ ADD_KIT ~RAShauRC~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAShauRC~
-		clascolr = ~198 87 198 29 198~
+		clascolr = ~66 79 254 41 6~
 		clswpbon = ~1 0 3~
 		clsrcreq = ~1 0 1 0 0 0 0~
 END
