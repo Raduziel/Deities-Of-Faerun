@@ -2574,4 +2574,52 @@ Upon completion of this spell, the Doombringer raps his weapon (usually a staff)
 
 If the save is successful, the victim avoids the stun effect, and is hurled only half the distance, receiving half the damage.~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Windwalker of Shaundakul
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3701 = ~windwalker of shaundakul~
+@3702 = ~Windwalker of Shaundakul~
+@3703 = ~WINDWALKER OF SHAUNDAKUL: Shaundakul (SHAWN-da-kul) the Rider of the Winds, was the god of travel and exploration in old Myth Drannor. His existence may date back to the time of the Rus, forbears of the Rashemaar, or beyond. In the time of Myth Drannor, he was worshiped by humans and half-elves, particularly those who were caravan merchants, traders, explorers, miners and adventurers in the uncharted wilderness of the Moonsea North. He was a keen-eyed guide who pointed out the hidden lodes and ways of the North, and brought luck and battlevalor to worshipers in need.
+
+In the days following the Dawn Cataclysm, Shaundakul is said to have had a brief dalliance with Tymora and spurned the advances of Lady Luck's sister, Beshaba. The Maid of Misfortune vowed revenge, and the Rider of the Wind's luck finally faltered during the assault on Myth Drannor. Shaundakul's worship fell with his worshipers when Myth Drannor was destroyed. Most of his faithful perished in the final battle against the Army of Darkness. Mielikki absorbed the surviving rangers, and Waukeen the traders.
+
+At his high point, Shaundakul was an intermediate power, but after the fall of Myth Drannor he declined to the status of a lesser power and bordered on demipower status. By the Fall of the Gods, Shaundakul's clergy had fallen to a mere double handful of priests scattered throughout the North, and Shaundakul was a demipower reduced to brooding over fallen Myth Drannor. Only a few prospectors and caravan merchants still worshiped him in quiet, underground cults or fellowships.
+
+During the Godswar, Shaundakul roamed the ruins of Myth Drannor with increased frequency and is believed to have battled and destroyed at least one demipower of the orc, gnoll, or giant pantheons. Since the Time of Troubles, a reinvigorated Shaundakul has increased his efforts to reestablish his worship throughout the North. Combined with the influx of traders and caravan merchants who have begun to venerate him with the disappearance of Waukeen (Lliira seems unconcerned by their collective choice), Shaundakul's faith has undergone a rapid revitalization. The Helping Hand is being called upon once again throughout the North and has just gained enough worship to reattain lesser power status. Whether Shaundakul will keep the worship of traders and caravan masters if Waukeen returns to the Realms is unknown at this time.
+
+Shaundakul's spheres of influence overlap slightly with several other gods including Helm, Lliira (serving in Waukeen's stead), Mielikki, Selune, and, in particular, Tymora. None of these powers is likely to tolerate any further encroachment on their portfolios, potentially severely curtailing the long-term growth of Shaundakul's faith.
+
+Shaundakul is a god of few words. He lets his deeds speak for him. He is kind and yet stern, but often displays a rugged sense of humor. He is sometimes lonely and enjoys a good chat—especially if he can trade jokes. He is eager to gain new worshipers, and if given the opportunity, he tries to persuade any ranger, fighter, wizard, or thief of appropriate alignment to join his faithful. His avatar often wanders the ruins of Myth Drannor striding to the aid of otherwise doomed adventurers, and he knows much about Myth Drannor's history, mythal, and current inhabitants. In exchange for his aid in such situations, he demands one service that often involves destroying or driving out from Myth Drannor a fiend from the lower planes or another powerful monster. Shaundakul himself is said to stalk the layers of Ysgard, and occasionally the Beastlands, hunting fierce beasts and evil giants with his attendant windghosts.
+
+The "Kiss of Beshaba" still bedevils the Rider of the Winds in the lands of Anauroch. Shaundakul is cursed as the "Treacherous Lurker in the Sands" by the Bedine nomads who call the desert home. He is portrayed as a mischievous, malicious trickster appearing as a jackal-headed man. In truth, here he is impersonated and his reputation has been subverted by Beshaba, with the aid of the phaerimm living beneath Anauroch and, later, ruined Myth Drannor. In Anauroch, Shaundakul is now blamed for blinding folk, drying out oases, causing travelers to become lost, and all the other misfortunes that beset the Bedine. The only "windghosts" serving this false aspect of Shaundakul are mad watchghosts. Shaundakul is planning to reclaim his good name in the lands of Anauroch, but the phaerimm and Beshaba are likely to oppose this plan at every opportunity.
+
+Armor: All up to and including splint mail. No large shields are allowed.
+Weapon: Any.
+
+Major: All, Air, Combat, Travelers, Healing, Protection.
+Minor: Divination, Vocal.
+
+Advantages:
+
+- Receives Attacks Per Round as if they were warriors.
+- May cast Invisibility once per day as a special ability, starting at level 2. 
+- May cast Protection From Normal Missile once per day as a special ability, starting at level 3.
+- May cast Wraithform once per day as a special ability, starting at level 5.
+- May cast Aerial Servant once per day as a special ability, starting at level 12.~
+@3704 = ~Holy Symbol of Shaundakul~
+@3705 = ~Only the most worthy and devoted servants of the Rider of the Winds are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
 //EoF
