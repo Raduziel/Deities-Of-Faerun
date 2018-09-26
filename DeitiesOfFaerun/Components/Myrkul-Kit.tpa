@@ -125,7 +125,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	SET match = 0
 	PATCH_MATCH proficiency WITH 
-		106 BEGIN
+		89 90 91 92 93 94 96 98 99 103 104 105 106 BEGIN
 		  LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
