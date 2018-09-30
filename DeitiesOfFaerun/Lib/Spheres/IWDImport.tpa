@@ -186,7 +186,7 @@ END
 
 /* Importing IWD Spells */
 
-ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
+ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-B_Spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
 
 //Curse
 
