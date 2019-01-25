@@ -2600,7 +2600,7 @@ Armor: All up to and including splint mail. No large shields are allowed.
 Weapon: Any.
 
 Major: All, Air, Combat, Travelers, Healing, Protection.
-Minor: Divination, Vocal.
+Minor: Divination, Vocal, Plant.
 
 Advantages:
 
@@ -2611,6 +2611,48 @@ Advantages:
 - May cast Aerial Servant once per day as a special ability, starting at level 12.~
 @3704 = ~Holy Symbol of Shaundakul~
 @3705 = ~Only the most worthy and devoted servants of the Rider of the Winds are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Wavetamer of Valkur
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3801 = ~Wavetamer of Valkur~
+@3802 = ~Wavetamer of Valkur~
+@3803 = ~WAVETAMER OF VALKUR: Valkur the Mighty is a sailor's god, a demipower who intercedes to protect ships against the cruel whimsy of Umberlee and the destruction of Talos. He is often depicted as a giant sailor who wades through the ocean, which only comes up to his knees. He carries a great shield with which he turns back the worst of the forces of nature arrayed against him. In other religious images he is shown at the helm of the great galleon Windjammer, which can sail across any sea and even fly through the heavens.
+
+Valkur is the sworn foe of the Gods of Fury (Talos, Umberlee, Malar, and Auril — especially Umberlee) and looks to Selûne to guide him across the oceans of Faerûn. The Red Knight is trying to persuade him to take more of an interest in the disposition of naval conflicts, but he feels his primary responsibilities lie in the protection of sailors. The Captain of the Waves can pilot any sailing craft in any conditions, and he never shies away from a challenge. His moods are as mercurial as the weather, but he is always incredibly loyal to his crew. He is usually jolly, always lucky, emphasizes his points by shaking his fist in the air, and has a great belly laugh. Valkur never holds a grudge, but when angered, his voice cracks like rolling thunder. Valkur epitomizes the daring sea captain who can sail his ship through anything the Gods of Fury can unleash.
+
+Valkur's worship originated in the North centuries ago and seems tied to tales of a legendary captain from Mintarn who challenged Umberlee and won against all odds. His faith quickly spread to Tethyr and Amn, where it is now centered. His name is used throughout the Realms to bless the spirits of dead sailors and lost ships.
+
+In the past, Valkur was not always responsive to his followers' prayers, and, as a result, worship among northern sailors was often more in line with trying to placate the Gods of Fury than seeking protection from them through him—protection that might never come. Since the Time of Troubles, the god of sailors has become more responsive to the entreaties of his faithful, although he is still somewhat unreliable, and as his worship has spread rapidly along the coast of the Sea of Fallen Stars, particularly in Aglarond (in Velprintalar and Furthinghome), Telflamm, and Tsurlagol, the ranks of his faithful are swelling with new converts. If Valkur reduces the high numbers of ships that have been lost at sea every month of late, his popularity is sure to soar even further. Umberlee's name, however, is still spoken more, and her shrines are more numerous. The Bitch Queen may yet attempt to destroy the upstart demipower who dares challenge her dominion.
+
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: All bludgeoning and spears.
+
+Major: All, Travelers, Water, Protection, Combat.
+Minor: Moon, Healing, Air.
+
+Advantages:
+
+- May spend three slots in Two-Weapon Fighting.
+- May cast Goodberry once per day as a special ability, starting at level 3. 
+- May cast Call Lightning once per day as a special ability, starting at level 7.
+- May cast Smashing Wave once per day as a special ability, starting at level 10.
+- May cast Conjure Water Elemental once per day as a special ability, starting at level 15.~
+@3804 = ~Holy Symbol of Valkur~
+@3805 = ~Only the most worthy and devoted servants of the Captain of the Waves are granted these powerful holy symbols.
 	
 STATISTICS:
 
