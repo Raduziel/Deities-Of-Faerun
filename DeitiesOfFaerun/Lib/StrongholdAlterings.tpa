@@ -41,7 +41,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATYR~)	BEGIN	~RATYR~  => 0	~RATYRFC~  => 0										END	//	Tyr	->	Helm, Paladin
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAULUT~)	BEGIN	~RAULUT~ => 0	~RAULUTRC~ => 0										END	//	Ulutiu	->	Helm
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAUMBE~)	BEGIN	~RAUMBE~ => 0	~RAUMBECT~ => 0										END	//	Umberlee	->	Talos
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVALK~)	BEGIN	~RAVALK~ => 0	~RAVALKFC~ => 0										END	//	Valkur	->	Fighter
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVALK~)	BEGIN	~RAVALK~ => 0	~RAVALKFC~ => 0										END	//	Valkur	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVELS~)	BEGIN	~RAVELS~ => 0	~RAVELSCM~ => 0										END	//	Velsharoon	->	Talos, Wizard
 	
 	DEFINE_PATCH_FUNCTION	EXTEND_TRIGGER
@@ -200,7 +200,6 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~		RET	extend	negate	count	END	//	Tyr
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAULUT~	RET	extend	negate	count	END	//	Ulutiu
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~	RET	extend	negate	count	END	//	Umberlee
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVALK~	RET	extend	negate	count	END	//	Valkur
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVELS~	RET	extend	negate	count	END	//	Velsharoon
 	//	Kit Headers	End
 	ACTION_IF count > 0 BEGIN
@@ -230,6 +229,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~	RET	extend	negate	count	END	//	Selune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~	RET	extend	negate	count	END	//	Sune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYMO~	RET	extend	negate	count	END	//	Tymora
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVALK~	RET	extend	negate	count	END	//	Valkur
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN
 			OUTER_SPRINT orblock ~~
@@ -496,7 +496,6 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASAVR~	RET	extend	negate	count	END	//	Savras
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAU~	RET	extend	negate	count	END	//	Shaundakul
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVALK~	RET	extend	negate	count	END	//	Valkur
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
 <<<<<<<< RAStrong.baf
@@ -589,7 +588,6 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~	RET	extend	negate	count	END	//	Clangeddin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAREDK~	RET	extend	negate	count	END	//	Red Knight
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVALK~	RET	extend	negate	count	END	//	Valkur
 	//	Kit Headers	End
 	ACTION_IF count > 1 BEGIN
 		COPY_EXISTING ~NALIA.DLG~ override
@@ -613,7 +611,7 @@ END
 //Let Kits get the Thief's Stronghold
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 1
 	//	Kit Headers	Begin
-		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~	RET	extend	negate	count	END	//	Cyric
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMASK~	RET	extend	negate	count	END	//	Mask
 	//	Kit Headers	End
