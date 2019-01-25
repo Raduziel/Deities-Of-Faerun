@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.9.0~
+VERSION ~1.9.1~
 
 ALWAYS
 
@@ -595,6 +595,8 @@ REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Valkur-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Valkur-KitFC.tpa~
 
+/*
+
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -630,6 +632,8 @@ BEGIN @99999068
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-KitRC.tpa~
+
+*/
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
