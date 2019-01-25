@@ -1167,7 +1167,7 @@
 		~Suffering~ => 0
 		~Animal~ => 0
 		~Vermin~ => 0
-		~Plant~ => 0
+		~Plant~ => 3
 		~Protection~ => 7
 		~Sun~ => 0
 		~Moon~ => 0
@@ -1402,6 +1402,33 @@
 		~Trickery~ => 0
 		~Time~ => 0
 		~Vocal~ => 0
+	END
+
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAVALK~) BEGIN
+		~Healing~ => 3
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 7
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 0
+		~Combat~ => 7
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 3
+		~Water~ => 7
+		~Earth~ => 0
+		~Fire~ => 0
+		~Divination~ => 0
+		~Travelers~ => 7
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 3
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAVELS~) BEGIN
