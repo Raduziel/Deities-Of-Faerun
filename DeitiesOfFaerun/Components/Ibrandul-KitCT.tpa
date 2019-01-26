@@ -1,0 +1,79 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						 Darkwalker of Ibrandul - Cleric/Thief
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAIbraCT~
+    ~RAIbraCT 1 1 1 1 1 1 1 1~
+    ~RAIbraCT 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAIbraCT 3 3 11 3 10 3~
+	~RAIbraCT 0 0 0 0 0 0~
+	~RAIbraCT 3 3 11 3 10 3~
+    ~RAIbraCT 3 3 11 3 10 3~
+	~RAIbraCT 0 0 0 0 0 0 0 1 0~
+	~RAIbraCT 0 0 0 0 0 0~
+	~override\RAIbraCT.2da~
+	~K_CT_H   K_CT_HE   K_CT_G   K_CT_D~
+	~0x00000000 15~
+	~CT0~
+	~LEAT17 DAGG13 HELM19 * RING09 RING29 CLCK27 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * RODS04 SW2H14 *~
+	SAY @3901
+	SAY @3902
+	SAY @3906
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAIbraCT~
+		clascolr = ~6 58 60 61 117~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~1 0 1 1 0 1 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAIbraCT~
+      kit_clab = ~RAIbraCT~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAIbraCT%	classID = 15 STR_VAR	kitname = ~RAIBRA~  END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RATIBRA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACTIBRA~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACTIBRA.itm~ SAY NAME1 @3904 SAY NAME2 @3904 SAY DESC @3905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAIbraCT + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~SHARS~
+WRITE_ASCII 0x058 ~SHARL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIbraCT~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//EoF

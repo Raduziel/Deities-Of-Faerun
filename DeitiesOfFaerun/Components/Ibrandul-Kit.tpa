@@ -1,0 +1,145 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Darkwalker of Ibrandul
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAIbra~
+    ~RAIbra 1 1 1 1 1 1 1 1~
+    ~RAIbra 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAIbra 3 3 11 3 10 3~
+	~RAIbra 0 0 0 0 0 0~
+	~RAIbra 3 3 11 3 10 3~
+    ~RAIbra 3 3 11 3 10 3~
+	~RAIbra 0 0 0 0 0 0 0 1 0~
+	~RAIbra 0 0 0 1 0 0~
+	~DeitiesOfFaerun\Tables\RAIbra.2da~
+	~K_C_H   K_C_HE   K_C_G   K_C_D~
+	~0x00000000 3~
+	~Cl0~
+	~LEAT17 DAGG13 HELM19 * RING09 RING29 CLCK27 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * RODS04 SW2H14 *~
+	SAY @3901
+	SAY @3902
+	SAY @3903
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAIbra~
+		clascolr = ~6 58 60 61 117~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~1 0 1 1 0 1 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAIBRA~  clabfile = ~RAIBRA~	END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSIBRA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSIBRA~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSIBRA.itm~ SAY NAME1 @3904 SAY NAME2 @3904 SAY DESC @3905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAIbra + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~IBRAS~
+WRITE_ASCII 0x058 ~IBRAL~
+
+//Spells
+
+COPY "DeitiesOfFaerun\Spl\RAIBRAF.spl" override
+
+//Darkness
+
+ACTION_IF !FILE_EXISTS_IN_GAME ~RADARK.PRO~ BEGIN
+
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RADARK.PRO~
+
+COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
+
+END
+
+COPY "DeitiesOfFaerun\Spl\RAIBRA1.spl" override  SAY NAME1 @406 SAY  UNIDENTIFIED_DESC @407 
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RADARK% END	
+LPF ALTER_EFFECT   	   INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Blinded%" END
+
+//Stoneskin
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_STONE_SKIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_STONE_SKIN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAIBRA2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAIbra.2da~ ~override/RAIbraCT.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RATIBRA~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIbra~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~IBRAS~ ~IBRAL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~IBRADARK~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
