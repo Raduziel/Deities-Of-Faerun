@@ -55,8 +55,8 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACTIBRA~ END
 
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACTIBRA.itm~ SAY NAME1 @3904 SAY NAME2 @3904 SAY DESC @3905
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAIbraCT + 0x4000) parameter2 = 9 timing = 2 power = 1 END
-WRITE_ASCII 0x03a ~SHARS~
-WRITE_ASCII 0x058 ~SHARL~
+WRITE_ASCII 0x03a ~IBRAS~
+WRITE_ASCII 0x058 ~IBRAL~
 
 //Restrictions
 
