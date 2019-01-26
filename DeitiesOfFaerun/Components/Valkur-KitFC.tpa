@@ -1,0 +1,95 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						Wavetamer of Valkur - Fighter/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAValkFC~
+    ~RAValkFC 0 0 0 2 2 2 0 2~
+    ~RAValkFC 0 0 0 2 2 2 0 2 0 0 0 0 0 0 2 0 2 2 2 0 2 2 2 0 0 0 0 2 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAValkFC 14 3 3 3 10 12~
+	~RAValkFC 0 0 0 0 0 0~
+	~RAValkFC 14 3 3 3 10 12~
+    ~RAValkFC 14 3 3 3 10 12~
+	~RAValkFC 0 0 0 0 0 0 1 0 0~
+	~RAValkFC 0 0 0 0 0 0~
+	~override\RAValkFC.2da~
+	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
+	~0x00000000 8~
+	~FC0~
+	~CHAN18 SW1H30 HELM07 * RING28 RING22 CLCK05 BOOT05 AMUL27 BRAC10 BELT04 * * * * * * SPER07 HAMM09 *~
+	SAY @3801
+	SAY @3802
+	SAY @3803
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAValkFC~
+		clascolr = ~80 58 105 95 57~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAValkFC~
+      kit_clab = ~RAValkFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAValkFC%	classID = 8 STR_VAR	kitname = ~RAVALK~  END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFVALK.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCVALK~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCVALK.itm~ SAY NAME1 @3804 SAY NAME2 @3804 SAY DESC @3805
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAValkFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~VALKS~
+WRITE_ASCII 0x058 ~VALKL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 96 99 103 104 105 106 BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMyrk + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"AX" "BW" "CB" "DD" "HB" "S0" "S1" "S2" "S3" "SP" "SS" "4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAValkFC~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//EoF
