@@ -1413,7 +1413,7 @@
 		~Plant~ => 0
 		~Protection~ => 7
 		~Sun~ => 0
-		~Moon~ => 0
+		~Moon~ => 3
 		~Darkness~ => 0
 		~Thought~ => 0
 		~Combat~ => 7
@@ -1428,7 +1428,7 @@
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
-		~Vocal~ => 3
+		~Vocal~ => 0
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAVELS~) BEGIN
