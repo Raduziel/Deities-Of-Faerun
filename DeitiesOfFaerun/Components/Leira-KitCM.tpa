@@ -21,7 +21,7 @@ ADD_KIT ~RALeirCM~
 	~* * * * * * * * * * * * * * * * * * * *~
 	SAY @3301
 	SAY @3302
-	SAY @3303
+	SAY @3307
 
 LAF fl#add_kit_ee
 	STR_VAR
