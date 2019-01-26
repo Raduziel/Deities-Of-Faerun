@@ -69,7 +69,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAMyrk + 0x4000)
+			  parameter1 = (RAValk + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 		END
