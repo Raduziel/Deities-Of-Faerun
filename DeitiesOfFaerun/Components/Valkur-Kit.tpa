@@ -141,8 +141,8 @@ END
 
 //Multiclass CLAB
 
-COPY_EXISTING ~RAHoar.2da~ ~override/RATempFC.2da~
-SET_2DA_ENTRY 5 25 50 ~AP_RAFTEMP~
+COPY_EXISTING ~RAValk.2da~ ~override/RAValkFC.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RAFVALK~
 PRETTY_PRINT_2DA
 
 //Restriction
