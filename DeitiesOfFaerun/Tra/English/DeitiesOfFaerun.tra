@@ -4074,7 +4074,7 @@ Advantages:
 //	   		                 Wavetamer of Valkur
 //__________________________________________________________________________________
 //__________________________________________________________________________________
-@3801 = ~Wavetamer of Valkur~
+@3801 = ~wavetamer of valkur~
 @3802 = ~Wavetamer of Valkur~
 @3803 = ~WAVETAMER OF VALKUR: Valkur the Mighty is a sailor's god, a demipower who intercedes to protect ships against the cruel whimsy of Umberlee and the destruction of Talos. He is often depicted as a giant sailor who wades through the ocean, which only comes up to his knees. He carries a great shield with which he turns back the worst of the forces of nature arrayed against him. In other religious images he is shown at the helm of the great galleon Windjammer, which can sail across any sea and even fly through the heavens.
 
@@ -4130,5 +4130,66 @@ Advantages:
 - May cast Call Lightning once per day as a special ability, starting at level 7.
 - May cast Smashing Wave once per day as a special ability, starting at level 10.
 - May cast Conjure Water Elemental once per day as a special ability, starting at level 15.~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Darkwalker of Ibrandul
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@3901 = ~darkwalker of ibrandul~
+@3902 = ~Darkwalker of Ibrandul~
+@3903 = ~DARKWALKER OF IBRANDUL: Worshipers in Calimshan and other areas of the Shining South claim that Ibrandul (ih-BRAN-duhl) watches over humans who must venture into hostile underground areas, aiding and guiding those who serve him when they are in need. Ibrandul's worship began in the prehistory of Calimshan, even before the founding of the Shoon Empire, which is now known as lltkazar. Some time after the defeat of the Djen, a tribe of nomadic humans was abducted from the Calim Desert by dark elf raiders from the city of Guallidurth, located deep beneath the desert sands. These humans served the drow as slaves for centuries, unable to flee the subterranean city because of their fear of the all-enveloping darkness.
+
+The humans eventually escaped when a monstrous lizard emerged from the darkness, drove off the dark elf overseers, and led the slaves into the surrounding wilds of the Underdark. Some of the former slaves eventually returned to the surface and brought with them tales of the Lord of the Dark Depths to the tribes of the surface. Others remained in the dark tunnels, living in small, nomadic bands and subsisting by raiding the farms and caravans of the drow of Guallidurth and the humans of the surface. The subterranean dwellers slowly evolved into skulks—a cowardly race of humanoids with chameleon like abilities—through a side-effect of one of the spells granted by the Skulking God. Both the humans of the surface and the skulks of the Underdark continue to worship Ibrandul, albeit with slightly different representations and sets of beliefs. Since then IbranduPs worship has quietly spread to many locations with access to the Underdark, including Undermountain beneath Mt. Waterdeep.
+
+During the Time of Troubles, Ibrandul was spotted wandering the Underdark beneath Waterdeep. Unbeknownst to his worshipers, Ibrandul was killed during the Godswar by Shar. The now-petrified remains of his avatar are believed to lie at the bottom of a vast chasm in a lost level of Undermountain. Shar has always jealously guarded her rulership over darkness and those who work in it, and when Ibrandul was tremendously weakened by being forced into a minor avatar form (as all the powers were) during the Time of Troubles, Shar killed him for daring to subvert followers away from her ranks. When the gods ascended to the heavens, Shar had acquired the power and portfolio of Ibrandul. Shar's guise as Ibrandul is quite useful to her, allowing her to subvert the worship of her hated enemy Selune without drawing attention to her most faithful worshipers, the Nightcloaks. Shar/Ibrandul enjoys the delicious irony of secretly eroding the power of the Lady of Silver, particularly in the city of Waterdeep, one of the seats of Selûne's power.
+
+Ibrandul was a taciturn and moody power, and Shar stills plays him as such when she speaks for him or has one of her avatars behave and appear as his used to. He displayed all intense emotions simply by flicking his tongue or blinking his eyes at a quicker pace. He radiated an aura of gloom, darkness, and ages long forgotten. He was always restless, wanting to stalk off into the dark and roam the tunnels of the Underdark searching for those might harm his followers.
+
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: Any.
+
+Major: All, Travelers, Earth, Protection, Vermin, Darkness.
+Minor: Healing, Suffering, Summoning, Trickery.
+
+Advantages:
+
+- Gains Infravision.
+- May cast Darkness once per day as a special ability, starting at level 1. Gains another use at level 3. 
+- Gains a base armor class of 5 and loses 3 points of Charisma at level 5.
+- May cast Stoneskin once per day as a special ability, starting at level 7.~
+@3904 = ~Holy Symbol of Ibrandul~
+@3905 = ~Only the most worthy and devoted servants of the Lurker in Darkness are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@3906 = ~DARKWALKER OF IBRANDUL (C/T): Worshipers in Calimshan and other areas of the Shining South claim that Ibrandul (ih-BRAN-duhl) watches over humans who must venture into hostile underground areas, aiding and guiding those who serve him when they are in need. Ibrandul's worship began in the prehistory of Calimshan, even before the founding of the Shoon Empire, which is now known as lltkazar. Some time after the defeat of the Djen, a tribe of nomadic humans was abducted from the Calim Desert by dark elf raiders from the city of Guallidurth, located deep beneath the desert sands. These humans served the drow as slaves for centuries, unable to flee the subterranean city because of their fear of the all-enveloping darkness.
+
+The humans eventually escaped when a monstrous lizard emerged from the darkness, drove off the dark elf overseers, and led the slaves into the surrounding wilds of the Underdark. Some of the former slaves eventually returned to the surface and brought with them tales of the Lord of the Dark Depths to the tribes of the surface. Others remained in the dark tunnels, living in small, nomadic bands and subsisting by raiding the farms and caravans of the drow of Guallidurth and the humans of the surface. The subterranean dwellers slowly evolved into skulks—a cowardly race of humanoids with chameleon like abilities—through a side-effect of one of the spells granted by the Skulking God. Both the humans of the surface and the skulks of the Underdark continue to worship Ibrandul, albeit with slightly different representations and sets of beliefs. Since then IbranduPs worship has quietly spread to many locations with access to the Underdark, including Undermountain beneath Mt. Waterdeep.
+
+During the Time of Troubles, Ibrandul was spotted wandering the Underdark beneath Waterdeep. Unbeknownst to his worshipers, Ibrandul was killed during the Godswar by Shar. The now-petrified remains of his avatar are believed to lie at the bottom of a vast chasm in a lost level of Undermountain. Shar has always jealously guarded her rulership over darkness and those who work in it, and when Ibrandul was tremendously weakened by being forced into a minor avatar form (as all the powers were) during the Time of Troubles, Shar killed him for daring to subvert followers away from her ranks. When the gods ascended to the heavens, Shar had acquired the power and portfolio of Ibrandul. Shar's guise as Ibrandul is quite useful to her, allowing her to subvert the worship of her hated enemy Selune without drawing attention to her most faithful worshipers, the Nightcloaks. Shar/Ibrandul enjoys the delicious irony of secretly eroding the power of the Lady of Silver, particularly in the city of Waterdeep, one of the seats of Selûne's power.
+
+Ibrandul was a taciturn and moody power, and Shar stills plays him as such when she speaks for him or has one of her avatars behave and appear as his used to. He displayed all intense emotions simply by flicking his tongue or blinking his eyes at a quicker pace. He radiated an aura of gloom, darkness, and ages long forgotten. He was always restless, wanting to stalk off into the dark and roam the tunnels of the Underdark searching for those might harm his followers.
+
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: Any.
+
+Major: All, Travelers, Earth, Protection, Vermin, Darkness.
+Minor: Healing, Suffering, Summoning, Trickery.
+
+Advantages:
+
+- Gains Infravision.
+- May cast Darkness once per day as a special ability, starting at level 1. Gains another use at level 3. 
+- Gains a base armor class of 5 and loses 3 points of Charisma at level 5.
+- May cast Stoneskin once per day as a special ability, starting at level 7.~
 
 //EoF
