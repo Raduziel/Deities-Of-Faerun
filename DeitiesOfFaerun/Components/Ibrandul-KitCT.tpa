@@ -60,14 +60,14 @@ WRITE_ASCII 0x058 ~IBRAL~
 
 //Restrictions
 
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 		READ_BYTE 0x18 flags1
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
 			PATCH_MATCH	"%animation%" WITH
-				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6"  BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIbraCT~) parameter2 = 9 END
 				END
 				DEFAULT

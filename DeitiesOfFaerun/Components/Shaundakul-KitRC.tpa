@@ -60,22 +60,20 @@ WRITE_ASCII 0x058 ~SHAUL~
 
 //Restrictions
 		  
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    READ_BYTE 0x18 flags1
-    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-	READ_ASCII	0x22 animation (2)
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D4") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShauRC~) parameter2 = 9 END
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"4A" "D4" "C6" "C2" "C1"  BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShauRC~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
 	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C6") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShauRC~) parameter2 = 9 END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShauRC~) parameter2 = 9 END
-	END
-	END
-  END
-  BUT_ONLY
+BUT_ONLY
 
 //EoF
