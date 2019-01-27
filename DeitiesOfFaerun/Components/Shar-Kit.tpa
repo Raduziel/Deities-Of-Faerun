@@ -61,11 +61,13 @@ COPY "DeitiesOfFaerun\Spl\RASHAREF.spl" override
 //Darkness
 
 ACTION_IF !FILE_EXISTS_IN_GAME ~RADARK.PRO~ BEGIN
-
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RADARK.PRO~
-
-COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
-
+	ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RADARK.PRO~
+	COPY "DeitiesOfFaerun\Spl\UB!Dark.bam" override
+END ELSE BEGIN
+	OUTER_SPRINT	file ~RADARK~
+	COPY_EXISTING ~PROJECTL.IDS~	override
+		REPLACE_EVALUATE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+%file%[ %TAB%%WNL%$]~	BEGIN	SET	EVAL ~%file%~ = ~%MATCH1%~	END	~%MATCH0%~
+	BUT_ONLY
 END
 
 COPY "DeitiesOfFaerun\Spl\RASHAR1.spl" override  SAY NAME1 @406 SAY  UNIDENTIFIED_DESC @407 
