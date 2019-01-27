@@ -97,6 +97,9 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  r
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override\%spell_res%C.BAM~
 
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG3.spl~
+LPM ~SPELL_TO_INNATE~
+
 END
 
 //Negative Plane Protection
