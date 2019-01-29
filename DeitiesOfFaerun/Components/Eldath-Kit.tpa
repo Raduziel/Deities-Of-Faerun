@@ -93,7 +93,7 @@ END
 //Multiclass CLAB
 
 COPY_EXISTING ~RAElda.2da~ ~override/RAEldaRC.2da~
-SET_2DA_ENTRY 5 25 50 ~AP_RARSHAU~
+SET_2DA_ENTRY 5 25 50 ~AP_RARELDA~
 PRETTY_PRINT_2DA
 
 //Restrictions
