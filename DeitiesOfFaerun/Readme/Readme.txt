@@ -1073,6 +1073,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
                                                                 
 - Cyric: Talos, Thief
 
+- Eldath: Lathander, Druid
+
 - Garagos: Talos                                   
                  
 - Helm: Helm
