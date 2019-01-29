@@ -4194,4 +4194,69 @@ Advantages:
 - May cast Stoneskin once per day as a special ability, starting at level 5.
 - May cast Spike Stones once per day as a special ability, starting at level 7.~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Pacifist of Eldath
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4001 = ~pacifist of eldath~
+@4002 = ~Pacifist of Eldath~
+@4003 = ~PACIFIST OF ELDATH: Eldath (EL-dath) is the guardian of druid groves, and her presence is felt every place where there is calm. Her druids and clergy often aid other druidic faiths in establishing a grove and sanctifying it. In religious art, Eldath is often depicted as a dark-haired woman dressed in shimmering green or as a dryad or wild elf with blue and green hair. Her singing is heard in every babbling brook and waterfall.
+
+Eldath is a pacifist and usually takes no hostile actions even when threatened. This is one of the reasons that Eldath is almost a forgotten power; most Faerûnians think of Mielikki, Silvanus, or Chauntea in relation to nature before they think of her. Eldath is enigmatic and speaks seldom. She seems shy, but possessed of unknown depths of character and an unexpressed resolve that cannot be broken. When challenged, she gives before challengers who only later discover that her apparent acceptance and retreat merely drew them out into an untenable position where they are surrounded, out of their element, and their reinforcements have been converted to her side.
+
+Like Mielikki, Eldath serves Silvanus. Eldath sees him as a father figure, but often finds his robustness intimidating to her retiring nature. Mielikki and Eldath have a very close relationship. During the Time of Troubles Mielikki was heard to address her as "Datha," and the two goddesses embraced as sisters.
+
+While Eldath opposes all that Tempus stands for, she does not consider him a personal foe. He in turn, is said to consider her naive, but to respect her convictions and generally ignore her.
+
+Eldath made the Prime Material Plane her home until very recently, similar to Mielikki. In 1369 DR, the same year that Mielikki established an Outer Planes realm, Eldath also moved her home realm, the True Grove, to Elysium. Where she received the divine burst of power to make such a huge move is unknown; sages have considered Eldath's faith a shrinking one for centuries. However, these same scholars speculate that wherever she received the power from, it may be related to the official shift toward good that Eldath herself made apparent in picking Elysium as her home plane. (Among themselves, church scholars list Mielikki, Mystra, or Chauntea as likely candidates for help in the move.) The shift itself surprised no one, and Eldath still welcomes the same worshipers and clergy members within her fold. Legend holds that Eldath's worshipers may still visit the True Grove even before their deaths through gates in places where it could formerly be reached: near the upper reaches of the Unicorn Run in the High Forest, in the Elven Court near Lake Sember or near Elventree, at Eldath's Water in the Misty Forest, in the depths of the Forest of Tethir, in the dense heart of the King's Forest in Cormyr, atop Oak Hill in the Border Forest north of the River Tesh, at various locales in Turmish, and in a dozen or more other wooded areas.
+
+Armor: All up to and including studded leather. No large shield allowed.
+Weapon: Club, sling, quarterstaff.
+
+Major: All, Water, Protection, Healing, Thought, Vocal.
+Minor: Sun, Moon, Plant, Creation.
+
+Advantages:
+
+- May cast Remove Fear once per day as a special ability, starting at level 1. 
+- May cast Sleep once per day as a special ability, starting at level 3. Gains an additional use every three levels.
+- May cast Silence, 15' Radius once per day as a special ability, starting at level 5. Gains an additional use every three levels.
+- May cast Sanctuary once per day as a special ability, starting at level 7. Gains an additional use every three levels.~
+@4004 = ~Holy Symbol of Eldath~
+@4005 = ~Only the most worthy and devoted servants of the Quiet One are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4006 = ~PACIFIST OF ELDATH (R/C): Eldath (EL-dath) is the guardian of druid groves, and her presence is felt every place where there is calm. Her druids and clergy often aid other druidic faiths in establishing a grove and sanctifying it. In religious art, Eldath is often depicted as a dark-haired woman dressed in shimmering green or as a dryad or wild elf with blue and green hair. Her singing is heard in every babbling brook and waterfall.
+
+Eldath is a pacifist and usually takes no hostile actions even when threatened. This is one of the reasons that Eldath is almost a forgotten power; most Faerûnians think of Mielikki, Silvanus, or Chauntea in relation to nature before they think of her. Eldath is enigmatic and speaks seldom. She seems shy, but possessed of unknown depths of character and an unexpressed resolve that cannot be broken. When challenged, she gives before challengers who only later discover that her apparent acceptance and retreat merely drew them out into an untenable position where they are surrounded, out of their element, and their reinforcements have been converted to her side.
+
+Like Mielikki, Eldath serves Silvanus. Eldath sees him as a father figure, but often finds his robustness intimidating to her retiring nature. Mielikki and Eldath have a very close relationship. During the Time of Troubles Mielikki was heard to address her as "Datha," and the two goddesses embraced as sisters.
+
+While Eldath opposes all that Tempus stands for, she does not consider him a personal foe. He in turn, is said to consider her naive, but to respect her convictions and generally ignore her.
+
+Eldath made the Prime Material Plane her home until very recently, similar to Mielikki. In 1369 DR, the same year that Mielikki established an Outer Planes realm, Eldath also moved her home realm, the True Grove, to Elysium. Where she received the divine burst of power to make such a huge move is unknown; sages have considered Eldath's faith a shrinking one for centuries. However, these same scholars speculate that wherever she received the power from, it may be related to the official shift toward good that Eldath herself made apparent in picking Elysium as her home plane. (Among themselves, church scholars list Mielikki, Mystra, or Chauntea as likely candidates for help in the move.) The shift itself surprised no one, and Eldath still welcomes the same worshipers and clergy members within her fold. Legend holds that Eldath's worshipers may still visit the True Grove even before their deaths through gates in places where it could formerly be reached: near the upper reaches of the Unicorn Run in the High Forest, in the Elven Court near Lake Sember or near Elventree, at Eldath's Water in the Misty Forest, in the depths of the Forest of Tethir, in the dense heart of the King's Forest in Cormyr, atop Oak Hill in the Border Forest north of the River Tesh, at various locales in Turmish, and in a dozen or more other wooded areas.
+
+Armor: All up to and including studded leather. No large shield allowed.
+Weapon: Club, sling, quarterstaff.
+
+Major: All, Water, Protection, Healing, Thought, Vocal.
+Minor: Sun, Moon, Plant, Creation.
+
+Advantages:
+
+- May cast Remove Fear once per day as a special ability, starting at level 1. 
+- May cast Sleep once per day as a special ability, starting at level 3. Gains an additional use every three levels.
+- May cast Silence, 15' Radius once per day as a special ability, starting at level 5. Gains an additional use every three levels.
+- May cast Sanctuary once per day as a special ability, starting at level 7. Gains an additional use every three levels.~
+
 //EoF
