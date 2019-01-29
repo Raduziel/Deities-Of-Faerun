@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.9.2~
+VERSION ~1.9.3~
 
 ALWAYS
 
@@ -608,8 +608,6 @@ REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Ibrandul-KitCT.tpa~
 
-/*
-
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -621,6 +619,8 @@ BEGIN @99999067
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Eldath-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Eldath-KitRC.tpa~
+
+/*
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
