@@ -1,0 +1,95 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					  Pacifist of Eldath - Ranger/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAEldaRC~
+    ~RAEldaRC 1 1 1 1 1 1 1 1~
+    ~RAEldaRC 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 2 0 0 0 0 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAEldaRC 3 3 3 3 14 13~
+	~RAEldaRC 0 0 0 0 0 0~
+	~RAEldaRC 3 3 3 3 14 13~
+    ~RAEldaRC 3 3 3 3 14 13~
+	~RAEldaRC 0 0 0 1 1 0 0 0 0~
+	~RAEldaRC 0 0 0 0 0 0~
+	~override\RAEldaRC.2da~
+	~K_CR_H K_CR_E K_CR_HE K_CR_HL~
+	~0x00000000 18~
+	~CR0~
+	~LEAT19 BLUN10 HELM03 * RING05 RING29 CLCK08 BOOT01 AMUL27 BRAC15 BELT10 * * * * * * * STAF10 BLUN23~
+	SAY @4001
+	SAY @4002
+	SAY @4006
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAEldaRC~
+		clascolr = ~66 79 254 41 6~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 1 1 0 1 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAEldaRC~
+      kit_clab = ~RAEldaRC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAEldaRC%	classID = 18 STR_VAR	kitname = ~RAELDA~ kitname2 = ~RAELDA~  END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RARELDA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RARCELDA~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RARCELDA.itm~ SAY NAME1 @4004 SAY NAME2 @4004 SAY DESC @4005
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAEldaRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~ELDAS~
+WRITE_ASCII 0x058 ~ELDAL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 97 98 99 100 101 103 104 105 106 BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAEldaRC + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"4A" "3A" "D4" "C6" "C2" "C1"  BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAEldaRC~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+		  
+//EoF
