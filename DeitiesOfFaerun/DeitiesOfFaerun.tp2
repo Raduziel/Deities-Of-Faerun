@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.9.3.2~
+VERSION ~1.9.4~
 
 ALWAYS
 
@@ -635,6 +635,19 @@ INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-KitRC.tpa~
 
 */
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		          WOODWIFE OF SHIALLIA (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999069
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Shiallia-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Shiallia-KitRC.tpa~
+
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
