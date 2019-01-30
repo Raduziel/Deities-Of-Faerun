@@ -1242,6 +1242,33 @@
 		~Vocal~ => 3
 	END
 	
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RASHIA~) BEGIN
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 7
+		~Vermin~ => 0
+		~Plant~ => 7
+		~Protection~ => 3
+		~Sun~ => 7
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 3
+		~Combat~ => 0
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 0
+		~Fire~ => 0
+		~Divination~ => 0
+		~Travelers~ => 3
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 0
+	END
+	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RASUNE~) BEGIN
 		~Healing~ => 7
 		~Necromantic~ => 0
