@@ -4259,4 +4259,110 @@ Advantages:
 - May cast Silence, 15' Radius once per day as a special ability, starting at level 5. Gains an additional use every three levels.
 - May cast Sanctuary once per day as a special ability, starting at level 7. Gains an additional use every three levels.~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Iceguardian of Ulutiu
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4101 = ~iceguardian of ulutiu~
+@4102 = ~Iceguardian of Ulutiu~
+@4103 = ~ICEGUARDIAN OF ULUTIU: 
+
+Armor: .
+Weapon: .
+
+Major: All, .
+Minor: .
+
+Advantages:
+
+- May cast Remove Fear once per day as a special ability, starting at level 1. 
+- May cast Sleep once per day as a special ability, starting at level 3. Gains an additional use every three levels.
+- May cast Silence, 15' Radius once per day as a special ability, starting at level 5. Gains an additional use every three levels.
+- May cast Sanctuary once per day as a special ability, starting at level 7. Gains an additional use every three levels.~
+@4104 = ~Holy Symbol of Ulutiu~
+@4105 = ~Only the most worthy and devoted servants of the Eternal Sleeper are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Woodwife of Shillia
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4201 = ~woodwife of shillia~
+@4202 = ~Woodwife of Shillia~
+@4203 = ~WOODWIFE OF SHILLIA: Shiallia (Shee-AL-lee-ah) is the patron and caretaker of pregnant forest creatures. She is a planter of trees and a nurturer of seedlings. She rejoices in life and shields against death. Her worship is limited to the proximity of the High Forest, though she is also venerated in the vicinity of the Neverwinter Wood as the Lady of the Woods.
+
+Shiallia is said to be the sister of the Tree Ghost (the collective spirit of the High Forest and one of the beast totems of Uthgar) and daughter of Tapann the Undying, Lord of Korreds and Father of the Dance. She serves Mielikki along with Lurue and Gwaeron Windstrom, and Mielikki in turn serves Silvanus. The relationship between them all is quite familial and supportive.
+
+She calls enemy most of those who the other deities of nature despise: Talos, Talona, Auril, and Malar. She holds a special antipathy for Talona, who always struggles to take away from her the new life Shiallia works so hard to nurture, and for Malar, whom she regards as an insane killer hopelessly outside of the balance of nature because he emphasizes only a small and aberrant portion of its whole.
+
+During the Time of Troubles, Shiallia allied with Gwaeron Windstrom against Malar. While Windstrom concentrated on pursuing the Beast Lord, Shiallia spent much of her time repairing the damage caused by the Malar's destructive rampages.
+
+Shiallia is winsome and earthy, delighting in dancing and frolicking in the woods and playing with woodland creatures when she is not tending to their needs. She has a low, throaty voice, and enjoys retorting with clever (and often crudely suggestive) rejoinders when engaged in conversation. At times she seems to behave like the satyrs whom korreds resemble, but she has a more mysterious quality and unexpressed depths that a satyr, which plays all its cards in plain sight, would find incomprehensible. She is fiercely protective of her charges, but lets matters outside her purview go unchallenged, since they do not directly involve her, unless she is ordered to act by Mielikki or Silvanus.
+
+Armor: All up to and including studded leather and small shields.
+Weapon: Club, dagger, dart, sling, quarterstaff.
+
+Major: All, Healing, Animal, Plant, Sun.
+Minor: Protection, Thought, Travelers.
+
+Advantages:
+
+- May Lay on Hands as a Paladin three times per day.
+- May cast Entangle once per day as a special ability, starting at level 1. 
+- May cast Goodberry once per day as a special ability, starting at level 1.
+- May cast Animal Summoning I once per day as a special ability, starting at level 5.
+- May cast Animal Summoning II once per day as a special ability, starting at level 7.
+- May cast Animal Summoning III once per day as a special ability, starting at level 10.
+- May cast Heal once per day as a special ability, starting at level 13.~
+@4204 = ~Holy Symbol of Shiallia~
+@4205 = ~Only the most worthy and devoted servants of the Lady of the Woods are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4206 = ~WOODWIFE OF SHILLIA (R/C): Shiallia (Shee-AL-lee-ah) is the patron and caretaker of pregnant forest creatures. She is a planter of trees and a nurturer of seedlings. She rejoices in life and shields against death. Her worship is limited to the proximity of the High Forest, though she is also venerated in the vicinity of the Neverwinter Wood as the Lady of the Woods.
+
+Shiallia is said to be the sister of the Tree Ghost (the collective spirit of the High Forest and one of the beast totems of Uthgar) and daughter of Tapann the Undying, Lord of Korreds and Father of the Dance. She serves Mielikki along with Lurue and Gwaeron Windstrom, and Mielikki in turn serves Silvanus. The relationship between them all is quite familial and supportive.
+
+She calls enemy most of those who the other deities of nature despise: Talos, Talona, Auril, and Malar. She holds a special antipathy for Talona, who always struggles to take away from her the new life Shiallia works so hard to nurture, and for Malar, whom she regards as an insane killer hopelessly outside of the balance of nature because he emphasizes only a small and aberrant portion of its whole.
+
+During the Time of Troubles, Shiallia allied with Gwaeron Windstrom against Malar. While Windstrom concentrated on pursuing the Beast Lord, Shiallia spent much of her time repairing the damage caused by the Malar's destructive rampages.
+
+Shiallia is winsome and earthy, delighting in dancing and frolicking in the woods and playing with woodland creatures when she is not tending to their needs. She has a low, throaty voice, and enjoys retorting with clever (and often crudely suggestive) rejoinders when engaged in conversation. At times she seems to behave like the satyrs whom korreds resemble, but she has a more mysterious quality and unexpressed depths that a satyr, which plays all its cards in plain sight, would find incomprehensible. She is fiercely protective of her charges, but lets matters outside her purview go unchallenged, since they do not directly involve her, unless she is ordered to act by Mielikki or Silvanus.
+
+Armor: All up to and including studded leather and small shields.
+Weapon: Club, dagger, dart, sling, quarterstaff.
+
+Major: All, Healing, Animal, Plant, Sun.
+Minor: Protection, Thought, Travelers.
+
+Advantages:
+
+- May Lay on Hands as a Paladin three times per day.
+- May cast Entangle once per day as a special ability, starting at level 1. 
+- May cast Goodberry once per day as a special ability, starting at level 1.
+- May cast Animal Summoning I once per day as a special ability, starting at level 5.
+- May cast Animal Summoning II once per day as a special ability, starting at level 7.
+- May cast Animal Summoning III once per day as a special ability, starting at level 10.
+- May cast Heal once per day as a special ability, starting at level 13.~ 
+
 //EoF
