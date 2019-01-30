@@ -1109,6 +1109,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Shaundakul: Ranger
 
+- Shiallia: Druid
+
 - Sune: Lathander, Bard
 
 - Talona: Talos                                   
