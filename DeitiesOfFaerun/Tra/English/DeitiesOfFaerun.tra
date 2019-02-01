@@ -4267,20 +4267,36 @@ Advantages:
 //__________________________________________________________________________________
 @4101 = ~iceguardian of ulutiu~
 @4102 = ~Iceguardian of Ulutiu~
-@4103 = ~ICEGUARDIAN OF ULUTIU: 
+@4103 = ~ICEGUARDIAN OF ULUTIU: Ulutiu (Oo-LOO-tee-oo) is a long-quiescent deity who has voluntarily spent the last eon in slumber, : adrift in the Astral Plane. Unlike many of the other deific inhabitants who linger in death on that plane, Ulutiu is sufficiently alive to continue to grant spells to his few followers scattered across Faerûn's northern arctic wastes. Although some scholars have speculated that Ulutiu was once mortal, most sages believe he was a minor sea god who maintained an avatar for several centuries in the northern reaches of the Realms several thousand years ago. When he discovered a vast and still ocean that filled the regions now known as the Great Glacier, Vaasa, Damara, and Narfell, Ulutiu forged a barge of ice and spent his days adrift upon the sea in silent contemplation.
 
-Armor: .
-Weapon: .
+According to the peoples of the Great Glacier and the Ice Hunters of the Savage Frontier, Ulutiu enjoyed a life of quiet reflection, avoiding involvement in the affairs of mortals or gods. Giant lore paints a much different picture of Ulutiu. Those behemoths claim that Ulutiu was one of the many lovers of Othea, bride of Annam. While Annam fathered the various races of true giants, Ulutiu fathered the various giant-kin — firbolgs, verbeegs, voadkyn, and formorians.
 
-Major: All, .
-Minor: .
+Both groups claim that Ulutiu sank to the depths of the Cold Ocean, his enchanted necklace freezing the surrounding sea and forming the Great Glacier. The giants believe that Annam killed Ulutiu after discovering he was being cuckolded. Ulutiu's human worshipers have no tales of any such battle. Their tales about Ulutiu indicate that he forged a necklace of enchanted ice, a delicate chain of glistening blue crystals, to ensure a peaceful slumber on the ocean floor and then voluntarily sank beneath the surface in his ice barge as the surrounding sea slowly froze.
+
+As is typical, the truth lies somewhere between these two bodies of legend. Ulutiu was Othea's lover, but Annam the All-Father was hardly a caring, attentive spouse. Othea turned away from Annam, who was more interested in fathering sons than caring for his wife, and she pursued a series of unsatisfying affairs with various powers such as Vaprak, father of the ogre race. In Ulutiu, the mother of Faerûn's giants and giant-kin finally found happiness and love. When Annam discovered their affair, he threatened to kill both Othea and Ulutiu. Eventually Ulutiu convinced the All-Father to spare Othea in return for his voluntary exile. Ulutiu descended into a deep slumber, nigh unto death, encased in a tomb of ice.
+
+Ulutiu had his revenge, however, when the ever-expanding ice of his crypt enveloped much of Ostoria, destroying the giant kingdom, and Othea negotiated Annam's exile for an indefinite period. The secret pact of Othea with Ulutiu to reunite after Annam's departure was foiled when Othea was poisoned by her eldest son Lanaxis, progenitor of the titans, who sought to reverse the ever-expanding tide of the Great Glacier by taking Ulutiu's necklace but was forbidden by Othea from venturing onto the ice.
+
+Today Ulutiu is neither awake nor dead. He drifts in eternal slumber alongside Othea in the Astral Plane. The Eternal Sleeper has little interest in the Realms following Othea's demise, but he does maintain a small presence to observe the unfolding events in the fallen lands of Ostoria. If a way could be found to resuscitate Othea, he would likely return to the Realms (and quickly come into conflict with Auril and Umberlee), but for the time being he seems content to rest in eternal sleep, granting spells and protection only to the few hardy people who survive in his favorite environment and venerate his name.
+
+Armor: All up to and including studded leather. No shield allowed.
+Weapon: Shortbow, spear, dart, dagger, short sword.
+
+Major: All, Animal, Combat, Water, Vocal.
+Minor: Healing, Air, Travelers.
 
 Advantages:
 
-- May cast Remove Fear once per day as a special ability, starting at level 1. 
-- May cast Sleep once per day as a special ability, starting at level 3. Gains an additional use every three levels.
-- May cast Silence, 15' Radius once per day as a special ability, starting at level 5. Gains an additional use every three levels.
-- May cast Sanctuary once per day as a special ability, starting at level 7. Gains an additional use every three levels.~
+- Gains immunity to all forms of cold.
+- May use the Call Upon Polar Fury special ability once per day, starting at level 5.
+- May cast Ice Storm once per day as a special ability, starting at level 7.
+- May shapechange into a White Beast once per day as a special ability, starting at level 10.
+- May cast Cone of Cold once per day as a special ability, starting at level 13.
+- May cast Freezing Sphere once per day as a special ability, starting at level 15.
+
+CALL UPON POLAR FURY:
+
+The Iceguardian communes with the power of the Great White Beast, gaining some of its combat's features~
 @4104 = ~Holy Symbol of Ulutiu~
 @4105 = ~Only the most worthy and devoted servants of the Eternal Sleeper are granted these powerful holy symbols.
 	
@@ -4293,6 +4309,51 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
+@4106 = ~Call Upon Polar Fury~
+@4107 = ~Call Upon Polar Fury
+(Altering)
+
+Level: 3
+Sphere: Animal, Combat
+Range: 0
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+By using this spell the Iceguardian communes with the spirit of the Great White Beast. The caster's Strength is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.~
+@4108 = ~Shapechange: White Beast~
+@4109 = ~This ability allows the Iceguardian to turn into one of Ulutiu's Totems, the Great White Bear Beast, for three turns.~
+@4110 = ~ICEGUARDIAN OF ULUTIU (R/C): Ulutiu (Oo-LOO-tee-oo) is a long-quiescent deity who has voluntarily spent the last eon in slumber, : adrift in the Astral Plane. Unlike many of the other deific inhabitants who linger in death on that plane, Ulutiu is sufficiently alive to continue to grant spells to his few followers scattered across Faerûn's northern arctic wastes. Although some scholars have speculated that Ulutiu was once mortal, most sages believe he was a minor sea god who maintained an avatar for several centuries in the northern reaches of the Realms several thousand years ago. When he discovered a vast and still ocean that filled the regions now known as the Great Glacier, Vaasa, Damara, and Narfell, Ulutiu forged a barge of ice and spent his days adrift upon the sea in silent contemplation.
+
+According to the peoples of the Great Glacier and the Ice Hunters of the Savage Frontier, Ulutiu enjoyed a life of quiet reflection, avoiding involvement in the affairs of mortals or gods. Giant lore paints a much different picture of Ulutiu. Those behemoths claim that Ulutiu was one of the many lovers of Othea, bride of Annam. While Annam fathered the various races of true giants, Ulutiu fathered the various giant-kin — firbolgs, verbeegs, voadkyn, and formorians.
+
+Both groups claim that Ulutiu sank to the depths of the Cold Ocean, his enchanted necklace freezing the surrounding sea and forming the Great Glacier. The giants believe that Annam killed Ulutiu after discovering he was being cuckolded. Ulutiu's human worshipers have no tales of any such battle. Their tales about Ulutiu indicate that he forged a necklace of enchanted ice, a delicate chain of glistening blue crystals, to ensure a peaceful slumber on the ocean floor and then voluntarily sank beneath the surface in his ice barge as the surrounding sea slowly froze.
+
+As is typical, the truth lies somewhere between these two bodies of legend. Ulutiu was Othea's lover, but Annam the All-Father was hardly a caring, attentive spouse. Othea turned away from Annam, who was more interested in fathering sons than caring for his wife, and she pursued a series of unsatisfying affairs with various powers such as Vaprak, father of the ogre race. In Ulutiu, the mother of Faerûn's giants and giant-kin finally found happiness and love. When Annam discovered their affair, he threatened to kill both Othea and Ulutiu. Eventually Ulutiu convinced the All-Father to spare Othea in return for his voluntary exile. Ulutiu descended into a deep slumber, nigh unto death, encased in a tomb of ice.
+
+Ulutiu had his revenge, however, when the ever-expanding ice of his crypt enveloped much of Ostoria, destroying the giant kingdom, and Othea negotiated Annam's exile for an indefinite period. The secret pact of Othea with Ulutiu to reunite after Annam's departure was foiled when Othea was poisoned by her eldest son Lanaxis, progenitor of the titans, who sought to reverse the ever-expanding tide of the Great Glacier by taking Ulutiu's necklace but was forbidden by Othea from venturing onto the ice.
+
+Today Ulutiu is neither awake nor dead. He drifts in eternal slumber alongside Othea in the Astral Plane. The Eternal Sleeper has little interest in the Realms following Othea's demise, but he does maintain a small presence to observe the unfolding events in the fallen lands of Ostoria. If a way could be found to resuscitate Othea, he would likely return to the Realms (and quickly come into conflict with Auril and Umberlee), but for the time being he seems content to rest in eternal sleep, granting spells and protection only to the few hardy people who survive in his favorite environment and venerate his name.
+
+Armor: All up to and including studded leather. No shield allowed.
+Weapon: Shortbow, spear, dart, dagger, short sword.
+
+Major: All, Animal, Combat, Water, Vocal.
+Minor: Healing, Air, Travelers.
+
+Advantages:
+
+- Gains immunity to all forms of cold.
+- May use the Call Upon Polar Fury special ability once per day, starting at level 5.
+- May cast Ice Storm once per day as a special ability, starting at level 7.
+- May shapechange into a White Beast once per day as a special ability, starting at level 10.
+- May cast Cone of Cold once per day as a special ability, starting at level 13.
+- May cast Freezing Sphere once per day as a special ability, starting at level 15.
+
+CALL UPON POLAR FURY:
+
+The Iceguardian communes with the power of the Great White Beast, gaining some of its combat's features~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
