@@ -1036,7 +1036,7 @@ Casting Time: 3
 Area of Effect: The caster
 Saving Throw: None
 
-By using this spell the Iceguardian communes with the spirit of the Great White Beast. The caster's Strength	 is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.
+By using this spell the Iceguardian communes with the spirit of the Great White Bear. The caster's Strength is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.
 
 
 ====================================================================================================================================================================
@@ -1886,11 +1886,11 @@ Resistances (%): 100 Cold; 100 Slashing, 100 Piercing, 100 Missile. Immunities a
 
 ---
 
-g7) White Beast
+g7) Great White Bear
 
-AC 0 | Thac0 10 | Attacks per Round 3 | STR 18/00 | CON 18
+AC 0 | Thac0 9 | Attacks per Round 3 | STR 18/00 | + 15 HP
 
-Damage: 1d10 / 1d10 / 2d8 (slashing/slashing/piercing)  - strikes as +2
+Damage: 1d12 / 1d12 / 2d8 (slashing/slashing/piercing)  - strikes as +2
 
 Resistances (%): 100 Cold
 
