@@ -1458,6 +1458,33 @@
 		~Vocal~ => 7
 	END
 	
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAULUT~) BEGIN
+		~Healing~ => 3
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 7
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 0
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 0
+		~Combat~ => 7
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 3
+		~Water~ => 7
+		~Earth~ => 0
+		~Fire~ => 0
+		~Divination~ => 0
+		~Travelers~ => 3
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 7
+	END	
+	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAUMBE~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 3
