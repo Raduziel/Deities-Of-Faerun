@@ -1023,6 +1023,24 @@ If the save is successful, the victim avoids the stun effect, and is hurled only
 
 ====================================================================================================================================================================
 
+25) ULUTIU
+
+Call Upon Polar Fury
+(Altering)
+
+Level: 3
+Sphere: Animal, Combat
+Range: 0
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+By using this spell the Iceguardian communes with the spirit of the Great White Beast. The caster's Strength	 is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.
+
+
+====================================================================================================================================================================
+
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
@@ -1126,8 +1144,6 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Tyr: Helm, Paladin
 
 - Umberlee: Talos
-
-- Ulutiu: Helm
 
 - Valkur: Lathander
 
@@ -1867,6 +1883,16 @@ g6) Seeking Sword
 Damage: 2d4 (slashing) - strikes as +4
 
 Resistances (%): 100 Cold; 100 Slashing, 100 Piercing, 100 Missile. Immunities as any construct.
+
+---
+
+g7) White Beast
+
+AC 0 | Thac0 10 | Attacks per Round 3 | STR 18/00 | CON 18
+
+Damage: 1d10 / 1d10 / 2d8 (slashing/slashing/piercing)  - strikes as +2
+
+Resistances (%): 100 Cold
 
 ====================================================================================================================================================================
 
