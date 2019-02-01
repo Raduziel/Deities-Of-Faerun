@@ -1127,6 +1127,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Umberlee: Talos
 
+- Ulutiu: Helm
+
 - Valkur: Lathander
 
 - Velsharoon: Talos, Wizard
