@@ -382,4 +382,14 @@ COPY_EXISTING_REGEXP ~^.+\.\(spl\|itm\)$~ override
 	END
 BUT_ONLY
 
+//Fix for Icestorm (bug identified by Ligg at Beamdog's Forum)
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~icestorm.pro~ override
+WRITE_BYTE 0x00216 4
+BUT_ONLY_IF_IT_CHANGES
+
+END
+
 //EoF
