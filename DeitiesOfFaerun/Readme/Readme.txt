@@ -1904,11 +1904,11 @@ Resistances (%): 100 Cold; 100 Slashing, 100 Piercing, 100 Missile. Immunities a
 
 g7) Great White Bear
 
-AC 0 | Thac0 9 | Attacks per Round 3 | STR 18/00 | + 15 HP
+AC 0 | Thac0 9 | Attacks per Round 3 | STR 18/00
 
 Damage: 1d12 / 1d12 / 2d8 (slashing/slashing/piercing)  - strikes as +2
 
-Resistances (%): 100 Cold
+Resistances (%): 100 Cold. Can only be hurt by weapons +1 or better.
 
 ====================================================================================================================================================================
 

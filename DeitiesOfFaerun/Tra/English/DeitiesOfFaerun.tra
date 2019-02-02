@@ -4322,9 +4322,21 @@ Area of Effect: The caster
 Saving Throw: None
 
 By using this spell the Iceguardian communes with the spirit of the Great White Bear. The caster's Strength is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.~
-@4108 = ~Shapechange: Great White Bear~
-@4109 = ~This ability allows the Iceguardian to turn into one of Ulutiu's Totems, the Great White Bear, for three turns.~
-@4110 = ~ICEGUARDIAN OF ULUTIU (R/C): Ulutiu (Oo-LOO-tee-oo) is a long-quiescent deity who has voluntarily spent the last eon in slumber, : adrift in the Astral Plane. Unlike many of the other deific inhabitants who linger in death on that plane, Ulutiu is sufficiently alive to continue to grant spells to his few followers scattered across Faerûn's northern arctic wastes. Although some scholars have speculated that Ulutiu was once mortal, most sages believe he was a minor sea god who maintained an avatar for several centuries in the northern reaches of the Realms several thousand years ago. When he discovered a vast and still ocean that filled the regions now known as the Great Glacier, Vaasa, Damara, and Narfell, Ulutiu forged a barge of ice and spent his days adrift upon the sea in silent contemplation.
+@4108 = ~Bear Claw~
+@4109 = ~Shapechange: Great White Bear~
+@4110 = ~This ability allows the Iceguardian to turn into one of Ulutiu's Totems, the Great White Bear, for three turns.
+
+Strength: 18/00
+
+Thac0: 9
+Base Armor Class: 0
+Number of Attacks: 3
+Attack Damage: 1d12/1d12/2d8 (slashing/slashing/piercing)
+
+Special Abilities:
+- Cold Resistance: 100%
+- Can only be hurt by weapons +1 or better.~
+@4111 = ~ICEGUARDIAN OF ULUTIU (R/C): Ulutiu (Oo-LOO-tee-oo) is a long-quiescent deity who has voluntarily spent the last eon in slumber, : adrift in the Astral Plane. Unlike many of the other deific inhabitants who linger in death on that plane, Ulutiu is sufficiently alive to continue to grant spells to his few followers scattered across Faerûn's northern arctic wastes. Although some scholars have speculated that Ulutiu was once mortal, most sages believe he was a minor sea god who maintained an avatar for several centuries in the northern reaches of the Realms several thousand years ago. When he discovered a vast and still ocean that filled the regions now known as the Great Glacier, Vaasa, Damara, and Narfell, Ulutiu forged a barge of ice and spent his days adrift upon the sea in silent contemplation.
 
 According to the peoples of the Great Glacier and the Ice Hunters of the Savage Frontier, Ulutiu enjoyed a life of quiet reflection, avoiding involvement in the affairs of mortals or gods. Giant lore paints a much different picture of Ulutiu. Those behemoths claim that Ulutiu was one of the many lovers of Othea, bride of Annam. While Annam fathered the various races of true giants, Ulutiu fathered the various giant-kin — firbolgs, verbeegs, voadkyn, and formorians.
 
