@@ -1801,8 +1801,14 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 - Dreadful Witch (by Raduziel - I Hate Undead Kitpack)
 
 - Hivemaster (by AionZ - Artisan's Kitpack)
+	
+	Major: Vermin, Plant, Protection, Healing, Earth, Suffering
+	Minor: Animal, Darkness, Thought
 
 - Warhorn Shaman (by AionZ - Artisan's Kitpack)
+
+	Major: Combat, Vocal, Protection, Thought, Creation, Divination
+	Minor: Healing, Air, Water
 
 ====================================================================================================================================================================
 
