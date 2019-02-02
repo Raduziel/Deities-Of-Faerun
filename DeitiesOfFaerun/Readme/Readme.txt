@@ -1794,6 +1794,16 @@ Ranger (access only to level 3 spells): All, Animal, Plant.
 | pick one spell per use of this ability.   |
 .............................................
 
+f3) Non-DoF kits compatible with DoF's Sphere System:
+
+- Circle Enforcer (by Raduziel - I Hate Undead Kitpack)
+
+- Dreadful Witch (by Raduziel - I Hate Undead Kitpack)
+
+- Hivemaster (by AionZ - Artisan's Kitpack)
+
+- Warhorn Shaman (by AionZ - Artisan's Kitpack)
+
 ====================================================================================================================================================================
 
 g) Bestiary
