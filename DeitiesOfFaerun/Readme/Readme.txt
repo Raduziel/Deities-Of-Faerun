@@ -1798,19 +1798,48 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 
 - Circle Enforcer (by Raduziel - I Hate Undead Kitpack)
 
+	Major: All,
+	Minor:
+
 - Dreadful Witch (by Raduziel - I Hate Undead Kitpack)
+
+	Major: All,
+	Minor:
 
 - Spirit Redeemer (by Raduziel - I Hate Undead Kitpack)
 
+	Major: All,
+	Minor:
+
 - Hivemaster (by AionZ - Artisan's Kitpack)
 	
-	Major: Vermin, Plant, Protection, Healing, Earth, Suffering
+	Major: All, Vermin, Plant, Protection, Healing, Earth, Suffering
 	Minor: Animal, Darkness, Thought
 
 - Warhorn Shaman (by AionZ - Artisan's Kitpack)
 
-	Major: Combat, Vocal, Protection, Thought, Creation, Divination
+	Major: All, Combat, Vocal, Protection, Thought, Creation, Divination
 	Minor: Healing, Air, Water
+
+- Dreamwalker (by Ulb)
+
+	Major: All, Air, Darkness, Suffering, Healing, Divination, Vocal 
+	Minor: Trickery, Travelers, Time
+
+- Spirit Hunter (by Ulb)
+
+	Major: All
+	Minor: Combat, Summoning, Air
+
+- Spiritwalker (by Ulb)
+
+	Major: All, Animal, Weave, Moon, Summoning, Combat, Vocal
+	Minor: Travelers, Time, Healing
+
+- Stormcaller (by Ulb)
+
+	Major: All, Air, Water, Sun, Divination, Vocal, Combat
+	Minor: Trickery, Travelers, Time
 
 ====================================================================================================================================================================
 
@@ -1847,8 +1876,6 @@ g1.4) Earth Elemental
 Damage: 4d8 (crushing) - strikes as +4
 
 Resistances (%): 100 Electricity. Can only be hurt by weapons +2 or better.
-
-
 
 ---
 
