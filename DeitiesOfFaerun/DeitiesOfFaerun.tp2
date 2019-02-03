@@ -623,12 +623,11 @@ INCLUDE  ~DeitiesOfFaerun/Components/Eldath-KitRC.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//		                  ICEGUARDIAN OF ULUTIU (IWDEE)
+//		            ICEGUARDIAN OF ULUTIU (IWDEE, EET, BGEE and BG2EE)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 BEGIN @99999068
-REQUIRE_PREDICATE (GAME_IS ~iwdee~) @9999906
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Ulutiu-KitRC.tpa~
