@@ -5,15 +5,15 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ADD_KIT ~RAUlutCM~
-    ~RAUlutCM 1 1 1 1 1 1 1 1~
-    ~RAUlutCM 1 1 1 1 1 1 1 1 0 0 2 0 0 0 0 2 0 0 2 0 0 0 0 0 0 2 2 0 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAUlutCM 12 3 3 3 14 3~
-	~RAUlutCM 0 0 0 0 0 0~
-	~RAUlutCM 12 3 3 3 14 3~
-    ~RAUlutCM 12 3 3 3 14 3~
-	~RAUlutCM 0 1 0 0 0 0 0 0 0~
-	~RAUlutCM 0 0 0 0 0 0~
+ADD_KIT ~RAUlutRC~
+    ~RAUlutRC 1 1 1 1 1 1 1 1~
+    ~RAUlutRC 1 1 1 1 1 1 1 1 0 0 2 0 0 0 0 2 0 0 2 0 0 0 0 0 0 2 2 0 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAUlutRC 12 3 3 3 14 3~
+	~RAUlutRC 0 0 0 0 0 0~
+	~RAUlutRC 12 3 3 3 14 3~
+    ~RAUlutRC 12 3 3 3 14 3~
+	~RAUlutRC 0 1 0 0 0 0 0 0 0~
+	~RAUlutRC 0 0 0 0 0 0~
 	~override\RAUlutRC.2da~
 	~K_CR_H~
 	~0x00000000 18~
@@ -54,7 +54,7 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RE
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RARCULUT~ END
 
 COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RARCULUT.itm~ SAY NAME1 @4104 SAY NAME2 @4104 SAY DESC @4105
-LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUlutCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUlutRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~ULUTS~
 WRITE_ASCII 0x058 ~ULUTL~
 
