@@ -275,7 +275,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override
 		TEXT_SPRINT file ~%SOURCE_RES%~
 		INNER_ACTION BEGIN
 			COPY_EXISTING ~RAULUTF.spl~ override
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 180 timing = 9 STR_VAR resource = ~%file%~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 180 timing = 9 STR_VAR resource = EVAL ~%file%~ END
 			BUT_ONLY
 		END
 	END
