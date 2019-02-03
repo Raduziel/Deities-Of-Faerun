@@ -260,7 +260,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override
 					SET j = fx_num
 					SET illegal = 1
 				END // EFF files that deal fire damage
-				333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%SOURCE_RES%B~)
+				333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%SOURCE_RES%B~) BEGIN
 					PATCH_IF	~%resource%~ STRING_EQUAL ~~ BEGIN
 						SET i = ab_num
 						SET j = fx_num
