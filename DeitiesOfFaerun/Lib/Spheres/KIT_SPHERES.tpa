@@ -1625,6 +1625,36 @@
 		~Vocal~ => 7
 	END
 	
+	//Ulb's Bearwalker
+	
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UB#DW~) BEGIN
+		~All~ => 0 
+		~Healing~ => 0
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 3
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 0
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 0
+		~Combat~ => 3
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 0
+		~Fire~ => 0
+		~Divination~ => 0
+		~Travelers~ => 0
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 0
+	END
+	
 	//Ulb's Dreamwalker
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UB#DW~) BEGIN
