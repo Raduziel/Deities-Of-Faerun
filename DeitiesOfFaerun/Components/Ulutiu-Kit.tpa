@@ -179,7 +179,19 @@ BUT_ONLY
 
 //The following code was built by Kjeron
 
+COPY_EXISTING_REGEXP ~^.+\.eff$~ override
+	TO_UPPER	SOURCE_RES
+	READ_LONG 0x10 opcode
+	READ_LONG 0x20 parameter2
+	PATCH_MATCH opcode WITH
+		12 WHEN parameter2 = 0x80000 BEGIN
+			SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
+		END  // Fire Damage
+		DEFAULT
+	END
+BUT_ONLY // Scan through EFFs for offending effect
 COPY_EXISTING_REGEXP ~^.+\.spl$~ override
+	TO_UPPER	SOURCE_RES
 	SET	ab_size = 0x28
 	READ_LONG 0x64 ab_off
 	READ_SHORT 0x68 ab_num
@@ -190,15 +202,41 @@ COPY_EXISTING_REGEXP ~^.+\.spl$~ override
 		FOR (j = 0; j < fx_num; ++j) BEGIN
 			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
 			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x8)	parameter2
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
 			PATCH_IF (opcode = 12 AND parameter2 = 0x80000) BEGIN
 				SET $ra_ulutiu_fire_spl(~%SOURCE_RES%~) = 1
 				SET i = ab_num
 				SET J = fx_num
 			END // Fire damage
+			PATCH_MATCH opcode WITH
+				12 WHEN parameter2 = 0x80000 BEGIN
+					SET $ra_ulutiu_fire_spl(~%SOURCE_RES%~) = 1
+					SET i = ab_num
+					SET j = fx_num
+				END  // Fire Damage
+				177 248 249 272 283 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_eff(~%resource%~) BEGIN
+					SET $ra_ulutiu_fire_spl(~%SOURCE_RES%~) = 1
+					SET i = ab_num
+					SET j = fx_num
+				END // EFF files that deal fire damage
+				DEFAULT
+			END
 		END
 	END
 BUT_ONLY // Scan through spells for offending effect
+COPY_EXISTING_REGEXP ~^.+\.eff$~ override
+	TO_UPPER	SOURCE_RES
+	READ_LONG 0x10 opcode
+	READ_LONG 0x20 parameter2
+	PATCH_MATCH opcode WITH
+		146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%resource%~) BEGIN
+			SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
+		END  // Spells that deal fire damage
+		DEFAULT
+	END
+BUT_ONLY // Scan through EFFs for casting offending spells
 COPY_EXISTING_REGEXP ~^.+\.spl$~ override
+	TO_UPPER	SOURCE_RES
 	SET	ab_size = 0x28
 	READ_LONG 0x64 ab_off
 	READ_SHORT 0x68 ab_num
@@ -208,30 +246,23 @@ COPY_EXISTING_REGEXP ~^.+\.spl$~ override
 		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
 		FOR (j = 0; j < fx_num; ++j) BEGIN
 			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
-			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
 			PATCH_MATCH opcode WITH
+				177 248 249 272 283 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_eff(~%resource%~) BEGIN
+					SET $ra_ulutiu_fire_spl(~%SOURCE_RES%~) = 1
+					SET i = ab_num
+					SET j = fx_num
+				END // EFF files that cast fire damage spells
 				146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%resource%~) BEGIN
-					SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
+					SET $ra_ulutiu_fire_spl(~%SOURCE_RES%~) = 1
 				END  // Spells that deal fire damage
 				DEFAULT
 			END
 		END
 	END
 BUT_ONLY  // One more pass to catch other spells that cast those offending spells
-COPY_EXISTING_REGEXP ~^.+\.eff$~ override
-	READ_LONG 0x10 opcode
-	READ_LONG 0x20 parameter2
-	PATCH_MATCH opcode WITH
-		12 WHEN parameter2 = 0x80000 BEGIN
-			SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
-		END  // Fire Damage
-		146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%resource%~) BEGIN
-			SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
-		END  // Spells that deal fire damage
-		DEFAULT
-	END
-BUT_ONLY // Scan through EFFs for offending effect
 COPY_EXISTING_REGEXP ~^.+\.itm$~ override
+	TO_UPPER	SOURCE_RES
 	SET	illegal = 0
 	SET	ab_size = 0x38
 	READ_LONG 0x64 ab_off
@@ -243,7 +274,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override
 		FOR (j = 0; j < fx_num; ++j) BEGIN
 			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
 			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x8)	parameter2
-			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
 			PATCH_MATCH opcode WITH
 				12 WHEN parameter2 = 0x80000 BEGIN
 					SET i = ab_num
@@ -264,7 +295,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override
 					PATCH_IF	~%resource%~ STRING_EQUAL ~~ BEGIN
 						SET i = ab_num
 						SET j = fx_num
-					SET illegal = 1
+						SET illegal = 1
 					END
 				END // Opcode 333 uses ('SOURCE'B) as it's resource when left empty
 				DEFAULT
@@ -272,14 +303,15 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override
 		END
 	END
 	PATCH_IF	illegal = 1 BEGIN
-		TEXT_SPRINT file ~%SOURCE_RES%~
-		INNER_ACTION BEGIN
-			COPY_EXISTING ~RAULUTF.spl~ override
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 180 timing = 9 STR_VAR resource = EVAL ~%file%~ END
-			BUT_ONLY
+		LPF	ADD_ITEM_EQEFFECT
+			 INT_VAR
+				opcode = 319
+				target = 1
+				parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUlut~)  // replace KITID
+				parameter2 = 9
 		END
 	END
-BUT_ONLY // Scan through items for offending effect, EFF, and spell calls.
+BUT_ONLY
 
 ACTION_FOR_EACH file IN ~ULUTS~ ~ULUTL~ BEGIN
   COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
