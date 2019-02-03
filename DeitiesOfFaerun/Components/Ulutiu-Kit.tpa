@@ -1,0 +1,322 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Iceguardian of Ulutiu
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAUlut~
+    ~RAUlut 1 1 1 1 1 1 1 1~
+    ~RAUlut 1 1 1 1 1 1 1 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAUlut 12 3 3 3 14 3~
+	~RAUlut 0 0 0 0 0 0~
+	~RAUlut 12 3 3 3 14 3~
+    ~RAUlut 12 3 3 3 14 3~
+	~RAUlut 0 1 0 0 0 0 0 0 0~
+	~RAUlut 0 0 0 0 0 1~
+	~DeitiesOfFaerun\Tables\RAUlut.2da~
+	~K_C_H~
+	~0x00000000 3~
+	~Cl0~
+	~LEAT20 * HELM04 * RING09 RING31 CLCK04 BOOT01 AMUL27 BRAC10 BELT10 * * * * * * SPER08 BOW19 *~
+	SAY @4101
+	SAY @4102
+	SAY @4103
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAUlut~
+		clascolr = ~23 42 208 38 1~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~1 0 0 0 0 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAULUT~  clabfile = ~RAULUT~	END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSULUT.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSAURI~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSULUT.itm~ SAY NAME1 @4104 SAY NAME2 @4104 SAY DESC @4105
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUlut + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~ULUTS~
+WRITE_ASCII 0x058 ~ULUTL~
+
+//Spells
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_COLD~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ ~override/RAAURIF.spl~
+WRITE_SHORT 0x1C 4                                                    
+WRITE_LONG  0x34 1                                                         
+WRITE_LONG  0x22 00
+LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
+LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+
+END
+
+//Features
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_COLD~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ ~override/RAULUTF.spl~
+WRITE_SHORT 0x1C 4                                                    
+WRITE_LONG  0x34 1                                                         
+WRITE_LONG  0x22 00
+LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 85 parameter1 = 100 END
+LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+
+END
+
+//Call Upon Polar Fury
+
+COPY "DeitiesOfFaerun\Spl\RAULUT1.spl" override SAY NAME1 @4106 SAY UNIDENTIFIED_DESC  @4107
+
+COPY "DeitiesOfFaerun\Spl\RAULUT11.spl" override
+
+COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT1.itm" override
+
+//Ice Storm
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ICE_STORM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ICE_STORM~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAULUT2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Shapechange: Great White Bear
+
+COPY "DeitiesOfFaerun\Spl\RAULUT3.spl" override SAY NAME1 @4109 SAY UNIDENTIFIED_DESC  @4110
+
+COPY "DeitiesOfFaerun\Spl\RAULUT31.spl" override SAY NAME1 @3208 SAY UNIDENTIFIED_DESC  @3208
+
+COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT3.itm" override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
+
+//Cone of Cold
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONE_OF_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONE_OF_COLD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAULUT4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Freezing Sphere
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_OTILUKES_FREEZING_SPHERE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_OTILUKES_FREEZING_SPHERE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAULUT5.spl~ SAY NAME1 @999941
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAUlut.2da~ ~override/RAUlutRC.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RARULUT~
+PRETTY_PRINT_2DA
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 92 93 94 95 97 99 100 101 102 103 104 107 115  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAUlut + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"4A" "3A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUlut~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//The following code was built by Kjeron
+
+COPY_EXISTING_REGEXP ~^.+\.spl$~ override
+	SET	ab_size = 0x28
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x8)	parameter2
+			PATCH_IF (opcode = 12 AND parameter2 = 0x80000) BEGIN
+				SET $ra_ulutiu_fire_spl(~%SOURCE_RES%~) = 1
+				SET i = ab_num
+				SET J = fx_num
+			END // Fire damage
+		END
+	END
+BUT_ONLY // Scan through spells for offending effect
+COPY_EXISTING_REGEXP ~^.+\.spl$~ override
+	SET	ab_size = 0x28
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource
+			PATCH_MATCH opcode WITH
+				146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%resource%~) BEGIN
+					SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
+				END  // Spells that deal fire damage
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY  // One more pass to catch other spells that cast those offending spells
+COPY_EXISTING_REGEXP ~^.+\.eff$~ override
+	READ_LONG 0x10 opcode
+	READ_LONG 0x20 parameter2
+	PATCH_MATCH opcode WITH
+		12 WHEN parameter2 = 0x80000 BEGIN
+			SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
+		END  // Fire Damage
+		146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%resource%~) BEGIN
+			SET $ra_ulutiu_fire_eff(~%SOURCE_RES%~) = 1
+		END  // Spells that deal fire damage
+		DEFAULT
+	END
+BUT_ONLY // Scan through EFFs for offending effect
+COPY_EXISTING_REGEXP ~^.+\.itm$~ override
+	SET	illegal = 0
+	SET	ab_size = 0x38
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x8)	parameter2
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource
+			PATCH_MATCH opcode WITH
+				12 WHEN parameter2 = 0x80000 BEGIN
+					SET i = ab_num
+					SET j = fx_num
+					SET illegal = 1
+				END  // Fire Damage
+				146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%resource%~) BEGIN
+					SET i = ab_num
+					SET j = fx_num
+					SET illegal = 1
+				END  // Spells that deal fire damage
+				177 248 249 272 283 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_eff(~%resource%~) BEGIN
+					SET i = ab_num
+					SET j = fx_num
+					SET illegal = 1
+				END // EFF files that deal fire damage
+				333 WHEN VARIABLE_IS_SET $ra_ulutiu_fire_spl(~%SOURCE_RES%B~)
+					PATCH_IF	~%resource%~ STRING_EQUAL ~~ BEGIN
+						SET i = ab_num
+						SET j = fx_num
+					SET illegal = 1
+					END
+				END // Opcode 333 uses ('SOURCE'B) as it's resource when left empty
+				DEFAULT
+			END	
+		END
+	END
+	PATCH_IF	illegal = 1 BEGIN
+		TEXT_SPRINT file ~%SOURCE_RES%~
+		INNER_ACTION BEGIN
+			COPY_EXISTING ~RAULUTF.spl~ override
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 180 STR_VAR	resource = ~%file%~ END
+			BUT_ONLY
+		END
+	END
+BUT_ONLY // Scan through items for offending effect, EFF, and spell calls.
+
+ACTION_FOR_EACH file IN ~ULUTS~ ~ULUTL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~ULUTCUPF~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END	
+
+//EoF
