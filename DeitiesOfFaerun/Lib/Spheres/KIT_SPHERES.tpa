@@ -1625,6 +1625,36 @@
 		~Vocal~ => 7
 	END
 	
+	//Ulb's Dreamwalker
+	
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UB#DW~) BEGIN
+		~All~ => 7 
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 7
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 0
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 7
+		~Thought~ => 0
+		~Combat~ => 0
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 7
+		~Water~ => 0
+		~Earth~ => 0
+		~Fire~ => 0
+		~Divination~ => 7
+		~Travelers~ => 3
+		~Weave~ => 0
+		~Trickery~ => 3
+		~Time~ => 3
+		~Vocal~ => 7
+	END
+	
 	//Ulb's Spirit Hunter
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UB_SH~) BEGIN
@@ -1653,36 +1683,6 @@
 		~Trickery~ => 0
 		~Time~ => 0
 		~Vocal~ => 0
-	END
-	
-	//Ulb's Storm Caller
-	
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UBSCL~) BEGIN
-		~All~ => 7 
-		~Healing~ => 0
-		~Necromantic~ => 0
-		~Suffering~ => 0
-		~Animal~ => 0
-		~Vermin~ => 0
-		~Plant~ => 0
-		~Protection~ => 0
-		~Sun~ => 7
-		~Moon~ => 0
-		~Darkness~ => 0
-		~Thought~ => 0
-		~Combat~ => 7
-		~Creation~ => 0
-		~Summoning~ => 0
-		~Air~ => 0
-		~Water~ => 7
-		~Earth~ => 0
-		~Fire~ => 0
-		~Divination~ => 7
-		~Travelers~ => 3
-		~Weave~ => 0
-		~Trickery~ => 3
-		~Time~ => 3
-		~Vocal~ => 7
 	END
 	
 	//Ulb's Spiritwalker
@@ -1715,26 +1715,26 @@
 		~Vocal~ => 7
 	END
 	
-	//Ulb's Dreamwalker
+	//Ulb's Storm Caller
 	
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UB#DW~) BEGIN
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UBSCL~) BEGIN
 		~All~ => 7 
-		~Healing~ => 7
+		~Healing~ => 0
 		~Necromantic~ => 0
-		~Suffering~ => 7
+		~Suffering~ => 0
 		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
 		~Protection~ => 0
-		~Sun~ => 0
+		~Sun~ => 7
 		~Moon~ => 0
-		~Darkness~ => 7
+		~Darkness~ => 0
 		~Thought~ => 0
-		~Combat~ => 0
+		~Combat~ => 7
 		~Creation~ => 0
 		~Summoning~ => 0
 		~Air~ => 7
-		~Water~ => 0
+		~Water~ => 7
 		~Earth~ => 0
 		~Fire~ => 0
 		~Divination~ => 7
