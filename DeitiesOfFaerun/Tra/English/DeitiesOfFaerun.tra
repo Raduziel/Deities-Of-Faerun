@@ -18,7 +18,7 @@ Weapon: Bludgeoning, shortbow, and darts.
 Major: All, Healing, Protection, Sun, Thought, Fire.
 Minor: Combat, Creation, Divination, Vocal.
 
-Advantages:
+Features:
 
 - May cast Dire Charm once per day as a special ability, starting at level 1.
 - May use the Rapture special ability once per day, starting at level 5.
@@ -87,7 +87,7 @@ Weapon: Bludgeoning, shortbow, and darts.
 Major: All, Healing, Protection, Sun, Thought, Fire.
 Minor: Combat, Creation, Divination, Vocal.
 
-Advantages:
+Features:
 
 - May cast Dire Charm once per day as a special ability, starting at level 1.
 - May use the Rapture special ability once per day, starting at level 5.
@@ -110,7 +110,7 @@ Weapon: Bludgeoning, shortbow, and darts.
 Major: All, Healing, Protection, Sun, Thought, Fire.
 Minor: Combat, Creation, Divination, Vocal.
 
-Advantages:
+Features:
 
 - May cast Dire Charm once per day as a special ability, starting at level 1.
 - May use the Rapture special ability once per day, starting at level 5.
@@ -142,7 +142,7 @@ Weapon: Any, except missiles.
 Major: All, Protection, Combat, Creation, Travelers, Vocal.
 Minor: Healing, Suffering, Divination.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May specialize in any melee weapon.
@@ -173,7 +173,7 @@ Weapon: Any, except missiles.
 Major: All, Protection, Combat, Creation, Travelers, Vocal.
 Minor: Healing, Suffering, Divination.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May specialize in any melee weapon.
@@ -205,7 +205,7 @@ Weapon: Bludgeoning and longswords.
 Major: All, Necromantic, Darkness, Thought, Summoning, Trickery.
 Minor: Suffering, Combat, Creation, Divination.
 
-Advantages:
+Features:
 
 - Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
 - Immune to any spell that alters the emotions (including charm and fear).
@@ -274,7 +274,7 @@ Weapon: Bludgeoning and longswords.
 Major: All, Necromantic, Darkness, Thought, Summoning, Trickery.
 Minor: Suffering, Combat, Creation, Divination.
 
-Advantages:
+Features:
 
 - Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
 - Immune to any spell that alters the emotions (including charm and fear).
@@ -311,7 +311,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Thought, Summoning, Weave, Trickery.
 Minor: Healing, Suffering, Moon, Creation.
 
-Advantages:
+Features:
 
 - Gains +1 bonus to hit, damage and on Saving Throws during the night.
 - May cast Darkness once per day as a special ability, starting at level 1. Gains an additional use every two levels.
@@ -404,7 +404,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Thought, Summoning, Weave, Trickery.
 Minor: Healing, Suffering, Moon, Creation.
 
-Advantages:
+Features:
 
 - Gains +1 bonus to hit, damage and on Saving Throws during the night.
 - May cast Darkness once per day as a special ability, starting at level 1. Gains an additional use every two levels.
@@ -434,7 +434,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Thought, Summoning, Weave, Trickery.
 Minor: Healing, Suffering, Moon, Creation.
 
-Advantages:
+Features:
 
 - Gains +1 bonus to hit, damage and on Saving Throws during the night.
 - May cast Darkness once per day as a special ability, starting at level 1. Gains an additional use every two levels.
@@ -471,7 +471,7 @@ Weapon: Any.
 Major: All, Protection, Combat, Creation, Earth, Vocal.
 Minor: Healing, Thought, Travelers.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May achieve Mastery in Axes and Warhammers.
@@ -504,7 +504,7 @@ Weapon: Any.
 Major: All, Protection, Combat, Creation, Earth, Vocal.
 Minor: Healing, Thought, Travelers.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May achieve Mastery in Axes and Warhammers.
@@ -534,7 +534,7 @@ Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaf
 Major: All, Protection, Combat, Earth, Travelers, Trickery.
 Minor: Healing, Suffering, Moon, Divination.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic at level 3.
 - May cast Mirror Image once per day as a special ability, starting at level 3.
@@ -566,7 +566,7 @@ Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaf
 Major: All, Protection, Combat, Earth, Travelers, Trickery.
 Minor: Healing, Suffering, Moon, Divination.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic at level 3.
 - May cast Mirror Image once per day as a special ability, starting at level 3.
@@ -586,7 +586,7 @@ Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaf
 Major: All, Protection, Combat, Earth, Travelers, Trickery.
 Minor: Healing, Suffering, Moon, Divination.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic at level 3.
 - May cast Mirror Image once per day as a special ability, starting at level 3.
@@ -617,7 +617,7 @@ Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
 Major: All, Healing, Animal, Plant, Protection, Earth. 
 Minor: Combat, Creation, Travelers, Trickery.
 
-Advantages:
+Features:
 
 - Immune to Entangle and Web.
 - May cast Barkskin once per day as a special ability, starting at level 3.
@@ -670,7 +670,7 @@ Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
 Major: All, Healing, Animal, Plant, Protection, Earth. 
 Minor: Combat, Creation, Travelers, Trickery.
 
-Advantages:
+Features:
 
 - Immune to Entangle and Web.
 - May cast Barkskin once per day as a special ability, starting at level 3.
@@ -695,7 +695,7 @@ Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
 Major: All, Healing, Animal, Plant, Protection, Earth. 
 Minor: Combat, Creation, Travelers, Trickery.
 
-Advantages:
+Features:
 
 - Immune to Entangle and Web.
 - May cast Barkskin once per day as a special ability, starting at level 3.
@@ -727,7 +727,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Combat, Creation, Divination. 
 Minor: Thought, Travelers, Vocal.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - Gains -2 bonus to Speed Factor.
@@ -815,7 +815,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Combat, Creation, Divination. 
 Minor: Thought, Travelers, Vocal.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - Gains -2 bonus to Speed Factor.
@@ -856,7 +856,7 @@ Weapon: Bludgeoning and spears.
 Major: All, Suffering, Combat, Summoning, Air, Water.
 Minor: Healing, Protection, Darkness, Fire.
 
-Advantages:
+Features:
 
 - Gains immunity to all forms of lightning and electrical damage.
 - May cast Shocking Grasp once per day as a special ability, starting at level 1.
@@ -887,7 +887,7 @@ Weapon: Bludgeoning and spears.
 Major: All, Suffering, Combat, Summoning, Air, Water.
 Minor: Healing, Protection, Darkness, Fire.
 
-Advantages:
+Features:
 
 - Gains immunity to all forms of lightning and electrical damage.
 - May cast Shocking Grasp once per day as a special ability, starting at level 1.
@@ -906,7 +906,7 @@ Weapon: Bludgeoning and spears.
 Major: All, Suffering, Combat, Summoning, Air, Water.
 Minor: Healing, Protection, Darkness, Fire.
 
-Advantages:
+Features:
 
 - Gains immunity to all forms of lightning and electrical damage.
 - May cast Shocking Grasp once per day as a special ability, starting at level 1.
@@ -932,7 +932,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Sun, Creation, Fire. 
 Minor: Thought, Combat, Divination, Travelers.
 
-Advantages:
+Features:
 
 - Turns Undead as a priest two levels higher.
 - May use the special ability Faerie Fire once per day, starting at level 3.
@@ -1012,7 +1012,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Sun, Creation, Fire. 
 Minor: Thought, Combat, Divination, Travelers.
 
-Advantages:
+Features:
 
 - Turns Undead as a priest two levels higher.
 - May use the special ability Faerie Fire once per day, starting at level 3.
@@ -1041,7 +1041,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Sun, Creation, Fire. 
 Minor: Thought, Combat, Divination, Travelers.
 
-Advantages:
+Features:
 
 - Turns Undead as a priest two levels higher.
 - May use the special ability Faerie Fire once per day, starting at level 3.
@@ -1081,7 +1081,7 @@ Weapon: Bludgeoning, bastard sword, and longsword.
 Major: All, Healing, Protection, Combat, Divination, Vocal.
 Minor: Sun, Thought, Creation.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Hold Person as a special ability once per day, starting at level 1.
@@ -1112,7 +1112,7 @@ Weapon: Bludgeoning, bastard sword, and longsword.
 Major: All, Healing, Protection, Combat, Divination, Vocal.
 Minor: Sun, Thought, Creation.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Hold Person as a special ability once per day, starting at level 1.
@@ -1138,7 +1138,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Thought, Creation, Divination, Time.
 Minor: Sun, Combat, Travelers, Weave.
 
-Advantages:
+Features:
 
 - May cast Friends as a special ability once per day, starting at level 5.
 - May use the Legend Lore special ability once per day, starting at level 10.
@@ -1182,7 +1182,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Thought, Creation, Divination, Time.
 Minor: Sun, Combat, Travelers, Weave.
 
-Advantages:
+Features:
 
 - May cast Friends as a special ability once per day, starting at level 5.
 - May use the Legend Lore special ability once per day, starting at level 10.
@@ -1214,7 +1214,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Combat, Creation, Travelers. 
 Minor: Plant, Sun, Thought, Divination.
 
-Advantages:
+Features:
 
 - Gains a bonus of +2 on Constitution and +4 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
 - May cast Remove Fear as a special ability once per day, starting at level 1. Gains an additional use every level.
@@ -1281,7 +1281,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Combat, Creation, Travelers. 
 Minor: Plant, Sun, Thought, Divination.
 
-Advantages:
+Features:
 
 - Gains a bonus of +2 on Constitution and +4 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
 - May cast Remove Fear as a special ability once per day, starting at level 1. Gains an additional use every level, up to ten uses.
@@ -1310,7 +1310,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Combat, Creation, Travelers. 
 Minor: Plant, Sun, Thought, Divination.
 
-Advantages:
+Features:
 
 - Gains a bonus of +2 on Constitution and +4 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
 - May cast Remove Fear as a special ability once per day, starting at level 1. Gains an additional use every level.
@@ -1348,7 +1348,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Protection, Thought, Divination, Weave, Time. 
 Minor: Healing, Moon, Combat, Creation.
 
-Advantages:
+Features:
 
 - Immune to wild, dead and miscast magic.
 - Gains a bonus of +2 bonus to <PRO_HISHER> Saving Throws vs. Spells.
@@ -1381,7 +1381,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Protection, Thought, Divination, Weave, Time. 
 Minor: Healing, Moon, Combat, Creation.
 
-Advantages:
+Features:
 
 - Immune to wild, dead and miscast magic.
 - Gains a bonus of +2 bonus to <PRO_HISHER> Saving Throws vs. Spells.
@@ -1417,7 +1417,7 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Combat, Creation, Travelers, Vocal. 
 Minor: Healing, Sun, Thought.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Command as a special ability once per day, starting at level 1.
@@ -1458,7 +1458,7 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Combat, Creation, Travelers, Vocal. 
 Minor: Healing, Sun, Thought.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Command as a special ability once per day, starting at level 1.
@@ -1490,7 +1490,7 @@ Weapon: Bludgeoning, dagger, and crossbow.
 Major: All, Darkness, Thought, Divination, Travelers, Trickery.
 Minor: Healing, Protection, Combat, Creation.
 
-Advantages:
+Features:
 
 - May cast Darkness once per day as a special ability, starting at level 1.
 - May use the Shadowcloak special ability once per day, starting at level 2.
@@ -1547,7 +1547,7 @@ Weapon: Bludgeoning, dagger, and crossbow.
 Major: All, Darkness, Thought, Divination, Travelers, Trickery.
 Minor: Healing, Protection, Combat, Creation.
 
-Advantages:
+Features:
 
 - May cast Darkness once per day as a special ability, starting at level 1.
 - May use the Shadowcloak special ability once per day, starting at level 2.
@@ -1580,7 +1580,7 @@ Weapon: Bludgeoning and axe only.
 Major: All, Necromantic, Suffering, Thought, Air, Water.
 Minor: Healing, Animal, Combat, Summoning.
 
-Advantages:
+Features:
 
 - Gains immunity to normal cold and 50% resistance to magical cold.
 - May use the Frost Dagger special ability once per day, starting at level 1.
@@ -1681,7 +1681,7 @@ Weapon: Bludgeoning and axe only.
 Major: All, Necromantic, Suffering, Thought, Air, Water.
 Minor: Healing, Animal, Combat, Summoning.
 
-Advantages:
+Features:
 
 - Gains immunity to normal cold and 50% resistance to magical cold.
 - May use the Frost Dagger special ability once per day, starting at level 1.
@@ -1729,7 +1729,7 @@ Weapon: Non-missile bludgeoning and dagger only.
 Major: All, Animal, Vermin, Combat, Earth, Travelers.
 Minor: Healing, Plant, Darkness.
 
-Advantages:
+Features:
 
 - May use the weapon Claws of Malar.
 - Receives Attacks Per Round as if they were warriors.
@@ -1787,7 +1787,7 @@ Weapon: Non-missile bludgeoning and dagger only.
 Major: All, Animal, Vermin, Combat, Earth, Travelers.
 Minor: Healing, Plant, Darkness.
 
-Advantages:
+Features:
 
 - May use the weapon Claws of Malar.
 - Receives Attacks Per Round as if they were warriors.
@@ -1821,7 +1821,7 @@ Weapon: Bludgeoning, spear, and dagger.
 Major: All, Suffering, Summoning, Air, Water, Travelers.
 Minor: Healing, Necromantic, Protection, Darkness.
 
-Advantages:
+Features:
 
 - May cast Smashing Wave once per day as a special ability, starting at level 4.
 - May use the Dehydrate special ability once per day, starting at level 6.
@@ -1888,7 +1888,7 @@ Weapon: Bludgeoning, spear, and dagger.
 Major: All, Suffering, Summoning, Air, Water, Travelers.
 Minor: Healing, Necromantic, Protection, Darkness.
 
-Advantages:
+Features:
 
 - May cast Smashing Wave once per day as a special ability, starting at level 4.
 - May use the Dehydrate special ability once per day, starting at level 6.
@@ -1928,7 +1928,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Moon, Thought, Combat, Divination.
 Minor: Sun, Creation, Air, Weave.
 
-Advantages:
+Features:
 
 - Gains Infravision.
 - Immune to all Blindness effects and spells.
@@ -1998,7 +1998,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Moon, Thought, Combat, Divination.
 Minor: Sun, Creation, Air, Weave.
 
-Advantages:
+Features:
 
 - Gains Infravision.
 - Immune to all Blindness effects and spells.
@@ -2030,7 +2030,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Moon, Thought, Combat, Divination.
 Minor: Sun, Creation, Air, Weave.
 
-Advantages:
+Features:
 
 - Gains Infravision.
 - Immune to all Blindness effects and spells.
@@ -2071,7 +2071,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
 Minor: Healing, Thought, Divination, Trickery.
 
-Advantages:
+Features:
 
 - Immune to disease.
 - Gains a bonus of +4 bonus to <PRO_HISHER> Saving Throws vs. Poison.
@@ -2131,7 +2131,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
 Minor: Healing, Thought, Divination, Trickery.
 
-Advantages:
+Features:
 
 - Immune to disease.
 - Gains a bonus of +4 bonus to <PRO_HISHER> Saving Throws vs. Poison.
@@ -2160,7 +2160,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
 Minor: Healing, Thought, Divination, Trickery.
 
-Advantages:
+Features:
 
 - Immune to disease.
 - Gains a bonus of +4 bonus to <PRO_HISHER> Saving Throws vs. Poison.
@@ -2192,7 +2192,7 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Combat, Summoning, Vocal.
 Minor: Healing, Necromantic, Protection, Fire.
 
-Advantages:
+Features:
 
 - May use the Touch of Loviatar special ability once per day, starting at level 1. Gains an additional use every three levels.
 - May use the Whip of Flame special ability once per day, starting at level 3.
@@ -2318,7 +2318,7 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Combat, Summoning, Vocal.
 Minor: Healing, Necromantic, Protection, Fire.
 
-Advantages:
+Features:
 
 - May use the Touch of Loviatar special ability once per day, starting at level 1. Gains an additional use every three levels.
 - May use the Whip of Flame special ability once per day, starting at level 3.
@@ -2356,7 +2356,7 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Combat, Summoning, Vocal.
 Minor: Healing, Necromantic, Protection, Fire.
 
-Advantages:
+Features:
 
 - May use the Touch of Loviatar special ability once per day, starting at level 1. Gains an additional use every three levels.
 - May use the Whip of Flame special ability once per day, starting at level 3.
@@ -2407,7 +2407,7 @@ Weapon: All non-missile bludgeoning and spears.
 Major: All, Necromantic, Suffering, Thought, Combat, Summoning. 
 Minor: Healing, Darkness, Divination, Vocal.
 
-Advantages:
+Features:
 
 - Immune to fear.
 - May cast Cloak of Fear once per day as a special ability, starting at level 5.
@@ -2464,7 +2464,7 @@ Weapon: All non-missile bludgeoning and spears.
 Major: All, Necromantic, Suffering, Thought, Combat, Summoning. 
 Minor: Healing, Darkness, Divination, Vocal.
 
-Advantages:
+Features:
 
 - Immune to fear.
 - May cast Cloak of Fear once per day as a special ability, starting at level 5.
@@ -2497,7 +2497,7 @@ Weapon: Bludgeoning and piercing only.
 Major: All, Necromantic, Suffering, Combat, Summoning, Divination.
 Minor: Healing, Darkness, Thought, Creation.
 
-Advantages:
+Features:
 
 - May use the Bone Dagger special ability once per day, starting at level 2.
 - May cast Finger of Death once per day as a special ability, starting at level 7.
@@ -2563,7 +2563,7 @@ Weapon: Bludgeoning and piercing only.
 Major: All, Necromantic, Suffering, Combat, Summoning, Divination.
 Minor: Healing, Darkness, Thought, Creation.
 
-Advantages:
+Features:
 
 - May use the Bone Dagger special ability once per day, starting at level 2.
 - May cast Finger of Death once per day as a special ability, starting at level 7.
@@ -2596,7 +2596,7 @@ Weapon: Bludgeoning and scimitar.
 Major: All, Necromantic, Suffering, Vermin, Protection, Darkness. 
 Minor: Healing, Combat, Creation, Divination.
 
-Advantages:
+Features:
 
 - Commands Undead as a priest two levels higher.
 - Gains +1 Saving Throws vs. Paralyzation/Poison/Death.
@@ -2661,7 +2661,7 @@ Weapon: Bludgeoning and scimitar.
 Major: All, Necromantic, Suffering, Vermin, Protection, Darkness. 
 Minor: Healing, Combat, Creation, Divination.
 
-Advantages:
+Features:
 
 - Commands Undead as a priest two levels higher.
 - Gains +1 Saving Throws vs. Paralyzation/Poison/Death.
@@ -2700,7 +2700,7 @@ Weapon: Bludgeoning and piercing only.
 Major: All, Healing, Necromantic, Sun, Moon, Combat.  
 Minor: Protection, Creation, Divination, Vocal.
 
-Advantages:
+Features:
 
 - Turns Undead as a priest two levels higher.
 - Gains +1 Saving Throws vs. Paralyzation/Poison/Death.
@@ -2769,7 +2769,7 @@ Weapon: Bludgeoning and piercing only.
 Major: All, Healing, Necromantic, Sun, Moon, Combat.  
 Minor: Protection, Creation, Divination, Vocal.
 
-Advantages:
+Features:
 
 - Turns Undead as a priest two levels higher.
 - Gains +1 Saving Throws vs. Paralyzation/Poison/Death.
@@ -2806,7 +2806,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Necromantic, Protection, Thought, Divination, Weave. 
 Minor: Moon, Creation, Travelers, Time.
 
-Advantages:
+Features:
 
 - Gains a bonus of +2 bonus to spellcasting time.
 - May cast some arcane spells as divine spells as they were one circle higher, starting at level 3.
@@ -2850,7 +2850,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Necromantic, Protection, Thought, Divination, Weave. 
 Minor: Moon, Creation, Travelers, Time.
 
-Advantages:
+Features:
 
 - Gains a bonus of +2 bonus to spellcasting time.
 - May cast some arcane spells as divine spells as they were one circle higher, starting at level 3.
@@ -2899,7 +2899,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Divination, Time.
 Minor: Suffering, Protection, Vocal.
 
-Advantages:
+Features:
 
 - Turns or Commands Undead as a priest one level higher.
 - Gains +1 Saving Throw bonus against spells using Necromancy magic.
@@ -2942,7 +2942,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Divination, Time.
 Minor: Suffering, Protection, Vocal.
 
-Advantages:
+Features:
 
 - Turns or Commands Undead as a priest one level higher.
 - Gains +1 Saving Throw bonus against spells using Necromancy magic.
@@ -2978,7 +2978,7 @@ Weapon: Any.
 Major: All, Protection, Combat, Divination, Vocal.
 Minor: Healing, Travelers.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Clairvoyance once per day as a special ability, starting at level 3.
@@ -3048,7 +3048,7 @@ Weapon: Any.
 Major: All, Protection, Combat, Divination, Vocal.
 Minor: Healing, Travelers.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Clairvoyance once per day as a special ability, starting at level 3.
@@ -3088,7 +3088,7 @@ Weapon: Any.
 Major: All, Combat, Creation, Travelers, Vocal.
 Minor: Suffering, Darkness.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May Enrage as a Berserker once per day.
@@ -3162,7 +3162,7 @@ Weapon: Any.
 Major: All, Combat, Creation, Travelers, Vocal.
 Minor: Suffering, Darkness.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May Enrage as a Berserker once per day.
@@ -3211,7 +3211,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Moon, Thought, Divination. 
 Minor: Necromantic, Weave, Time.
 
-Advantages:
+Features:
 
 - May cast Clairvoyance once per day as a special ability, starting at level 1.
 - May cast Wizard Eye once per day as a special ability, starting at level 3.
@@ -3261,7 +3261,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Moon, Thought, Divination. 
 Minor: Necromantic, Weave, Time.
 
-Advantages:
+Features:
 
 - May cast Clairvoyance once per day as a special ability, starting at level 1.
 - May cast Wizard Eye once per day as a special ability, starting at level 3.
@@ -3302,7 +3302,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Suffering, Darkness, Summoning, Divination.
 Minor: Vermin, Weave, Time.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Necromancy magic.
 - May cast Chill Touch once per day as a special ability, starting at level 1.
@@ -3363,7 +3363,7 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Suffering, Darkness, Summoning, Divination.
 Minor: Vermin, Weave, Time.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Necromancy magic.
 - May cast Chill Touch once per day as a special ability, starting at level 1.
@@ -3397,7 +3397,7 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Moon, Thought, Air, Travelers, Trickery.
 Minor: Healing, Darkness, Weave, Time.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic.
 - May cast Mirror Image once per day as a special ability, starting at level 3.
@@ -3430,7 +3430,7 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Moon, Thought, Air, Travelers, Trickery.
 Minor: Healing, Darkness, Weave, Time.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic.
 - May cast Mirror Image once per day as a special ability, starting at level 3.
@@ -3451,7 +3451,7 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Moon, Thought, Air, Travelers, Trickery.
 Minor: Healing, Darkness, Weave, Time.
 
-Advantages:
+Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic.
 - May cast Mirror Image once per day as a special ability, starting at level 3.
@@ -3479,7 +3479,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Thought, Divination, Trickery. 
 Minor: Sun, Moon, Creation, Travelers.
 
-Advantages:
+Features:
 
 - May cast Luck once per day as a special ability, starting at level 1.
 - May use the Moment special ability once per day, starting at level 3.
@@ -3585,7 +3585,7 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Thought, Divination, Trickery. 
 Minor: Sun, Moon, Creation, Travelers.
 
-Advantages:
+Features:
 
 - May cast Luck once per day as a special ability, starting at level 1.
 - May use the Moment special ability once per day, starting at level 3.
@@ -3632,7 +3632,7 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
 
-Advantages:
+Features:
 
 - May use the Bad Luck special ability once per day, starting at level 1.
 - May use the Doom special ability once per day, starting at level 3.
@@ -3735,7 +3735,7 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
 
-Advantages:
+Features:
 
 - May use the Bad Luck special ability once per day, starting at level 1.
 - May use the Doom special ability once per day, starting at level 3.
@@ -3774,7 +3774,7 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
 
-Advantages:
+Features:
 
 - May use the Bad Luck special ability once per day, starting at level 1.
 - May use the Doom special ability once per day, starting at level 3.
@@ -3813,7 +3813,7 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
 
-Advantages:
+Features:
 
 - May use the Bad Luck special ability once per day, starting at level 1.
 - May use the Doom special ability once per day, starting at level 3.
@@ -3865,7 +3865,7 @@ Weapon: Any.
 Major: All, Suffering, Combat, Divination, Vocal.
 Minor: Healing, Darkness.
 
-Advantages:
+Features:
 
 - May Enrage as a Berserker once per day.
 - May cast Shocking Grasp once per day as a special ability, starting at level 3.
@@ -3942,7 +3942,7 @@ Weapon: Any.
 Major: All, Suffering, Combat, Divination, Vocal.
 Minor: Healing, Darkness.
 
-Advantages:
+Features:
 
 - May Enrage as a Berserker once per day.
 - May cast Shocking Grasp once per day as a special ability, starting at level 3.
@@ -3976,7 +3976,7 @@ Weapon: Any.
 Major: All, Suffering, Combat, Divination, Vocal.
 Minor: Healing, Darkness.
 
-Advantages:
+Features:
 
 - May Enrage as a Berserker once per day.
 - May cast Shocking Grasp once per day as a special ability, starting at level 3.
@@ -4021,7 +4021,7 @@ Weapon: Any.
 Major: All, Air, Combat, Travelers, Healing, Protection.
 Minor: Divination, Vocal, Plant.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Invisibility once per day as a special ability, starting at level 2. 
@@ -4060,7 +4060,7 @@ Weapon: Any.
 Major: All, Air, Combat, Travelers, Healing, Protection.
 Minor: Divination, Vocal, Plant.
 
-Advantages:
+Features:
 
 - Receives Attacks Per Round as if they were warriors.
 - May cast Invisibility once per day as a special ability, starting at level 2. 
@@ -4090,7 +4090,7 @@ Weapon: All bludgeoning, scimitar and spears.
 Major: All, Travelers, Water, Protection, Combat.
 Minor: Moon, Healing, Air.
 
-Advantages:
+Features:
 
 - May spend three slots in Two-Weapon Fighting.
 - May cast Goodberry once per day as a special ability, starting at level 3. 
@@ -4123,7 +4123,7 @@ Weapon: All bludgeoning, scimitar and spears.
 Major: All, Travelers, Water, Protection, Combat.
 Minor: Moon, Healing, Air.
 
-Advantages:
+Features:
 
 - May spend three slots in Two-Weapon Fighting.
 - May cast Goodberry once per day as a special ability, starting at level 3. 
@@ -4153,7 +4153,7 @@ Weapon: Any.
 Major: All, Travelers, Earth, Protection, Vermin, Darkness.
 Minor: Healing, Suffering, Summoning, Trickery.
 
-Advantages:
+Features:
 
 - Gains Infravision.
 - May cast Darkness once per day as a special ability, starting at level 1. Gains another use at level 3. 
@@ -4186,7 +4186,7 @@ Weapon: Any.
 Major: All, Travelers, Earth, Protection, Vermin, Darkness.
 Minor: Healing, Suffering, Summoning, Trickery.
 
-Advantages:
+Features:
 
 - Gains Infravision.
 - May cast Darkness once per day as a special ability, starting at level 1. Gains another use at level 3. 
@@ -4218,7 +4218,7 @@ Weapon: Club, sling, quarterstaff.
 Major: All, Water, Protection, Healing, Thought, Vocal.
 Minor: Sun, Moon, Plant, Creation.
 
-Advantages:
+Features:
 
 - May cast Remove Fear once per day as a special ability, starting at level 1. 
 - May cast Sleep once per day as a special ability, starting at level 3. Gains an additional use every three levels.
@@ -4252,7 +4252,7 @@ Weapon: Club, sling, quarterstaff.
 Major: All, Water, Protection, Healing, Thought, Vocal.
 Minor: Sun, Moon, Plant, Creation.
 
-Advantages:
+Features:
 
 - May cast Remove Fear once per day as a special ability, starting at level 1. 
 - May cast Sleep once per day as a special ability, starting at level 3. Gains an additional use every three levels.
@@ -4285,7 +4285,7 @@ Weapon: Shortbow, spear, dart, dagger, short sword.
 Major: All, Animal, Combat, Water, Vocal.
 Minor: Healing, Air, Travelers.
 
-Advantages:
+Features:
 
 - Gains immunity to all forms of cold.
 - May use the Call Upon Polar Fury special ability once per day, starting at level 5.
@@ -4293,6 +4293,7 @@ Advantages:
 - May shapechange into a Great White Bear once per day as a special ability, starting at level 10.
 - May cast Cone of Cold once per day as a special ability, starting at level 13.
 - May cast Freezing Sphere once per day as a special ability, starting at level 15.
+- May never start or use a fire.
 
 CALL UPON POLAR FURY:
 
@@ -4354,7 +4355,7 @@ Weapon: Shortbow, spear, dart, dagger, short sword.
 Major: All, Animal, Combat, Water, Vocal.
 Minor: Healing, Air, Travelers.
 
-Advantages:
+Features:
 
 - Gains immunity to all forms of cold.
 - May use the Call Upon Polar Fury special ability once per day, starting at level 5.
@@ -4362,6 +4363,7 @@ Advantages:
 - May shapechange into a Great White Bear once per day as a special ability, starting at level 10.
 - May cast Cone of Cold once per day as a special ability, starting at level 13.
 - May cast Freezing Sphere once per day as a special ability, starting at level 15.
+- May never start or use a fire.
 
 CALL UPON POLAR FURY:
 
@@ -4393,7 +4395,7 @@ Weapon: Club, dagger, dart, sling, quarterstaff.
 Major: All, Healing, Animal, Plant, Sun.
 Minor: Protection, Thought, Travelers.
 
-Advantages:
+Features:
 
 - May Lay on Hands as a Paladin three times per day.
 - May cast Entangle once per day as a special ability, starting at level 1. 
@@ -4434,7 +4436,7 @@ Weapon: Club, dagger, dart, sling, quarterstaff.
 Major: All, Healing, Animal, Plant, Sun.
 Minor: Protection, Thought, Travelers.
 
-Advantages:
+Features:
 
 - May Lay on Hands as a Paladin three times per day.
 - May cast Entangle once per day as a special ability, starting at level 1. 
