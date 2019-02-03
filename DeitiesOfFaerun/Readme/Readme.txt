@@ -1800,6 +1800,8 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 
 - Dreadful Witch (by Raduziel - I Hate Undead Kitpack)
 
+- Spirit Redeemer (by Raduziel - I Hate Undead Kitpack)
+
 - Hivemaster (by AionZ - Artisan's Kitpack)
 	
 	Major: Vermin, Plant, Protection, Healing, Earth, Suffering
@@ -1906,7 +1908,7 @@ g7) Great White Bear
 
 AC 0 | Thac0 9 | Attacks per Round 3 | STR 18/00
 
-Damage: 1d12 / 1d12 / 2d8 (slashing/slashing/piercing)  - strikes as +2
+Damage: 2d8 (slashing)  - strikes as +2
 
 Resistances (%): 100 Cold. Can only be hurt by weapons +1 or better.
 
