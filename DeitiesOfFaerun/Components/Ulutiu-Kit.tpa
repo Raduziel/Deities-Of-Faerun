@@ -97,7 +97,7 @@ COPY "DeitiesOfFaerun\Spl\RAULUT1.spl" override SAY NAME1 @4106 SAY UNIDENTIFIED
 
 COPY "DeitiesOfFaerun\Spl\RAULUT11.spl" override
 
-COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT1.itm" override
+COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT1.itm" override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
 
 //Ice Storm
 
