@@ -9,7 +9,7 @@ ADD_KIT ~RAUlutRC~
     ~RAUlutRC 1 1 1 1 1 1 1 1~
     ~RAUlutRC 1 1 1 1 1 1 1 1 0 0 2 0 0 0 0 2 0 0 2 0 0 0 0 0 0 2 2 0 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAUlutRC 12 3 3 3 14 3~
-	~RAUlutRC 0 0 0 0 0 0~
+	~RAUlutRC 0 0 0 0 2 0~
 	~RAUlutRC 12 3 3 3 14 3~
     ~RAUlutRC 12 3 3 3 14 3~
 	~RAUlutRC 0 1 0 0 0 0 0 0 0~
