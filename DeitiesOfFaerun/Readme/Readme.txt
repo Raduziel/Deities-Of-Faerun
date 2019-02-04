@@ -1798,18 +1798,18 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 
 - Circle Enforcer (by Raduziel - I Hate Undead Kitpack)
 
-	Major: All,
-	Minor:
+	Major: All, Protection, Combat, Air, Water, Earth, Fire
+	Minor: Healing, Sun, Creation
 
 - Dreadful Witch (by Raduziel - I Hate Undead Kitpack)
 
-	Major: All,
-	Minor:
+	Major: All, Necromantic, Suffering, Plant, Darkness, Summoning, Earth  
+	Minor: Healing, Animal, Thought
 
 - Spirit Redeemer (by Raduziel - I Hate Undead Kitpack)
 
-	Major: All,
-	Minor:
+	Major: All, Protection, Sun, Combat, Creation, Fire
+	Minor: Healing, Moon, Divination, Vocal
 
 - Hivemaster (by AionZ - Artisan's Kitpack)
 	
