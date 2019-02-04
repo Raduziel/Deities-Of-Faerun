@@ -57,7 +57,7 @@ WRITE_ASCII 0x058 ~ULUTL~
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_COLD~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override/RAAURIF.spl~
+COPY_EXISTING ~%spell_res%.spl~ ~override/RAULUTF.spl~
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
@@ -69,6 +69,7 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+LPF ALTER_EFFECT INT_VAR opcode = 85 parameter1 = 100 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 49 parameter1 = 2 parameter2 = 0 target = 2 power = 0 resist_dispel = 0 timing = 9 duration = 0 END
 
 END
