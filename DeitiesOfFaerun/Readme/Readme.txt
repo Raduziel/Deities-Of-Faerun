@@ -1821,6 +1821,11 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 	Major: All, Combat, Vocal, Protection, Thought, Creation, Divination
 	Minor: Healing, Air, Water
 
+- Witchlight Shaman (by LavaDelVortel)
+
+	Major: All, Vocal, Vermin, Plant, Moon, Earth, Time
+	Minor: Healing, Trickery, Darkness
+
 - Bearwalker (by Ulb): All, Combat, Moon
 
 - Dreamwalker (by Ulb)
