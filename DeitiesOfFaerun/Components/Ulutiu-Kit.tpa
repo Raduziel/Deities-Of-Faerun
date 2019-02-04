@@ -111,17 +111,19 @@ END
 
 //Shapechange: Great White Bear
 
+COPY "DeitiesOfFaerun\Spl\RAULUT3.spl" override SAY NAME1 @4109 SAY UNIDENTIFIED_DESC  @4110
+
+COPY "DeitiesOfFaerun\Spl\RAULUT31.spl" override SAY NAME1 @3208 SAY UNIDENTIFIED_DESC  @3208
+
+COPY "DeitiesOfFaerun\Spl\RAUlutNF.bam" override
+
+COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT3.itm" override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
+
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
 COPY "DeitiesOfFaerun\Cre\GreatWhiteBear" override 
 
 END
-
-COPY "DeitiesOfFaerun\Spl\RAULUT3.spl" override SAY NAME1 @4109 SAY UNIDENTIFIED_DESC  @4110
-
-COPY "DeitiesOfFaerun\Spl\RAULUT31.spl" override SAY NAME1 @3208 SAY UNIDENTIFIED_DESC  @3208
-
-COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT3.itm" override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
 
 //Cone of Cold
 
