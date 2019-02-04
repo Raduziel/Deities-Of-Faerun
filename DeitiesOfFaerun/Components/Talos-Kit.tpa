@@ -59,7 +59,7 @@ COPY_EXISTING ~%spell_res%.spl~ ~override/RATALOF.spl~
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
-FOR (level = 2; level < 51; level =+ 1) BEGIN
+FOR (level = 2; level < 51; level += 1) BEGIN
 LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level  END
 END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
