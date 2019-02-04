@@ -18,6 +18,8 @@ Weapon: Bludgeoning, shortbow, and darts.
 Major: All, Healing, Protection, Sun, Thought, Fire.
 Minor: Combat, Creation, Divination, Vocal.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May cast Dire Charm once per day as a special ability, starting at level 1.
@@ -87,6 +89,8 @@ Weapon: Bludgeoning, shortbow, and darts.
 Major: All, Healing, Protection, Sun, Thought, Fire.
 Minor: Combat, Creation, Divination, Vocal.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May cast Dire Charm once per day as a special ability, starting at level 1.
@@ -109,6 +113,8 @@ Weapon: Bludgeoning, shortbow, and darts.
 
 Major: All, Healing, Protection, Sun, Thought, Fire.
 Minor: Combat, Creation, Divination, Vocal.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -142,6 +148,8 @@ Weapon: Any, except missiles.
 Major: All, Protection, Combat, Creation, Travelers, Vocal.
 Minor: Healing, Suffering, Divination.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -172,6 +180,8 @@ Weapon: Any, except missiles.
 
 Major: All, Protection, Combat, Creation, Travelers, Vocal.
 Minor: Healing, Suffering, Divination.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -204,6 +214,8 @@ Weapon: Bludgeoning and longswords.
 
 Major: All, Necromantic, Darkness, Thought, Summoning, Trickery.
 Minor: Suffering, Combat, Creation, Divination.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -274,6 +286,8 @@ Weapon: Bludgeoning and longswords.
 Major: All, Necromantic, Darkness, Thought, Summoning, Trickery.
 Minor: Suffering, Combat, Creation, Divination.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
@@ -310,6 +324,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Necromantic, Darkness, Thought, Summoning, Weave, Trickery.
 Minor: Healing, Suffering, Moon, Creation.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -404,6 +420,8 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Thought, Summoning, Weave, Trickery.
 Minor: Healing, Suffering, Moon, Creation.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains +1 bonus to hit, damage and on Saving Throws during the night.
@@ -433,6 +451,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Necromantic, Darkness, Thought, Summoning, Weave, Trickery.
 Minor: Healing, Suffering, Moon, Creation.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -471,6 +491,8 @@ Weapon: Any.
 Major: All, Protection, Combat, Creation, Earth, Vocal.
 Minor: Healing, Thought, Travelers.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -504,6 +526,8 @@ Weapon: Any.
 Major: All, Protection, Combat, Creation, Earth, Vocal.
 Minor: Healing, Thought, Travelers.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -533,6 +557,8 @@ Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaf
 
 Major: All, Protection, Combat, Earth, Travelers, Trickery.
 Minor: Healing, Suffering, Moon, Divination.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -566,6 +592,8 @@ Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaf
 Major: All, Protection, Combat, Earth, Travelers, Trickery.
 Minor: Healing, Suffering, Moon, Divination.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic at level 3.
@@ -585,6 +613,8 @@ Weapon: Club, dagger, dart, crossbows, shortbow, short sword, sling, quarterstaf
 
 Major: All, Protection, Combat, Earth, Travelers, Trickery.
 Minor: Healing, Suffering, Moon, Divination.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -616,6 +646,8 @@ Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
 
 Major: All, Healing, Animal, Plant, Protection, Earth. 
 Minor: Combat, Creation, Travelers, Trickery.
+
+Turn/Command Undead: Yes (see below).
 
 Features:
 
@@ -671,6 +703,8 @@ Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
 Major: All, Healing, Animal, Plant, Protection, Earth. 
 Minor: Combat, Creation, Travelers, Trickery.
 
+Turn/Command Undead: Yes (see below).
+
 Features:
 
 - Immune to Entangle and Web.
@@ -697,6 +731,8 @@ Weapon: Club, crossbows, dagger, axe, sling, spear, shortbow and quarterstaff.
 Major: All, Healing, Animal, Plant, Protection, Earth. 
 Minor: Combat, Creation, Travelers, Trickery.
 
+Turn/Command Undead: Yes (see below).
+
 Features:
 
 - Immune to Entangle and Web.
@@ -704,6 +740,7 @@ Features:
 - May cast Call Woodland Beings once per day as a special ability, starting at level 7.
 - May cast Animal Summoning III once per day as a special ability, starting at level 13.
 - May use the Changestaff special ability once per day, starting at level 15.
+- Turns Undead as a priest four levels lower.
 
 CHANGESTAFF
 
@@ -728,6 +765,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Combat, Creation, Divination. 
 Minor: Thought, Travelers, Vocal.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -817,6 +856,8 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Combat, Creation, Divination. 
 Minor: Thought, Travelers, Vocal.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -858,6 +899,8 @@ Weapon: Bludgeoning and spears.
 Major: All, Suffering, Combat, Summoning, Air, Water.
 Minor: Healing, Protection, Darkness, Fire.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains immunity to all forms of lightning and electrical damage.
@@ -889,6 +932,8 @@ Weapon: Bludgeoning and spears.
 Major: All, Suffering, Combat, Summoning, Air, Water.
 Minor: Healing, Protection, Darkness, Fire.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains immunity to all forms of lightning and electrical damage.
@@ -907,6 +952,8 @@ Weapon: Bludgeoning and spears.
 
 Major: All, Suffering, Combat, Summoning, Air, Water.
 Minor: Healing, Protection, Darkness, Fire.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -933,6 +980,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Sun, Creation, Fire. 
 Minor: Thought, Combat, Divination, Travelers.
+
+Turn/Command Undead: Yes (see below).
 
 Features:
 
@@ -1014,6 +1063,8 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Sun, Creation, Fire. 
 Minor: Thought, Combat, Divination, Travelers.
 
+Turn/Command Undead: Yes (see below).
+
 Features:
 
 - Turns Undead as a priest two levels higher.
@@ -1042,6 +1093,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Sun, Creation, Fire. 
 Minor: Thought, Combat, Divination, Travelers.
+
+Turn/Command Undead: Yes (see below).
 
 Features:
 
@@ -1083,6 +1136,8 @@ Weapon: Bludgeoning, bastard sword, and longsword.
 Major: All, Healing, Protection, Combat, Divination, Vocal.
 Minor: Sun, Thought, Creation.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -1114,6 +1169,8 @@ Weapon: Bludgeoning, bastard sword, and longsword.
 Major: All, Healing, Protection, Combat, Divination, Vocal.
 Minor: Sun, Thought, Creation.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -1139,6 +1196,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Thought, Creation, Divination, Time.
 Minor: Sun, Combat, Travelers, Weave.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -1184,6 +1243,8 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Thought, Creation, Divination, Time.
 Minor: Sun, Combat, Travelers, Weave.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May cast Friends as a special ability once per day, starting at level 5.
@@ -1215,6 +1276,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Combat, Creation, Travelers. 
 Minor: Plant, Sun, Thought, Divination.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -1283,6 +1346,8 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Combat, Creation, Travelers. 
 Minor: Plant, Sun, Thought, Divination.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Gains a bonus of +2 on Constitution and +4 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
@@ -1311,6 +1376,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Combat, Creation, Travelers. 
 Minor: Plant, Sun, Thought, Divination.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -1350,6 +1417,8 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Protection, Thought, Divination, Weave, Time. 
 Minor: Healing, Moon, Combat, Creation.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Immune to wild, dead and miscast magic.
@@ -1382,6 +1451,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Necromantic, Protection, Thought, Divination, Weave, Time. 
 Minor: Healing, Moon, Combat, Creation.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -1418,6 +1489,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Protection, Combat, Creation, Travelers, Vocal. 
 Minor: Healing, Sun, Thought.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -1460,6 +1533,8 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Combat, Creation, Travelers, Vocal. 
 Minor: Healing, Sun, Thought.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -1491,6 +1566,8 @@ Weapon: Bludgeoning, dagger, and crossbow.
 
 Major: All, Darkness, Thought, Divination, Travelers, Trickery.
 Minor: Healing, Protection, Combat, Creation.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -1549,6 +1626,8 @@ Weapon: Bludgeoning, dagger, and crossbow.
 Major: All, Darkness, Thought, Divination, Travelers, Trickery.
 Minor: Healing, Protection, Combat, Creation.
 
+Turn/Command Undead: No.
+
 Features:
 
 - May cast Darkness once per day as a special ability, starting at level 1.
@@ -1581,6 +1660,8 @@ Weapon: Bludgeoning and axe only.
 
 Major: All, Necromantic, Suffering, Thought, Air, Water.
 Minor: Healing, Animal, Combat, Summoning.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -1683,6 +1764,8 @@ Weapon: Bludgeoning and axe only.
 Major: All, Necromantic, Suffering, Thought, Air, Water.
 Minor: Healing, Animal, Combat, Summoning.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Gains immunity to normal cold and 50% resistance to magical cold.
@@ -1730,6 +1813,8 @@ Weapon: Non-missile bludgeoning and dagger only.
 
 Major: All, Animal, Vermin, Combat, Earth, Travelers.
 Minor: Healing, Plant, Darkness.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -1789,6 +1874,8 @@ Weapon: Non-missile bludgeoning and dagger only.
 Major: All, Animal, Vermin, Combat, Earth, Travelers.
 Minor: Healing, Plant, Darkness.
 
+Turn/Command Undead: No.
+
 Features:
 
 - May use the weapon Claws of Malar.
@@ -1822,6 +1909,8 @@ Weapon: Bludgeoning, spear, and dagger.
 
 Major: All, Suffering, Summoning, Air, Water, Travelers.
 Minor: Healing, Necromantic, Protection, Darkness.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -1890,6 +1979,8 @@ Weapon: Bludgeoning, spear, and dagger.
 Major: All, Suffering, Summoning, Air, Water, Travelers.
 Minor: Healing, Necromantic, Protection, Darkness.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May cast Smashing Wave once per day as a special ability, starting at level 4.
@@ -1929,6 +2020,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Moon, Thought, Combat, Divination.
 Minor: Sun, Creation, Air, Weave.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -2000,6 +2093,8 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Moon, Thought, Combat, Divination.
 Minor: Sun, Creation, Air, Weave.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains Infravision.
@@ -2031,6 +2126,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Moon, Thought, Combat, Divination.
 Minor: Sun, Creation, Air, Weave.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -2072,6 +2169,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
 Minor: Healing, Thought, Divination, Trickery.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -2133,6 +2232,8 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
 Minor: Healing, Thought, Divination, Trickery.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Immune to disease.
@@ -2161,6 +2262,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
 Minor: Healing, Thought, Divination, Trickery.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -2193,6 +2296,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Suffering, Darkness, Combat, Summoning, Vocal.
 Minor: Healing, Necromantic, Protection, Fire.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -2320,6 +2425,8 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Combat, Summoning, Vocal.
 Minor: Healing, Necromantic, Protection, Fire.
 
+Turn/Command Undead: No.
+
 Features:
 
 - May use the Touch of Loviatar special ability once per day, starting at level 1. Gains an additional use every three levels.
@@ -2357,6 +2464,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Suffering, Darkness, Combat, Summoning, Vocal.
 Minor: Healing, Necromantic, Protection, Fire.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -2408,6 +2517,8 @@ Weapon: All non-missile bludgeoning and spears.
 
 Major: All, Necromantic, Suffering, Thought, Combat, Summoning. 
 Minor: Healing, Darkness, Divination, Vocal.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -2466,6 +2577,8 @@ Weapon: All non-missile bludgeoning and spears.
 Major: All, Necromantic, Suffering, Thought, Combat, Summoning. 
 Minor: Healing, Darkness, Divination, Vocal.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Immune to fear.
@@ -2498,6 +2611,8 @@ Weapon: Bludgeoning and piercing only.
 
 Major: All, Necromantic, Suffering, Combat, Summoning, Divination.
 Minor: Healing, Darkness, Thought, Creation.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -2565,6 +2680,8 @@ Weapon: Bludgeoning and piercing only.
 Major: All, Necromantic, Suffering, Combat, Summoning, Divination.
 Minor: Healing, Darkness, Thought, Creation.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May use the Bone Dagger special ability once per day, starting at level 2.
@@ -2597,6 +2714,8 @@ Weapon: Bludgeoning and scimitar.
 
 Major: All, Necromantic, Suffering, Vermin, Protection, Darkness. 
 Minor: Healing, Combat, Creation, Divination.
+
+Turn/Command Undead: Yes (see below).
 
 Features:
 
@@ -2663,6 +2782,8 @@ Weapon: Bludgeoning and scimitar.
 Major: All, Necromantic, Suffering, Vermin, Protection, Darkness. 
 Minor: Healing, Combat, Creation, Divination.
 
+Turn/Command Undead: Yes (see below).
+
 Features:
 
 - Commands Undead as a priest two levels higher.
@@ -2701,6 +2822,8 @@ Weapon: Bludgeoning and piercing only.
 
 Major: All, Healing, Necromantic, Sun, Moon, Combat.  
 Minor: Protection, Creation, Divination, Vocal.
+
+Turn/Command Undead: Yes (see below).
 
 Features:
 
@@ -2771,6 +2894,8 @@ Weapon: Bludgeoning and piercing only.
 Major: All, Healing, Necromantic, Sun, Moon, Combat.  
 Minor: Protection, Creation, Divination, Vocal.
 
+Turn/Command Undead: Yes (see below).
+
 Features:
 
 - Turns Undead as a priest two levels higher.
@@ -2807,6 +2932,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Necromantic, Protection, Thought, Divination, Weave. 
 Minor: Moon, Creation, Travelers, Time.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -2851,6 +2978,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Necromantic, Protection, Thought, Divination, Weave. 
 Minor: Moon, Creation, Travelers, Time.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -2901,6 +3030,8 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Divination, Time.
 Minor: Suffering, Protection, Vocal.
 
+Turn/Command Undead: Yes (see below).
+
 Features:
 
 - Turns or Commands Undead as a priest one level higher.
@@ -2944,6 +3075,8 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Darkness, Divination, Time.
 Minor: Suffering, Protection, Vocal.
 
+Turn/Command Undead: Yes (see below).
+
 Features:
 
 - Turns or Commands Undead as a priest one level higher.
@@ -2979,6 +3112,8 @@ Weapon: Any.
 
 Major: All, Protection, Combat, Divination, Vocal.
 Minor: Healing, Travelers.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -3050,6 +3185,8 @@ Weapon: Any.
 Major: All, Protection, Combat, Divination, Vocal.
 Minor: Healing, Travelers.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -3089,6 +3226,8 @@ Weapon: Any.
 
 Major: All, Combat, Creation, Travelers, Vocal.
 Minor: Suffering, Darkness.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -3164,6 +3303,8 @@ Weapon: Any.
 Major: All, Combat, Creation, Travelers, Vocal.
 Minor: Suffering, Darkness.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -3212,6 +3353,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Moon, Thought, Divination. 
 Minor: Necromantic, Weave, Time.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -3263,6 +3406,8 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Moon, Thought, Divination. 
 Minor: Necromantic, Weave, Time.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May cast Clairvoyance once per day as a special ability, starting at level 1.
@@ -3303,6 +3448,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Necromantic, Suffering, Darkness, Summoning, Divination.
 Minor: Vermin, Weave, Time.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -3365,6 +3512,8 @@ Weapon: Bludgeoning only.
 Major: All, Necromantic, Suffering, Darkness, Summoning, Divination.
 Minor: Vermin, Weave, Time.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains +2 Saving Throw bonus against spells using Necromancy magic.
@@ -3399,6 +3548,8 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Moon, Thought, Air, Travelers, Trickery.
 Minor: Healing, Darkness, Weave, Time.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic.
@@ -3432,6 +3583,8 @@ Weapon: Bludgeoning only.
 Major: All, Protection, Moon, Thought, Air, Travelers, Trickery.
 Minor: Healing, Darkness, Weave, Time.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic.
@@ -3452,6 +3605,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Protection, Moon, Thought, Air, Travelers, Trickery.
 Minor: Healing, Darkness, Weave, Time.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -3480,6 +3635,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Healing, Protection, Thought, Divination, Trickery. 
 Minor: Sun, Moon, Creation, Travelers.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -3587,6 +3744,8 @@ Weapon: Bludgeoning only.
 Major: All, Healing, Protection, Thought, Divination, Trickery. 
 Minor: Sun, Moon, Creation, Travelers.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May cast Luck once per day as a special ability, starting at level 1.
@@ -3633,6 +3792,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -3737,6 +3898,8 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May use the Bad Luck special ability once per day, starting at level 1.
@@ -3776,6 +3939,8 @@ Weapon: Bludgeoning only.
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May use the Bad Luck special ability once per day, starting at level 1.
@@ -3814,6 +3979,8 @@ Weapon: Bludgeoning only.
 
 Major: All, Suffering, Darkness, Thought, Divination, Trickery.
 Minor: Healing, Necromantic, Summoning, Travelers.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -3866,6 +4033,8 @@ Weapon: Any.
 
 Major: All, Suffering, Combat, Divination, Vocal.
 Minor: Healing, Darkness.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -3944,6 +4113,8 @@ Weapon: Any.
 Major: All, Suffering, Combat, Divination, Vocal.
 Minor: Healing, Darkness.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May Enrage as a Berserker once per day.
@@ -3977,6 +4148,8 @@ Weapon: Any.
 
 Major: All, Suffering, Combat, Divination, Vocal.
 Minor: Healing, Darkness.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -4023,6 +4196,8 @@ Weapon: Any.
 Major: All, Air, Combat, Travelers, Healing, Protection.
 Minor: Divination, Vocal, Plant.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -4062,6 +4237,8 @@ Weapon: Any.
 Major: All, Air, Combat, Travelers, Healing, Protection.
 Minor: Divination, Vocal, Plant.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
@@ -4091,6 +4268,8 @@ Weapon: All bludgeoning, scimitar and spears.
 
 Major: All, Travelers, Water, Protection, Combat.
 Minor: Moon, Healing, Air.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -4125,6 +4304,8 @@ Weapon: All bludgeoning, scimitar and spears.
 Major: All, Travelers, Water, Protection, Combat.
 Minor: Moon, Healing, Air.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May spend three slots in Two-Weapon Fighting.
@@ -4154,6 +4335,8 @@ Weapon: Any.
 
 Major: All, Travelers, Earth, Protection, Vermin, Darkness.
 Minor: Healing, Suffering, Summoning, Trickery.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -4188,6 +4371,8 @@ Weapon: Any.
 Major: All, Travelers, Earth, Protection, Vermin, Darkness.
 Minor: Healing, Suffering, Summoning, Trickery.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Gains Infravision.
@@ -4219,6 +4404,8 @@ Weapon: Club, sling, quarterstaff.
 
 Major: All, Water, Protection, Healing, Thought, Vocal.
 Minor: Sun, Moon, Plant, Creation.
+
+Turn/Command Undead: Yes.
 
 Features:
 
@@ -4254,6 +4441,8 @@ Weapon: Club, sling, quarterstaff.
 Major: All, Water, Protection, Healing, Thought, Vocal.
 Minor: Sun, Moon, Plant, Creation.
 
+Turn/Command Undead: Yes.
+
 Features:
 
 - May cast Remove Fear once per day as a special ability, starting at level 1. 
@@ -4286,6 +4475,8 @@ Weapon: Shortbow, spear, dart, dagger, short sword.
 
 Major: All, Animal, Combat, Water, Vocal.
 Minor: Healing, Air, Travelers.
+
+Turn/Command Undead: No.
 
 Features:
 
@@ -4358,6 +4549,8 @@ Weapon: Shortbow, spear, dart, dagger, short sword.
 Major: All, Animal, Combat, Water, Vocal.
 Minor: Healing, Air, Travelers.
 
+Turn/Command Undead: No.
+
 Features:
 
 - Gains +2 bonus to Wisdom.
@@ -4399,6 +4592,8 @@ Weapon: Club, dagger, dart, sling, quarterstaff.
 Major: All, Healing, Animal, Plant, Sun.
 Minor: Protection, Thought, Travelers.
 
+Turn/Command Undead: No.
+
 Features:
 
 - May Lay on Hands as a Paladin three times per day.
@@ -4439,6 +4634,8 @@ Weapon: Club, dagger, dart, sling, quarterstaff.
 
 Major: All, Healing, Animal, Plant, Sun.
 Minor: Protection, Thought, Travelers.
+
+Turn/Command Undead: No.
 
 Features:
 
