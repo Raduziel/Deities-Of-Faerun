@@ -1632,12 +1632,12 @@
 		~Healing~ => 0
 		~Necromantic~ => 0
 		~Suffering~ => 0
-		~Animal~ => 3
+		~Animal~ => 0
 		~Vermin~ => 0
 		~Plant~ => 0
 		~Protection~ => 0
 		~Sun~ => 0
-		~Moon~ => 0
+		~Moon~ => 3
 		~Darkness~ => 0
 		~Thought~ => 0
 		~Combat~ => 3
