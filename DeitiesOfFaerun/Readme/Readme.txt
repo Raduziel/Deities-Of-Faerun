@@ -1821,7 +1821,7 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 	Major: All, Combat, Vocal, Protection, Thought, Creation, Divination
 	Minor: Healing, Air, Water
 
-- Bearwalker (by Ulb): All, Combat, Animal
+- Bearwalker (by Ulb): All, Combat, Moon
 
 - Dreamwalker (by Ulb)
 
