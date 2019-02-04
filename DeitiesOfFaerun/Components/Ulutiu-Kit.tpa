@@ -143,6 +143,24 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_OTILUKES_FREEZING_SPHERE
 COPY_EXISTING	~%spell_res%.spl~	~override/RAULUT5.spl~ SAY NAME1 @999941
 LPM ~SPELL_TO_INNATE~
 
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/IDPRO269.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628.spl~ 2 6 WIZARD_OTILUKES_FREEZING_SPHERE
+SAY NAME1 @9999152 SAY NAME2 @9999152 SAY UNIDENTIFIED_DESC @9999153 SAY DESC @9999153
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO269% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAULUT5.spl~ SAY NAME1 @999941
+LPM ~SPELL_TO_INNATE~
+
 END
 
 //Multiclass CLAB
