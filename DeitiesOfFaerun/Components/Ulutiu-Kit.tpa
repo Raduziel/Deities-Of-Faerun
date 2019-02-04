@@ -61,6 +61,35 @@ COPY_EXISTING ~%spell_res%.spl~ ~override/RAULUTF.spl~
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 2  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 3  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 4  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 5  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 6  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 7  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 8  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 9  END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 10 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 11 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 12 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 13 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 14 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 15 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 16 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 17 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 18 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 19 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 20 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 21 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 22 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 23 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 24 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 25 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 26 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 27 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 28 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 29 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 30 END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
@@ -68,8 +97,9 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 321 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
-LPF ALTER_EFFECT INT_VAR match_opcode = 85 parameter1 = 100 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 85 parameter1 = 100 parameter2 = 1 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 49 parameter1 = 2 parameter2 = 0 target = 2 power = 0 resist_dispel = 0 timing = 9 duration = 0 END
 
 END

@@ -52,7 +52,10 @@ WRITE_ASCII 0x058 ~BANEL~
 
 //Spells
 
-COPY_EXISTING ~SPPR108.spl~ ~override/RABANEF.spl~
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_REMOVE_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_FEAR~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ ~override/RABANEF.spl~
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
@@ -63,7 +66,10 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 321 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+
+END
 
 //Cloak of Fear
 
