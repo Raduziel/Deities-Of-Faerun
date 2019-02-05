@@ -1169,6 +1169,8 @@ This component will make all non-magical armors, helmets and shields use the kit
 
 f1) Sphere System
 
+A kit may have either major or minor access to a sphere. Major access means that every spell of that sphere may be cast by the kit (if they have the proper level for them, of course). Minor access means that only spells up to and including the third circle may be cast. A spell that is not from a sphere that the kit have access can't be cast at all.  
+
 [All]
 
 1 - Bless
