@@ -56,25 +56,7 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_E
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_ELECTRICITY~	RET	spell_res	END
 
 COPY_EXISTING ~%spell_res%.spl~ ~override/RATALOF.spl~
-WRITE_SHORT 0x1C 4                                                    
-WRITE_LONG  0x34 1                                                         
-WRITE_LONG  0x22 00
-WRITE_ASCII 0x03a ~~
-WRITE_ASCII 0x058 ~~
-SAY NAME1 ~~ 
-SAY UNIDENTIFIED_DESC ~~
-FOR (level = 2; level < 51; level += 1) BEGIN
-LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level  END
-END
-LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 321 END
-LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+LPM ~SPELL_TO_FEATURE~
 
 END
 
