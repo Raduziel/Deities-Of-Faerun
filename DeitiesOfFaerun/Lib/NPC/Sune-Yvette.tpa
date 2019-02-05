@@ -15,17 +15,18 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   END
 BUT_ONLY_IF_IT_CHANGES
 
-COPY_EXISTING ~yxyve1.cre~ ~override~
- WRITE_BYTE    0x23e 16
- READ_BYTE 	  0x273 class
- PATCH_IF (class = 3) BEGIN
-  WRITE_SHORT   0x244 0
-  WRITE_BYTE    0x246 RASune
-  WRITE_BYTE    0x247 0x40
- END
-BUT_ONLY
-
+OUTER_SET kit = "%RASune%"
 ACTION_FOR_EACH creature IN yxyve1 BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_LONG    0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  WRITE_BYTE    0x23e 16
+	  BUT_ONLY
+  END
   
     ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
@@ -34,6 +35,7 @@ ACTION_FOR_EACH creature IN yxyve1 BEGIN
   END
   
   END
+
   
 //Kit
 
