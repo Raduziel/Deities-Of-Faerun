@@ -1627,7 +1627,7 @@
 	
 	//Lava's Witchlight Shaman
 	
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~l0ws~) BEGIN
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~L0WS~) BEGIN
 		~All~ => 7 
 		~Healing~ => 3
 		~Necromantic~ => 0
