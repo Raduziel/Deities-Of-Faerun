@@ -61,6 +61,10 @@ COPY_EXISTING ~%spell_res%.spl~ ~override/RAULUTF.spl~
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
+WRITE_ASCII 0x03a ~~
+WRITE_ASCII 0x058 ~~
+SAY NAME1 ~~ 
+SAY UNIDENTIFIED_DESC ~~
 FOR (level = 2; level < 51; level += 1) BEGIN
 LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level  END
 END
@@ -73,7 +77,6 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 321 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
-LPF ALTER_EFFECT INT_VAR match_opcode = 85 parameter1 = 100 parameter2 = 1 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 49 parameter1 = 2 parameter2 = 0 target = 2 power = 0 resist_dispel = 0 timing = 9 duration = 0 END
 
 END
