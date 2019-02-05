@@ -398,7 +398,9 @@
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	END
 	REINCLUDE	~override\%MOD_PREFIX%SPHERE.tpa~
-	
+	APPEND 		~%MOD_PREFIX%SPHERE.TPA~ ~OUTER_SET	divineSpheres = %divineSpheres%~
+	APPEND 		~%MOD_PREFIX%SPHERE.TPA~ ~OUTER_SET	natureSpheres = %natureSpheres%~
+
 	ACTION_CLEAR_ARRAY	alter_level
 	ACTION_CLEAR_ARRAY	convert_clone
 	//	Create a Blank spell to add spells for each level:
