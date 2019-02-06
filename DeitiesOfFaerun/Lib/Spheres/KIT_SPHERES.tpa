@@ -416,7 +416,7 @@
 		~Sun~ => 0
 		~Moon~ => 0
 		~Darkness~ => 0
-		~Thought~ => 3
+		~Thought~ => 0
 		~Combat~ => 0
 		~Creation~ => 0
 		~Summoning~ => 0
@@ -429,7 +429,7 @@
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
-		~Vocal~ => 0
+		~Vocal~ => 3
 	END
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAAURI~) BEGIN
