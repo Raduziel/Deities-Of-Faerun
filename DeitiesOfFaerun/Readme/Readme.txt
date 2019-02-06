@@ -1248,6 +1248,7 @@ A kit may have either major or minor access to a sphere. Major access means that
     Doom
 
 2 - Cause Moderate Wounds
+    Ray of Enfeeblement	
    
 3 - Cause Medium Wounds
     Cause Disease
@@ -1415,6 +1416,7 @@ A kit may have either major or minor access to a sphere. Major access means that
     Spook
 
 2 - Horror
+    Invisibility
 
 3 - Non-Detection
     Unholy Blight
@@ -1528,7 +1530,8 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 1 - Shocking Grasp
 
-2 - Stinking Cloud
+2 - Blur
+    Stinking Cloud
 
 3 - Call Lightning
     Lightning Bolt
@@ -1553,8 +1556,8 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 1 - Chill Touch
 
-2 - Snowball Swarm
-    Writhing Fog
+2 - Acid Arrow
+    Snowball Swarm
 
 3 - Cloudburst
     Icelance
