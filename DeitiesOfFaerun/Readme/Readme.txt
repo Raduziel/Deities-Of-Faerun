@@ -1263,7 +1263,8 @@ A kit may have either major or minor access to a sphere. Major access means that
     Cause Critical Wounds
     Cloudkill
 
-6 - Harm
+6 - Feeblemind
+    Harm
 
 7 - Dolorous Decay
     Suffocate
@@ -1404,7 +1405,8 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 5 - Phantom Blade
 
-6 - Invisible Stalker
+6 - Feeblemind
+    Invisible Stalker
 
 7 - Power Word: Silence
     Project Image
@@ -1453,7 +1455,8 @@ A kit may have either major or minor access to a sphere. Major access means that
 5 - Chaotic Commands
     Greater Command
 
-6 - Hold Monster
+6 - Feeblemind
+    Hold Monster
 
 7 - Confusion
     Impervious Sanctity of Mind
