@@ -1245,10 +1245,10 @@ A kit may have either major or minor access to a sphere. Major access means that
 [Suffering]
 
 1 - Cause Light Wounds
-
-2 - Cause Moderate Wounds
     Doom
 
+2 - Cause Moderate Wounds
+   
 3 - Cause Medium Wounds
     Cause Disease
     Mold Touch
@@ -1404,7 +1404,6 @@ A kit may have either major or minor access to a sphere. Major access means that
 5 - Phantom Blade
 
 6 - Invisible Stalker
-    Spiritual Lock
 
 7 - Power Word: Silence
     Project Image
@@ -1412,10 +1411,10 @@ A kit may have either major or minor access to a sphere. Major access means that
 [Darkness]
 
 1 - Blindness
+    Doom
     Spook
 
-2 - Doom
-    Horror
+2 - Horror
 
 3 - Non-Detection
     Unholy Blight
@@ -1530,7 +1529,6 @@ A kit may have either major or minor access to a sphere. Major access means that
 1 - Shocking Grasp
 
 2 - Stinking Cloud
-    Writhing Fog
 
 3 - Call Lightning
     Lightning Bolt
@@ -1662,8 +1660,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 6 - Improved Haste
 
-7 - Ether Gate
-    Maze
+7 - Maze
 
 [Weave]
 
