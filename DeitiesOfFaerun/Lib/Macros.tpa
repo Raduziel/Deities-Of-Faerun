@@ -58,8 +58,6 @@ DEFINE_PATCH_MACRO ~SPELL_TO_FEATURE~ BEGIN
 WRITE_SHORT 0x1C 4                                                    
 WRITE_LONG  0x34 1                                                         
 WRITE_LONG  0x22 00
-WRITE_ASCII 0x03a ~~
-WRITE_ASCII 0x058 ~~
 WRITE_LONG NAME1 ~-1~ 
 WRITE_LONG UNIDENTIFIED_DESC ~-1~
 
