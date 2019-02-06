@@ -1405,8 +1405,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 5 - Phantom Blade
 
-6 - Feeblemind
-    Invisible Stalker
+6 - Invisible Stalker
 
 7 - Power Word: Silence
     Project Image
@@ -1789,7 +1788,7 @@ Ranger (access only to level 3 spells): All, Animal, Plant.
 
   - Stalker: All, Moon, Trickery.
 
-  - Beastmaster: All, Animal, Thought.
+  - Beastmaster: All, Animal, Vocal.
 
 .............................................
 | Be aware that the Shaman's spells are now |
