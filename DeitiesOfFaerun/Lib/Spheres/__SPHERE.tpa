@@ -2,6 +2,7 @@
 // Create a string to add to the CLAB files:
 
 	OUTER_SPRINT	sphere_empty_slots ~SPHERE~
+	OUTER_SPRINT	$seqresref(~DEFAULT_SHAMAN~) ~%MOD_PREFIX%SHMKN~
 	OUTER_FOR	(i = 0; i < 50; ++i)	BEGIN
 		OUTER_SPRINT sphere_empty_slots ~%sphere_empty_slots% ****~
 	END
@@ -122,6 +123,7 @@
 		kitname = ~~
 		kitname2 = ~~
 		clabfile = ~~
+		seqresref = ~~
 	BEGIN
 		ACTION_TO_UPPER	kitname
 		ACTION_TO_UPPER	kitname2
@@ -176,14 +178,12 @@
 		ACTION_MATCH	classID	WITH	//	multiclasses should use priest base for spell access
 			8 14 15 17 WHEN divineSpheres = 1 BEGIN	OUTER_SPRINT	clabfile ~CLABPR01~	END
 			16	WHEN natureSpheres = 1 BEGIN	OUTER_SPRINT	clabfile ~CLABDR01~	END
-			21	BEGIN
-				LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END
-			END
 			DEFAULT
 		END
 		ACTION_MATCH	classID	WITH
 			21	WHEN natureSpheres = 1	BEGIN	//	Shaman
-				LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END
+				LAF	UPDATE_SHAMAN_UI	INT_VAR	kitid	STR_VAR	kitname	clabfile seqresref	END
+			//	LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END
 			END
 			18	BEGIN		//	Cleric/Ranger
 				ACTION_IF	divineSpheres = 1	BEGIN
@@ -465,13 +465,52 @@
 							END
 						END
 					END
+					/*	Not needed with UI system
 					FOR	(i = 0; i < 8; ++i)	BEGIN
 						PATCH_IF $shm_count(~%i%~) > 0	BEGIN
 							SET	j = i + 1
 							LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 187	parameter1 = $shm_count(~%i%~)	timing = 9	special = 1	STR_VAR	effvar = EVAL ~RASHMKN%j%~	END	// Shaman spell count marker
 						END
 					END
+					*/
 				BUT_ONLY IF_EXISTS
+			END
+		END
+	END
+	
+	//	Add shaman/new kits to UI spell selection
+	DEFINE_ACTION_FUNCTION	UPDATE_SHAMAN_UI
+		STR_VAR	kitname = ~DEFAULT_SHAMAN~	clabfile = ~CLABSH01~	seqresref = EVAL ~%MOD_PREFIX%SHMKN~
+	BEGIN
+		OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~ BEGIN	SET_2DA_ENTRY	0 1 1 ~GA_%seqresref%~	END
+		APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
+		
+		ACTION_IF	! FILE_EXISTS_IN_GAME ~%seqresref%X.2da~	BEGIN
+		<<<<<<<< .../inlined.2da
+2DA V1.0
+****
+            	ResRef	Type>>>>>>>>
+			REINCLUDE	~DeitiesOfFaerun\Lib\SEQUENCER_MENU.tpa~
+			LAF CREATE_SEQUENCER_MENU
+				INT_VAR
+					tip = RESOLVE_STR_REF(~Shaman Spell Selection~)
+					name = tra_shaman_spl_name
+					desc = tra_shaman_spl_desc
+					maxlevel = 0
+					multilist = 1
+				STR_VAR
+					resref = EVAL ~%seqresref%~
+					icon = ~SPPR316B~
+					title = ~Shaman Spell Selection~
+					label = ~Shaman Spell Selection~
+			END
+			ACTION_PHP_EACH access_spells AS sphere => file	BEGIN
+				ACTION_IF VARIABLE_IS_SET	$ EVAL ~priestspherelist_%kitname%~(~%sphere%~) BEGIN
+					OUTER_SET	value = EVAL $ EVAL ~priestspherelist_%kitname%~(~%sphere%~)
+					OUTER_FOR	(i = 1; i <= value; ++i)	BEGIN
+						APPEND	~%seqresref%X.2da~ ~Sphere %file%%i%G 3~
+					END
+				END
 			END
 		END
 	END

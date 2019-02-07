@@ -2,6 +2,9 @@
 	//	Add marker file.
 	COPY	~%MOD_FOLDER%\%FILE_PATH%\__SPHERE.marker~	~override\%MOD_PREFIX%SPHERE.marker~
 	
+	OUTER_SET	tra_shaman_spl_name = RESOLVE_STR_REF((AT tra_shaman_spl_name))
+	OUTER_SET	tra_shaman_spl_desc = RESOLVE_STR_REF((AT tra_shaman_spl_desc))
+	
 	//	Remove priest usability flags from spells
 	COPY_EXISTING_REGEXP ~^SPPR[1-7]\([0-4][1-9]\|\|10\|20\|30\|40\|50\)\.spl$~ override
 		PATCH_IF	divineSpheres = 1	BEGIN	WRITE_BYTE	0x21	(THIS BOR 0b01000000)	END	//	Add cleric/paladin exclusion flags
@@ -197,7 +200,7 @@
 		BUT_ONLY	IF_EXISTS
 	END
 	
-	DEFINE_ACTION_FUNCTION	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res = ~~	RET_ARRAY	alignments
+	DEFINE_ACTION_FUNCTION	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res = ~~	RET alignment RET_ARRAY	alignments
 	BEGIN
 		ACTION_CLEAR_ARRAY	alignments
 		COPY_EXISTING	~%spell_res%.spl~	override
@@ -230,8 +233,20 @@
 		BUT_ONLY
 	END
 	
+	DEFINE_PATCH_FUNCTION UI_DUPLICATE_SPELL BEGIN
+		INNER_ACTION	BEGIN
+			ACTION_IF	!FILE_EXISTS_IN_GAME ~%spell_res%L.spl~ BEGIN
+				COPY_EXISTING	~%spell_res%.spl~	~override\%spell_res%L.spl~
+					PATCH_IF	!FILE_EXISTS_IN_GAME	~%spell_res%L.spl~	BEGIN
+						WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END
+						LPF	DELETE_EFFECT	END	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%spell_res%~	END
+					END
+			END
+		END
+	END
+	
 	// Functions to add spells to sphere access spells
-	DEFINE_PATCH_FUNCTION	ADD_SPHERE_SPL	INT_VAR	level = 0	STR_VAR	array = ~~	RET_ARRAY convert_clone	alter_level sphere_list_dup	BEGIN	// returned more efficient intall time
+	DEFINE_PATCH_FUNCTION	ADD_SPHERE_SPL	INT_VAR	level = 0	STR_VAR	array = ~~	RET alignment_array RET_ARRAY convert_clone	alter_level sphere_list_dup	BEGIN	// returned more efficient intall time
 		SET	$convert_clone(~?~) = 1
 		SET	$alter_level(~?~) = 1
 		SET	$sphere_list_dup(~?~) = 1
@@ -281,20 +296,27 @@
 							INNER_ACTION	BEGIN
 								LAF	ALTER_SPELL_STRING	STR_VAR	source = EVAL ~%one%~	sphere = EVAL ~%array%~	resource = EVAL ~%spell_res%~	END
 							END
+							LPF UI_DUPLICATE_SPELL	END
 							SET	$sphere_list_dup(~%spell_res%~) = 1
 							PATCH_IF	1	BEGIN
 								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 2	STR_VAR	resource = EVAL ~%spell_res%~	END	// 'Add Spell' effect for this spell resource
+								INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END
 							END	ELSE	BEGIN
 								INNER_ACTION	BEGIN
-									LAF	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res	RET_ARRAY	alignments	END	//	(Disabled) // Restrict spells by alignment
+									LAF	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res	RET_ARRAY	alignment alignments	END	//	(Disabled) // Restrict spells by alignment
+								END
+								PATCH_IF	! (alignment = 0) BEGIN
+									TEXT_SPRINT alignment_array ~%alignment_array%	array['%spell_res%'] = function() return %alignment% end%WNL%~
 								END
 								TEXT_SPRINT	suffix ~~
 								PHP_EACH	alignments	AS	index => parameter1	BEGIN
 									PATCH_IF	parameter1 = 0	BEGIN
 										LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 2	STR_VAR	resource = EVAL ~%spell_res%~	END	// 'Add Spell' effect for this spell resource
+										INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END
 									END	ELSE	BEGIN	
 										INNER_PATCH_SAVE	new_res ~%spell_res%%suffix%~	BEGIN	WRITE_ASCIIE	0 ~%MOD_PREFIX%~	#2	END
 										LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	target = 2	parameter1	parameter2 = 8	STR_VAR	resource = EVAL ~%new_res%~	END	//	Restrict to specific Alignment(s)
+										INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END
 										PATCH_IF	!FILE_EXISTS_IN_GAME	~%new_res%.eff~	BEGIN
 											INNER_ACTION	BEGIN
 												CREATE	EFF	~%new_res%~	WRITE_LONG	0x10	171	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%spell_res%~
@@ -310,8 +332,8 @@
 			END
 		END
 	END
-	
-	DEFINE_ACTION_FUNCTION	ADD_SPHERE_SPL	INT_VAR	level = 0	STR_VAR	file = ~~	array = ~~	RET_ARRAY convert_clone	alter_level sphere_list_dup	BEGIN	// returned less efficient intall time
+	/*	// returned less efficient intall time
+	DEFINE_ACTION_FUNCTION	ADD_SPHERE_SPL	INT_VAR	level = 0	STR_VAR	file = ~~	array = ~~	RET_ARRAY convert_clone	alter_level sphere_list_dup	BEGIN
 		OUTER_SET	$convert_clone(~?~) = 1
 		OUTER_SET	$alter_level(~?~) = 1
 		OUTER_SET	$sphere_list_dup(~?~) = 1
@@ -343,10 +365,18 @@
 						END
 						LAF	ALTER_SPELL_STRING	STR_VAR	sphere = EVAL ~%array%~	resource = EVAL ~%spell_res%~	END
 						OUTER_SET	$sphere_list_dup(~%spell_res%~) = 1
+						ACTION_IF	!FILE_EXISTS_IN_GAME ~%spell_res%L.spl~ BEGIN
+							COPY_EXISTING	~%spell_res%.spl~	~override\%spell_res%L.spl~
+								PATCH_IF	!FILE_EXISTS_IN_GAME	~%spell_res%L.spl~	BEGIN
+									WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END
+									LPF	DELETE_EFFECT	END	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%spell_res%~	END
+								END
+						END
 						ACTION_IF	1	BEGIN
 							COPY_EXISTING	~%file%%level%G.spl~	override
 								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 2	STR_VAR	resource = EVAL ~%spell_res%~	END	// 'Add Spell' effect for this spell resource
 							IF_EXISTS
+							APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~
 						END	ELSE	BEGIN
 							LAF	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res	RET_ARRAY	alignments	END	//	(Disabled) // Restrict spells by alignment
 							OUTER_SPRINT	suffix ~~
@@ -355,11 +385,13 @@
 									COPY_EXISTING	~%file%%level%G.spl~	override
 										LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 2	STR_VAR	resource = EVAL ~%spell_res%~	END	// 'Add Spell' effect for this spell resource
 									IF_EXISTS
+									APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~
 								END	ELSE	BEGIN	
 									OUTER_PATCH_SAVE	new_res ~%spell_res%%suffix%~	BEGIN	WRITE_ASCIIE	0 ~%MOD_PREFIX%~	#2	END
 									COPY_EXISTING	~%file%%level%G.spl~	override
 										LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	target = 2	parameter1	parameter2 = 8	STR_VAR	resource = EVAL ~%new_res%~	END	//	Restrict to specific Alignment(s)
 									IF_EXISTS
+									APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~
 									ACTION_IF	!FILE_EXISTS_IN_GAME	~%new_res%.eff~	BEGIN
 										CREATE	EFF	~%new_res%~	WRITE_LONG	0x10	171	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%spell_res%~
 									END
@@ -372,6 +404,7 @@
 			END
 		END
 	END
+	*/
 	
 	// Sets innate spell values and adds a blank ability, you can alternatively use a pre-made empty spell.
 	DEFINE_PATCH_FUNCTION SETUP_INNATE_SPL	INT_VAR	num = 1	BEGIN
@@ -387,6 +420,7 @@
 			LPF	INSERT_ASCII	INT_VAR	offset = 0
 				STR_VAR	string = EVAL	"%WNL%OUTER_SPRINT	MOD_PREFIX	~%MOD_PREFIX%~%WNL%OUTER_SET divineSpheres = %divineSpheres%%WNL%OUTER_SET natureSpheres = %natureSpheres%%WNL%"
 			END
+			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\__SPHERE.tpa~
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\CLS_SPHERES.tpa~
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	END	ELSE	BEGIN
@@ -397,15 +431,23 @@
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\CLS_SPHERES.tpa~
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	END
+	PRINT ~tra_shaman_spl_name = %tra_shaman_spl_name%~
+	APPEND	~%MOD_PREFIX%SPHERE.tpa~	"OUTER_SET tra_shaman_spl_name = %tra_shaman_spl_name%"
+	APPEND	~%MOD_PREFIX%SPHERE.tpa~	"OUTER_SET tra_shaman_spl_desc = %tra_shaman_spl_desc%"
 	REINCLUDE	~override\%MOD_PREFIX%SPHERE.tpa~
-	APPEND 		~%MOD_PREFIX%SPHERE.TPA~ ~OUTER_SET	divineSpheres = %divineSpheres%~
-	APPEND 		~%MOD_PREFIX%SPHERE.TPA~ ~OUTER_SET	natureSpheres = %natureSpheres%~
+	<<<<<<<< .../inlined.2da
+2DA V1.0
+****
+            	ResRef	Type>>>>>>>>
+	COPY	~.../inlined.2da~ ~override/%file%%i%G.2da~
 
 	ACTION_CLEAR_ARRAY	alter_level
 	ACTION_CLEAR_ARRAY	convert_clone
+	OUTER_SPRINT	alignment_array ~function SequencerMenuAlignment(res)%WNL% local array = {}%WNL%~
 	//	Create a Blank spell to add spells for each level:
 	ACTION_PHP_EACH	access_spells AS sphere => file	BEGIN
 		OUTER_FOR	(i = 1; i < 8; ++i)	BEGIN
+			COPY	~.../inlined.2da~ ~override/%file%%i%G.2da~
 			CREATE	SPL	~%file%%i%~	LPF	SETUP_INNATE_SPL	END
 			COPY_EXISTING	~%file%%i%.spl~	override
 				LPF	ADD_SPELL_EFFECT	INT_VAR opcode = 177 target = 2	parameter1 = 18	parameter2 = 5	STR_VAR	resource = EVAL ~%file%%i%M~	END
@@ -413,7 +455,7 @@
 			CREATE	EFF	~%file%%i%G~	WRITE_LONG	0x10	146	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%G~	WRITE_LONG	0x90	1	WRITE_ASCIIE	0x94	~%file%%i%X~
 			CREATE	SPL	~%file%%i%G~	LPF	SETUP_INNATE_SPL	END
 			COPY_EXISTING	~%file%%i%G.spl~	override
-				LPF	ADD_SPHERE_SPL	INT_VAR	level = i	STR_VAR	array = EVAL ~%sphere%~	RET_ARRAY	convert_clone	alter_level sphere_list_dup	END	// returned more efficient intall time
+				LPF	ADD_SPHERE_SPL	INT_VAR	level = i	STR_VAR	array = EVAL ~%sphere%~ RET alignment_array 	RET_ARRAY	convert_clone	alter_level sphere_list_dup	END	// returned more efficient intall time
 			CREATE	EFF	~%file%%i%X~	WRITE_LONG	0x10	206	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%X~
 			CREATE	SPL	~%file%%i%X~	LPF	SETUP_INNATE_SPL	END
 			CREATE	EFF	~%file%%i%M~	WRITE_LONG	0x10	146	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%M~
@@ -421,6 +463,7 @@
 		END
 	//	LAF	ADD_SPHERE_SPL	INT_VAR	level = i	STR_VAR	file	array = EVAL ~%sphere%~	RET_ARRAY	convert_clone	alter_level sphere_list_dup	END	//	returned less efficient intall time
 	END
+	OUTER_SPRINT alignment_array ~%alignment_array%	if array[res] then%WNL%		return array[res]()%WNL%	else%WNL%		return 0%WNL%	end%WNL%end~
 	
 	ACTION_PHP_EACH	convert_clone	AS	one => two	BEGIN
 		PRINT ~%one% => %two%~
@@ -482,11 +525,12 @@
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_DRUID~ kitid = 0x4000	clabfile = ~CLABDR01~ classID = 11	END
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_RANGER~ kitid = 0x4000	clabfile = ~CLABRN01~ classID = 12	END
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_FIGHTER_DRUID~ kitid = 0x4000	clabfile = ~CLABDR01~ classID = 16	END
+		LAF	UPDATE_SHAMAN_UI	END
 	END
 	ACTION_IF	(divineSpheres = 1) OR (natureSpheres = 1)	BEGIN
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_CLERIC_RANGER~ kitid = 0x4000	clabfile = ~CLABPR01~ classID = 18	END
 	END
-	
+	APPEND ~M_SQMENU.lua~ ~%alignment_array%~
 	INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	
 	//	Cycle through existing kits in Kitlist, appending their CLAB files as necesssary:
@@ -520,6 +564,25 @@
 						END
 						INNER_ACTION	BEGIN
 							LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname kitid	clabfile classID	END
+						END
+					END
+				END
+				21	WHEN natureSpheres = 1 BEGIN	// Shaman
+					READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 5	clabfile
+					PATCH_IF FILE_EXISTS_IN_GAME ~%clabfile%.2da~	BEGIN
+						READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 1	kitname
+						TO_UPPER	kitname
+						SET	kitid = ~-1~
+						PATCH_IF VARIABLE_IS_SET $READ_KITLIST(~%i%~ ~9~)	BEGIN
+							READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 kitid
+						END
+						PATCH_IF	VARIABLE_IS_SET	$seqresref(~%kitname%~) BEGIN
+							TEXT_SPRINT	seqresref $seqresref(~%kitname%~)
+						END	ELSE BEGIN
+							TEXT_SPRINT seqresref ~%MOD_PREFIX%SHMKN~
+						END
+						INNER_ACTION	BEGIN
+							LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname kitid	clabfile classID seqresref END
 						END
 					END
 				END	DEFAULT
@@ -576,4 +639,4 @@
 			END
 		BUT_ONLY	IF_EXISTS
 	END
-		
+	
