@@ -260,7 +260,7 @@ This spell creates a spherical miasma of gloom and menace centered on the caster
 @309 = ~Instill Madness
 (Enchantment/Charm)
 
-Level: 7
+Level: 5
 Sphere: Suffering, Thought
 Range: Touch
 Duration: Permanent
@@ -359,7 +359,7 @@ Weight: 0~
 @407 = ~Darkness
 (Alteration)
 
-Level: 2
+Level: 1
 Sphere: Darkness
 Range: 20 ft.
 Duration: 1 turn
@@ -834,6 +834,7 @@ This spell is known as wyvern watch because of the insubstantial haze brought fo
 @811 = ~Seeking Sword
 (Evocation)
 
+Level: 4
 Sphere: Creation 
 Range: 30 ft.
 Duration: 2 rounds/level
@@ -1031,7 +1032,7 @@ During this spell's effect, the recipient receives bonuses of + 1 on attack roll
 @1009 = ~Faerie Fire
 (Alteration)
 
-Level: 2
+Level: 1
 Sphere: Sun
 Range: 80 ft.
 Duration: 4 rounds/level
@@ -1224,7 +1225,7 @@ Weight: 0~
 @1207 = ~Legend Lore
 (Divination)
 
-Level: 5
+Level: 6
 Sphere: Divination
 Range: Touch
 Duration: Special
@@ -1323,7 +1324,7 @@ By means of this spell the Painbearer call a beneficial servant of Ilmater to po
 @1309 = ~Endurance of Ilmater
 (Abjuration, Alteration, Necromancy)
 
-Level: 5
+Level: 4
 Sphere: Protection 
 Range: Touch
 Duration: 1 round + 1 round/level
@@ -1599,7 +1600,7 @@ Weight: 0~
 @1607 = ~Shadowcloak
 (Alteration)
 
-Level: 2
+Level: 3
 Sphere: Darkness, Trickery
 Range: 0
 Duration: 1 round/level
@@ -1943,7 +1944,7 @@ Weight: 0~
 @1907 = ~Dehydrate
 (Alteration)
 
-Level: 4
+Level: 3
 Sphere: Suffering, Water
 Range: 40
 Duration: Instantaneous
@@ -2055,7 +2056,7 @@ Weight: 0~
 @2007 = ~Moonbeam
 (Invocation)
 
-Level: 2
+Level: 5
 Sphere: Moon
 Range: 60
 Duration: 1 round/level
@@ -2201,7 +2202,7 @@ Weight: 0~
 @2107 = ~Poison Touch
 (Necromancy)
 
-Level: 4
+Level: 2
 Sphere: Suffering
 Range: Touch
 Duration: Special
@@ -2763,7 +2764,7 @@ This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, A
 @2510 = ~Hand of Myrkul
 (Necromancy)
 
-Level: 7
+Level: 6
 Sphere: Necromantic
 Range: Touch
 Duration: Permanent
@@ -2857,7 +2858,7 @@ Weight: 0~
 @2607 = ~Chilling Scythe
 (Evocation, Necromancy)
 
-Level: 3
+Level: 2
 Sphere: Creation, Combat
 Range: 0
 Duration: 1 round/level
@@ -3146,7 +3147,7 @@ Weight: 0~
 @2907 = ~Divination
 (Divination)
 
-Level: 3
+Level: 4
 Sphere: Divination
 Range: 0
 Duration: 1 turn
@@ -3480,7 +3481,7 @@ Weight: 0~
 @3207 = ~Gaseous Form
 (Necromancy)
 
-Level: 6
+Level: 5
 Sphere: Necromantic
 Range: 0
 Duration: 1 turn/level
