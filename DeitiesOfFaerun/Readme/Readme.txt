@@ -466,7 +466,7 @@ This spell creates a swirling sword-shaped formation of jagged, fast-swirling ic
 
 ---
 
-Conjure Ice Elemental
+Conjure Ice Paraelemental
 (Conjuration/Summoning)
 
 Level: 6
