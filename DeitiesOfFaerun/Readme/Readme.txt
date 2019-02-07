@@ -109,6 +109,7 @@ This component will add the kits per se. All the kits were made as close to thei
 Rapture
 (Enchantment/Charm)
 
+Level: 3
 Sphere: Thought
 Range: 75 ft.
 Duration: 1 round/level
@@ -123,6 +124,7 @@ This spell has two effects: when cast upon an ally it will put it on a state of 
 Emotion
 (Enchantment/Charm)
 
+Level: 4
 Sphere: Combat, Darkness, Sun
 Range: Visual range of the caster
 Duration: See below
@@ -147,6 +149,7 @@ HOPELESSNESS: This spell creates the emotion of hopelessness within the area of 
 Dark Aura
 (Alteration, Invocation/Evocation)
 
+Level: 4
 Sphere: Darkness
 Range: 0
 Duration: 1 round/level
@@ -161,6 +164,7 @@ This spell creates a spherical miasma of gloom and menace centered on the caster
 Instill Madness
 (Enchantment/Charm)
 
+Level: 5
 Sphere: Suffering, Thought
 Range: Touch
 Duration: Permanent
@@ -177,6 +181,7 @@ Instill Madness causes the subject to become completely insane unless a Saving T
 Darkness
 (Alteration)
 
+Level: 1
 Sphere: Darkness
 Range: 20 ft.
 Duration: 1 turn
@@ -191,6 +196,7 @@ This spell causes total, impenetrable darkness in the area of effect. Infravisio
 Nightmare
 (Invocation, Illusion/Phantasm)
 
+Level: 5
 Sphere: Darkness, Suffering, Thought
 Range: 40 ft.
 Duration: 1 turn
@@ -205,6 +211,7 @@ This spell enables the Nightcloak to put <PRO_HISHER> victim in a deep slumber a
 Eyebite
 (Enchantment/Charm, Illusion/Phantasm)
 
+Level: 6
 Sphere: Darkness, Suffering, Thought
 Range: 60 ft.
 Duration: 1 round/3 levels
@@ -229,6 +236,7 @@ SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.
 Changestaff
 (Alteration)
 
+Level: 7
 Sphere: Plant 
 Range: 40
 Duration: 1 turn/level
@@ -245,6 +253,7 @@ By means of this spell, the caster is able to change a specially prepared staff 
 Mace of Odo
 (Evocation)
 
+Level: 3
 Sphere: Creation 
 Range: 0
 Duration: 4 rounds 
@@ -263,6 +272,7 @@ The mace vanishes after one strike or after 4 rounds.
 Wyvern Watch
 (Abjuration, Evocation)
 
+Level: 2
 Sphere: Protection 
 Range: 30 ft.
 Duration: Special 
@@ -277,6 +287,7 @@ This spell is known as wyvern watch because of the insubstantial haze brought fo
 Seeking Sword
 (Evocation)
 
+Level: 4
 Sphere: Creation 
 Range: 30 ft.
 Duration: 2 rounds/level
@@ -295,6 +306,7 @@ Although it has no attack or damage bonuses, a Seeking Sword is considered a +4 
 Boon of Lathander
 (Conjuration/Summoning)
 
+Level: 4
 Sphere: Combat
 Range: Touch
 Duration: 6 rounds
@@ -309,6 +321,7 @@ During this spell's effect, the spell recipient receives bonuses of + 1 on attac
 Faerie Fire
 (Alteration)
 
+Level: 1
 Sphere: Sun
 Range: 80 ft.
 Duration: 4 rounds/level
@@ -323,6 +336,7 @@ This spell enables the caster to outline one or more objects or creatures with a
 Sunrise
 (Evocation, Alteration)
 
+Level: 3
 Sphere: Sun
 Range: 0
 Duration: Instantaneous
@@ -339,6 +353,7 @@ With this spell, the caster evokes a dazzling sphere of light equal to natural s
 Legend Lore
 (Divination)
 
+Level: 6
 Sphere: Divination
 Range: Touch
 Duration: Special
@@ -355,6 +370,7 @@ With this spell, the Lorekeeper can extend  knowledge immensely. The caster gain
 Martyrdom of Ilmater
 (Abjuration, Alteration)
 
+Level: 6
 Sphere: Protection 
 Range: 0
 Duration: 5 rounds
@@ -369,6 +385,7 @@ By means of this spell the Painbearer call a beneficial servant of Ilmater to po
 Endurance of Ilmater
 (Abjuration, Alteration, Necromancy)
 
+Level: 4
 Sphere: Protection
 Range: Touch
 Duration: 1 round + 1 round/level
@@ -386,6 +403,7 @@ This spell doubles the hit points of the spell recipient for the spell duration.
 Shadowcloak
 (Alteration)
 
+Level: 3
 Sphere: Darkness, Trickery
 Range: 0
 Duration: 1 round/level
@@ -468,7 +486,7 @@ Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate t
 Dehydrate
 (Alteration)
 
-Level: 4
+Level: 3
 Sphere: Suffering, Water
 Range: 40
 Duration: Instantaneous
@@ -483,7 +501,7 @@ This spell evaporates moisture from the bodies of the target creature, inflictin
 Drown
 (Alteration)
 
-Level: 4
+Level: 6
 Sphere: Water
 Range: 30
 Duration: 1 turn
@@ -500,7 +518,7 @@ This spell fill the lungs of the target creature with water. Creatures that do n
 Moonbeam
 (Invocation)
 
-Level: 2
+Level: 5
 Sphere: Moon
 Range: 60
 Duration: 1 round/level
@@ -710,7 +728,7 @@ This spell summons a Minor Death to serve the Gray One. It has 64 HP, 1 Thac0, A
 Hand of Myrkul
 (Necromancy)
 
-Level: 7
+Level: 6
 Sphere: Necromantic
 Range: Touch
 Duration: Permanent
@@ -728,7 +746,7 @@ The Gray One touches <PRO_HISHER> victim forcing the creature to make a Saving T
 Chilling Scythe
 (Evocation, Necromancy)
 
-Level: 3
+Level: 2
 Sphere: Creation, Combat
 Range: 0
 Duration: 1 round/level
@@ -763,7 +781,7 @@ This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, 
 Divination
 (Divination)
 
-Level: 3
+Level: 4
 Sphere: Divination
 Range: 0
 Duration: 1 turn
@@ -835,7 +853,7 @@ While protected by a Blood Armor, the cleric has a +3 bonus to <PRO_HISHER> Armo
 Gaseous Form
 (Necromancy)
 
-Level: 6
+Level: 5
 Sphere: Necromantic
 Range: 0
 Duration: 1 turn/level
