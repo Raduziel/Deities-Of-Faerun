@@ -119,19 +119,8 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_N
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_NORMAL_MISSILES~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR6.spl~
-WRITE_SHORT 0x1C 4                                                    
-WRITE_LONG  0x34 1                                                         
-WRITE_LONG  0x22 00
-LPF ALTER_SPELL_HEADER INT_VAR projectile = 0 target = 5 range = 1 speed = 0 location = 0 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 8   END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 9   END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 50  END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 141 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
+LPM ~SPELL_TO_FEATURE~
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 156 END
-LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
 
 END
 
