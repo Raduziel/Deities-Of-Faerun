@@ -161,6 +161,25 @@ This spell creates a spherical miasma of gloom and menace centered on the caster
 
 ---
 
+Phantasmal Killer
+(Illusion/Phantasm)
+
+Level: 4
+Sphere: Darkness
+Range: 50 ft.
+Duration: Special
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Special
+
+When this spell is cast, the Strifleader creates the illusion of the most fearsome thing imaginable to the victim, simply by forming the fears of the victim's subconscious mind into something that its conscious mind can visualize--the most horrible beast. Only the spell recipient can see the phantasmal killer.
+
+When the phantasmal killer attacks, the victim makes a Saving Throw vs. Spell. Success means that the illusion is disbelieved and nothing happens. If the victim fails, another Saving Throw, this time vs. Death, must be rolled. Success means that the victim will be in panic for 4 rounds and take 4d6 points of magic damage. Failing in this second test kills the victim instantly.
+
+This spell has no effect over constructs and undead.
+
+---
+
 Instill Madness
 (Enchantment/Charm)
 
