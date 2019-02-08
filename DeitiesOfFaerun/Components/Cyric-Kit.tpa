@@ -200,13 +200,15 @@ COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                 
 	FOR (i = 7; i < 51; ++i)	BEGIN
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 7) match_duration = 6 duration = (6 * i) END
 	END
+	
+COPY "DeitiesOfFaerun\Spl\RACYRI2.spl" override SAY NAME1 @308 SAY UNIDENTIFIED_DESC  @309                           //Phantasmal Killer
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FEEBLEMIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN    //Instill Madness
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FEEBLEMIND~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RACYRI2.spl~ SAY NAME1 @308 SAY UNIDENTIFIED_DESC @309 
+COPY_EXISTING	~%spell_res%.spl~	~override/RACYRI3.spl~ SAY NAME1 @310 SAY UNIDENTIFIED_DESC @311 
 LPF ALTER_SPELL_HEADER  INT_VAR range = 0 min_level = 15 STR_VAR icon = ~CYRIINMA~ END
-LPF CLONE_EFFECT    	INT_VAR match_opcode = 76 opcode = 139 duration = 0 parameter1 = RESOLVE_STR_REF (@310) END
+LPF CLONE_EFFECT    	INT_VAR match_opcode = 76 opcode = 139 duration = 0 parameter1 = RESOLVE_STR_REF (@312) END
 LPM ~SPELL_TO_INNATE~
 
 END	
@@ -257,7 +259,7 @@ ACTION_FOR_EACH file IN ~CYRIS~ ~CYRIL~ BEGIN
   END
 END
 
-ACTION_FOR_EACH file IN ~CYRIDAAU~ ~CYRIINMA~ BEGIN
+ACTION_FOR_EACH file IN ~CYRIDAAU~ ~CYRIINMA~ ~CYRIPHAN~ BEGIN
 COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
     LPF UPDATE_PVRZ_INDICES
     RET
