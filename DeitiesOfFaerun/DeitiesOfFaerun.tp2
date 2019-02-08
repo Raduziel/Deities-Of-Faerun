@@ -113,9 +113,12 @@ BEGIN @9999909
 		OUTER_SET	tra_learn	= 9999239	OUTER_SET   tra_shaman_spl_name = 9999249
 		OUTER_SET	tra_quit    = 9999240	OUTER_SET   tra_shaman_spl_desc = 9999250
 		OUTER_SET	sphere_shm_align = 0
+		OUTER_SET	sphere_alignment = 0
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/IWDImport.tpa~
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Main.tpa~
-		/*INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Shaman/SplShmkn.tpa~*/
+		ACTION_IF GAME_IS ~iwdee~ BEGIN
+		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Shaman/SplShmkn.tpa~*/
+		END
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/NPC-Spellbook.tpa~
 	  
 //__________________________________________________________________________________
