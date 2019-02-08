@@ -202,6 +202,9 @@ COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                 
 	END
 	
 COPY "DeitiesOfFaerun\Spl\RACYRI2.spl" override SAY NAME1 @308 SAY UNIDENTIFIED_DESC  @309                           //Phantasmal Killer
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
+
+COPY "DeitiesOfFaerun\Spl\RACYRI22.spl" override
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FEEBLEMIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN    //Instill Madness
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FEEBLEMIND~	RET	spell_res	END
