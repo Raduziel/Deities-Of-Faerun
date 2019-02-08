@@ -222,15 +222,20 @@ Features:
 - Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
 - Immune to any spell that alters the emotions (including charm and fear).
 - May use the Dark Aura special ability once per day, starting at level 7.
+- May use the Phantasmal Killer special ability once per day, starting at level 10.
 - May use the Instill Madness special ability once per day, starting at level 15.
-
-INSTILL MADNESS:
-
-As the wizard spell Feeblemind, except that it has a touch range.
 
 DARK AURA:
 
-The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.~
+The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.
+
+PHANTASMAL KILLER:
+
+The Strifleader creates an illusion that reflects the target's worst fear, scaring, injuring or even killing it.
+
+INSTILL MADNESS:
+
+As the wizard spell Feeblemind, except that it has a touch range.~
 @304 = ~Holy Symbol of Cyric~
 @305 = ~Only the most worthy and devoted servants of the Dark Sun are granted these powerful holy symbols.
 
@@ -256,8 +261,25 @@ Area of Effect: A sphere of 15-ft. radius
 Saving Throw: None
 
 This spell creates a spherical miasma of gloom and menace centered on the caster. When this spell is cast, all evil aligned beings attack at a +1 bonus to their attack and damage rolls, all good-aligned creatures strike at a -1 penalty to their attack and damage rolls, and the caster is personally empowered to strike at a +3 bonus to <PRO_HISHER> attack and damage rolls. Neutral-aligned beings (with respect to good and evil) are unaffected by this spell. Once cast, the spell moves with the caster and does not need to be concentrated on to be maintained.~
-@308 = ~Instill Madness~
-@309 = ~Instill Madness
+@308 = ~Phantasmal Killer~
+@309 = ~Phantasmal Killer
+(Illusion/Phantasm)
+
+Level: 4
+Sphere: Darkness
+Range: 50 ft.
+Duration: Special
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Special
+
+When this spell is cast, the Strifleader creates the illusion of the most fearsome thing imaginable to the victim, simply by forming the fears of the victim's subconscious mind into something that its conscious mind can visualize--the most horrible beast. Only the spell recipient can see the phantasmal killer.
+
+When the phantasmal killer attacks, the victim makes a Saving Throw vs. Spell. Success means that the illusion is disbelieved and nothing happens. If the victim fails, another Saving Throw, this time vs. Death, must be rolled. Success means that the victim will be in panic for 4 rounds and take 4d6 points of magic damage. Failing in this second test kills the victim instantly.
+
+This spell has no effect over constructs and undead.~
+@310 = ~Instill Madness~
+@311 = ~Instill Madness
 (Enchantment/Charm)
 
 Level: 5
@@ -269,8 +291,8 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.~
-@310 = ~Insane~
-@311 = ~STRIFLEADER OF CYRIC (C/T): Cyric (SEER-ick) is a god born of the events of the Time of Troubles. He gained the followers and portfolios of many old evil gods and fights to retain them. His power base is immense, and he is one of the three greater powers of evil in Faerûn. The destruction of Zhentil Keep, along with many of the rest of the woes of Faerûn, may be laid at his feet. In an attempt to further enhance his own power, Cyric created the Cyrinishad, a book that is enchanted to bind the reader slavishly to believing that Cyric is the most important being in the universe, exceeding all others. Cyric made the serious error of reading his own book and is now mad, believing that he himself is the center of the universe and everything that occurs is by his direct intervention.
+@312 = ~Insane~
+@313 = ~STRIFLEADER OF CYRIC (C/T): Cyric (SEER-ick) is a god born of the events of the Time of Troubles. He gained the followers and portfolios of many old evil gods and fights to retain them. His power base is immense, and he is one of the three greater powers of evil in Faerûn. The destruction of Zhentil Keep, along with many of the rest of the woes of Faerûn, may be laid at his feet. In an attempt to further enhance his own power, Cyric created the Cyrinishad, a book that is enchanted to bind the reader slavishly to believing that Cyric is the most important being in the universe, exceeding all others. Cyric made the serious error of reading his own book and is now mad, believing that he himself is the center of the universe and everything that occurs is by his direct intervention.
 
 Cyric's madness has taken a number of forms, including visions and a continual chorus of voices that burble and moan in the back of his mind. These voices may be parts of Cyric's own shattered consciousness or they may be the remains of the gods that Cyric slew or usurped the portfolios of.
 
@@ -293,15 +315,21 @@ Features:
 - Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
 - Immune to any spell that alters the emotions (including charm and fear).
 - May use the Dark Aura special ability once per day, starting at level 7.
+- May use the Phantasmal Killer special ability once per day, starting at level 10.
 - May use the Instill Madness special ability once per day, starting at level 15.
-
-INSTILL MADNESS:
-
-As the wizard spell Feeblemind, except that it has a touch range.
 
 DARK AURA:
 
-The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.~
+The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.
+
+
+PHANTASMAL KILLER:
+
+The Strifleader creates an illusion that reflects the target's worst fear, scaring, injuring or even killing it.
+
+INSTILL MADNESS:
+
+As the wizard spell Feeblemind, except that it has a touch range.~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
