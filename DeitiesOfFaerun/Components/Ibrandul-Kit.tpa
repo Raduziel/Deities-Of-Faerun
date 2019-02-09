@@ -93,7 +93,7 @@ END
 //Multiclass CLAB
 
 COPY_EXISTING ~RAIbra.2da~ ~override/RAIbraCT.2da~
-SET_2DA_ENTRY 6 25 50 ~AP_RATIBRA~
+SET_2DA_ENTRY 5 25 50 ~AP_RATIBRA~
 PRETTY_PRINT_2DA
 
 //Restriction
