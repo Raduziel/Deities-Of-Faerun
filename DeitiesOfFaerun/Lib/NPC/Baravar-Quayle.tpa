@@ -16,20 +16,8 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   END
   BUT_ONLY_IF_IT_CHANGES
   
-ACTION_IF ((FILE_EXISTS_IN_GAME ~1xqu25.cre~) AND (GAME_IS ~bg2ee~)) THEN BEGIN
-
-	ACTION_FOR_EACH creature IN ~quayle~ ~1xqu25~ BEGIN
-
-		ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
-
-			COPY_EXISTING ~%creature%.cre~ ~override~
-			SET_BG2_PROFICIENCY 112 1
-			REPLACE_CRE_ITEM    ~clck15~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
-		END
-	END
-END
-
 OUTER_SET kit = "%RABaraCM%"
+
 ACTION_FOR_EACH creature IN quayle quayle4 quayle6 1xqu25 BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
@@ -53,6 +41,19 @@ ACTION_FOR_EACH creature IN quayle quayle4 quayle6 1xqu25 BEGIN
   END
   
   END
+  
+ ACTION_IF ((FILE_EXISTS_IN_GAME ~1xqu25.cre~) AND (GAME_IS ~bg2ee~)) THEN BEGIN
+
+	ACTION_FOR_EACH creature IN ~quayle~ ~1xqu25~ BEGIN
+
+		ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+			COPY_EXISTING ~%creature%.cre~ ~override~
+			SET_BG2_PROFICIENCY 112 1
+			REPLACE_CRE_ITEM    ~clck15~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
+		END
+	END
+END 
   
   ACTION_IF FILE_EXISTS_IN_GAME ~QUAB.itm~ THEN BEGIN
   

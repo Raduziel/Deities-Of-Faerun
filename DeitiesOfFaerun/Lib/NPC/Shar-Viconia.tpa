@@ -17,6 +17,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   BUT_ONLY_IF_IT_CHANGES
 
 OUTER_SET kit = "%RAShar%"
+
 ACTION_FOR_EACH creature IN viconi viconi4 viconi6 viconi7 viconi8 viconi9 viconi11 viconi13 viconi16 BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN

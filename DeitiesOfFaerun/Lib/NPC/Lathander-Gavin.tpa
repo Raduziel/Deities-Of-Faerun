@@ -20,7 +20,7 @@ OUTER_SET kit = "%RALath%"
 
 ACTION_IF GAME_IS ~bgee~ BEGIN
 
-COPY_EXISTING_REGEXP GLOB ~.*gavin.cre$~ ~override~
+COPY_EXISTING ~b!gavin.cre~ ~override~
 	WRITE_SHORT   0x244 0
 	WRITE_BYTE    0x246 "%kit%"
 	WRITE_BYTE    0x247 0x40
@@ -35,7 +35,7 @@ END
 
 ACTION_IF GAME_IS ~bg2ee~ BEGIN
 
-COPY_EXISTING_REGEXP GLOB ~.*gav08.cre$~ ~override~
+COPY_EXISTING ~b!gav08.cre~ ~override~
 	WRITE_SHORT   0x244 0
 	WRITE_BYTE    0x246 "%kit%"
 	WRITE_BYTE    0x247 0x40
@@ -49,7 +49,7 @@ COPY_EXISTING_REGEXP GLOB ~.*gav08.cre$~ ~override~
 	REMOVE_KNOWN_SPELL ~SPCL742~
 	BUT_ONLY
 	
-COPY_EXISTING_REGEXP GLOB ~.*gav13.cre$~ ~override~
+COPY_EXISTING ~b!gav13.cre~ ~override~
 	WRITE_SHORT   0x244 0
 	WRITE_BYTE    0x246 "%kit%"
 	WRITE_BYTE    0x247 0x40

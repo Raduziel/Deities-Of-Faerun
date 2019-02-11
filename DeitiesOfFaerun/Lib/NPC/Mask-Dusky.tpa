@@ -18,14 +18,17 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 
 OUTER_SET kit = "%RAMaskCT%"
 
-COPY_EXISTING_REGEXP GLOB ~.*dusky.cre$~ ~override~
+ACTION_FOR_EACH creature IN ~l#dusky~ BEGIN
+  
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+	  
+	COPY_EXISTING ~%creature%.cre~ ~override~
 	  WRITE_SHORT   0x244 0
       WRITE_BYTE    0x246 "%kit%"
       WRITE_BYTE    0x247 0x40
 	  REMOVE_CRE_ITEM ~SHLD08~
-BUT_ONLY
-
-  ACTION_FOR_EACH creature IN dusky BEGIN
+	  BUT_ONLY
+  END 
   
     ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
