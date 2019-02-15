@@ -78,4 +78,27 @@ LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 EN
 
 END
 
+//Kjeron's code to create ability headers
+
+DEFINE_PATCH_FUNCTION	ADD_ABILITIES	INT_VAR	abil = 0	target = 1	range = 0	speed = 0	STR_VAR	icon = ~~	BEGIN
+		WRITE_SHORT	 0x68 abil	
+		WRITE_LONG	 0x6a (0x72 + abil * 0x28)
+		INSERT_BYTES 0x72 (0x28 * abil)
+		INNER_PATCH_SAVE ability	~~	BEGIN
+		INSERT_BYTES 0 0x28
+		WRITE_BYTE 0x0 1
+		WRITE_BYTE 0x2 4
+		WRITE_EVALUATED_ASCII 0x4 ~%icon%~ #8
+		WRITE_BYTE	0xc	target
+		WRITE_SHORT	0xe	range
+		WRITE_SHORT	0x10 1
+		WRITE_SHORT	0x12 speed
+		WRITE_SHORT	0x26 1
+		END
+		FOR	(i = 0; i < abil; ++i)	BEGIN
+			WRITE_EVALUATED_ASCII	(0x72 + i * 0x28)	~%ability%~	(0x28)
+			WRITE_SHORT	(0x82 + i * 0x28) (i + 1)
+		END
+	END
+
 //EoF
