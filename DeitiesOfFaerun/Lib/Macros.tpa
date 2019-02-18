@@ -100,5 +100,15 @@ DEFINE_PATCH_FUNCTION	ADD_ABILITIES	INT_VAR	abil = 0	target = 1	range = 0	speed 
 			WRITE_SHORT	(0x82 + i * 0x28) (i + 1)
 		END
 	END
+	
+//Beautiful piece of code by Subtledoctor
+
+DEFINE_PATCH_FUNCTION AT_WILL BEGIN
+  READ_SHORT 0x1c spell_type
+  PATCH_IF  (%spell_type% = 4) BEGIN
+    LPF ADD_SPELL_CFEFFECT INT_VAR insert_point = 0 opcode = 171 target = 1 timing = 9 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
+    LPF ADD_SPELL_CFEFFECT INT_VAR insert_point = 0 opcode = 172 target = 1 timing = 9 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
+  END
+END	
 
 //EoF
