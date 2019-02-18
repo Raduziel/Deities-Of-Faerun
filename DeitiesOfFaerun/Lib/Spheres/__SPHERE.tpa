@@ -182,8 +182,11 @@
 		END
 		ACTION_MATCH	classID	WITH
 			21	WHEN natureSpheres = 1	BEGIN	//	Shaman
-				LAF	UPDATE_SHAMAN_UI	INT_VAR	kitid	STR_VAR	kitname	clabfile seqresref	END
-			//	LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END
+				ACTION_IF	dialog BEGIN
+					LAF	UPDATE_SHAMAN_DLG	INT_VAR	kitid	STR_VAR	kitname	clabfile	END
+				END	ELSE	BEGIN
+					LAF	UPDATE_SHAMAN_UI	INT_VAR	kitid	STR_VAR	kitname	clabfile seqresref	END
+				END
 			END
 			18	BEGIN		//	Cleric/Ranger
 				ACTION_IF	divineSpheres = 1	BEGIN
@@ -352,12 +355,15 @@
 					END	
 					READ_LONG	0x2a8	mem_off
 					READ_LONG	0x2ac	mem_num
+					CLEAR_ARRAY total
 					FOR	(i = 0; i < mem_num; ++i)	BEGIN
 						READ_SHORT	(mem_off + i * 0x10) level
+						READ_SHORT	(mem_off + i * 0x10 + 2) total
 						READ_SHORT	(mem_off + i * 0x10 + 6) type
 						READ_SHORT	(mem_off + i * 0x10 + 0xc) count
 						PATCH_IF	type = 0	BEGIN
 							SET	$count(~%level%~) -= count	//	Account for spells not removed
+							SET	$total(~%level%~) = total	//	Account for spells slot, ADD_MEMORIZED_SPELL will break this value
 						END
 					END
 					PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN	SET	kitid |= 0x4000	END
@@ -465,14 +471,17 @@
 							END
 						END
 					END
-					/*	Not needed with UI system
-					FOR	(i = 0; i < 8; ++i)	BEGIN
-						PATCH_IF $shm_count(~%i%~) > 0	BEGIN
-							SET	j = i + 1
-							LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 187	parameter1 = $shm_count(~%i%~)	timing = 9	special = 1	STR_VAR	effvar = EVAL ~RASHMKN%j%~	END	// Shaman spell count marker
+					PATCH_IF dialog BEGIN
+						FOR	(i = 0; i < 8; ++i)	BEGIN
+							PATCH_IF $shm_count(~%i%~) > 0	BEGIN
+								SET	j = i + 1
+								LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 187	parameter1 = $shm_count(~%i%~)	timing = 9	special = 1	STR_VAR	effvar = EVAL ~RASHMKN%j%~	END	// Shaman spell count marker
+							END
 						END
 					END
-					*/
+					PHP_EACH total AS one => two BEGIN
+						WRITE_SHORT	(mem_off + one * 0x10 + 2) two
+					END
 				BUT_ONLY IF_EXISTS
 			END
 		END
