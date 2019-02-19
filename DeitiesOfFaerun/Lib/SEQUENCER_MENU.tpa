@@ -1,6 +1,6 @@
 
 	//	UI-based Spell Learning tool for Sorcerers/Shamans
-	//	v0.41
+	//	v0.52
 	
 	//	This function is designed to implement a UI-based Spell selection system, as an alternative to dialog-based Spell Selection, utilizing
 	//		the Sequencer/Contingency spell selection menu to learn arcane or divine spells.  Innate abilities "can" be learned this way as well,
@@ -16,6 +16,7 @@
 	//	- '%filename%X.2DA' - Primary spell list, identical in form to the spell lists for Opcode 214 (Select Spell).
 	//		If specified, the function will automatically populate the list with appropriate "default" spells (SPPR/SPWI), based on HIDESPL.2DA and the
 	//		specified exclusion flag.  Spells may be manually appended to the list as desired, and spell level is automatically detected and filtered by the UI.
+	//	- '%filename%G.EFF', '%filename%.CRE', '%filename%.BCS' - Created only if using GLOBAL/LOCALS variables option, EFF summons CRE, CRE runs BCS.  
 	
 	//	All spells that can be learned will require an "L" suffixed subspell, using the same spellbook Icon and containing a single opcode 171 effect
 	//		referencing the main spell.  These will be created automatically for SPWI/SPPR spells added to the primary spell list by the function.
@@ -47,6 +48,13 @@
 							//  for use with custom spelllists, column of file to use.
 	//				alignment = boolean
 							//	If non-zero, function enforces that spell selection should respect alignment restrictions (currently only if they are provided by an external source).
+	//				global = value
+							//	If non-zero, function will read known spells in LOCALS and GLOBAL variables.  Activating ability will take up to 1 second before menu pops up while variables are set.
+							//	If 1, Subspells to learn spells will need to be setup manually, since this mode is only intended for spells that cannot be "known" in the normal manner.
+							//	If 2, subspells are still created as normal.
+							//	If the spells LOCALS variable is set to 1, it will be considered "known" and count towards the known spell limit.
+							//	If the spells LOCALS variable is set to 2, it will be considered "known" but not count towards the known spell limit.
+							//	The LOCALS/GLOBAL variable for each spell is it's RESREF.
 	//
 	//			STR_VAR
 	//				resref = ~filename~
@@ -77,6 +85,14 @@
 	//				custom = ~lua function~
 							//	Specifying this variable will install the core functions and assign 'custom' to the 'resref'.  All other fields are ignored.
 							//	No other files are created, no other entries are added.
+	//				subspell = ~character~
+							//	Default = ~L~
+							//	Subspells for each learnable spell will be created, appended with this character (SPPR101.SPL -> SPPR101L.SPL)
+							//	Must be a single character, must not already be in use by spells (A,B,C,D,F,P are not permiited)
+	//				blacklist = ~variable name~
+							//	Array ~%blacklist%~ will be scanned over for IDS spell labels as well as spell resrefs.
+							//	All valid spells listed will be ommitted from the auto-generated spell lists.
+							//	No function when using pre-built spell lists.
 	//		END
 	//	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//	The following code will mimic the default sorcerer/shaman spell options (provided proper tra references):
@@ -101,7 +117,7 @@
 	//	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	DEFINE_ACTION_FUNCTION	SETUP_SEQUENCER_MENU	BEGIN
-		OUTER_SET	version = 41	OUTER_SET	current = 0
+		OUTER_SET	version = 52	OUTER_SET	current = 0
 		ACTION_IF FILE_EXISTS_IN_GAME ~M_SQTOOL.LUA~	BEGIN
 			COPY_EXISTING ~M_SQTOOL.LUA~ override	REPLACE_EVALUATE ~[%WNL%^]\-\-SEQUENCER_MENU_VERSION:\([0-9]+\)[%WNL%]~	BEGIN	SET	current = MATCH1	END ~%MATCH0%~ BUT_ONLY
 		END	ELSE	BEGIN
@@ -145,7 +161,7 @@
 		if type(SequencerMenu[contingencyResRef]) == 'function' then
 			SequencerMenu[contingencyResRef]()
 		else
-			SequencerMenu['DEFAULT']()
+			--SequencerMenu['DEFAULT']()
 		end
 		return bookSpells
 	end
@@ -160,7 +176,10 @@
 	end~~~~~
 			ACTION_IF	GAME_IS	~iwdee~	BEGIN	OUTER_SPRINT	currentLevel ~contingencySpellLevel~	END	ELSE	BEGIN	OUTER_SPRINT	currentLevel ~currentSpellLevel~	END
 			APPEND	~M_SQTOOL.LUA~	~~~~~
-	function SequencerMenuSpellsKnown(multi,spelltable,abilFunc,abil,alignment)
+	function SequencerMenuSpellsKnown(multi,spelltable,abilFunc,abil,alignment,postfix,global)
+		if postfix == nil then
+			postfix = 'L'
+		end
 		local	temp = {};	local	unknown = {};	local known = 0;	local num = 0;	local mod = 0;
 		if multi ~= 0 then
 			if mageScreen:SpellSwappedInContingency(contingencyResRef) then
@@ -169,7 +188,15 @@
 					if mageScreen:SpellSwappedInContingency(v.resref) then
 						for x,y in pairs (contingencySwapTable) do
 							if y.level == %currentLevel% then
-								unknown[y.resref] = y
+								if global then
+									if (Infinity_GetScriptVarInt(y.resref) == nil) or (Infinity_GetScriptVarInt(y.resref) == 0) then
+										unknown[y.resref] = y
+									elseif Infinity_GetScriptVarInt(y.resref) == 1 then
+										known = known + 1
+									end
+								else
+									unknown[y.resref] = y
+								end
 							end
 						end
 					end
@@ -179,7 +206,15 @@
 			if mageScreen:SpellSwappedInContingency(contingencyResRef) then
 				for k,v in pairs (contingencySwapTable) do
 					if v.level == %currentLevel% then
-						unknown[v.resref] = v
+						if global then
+							if (Infinity_GetScriptVarInt(v.resref) == nil) or (Infinity_GetScriptVarInt(v.resref) == 0) then
+								unknown[v.resref] = v
+							elseif Infinity_GetScriptVarInt(v.resref) == 1 then
+								known = known + 1
+							end
+						else
+							unknown[v.resref] = v
+						end
 					end
 				end
 			end
@@ -245,7 +280,7 @@
 		table.sort(temp,function(a,b) return a.resref < b.resref end)
 		for k,v in ipairs (temp) do
 			if known < num + mod then
-				v.resref = v.resref .. 'L'
+				v.resref = v.resref .. postfix
 			else
 				v.resref = 'M_SQMENU'
 			end
@@ -367,9 +402,12 @@
 	end	--[SEQUENCER_MENU_KNOWN_SPL_TABLE END]~~~~~
 	END
 	DEFINE_ACTION_FUNCTION	CREATE_SEQUENCER_MENU
-		INT_VAR	class = 0	exclude = 0	maxlevel = ~-1~	multilist = 0	tip = ~-1~	name = ~-1~	desc = ~-1~	column = 1	alignment = 0
-		STR_VAR	resref = ~~	icon = ~~	title = ~~	action = ~~	spelltable = ~~	spelllist = ~~	attribute = ~~	attrtable = ~~	custom = ~~
+		INT_VAR	class = 1	exclude = 0	maxlevel = ~-1~	multilist = 0	tip = ~-1~	name = ~-1~	desc = ~-1~	column = 1	alignment = 0	global = 0
+		STR_VAR	resref = ~~	icon = ~~	title = ~~	action = ~~	spelltable = ~~	spelllist = ~~	attribute = ~~	attrtable = ~~	custom = ~~	subspell = ~L~	blacklist = ~~
 	BEGIN
+		OUTER_SPRINT $ EVAL ~%blacklist%~(~-1~) ~DEFAULT~
+		PRINT ~Running CREATE_SEQUENCER_MENU version#: 0.%version%~
+		ACTION_TO_UPPER resref	ACTION_TO_UPPER spelltable	ACTION_TO_UPPER spelllist	ACTION_TO_UPPER attribute	ACTION_TO_UPPER attrtable	ACTION_TO_UPPER subspell
 		LAF	SETUP_SEQUENCER_MENU	END
 		ACTION_IF	! (~%custom%~ STRING_EQUAL ~~)	BEGIN
 			APPEND	~M_SQMENU.LUA~	~~~~~SequencerMenu['%resref%'] = %WNL%%custom%~~~~~
@@ -383,9 +421,21 @@
 			APPEND	~BGEE.LUA~	~mageBookStrings['%resref%X'] = {tip = %tip%, title = '%resref%_SEQUENCER_TITLE', action = "%resref%_SEQUENCER_LABEL"}~
 			APPEND	~L_%EE_LANGUAGE%.LUA~	~uiStrings['%resref%_SEQUENCER_TITLE'] = "%title%"~
 			APPEND	~L_%EE_LANGUAGE%.LUA~	~uiStrings['%resref%_SEQUENCER_LABEL'] = "%action%"~
+			ACTION_IF FILE_EXISTS_IN_GAME ~%spelltable%.2da~ AND maxlevel = ~-1~ BEGIN	OUTER_SET maxlevel = 9 END
+			PRINT ~%subspell%~
+			ACTION_MATCH ~%subspell%~ WITH
+				1 2 3 4 5 6 7 8 9 0 ~G~ ~H~ ~I~ ~J~ ~K~ ~L~ ~M~ ~N~ ~O~ ~Q~ ~R~ ~S~ ~T~ ~U~ ~V~ ~W~ ~X~ ~Y~ ~Z~ BEGIN OUTER_SPRINT postfix ~%subspell%~	END
+				DEFAULT
+					WARN ~Invalid subspell extension, defaulting to 'L'.~
+					OUTER_SPRINT postfix ~L~
+			END
 			ACTION_IF	class = 1	BEGIN
 				OUTER_SPRINT	prefix ~SPWI~
 				ACTION_IF (maxlevel > 9) OR (maxlevel < 0)	BEGIN	OUTER_SET	maxlevel = 9	END
+				ACTION_IF	!(~%spelltable%~ STRING_EQUAL ~~) AND !FILE_EXISTS_IN_GAME ~%spelltable%.2da~	BEGIN
+					WARN	~Spelltable (%spelltable%.2DA) does not exist in game, using class default (SPLSRCKN.2DA).~
+					OUTER_SPRINT	spelltable ~~
+				END
 				ACTION_IF	~%spelltable%~ STRING_EQUAL ~~	BEGIN
 					OUTER_SPRINT	spelltable ~SPLSRCKN_BACKUP~
 					ACTION_IF	!FILE_EXISTS_IN_GAME	~SPLSRCKN_BACKUP.2da~	BEGIN
@@ -396,12 +446,14 @@
 							SET_2DA_ENTRIES_NOW	~SET_SPLSRCKN~ cols
 						BUT_ONLY
 					END
-				END	ELSE	BEGIN
-					ACTION_IF	!FILE_EXISTS_IN_GAME ~%spelltable%.2da~	BEGIN	WARN	~Spelltable (%spelltable%.2DA) does not exist in game, using class default (SPLSRCKN.2DA).~	END
 				END
 			END	ELSE	BEGIN
 				OUTER_SPRINT	prefix ~SPPR~
 				ACTION_IF (maxlevel > 7) OR (maxlevel < 0)	BEGIN	OUTER_SET	maxlevel = 7	END
+				ACTION_IF	!(~%spelltable%~ STRING_EQUAL ~~) AND !FILE_EXISTS_IN_GAME ~%spelltable%.2da~	BEGIN
+					WARN	~Spelltable (%spelltable%.2DA) does not exist in game, using class default (SPLSRCKN.2DA).~
+					OUTER_SPRINT	spelltable ~~
+				END
 				ACTION_IF	~%spelltable%~ STRING_EQUAL ~~	BEGIN
 					OUTER_SPRINT	spelltable ~SPLSHMKN_BACKUP~
 					ACTION_IF	!FILE_EXISTS_IN_GAME	~SPLSHMKN_BACKUP.2da~	BEGIN
@@ -412,20 +464,50 @@
 							SET_2DA_ENTRIES_NOW	~SET_SPLSHMKN~ cols
 						BUT_ONLY
 					END
-				END	ELSE	BEGIN
-					ACTION_IF	!FILE_EXISTS_IN_GAME ~%spelltable%.2da~	BEGIN	WARN	~Spelltable (%spelltable%.2DA) does not exist in game, using class default (SPLSHMKN.2DA).~	END
 				END
 			END
 			LAF	SEQUENCER_MENU_KNOWN_SPL_TABLE	STR_VAR	spelltable	END
 			COPY	~.../inlined.2da~	~override/%resref%X.2da~
-			CREATE	SPL	~%resref%~	WRITE_LONG	NAME1	name	WRITE_LONG	UNIDENTIFIED_DESC	desc	WRITE_LONG	0x34	1	WRITE_SHORT	0x1c	4	WRITE_LONG	0x18	0x0201c000
-				WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28
-				LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = 47	target = 7	min_level = 1	STR_VAR	icon	END
-				LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
-				LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 172	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
-				LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 321	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
-				LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	target = 9	parameter2 = 2	STR_VAR	resource =	EVAL ~%resref%X~	END
-				LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 146	target = 9	parameter2 = 1	STR_VAR	resource =	EVAL ~%resref%D~	END
+			ACTION_IF	global BEGIN
+				CREATE	SPL	~%resref%~
+					WRITE_LONG	NAME1	name	WRITE_LONG	UNIDENTIFIED_DESC	desc	WRITE_LONG	0x18	0x0201c000
+					WRITE_LONG	0x34	1	WRITE_SHORT	0x1c	4	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28
+					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = 47	target = 7	min_level = 1	STR_VAR	icon	END
+					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
+					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 172	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 258	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	parameter2 = 2	target = 1	timing = 1	STR_VAR	resource =	EVAL ~%resref%G~	END
+				CREATE	SPL	~%resref%G~
+					WRITE_LONG	0x34	1	WRITE_SHORT	0x1c	4	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28
+					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = 47	target = 7	min_level = 1	STR_VAR	icon	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 321	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	target = 9	parameter2 = 2	STR_VAR	resource =	EVAL ~%resref%X~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 146	target = 9	parameter2 = 1	STR_VAR	resource =	EVAL ~%resref%D~	END
+				CREATE	EFF	~%resref%G~	WRITE_LONG	0x10	67	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%resref%G~	WRITE_ASCIIE	0x70 ~none~
+				CREATE	CRE ~%resref%G~	WRITE_LONG	NAME1 ~-1~	WRITE_LONG	NAME2 ~-1~	WRITE_LONG	0x20	0x600010	WRITE_SHORT	0x24	1	WRITE_SHORT	0x26	1
+					WRITE_BYTE	0x33	1	WRITE_BYTE	0x7e	255	WRITE_LONG	0x54 0x14141414	WRITE_BYTE 0x58 0x14
+					WRITE_LONG	0x234 0x010101	WRITE_LONG	0x238	0x19190019	WRITE_LONG	0x23c	0x14191919	WRITE_ASCIIE	0x248	~%resref%G~
+					LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 287	timing = 9	END
+					LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 100	parameter2 = 2	timing = 9	END
+					LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 101	parameter2 = 12	timing = 9	END
+					LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 208	parameter2 = 1	timing = 9	END
+					LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 315	parameter2 = 1	timing = 9	END
+					LPF	ADD_CRE_EFFECT	INT_VAR	opcode = 367	parameter2 = 1	timing = 9	END
+				<<<<<<<< .../%resref%G.baf
+				%script%>>>>>>>>
+				OUTER_SPRINT script ~~
+			END	ELSE	BEGIN
+				CREATE	SPL	~%resref%~
+					WRITE_LONG	NAME1	name	WRITE_LONG	UNIDENTIFIED_DESC	desc	WRITE_LONG	0x18	0x0201c000
+					WRITE_LONG	0x34	1	WRITE_SHORT	0x1c	4	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28
+					LPF	ALTER_SPELL_HEADER	INT_VAR	location = 4	projectile = 47	target = 7	min_level = 1	STR_VAR	icon	END
+					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
+					LPF	ADD_SPELL_CFEFFECT	INT_VAR	opcode = 172	target = 1	STR_VAR	resource =	EVAL ~%resref%~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 258	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 321	target = 1	STR_VAR	resource =	EVAL ~%resref%X~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	target = 9	parameter2 = 2	STR_VAR	resource =	EVAL ~%resref%X~	END
+					LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 146	target = 9	parameter2 = 1	STR_VAR	resource =	EVAL ~%resref%D~	END
+			END
 			CREATE	SPL	~%resref%D~	WRITE_LONG	0x34	1	WRITE_SHORT	0x68	1	WRITE_LONG	0x6a	(0x72 + 0x28)	INSERT_BYTES	0x72	0x28	WRITE_SHORT	0x98	47
 				LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 258	target = 2	STR_VAR	resource =	EVAL ~%resref%X~	END
 			CREATE	EFF	~%resref%X~	WRITE_LONG	0x10	257	WRITE_LONG	0x1c	9	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x94	~%resref%X~
@@ -437,19 +519,37 @@
 					TEXT_SPRINT	$hidden(~%res%~) ~%value%~
 				END
 			BUT_ONLY
+			ACTION_PHP_EACH	EVAL ~%blacklist%~ AS index => label BEGIN
+				OUTER_SPRINT	spell_res	EVAL ~%label%~
+				ACTION_IF	!FILE_EXISTS_IN_GAME	~%label%.spl~	BEGIN
+					ACTION_IF	FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]%label%[ %TAB%%WNL%$]~)	BEGIN
+						LAF	RES_NUM_OF_SPELL_NAME	STR_VAR	spell_name = EVAL ~%label%~	RET	spell_res	END
+					END
+				END
+				ACTION_IF	FILE_EXISTS_IN_GAME	~%spell_res%.spl~	BEGIN
+					OUTER_SPRINT $hidden(~%spell_res%~) ~1~
+				END
+			END
 			ACTION_IF	~%spelllist%~ STRING_EQUAL ~~	BEGIN
 				OUTER_FOR	(i = 1; i <= maxlevel; ++i)	BEGIN
-					COPY_EXISTING_REGEXP	~^\(%prefix%%i%\([0-4][1-9]\|10\|20\|30\|40\)\)\.spl$~	~override/\1L.spl~
+					COPY_EXISTING_REGEXP	~^\(%prefix%%i%\([0-4][1-9]\|10\|20\|30\|40\)\)\.spl$~	~override/\1%postfix%.spl~
 						PATCH_IF	(!VARIABLE_IS_SET	$hidden(~%SOURCE_RES%~)) OR ($hidden(~%SOURCE_RES%~)	STRING_EQUAL ~0~)	BEGIN
 							PATCH_IF	!FILE_EXISTS_IN_GAME	~%DEST_FILE%~	BEGIN
-								WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END
-								LPF	DELETE_EFFECT	END	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%SOURCE_RES%~	END
+								WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END	LPF	DELETE_EFFECT	END
+								PATCH_IF	global != 1 BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	END
+								PATCH_IF	global = 1	BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1	parameter1 = 1	timing = 9	STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	END
 							END
 							READ_LONG	0x1e	flag	READ_LONG	0x34	level
 							PATCH_IF	level > 0 AND level <= maxlevel	BEGIN
 								PATCH_IF	(flag BAND exclude) = 0	BEGIN
 									INNER_ACTION	BEGIN
 										APPEND	~%resref%X.2DA~	~Default			%SOURCE_RES%	3~
+										ACTION_IF	global BEGIN
+											OUTER_SPRINT	spell_res ~%SOURCE_RES%~
+											COPY_EXISTING	~%resref%.spl~	override	LPF	ADD_SPELL_EFFECT	INT_VAR insert_point = 0	opcode = 265	target = 1	timing = 9	STR_VAR resource = EVAL ~%spell_res%~	END
+											OUTER_SPRINT	script ~%script%%WNL%IF%WNL%NextTriggerObject(LastSummonerOf(Myself))%WNL%Global("%spell_res%","LOCALS",%global%)%WNL%THEN%WNL%RESPONSE #100
+												SetGlobal("%spell_res%","GLOBAL",%global%)%WNL%Continue()%WNL%END~
+										END
 									END
 								END
 							END
@@ -473,15 +573,21 @@
 								END
 							END
 							ACTION_IF	FILE_EXISTS_IN_GAME	~%spell_res%.spl~	BEGIN
-								COPY_EXISTING	~%spell_res%.spl~	~override\%spell_res%L.spl~
-									PATCH_IF	!FILE_EXISTS_IN_GAME	~%spell_res%L.spl~	BEGIN
-										WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END
-										LPF	DELETE_EFFECT	END	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%spell_res%~	END
+								COPY_EXISTING	~%spell_res%.spl~	~override\%spell_res%%postfix%.spl~
+									PATCH_IF	!FILE_EXISTS_IN_GAME	~%spell_res%%postfix%.spl~	BEGIN
+										WRITE_LONG	0x18	0	LPF	ALTER_SPELL_HEADER	INT_VAR	range = 32767	projectile = 1	END	LPF	DELETE_EFFECT	END
+										PATCH_IF	global != 1 BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 1	STR_VAR	resource = EVAL ~%spell_res%~	END	END
+										PATCH_IF	global = 1	BEGIN	LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 309	target = 1	parameter1 = 1	timing = 9	STR_VAR	resource = EVAL ~%spell_res%~	END	END
 									END
 									READ_LONG	0x34	level
 									PATCH_IF	level > 0 AND level <= maxlevel	BEGIN
 										INNER_ACTION	BEGIN
 											APPEND	~%resref%X.2DA~	~Default			%spell_res%	3~
+											ACTION_IF	global BEGIN
+												COPY_EXISTING	~%resref%.spl~	override	LPF	ADD_SPELL_EFFECT	INT_VAR insert_point = 0	opcode = 265	target = 1	timing = 9	STR_VAR resource = EVAL ~%spell_res%~	END
+												OUTER_SPRINT	script ~%script%%WNL%IF%WNL%NextTriggerObject(LastSummonerOf(Myself))%WNL%Global("%spell_res%","LOCALS",%global%)%WNL%THEN%WNL%RESPONSE #100
+													SetGlobal("%spell_res%","GLOBAL",%global%)%WNL%Continue()%WNL%END~
+											END
 										END
 									END
 								BUT_ONLY
@@ -490,7 +596,11 @@
 					END
 				END
 			END
-			APPEND	~M_SQMENU.LUA~	~~~~~SequencerMenu['%resref%X'] = function(); bookSpells = SequencerMenuSpellsKnown(%multilist%,'%spelltable%','%attrtable%','%abil%',%alignment%); end~~~~~
+			ACTION_IF	global BEGIN
+				OUTER_SPRINT script ~%script%%WNL%IF%WNL%True()%WNL%THEN%WNL%RESPONSE #100%WNL%ActionOverride(LastSummonerOf(Myself),ReallyForceSpellRES("%resref%G",Myself))%WNL%DestroySelf()%WNL%END~
+				COMPILE EVAL ~.../%resref%G.baf~
+			END
+			APPEND	~M_SQMENU.LUA~	~~~~~SequencerMenu['%resref%X'] = function(); bookSpells = SequencerMenuSpellsKnown(%multilist%,'%spelltable%','%attrtable%','%abil%',%alignment%,'%postfix%',%global%); end~~~~~
 		END
 	END
 	
