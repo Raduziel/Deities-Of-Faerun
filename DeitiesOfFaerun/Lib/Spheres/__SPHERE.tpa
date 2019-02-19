@@ -1,5 +1,10 @@
-
 // Create a string to add to the CLAB files:
+
+	ACTION_IF	GAME_IS ~iwdee~	BEGIN
+		OUTER_SET	dialog = 1
+	END	ELSE	BEGIN
+		OUTER_SET	dialog = 0
+	END
 
 	OUTER_SPRINT	sphere_empty_slots ~SPHERE~
 	OUTER_SPRINT	$seqresref(~DEFAULT_SHAMAN~) ~%MOD_PREFIX%SHMKN~
