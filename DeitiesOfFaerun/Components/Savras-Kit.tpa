@@ -54,6 +54,10 @@ WRITE_ASCII 0x058 ~SAVRL~
 
 COPY "DeitiesOfFaerun\Spl\RASAVRF.spl" override
 
+COPY "DeitiesOfFaerun\Spl\RASAVRG.spl" override
+
+COPY "DeitiesOfFaerun\Spl\RASAVRH.spl" override
+
 ACTION_IF !FILE_EXISTS_IN_GAME ~RARedK.2da~ BEGIN
 
 COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override

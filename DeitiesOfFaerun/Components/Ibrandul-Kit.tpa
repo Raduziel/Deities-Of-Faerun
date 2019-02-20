@@ -54,6 +54,8 @@ WRITE_ASCII 0x058 ~IBRAL~
 
 COPY "DeitiesOfFaerun\Spl\RAIBRAF.spl" override
 
+COPY "DeitiesOfFaerun\Spl\RAIBRAG.spl" override
+
 //Darkness
 
 ACTION_IF !FILE_EXISTS_IN_GAME ~RADARK.PRO~ BEGIN
