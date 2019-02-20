@@ -1,0 +1,169 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					  SHAR-TEEL, THE BLOODREAVER OF GARAGOS
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAGara" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAGara"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAGara%"
+
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DOOM~ 	          RET spell_1 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FLAME_BLADE~	  RET spell_2 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STRENGTH_OF_ONE~ RET spell_3 = spell_res END
+
+    COPY_EXISTING ~shartd.cre~ ~override~
+      WRITE_SHORT     0x244 0
+      WRITE_BYTE      0x246 "%kit%"
+      WRITE_BYTE      0x247 0x40
+	  WRITE_BYTE	  0x239 0        //Exceptional Strength
+	  WRITE_BYTE	  0x23b 9        //Wisdom
+	  WRITE_BYTE	  0x23d 11       //Constitution
+	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_LONG      0x028 24592    //Animation
+	  WRITE_BYTE      0x052 20       //Thac0
+	  WRITE_BYTE      0x054 10       //Death
+	  WRITE_BYTE      0x055 14       //Wands
+	  WRITE_BYTE      0x056 13       //Paralyze
+	  WRITE_BYTE      0x057 16       //Breath
+	  WRITE_BYTE      0x058 15       //Spells
+	  ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~priest~ (2)
+	  ADD_MEMORIZED_SPELL ~%spell_2%~ #1 ~priest~ (1)
+	  READ_LONG       0x2a8 spl_off
+	  READ_LONG       0x2ac spl_num
+		FOR (i = 0; i < spl_num; ++i) BEGIN
+			READ_SHORT (spl_off + i * 0x10 + 0x8) type
+			PATCH_IF (type = 0) BEGIN
+				READ_SHORT (spl_off + i * 0x10) level
+					PATCH_MATCH level WITH
+			0 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 2 END
+			1 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 1 END
+			DEFAULT
+			
+		END
+	END
+END
+	BUT_ONLY
+	  
+	COPY_EXISTING ~sharte.cre~ ~override~
+      WRITE_SHORT     0x244 0
+      WRITE_BYTE      0x246 "%kit%"
+      WRITE_BYTE      0x247 0x40
+	  WRITE_BYTE	  0x239 0        //Exceptional Strength
+	  WRITE_BYTE	  0x23b 9        //Wisdom
+	  WRITE_BYTE	  0x23d 11       //Constitution
+	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_LONG      0x028 24592    //Animation
+	  WRITE_BYTE      0x052 20       //Thac0
+	  WRITE_BYTE      0x054 10       //Death
+	  WRITE_BYTE      0x055 14       //Wands
+	  WRITE_BYTE      0x056 13       //Paralyze
+	  WRITE_BYTE      0x057 16       //Breath
+	  WRITE_BYTE      0x058 15       //Spells
+	  SET_BG2_PROFICIENCY 114 0
+	  ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~priest~ (2)
+	  READ_LONG       0x2a8 spl_off
+	  READ_LONG       0x2ac spl_num
+		FOR (i = 0; i < spl_num; ++i) BEGIN
+			READ_SHORT (spl_off + i * 0x10 + 0x8) type
+			PATCH_IF (type = 0) BEGIN
+				READ_SHORT (spl_off + i * 0x10) level
+					PATCH_MATCH level WITH
+			0 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 2 END
+			DEFAULT
+			
+		END
+	END
+END  
+	BUT_ONLY
+	  
+	COPY_EXISTING ~sharte4.cre~ ~override~
+      WRITE_SHORT     0x244 0
+      WRITE_BYTE      0x246 "%kit%"
+      WRITE_BYTE      0x247 0x40
+	  WRITE_BYTE	  0x239 0        //Exceptional Strength
+	  WRITE_BYTE	  0x23b 9        //Wisdom
+	  WRITE_BYTE	  0x23d 11       //Constitution
+	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_LONG      0x028 24592    //Animation
+	  WRITE_BYTE      0x052 18       //Thac0
+	  WRITE_BYTE      0x054 9        //Death
+	  WRITE_BYTE      0x055 13       //Wands
+	  WRITE_BYTE      0x056 12       //Paralyze
+	  WRITE_BYTE      0x057 15       //Breath
+	  WRITE_BYTE      0x058 14       //Spells
+	  SET_BG2_PROFICIENCY 114 1
+	  SET_BG2_PROFICIENCY 103 0
+	  ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_2%~ #1 ~priest~ (2)
+	  READ_LONG       0x2a8 spl_off
+	  READ_LONG       0x2ac spl_num
+		FOR (i = 0; i < spl_num; ++i) BEGIN
+			READ_SHORT (spl_off + i * 0x10 + 0x8) type
+			PATCH_IF (type = 0) BEGIN
+				READ_SHORT (spl_off + i * 0x10) level
+					PATCH_MATCH level WITH
+			0 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 3 END
+			1 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 2 END
+			DEFAULT
+			
+		END
+	END
+END
+	BUT_ONLY
+	  
+	COPY_EXISTING ~sharte6.cre~ ~override~
+      WRITE_SHORT     0x244 0
+      WRITE_BYTE      0x246 "%kit%"
+      WRITE_BYTE      0x247 0x40
+	  WRITE_BYTE	  0x239 0        //Exceptional Strength
+	  WRITE_BYTE	  0x23b 9        //Wisdom
+	  WRITE_BYTE	  0x23d 11       //Constitution
+	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_LONG      0x028 24592    //Animation
+	  WRITE_BYTE      0x052 18       //Thac0
+	  WRITE_BYTE      0x054 9        //Death
+	  WRITE_BYTE      0x055 13       //Wands
+	  WRITE_BYTE      0x056 12       //Paralyze
+	  WRITE_BYTE      0x057 15       //Breath
+	  WRITE_BYTE      0x058 14       //Spells
+	  SET_BG2_PROFICIENCY  90 1
+	  SET_BG2_PROFICIENCY 103 0
+	  SET_BG2_PROFICIENCY 114 1
+	  ADD_MEMORIZED_SPELL ~%spell_1%~ #0 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_2%~ #1 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_2%~ #2 ~priest~ (2)
+	  READ_LONG       0x2a8 spl_off
+	  READ_LONG       0x2ac spl_num
+		FOR (i = 0; i < spl_num; ++i) BEGIN
+			READ_SHORT (spl_off + i * 0x10 + 0x8) type
+			PATCH_IF (type = 0) BEGIN
+				READ_SHORT (spl_off + i * 0x10) level
+					PATCH_MATCH level WITH
+			0 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 3 END
+			1 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 3 END
+			2 BEGIN	WRITE_SHORT (spl_off + i * 0x10 + 0x2) 2 END
+			DEFAULT
+			
+		END
+	END
+END
+	BUT_ONLY
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAGara	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAGARA~	kitname2 = ~~	END
+
+  END
+  
+//EoF
