@@ -763,14 +763,14 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tyr-Drake.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//				       SIRENE, THE PAINBEARER OF ILMATER
+//				     SHAR-TEEL, THE BLOODREAVER OF GARAGOS
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 
-/*BEGIN @99999020
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAIlma.2da~) AND (FILE_EXISTS_IN_GAME ~c0sirene.cre~)) @9999905
-INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Ilmater-Sirene.tpa~*/
+BEGIN @99999020
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (FILE_EXISTS_IN_GAME ~RAGara.2da~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Garagos-Shar-Teel.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
