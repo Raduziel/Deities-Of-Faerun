@@ -72,15 +72,13 @@ BEGIN
 	END
 END
 
-COPY "DeitiesOfFaerun\Spl\RAMYSTG.spl" override
-
 //Immunity 1: Remove Magic
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DISPEL_MAGIC[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DISPEL_MAGIC~	RET	spell_res	END
 
-COPY_EXISTING	~RAMYSTH.spl~	~override~
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING	~RAMYSTF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 
 END
 
@@ -89,8 +87,8 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SECRET_WORD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SECRET_WORD~	RET	spell_res	END
 
-COPY_EXISTING	~RAMYSTH.spl~	~override~
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING	~RAMYSTF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 
 END
 
@@ -99,8 +97,8 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_BREACH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BREACH~	RET	spell_res	END
 
-COPY_EXISTING	~RAMYSTH.spl~	~override~
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING	~RAMYSTF.spl~	~override~
+LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 
 END
 
