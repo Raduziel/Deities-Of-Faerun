@@ -1716,7 +1716,7 @@
 	
 	//Raduziel's Spirit Redeemer
 	
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAHUSR~) BEGIN
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAHUHR~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
