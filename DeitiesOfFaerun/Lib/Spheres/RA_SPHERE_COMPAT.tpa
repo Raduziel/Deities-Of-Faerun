@@ -1,13 +1,17 @@
 
-DEFINE_ACTION_FUNCTION	RA_SPHERE_COMPAT STR_VAR sphere_path = ~~ kitname = ~~ clabfile = ~~ seqresref = ~~	BEGIN
+DEFINE_ACTION_FUNCTION	RA_SPHERE_COMPAT INT_VAR	kitid = ~-1~	classID = ~-1~	STR_VAR sphere_path = ~~ kitname = ~~ clabfile = ~~ seqresref = ~~	BEGIN
 	ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 		ACTION_IF ! (~%sphere_path%~ STRING_EQUAL ~~) BEGIN
 			COPY_EXISTING ~RASPHERE.tpa~	override APPEND_FILE  ~%sphere_path%.tpa~
-		END		INCLUDE ~override\RASPHERE.tpa~
-		LAF BUILD_SPHERE_ACCESS STR_VAR kitname  clabfile seqresref	END
+		END		REINCLUDE ~override\RASPHERE.tpa~
+		LAF BUILD_SPHERE_ACCESS INT_VAR	kitid	classID	STR_VAR	kitname  clabfile seqresref	END
 	END ELSE BEGIN // Sphere mod not yet installed, setup for when it is
 		ACTION_IF ! FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
 			COPY_EXISTING ~KITLIST.2DA~ ~override/RASPHERE.tpa~ DELETE_BYTES 0 SOURCE_SIZE
+		END
+		ACTION_IF	kitid != ~-1~	BEGIN
+			ACTION_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN	OUTER_SET	kitid |= 0x4000	END
+			APPEND	~RASPHERE.tpa~	"OUTER_SPRINT	$DoFkitSphereOverride(~%kitid%~) ~%kitname%~"
 		END
 		ACTION_IF ! (~%sphere_path%~ STRING_EQUAL ~~) BEGIN
 			COPY_EXISTING	~RASPHERE.tpa~	override APPEND_FILE  ~%sphere_path%.tpa~

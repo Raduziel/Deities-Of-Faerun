@@ -2,8 +2,13 @@
 	//	Add marker file.
 	COPY	~%MOD_FOLDER%\%FILE_PATH%\__SPHERE.marker~	~override\%MOD_PREFIX%SPHERE.marker~
 	
-	OUTER_SET	tra_shaman_spl_name = RESOLVE_STR_REF((AT tra_shaman_spl_name))
-	OUTER_SET	tra_shaman_spl_desc = RESOLVE_STR_REF((AT tra_shaman_spl_desc))
+	ACTION_IF	GAME_IS ~iwdee~	BEGIN
+		OUTER_SET	dialog = 1
+	END	ELSE	BEGIN
+		OUTER_SET	dialog = 0
+		OUTER_SET	tra_shaman_spl_name = RESOLVE_STR_REF((AT tra_shaman_spl_name))
+		OUTER_SET	tra_shaman_spl_desc = RESOLVE_STR_REF((AT tra_shaman_spl_desc))
+	END
 	
 	//	Remove priest usability flags from spells
 	COPY_EXISTING_REGEXP ~^SPPR[1-7]\([0-4][1-9]\|\|10\|20\|30\|40\|50\)\.spl$~ override
@@ -204,7 +209,7 @@
 	BEGIN
 		ACTION_CLEAR_ARRAY	alignments
 		COPY_EXISTING	~%spell_res%.spl~	override
-			READ_BYTE	0x18	alignment
+			READ_BYTE	0x1e	alignment
 			SET	alignment &= 63
 			PATCH_MATCH	alignment WITH
 				1		BEGIN	SET	$alignments(~1~) = 16	SET	$alignments(~2~) = 32	END	//	Non-Chaotic
@@ -246,7 +251,7 @@
 	END
 	
 	// Functions to add spells to sphere access spells
-	DEFINE_PATCH_FUNCTION	ADD_SPHERE_SPL	INT_VAR	level = 0	STR_VAR	array = ~~	RET alignment_array RET_ARRAY convert_clone	alter_level sphere_list_dup	BEGIN	// returned more efficient intall time
+	DEFINE_PATCH_FUNCTION	ADD_SPHERE_SPL	INT_VAR	level = 0	STR_VAR	array = ~~	alignment_array = ~~ RET alignment_array RET_ARRAY convert_clone	alter_level sphere_list_dup	BEGIN	// returned more efficient intall time
 		SET	$convert_clone(~?~) = 1
 		SET	$alter_level(~?~) = 1
 		SET	$sphere_list_dup(~?~) = 1
@@ -296,27 +301,37 @@
 							INNER_ACTION	BEGIN
 								LAF	ALTER_SPELL_STRING	STR_VAR	source = EVAL ~%one%~	sphere = EVAL ~%array%~	resource = EVAL ~%spell_res%~	END
 							END
-							LPF UI_DUPLICATE_SPELL	END
+							PATCH_IF	!dialog BEGIN	LPF UI_DUPLICATE_SPELL	END	END
 							SET	$sphere_list_dup(~%spell_res%~) = 1
-							PATCH_IF	1	BEGIN
+							PATCH_IF	!sphere_alignment	BEGIN
 								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 2	STR_VAR	resource = EVAL ~%spell_res%~	END	// 'Add Spell' effect for this spell resource
-								INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END
+								PATCH_IF	!dialog BEGIN
+									INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END
+									/*
+									INNER_ACTION	BEGIN LAF	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res	RET	alignment RET_ARRAY alignments	END	END // Restrict spells by alignment
+									PATCH_IF	alignment > 0 BEGIN
+										TEXT_SPRINT alignment_array ~%alignment_array%	array['%spell_res%'] = function() return %alignment% end%WNL%~
+									END
+									*/
+								END
 							END	ELSE	BEGIN
 								INNER_ACTION	BEGIN
-									LAF	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res	RET_ARRAY	alignment alignments	END	//	(Disabled) // Restrict spells by alignment
+									LAF	GET_SPELL_ALIGNMENTS	STR_VAR	spell_res	RET	alignment RET_ARRAY alignments	END	//	(Disabled) // Restrict spells by alignment
 								END
-								PATCH_IF	! (alignment = 0) BEGIN
-									TEXT_SPRINT alignment_array ~%alignment_array%	array['%spell_res%'] = function() return %alignment% end%WNL%~
+								PATCH_IF	!dialog BEGIN
+									PATCH_IF	alignment > 0 BEGIN
+										TEXT_SPRINT alignment_array ~%alignment_array%	array['%spell_res%'] = function() return %alignment% end%WNL%~
+									END
 								END
 								TEXT_SPRINT	suffix ~~
 								PHP_EACH	alignments	AS	index => parameter1	BEGIN
 									PATCH_IF	parameter1 = 0	BEGIN
 										LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 171	target = 2	STR_VAR	resource = EVAL ~%spell_res%~	END	// 'Add Spell' effect for this spell resource
-										INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END
+										PATCH_IF	!dialog BEGIN INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END	END
 									END	ELSE	BEGIN	
 										INNER_PATCH_SAVE	new_res ~%spell_res%%suffix%~	BEGIN	WRITE_ASCIIE	0 ~%MOD_PREFIX%~	#2	END
 										LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177	target = 2	parameter1	parameter2 = 8	STR_VAR	resource = EVAL ~%new_res%~	END	//	Restrict to specific Alignment(s)
-										INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END
+										PATCH_IF	!dialog BEGIN	INNER_ACTION	BEGIN	APPEND	~%file%%level%G.2da~ ~Sphere %spell_res% 3~	END	END
 										PATCH_IF	!FILE_EXISTS_IN_GAME	~%new_res%.eff~	BEGIN
 											INNER_ACTION	BEGIN
 												CREATE	EFF	~%new_res%~	WRITE_LONG	0x10	171	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%spell_res%~
@@ -431,9 +446,11 @@
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\CLS_SPHERES.tpa~
 			APPEND_FILE TEXT ~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	END
-	PRINT ~tra_shaman_spl_name = %tra_shaman_spl_name%~
-	APPEND	~%MOD_PREFIX%SPHERE.tpa~	"OUTER_SET tra_shaman_spl_name = %tra_shaman_spl_name%"
-	APPEND	~%MOD_PREFIX%SPHERE.tpa~	"OUTER_SET tra_shaman_spl_desc = %tra_shaman_spl_desc%"
+	ACTION_IF	!dialog BEGIN
+		APPEND	~%MOD_PREFIX%SPHERE.tpa~	"OUTER_SET tra_shaman_spl_name = %tra_shaman_spl_name%"
+		APPEND	~%MOD_PREFIX%SPHERE.tpa~	"OUTER_SET tra_shaman_spl_desc = %tra_shaman_spl_desc%"
+	END
+	APPEND ~%MOD_PREFIX%SPHERE.tpa~	"OUTER_SET	dialog = %dialog%"
 	REINCLUDE	~override\%MOD_PREFIX%SPHERE.tpa~
 	<<<<<<<< .../inlined.2da
 2DA V1.0
@@ -455,7 +472,7 @@
 			CREATE	EFF	~%file%%i%G~	WRITE_LONG	0x10	146	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%G~	WRITE_LONG	0x90	1	WRITE_ASCIIE	0x94	~%file%%i%X~
 			CREATE	SPL	~%file%%i%G~	LPF	SETUP_INNATE_SPL	END
 			COPY_EXISTING	~%file%%i%G.spl~	override
-				LPF	ADD_SPHERE_SPL	INT_VAR	level = i	STR_VAR	array = EVAL ~%sphere%~ RET alignment_array 	RET_ARRAY	convert_clone	alter_level sphere_list_dup	END	// returned more efficient intall time
+				LPF	ADD_SPHERE_SPL	INT_VAR	level = i	STR_VAR	array = EVAL ~%sphere%~ alignment_array RET alignment_array 	RET_ARRAY	convert_clone	alter_level sphere_list_dup	END	// returned more efficient intall time
 			CREATE	EFF	~%file%%i%X~	WRITE_LONG	0x10	206	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%X~
 			CREATE	SPL	~%file%%i%X~	LPF	SETUP_INNATE_SPL	END
 			CREATE	EFF	~%file%%i%M~	WRITE_LONG	0x10	146	WRITE_LONG	0x20	1	WRITE_SHORT	0x2c	100	WRITE_ASCIIE	0x30	~%file%%i%M~
@@ -525,12 +542,16 @@
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_DRUID~ kitid = 0x4000	clabfile = ~CLABDR01~ classID = 11	END
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_RANGER~ kitid = 0x4000	clabfile = ~CLABRN01~ classID = 12	END
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_FIGHTER_DRUID~ kitid = 0x4000	clabfile = ~CLABDR01~ classID = 16	END
-		LAF	UPDATE_SHAMAN_UI	END
+		ACTION_IF dialog BEGIN
+			// LAF UPDATE_SHAMAN_DLG	END
+		END	ELSE	BEGIN
+			LAF	UPDATE_SHAMAN_UI	END
+		END
 	END
 	ACTION_IF	(divineSpheres = 1) OR (natureSpheres = 1)	BEGIN
 		LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~TRUECLASS_CLERIC_RANGER~ kitid = 0x4000	clabfile = ~CLABPR01~ classID = 18	END
 	END
-	APPEND ~M_SQMENU.lua~ ~%alignment_array%~
+	ACTION_IF	!dialog BEGIN	APPEND ~M_SQMENU.lua~ ~%alignment_array%~	END
 	INCLUDE	~%MOD_FOLDER%\%FILE_PATH%\KIT_SPHERES.tpa~
 	
 	//	Cycle through existing kits in Kitlist, appending their CLAB files as necesssary:
@@ -548,8 +569,12 @@
 						PATCH_IF VARIABLE_IS_SET $READ_KITLIST(~%i%~ ~9~)	BEGIN
 							READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 kitid
 						END
+						SET	evalID = kitid
+						PATCH_IF VARIABLE_IS_SET $DoFkitSphereOverride(~%evalID%~)	BEGIN
+							TEXT_SPRINT	kitname $DoFkitSphereOverride(~%evalID%~)
+						END
 						INNER_ACTION	BEGIN
-							LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname kitid	clabfile classID	END
+							LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid	classID	STR_VAR	kitname	clabfile	END
 						END
 					END
 				END
@@ -562,8 +587,12 @@
 						PATCH_IF VARIABLE_IS_SET $READ_KITLIST(~%i%~ ~9~)	BEGIN
 							READ_2DA_ENTRY_FORMER	~READ_KITLIST~ i 9 kitid
 						END
+						SET	evalID = kitid
+						PATCH_IF VARIABLE_IS_SET $DoFkitSphereOverride(~%kitid%~)	BEGIN
+							TEXT_SPRINT	kitname $DoFkitSphereOverride(~%kitid%~)
+						END
 						INNER_ACTION	BEGIN
-							LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname kitid	clabfile classID	END
+							LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid	classID	STR_VAR	kitname	clabfile	END
 						END
 					END
 				END
@@ -581,8 +610,11 @@
 						END	ELSE BEGIN
 							TEXT_SPRINT seqresref ~%MOD_PREFIX%SHMKN~
 						END
+						PATCH_IF VARIABLE_IS_SET $DoFkitSphereOverride(~%kitid%~)	BEGIN
+							TEXT_SPRINT	kitname $DoFkitSphereOverride(~%kitid%~)
+						END
 						INNER_ACTION	BEGIN
-							LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname kitid	clabfile classID seqresref END
+							LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid	classID	STR_VAR	kitname	clabfile seqresref END
 						END
 					END
 				END	DEFAULT
