@@ -1,10 +1,5 @@
-// Create a string to add to the CLAB files:
 
-	ACTION_IF	GAME_IS ~iwdee~	BEGIN
-		OUTER_SET	dialog = 1
-	END	ELSE	BEGIN
-		OUTER_SET	dialog = 0
-	END
+// Create a string to add to the CLAB files:
 
 	OUTER_SPRINT	sphere_empty_slots ~SPHERE~
 	OUTER_SPRINT	$seqresref(~DEFAULT_SHAMAN~) ~%MOD_PREFIX%SHMKN~
@@ -66,9 +61,9 @@
 						BUT_ONLY
 					END
 				END
-				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (EVAL ~%clabfile%.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
+				ACTION_IF	(NOT	FILE_CONTAINS_EVALUATED (EVAL ~%clabfile%.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)) AND (level > 0)	BEGIN
 					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~	BEGIN
-						FOR	(i = 1; i < level + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
+						FOR	(i = 1; i <= level; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
 					END
 					APPEND ~%clabfile%.2da~ ~%newline%~	COPY_EXISTING	~%clabfile%.2da~ override PRETTY_PRINT_2DA
 				END
@@ -78,7 +73,7 @@
 			ACTION_PHP_EACH	~priestspherelist_DEFAULT_RANGER~ AS kit_sphere => level BEGIN
 				ACTION_IF VARIABLE_IS_SET	$access_spells(~%kit_sphere%~)	BEGIN
 					OUTER_SPRINT file EVAL $access_spells(~%kit_sphere%~)
-					OUTER_FOR	(i = 1; i < level + 1; ++i)	BEGIN
+					OUTER_FOR	(i = 1; i <= level; ++i)	BEGIN
 						COPY_EXISTING	~%file%%i%M.spl~	override
 							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
 								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
@@ -88,9 +83,9 @@
 						BUT_ONLY
 					END
 				END
-				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (~CLABRN01.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
+				ACTION_IF	(NOT	FILE_CONTAINS_EVALUATED (~CLABRN01.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)) AND (level > 0)	BEGIN
 					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~	BEGIN
-						FOR	(i = 1; i < level + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
+						FOR	(i = 1; i <= level; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
 					END
 					APPEND ~CLABRN01.2da~ ~%newline%~	COPY_EXISTING	~CLABRN01.2da~ override PRETTY_PRINT_2DA
 				END
@@ -100,7 +95,7 @@
 			ACTION_PHP_EACH	~priestspherelist_DEFAULT_CLERIC~ AS kit_sphere => level BEGIN
 				ACTION_IF VARIABLE_IS_SET	$access_spells(~%kit_sphere%~)	BEGIN
 					OUTER_SPRINT file EVAL $access_spells(~%kit_sphere%~)
-					OUTER_FOR	(i = 1; i < level + 1; ++i)	BEGIN
+					OUTER_FOR	(i = 1; i <= level; ++i)	BEGIN
 						COPY_EXISTING	~%file%%i%M.spl~	override
 							PATCH_IF	(kitid < 256)	AND (kitid != 0x40) AND (kitid != 0x80) AND (kitid != 0)	BEGIN
 								LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 177 target = 2 parameter1 = (kitid BOR 0x4000)	parameter2 = 9	STR_VAR	resource = EVAL ~%file%%i%G~	END
@@ -110,9 +105,9 @@
 						BUT_ONLY
 					END
 				END
-				ACTION_IF	NOT	FILE_CONTAINS_EVALUATED (~CLABPR01.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)	BEGIN
+				ACTION_IF	(NOT	FILE_CONTAINS_EVALUATED (~CLABPR01.2da~ ~[ %TAB%]AP_%file%[1-7][ %TAB%]~)) AND (level > 0)	BEGIN
 					OUTER_PATCH_SAVE	newline ~%sphere_empty_slots%~	BEGIN
-						FOR	(i = 1; i < level + 1; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
+						FOR	(i = 1; i <= level; ++i)	BEGIN	SET_2DA_ENTRY	0 i i ~AP_%file%%i%~	END
 					END
 					APPEND ~CLABPR01.2da~ ~%newline%~	COPY_EXISTING	~CLABPR01.2da~ override PRETTY_PRINT_2DA
 				END
@@ -130,6 +125,7 @@
 		clabfile = ~~
 		seqresref = ~~
 	BEGIN
+		ACTION_IF (kitid > 0) AND (kitid < 256) AND (kitid != 0x40) AND (kitid != 0x80) BEGIN	OUTER_SET kitid |= 0x4000	END	// convert kitrow to kitid.
 		ACTION_TO_UPPER	kitname
 		ACTION_TO_UPPER	kitname2
 		ACTION_IF	(kitid = ~-1~)	OR (classID = ~-1~)	BEGIN	//	get kitid from KITLIST.2da if not supplied (mods)
@@ -334,9 +330,7 @@
 									PATCH_IF	class = 21	AND natureSpheres = 1	BEGIN	//	Shaman
 										READ_SHORT	(known_off + i * 0xc + 0xa) kn_type
 										READ_SHORT	(known_off + i * 0xc + 0x8) kn_lvl
-										PATCH_IF	kn_type	= 0	BEGIN
-											SET	$shm_count(~%kn_lvl%~) += 1	//	Count known spells of each level
-										END
+										PATCH_IF	kn_type	= 0	BEGIN	SET	$shm_count(~%kn_lvl%~) += 1	END	//	Count known spells of each level
 									END	ELSE	BEGIN
 										PATCH_IF (class = 18) AND	((divineSpheres = 0) OR (natureSpheres = 0))	BEGIN //	Cleric/Ranger should retain spells from their non-sphered class.
 											READ_ASCII	(known_off + i * 0xc) resref
@@ -381,100 +375,33 @@
 							11 16	WHEN natureSpheres = 1	BEGIN	TEXT_SPRINT kitname ~DEFAULT_DRUID~	END
 							12		WHEN natureSpheres = 1	BEGIN	TEXT_SPRINT kitname ~DEFAULT_RANGER~	END
 							18 BEGIN
-								PATCH_IF	divineSpheres = 1	BEGIN
-									TEXT_SPRINT kitname ~DEFAULT_CLERIC~
-								END
+								PATCH_IF	divineSpheres = 1	BEGIN	TEXT_SPRINT kitname ~DEFAULT_CLERIC~	END
 								PATCH_IF	natureSpheres = 1	BEGIN
-									PATCH_IF	divineSpheres = 1	BEGIN
-										TEXT_SPRINT kitname2 ~DEFAULT_RANGER~
-									END	ELSE	BEGIN
-										TEXT_SPRINT kitname ~DEFAULT_RANGER~
+									PATCH_IF	divineSpheres = 1	BEGIN	TEXT_SPRINT kitname2 ~DEFAULT_RANGER~
+																		END	ELSE	BEGIN	TEXT_SPRINT kitname ~DEFAULT_RANGER~
 									END
 								END
 							END
 							DEFAULT	TEXT_SPRINT	kitname ~~
 						END
 					END
-					PATCH_IF	class = 21	BEGIN	TEXT_SPRINT	kitname ~~	END	//	do not update shaman spells
+					SET	allSphere = 1
+					PATCH_IF	class = 21	BEGIN	TEXT_SPRINT	kitname ~~	TEXT_SPRINT kitname2 ~~	END	//	do not update shaman spells
 					PATCH_IF ! (~%kitname%~ STRING_EQUAL ~~)	BEGIN
 						PHP_EACH	EVAL ~priestspherelist_%kitname%~ AS array => level BEGIN
-							PATCH_IF VARIABLE_IS_SET	$access_spells(~%array%~)	BEGIN
-								TEXT_SPRINT file EVAL $access_spells(~%array%~)
-								INNER_ACTION	BEGIN
-									OUTER_FOR	(i = 1; i <= 7; ++i)	BEGIN
-										OUTER_SET	$spell_res(~%i%~) = 0
-									END
-									OUTER_FOR	(i = 1; i <= level; ++i)	BEGIN
-										COPY_EXISTING	~%file%%i%G.spl~	override
-											READ_LONG		0x6a	fx_off
-											READ_SHORT	0x90	fx_num
-											READ_SHORT	0x92	fx_idx
-											FOR (j = 0; j < fx_num; ++j)	BEGIN
-												READ_ASCII (fx_off + (fx_idx + j) * 0x30 + 0x14)	spell_res
-												INNER_ACTION	BEGIN
-													COPY_EXISTING	~%spell_res%.spl~	override	//	Get the spells current level (if another mod changes it later, it's on them to update CRE files)
-														READ_BYTE	0x34	lev
-													BUT_ONLY
-												END
-												TEXT_SPRINT	$spell_res(~%lev%~ ~%j%~)	~%spell_res%~
-												SET	$spell_res(~%lev%~) += 1
-											END
-										BUT_ONLY IF_EXISTS
-									END
-								END
-								FOR (i = 1; i < 8; ++i)	BEGIN
-									FOR (j = 0; j < $spell_res(~%i%~); ++j)	BEGIN
-									SET	num = i - 1
-										TEXT_SPRINT	spell_res $spell_res(~%i%~ ~%j%~)
-										ADD_KNOWN_SPELL	~%spell_res%~ (num) ~priest~
-										PATCH_IF $count(~%num%~) > 0 BEGIN	//	memorize one each up to the same total amount as previous for this level
-											ADD_MEMORIZED_SPELL	~%spell_res%~ (num) ~priest~
-											SET $count(~%num%~) -= 1
-										END
-									END
-								END
-							END
+							LPF	UPDATE_NPC_SPHERE_KNOWN_MEMORIZED	STR_VAR	array	level	RET_ARRAY	count	END
+							PATCH_IF	$access_spells(~%array%~) STRING_EQUAL ~All~	BEGIN	SET	allSphere = 0	END
 						END
-						PATCH_IF	! (~%kitname2%~ STRING_EQUAL ~~)	BEGIN	//	Cleric/Ranger
-							PHP_EACH	EVAL ~priestspherelist_%kitname2%~ AS array => level BEGIN
-								PATCH_IF VARIABLE_IS_SET	$access_spells(~%array%~)	BEGIN
-									TEXT_SPRINT file EVAL $access_spells(~%array%~)
-									INNER_ACTION	BEGIN
-										OUTER_FOR	(i = 1; i <= 7; ++i)	BEGIN
-											OUTER_SET	$spell_res(~%i%~) = 0
-										END
-										OUTER_FOR	(i = 1; i <= level; ++i)	BEGIN
-											COPY_EXISTING	~%file%%i%G.spl~	override
-												READ_LONG		0x6a	fx_off
-												READ_SHORT	0x90	fx_num
-												READ_SHORT	0x92	fx_idx
-												FOR (j = 0; j < fx_num; ++j)	BEGIN
-													READ_ASCII (fx_off + (fx_idx + j) * 0x30 + 0x14)	spell_res
-													INNER_ACTION	BEGIN
-														COPY_EXISTING	~%spell_res%.spl~	override	//	Get the spells current level (if another mod changes it later, it's on them to update CRE files)
-															READ_BYTE	0x34	lev
-														BUT_ONLY
-													END
-													TEXT_SPRINT	$spell_res(~%lev%~ ~%j%~)	~%spell_res%~
-													SET	$spell_res(~%lev%~) += 1
-												END
-											BUT_ONLY IF_EXISTS
-										END
-									END
-									FOR (i = 1; i < 8; ++i)	BEGIN
-										FOR (j = 0; j < $spell_res(~%i%~); ++j)	BEGIN
-											SET	num = i - 1
-											TEXT_SPRINT	spell_res $spell_res(~%i%~ ~%j%~)
-											ADD_KNOWN_SPELL	~%spell_res%~ (num) ~priest~
-											PATCH_IF $count(~%num%~) > 0 BEGIN	//	memorize one each up to the same total amount as previous for this level
-												ADD_MEMORIZED_SPELL	~%spell_res%~ (num) ~priest~
-												SET $count(~%num%~) -= 1
-											END
-										END
-									END
-								END
-							END
+					END
+					PATCH_IF	! (~%kitname2%~ STRING_EQUAL ~~)	BEGIN	//	Cleric/Ranger
+						PHP_EACH	EVAL ~priestspherelist_%kitname2%~ AS array => level BEGIN
+							LPF	UPDATE_NPC_SPHERE_KNOWN_MEMORIZED	STR_VAR	array	level	RET_ARRAY	count	END
+							PATCH_IF	$access_spells(~%array%~) STRING_EQUAL ~All~	BEGIN	SET	allSphere = 0	END
 						END
+					END
+					PATCH_IF allSphere AND (!((~%kitname%~ STRING_EQUAL ~~) AND (~%kitname2%~ STRING_EQUAL ~~)))	BEGIN	//	Get the 'All' Sphere, alignment restricted.
+						READ_BYTE	0x27b alignCRE
+						LPF	UPDATE_NPC_SPHERE_KNOWN_MEMORIZED	INT_VAR	alignCRE STR_VAR	array = ~All~	level = 7	RET_ARRAY	count	END
 					END
 					PATCH_IF dialog BEGIN
 						FOR	(i = 0; i < 8; ++i)	BEGIN
@@ -484,10 +411,61 @@
 							END
 						END
 					END
+					READ_LONG	0x2a8	mem_off
 					PHP_EACH total AS one => two BEGIN
 						WRITE_SHORT	(mem_off + one * 0x10 + 2) two
 					END
 				BUT_ONLY IF_EXISTS
+			END
+		END
+	END
+	
+	DEFINE_PATCH_FUNCTION	UPDATE_NPC_SPHERE_KNOWN_MEMORIZED	INT_VAR	alignCRE = 0	STR_VAR	array = ~~	level = ~~	RET_ARRAY	count	BEGIN
+		SET	$count(~?~) = 0
+		PATCH_IF VARIABLE_IS_SET	$access_spells(~%array%~)	BEGIN
+			TEXT_SPRINT file EVAL $access_spells(~%array%~)
+			INNER_ACTION	BEGIN
+				OUTER_FOR	(i = 1; i <= 7; ++i)	BEGIN
+					OUTER_SET	$spell_res(~%i%~) = 0
+				END
+				OUTER_FOR	(i = 1; i <= level; ++i)	BEGIN
+					COPY_EXISTING	~%file%%i%G.spl~	override
+						READ_LONG		0x6a	fx_off
+						READ_SHORT	0x90	fx_num
+						READ_SHORT	0x92	fx_idx
+						FOR (j = 0; j < fx_num; ++j)	BEGIN
+							READ_ASCII (fx_off + (fx_idx + j) * 0x30 + 0x14)	spell_res
+							INNER_ACTION	BEGIN
+								COPY_EXISTING	~%spell_res%.spl~	override	//	Get the spells current level (if another mod changes it later, it's on them to update CRE files)
+									READ_BYTE	0x34	lev	READ_BYTE	0x1e	alignEX
+								BUT_ONLY
+							END
+							TEXT_SPRINT	$spell_res(~%lev%~ ~%j%~)	~%spell_res%~
+							SET	$alignEX(~%lev%~ ~%j%~) = alignEX
+							SET	$spell_res(~%lev%~) += 1
+						END
+					BUT_ONLY IF_EXISTS
+				END
+			END
+			FOR (i = 1; i < 8; ++i)	BEGIN
+				FOR (j = 0; j < $spell_res(~%i%~); ++j)	BEGIN
+				SET	num = i - 1
+					PATCH_MATCH 1 WITH
+						ANY ((alignCRE BAND 0x30) = 0x30) AND ($alignEX(~%i%~ ~%j%~) BAND 1) BEGIN	END
+						ANY ((alignCRE BAND 0x3) = 0x3) AND ($alignEX(~%i%~ ~%j%~) BAND 2) BEGIN	END
+						ANY ((alignCRE BAND 0x1) = 0x1) AND ($alignEX(~%i%~ ~%j%~) BAND 4) BEGIN	END
+						ANY ((alignCRE BAND 0x2) = 0x2) AND ($alignEX(~%i%~ ~%j%~) BAND 8) BEGIN	END
+						ANY ((alignCRE BAND 0x10) = 0x10) AND ($alignEX(~%i%~ ~%j%~) BAND 16) BEGIN	END
+						ANY ((alignCRE BAND 0x20) = 0x20) AND ($alignEX(~%i%~ ~%j%~) BAND 32) BEGIN	END
+						DEFAULT
+							TEXT_SPRINT	spell_res $spell_res(~%i%~ ~%j%~)
+							ADD_KNOWN_SPELL	~%spell_res%~ (num) ~priest~
+							PATCH_IF $count(~%num%~) > 0 BEGIN	//	memorize one each up to the same total amount as previous for this level
+								ADD_MEMORIZED_SPELL	~%spell_res%~ (num) ~priest~
+								SET $count(~%num%~) -= 1
+							END
+					END
+				END
 			END
 		END
 	END
