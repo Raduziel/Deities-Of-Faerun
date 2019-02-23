@@ -2594,6 +2594,12 @@ BEGIN
   END
 END
 
+COPY_EXISTING ~SPRA302.spl~ override
+WRITE_BYTE 0x19 (THIS BAND 253)
+
+COPY_EXISTING ~SPRA303.spl~ override
+WRITE_BYTE 0x19 (THIS BAND 253)
+
 //Knock, Know Alignment and Shadow Door will receive the "Break Sanctuary" flag if SR is installed
 
 
