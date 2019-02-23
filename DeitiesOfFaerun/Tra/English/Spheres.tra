@@ -1485,5 +1485,49 @@ Disadvantages:
 – May not use the Cure Disease ability.
 – Does not gain immunity to disease.~
 	@9999270 = ~Acid Arrow~
-	
+	@9999271 = ~Haste
+(Alteration)
+
+Level: 3
+Range: 15 ft.
+Duration: 3 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, all creatures affected function at double their normal movement rate, gain a +2 bonus to initiative, and receive an extra attack per round. Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round. At the instant the spell is completed, it affects all allied creatures in a 15-ft. radius centered on a point selected by the caster (thus, creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not). This spell is not cumulative with itself or with other similar magic. Spellcasting and spell effects are not affected. Note that this spell negates the effects of a Slow spell.~ 
+	@9999272 = ~Slow
+(Alteration)
+
+Level: 3
+Range: 25 ft.
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+A Slow spell causes creatures to move and attack at half of their normal rates. It negates Haste, but does not otherwise affect magically hasted or slowed creatures. Slowed creatures have an Armor Class and attack penalty of -4 and -2 penalty to initiative. Creatures save at -4 vs. Spell.~
+	@9999273 = ~Haste
+(Alteration)
+
+Level: 3
+Range: Visual range of the caster
+Duration: 3 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Haste doubles the base movement rate of all friendly creatures within the area of effect, grants them each an extra attack per round and +2 bonus to initiative. (Spellcasting and spell effects are not sped up.) All affected by the Haste spell must be in the designated area of effect. Note that this spell negates the effects of a Slow spell. This spell is not cumulative with itself or with other similar magic. Anyone affected by Haste will suffer fatigue when the spell wears off.~
+	@9999274 = ~Slow
+(Alteration)
+
+Level: 3
+Range: Visual range of the caster
+Duration: 3 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Slow causes creatures to move and attack at 1/2 of their normal rates. It negates Haste, but does not otherwise affect magically sped-up or slowed creatures. Slowed creatures suffer -4 penalties to attack and Armor Class and -2 penalty to initiative. To make matters worse, creatures save at -4 against this spell.~
+
 // EoF
