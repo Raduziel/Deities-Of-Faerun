@@ -87,6 +87,24 @@ COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
 		END
 BUT_ONLY_IF_IT_CHANGES
 
+//Haste and Slow Changes
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_HASTE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HASTE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF CLONE_EFFECT  		INT_VAR match_opcode = 16 opcode = 190 parameter1 = 2    parameter2 = 0 END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SLOW[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SLOW~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF CLONE_EFFECT  		INT_VAR match_opcode = 40 opcode = 190 parameter1 = ~-2~ parameter2 = 0 END
+
+END
+
 //Iron Skin Changes
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_IRONSKIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
