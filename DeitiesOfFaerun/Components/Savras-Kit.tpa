@@ -54,7 +54,7 @@ WRITE_ASCII 0x058 ~SAVRL~
 
 COPY "DeitiesOfFaerun\Spl\RASAVRF.spl" override
 
-ACTION_IF !FILE_EXISTS_IN_GAME ~RARedK.2da~ BEGIN
+ACTION_IF !FILE_EXISTS_IN_GAME ~RAForeIc.bam~ BEGIN
 
 COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2910) STR_VAR bam_file = RAFOREIC RET iconfore = icon END
