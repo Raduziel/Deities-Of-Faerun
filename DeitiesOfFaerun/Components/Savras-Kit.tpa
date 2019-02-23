@@ -55,12 +55,17 @@ WRITE_ASCII 0x058 ~SAVRL~
 COPY "DeitiesOfFaerun\Spl\RASAVRF.spl" override
 
 ACTION_IF !FILE_EXISTS_IN_GAME ~RAForeIc.bam~ BEGIN
+	
+	COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
+	LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2910) STR_VAR bam_file = RAFOREIC RET iconfore = icon END
 
-COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2910) STR_VAR bam_file = RAFOREIC RET iconfore = icon END
-		  
+END ELSE BEGIN
+	OUTER_SPRINT	file ~RAForeIc~
+	COPY_EXISTING ~statdesc.2da~	override
+		REPLACE_EVALUATE CASE_INSENSITIVE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+[0-9\-]+[ %TAB%]+%file%[ %TAB%%WNL%$]~ BEGIN	SET	iconfore = (~%MATCH1%~)	END	~%MATCH0%~
+	BUT_ONLY
 END
-		  
+ 
 //Clairvoyance
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CLAIRVOYANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
