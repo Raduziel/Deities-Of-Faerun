@@ -1,3 +1,13 @@
+//PnP Spell Progression for Icewind Dale
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLPAL.2da~ ~override~
+
+	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
+	
+END
+
 //Conjure Water Elemental - Raduziel
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
@@ -131,16 +141,6 @@ IF_EXISTS
 
 END
 
-//PnP Spell Progression for Icewind Dale
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-
-	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLPAL.2da~ ~override~
-
-	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
-	
-END
-
 //Hold Animal -> Hold Person or Mammal
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLD_ANIMAL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -183,6 +183,44 @@ COPY_EXISTING ~IDPRO249.pro~ override
 IF_EXISTS
 
 END
+
+//Silence provides MS boost
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SILENCE_15_FOOT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SILENCE_15_FOOT~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 38 opcode = 59 parameter1 = 100 parameter2 = 0   END
+
+END
+
+//Fix for Physical Mirror (bug identified by Kotophey at Beamdog's Forum)
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PHYSICAL_MIRROR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PHYSICAL_MIRROR~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+LPF ALTER_EFFECT INT_VAR silent = 1 match_timing = 2 timing = 0 duration = 54 END
+
+END
+
+//Fix for Ice Storm (bug identified by Ligg at Beamdog's Forum)
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~icestorm.pro~ override
+WRITE_BYTE 0x00216 4
+BUT_ONLY_IF_IT_CHANGES
+
+END
+
+//Solves issue for Minor Sequencer, Sequencer, Spell Trigger, Contingency and Chain Contingency
+
+COPY_EXISTING	~UI.MENU~	override
+	REPLACE_TEXTUALLY	~mageBookEnabled == false~ ~((mageBookEnabled == false) and not (bookMode == 1))~
+	REPLACE_TEXTUALLY EXACT_MATCH ~mageScreen:SequenceSpell( bookSpells[currentBookSpell].resref )~ ~mageScreen:SequenceSpell( bookSpells[currentBookSpell].resref, bookSpells[currentBookSpell].masterResref )~
+	REPLACE_TEXTUALLY EXACT_MATCH ~mageScreen:UnSequenceSpell( bottomSpells[currentBottomSpell].resref )~ ~mageScreen:UnSequenceSpell( bottomSpells[currentBottomSpell].resref, bottomSpells[currentBottomSpell].masterResref )~
+BUT_ONLY
 
 /* Importing IWD Spells */
 
@@ -2534,17 +2572,30 @@ BEGIN
 END
 
 END
+
+//Fix for a bug that touches a lot of spells (Nature's Beauty, Glyph of Warding, Skull Trap and others...) - By Kjeron
+
+ADD_PROJECTILE	~DeitiesOfFaerun\Spl\RAFix.pro~
+
+COPY_EXISTING_REGEXP ~^.+\.\(spl\|itm\)$~ override
+	READ_ASCII	0x0	 sign	(4)
+	READ_LONG 	0x64 ab_off
+	READ_SHORT	0x68 ab_num
+	PATCH_MATCH	~%sign%~ WITH
+		~SPL ~	BEGIN	SET	ab_size = 0x28	SET	pro_off = 0x26	END
+		~ITM ~	BEGIN	SET	ab_size = 0x38	SET	pro_off = 0x2a	END
+		DEFAULT	SET	ab_size = 0
+	END
+	PATCH_IF	ab_size	BEGIN
+		FOR(i = 0; i < ab_num; ++i)	BEGIN
+			READ_SHORT	(ab_off + i * ab_size + pro_off)	projectile	ELSE 0
+			PATCH_IF	projectile = 79	BEGIN
+				WRITE_SHORT (ab_off + i * ab_size + pro_off) %RAFix%
+			END
+		END
+	END
+BUT_ONLY
 	
-//Silence provides MS boost
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SILENCE_15_FOOT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SILENCE_15_FOOT~	RET	spell_res	END
-
-COPY_EXISTING ~%spell_res%.spl~ ~override~
-LPF	CLONE_EFFECT INT_VAR match_opcode = 38 opcode = 59 parameter1 = 100 parameter2 = 0   END
-
-END
-
 //Respecting my OCD for aligned things
 
 COPY_EXISTING ~smtables.2da~ ~override~
