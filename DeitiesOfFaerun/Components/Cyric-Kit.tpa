@@ -136,7 +136,7 @@ COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @306 SAY UNIDENTIFIED_
 	READ_SHORT	(ab_off + 0x1e) fx_num
 	READ_SHORT	(ab_off + 0x20) fx_idx
 	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
-	FOR (i = 8; i < 51; ++i)	BEGIN
+	FOR (i = 2; i < 51; ++i)	BEGIN
 		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
 		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
 		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
@@ -148,8 +148,8 @@ COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @306 SAY UNIDENTIFIED_
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 7; i < 51; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 7) match_duration = 6 duration = (6 * i) END
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
 
@@ -161,7 +161,7 @@ COPY "DeitiesOfFaerun\Spl\RACYRIE.spl" override                                 
 	READ_SHORT	(ab_off + 0x1e) fx_num
 	READ_SHORT	(ab_off + 0x20) fx_idx
 	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
-	FOR (i = 8; i < 51; ++i)	BEGIN
+	FOR (i = 2; i < 51; ++i)	BEGIN
 		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
 		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
 		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
@@ -173,8 +173,8 @@ COPY "DeitiesOfFaerun\Spl\RACYRIE.spl" override                                 
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 7; i < 51; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 7) match_duration = 6 duration = (6 * i) END
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
 COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                           //Penalties for Good-aligned
@@ -185,7 +185,7 @@ COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                 
 	READ_SHORT	(ab_off + 0x1e) fx_num
 	READ_SHORT	(ab_off + 0x20) fx_idx
 	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
-	FOR (i = 8; i < 51; ++i)	BEGIN
+	FOR (i = 2; i < 51; ++i)	BEGIN
 		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
 		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
 		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
@@ -197,8 +197,8 @@ COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                 
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 7; i < 51; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 7) match_duration = 6 duration = (6 * i) END
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 	
 COPY "DeitiesOfFaerun\Spl\RACYRI2.spl" override SAY NAME1 @308 SAY UNIDENTIFIED_DESC  @309                           //Phantasmal Killer
@@ -218,9 +218,20 @@ END
 
 //Multiclass CLAB
 
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
 COPY_EXISTING ~RACyri.2da~ ~override/RACyriCT.2da~
 SET_2DA_ENTRY 4 25 50 ~AP_RATCYRI~
 PRETTY_PRINT_2DA
+
+END ELSE BEGIN
+
+COPY_EXISTING ~RACyri.2da~ ~override/RACyriCT.2da~
+SET_2DA_ENTRY 4 25 50 ~AP_RATCYRI~
+SET_2DA_ENTRY 1  7 50 ~AP_#EVASION~
+PRETTY_PRINT_2DA
+
+END
 
 //Restriction
 

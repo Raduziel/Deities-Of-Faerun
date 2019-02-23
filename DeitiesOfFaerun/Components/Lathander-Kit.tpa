@@ -64,7 +64,7 @@ COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED
 	READ_SHORT	(ab_off + 0x1e) fx_num
 	READ_SHORT	(ab_off + 0x20) fx_idx
 	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
-	FOR (i = 4; i < 51; ++i)	BEGIN
+	FOR (i = 2; i < 51; ++i)	BEGIN
 		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
 		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
 		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
@@ -76,8 +76,8 @@ COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 3; i < 51; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 3) match_duration = 24 duration = (24 * i) END
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 24 duration = (24 * i) END
 	END
 
 COPY "DeitiesOfFaerun\Spl\RALATH3.spl" override SAY NAME1 @1010 SAY UNIDENTIFIED_DESC  @1011   //Sunrise
