@@ -20,7 +20,7 @@ INSTALLATION NOTES:
 
 * Deities of Faerûn will probably misbehave with any mod component that alters the strongholds quests (except for those that exclusively remove the one-stronghold limit).
 
-* Deities of Faerûn is not compatible with any mods that alters the Cleric and will break any kit added by other mods (except for the Spirit Redeemer from I Hate Undead) - this can be fixed doing the following:
+* Deities of Faerûn is not compatible with any mods that alters the Cleric and will break any kit added by other mods (except for the Holy Redeemer from I Hate Undead) - this can be fixed doing the following:
 
 Add "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the kit's tpa/tp2 as the example below:
 
@@ -1847,7 +1847,7 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 	Major: All, Necromantic, Suffering, Plant, Darkness, Summoning, Earth  
 	Minor: Healing, Animal, Thought
 
-- Spirit Redeemer (by Raduziel - I Hate Undead Kitpack)
+- Holy Redeemer (by Raduziel - I Hate Undead Kitpack)
 
 	Major: All, Protection, Sun, Combat, Creation, Fire
 	Minor: Healing, Moon, Divination, Vocal
