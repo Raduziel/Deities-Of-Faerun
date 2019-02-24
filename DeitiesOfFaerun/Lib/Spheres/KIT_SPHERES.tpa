@@ -1714,7 +1714,7 @@
 		~Vocal~ => 0
 	END	
 	
-	//Raduziel's Spirit Redeemer
+	//Raduziel's Holy Redeemer
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAHUHR~) BEGIN
 		~Healing~ => 3
