@@ -96,6 +96,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HASTE~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999271 SAY DESC @9999271
+LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
 LPF CLONE_EFFECT  		INT_VAR match_opcode = 16 opcode = 190 parameter1 = 2    parameter2 = 0 END
 
 END
@@ -105,6 +106,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SLOW~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999272 SAY DESC @9999272
+LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
 LPF CLONE_EFFECT  		INT_VAR match_opcode = 40 opcode = 190 parameter1 = ~-2~ parameter2 = 0 END
 
 END
@@ -116,6 +118,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HASTE~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999273 SAY DESC @9999273
+LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
 LPF CLONE_EFFECT  		INT_VAR match_opcode = 16 opcode = 190 parameter1 = 2    parameter2 = 0 END
 
 END
@@ -125,6 +128,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SLOW~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999274 SAY DESC @9999274
+LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
 LPF CLONE_EFFECT  		INT_VAR match_opcode = 40 opcode = 190 parameter1 = ~-2~ parameter2 = 0 END
 
 END
