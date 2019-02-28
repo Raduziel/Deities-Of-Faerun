@@ -292,11 +292,15 @@ END
 	END
 END
 	BUT_ONLY
+	
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN	
+	
+ACTION_FOR_EACH creature IN shartd sharte sharte4 sharte6 BEGIN	
   
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+    LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAGara	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAGARA~	kitname2 = ~~	END
 
-	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAGara	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAGARA~	kitname2 = ~~	END
-
-  END
+END
+  
+END  
   
 //EoF
