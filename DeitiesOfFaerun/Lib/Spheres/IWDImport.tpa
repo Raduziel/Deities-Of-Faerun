@@ -87,6 +87,19 @@ COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
 		END
 BUT_ONLY_IF_IT_CHANGES
 
+//Fix for Animal Summoning I (bug identified by Kotophey at Beamdog's Forum)
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SPANIM1.eff~ BEGIN
+
+COPY_EXISTING ~SPANIM1.eff~ override
+WRITE_LONG 0x01c 24	
+
+END
+
+END
+
 //Haste and Slow Changes
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
