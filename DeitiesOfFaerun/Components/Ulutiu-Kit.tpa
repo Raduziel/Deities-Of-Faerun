@@ -97,6 +97,8 @@ COPY "DeitiesOfFaerun\Cre\GreatWhiteBear" override
 
 END
 
+COPY "DeitiesOfFaerun\Spl\RAUlutInv.bam" ~override\MBER3INV.bam~
+
 //Cone of Cold
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONE_OF_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
