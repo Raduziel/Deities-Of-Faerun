@@ -111,9 +111,11 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EV
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 60 duration = (60 * i) END
 	END
 
-COPY ~DeitiesOfFaerun\Spl\RAVels41.spl~ ~override~ SAY NAME1 @3208 SAY UNIDENTIFIED_DESC @3208
+COPY ~DeitiesOfFaerun\Spl\RAVels41.spl~ override SAY NAME1 @3208 SAY UNIDENTIFIED_DESC @3208
 
-COPY ~DeitiesOfFaerun\Spl\RAVelsNF.bam~ ~override~
+COPY ~DeitiesOfFaerun\Spl\RAVelsNF.bam~ override
+
+COPY ~DeitiesOfFaerun\Spl\RAVelsInv.bam~ ~override\MMSTINV.bam~
 
 //Energy Drain
 
