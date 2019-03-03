@@ -490,6 +490,7 @@
 					desc = tra_shaman_spl_desc
 					maxlevel = 0
 					multilist = 1
+					class = 0
 				STR_VAR
 					resref = EVAL ~%seqresref%~
 					icon = ~SPPR316B~
