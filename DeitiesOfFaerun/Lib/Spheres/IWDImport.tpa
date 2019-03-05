@@ -283,6 +283,42 @@ COPY_EXISTING	~UI.MENU~	override
 	REPLACE_TEXTUALLY EXACT_MATCH ~mageScreen:UnSequenceSpell( bottomSpells[currentBottomSpell].resref )~ ~mageScreen:UnSequenceSpell( bottomSpells[currentBottomSpell].resref, bottomSpells[currentBottomSpell].masterResref )~
 BUT_ONLY
 
+//No touching-effect through Mirror Image, Reflect Image, Iron Skin and Stoneskin - by Kjeron (part II)
+
+		LAF	GET_AOE_PROJ RET_ARRAY proList END
+		LAF	INDEX_EFFS	 INT_VAR sub = 0 RET_ARRAY eff25List eff78List eff109List eff216List effDispelList END
+		LAF	INDEX_SPELLS INT_VAR sub = 0 RET_ARRAY spl25List spl78List spl109List spl216List splDispelList END
+		LAF	INDEX_SPELLS INT_VAR sub = 1 RET_ARRAY spl25List spl78List spl109List spl216List splDispelList END
+		LAF	INDEX_EFFS	 INT_VAR sub = 1 RET_ARRAY eff25List eff78List eff109List eff216List effDispelList END
+		
+		LAF	ADD_SPLPROT	INT_VAR	stat = 273 value = 0x40000000 relation = 8         RET mirror	  = new_row END
+		LAF	ADD_SPLPROT	INT_VAR stat = 88  value = 0	      relation = 5	       RET stoneskin  = new_row END
+		LAF	ADD_SPLPROT	INT_VAR stat = 199 value = 0	      relation = 5	       RET golemskin  = new_row END
+		LAF	ADD_SPLPROT	INT_VAR stat = 259 value = stoneskin  relation = golemskin RET anyskin    = new_row END
+		LAF	ADD_SPLPROT	INT_VAR stat = 259 value = mirror     relation = anyskin   RET mirrorskin = new_row END
+		
+		LAF	ADD_SPLPROT	INT_VAR stat = 88  value = 0	      relation = 5	       RET stoneskin  = new_row END
+		LAF	ADD_SPLPROT	INT_VAR stat = 199 value = 0	      relation = 5	       RET golemskin  = new_row END
+		LAF	ADD_SPLPROT	INT_VAR stat = 259 value = stoneskin  relation = golemskin RET anyskin    = new_row END
+				
+		LAF	MODIFY_POISON_WEAPON INT_VAR parameter2 = mirroskin END
+		
+		COPY_EXISTING_REGEXP ~^.+\.itm$~ override TO_UPPER SOURCE_RES
+			PATCH_MATCH	~%SOURCE_RES%~	WITH
+				~AROW07~ ~AX1H07~ ~REAVER~ ~OHREAVER~ ~SW1H60~ ~SW1H61~ ~CARSOMYR~ ~SW2H10~ ~SW2H19~ ~DEVA~ ~DEVAEVIL~ ~OHNHAMM1~ ~OHNSLNG1~ ~STAF11~	BEGIN	END
+			DEFAULT		
+			LPF	BLOCK_EFFECTS INT_VAR parameter2 = mirror aoe_gaze = 1 END
+		END
+		BUT_ONLY
+		
+		COPY_EXISTING_REGEXP ~.*\.itm$~ override LPF BLOCK_EFFECT INT_VAR opcode = 25 parameter2 = mirrorskin END BUT_ONLY
+	    COPY_EXISTING_REGEXP ~.*\.itm$~ override LPF BLOCK_EFFECT INT_VAR opcode = 78 parameter2 = anyskin	  END BUT_ONLY
+	
+		LAF	INDEX_EFFS	 INT_VAR sub = 0 RET_ARRAY eff25List eff78List eff109List eff216List effDispelList END
+	    LAF	INDEX_SPELLS INT_VAR sub = 0 RET_ARRAY spl25List spl78List spl109List spl216List splDispelList END
+	    LAF	INDEX_SPELLS INT_VAR sub = 1 RET_ARRAY spl25List spl78List spl109List spl216List splDispelList END
+	    LAF	INDEX_EFFS	 INT_VAR sub = 1 RET_ARRAY eff25List eff78List eff109List eff216List effDispelList END
+	
 /* Importing IWD Spells */
 
 ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-B_Spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
@@ -2373,24 +2409,26 @@ END
 //Antimagic Shell
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ANTIMAGIC_SHELL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ANTIMAGIC_SHELL~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ANTIMAGIC_SHELL~	RET	spell 1 = spell_res	END
+LAF     RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ENCHANTED_WEAPON~	RET	spell_2	= spell_res	END
+
+COPY_EXISTING ~%spell_1%.spl~ ~override~
 SAY NAME1 @9999190 SAY NAME2 @9999190 SAY UNIDENTIFIED_DESC @9999191 SAY DESC @9999191
-LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                    END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 0  parameter2 = 1   END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 9  parameter2 = 1   END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 11 parameter2 = 1   END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 35 parameter2 = 1   END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~MELFMET~   		     END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~ENEBLADE~  			 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~FBLADE~    			 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~GHOULT~    			 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~CHILLT~    			 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~PHANBLAD~  			 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~BLAKBLAD~  			 END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 opcode = 321 STR_VAR match_resource = ~BCLAW~ resource = ~SPWI417~ END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 123 STR_VAR match_resource = ~FSEEDS~ resource = ~STARDART~  			 END
+LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                           END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 0  parameter2 = 1          END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 9  parameter2 = 1          END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 11 parameter2 = 1          END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 35 parameter2 = 1          END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~MELFMET~   		            END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~ENEBLADE~  			        END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~FBLADE~    			        END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~GHOULT~    			        END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~CHILLT~    			        END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~PHANBLAD~  			        END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 STR_VAR match_resource = ~BCLAW~ resource = ~BLAKBLAD~  			        END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 112 opcode = 321 STR_VAR match_resource = ~BCLAW~ resource = EVAL ~%spell_2%~ END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 123 STR_VAR match_resource = ~FSEEDS~ resource = ~STARDART~  			        END
 
 END
 
