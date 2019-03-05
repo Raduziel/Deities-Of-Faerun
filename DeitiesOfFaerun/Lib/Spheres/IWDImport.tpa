@@ -301,7 +301,7 @@ BUT_ONLY
 		LAF	ADD_SPLPROT	INT_VAR stat = 199 value = 0	      relation = 5	       RET golemskin  = new_row END
 		LAF	ADD_SPLPROT	INT_VAR stat = 259 value = stoneskin  relation = golemskin RET anyskin    = new_row END
 				
-		LAF	MODIFY_POISON_WEAPON INT_VAR parameter2 = mirroskin END
+		LAF	MODIFY_POISON_WEAPON INT_VAR parameter2 = mirrorskin END
 		
 		COPY_EXISTING_REGEXP ~^.+\.itm$~ override TO_UPPER SOURCE_RES
 			PATCH_MATCH	~%SOURCE_RES%~	WITH
