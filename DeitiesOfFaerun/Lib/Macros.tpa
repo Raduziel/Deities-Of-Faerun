@@ -39,17 +39,17 @@ END
 
 DEFINE_PATCH_MACRO ~SPELL_TO_INNATE~ BEGIN
 
-  READ_LONG  0x64 abil_off ELSE 0
-  READ_SHORT 0x68 abil_num ELSE 0
-  READ_ASCII (abil_off + 0x04) bam (8)
-  WRITE_SHORT 0x1C 4
-  WRITE_LONG  0x34 1
+  READ_LONG   0x64 abil_off ELSE 0
+  READ_SHORT  0x68 abil_num ELSE 0
+  READ_ASCII  (abil_off + 0x04) bam (8)
+  WRITE_SHORT  0x1C 4
+  WRITE_LONG   0x34 1
   WRITE_ASCIIE 0x3A "%bam%" #8
   FOR (index = 0 ; index < abil_num ; ++index) BEGIN
     WRITE_SHORT (abil_off + 0x02 + (0x28 * index)) 4
     WRITE_SHORT (abil_off + 0x12 + (0x28 * index)) 3
     END
-  END
+ END
 
 //Raduziel's macro to turn spells into kit's features.
 
@@ -81,34 +81,220 @@ END
 //Kjeron's code to create ability headers
 
 DEFINE_PATCH_FUNCTION	ADD_ABILITIES	INT_VAR	abil = 0	target = 1	range = 0	speed = 0	STR_VAR	icon = ~~	BEGIN
-		WRITE_SHORT	 0x68 abil	
+		WRITE_SHORT	 0x68  abil	
 		WRITE_LONG	 0x6a (0x72 + abil * 0x28)
 		INSERT_BYTES 0x72 (0x28 * abil)
-		INNER_PATCH_SAVE ability	~~	BEGIN
+		INNER_PATCH_SAVE ability ~~	BEGIN
 		INSERT_BYTES 0 0x28
 		WRITE_BYTE 0x0 1
 		WRITE_BYTE 0x2 4
 		WRITE_EVALUATED_ASCII 0x4 ~%icon%~ #8
-		WRITE_BYTE	0xc	target
+		WRITE_BYTE  0xc	target
 		WRITE_SHORT	0xe	range
 		WRITE_SHORT	0x10 1
 		WRITE_SHORT	0x12 speed
 		WRITE_SHORT	0x26 1
 		END
-		FOR	(i = 0; i < abil; ++i)	BEGIN
-			WRITE_EVALUATED_ASCII	(0x72 + i * 0x28)	~%ability%~	(0x28)
+		FOR	(i = 0; i < abil; ++i) BEGIN
+			WRITE_EVALUATED_ASCII (0x72 + i * 0x28)	~%ability%~	(0x28)
 			WRITE_SHORT	(0x82 + i * 0x28) (i + 1)
 		END
-	END
+END
 	
 //Beautiful piece of code by Subtledoctor
 
-DEFINE_PATCH_FUNCTION AT_WILL BEGIN
+DEFINE_PATCH_FUNCTION AT_WILL  BEGIN
   READ_SHORT 0x1c spell_type
   PATCH_IF  (%spell_type% = 4) BEGIN
     LPF ADD_SPELL_CFEFFECT INT_VAR insert_point = 0 opcode = 171 target = 1 timing = 9 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
     LPF ADD_SPELL_CFEFFECT INT_VAR insert_point = 0 opcode = 172 target = 1 timing = 9 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
   END
-END	
+END
 
+//No touching-effect through Mirror Image, Reflect Image, Iron Skin and Stoneskin - by Kjeron (part I)
+
+DEFINE_ACTION_FUNCTION ADD_SPLPROT INT_VAR stat = 0	value = 0 relation = 0	new_row = ~-1~ RET	new_row BEGIN
+		COPY_EXISTING ~SPLPROT.2DA~	override
+			COUNT_2DA_COLS cols READ_2DA_ENTRIES_NOW READ cols
+			FOR	(i = 0; i < READ; ++i)	BEGIN
+				PATCH_IF (~%stat%~ STRING_EQUAL EVAL ~%READ_%i%_1%~) AND (~%value%~ STRING_EQUAL EVAL ~%READ_%i%_2%~) AND (~%relation%~ STRING_EQUAL EVAL ~%READ_%i%_3%~) BEGIN
+					SET	new_row = i
+					SET	i = READ
+				END
+			END
+			PATCH_IF new_row = ~-1~	BEGIN
+				FOR	(i = 0; i < READ; ++i)	BEGIN
+					PATCH_IF (~*~ STRING_EQUAL EVAL ~%READ_%i%_1%~)	BEGIN
+						SET	new_row = i	SET	i = READ
+						REMOVE_2DA_ROW new_row cols
+						INSERT_2DA_ROW new_row cols ~%new_row% %stat% %value% %relation%~
+					END
+				END
+				    PATCH_IF new_row = ~-1~	BEGIN 
+					    SET new_row =  READ
+					    INSERT_2DA_ROW READ cols    ~%new_row% %stat% %value% %relation%~
+				    END
+			END
+		BUT_ONLY
+	END
+	
+DEFINE_ACTION_FUNCTION MODIFY_POISON_WEAPON INT_VAR parameter2 = 0 BEGIN
+		COPY_EXISTING ~bdpweapn.SPL~ override
+			LPF	ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 STR_VAR resource = EVAL ~%SOURCE_RES%~	END
+		BUT_ONLY IF_EXISTS
+	END
+	
+DEFINE_PATCH_FUNCTION BLOCK_EFFECTS	INT_VAR	abort = 0 parameter2 = 0 aoe_gaze = 0 BEGIN
+		READ_LONG 0x64 ab_off READ_SHORT 0x68 ab_num READ_LONG 0x6a	fx_off
+		FOR	(i = 0; i < ab_num; ++i) BEGIN
+			PATCH_IF BYTE_AT (ab_off + i * 0x38 + 0x2) = 1 BEGIN
+				READ_SHORT	 (ab_off + i * 0x38 + 0x2a) proj
+				PATCH_MATCH	aoe_gaze WITH
+					1	WHEN VARIABLE_IS_SET $pronum(~%proj%~) AND ($pronum(~%proj%~) = 3) BEGIN END
+					1	WHEN SHORT_AT        (ab_off + i * 0x38 + 0x2a) = 65               BEGIN END
+				DEFAULT
+					READ_SHORT (ab_off + i * 0x38 + 0x1e) fx_num
+					READ_SHORT (ab_off + i * 0x38 + 0x20) fx_idx
+					FOR	(j = 0; j < fx_num; ++j) BEGIN
+						READ_ASCII (fx_off + (j + fx_idx) * 0x30 + 0x14) resource
+						PATCH_MATCH	SHORT_AT (fx_off + (j + fx_idx) * 0x30) WITH
+							58	60	280	BEGIN SET	abort = 1 END
+							177	        WHEN VARIABLE_IS_SET $effDispelList(~%resource%~) AND $effDispelList(~%resource%~) = 1 BEGIN SET abort = 1 END
+							146 148 326	WHEN VARIABLE_IS_SET $splDispelList(~%resource%~) AND $splDispelList(~%resource%~) = 1 BEGIN SET abort = 1 END
+							DEFAULT
+						END
+					END
+					PATCH_IF !abort AND fx_num	BEGIN
+						LPF	ADD_ITEM_EFFECT	INT_VAR	header = (i + 1) type = 99 insert_point = 0	opcode = 318 target = 2	parameter2 STR_VAR resource = EVAL ~%SOURCE_RES%~ END
+					END
+				END
+			END
+		END
+	END
+	
+DEFINE_ACTION_FUNCTION INDEX_EFFS INT_VAR sub = 0 RET_ARRAY	eff25List eff78List	eff109List	eff216List	effDispelList BEGIN
+		OUTER_SPRINT   $eff25List(~?~)     ~~ OUTER_SPRINT $eff78List(~?~) ~~ OUTER_SPRINT $eff109List(~?~) ~~ OUTER_SPRINT	$eff216List(~?~) ~~
+		OUTER_SPRINT   $effDispelList(~?~) ~~
+		COPY_EXISTING_REGEXP ~^.+\.eff$~ override
+			PATCH_MATCH	(LONG_AT 0x10)   WITH
+				25	        WHEN sub = 0 BEGIN SET $eff25List    (~%SOURCE_RES%~) = 1 END
+				78	        WHEN sub = 0 BEGIN SET $eff78List    (~%SOURCE_RES%~) = 1 END
+				109	        WHEN sub = 0 BEGIN SET $eff109List   (~%SOURCE_RES%~) = 1 END
+				216	        WHEN sub = 0 BEGIN SET $op216List    (~%SOURCE_RES%~) = 1 END
+				78	        WHEN sub = 0 BEGIN SET $eff216List   (~%SOURCE_RES%~) = 1 END
+				58	60	280	WHEN sub = 0 BEGIN SET $effDispelList(~%SOURCE_RES%~) = 1 END
+				146	148	326	WHEN sub	 BEGIN
+					READ_ASCII	(0x30)	resource
+					PATCH_MATCH	1	WITH
+						$spl25List    (~%resource%~) WHEN VARIABLE_IS_SET $spl25List    (~%resource%~) BEGIN SET $eff25List    (~%SOURCE_RES%~) = 1	END
+						$spl78List    (~%resource%~) WHEN VARIABLE_IS_SET $spl78List    (~%resource%~) BEGIN SET $eff78List    (~%SOURCE_RES%~) = 1	END
+						$spl109List   (~%resource%~) WHEN VARIABLE_IS_SET $spl109List   (~%resource%~) BEGIN SET $eff109List   (~%SOURCE_RES%~) = 1	END
+						$spl216List   (~%resource%~) WHEN VARIABLE_IS_SET $spl216List   (~%resource%~) BEGIN SET $eff216List   (~%SOURCE_RES%~) = 1	END
+						$splDispelList(~%resource%~) WHEN VARIABLE_IS_SET $splDispelList(~%resource%~) BEGIN SET $effDispelList(~%SOURCE_RES%~) = 1	END
+						DEFAULT
+					END
+				END
+				DEFAULT
+			END
+		BUT_ONLY
+	END
+	
+DEFINE_ACTION_FUNCTION	INDEX_SPELLS	INT_VAR	sub	= 0	RET_ARRAY	spl25List	spl78List	spl109List	spl216List	splDispelList	BEGIN
+		OUTER_SPRINT	$spl25List(~?~) ~~	OUTER_SPRINT	$spl78List(~?~) ~~	OUTER_SPRINT	$spl109List(~?~) ~~	OUTER_SPRINT	$spl216List(~?~) ~~
+		OUTER_SPRINT	$splDispelList(~?~) ~~
+		COPY_EXISTING_REGEXP	~^.+\.spl$~	override
+			READ_LONG	0x64	ab_off	READ_SHORT	0x68	ab_num	READ_LONG	0x6a	fx_off
+			SET	$op25List(~%SOURCE_RES%~) = 0	SET	$op25List(~%SOURCE_RES%~) = 0	SET	$op25List(~%SOURCE_RES%~) = 0	SET	$op25List(~%SOURCE_RES%~) = 0
+			SET	$dispelList(~%SOURCE_RES%~) = 0
+			FOR	(i = 0; i < ab_num; ++i)	BEGIN
+				READ_SHORT	(ab_off + i * 0x28 + 0x1e)	fx_num
+				READ_SHORT	(ab_off + i * 0x28 + 0x20)	fx_idx
+				FOR	(j = 0; j < fx_num; ++j)	BEGIN
+					PATCH_MATCH	SHORT_AT (fx_off + (j + fx_idx) * 0x30) WITH
+						25	        WHEN sub = 0 BEGIN SET $op25List  (~%SOURCE_RES%~) = 1 END
+						78	        WHEN sub = 0 BEGIN SET $op78List  (~%SOURCE_RES%~) = 1 END
+						109	        WHEN sub = 0 BEGIN SET $op109List (~%SOURCE_RES%~) = 1 END
+						216	        WHEN sub = 0 BEGIN SET $op216List (~%SOURCE_RES%~) = 1 END
+						78	        WHEN sub = 0 BEGIN SET $op78List  (~%SOURCE_RES%~) = 1 END
+						58	60	280 WHEN sub = 0 BEGIN SET $dispelList(~%SOURCE_RES%~) = 1 END
+						177	        WHEN sub = 0 BEGIN
+							READ_ASCII	(fx_off + (j + fx_idx) * 0x30 + 0x14)	resource
+							PATCH_MATCH	1	WITH
+								$eff25List    (~%resource%~) WHEN VARIABLE_IS_SET $eff25List    (~%resource%~)BEGIN SET $spl25List     (~%SOURCE_RES%~) = 1	END
+								$eff78List    (~%resource%~) WHEN VARIABLE_IS_SET $eff78List    (~%resource%~)BEGIN SET $spl78List     (~%SOURCE_RES%~) = 1	END
+								$eff109List   (~%resource%~) WHEN VARIABLE_IS_SET $eff109List   (~%resource%~)BEGIN SET $spl109List    (~%SOURCE_RES%~) = 1	END
+								$eff216List   (~%resource%~) WHEN VARIABLE_IS_SET $eff216List   (~%resource%~)BEGIN SET $spl216List    (~%SOURCE_RES%~) = 1	END
+								$effDispelList(~%resource%~) WHEN VARIABLE_IS_SET $effDispelList(~%resource%~) BEGIN SET $splDispelList(~%SOURCE_RES%~) = 1	END
+								DEFAULT
+							END
+						END
+						146	148	326	WHEN 	sub	BEGIN
+							READ_ASCII	(fx_off + (j + fx_idx) * 0x30 + 0x14)	resource
+							PATCH_MATCH	1	WITH
+								$spl25List    (~%resource%~) WHEN VARIABLE_IS_SET $spl25List    (~%resource%~) BEGIN SET $spl25List    (~%SOURCE_RES%~) = 1	END
+								$spl78List    (~%resource%~) WHEN VARIABLE_IS_SET $spl78List    (~%resource%~) BEGIN SET $spl78List    (~%SOURCE_RES%~) = 1	END
+								$spl109List   (~%resource%~) WHEN VARIABLE_IS_SET $spl109List   (~%resource%~) BEGIN SET $spl109List   (~%SOURCE_RES%~) = 1	END
+								$spl216List   (~%resource%~) WHEN VARIABLE_IS_SET $spl216List   (~%resource%~) BEGIN SET $spl216List   (~%SOURCE_RES%~) = 1	END
+								$splDispelList(~%resource%~) WHEN VARIABLE_IS_SET $splDispelList(~%resource%~) BEGIN SET $splDispelList(~%SOURCE_RES%~) = 1	END
+								DEFAULT
+							END
+						END
+						DEFAULT
+					END
+				END
+			END
+		BUT_ONLY
+	END	
+	
+DEFINE_PATCH_FUNCTION BLOCK_EFFECT INT_VAR opcode = ~-1~ target = 2	parameter2 = 0	aoe_gaze = 0 BEGIN
+		READ_LONG 0x64 ab_off READ_SHORT 0x68 ab_num READ_LONG 0x6a	fx_off
+		FOR	(i = 0; i < ab_num; ++i) BEGIN
+			PATCH_IF BYTE_AT (ab_off + i * 0x38 + 0x2) = 1 BEGIN
+				READ_SHORT (ab_off + i * 0x38 + 0x2a) proj
+				PATCH_MATCH	aoe_gaze	WITH
+					1	WHEN VARIABLE_IS_SET $pronum(~%proj%~) AND ($pronum(~%proj%~) = 3) BEGIN END
+					1	WHEN SHORT_AT        (ab_off + i * 0x38 + 0x2a) = 65	           BEGIN END
+				DEFAULT
+					READ_SHORT (ab_off + i * 0x38 + 0x1e) fx_num
+					READ_SHORT (ab_off + i * 0x38 + 0x20) fx_idx
+					FOR	(j = 0; j < fx_num; ++j) BEGIN
+						PATCH_IF	BYTE_AT (fx_off + (j + fx_idx) * 0x30 + 0x2) = target BEGIN
+							READ_ASCII	(fx_off + (j + fx_idx) * 0x30 + 0x14)	resource
+							PATCH_MATCH	SHORT_AT (fx_off + (j + fx_idx) * 0x30)	WITH
+								opcode BEGIN
+									LPF	ADD_ITEM_EFFECT	INT_VAR	header = (i + 1) type = 99 insert_point = 0	opcode = 318 target	parameter2
+																			STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	SET	j = fx_num
+								END
+								177	        WHEN VARIABLE_IS_SET $ EVAL ~eff%opcode%List~(~%resource%~) AND $ EVAL ~eff%opcode%List~(~%resource%~) = 1 BEGIN
+									LPF	ADD_ITEM_EFFECT	INT_VAR	header = (i + 1) type = 99 insert_point = 0	opcode = 318 target	parameter2
+																			STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	SET	j = fx_num
+								END
+								146 148 326	WHEN VARIABLE_IS_SET $ EVAL ~spl%opcode%List~(~%resource%~) AND $ EVAL ~spl%opcode%List~(~%resource%~) = 1 BEGIN
+									LPF	ADD_ITEM_EFFECT	INT_VAR	header = (i + 1) type = 99 insert_point = 0	opcode = 318 target	parameter2
+																			STR_VAR	resource = EVAL ~%SOURCE_RES%~	END	SET	j = fx_num
+								END
+								DEFAULT
+							END
+						END
+					END
+				END
+			END
+		END
+	END
+	
+DEFINE_ACTION_FUNCTION GET_AOE_PROJ RET_ARRAY proList BEGIN
+		OUTER_SPRINT $proList(~?~) ~~
+		COPY_EXISTING_REGEXP ~.*\.pro~ override	SET	$protype(~%SOURCE_RES%~) = (BYTE_AT 0x8) BUT_ONLY
+		COPY_EXISTING ~PROJECTL.IDS~   override
+			READ_2DA_ENTRIES_NOW READ 2
+			FOR(i = 1; i < READ; ++i) BEGIN
+				READ_2DA_ENTRY_FORMER READ i 1 filename
+				PATCH_IF VARIABLE_IS_SET $protype(~%filename%~)	BEGIN
+					READ_2DA_ENTRY_FORMER READ i 0 ids ++ids
+					SET	$proList(~%ids%~) = $protype(~%filename%~)
+				END
+			END
+		BUT_ONLY
+	END
+	
 //EoF
