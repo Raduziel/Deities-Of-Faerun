@@ -1648,7 +1648,7 @@ A kit may have either major or minor access to a sphere. Major access means that
     Flame Arrow
     Protection From Fire
 
-4 - Fireshield (Red)
+4 - Fireshield
     Produce Fire
 
 5 - Flame Strike
