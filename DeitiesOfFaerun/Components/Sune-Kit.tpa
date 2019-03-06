@@ -105,23 +105,14 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RASUNE3.spl~
 LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASUNE3~	END
 LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASUNE3~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RASUNE4.spl"  override SAY NAME1 @108 SAY UNIDENTIFIED_DESC @109                   //Emotion
+//Emotion
 
-COPY "DeitiesOfFaerun\Tables\RASUNE4.2da" override                                                           //Emotion 2da
-
-//Fear
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_FEAR~	RET	spell_res	END
-
-APPEND ~RASune4.2da~ ~FEAR %spell_res% 3~
-
-END ELSE BEGIN
+ACTION_IF	!FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/IDPRO255.PRO~
 
@@ -139,18 +130,13 @@ LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428C.BAM~	~override\%spell_res%C.BAM~
 
-APPEND ~RASune4.2da~ ~FEAR %spell_res% 3~
+CLEAR_ARRAYS
 
 END
 
 //Courage
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_COURAGE~	RET	spell_res	END
-
-APPEND ~RASune4.2da~ ~COURAGE %spell_res% 3~
-
-END ELSE BEGIN
+ACTION_IF	!FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/IDPRO407.PRO~
 
@@ -172,7 +158,7 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427C.BAM~	~override\
 COPY_EXISTING ~%res_of_label_WIZARD_EMOTION_FEAR%.spl~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI427~ resource = EVAL ~%spell_res%~ END
 
-APPEND ~RASune4.2da~ ~COURAGE %spell_res% 3~
+CLEAR_ARRAYS
 
 END
 
@@ -187,16 +173,13 @@ LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  paramet
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL "%RA_Hopeless%" END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI429~ resource = ~XXWI429~    END
 
-APPEND ~RASune4.2da~ ~HOPELESSNESS SPWI411 3~
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET spell_res END
+
+CLEAR_ARRAYS
 
 //Hope
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_HOPE~	RET	spell_res	END
-
-APPEND ~RASune4.2da~ ~HOPE %spell_res% 3~
-
-END ELSE BEGIN
+ACTION_IF	!FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/IDPRO407.PRO~
 
@@ -218,12 +201,58 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429C.BAM~	~override\%sp
 COPY_EXISTING ~SPWI411.spl~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI429~ resource = EVAL ~%spell_res%~ END
 
-APPEND ~RASune4.2da~ ~HOPE %spell_res% 3~
+END
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_EMOTION[ %TAB%%WNL%$]~) BEGIN
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.spl~ ~override\RASPEMC.spl~
+
+ADD_SPELL ~override\RASPEMC.spl~ 1 4  CLERIC_RADUZIEL_EMOTION
+SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999279 SAY DESC @9999279
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOC.BAM~ ~override\%spell_res%C.BAM~
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_res%  1 0~
 
 END
 
-COPY_EXISTING ~RASUNE4.2da~ ~override~
-PRETTY_PRINT_2DA
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_res%  1 0 0~
+
+END
+
+COPY_EXISTING ~%spell_res%.spl~ ~override/RASUNE4.spl~
+LPM ~SPELL_TO_INNATE~
+
+CLEAR_ARRAYS
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET spell_1  = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPE~         RET spell_2  = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_FEAR~         RET spell_3  = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_COURAGE~      RET spell_4  = spell_res END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.2da~  override
+
+APPEND ~RASPEMO.2da~ ~HOPELESSNESS %spell_1% 3~
+APPEND ~RASPEMO.2da~ ~HOPE         %spell_2% 3~
+APPEND ~RASPEMO.2da~ ~FEAR         %spell_3% 3~
+APPEND ~RASPEMO.2da~ ~COURAGE      %spell_4% 3~
+
+END ELSE BEGIN
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_RADUZIEL_EMOTION~ RET spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASUNE4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 //Multiclass CLAB
 
@@ -268,7 +297,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~SUNES~ ~SUNEL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -287,7 +316,7 @@ ACTION_FOR_EACH file IN ~SUNES~ ~SUNEL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~SUNERAPT~ ~SUNEEMOT~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
