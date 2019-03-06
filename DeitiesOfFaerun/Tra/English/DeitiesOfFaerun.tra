@@ -56,28 +56,7 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell has two effects: when cast upon an ally it will put it on a state of bliss, raising its morale and banishing all effects of disease, fear, sleep and charm. When cast upon an enemy the target must make a Saving Throw vs. Paralyzation or become stunned during the effect of the spell.~
-@108 = ~Emotion~
-@109 = ~Emotion
-(Enchantment/Charm)
-
-Level: 4
-Sphere: Combat, Darkness, Sun
-Range: Visual range of the caster
-Duration: See below
-Casting Time: 4
-Area of Effect: 7-ft. radius
-Saving Throw: See below
-
-The Heartwarder can inspire one of the following emotions of <PRO_HISHER> target:
-
-HOPE: This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain, during 1 hour, a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.
-
-COURAGE: This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain, during 1 hour, +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.
-
-FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
-
-HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
-@110 = ~HEARTWARDER OF SUNE (F/C): Sune (SUE-nee) Firehair is said to be the fairest of the powers. When she is represented, she is shown as the most beautiful woman in the Realms, with sweeping, radiant, red hair and incredible charms. The Sunite faith is a popular one in large metropolitan areas and among the nobility. Those of a literary or artistic bent, as well as people falling in love or looking for life-mates, often venerate the Lady Firehair.
+@108 = ~HEARTWARDER OF SUNE (F/C): Sune (SUE-nee) Firehair is said to be the fairest of the powers. When she is represented, she is shown as the most beautiful woman in the Realms, with sweeping, radiant, red hair and incredible charms. The Sunite faith is a popular one in large metropolitan areas and among the nobility. Those of a literary or artistic bent, as well as people falling in love or looking for life-mates, often venerate the Lady Firehair.
 
 Sune herself is said to be benevolent and sometimes whimsical, alternating between deep passions and shallow flirtations. She has been romantically linked with many of the Faerûnian powers in the myths of the Realms, although she has never borne any love at all for the gods of fury, Talona, or Tempus, since their functions posit the destruction of many beautiful things, both living and inanimate. Currently, she is rumored to have been rather smitten by the noble actions of Torm at Tantras during the Time of Troubles.
 
@@ -102,7 +81,7 @@ Features:
 RAPTURE
 
 The Heartwarder either charms an ally, curing it of fear, disease and charm effects or awes an enemy, stunning it.~
-@111 = ~HEARTWARDER OF SUNE (C/T): Sune (SUE-nee) Firehair is said to be the fairest of the powers. When she is represented, she is shown as the most beautiful woman in the Realms, with sweeping, radiant, red hair and incredible charms. The Sunite faith is a popular one in large metropolitan areas and among the nobility. Those of a literary or artistic bent, as well as people falling in love or looking for life-mates, often venerate the Lady Firehair.
+@109 = ~HEARTWARDER OF SUNE (C/T): Sune (SUE-nee) Firehair is said to be the fairest of the powers. When she is represented, she is shown as the most beautiful woman in the Realms, with sweeping, radiant, red hair and incredible charms. The Sunite faith is a popular one in large metropolitan areas and among the nobility. Those of a literary or artistic bent, as well as people falling in love or looking for life-mates, often venerate the Lady Firehair.
 
 Sune herself is said to be benevolent and sometimes whimsical, alternating between deep passions and shallow flirtations. She has been romantically linked with many of the Faerûnian powers in the myths of the Realms, although she has never borne any love at all for the gods of fury, Talona, or Tempus, since their functions posit the destruction of many beautiful things, both living and inanimate. Currently, she is rumored to have been rather smitten by the noble actions of Torm at Tantras during the Time of Troubles.
 

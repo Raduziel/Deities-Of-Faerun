@@ -1277,7 +1277,6 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 7 - Energy Drain
     Finger of Death
-    Symbol: Death
 
 [Suffering]
 
@@ -1305,7 +1304,6 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 7 - Dolorous Decay
     Suffocate
-    Symbol: Pain
 
 [Animal]
 

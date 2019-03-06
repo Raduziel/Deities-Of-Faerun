@@ -1561,6 +1561,45 @@ This spell allows the caster to summon either fireshield that can be either red 
 The blue fireshield protects the user from cold damage by surrounding the caster with a shield of ice flame. This shield not only grants the user +50% Cold Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 cold damage. This effect, however, doubles any fire-based damage that the caster may suffer.
 
 The red fireshield protects the user from fire damage by surrounding the caster with a shield of flame. This shield not only grants the user +50% Fire Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 fire damage. This effect, however, doubles any cold-based damage that the caster may suffer.~
-	
+	@9999278 = ~Emotion~
+	@9999279 = ~Emotion
+(Enchantment/Charm)
+
+Level: 4
+Sphere: Darkness
+Range: Visual range of the caster
+Duration: See below
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: See below
+
+The Heartwarder can inspire one of the following emotions of <PRO_HISHER> target:
+
+HOPE: This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain, during 1 hour, a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.
+
+COURAGE: This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain, during 1 hour, +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.
+
+FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
+
+HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+	@9999280 = ~Emotion
+(Enchantment/Charm)
+
+Level: 4
+Sphere: Darkness
+Duration: See below
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: See below
+
+The Heartwarder can inspire one of the following emotions of <PRO_HISHER> target:
+
+HOPE: This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain, during 1 hour, a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.
+
+COURAGE: This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain, during 1 hour, +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.
+
+FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
+
+HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
 
 // EoF
