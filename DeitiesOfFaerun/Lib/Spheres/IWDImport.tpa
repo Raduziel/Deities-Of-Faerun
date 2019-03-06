@@ -986,14 +986,19 @@ END
 
 //Emotion, Hopelessness
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHopelessness/IDPRO255.PRO~
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET spell_res END
 
-COPY ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHopelessness/SPWI411.spl~ override
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999119 SAY NAME2 @9999119 SAY UNIDENTIFIED_DESC @9999120 SAY DESC @9999120
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%"  END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL "%RA_Hopeless%" END
-LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI429~ resource = ~XXWI429~    END
+LPF ALTER_SPELL_HEADER  INT_VAR projectile = %IDPRO255% END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = ~-1~                                                                                                                                                       END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 321 target = 2            duration = 1                                                                                STR_VAR resource = ~XXWI429~  insert_point = 0 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 174 target = 2 timing = 1                                                 power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR resource = ~#EFF_M05~ insert_point = 1 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 139 target = 2 timing = 1               parameter1 = EVAL "%RA_Hopeless%" power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR                       insert_point = 2 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode =  39 target = 2            duration = 60 parameter2 = 1                    power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR                       insert_point = 3 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 174 target = 2 timing = 4 duration = 60                                   power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR resource = ~#EFF_E05~ insert_point = 4 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 142 target = 2            duration = 60 parameter2 = 44                   power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR                       insert_point = 5 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 174 target = 2 timing = 1                                                 power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR resource = ~PARALH~   insert_point = 6 END
 
 //Emotion, Hope
 
