@@ -2,18 +2,79 @@
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
-	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLPAL.2da~ ~override~
+	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLPAL.2da~ override
 
-	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ ~override~
+	COPY ~DeitiesOfFaerun/Lib/Spheres/MXSPLRAN.2da~ override
 	
+END
+
+//Fireshield - Raduziel's PnP Version
+
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~))  BEGIN
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSC.spl~
+
+ADD_SPELL ~override\RASPFSC.spl~ 1 4  CLERIC_RADUZIEL_FIRESHIED
+SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999276 SAY DESC @9999276
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDB.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDC.BAM~	~override\%spell_res%C.BAM~
+
+CLEAR_ARRAYS
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSW.spl~
+
+ADD_SPELL ~override\RASPFSW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIED
+SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9999277
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDC.BAM~ ~override\%spell_res%C.BAM~
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_BLUE~ RET spell_1 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_RED~  RET spell_2 = spell_res END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.2da~  override
+
+APPEND ~RASPFSD.2da~ ~BLUE %spell_1% 3~
+APPEND ~RASPFSD.2da~ ~RED  %spell_2% 3~
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0~
+
+END
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0 0~
+
+END
+
+COPY_EXISTING ~%spell_1%.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_2%~ insert_point = 0 END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 28 opcode = 30 parameter1 = ~-100~ END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 85 opcode = 84 parameter1 = ~-100~ END
+
+COPY_EXISTING ~%spell_2%.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_1%~ insert_point = 0 END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 30 opcode = 28 parameter1 = ~-100~ END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 84 opcode = 85 parameter1 = ~-100~ END
+
 END
 
 //Conjure Water Elemental - Raduziel
 
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
 
 LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 RADUZIEL_CONJURE_WATER_ELEMENTAL
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL
 SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
@@ -24,25 +85,25 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
 END
 
 //Conjure Air Elemental - Raduziel
 
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
 
 LAF cd_new_summon_table STR_VAR descript = "AIR_ELEMENTAL_RADUZIEL" 2da_file = RAELEMA RET RAELEMA = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 RADUZIEL_CONJURE_AIR_ELEMENTAL
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
 SAY NAME1 @9999228 SAY NAME2 @9999228 SAY UNIDENTIFIED_DESC @9999229 SAY DESC @9999229
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
@@ -53,22 +114,22 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMA END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	override
 SAY NAME1 @9999230 SAY NAME2 @9999230
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	override
 SAY NAME1 @9999230 SAY NAME2 @9999230
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	override
 SAY NAME1 @9999230 SAY NAME2 @9999230
 
 END
 
 //Elemental Changes
 
-COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
+COPY_EXISTING_REGEXP ~.*\.cre~ override
 	READ_LONG	0x028	animation
 		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN /*Air Elemental*/
 			WRITE_BYTE 0x063  50
@@ -185,7 +246,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 WRITE_LONG 0x1e (THIS BOR 0x2)
 IF_EXISTS
 
@@ -196,7 +257,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CURSE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURSE~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 WRITE_LONG 0x1e (THIS BOR 0x4)
 IF_EXISTS
 
@@ -207,7 +268,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLD_ANIMAL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLD_ANIMAL~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 	LPF	CLONE_EFFECT
 		INT_VAR
 			match_opcode = 175	
@@ -250,7 +311,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SILENCE_15_FOOT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SILENCE_15_FOOT~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 LPF	CLONE_EFFECT INT_VAR match_opcode = 38 opcode = 59 parameter1 = 100 parameter2 = 0   END
 
 END
@@ -458,7 +519,7 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/SPWI630B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/SPWI630C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/DOBONE.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DartsofBone/DOBONE.ITM~	override
 SAY NAME1 @999958 SAY NAME2 @999958
 
 END
@@ -477,7 +538,7 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/SPWI626B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/SPWI626C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/LTOUCH.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/LichTouch/LTOUCH.ITM~	override
 SAY NAME1 @999959 SAY NAME2 @999959
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" END
@@ -510,7 +571,7 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPWI631~	 
 LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/AD3SKLM.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SoulEater/AD3SKLM.CRE~	override
 SAY NAME1 @999963 SAY NAME2 @999963
 
 END
@@ -531,30 +592,30 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SMONSTE END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SPWI426C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SMONSTE.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SMONSTE.2DA~	override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB1.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB1.CRE~	override
 SAY NAME1 @999966 SAY NAME2 @999966
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB2.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB2.CRE~	override
 SAY NAME1 @999966 SAY NAME2 @999966
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB3.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1GOB3.CRE~	override
 SAY NAME1 @999966 SAY NAME2 @999966
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ3.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ3.CRE~	override
 SAY NAME1 @999967 SAY NAME2 @999967
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ4.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1LIZ4.CRE~	override
 SAY NAME1 @999967 SAY NAME2 @999967
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL6.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL6.CRE~	override
 SAY NAME1 @999968 SAY NAME2 @999968
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL7.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL7.CRE~	override
 SAY NAME1 @999968 SAY NAME2 @999968
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL8.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ShadowMonsters/SS1TRL8.CRE~	override
 SAY NAME1 @999968 SAY NAME2 @999968
 
 END
@@ -575,24 +636,24 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = DSMONST END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SPWI525C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/DSMONST.2DA~	    ~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/DSMONST.2DA~	    override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB1.CRE~	    ~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB1.CRE~	    override
 SAY NAME1 @999971 SAY NAME2 @999971
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB2.CRE~		~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB2.CRE~		override
 SAY NAME1 @999971 SAY NAME2 @999971
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB3.CRE~		~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2GOB3.CRE~		override
 SAY NAME1 @999971 SAY NAME2 @999971
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ5.CRE~		~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ5.CRE~		override
 SAY NAME1 @999972 SAY NAME2 @999972
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ6.CRE~		~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ6.CRE~		override
 SAY NAME1 @999972 SAY NAME2 @999972
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ7.CRE~		~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/DemiShadowMonster/SS2LIZ7.CRE~		override
 SAY NAME1 @999972 SAY NAME2 @999972
 
 END
@@ -613,26 +674,26 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SHADES END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SPWI629C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SHADES.2DA~	    ~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SHADES.2DA~	    override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL7.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL7.CRE~	override
 SAY NAME1 @999968 SAY NAME2 @999968
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL8.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3TRL8.CRE~	override
 SAY NAME1 @999968 SAY NAME2 @999968
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB8.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB8.CRE~	override
 SAY NAME1 @999975 SAY NAME2 @999975
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB9.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/SS3UMB9.CRE~	override
 SAY NAME1 @999975 SAY NAME2 @999975
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/REG1HP2.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/REG1HP2.ITM~	override
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35600 parameter1 = EVAL "%RA_UndeadD%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35591 parameter1 = EVAL "%RA_Death%"   END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35592 parameter1 = EVAL "%RA_Vorpal%"  END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/CDIWDTR1.SPL~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Shades/CDIWDTR1.SPL~	override
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35593 parameter1 = EVAL "%RA_Diseased%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 39752 parameter1 = EVAL "%RA_FoulDisease%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 36317 parameter1 = EVAL "%RA_Poison%" END
@@ -656,9 +717,9 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = SSHADOW END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SPWI526B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SPWI526C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SSHADOW.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SSHADOW.2DA~	override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SUMSHAD.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SummonShadow/SUMSHAD.CRE~	override
 SAY NAME1 @999978 SAY NAME2 @999978
 
 END
@@ -784,7 +845,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/ICGHIT.PRO~
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/ICEGLYP.PRO~
 
-COPY_EXISTING	~ICEGLYP.PRO~	~override~
+COPY_EXISTING	~ICEGLYP.PRO~	override
 WRITE_SHORT 0x0214 ICGHIT
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2215) STR_VAR bam_file = RAPAINIC RET iconpain = icon END
@@ -809,7 +870,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_GIANT_INSECT[ %TA
 
 LAF ADD_PROJECTL STR_VAR path = ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect~ file = ~IDPRO282~ missile = ~Acid Spray~ RET acidspra  = IDPRO282 END
 
-COPY_EXISTING	~IDPRO282.PRO~	~override~
+COPY_EXISTING	~IDPRO282.PRO~	override
 WRITE_LONG 0x0030 RESOLVE_STR_REF (@999997)
 
 LAF cd_new_summon_table STR_VAR descript = "GIANT_INSECT" 2da_file = GINSECT RET GINSECT = table END
@@ -824,15 +885,15 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = GINSECT END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPPR418B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPPR418C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GINSECT.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GINSECT.2DA~	override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GISBORB.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GISBORB.CRE~	override
 SAY NAME1 @999995 SAY NAME2 @999995
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GISBOMB.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/GISBOMB.CRE~	override
 SAY NAME1 @999996 SAY NAME2 @999996
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPIN191.spl~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/GiantInsect/SPIN191.spl~	override
 LPF ALTER_SPELL_HEADER INT_VAR projectile = acidspra END
 
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 34527 parameter1 = RESOLVE_STR_REF (@999997) END
@@ -934,7 +995,7 @@ LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/SPPR322C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/MOONBLA.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Moonblade/MOONBLA.ITM~	override
 SAY NAME1 @9999106 SAY NAME2 @9999106 SAY UNIDENTIFIED_DESC @9999106 SAY DESC @9999106
 
 END
@@ -984,7 +1045,7 @@ LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/StarMetalCudgel/SPPR425B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/StarMetalCudgel/SPPR425C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/StarMetalCudgel/SMCUDGE.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/StarMetalCudgel/SMCUDGE.ITM~	override
 SAY NAME1 @9999110 SAY NAME2 @9999110 SAY UNIDENTIFIED_DESC @9999110 SAY DESC @9999110
 
 END
@@ -1044,7 +1105,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/IDPRO277.P
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/ICGHIT.PRO~
 
-COPY_EXISTING	~IDPRO277.PRO~	~override~
+COPY_EXISTING	~IDPRO277.PRO~	override
 WRITE_SHORT 0x0214 ICGHIT
 
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716.spl~ 1 7 CLERIC_SYMBOL_OF_HOPELESSNESS
@@ -1138,7 +1199,7 @@ LPF ALTER_SPELL_HEADER INT_VAR projectile = %SMLLAREA% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPWI430~	      resource = EVAL ~%spell_res%~	    END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
-COPY_EXISTING	~SPWI114.spl~	~override~
+COPY_EXISTING	~SPWI114.spl~	override
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 1 power = 1 resist_dispel = 3 duration = 300 STR_VAR resource = EVAL ~%spell_res%~  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 1 power = 1 resist_dispel = 3 duration = 300 STR_VAR resource = EVAL ~%spell_res%B~ END
 
@@ -1179,7 +1240,7 @@ LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/BCLAW.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/BCLAW.ITM~	override
 SAY NAME1 @9999128 SAY NAME2 @9999128 SAY UNIDENTIFIED_DESC @9999128 SAY DESC @9999128
 
 END
@@ -1522,10 +1583,10 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	reso
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SPPR737B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SPPR737C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SSHAMB.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SSHAMB.CRE~	override
 SAY NAME1 @9999167 SAY NAME2 @9999167
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SHMBLR.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Stalker/SHMBLR.ITM~	override
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 37709 parameter1 = EVAL "%RA_Entangled%" END
 
 END
@@ -1592,7 +1653,7 @@ LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 END
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/SPWI814B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/SPWI814C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/IBODY.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/IronBody/IBODY.ITM~	override
 SAY NAME1 @9999175 SAY NAME2 @9999175 SAY UNIDENTIFIED_DESC @9999175 SAY DESC @9999175
 
 END
@@ -1600,7 +1661,7 @@ END
 ACTION_IF ((!GAME_IS ~iwdee~) AND (FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_IRON_BODY[ %TAB%%WNL%%LNL%%MNL%$]~)))	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_IRON_BODY~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 PATCH_FOR_EACH label IN
 	~WIZARD_MALAVONS_CORROSIVE_FOG~
 	~WIZARD_ABI_DALZIMS_HORRID_WILTING~
@@ -1680,7 +1741,7 @@ END
 ACTION_IF ((!GAME_IS ~iwdee~) AND (FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLOOD_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)))	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLOOD_RAGE~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 PATCH_FOR_EACH label IN
 	~CLERIC_SYMBOL_OF_PAIN~
 	~CLERIC_SYMBOL_OF_HOPELESSNESS~
@@ -2009,7 +2070,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_SEVEN_EYES[ %TAB%
 
 ACTION_IF !FILE_EXISTS_IN_GAME ~7EYES.2da~	BEGIN
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/7EYES.2da~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SevenEyes/7EYES.2da~	override
 
 OUTER_SET index = 0
 
@@ -2155,7 +2216,7 @@ APPEND ~7EYES.2da~ ~EYEFORTITUDE 53 %strref% 38 45 74 80 109 175 210 * *~
 OUTER_SET strref = RESOLVE_STR_REF(@9999216)
 APPEND ~7EYES.2da~ ~EYESTONE 54 %strref% 134 * * * * * * * *~
 
-COPY_EXISTING ~7EYES.2da~ ~override~
+COPY_EXISTING ~7EYES.2da~ override
 PRETTY_PRINT_2DA
 
 END
@@ -2168,7 +2229,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SpiritualWrath/IDPRO207.PRO~
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SpiritualWrath/IDPRO312.PRO~
 
-COPY_EXISTING	~IDPRO312.PRO~	~override~
+COPY_EXISTING	~IDPRO312.PRO~	override
 WRITE_SHORT 0x021a IDPRO207
 
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SpiritualWrath/SPPR618.spl~ 1 6 CLERIC_SPIRITUAL_WRATH
@@ -2208,7 +2269,7 @@ ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/MassCauseLightWounds/SPARRENP
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/MassCauseLightWounds/SPARKLRE.PRO~
 
-COPY_EXISTING	~SPARRENP.PRO~	~override~
+COPY_EXISTING	~SPARRENP.PRO~	override
 WRITE_SHORT 0x0214 SPARKLRE
 
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/MassCauseLightWounds/SPPR523.spl~ 1 5 CLERIC_MASS_CAUSE_LIGHT_WOUNDS
@@ -2235,7 +2296,7 @@ ACTION_IF ((GAME_IS ~iwdee~) OR (MOD_IS_INSTALLED ~spells/SetUp-spells.tp2~ ~0~)
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MASS_CAUSE_LIGHT_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MASS_CAUSE_LIGHT_WOUNDS~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999223 SAY NAME2 @9999223 SAY UNIDENTIFIED_DESC @9999224 SAY DESC @9999224
 
 END
@@ -2245,7 +2306,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CAUSE_MEDIUM_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CAUSE_MEDIUM_WOUNDS~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999221 SAY NAME2 @9999221 SAY UNIDENTIFIED_DESC @9999222 SAY DESC @9999222
 
 END
@@ -2255,7 +2316,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CAUSE_MODERATE_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CAUSE_MODERATE_WOUNDS~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @999981 SAY NAME2 @999981 SAY UNIDENTIFIED_DESC @999982 SAY DESC @999982
 
 END
@@ -2265,7 +2326,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CAUSE_LIGHT_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CAUSE_LIGHT_WOUNDS~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @999979 SAY NAME2 @999979 SAY UNIDENTIFIED_DESC @999980 SAY DESC @999980
 
 END
@@ -2275,7 +2336,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CIRCLE_OF_BONES[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CIRCLE_OF_BONES~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @999954 SAY NAME2 @999954 SAY UNIDENTIFIED_DESC @999955 SAY DESC @999955
 
 END
@@ -2285,7 +2346,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CAUSE_DISEASE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CAUSE_DISEASE~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @999983 SAY NAME2 @999983 SAY UNIDENTIFIED_DESC @999984 SAY DESC @999984
 
 END
@@ -2295,7 +2356,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CLOUD_OF_PESTILENCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CLOUD_OF_PESTILENCE~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @999987 SAY NAME2 @999987 SAY UNIDENTIFIED_DESC @999988 SAY DESC @999988
 
 END
@@ -2305,7 +2366,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_WITHER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_WITHER~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999168 SAY NAME2 @9999168 SAY UNIDENTIFIED_DESC @9999169 SAY DESC @9999169
 
 END
@@ -2315,7 +2376,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_IRON_BODY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_IRON_BODY~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999173 SAY NAME2 @9999173 SAY UNIDENTIFIED_DESC @9999174 SAY DESC @9999174
 LPF ADD_SPELL_EFFECT   INT_VAR opcode = 206 target = 1 power = 8 resist_dispel = 3 duration = 120 STR_VAR resource = ~RAUMBE3~ END
 PATCH_FOR_EACH label IN
@@ -2362,7 +2423,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLOOD_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLOOD_RAGE~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999176 SAY NAME2 @9999176 SAY UNIDENTIFIED_DESC @9999177 SAY DESC @9999177
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPPR714~ END
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 318 match_resource = ~SPPR716~ END
@@ -2398,7 +2459,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_IMPERVIOUS_SANCTITY_OF_MIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_IMPERVIOUS_SANCTITY_OF_MIND~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999180 SAY NAME2 @9999180 SAY UNIDENTIFIED_DESC @9999181 SAY DESC @9999181
 LPF	CLONE_EFFECT	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR102~ resource = ~RACLAN1~	    END
 LPF	CLONE_EFFECT	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR102~ resource = ~RATORM1~	    END
@@ -2413,7 +2474,7 @@ ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ANTIMAGIC_SHELL[ 
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ANTIMAGIC_SHELL~	RET	spell 1 = spell_res	END
 LAF     RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ENCHANTED_WEAPON~	RET	spell_2	= spell_res	END
 
-COPY_EXISTING ~%spell_1%.spl~ ~override~
+COPY_EXISTING ~%spell_1%.spl~ override
 SAY NAME1 @9999190 SAY NAME2 @9999190 SAY UNIDENTIFIED_DESC @9999191 SAY DESC @9999191
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 206                                                                           END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 102 match_parameter1 = 1 opcode = 181 parameter1 = 0  parameter2 = 1          END
@@ -2437,7 +2498,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DESTRUCTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DESTRUCTION~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999192 SAY NAME2 @9999192 SAY UNIDENTIFIED_DESC @9999193 SAY DESC @9999193
 
 END
@@ -2447,7 +2508,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FAVOR_OF_ILMATER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FAVOR_OF_ILMATER~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999194 SAY NAME2 @9999194 SAY UNIDENTIFIED_DESC @9999195 SAY DESC @9999195
 
 END
@@ -2457,7 +2518,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SHIELD_OF_LATHANDER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SHIELD_OF_LATHANDER~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999196 SAY NAME2 @9999196 SAY UNIDENTIFIED_DESC @9999197 SAY DESC @9999197
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 324 END
 
@@ -2468,7 +2529,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_GREATER_SHIELD_OF_LATHANDER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GREATER_SHIELD_OF_LATHANDER~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999198 SAY NAME2 @9999198 SAY UNIDENTIFIED_DESC @9999199 SAY DESC @9999199
 LPF	DELETE_EFFECT	   STR_VAR match_opcode = 324 END
 
@@ -2479,7 +2540,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ENTROPY_SHIELD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ENTROPY_SHIELD~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~ ~override~
+COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999200 SAY NAME2 @9999200 SAY UNIDENTIFIED_DESC @9999201 SAY DESC @9999201
 LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPWI327~ resource = EVAL $res_of_label(~WIZARD_ICELANCE~)			 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE2~		 								 		  END
@@ -2703,7 +2764,10 @@ BUT_ONLY
 	
 //Respecting my OCD for aligned things
 
-COPY_EXISTING ~smtables.2da~ ~override~
+COPY_EXISTING ~smtables.2da~ override
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~hidespl.2da~  override
 PRETTY_PRINT_2DA
 
 //EoF
