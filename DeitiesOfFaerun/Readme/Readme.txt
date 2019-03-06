@@ -1411,7 +1411,6 @@ A kit may have either major or minor access to a sphere. Major access means that
     Holy Smite
 
 4 - Death Ward
-    Emotion: Hope
     Negative Plane Protection
 
 5 - Flame Strike
@@ -1460,8 +1459,7 @@ A kit may have either major or minor access to a sphere. Major access means that
     Unholy Blight
 
 4 - Cloak of Fear
-    Emotion: Fear	
-    Emotion: Hopelessness
+    Emotion
     Shadow Monster
 
 5 - Demi-Shadow Monster
@@ -1470,8 +1468,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 6 - Death Spell
     Shades
 
-7 - Symbol: Fear
-    Symbol: Hopelessness
+7 - Symbol
 
 [Thought]
 
@@ -1486,6 +1483,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 4 - Blood Rage
     Cloak of Fear
+    Emotion
     Mental Domination
 
 5 - Chaotic Commands
@@ -1514,7 +1512,6 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 4 - Blood Rage
     Defensive Harmony
-    Emotion: Courage
     Holy Power
 
 5 - Champion's Strength
@@ -1525,8 +1522,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 7 - Destruction
     Great Shout
-    Symbol: Stun
-
+ 
 [Creation]
 
 1 - Shillelagh
