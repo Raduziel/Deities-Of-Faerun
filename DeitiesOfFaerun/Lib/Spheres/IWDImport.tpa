@@ -8,146 +8,6 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
 	
 END
 
-//Fireshield - Raduziel's PnP Version
-
-ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~))  BEGIN
-
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSC.spl~
-
-ADD_SPELL ~override\RASPFSC.spl~ 1 4  CLERIC_RADUZIEL_FIRESHIED
-SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999276 SAY DESC @9999276
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDB.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDC.BAM~	~override\%spell_res%C.BAM~
-
-CLEAR_ARRAYS
-
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSW.spl~
-
-ADD_SPELL ~override\RASPFSW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIED
-SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9999277
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDA.BAM~ ~override\%spell_res%A.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDB.BAM~ ~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDC.BAM~ ~override\%spell_res%C.BAM~
-
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_BLUE~ RET spell_1 = spell_res END
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_RED~  RET spell_2 = spell_res END
-
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.2da~  override
-
-APPEND ~RASPFSD.2da~ ~BLUE %spell_1% 3~
-APPEND ~RASPFSD.2da~ ~RED  %spell_2% 3~
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-
-APPEND ~hidespl.2da~ ~%spell_1%  1 0~
-APPEND ~hidespl.2da~ ~%spell_2%  1 0~
-
-END
-
-ACTION_IF !GAME_IS ~iwdee~ BEGIN
-
-APPEND ~hidespl.2da~ ~%spell_1%  1 0 0~
-APPEND ~hidespl.2da~ ~%spell_2%  1 0 0~
-
-END
-
-COPY_EXISTING ~%spell_1%.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_2%~ insert_point = 0 END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 28 opcode = 30 parameter1 = ~-100~ END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 85 opcode = 84 parameter1 = ~-100~ END
-
-COPY_EXISTING ~%spell_2%.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_1%~ insert_point = 0 END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 30 opcode = 28 parameter1 = ~-100~ END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 84 opcode = 85 parameter1 = ~-100~ END
-
-END
-
-//Conjure Water Elemental - Raduziel
-
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
-
-LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL
-SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
-SAY NAME1 @9999143 SAY NAME2 @9999143
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
-SAY NAME1 @9999143 SAY NAME2 @9999143
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
-SAY NAME1 @9999143 SAY NAME2 @9999143
-
-END
-
-//Conjure Air Elemental - Raduziel
-
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
-
-LAF cd_new_summon_table STR_VAR descript = "AIR_ELEMENTAL_RADUZIEL" 2da_file = RAELEMA RET RAELEMA = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
-SAY NAME1 @9999228 SAY NAME2 @9999228 SAY UNIDENTIFIED_DESC @9999229 SAY DESC @9999229
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMA END
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2C.BAM~	~override\%spell_res%C.BAM~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	override
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	override
-SAY NAME1 @9999230 SAY NAME2 @9999230
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	override
-SAY NAME1 @9999230 SAY NAME2 @9999230
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	override
-SAY NAME1 @9999230 SAY NAME2 @9999230
-
-END
-
-//Elemental Changes
-
-COPY_EXISTING_REGEXP ~.*\.cre~ override
-	READ_LONG	0x028	animation
-		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN /*Air Elemental*/
-			WRITE_BYTE 0x063  50
-			WRITE_BYTE 0x05b  50
-			WRITE_BYTE 0x05a  50
-			WRITE_BYTE 0x05f  50
-		END
-		PATCH_IF (animation = 29440) OR (animation = 29441) OR (animation = 57931) BEGIN /*Earth Elemental*/
-			WRITE_BYTE 0x05b 100
-		END
-		PATCH_IF (animation = 57933) OR (animation = 57964) BEGIN /*Water Elemental*/
-			WRITE_BYTE 0x05b  ~-100~
-			WRITE_BYTE 0x05a    50
-			WRITE_BYTE 0x05f    50
-			WRITE_BYTE 0x05c    50
-		END
-BUT_ONLY_IF_IT_CHANGES
-
 //Fix for Animal Summoning I (bug identified by Kotophey at Beamdog's Forum)
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
@@ -2761,6 +2621,211 @@ COPY_EXISTING_REGEXP ~^.+\.\(spl\|itm\)$~ override
 		END
 	END
 BUT_ONLY
+
+//Fireshield - Raduziel's PnP Version
+
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~))  BEGIN
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSC.spl~
+
+ADD_SPELL ~override\RASPFSC.spl~ 1 4  CLERIC_RADUZIEL_FIRESHIED
+SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999276 SAY DESC @9999276
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDC.BAM~ ~override\%spell_res%C.BAM~
+
+CLEAR_ARRAYS
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSW.spl~
+
+ADD_SPELL ~override\RASPFSW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIED
+SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9999277
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDC.BAM~ ~override\%spell_res%C.BAM~
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_BLUE~ RET spell_1 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_RED~  RET spell_2 = spell_res END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.2da~  override
+
+APPEND ~RASPFSD.2da~ ~BLUE %spell_1% 3~
+APPEND ~RASPFSD.2da~ ~RED  %spell_2% 3~
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0~
+
+END
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0 0~
+
+END
+
+COPY_EXISTING ~%spell_1%.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_2%~ insert_point = 0 END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 28 opcode = 30 parameter1 = ~-100~ END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 85 opcode = 84 parameter1 = ~-100~ END
+
+COPY_EXISTING ~%spell_2%.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_1%~ insert_point = 0 END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 30 opcode = 28 parameter1 = ~-100~ END
+LPF	CLONE_EFFECT     INT_VAR match_opcode = 84 opcode = 85 parameter1 = ~-100~ END
+
+CLEAR_ARRAYS
+
+END
+
+//Emotion - Raduziel's PnP Version
+
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_EMOTION[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_EMOTION[ %TAB%%WNL%$]~))  BEGIN
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.spl~ ~override\RASPEMC.spl~
+
+ADD_SPELL ~override\RASPEMC.spl~ 1 4  CLERIC_RADUZIEL_EMOTION
+SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999279 SAY DESC @9999279
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOC.BAM~ ~override\%spell_res%C.BAM~
+
+CLEAR_ARRAYS
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.spl~ ~override\RASPEMW.spl~
+
+ADD_SPELL ~override\RASPEMW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIED
+SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999280 SAY DESC @9999280
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOC.BAM~ ~override\%spell_res%C.BAM~
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET spell_1  = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPE~         RET spell_2  = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_FEAR~         RET spell_3  = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_COURAGE~      RET spell_4  = spell_res END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.2da~  override
+
+APPEND ~RASPEMO.2da~ ~HOPELESSNESS %spell_1% 3~
+APPEND ~RASPEMO.2da~ ~HOPE         %spell_2% 3~
+APPEND ~RASPEMO.2da~ ~FEAR         %spell_3% 3~
+APPEND ~RASPEMO.2da~ ~COURAGE      %spell_4% 3~
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0~
+APPEND ~hidespl.2da~ ~%spell_3%  1 0~
+APPEND ~hidespl.2da~ ~%spell_4%  1 0~
+
+END
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_3%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_4%  1 0 0~
+
+END
+
+CLEAR_ARRAYS
+
+END
+
+//Conjure Water Elemental - Raduziel
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL
+SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+END
+
+//Conjure Air Elemental - Raduziel
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "AIR_ELEMENTAL_RADUZIEL" 2da_file = RAELEMA RET RAELEMA = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
+SAY NAME1 @9999228 SAY NAME2 @9999228 SAY UNIDENTIFIED_DESC @9999229 SAY DESC @9999229
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMA END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	override
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+END
+
+//Elemental Changes
+
+COPY_EXISTING_REGEXP ~.*\.cre~ override
+	READ_LONG	0x028	animation
+		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN /*Air Elemental*/
+			WRITE_BYTE 0x063  50
+			WRITE_BYTE 0x05b  50
+			WRITE_BYTE 0x05a  50
+			WRITE_BYTE 0x05f  50
+		END
+		PATCH_IF (animation = 29440) OR (animation = 29441) OR (animation = 57931) BEGIN /*Earth Elemental*/
+			WRITE_BYTE 0x05b 100
+		END
+		PATCH_IF (animation = 57933) OR (animation = 57964) BEGIN /*Water Elemental*/
+			WRITE_BYTE 0x05b  ~-100~
+			WRITE_BYTE 0x05a    50
+			WRITE_BYTE 0x05f    50
+			WRITE_BYTE 0x05c    50
+		END
+BUT_ONLY_IF_IT_CHANGES
 	
 //Respecting my OCD for aligned things
 
