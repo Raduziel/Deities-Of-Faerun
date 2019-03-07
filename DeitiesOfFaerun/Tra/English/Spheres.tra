@@ -1601,5 +1601,49 @@ COURAGE: This spell creates the emotion of courage within the area of effect. Al
 FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
 
 HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+	@9999281 = ~Symbol~
+	@9999282 = ~Symbol
+(Conjuration/Summoning)
 
+Level: 7
+Sphere: Darkness
+Range: Visual range of the caster
+Duration: See below
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: See below
+
+Symbol is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to be affected by its power unless a Saving Throw is successfully made. The symbols that can be inscribed as well as its effects are listed below:
+
+Fear: Saving Throw vs. Spell with a -4 penalty or be in panic for 2 rounds + 1 round for every 3 levels of the caster.
+
+Pain: Saving Throw vs. Spell or be overwhelmed by pain, suffering a -4 penalty to attack rolls, a -2 penalty to Dexterity scores, and a -2 penalty to Armor Class for 11 turns.
+
+Hopelessness: Saving Throw vs. Spell with a -2 penalty or stand in place, overwhelmed by dejection and surrender. They will make no move to defend themselves from attack. This spell nullifies Emotion, Hope within the area of effect at the time of casting.
+
+Stun: Saving Throw vs. Spell with a -4 penalty or be stunned for 2 rounds + 1 round every 3 levels of the caster.
+
+Death: Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are immune to this effect.~
+	@9999283 = ~Symbol
+(Conjuration/Summoning)
+
+Level: 8
+Range: Visual range of the caster
+Duration: See below
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: See below
+
+Symbol is a powerful enchantment that allows the wizard to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to be affected by its power unless a Saving Throw is successfully made. The symbols that can be inscribed as well as its effects are listed below:
+
+Fear: Saving Throw vs. Spell with a -4 penalty or be in panic for 2 rounds + 1 round for every 3 levels of the caster.
+
+Pain: Saving Throw vs. Spell or be overwhelmed by pain, suffering a -4 penalty to attack rolls, a -2 penalty to Dexterity scores, and a -2 penalty to Armor Class for 11 turns.
+
+Hopelessness: Saving Throw vs. Spell with a -2 penalty or stand in place, overwhelmed by dejection and surrender. They will make no move to defend themselves from attack. This spell nullifies Emotion, Hope within the area of effect at the time of casting.
+
+Stun: Saving Throw vs. Spell with a -4 penalty or be stunned for 2 rounds + 1 round every 3 levels of the caster.
+
+Death: Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are immune to this effect.~
+	
 // EoF
