@@ -2635,7 +2635,7 @@ COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPF
 
 ADD_SPELL ~override\RASPFSC.spl~ 1 4  CLERIC_RADUZIEL_FIRESHIED
 SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999276 SAY DESC @9999276
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_LONG 0x034 4 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDA.BAM~ ~override\%spell_res%A.BAM~
@@ -2648,7 +2648,7 @@ COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPF
 
 ADD_SPELL ~override\RASPFSW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIED
 SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9999277
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_LONG 0x034 4 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSDA.BAM~ ~override\%spell_res%A.BAM~
@@ -2662,6 +2662,9 @@ COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.2da~  override
 
 APPEND ~RASPFSD.2da~ ~BLUE %spell_1% 3~
 APPEND ~RASPFSD.2da~ ~RED  %spell_2% 3~
+
+COPY_EXISTING ~RASPFSD.2da~ override
+PRETTY_PRINT_2DA
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
@@ -2699,7 +2702,7 @@ COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.spl~ ~override\RASPEMC.
 
 ADD_SPELL ~override\RASPEMC.spl~ 1 4  CLERIC_RADUZIEL_EMOTION
 SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999279 SAY DESC @9999279
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_LONG 0x034 4 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOA.BAM~ ~override\%spell_res%A.BAM~
@@ -2710,9 +2713,9 @@ CLEAR_ARRAYS
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.spl~ ~override\RASPEMW.spl~
 
-ADD_SPELL ~override\RASPEMW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIED
+ADD_SPELL ~override\RASPEMW.spl~ 2 4  WIZARD_RADUZIEL_EMOTION
 SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999280 SAY DESC @9999280
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_LONG 0x034 4 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOA.BAM~ ~override\%spell_res%A.BAM~
@@ -2731,6 +2734,9 @@ APPEND ~RASPEMO.2da~ ~HOPE         %spell_2% 3~
 APPEND ~RASPEMO.2da~ ~FEAR         %spell_3% 3~
 APPEND ~RASPEMO.2da~ ~COURAGE      %spell_4% 3~
 
+COPY_EXISTING ~RASPEMO.2da~ override
+PRETTY_PRINT_2DA
+
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
 APPEND ~hidespl.2da~ ~%spell_1%  1 0~
@@ -2746,6 +2752,84 @@ APPEND ~hidespl.2da~ ~%spell_1%  1 0 0~
 APPEND ~hidespl.2da~ ~%spell_2%  1 0 0~
 APPEND ~hidespl.2da~ ~%spell_3%  1 0 0~
 APPEND ~hidespl.2da~ ~%spell_4%  1 0 0~
+
+END
+
+CLEAR_ARRAYS
+
+END
+
+//Symbol - Raduziel's PnP version
+
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_SYMBOL[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_SYMBOL[ %TAB%%WNL%$]~))  BEGIN
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYM.spl~ ~override\RASPSYC.spl~
+
+ADD_SPELL ~override\RASPEMC.spl~ 1 7  CLERIC_RADUZIEL_SYMBOL
+SAY NAME1 @9999281 SAY NAME2 @9999281 SAY UNIDENTIFIED_DESC @9999282 SAY DESC @9999282
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_LONG 0x034 7 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMC.BAM~ ~override\%spell_res%C.BAM~
+
+CLEAR_ARRAYS
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYM.spl~ ~override\RASPSYW.spl~
+
+ADD_SPELL ~override\RASPEMW.spl~ 2 8  WIZARD_RADUZIEL_SYMBOL
+SAY NAME1 @9999281 SAY NAME2 @9999281 SAY UNIDENTIFIED_DESC @9999283 SAY DESC @9999283
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_LONG 0x034 8 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMA.BAM~ ~override\%spell_res%A.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMC.BAM~ ~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYM.2da~  override
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SYMBOL_FEAR~            RET spell_1 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SYMBOL_STUN~            RET spell_2 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SYMBOL_DEATH~           RET spell_3 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SYMBOL_FEAR~            RET spell_4 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SYMBOL_OF_PAIN~         RET spell_5 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SYMBOL_OF_HOPELESSNESS~ RET spell_6 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SYMBOL_STUN~            RET spell_7 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SYMBOL_DEATH~           RET spell_8 = spell_res END
+
+APPEND ~RASPSYM.2da~ ~FEAR         %spell_4% 3~
+APPEND ~RASPSYM.2da~ ~PAIN         %spell_5% 3~
+APPEND ~RASPSYM.2da~ ~HOPELESSNESS %spell_6% 3~
+APPEND ~RASPSYM.2da~ ~STUN         %spell_7% 3~
+APPEND ~RASPSYM.2da~ ~DEATH        %spell_8% 3~
+
+COPY_EXISTING ~RASPSYM.2da~ override
+PRETTY_PRINT_2DA
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0~
+APPEND ~hidespl.2da~ ~%spell_3%  1 0~
+APPEND ~hidespl.2da~ ~%spell_4%  1 0~
+APPEND ~hidespl.2da~ ~%spell_5%  1 0~
+APPEND ~hidespl.2da~ ~%spell_6%  1 0~
+APPEND ~hidespl.2da~ ~%spell_7%  1 0~
+APPEND ~hidespl.2da~ ~%spell_8%  1 0~
+
+END
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+APPEND ~hidespl.2da~ ~%spell_1%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_2%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_3%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_4%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_5%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_6%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_7%  1 0 0~
+APPEND ~hidespl.2da~ ~%spell_8%  1 0 0~
 
 END
 
