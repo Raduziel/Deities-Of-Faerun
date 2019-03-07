@@ -2833,6 +2833,23 @@ APPEND ~hidespl.2da~ ~%spell_8%  1 0 0~
 
 END
 
+COPY_EXISTING ~ICEGLYP.pro~ override
+WRITE_SHORT 0x0206 256
+
+COPY_EXISTING ~ICGHIT.pro~  override
+WRITE_SHORT 0x0206 256
+
+ACTION_FOR_EACH spell IN ~%spell_1%~ ~%spell_2%~ ~%spell_3%~ ~%spell_4%~ ~%spell_7%~ ~%spell_8%~ BEGIN
+
+COPY_EXISTING ~%spell%.spl~ override
+READ_LONG   0x64 abil_off ELSE 0
+READ_SHORT  0x68 abil_num ELSE 0
+ FOR (index = 0 ; index < abil_num ; ++index) BEGIN
+   WRITE_SHORT (abil_off + 0x12 + (0x28 * index)) 3
+ END
+
+END
+
 CLEAR_ARRAYS
 
 END
