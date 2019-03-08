@@ -914,7 +914,18 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%$]~) BEGIN
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/IDPRO255.PRO~
+ACTION_IF !FILE_EXISTS_IN_GAME ~IDPRO255.PRO~ BEGIN
+
+	ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Common/IDPRO255.PRO~
+
+END ELSE BEGIN
+
+	OUTER_SPRINT	file ~IDPRO255~
+	COPY_EXISTING ~PROJECTL.IDS~	override
+		REPLACE_EVALUATE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+%file%[ %TAB%%WNL%$]~	BEGIN	SET	EVAL ~%file%~ = (~%MATCH1%~ +1)	END	~%MATCH0%~
+	BUT_ONLY
+
+END
 
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionFear/SPWI428.spl~ 2 4 WIZARD_EMOTION_FEAR
 SAY NAME1 @9999112 SAY NAME2 @9999112 SAY UNIDENTIFIED_DESC @9999113 SAY DESC @9999113
@@ -936,7 +947,18 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%$]~) BEGIN
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/IDPRO407.PRO~
+ACTION_IF !FILE_EXISTS_IN_GAME ~IDPRO407.PRO~ BEGIN
+
+	ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Common/IDPRO407.PRO~
+
+END ELSE BEGIN
+
+	OUTER_SPRINT	file ~IDPRO407~
+	COPY_EXISTING ~PROJECTL.IDS~	override
+		REPLACE_EVALUATE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+%file%[ %TAB%%WNL%$]~	BEGIN	SET	EVAL ~%file%~ = (~%MATCH1%~ +1)	END	~%MATCH0%~
+	BUT_ONLY
+
+END
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999116) STR_VAR bam_file = RACOURAG RET iconcour = icon END
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427.spl~ 2 4 WIZARD_EMOTION_COURAGE
@@ -988,6 +1010,21 @@ END
 
 LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET spell_res END
 
+
+ACTION_IF !FILE_EXISTS_IN_GAME ~IDPRO255.PRO~ BEGIN
+
+	ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Common/IDPRO255.PRO~
+
+END ELSE BEGIN
+
+	OUTER_SPRINT	file ~IDPRO255~
+	COPY_EXISTING ~PROJECTL.IDS~	override
+		REPLACE_EVALUATE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+%file%[ %TAB%%WNL%$]~	BEGIN	SET	EVAL ~%file%~ = (~%MATCH1%~ +1)	END	~%MATCH0%~
+	BUT_ONLY
+
+END
+
+
 COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999119 SAY NAME2 @9999119 SAY UNIDENTIFIED_DESC @9999120 SAY DESC @9999120
 LPF ALTER_SPELL_HEADER  INT_VAR projectile = %IDPRO255% END
@@ -1004,7 +1041,18 @@ LPF ADD_SPELL_EFFECT    INT_VAR opcode = 174 target = 2 timing = 1              
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%$]~) BEGIN
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/IDPRO407.PRO~
+ACTION_IF !FILE_EXISTS_IN_GAME ~IDPRO407.PRO~ BEGIN
+
+	ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Common/IDPRO407.PRO~
+
+END ELSE BEGIN
+
+	OUTER_SPRINT	file ~IDPRO407~
+	COPY_EXISTING ~PROJECTL.IDS~	override
+		REPLACE_EVALUATE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+%file%[ %TAB%%WNL%$]~	BEGIN	SET	EVAL ~%file%~ = (~%MATCH1%~ +1)	END	~%MATCH0%~
+	BUT_ONLY
+
+END
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999123) STR_VAR bam_file = RAHOPEIC RET iconhope = icon END
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI429.spl~ 2 4 WIZARD_EMOTION_HOPE
@@ -2633,7 +2681,7 @@ ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_FIRESHI
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSC.spl~
 
-ADD_SPELL ~override\RASPFSC.spl~ 1 4  CLERIC_RADUZIEL_FIRESHIED
+ADD_SPELL ~override\RASPFSC.spl~ 1 4  CLERIC_RADUZIEL_FIRESHIELD
 SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999276 SAY DESC @9999276
 TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_LONG 0x034 4 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
@@ -2646,7 +2694,7 @@ CLEAR_ARRAYS
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Fireshield\RASPFSD.spl~ ~override\RASPFSW.spl~
 
-ADD_SPELL ~override\RASPFSW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIED
+ADD_SPELL ~override\RASPFSW.spl~ 2 4  WIZARD_RADUZIEL_FIRESHIELD
 SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9999277
 TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 1 WRITE_LONG 0x034 4 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
@@ -2940,5 +2988,155 @@ PRETTY_PRINT_2DA
 
 COPY_EXISTING ~hidespl.2da~  override
 PRETTY_PRINT_2DA
+
+//New scrolls for Wizards (Emotion, Fireshield and Symbol)
+
+LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RADUZIEL_FIRESHIELD~ RET spell_1 = spell_res END
+LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RADUZIEL_EMOTION~    RET spell_2 = spell_res END
+LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RADUZIEL_SYMBOL~     RET spell_3 = spell_res END
+
+COPY_EXISTING ~SCRL1W.itm~ ~override/SCRLFSD.itm~
+SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9999277
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_1%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_1%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 STR_VAR resource = EVAL ~%spell_1%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1                               STR_VAR icon     = EVAL ~%spell_1%A~ END
+
+COPY_EXISTING ~SCRL1W.itm~ ~override/SCRLEMO.itm~
+SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999280 SAY DESC @9999280
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_2%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_2%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 STR_VAR resource = EVAL ~%spell_2%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1                               STR_VAR icon     = EVAL ~%spell_2%A~ END
+
+COPY_EXISTING ~SCRL9F.itm~ ~override/SCRLSYM.itm~
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_3%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_3%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 STR_VAR resource = EVAL ~%spell_3%~  END
+LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1                               STR_VAR icon     = EVAL ~%spell_3%A~ END
+
+CLEAR_ARRAYS
+
+ACTION_CLEAR_ARRAY	fireshield	ACTION_CLEAR_ARRAY	emotion	ACTION_CLEAR_ARRAY	symbol
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_FIRE_SHIELD_BLUE[ %TAB%%WNL%%LNL%%MNL%$]~)          BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FIRE_SHIELD_BLUE~     RET $fireshield(~blue~)      = spell_res END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_FIRE_SHIELD_RED[ %TAB%%WNL%%LNL%%MNL%$]~)	       BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FIRE_SHIELD_RED~      RET $fireshield(~red~)       = spell_res	END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_HOPELESSNESS[ %TAB%%WNL%%LNL%%MNL%$]~)	   BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET $emotion(~hopelessness~) = spell_res END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%%LNL%%MNL%$]~)	           BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_HOPE~         RET $emotion(~hope~)         = spell_res	END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	       BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_COURAGE~      RET $emotion(~courage~)      = spell_res END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	           BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_FEAR~         RET $emotion(~fear~)         = spell_res	END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_SYMBOL_DEATH[ %TAB%%WNL%%LNL%%MNL%$]~)	           BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SYMBOL_DEATH~         RET $symbol(~death~)         = spell_res	END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_SYMBOL_STUN[ %TAB%%WNL%%LNL%%MNL%$]~)	           BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SYMBOL_STUN~          RET $symbol(~stun~)          = spell_res	END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_SYMBOL_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	           BEGIN
+		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SYMBOL_FEAR~          RET $symbol(~fear~)          = spell_res	END
+	END
+	COPY_EXISTING_REGEXP	~^.+\.itm$~	override
+		PATCH_IF	SHORT_AT 0x1c = 11	BEGIN
+			READ_LONG	0x64	ab_off
+			READ_SHORT	0x68	ab_num
+			READ_LONG	0x6a	fx_off
+			FOR (i = 0; i < ab_num; ++i)	BEGIN
+				READ_SHORT	(ab_off + i * 0x38 + 0x1e)	fx_num
+				READ_SHORT	(ab_off + i * 0x38 + 0x20)	fx_idx
+				FOR	(j = 0; j < fx_num; ++j)	BEGIN
+					PATCH_IF	SHORT_AT (fx_off + (j + fx_idx) * 0x30) = 147	BEGIN
+						READ_ASCII	(fx_off + (j + fx_idx) * 0x30 + 0x14) resource	TO_UPPER resource
+						PATCH_MATCH	~%resource%~ WITH
+							$fireshield(~red~)	$fireshield(~blue~)	                                        BEGIN
+								TEXT_SPRINT $learn(~%SOURCE_RES%~) ~fireshield~
+							END
+							$emotion(~hopelessness~) $emotion(~hope~) $emotion(~courage~) $emotion(~fear~)	BEGIN
+								TEXT_SPRINT $learn(~%SOURCE_RES%~) ~emotion~
+							END
+							$symbol(~death~) $symbol(~stun~) $symbol(~fear~)	                            BEGIN
+								TEXT_SPRINT $learn(~%SOURCE_RES%~) ~symbol~
+							END
+							DEFAULT
+						END
+					END
+				END
+			END
+		END
+	BUT_ONLY
+	
+	COPY_EXISTING_REGEXP ~^.+\.cre$~ override
+		fireshield = 0	emotion = 0	symbol = 0
+		READ_LONG  0x2bc item_off
+		READ_SHORT 0x2c0 item_num
+		FOR (i = 0; i < item_num; ++i) BEGIN
+			READ_ASCII	(item_off + i * 0x14) resource TO_UPPER	resource
+			TEXT_SPRINT	type $learn(~%resource%~)	
+			PATCH_MATCH	~%type%~ WITH
+				~^fireshield$~	BEGIN WRITE_ASCII (item_off + i * 0x14) ~SCRLFSD~ #8 END
+				~^emotion$~	    BEGIN WRITE_ASCII (item_off + i * 0x14) ~SCRLEMO~ #8 END
+				~^symbol$~	    BEGIN WRITE_ASCII (item_off + i * 0x14) ~SCRLSYM~ #8 END
+				DEFAULT
+			END
+		END
+	BUT_ONLY
+	
+	COPY_EXISTING_REGEXP ~^.+\.are$~ override
+		fireshield = 0 emotion = 0 symbol = 0
+		READ_LONG  0x70	cont_off
+		READ_SHORT 0x74	cont_num
+		READ_SHORT 0x78	item_off
+		FOR (i = 0; i < cont_num; ++i) BEGIN
+			READ_LONG	(cont_off + i * 0xc0 + 0x40) item_idx
+			READ_LONG	(cont_off + i * 0xc0 + 0x44) item_num
+			FOR	(j = 0; j < item_num; ++j)	BEGIN
+				READ_ASCII	(item_off + (j + item_idx) * 0x14) resource	TO_UPPER resource
+				TEXT_SPRINT	type $learn(~%resource%~)	
+				PATCH_MATCH	~%type%~ WITH
+					~^fireshield$~	BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~SCRLFSD~ #8 END
+					~^emotion$~	    BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~SCRLEMO~ #8 END
+					~^symbol$~	    BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~SCRLSYM~ #8 END
+					DEFAULT
+				END
+			END
+		END
+	BUT_ONLY
+		
+	COPY_EXISTING_REGEXP ~^.+\.sto$~ override
+		fireshield = 0 emotion = 0 symbol = 0
+		READ_LONG  0x34	item_off
+		READ_SHORT 0x38	item_num
+		FOR (i = 0; i < item_num; ++i) BEGIN
+			READ_ASCII	(item_off + i * 0x1c) resource TO_UPPER	resource
+			TEXT_SPRINT	type $learn(~%resource%~)	
+			PATCH_MATCH	~%type%~ WITH
+				~^fireshield$~  BEGIN ++fireshield	END
+				~^emotion$~	    BEGIN ++emotion	    END
+				~^symbol$~	    BEGIN ++symbol	    END
+				DEFAULT
+			END
+		END
+		PATCH_IF fireshield BEGIN
+			ADD_STORE_ITEM	~SCRLFSD~ LAST #1 #0 #0 ~IDENTIFIED~ #2
+			PHP_EACH learn AS base => sub BEGIN	PATCH_IF	~%sub%~ STRING_EQUAL ~fireshield~ BEGIN	REMOVE_STORE_ITEM ~%base%~ END END
+		END
+		PATCH_IF emotion	BEGIN
+			ADD_STORE_ITEM	~SCRLEMO~ LAST #1 #0 #0 ~IDENTIFIED~ #2
+			PHP_EACH learn AS base => sub BEGIN	PATCH_IF	~%sub%~ STRING_EQUAL ~emotion~    BEGIN	REMOVE_STORE_ITEM ~%base%~ END END
+		END
+		PATCH_IF symbol     BEGIN
+			ADD_STORE_ITEM	~SCRLSYM~ LAST #1 #0 #0 ~IDENTIFIED~ #2
+			PHP_EACH learn AS base => sub BEGIN	PATCH_IF	~%sub%~ STRING_EQUAL ~symbol~     BEGIN	REMOVE_STORE_ITEM ~%base%~ END END
+		END
+	BUT_ONLY
 
 //EoF
