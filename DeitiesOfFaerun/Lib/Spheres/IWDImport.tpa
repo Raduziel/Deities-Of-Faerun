@@ -2966,6 +2966,7 @@ LPF ALTER_ITEM_HEADER INT_VAR                                                 ST
 WRITE_ASCIIE 0x3a ~%spell_2%A~ #8
 
 COPY_EXISTING ~SCRL9F.itm~ ~override/SCRLSYM.itm~
+SAY NAME1 @9999281 SAY NAME2 @9999281 SAY UNIDENTIFIED_DESC @9999283 SAY DESC @9999283
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_3%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_3%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 STR_VAR resource = EVAL ~%spell_3%~  END
