@@ -2954,20 +2954,23 @@ SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_1%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_1%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 STR_VAR resource = EVAL ~%spell_1%~  END
-LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1                               STR_VAR icon     = EVAL ~%spell_1%A~ END
+LPF ALTER_ITEM_HEADER INT_VAR                                                 STR_VAR icon     = EVAL ~%spell_1%A~ END
+WRITE_ASCIIE 0x3a ~%spell_1%A~ #8
 
 COPY_EXISTING ~SCRL1W.itm~ ~override/SCRLEMO.itm~
 SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999280 SAY DESC @9999280
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_2%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_2%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 STR_VAR resource = EVAL ~%spell_2%~  END
-LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1                               STR_VAR icon     = EVAL ~%spell_2%A~ END
+LPF ALTER_ITEM_HEADER INT_VAR                                                 STR_VAR icon     = EVAL ~%spell_2%A~ END
+WRITE_ASCIIE 0x3a ~%spell_2%A~ #8
 
 COPY_EXISTING ~SCRL9F.itm~ ~override/SCRLSYM.itm~
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_3%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_3%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 STR_VAR resource = EVAL ~%spell_3%~  END
-LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1                               STR_VAR icon     = EVAL ~%spell_3%A~ END
+LPF ALTER_ITEM_HEADER INT_VAR                                                 STR_VAR icon     = EVAL ~%spell_3%A~ END
+WRITE_ASCIIE 0x3a ~%spell_3%A~ #8
 
 CLEAR_ARRAYS
 
