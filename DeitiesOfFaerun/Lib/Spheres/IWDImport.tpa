@@ -2949,7 +2949,7 @@ LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RADUZIEL_FIRESHIELD~ RE
 LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RADUZIEL_EMOTION~    RET spell_2 = spell_res END
 LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RADUZIEL_SYMBOL~     RET spell_3 = spell_res END
 
-COPY_EXISTING ~SCRL1W.itm~ ~override/SCRLFSD.itm~
+COPY_EXISTING ~SCRL1W.itm~ ~override/RASCFSD.itm~
 SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999277 SAY DESC @9999277
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_1%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_1%~  END
@@ -2957,7 +2957,7 @@ LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 ST
 LPF ALTER_ITEM_HEADER INT_VAR                                                 STR_VAR icon     = EVAL ~%spell_1%A~ END
 WRITE_ASCIIE 0x3a ~%spell_1%A~ #8
 
-COPY_EXISTING ~SCRL1W.itm~ ~override/SCRLEMO.itm~
+COPY_EXISTING ~SCRL1W.itm~ ~override/RASCEMO.itm~
 SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999280 SAY DESC @9999280
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_2%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_2%~  END
@@ -2965,7 +2965,7 @@ LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 148 ST
 LPF ALTER_ITEM_HEADER INT_VAR                                                 STR_VAR icon     = EVAL ~%spell_2%A~ END
 WRITE_ASCIIE 0x3a ~%spell_2%A~ #8
 
-COPY_EXISTING ~SCRLB1.itm~ ~override/SCRLSYM.itm~
+COPY_EXISTING ~SCRLB1.itm~ ~override/RASCSYM.itm~
 SAY NAME1 @9999281 SAY NAME2 @9999281 SAY UNIDENTIFIED_DESC @9999283 SAY DESC @9999283
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 146 STR_VAR resource = EVAL ~%spell_3%~  END
 LPF ALTER_ITEM_EFFECT INT_VAR silent = 1 check_headers = 1 match_opcode = 147 STR_VAR resource = EVAL ~%spell_3%~  END
@@ -3040,9 +3040,9 @@ ACTION_CLEAR_ARRAY	fireshield	ACTION_CLEAR_ARRAY	emotion	ACTION_CLEAR_ARRAY	symb
 			READ_ASCII	(item_off + i * 0x14) resource TO_UPPER	resource
 			TEXT_SPRINT	type $learn(~%resource%~)	
 			PATCH_MATCH	~%type%~ WITH
-				~^fireshield$~	BEGIN WRITE_ASCII (item_off + i * 0x14) ~SCRLFSD~ #8 END
-				~^emotion$~	    BEGIN WRITE_ASCII (item_off + i * 0x14) ~SCRLEMO~ #8 END
-				~^symbol$~	    BEGIN WRITE_ASCII (item_off + i * 0x14) ~SCRLSYM~ #8 END
+				~^fireshield$~	BEGIN WRITE_ASCII (item_off + i * 0x14) ~RASCFSD~ #8 END
+				~^emotion$~	    BEGIN WRITE_ASCII (item_off + i * 0x14) ~RASCEMO~ #8 END
+				~^symbol$~	    BEGIN WRITE_ASCII (item_off + i * 0x14) ~RASCSYM~ #8 END
 				DEFAULT
 			END
 		END
@@ -3060,9 +3060,9 @@ ACTION_CLEAR_ARRAY	fireshield	ACTION_CLEAR_ARRAY	emotion	ACTION_CLEAR_ARRAY	symb
 				READ_ASCII	(item_off + (j + item_idx) * 0x14) resource	TO_UPPER resource
 				TEXT_SPRINT	type $learn(~%resource%~)	
 				PATCH_MATCH	~%type%~ WITH
-					~^fireshield$~	BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~SCRLFSD~ #8 END
-					~^emotion$~	    BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~SCRLEMO~ #8 END
-					~^symbol$~	    BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~SCRLSYM~ #8 END
+					~^fireshield$~	BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~RASCFSD~ #8 END
+					~^emotion$~	    BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~RASCEMO~ #8 END
+					~^symbol$~	    BEGIN WRITE_ASCII (item_off + (j + item_idx) * 0x14) ~RASCSYM~ #8 END
 					DEFAULT
 				END
 			END
@@ -3084,15 +3084,15 @@ ACTION_CLEAR_ARRAY	fireshield	ACTION_CLEAR_ARRAY	emotion	ACTION_CLEAR_ARRAY	symb
 			END
 		END
 		PATCH_IF fireshield BEGIN
-			ADD_STORE_ITEM	~SCRLFSD~ LAST #1 #0 #0 ~IDENTIFIED~ #2
+			ADD_STORE_ITEM	~RASCFSD~ LAST #1 #0 #0 ~IDENTIFIED~ #2
 			PHP_EACH learn AS base => sub BEGIN	PATCH_IF	~%sub%~ STRING_EQUAL ~fireshield~ BEGIN	REMOVE_STORE_ITEM ~%base%~ END END
 		END
 		PATCH_IF emotion	BEGIN
-			ADD_STORE_ITEM	~SCRLEMO~ LAST #1 #0 #0 ~IDENTIFIED~ #2
+			ADD_STORE_ITEM	~RASCEMO~ LAST #1 #0 #0 ~IDENTIFIED~ #2
 			PHP_EACH learn AS base => sub BEGIN	PATCH_IF	~%sub%~ STRING_EQUAL ~emotion~    BEGIN	REMOVE_STORE_ITEM ~%base%~ END END
 		END
 		PATCH_IF symbol     BEGIN
-			ADD_STORE_ITEM	~SCRLSYM~ LAST #1 #0 #0 ~IDENTIFIED~ #2
+			ADD_STORE_ITEM	~RASCSYM~ LAST #1 #0 #0 ~IDENTIFIED~ #2
 			PHP_EACH learn AS base => sub BEGIN	PATCH_IF	~%sub%~ STRING_EQUAL ~symbol~     BEGIN	REMOVE_STORE_ITEM ~%base%~ END END
 		END
 	BUT_ONLY
