@@ -27,7 +27,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAShauRC~
 		clascolr = ~66 79 254 41 6~
-		clswpbon = ~1 0 3~
+		clswpbon = ~1 0 2~
 		clsrcreq = ~1 0 1 0 0 0 0~
 END
 
@@ -60,7 +60,7 @@ WRITE_ASCII 0x058 ~SHAUL~
 
 //Restrictions
 		  
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ override
 PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 		READ_BYTE 0x18 flags1
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN

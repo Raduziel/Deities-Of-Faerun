@@ -27,7 +27,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAClanFC~
 		clascolr = ~205 5 79 41 105~
-		clswpbon = ~1 0 3~
+		clswpbon = ~1 0 2~
 		clsrcreq = ~0 0 0 1 0 0 0~
 END
 

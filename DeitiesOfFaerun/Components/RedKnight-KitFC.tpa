@@ -27,7 +27,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RARedKFC~
 		clascolr = ~198 29 47 46 195~
-		clswpbon = ~1 0 3~
+		clswpbon = ~1 0 2~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -60,7 +60,7 @@ WRITE_ASCII 0x058 ~REDKL~
 
 //Restrictions
 
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ override
 PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 		READ_BYTE 0x18 flags1
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN

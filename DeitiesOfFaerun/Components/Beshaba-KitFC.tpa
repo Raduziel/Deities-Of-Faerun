@@ -27,7 +27,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RABeshFC~
 		clascolr = ~44 139 117 140 119~
-		clswpbon = ~1 0 3~
+		clswpbon = ~1 0 2~
 		clsrcreq = ~1 0 1 0 1 1 1~
 END
 
