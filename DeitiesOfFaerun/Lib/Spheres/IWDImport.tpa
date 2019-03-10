@@ -225,12 +225,16 @@ BUT_ONLY
 		LAF	MODIFY_POISON_WEAPON INT_VAR parameter2 = mirrorskin END
 		
 		COPY_EXISTING_REGEXP ~^.+\.itm$~ override TO_UPPER SOURCE_RES
+		PATCH_MATCH	SHORT_AT 0x1c WITH	BEGIN
+			1 2 3 4 6 7 8 9 10 11 12 13 32 33 34 35 36 37 38 39 40 BEGIN END
+		DEFAULT
 			PATCH_MATCH	~%SOURCE_RES%~	WITH
-				~AROW07~ ~AX1H07~ ~REAVER~ ~OHREAVER~ ~SW1H60~ ~SW1H61~ ~CARSOMYR~ ~SW2H10~ ~SW2H19~ ~DEVA~ ~DEVAEVIL~ ~OHNHAMM1~ ~OHNSLNG1~ ~STAF11~	BEGIN	END
-			DEFAULT		
-			LPF	BLOCK_EFFECTS INT_VAR parameter2 = mirror aoe_gaze = 1 END
+				~AROW07~ ~AX1H07~ ~REAVER~ ~OHREAVER~ ~SW1H60~ ~SW1H61~ ~CARSOMYR~ ~SW2H10~ ~SW2H19~ ~DEVA~ ~DEVAEVIL~ ~OHNHAMM1~ ~OHNSLNG1~ ~STAF11~ BEGIN	END
+				DEFAULT		
+				LPF	BLOCK_EFFECTS INT_VAR parameter2 = mirror aoe_gaze = 1 END
+			END
 		END
-		BUT_ONLY
+	BUT_ONLY
 		
 		COPY_EXISTING_REGEXP ~.*\.itm$~ override LPF BLOCK_EFFECT INT_VAR opcode = 25 parameter2 = mirrorskin END BUT_ONLY
 	    COPY_EXISTING_REGEXP ~.*\.itm$~ override LPF BLOCK_EFFECT INT_VAR opcode = 78 parameter2 = anyskin	  END BUT_ONLY
@@ -242,7 +246,7 @@ BUT_ONLY
 	
 /* Importing IWD Spells */
 
-ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-B_Spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
+ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~setup-TenyaThermidor.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
 
 //Curse
 
