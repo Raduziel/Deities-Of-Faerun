@@ -1,6 +1,6 @@
 
 	//	UI-based Spell Learning tool for Sorcerers/Shamans
-	//	v0.53
+	//	v0.55
 	
 	//	This function is designed to implement a UI-based Spell selection system, as an alternative to dialog-based Spell Selection, utilizing
 	//		the Sequencer/Contingency spell selection menu to learn arcane or divine spells.  Innate abilities "can" be learned this way as well,
@@ -117,7 +117,7 @@
 	//	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	DEFINE_ACTION_FUNCTION	SETUP_SEQUENCER_MENU	BEGIN
-		OUTER_SET	version = 52	OUTER_SET	current = 0
+		OUTER_SET	version = 55	OUTER_SET	current = 0
 		ACTION_IF FILE_EXISTS_IN_GAME ~M_SQTOOL.LUA~	BEGIN
 			COPY_EXISTING ~M_SQTOOL.LUA~ override	REPLACE_EVALUATE ~[%WNL%^]\-\-SEQUENCER_MENU_VERSION:\([0-9]+\)[%WNL%]~	BEGIN	SET	current = MATCH1	END ~%MATCH0%~ BUT_ONLY
 		END	ELSE	BEGIN
@@ -284,7 +284,7 @@
 			if known < num + mod then
 				v.resref = v.resref .. postfix
 			else
-				v.resref = 'M_SQMENU'
+				v.resref = {}
 			end
 		end
 		SequencerMenuKnown = known
@@ -369,6 +369,7 @@
 			COUNT_2DA_COLS	cols	READ_2DA_ENTRIES_NOW	~READ~	cols
 			TEXT_SPRINT	else1	~~	TEXT_SPRINT	text	~~
 			FOR	(i = 1; i < cols; ++i)	BEGIN
+				SET	old = 0
 				TEXT_SPRINT	text	~~~~~%text%%else1%if currentSpellLevel == %i% and level >~~~~~
 				FOR	(j = 0; j < READ; ++j)	BEGIN
 					READ_2DA_ENTRY_FORMER	~READ~	j i value
@@ -383,12 +384,15 @@
 					READ_2DA_ENTRY_FORMER	~READ~	j i value
 					PATCH_IF	old < value	BEGIN
 						READ_2DA_ENTRY_FORMER	~READ~	j 0 level
-						PATCH_IF	old > 0	BEGIN
+//						PATCH_IF	old > 0	BEGIN
 							TEXT_SPRINT	text	~~~~~%text%%else2%if level < %level% then; num = %old%;~~~~~
 							TEXT_SPRINT	else2	~ else~
-						END
+//						END
 						SET	old = value
 					END
+				END
+				PATCH_IF	old = 0	BEGIN
+					TEXT_SPRINT	text	~~~~~%text% 0 then; num = 0~~~~~
 				END
 				TEXT_SPRINT	text	~~~~~%text% else; num = %value% end%WNL%%TAB%%TAB%~~~~~
 				TEXT_SPRINT	else1	~else~
@@ -453,7 +457,7 @@
 				OUTER_SPRINT	prefix ~SPPR~
 				ACTION_IF (maxlevel > 7) OR (maxlevel < 0)	BEGIN	OUTER_SET	maxlevel = 7	END
 				ACTION_IF	!(~%spelltable%~ STRING_EQUAL ~~) AND !FILE_EXISTS_IN_GAME ~%spelltable%.2da~	BEGIN
-					WARN	~Spelltable (%spelltable%.2DA) does not exist in game, using class default (SPLSRCKN.2DA).~
+					WARN	~Spelltable (%spelltable%.2DA) does not exist in game, using class default (SPLSHMKN.2DA).~
 					OUTER_SPRINT	spelltable ~~
 				END
 				ACTION_IF	~%spelltable%~ STRING_EQUAL ~~	BEGIN
