@@ -2390,7 +2390,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SHIELD_OF_LATHANDER~	RET
 
 COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999196 SAY NAME2 @9999196 SAY UNIDENTIFIED_DESC @9999197 SAY DESC @9999197
-LPF	DELETE_EFFECT	   STR_VAR match_opcode = 324 END
+LPF	DELETE_EFFECT STR_VAR match_opcode = 324 END
 
 END
 
@@ -2401,7 +2401,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GREATER_SHIELD_OF_LATHAN
 
 COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999198 SAY NAME2 @9999198 SAY UNIDENTIFIED_DESC @9999199 SAY DESC @9999199
-LPF	DELETE_EFFECT	   STR_VAR match_opcode = 324 END
+LPF	DELETE_EFFECT STR_VAR match_opcode = 324 END
 
 END
 
@@ -2412,14 +2412,14 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ENTROPY_SHIELD~	RET	spel
 
 COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999200 SAY NAME2 @9999200 SAY UNIDENTIFIED_DESC @9999201 SAY DESC @9999201
-LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPWI327~ resource = EVAL $res_of_label(~WIZARD_ICELANCE~)			 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE2~		 								 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RAAURI1~		 								 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~SPPR503~		 								 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_LANCE_OF_DISRUPTION~) 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~CLERIC_ALICORN_LANCE~) 		 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~CLERIC_SUNSCORCH~) 		 	 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_MORDENKAINENS_FORCE_MISSILES~) END
+LPF	ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPWI327~ resource = EVAL $res_of_label(~WIZARD_ICELANCE~)			 		    END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE2~		 								 		    END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RAAURI1~		 								 		    END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~SPPR503~		 								 		    END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_LANCE_OF_DISRUPTION~) 		    END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~CLERIC_ALICORN_LANCE~) 		 		END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~CLERIC_SUNSCORCH~) 		 	 		END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_MORDENKAINENS_FORCE_MISSILES~) END
 
 END
 
