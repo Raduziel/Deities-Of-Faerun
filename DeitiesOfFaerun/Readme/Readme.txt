@@ -1182,6 +1182,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Umberlee: Talos
 
+- Ulutiu: Helm
+
 - Valkur: Lathander
 
 - Velsharoon: Talos, Wizard
@@ -1357,7 +1359,7 @@ A kit may have either major or minor access to a sphere. Major access means that
     Slow Poison
 
 3 - Mold Touch
-    Spire Growth
+    Spike Growth
 
 4 - Call Woodland Beings
     Neutralize Poison
