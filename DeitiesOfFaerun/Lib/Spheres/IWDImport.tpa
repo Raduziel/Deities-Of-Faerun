@@ -21,6 +21,19 @@ END
 
 END
 
+//Fix for Chaotic Commands
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CHAOTIC_COMMANDS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CHAOTIC_COMMANDS~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 101 match_parameter2 = 213                                                                           END
+LPF CLONE_EFFECT  INT_VAR silent = 1 match_opcode = 296                                        STR_VAR match_resource = ~SPMINDAT~ resource = ~SPSPMAZE~ END
+LPF CLONE_EFFECT  INT_VAR silent = 1 match_opcode = 101 match_parameter2 = 5 parameter2 = 213                                                            END
+LPF CLONE_EFFECT  INT_VAR silent = 1 match_opcode = 169 match_parameter2 = 1 parameter2 = 78                                                             END
+
+END
+
 //Haste and Slow Changes
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
