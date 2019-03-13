@@ -366,4 +366,28 @@ BUT_ONLY IF_EXISTS
 
 END
 
+//Fix for an issue with the Flail of Ages
+
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+
+COPY_EXISTING ~BLUN30.itm~  override
+LPF DELETE_EFFECT   INT_VAR    match_opcode = 324                      match_parameter2 = 55                                                           END
+LPF DELETE_EFFECT   INT_VAR    match_opcode = 324                      match_parameter2 = 77                                                           END
+LPF DELETE_EFFECT   INT_VAR    match_opcode =  12                      match_parameter2 = 2097152                                                      END
+LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 324 target = 2                 parameter2 = 55                              STR_VAR resource = ~BLUN30~  END
+LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 324 target = 2                 parameter2 = 77                              STR_VAR resource = ~BLUN30~  END
+LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode =  12 target = 2 parameter1 = 2  parameter2 = 2097152 timing = 1 dicesize = 6                              END
+BUT_ONLY IF_EXISTS
+
+COPY_EXISTING ~BLUN30C.itm~ override
+LPF DELETE_EFFECT   INT_VAR    match_opcode = 324                      match_parameter2 = 55                                                           END
+LPF DELETE_EFFECT   INT_VAR    match_opcode = 324                      match_parameter2 = 77                                                           END
+LPF DELETE_EFFECT   INT_VAR    match_opcode =  12                      match_parameter2 = 2097152                                                      END
+LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 324 target = 2                 parameter2 = 55                              STR_VAR resource = ~BLUN30C~ END
+LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 324 target = 2                 parameter2 = 77                              STR_VAR resource = ~BLUN30C~ END
+LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode =  12 target = 2 parameter1 = 1  parameter2 = 2097152 timing = 1 dicesize = 6 STR_VAR                      END
+BUT_ONLY IF_EXISTS
+
+END
+
 //EoF
