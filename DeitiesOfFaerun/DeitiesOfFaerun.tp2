@@ -647,6 +647,18 @@ REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Shiallia-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Shiallia-KitRC.tpa~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		        GLYPHSCRIBER OF DENEIR (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999052
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Deneir-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Deneir-KitCM.tpa~
+
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -820,8 +832,6 @@ BEGIN @999999015
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~Helarine_BGEE.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~28~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Kelemvor-Helarine.tpa~
 
-/*
-
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -834,7 +844,7 @@ BEGIN @999999016
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~FinchNPC.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~45~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Deneir-Finch.tpa~
 
-
+/*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
