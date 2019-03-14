@@ -1090,7 +1090,7 @@ Casting Time: 5
 Area of Effect: 12-ft. radius
 Saving Throw: None
 
-Through this spell, the Glyphscriber creates a glyph that will remain flying still until triggered. Any enemy entering the glyph's area will make it explode, revealing invisible and hidden foes as well as making them glow, imposing a -1 penalty to their AC.
+Through this spell, the Glyphscriber creates a glyph that will remain flying still until triggered. Any enemy entering the glyph's area will make it explode, revealing invisible and hidden foes as well as making them glow for the next 3 rounds, imposing a -1 penalty to their AC.
 
 
 
