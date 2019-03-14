@@ -4656,4 +4656,84 @@ Features:
 - May cast Animal Summoning III once per day as a special ability, starting at level 10.
 - May cast Heal once per day as a special ability, starting at level 13.~ 
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Glyphscriber of Deneir
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4301 = ~glyphscriber of deneir~
+@4302 = ~Glyphscriber of Deneir~
+@4303 = ~GLYPHSCRIBER OF DENEIR: Deneir (Deh-NEER) is the patron of the artist, the illuminator, the scribe, and the cartographer. His is the power to accurately render and describe, to write and to read, and to pass on information. He counts as his foes all who destroy, hide, or distort knowledge. He works for Oghma making sure that all that is known and true is accurately recorded in the Great Library. He is portrayed in religious art as a balding old sage with a huge, flared beard whose eyes are in some way peculiar: Sometimes they are a vibrant violet with triangular pupils, at other times they are a brilliant ice blue, and at yet others they are blazing orbs of blue fire. He is always shown holding a quill pen and carrying or writing in or on a book, scroll, or parchment.
+
+Deneir is caught up in the recording, filing, indexing and maintaining of all that was ever written or depicted. He can appear very absent-minded, and often trails off in midsentence because his mind is racing along other trails of thought even as he speaks. For all his acquaintance with book knowledge, he can be out of touch with the world as it is now—in particular, human customs in practice: He tends to use mannerisms of speech and hold to points of etiquette that disappeared long ago from Faerûn — or he may (unintentionally humorously) mix his slang terms or try to sound in vogue and actually sound profoundly dated. When he gets going on a story, he can eat up immense amounts of his listeners' time as he diverges seemingly endlessly in parenthetical substories. For all their length, his tales always convey some vital piece of knowledge to those who wait them out.
+
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: Club, mace, flail, morningstar, warhammer, sling.
+
+Major: All, Healing, Protection, Thought, Travelers, Divination, Vocal.
+Minor: Necromantic, Creation, Weave, Time.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Immune to the effect of cursed scrolls, glyphs and symbols.
+- May use the Glyph of Revealing special ability once per day, starting at level 3.
+- May cast Glyph of Warding once per day as a special ability, starting at level 5.
+- May cast Dispel Magic once per day as a special ability, starting at level 7.
+- May cast Symbol once per day as a special ability, starting at level 15.
+
+GLYPH OF REVEALING
+
+The Glyphscriber creates a glyph that may reveal hidden creatures that passes by it.~
+@4304 = ~Holy Symbol of Deneir~
+@4305 = ~Only the most worthy and devoted servants of the Lord of all Glyphs and Images are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4306 = ~Glyph of Revealing~
+@4307 = ~Glyph of Revealing
+(Altering, Evocation)
+
+Level: 2
+Sphere: Divination
+Range: 60
+Duration: Permanent until discharged
+Casting Time: 5
+Area of Effect: 12-ft. radius
+Saving Throw: None
+
+Through this spell, the Glyphscriber creates a glyph that will remain flying still until triggered. Any enemy entering the glyph's area will make it explode, revealing invisible and hidden foes as well as making them glow, imposing a -1 penalty to their AC.~
+@4308 = ~GLYPHSCRIBER OF DENEIR (C/M): Deneir (Deh-NEER) is the patron of the artist, the illuminator, the scribe, and the cartographer. His is the power to accurately render and describe, to write and to read, and to pass on information. He counts as his foes all who destroy, hide, or distort knowledge. He works for Oghma making sure that all that is known and true is accurately recorded in the Great Library. He is portrayed in religious art as a balding old sage with a huge, flared beard whose eyes are in some way peculiar: Sometimes they are a vibrant violet with triangular pupils, at other times they are a brilliant ice blue, and at yet others they are blazing orbs of blue fire. He is always shown holding a quill pen and carrying or writing in or on a book, scroll, or parchment.
+
+Deneir is caught up in the recording, filing, indexing and maintaining of all that was ever written or depicted. He can appear very absent-minded, and often trails off in midsentence because his mind is racing along other trails of thought even as he speaks. For all his acquaintance with book knowledge, he can be out of touch with the world as it is now—in particular, human customs in practice: He tends to use mannerisms of speech and hold to points of etiquette that disappeared long ago from Faerûn — or he may (unintentionally humorously) mix his slang terms or try to sound in vogue and actually sound profoundly dated. When he gets going on a story, he can eat up immense amounts of his listeners' time as he diverges seemingly endlessly in parenthetical substories. For all their length, his tales always convey some vital piece of knowledge to those who wait them out.
+
+Armor: All up to and including splint mail. No shield allowed.
+Weapon: Club, mace, flail, morningstar, warhammer, sling.
+
+Major: All, Healing, Protection, Thought, Travelers, Divination, Vocal.
+Minor: Necromantic, Creation, Weave, Time.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Immune to the effect of cursed scrolls, glyphs and symbols.
+- May use the Glyph of Revealing special ability once per day, starting at level 3.
+- May cast Glyph of Warding once per day as a special ability, starting at level 5.
+- May cast Dispel Magic once per day as a special ability, starting at level 7.
+- May cast Symbol once per day as a special ability, starting at level 15.
+
+GLYPH OF REVEALING
+
+The Glyphscriber creates a glyph that may reveal hidden creatures that passes by it.~
+
 //EoF
