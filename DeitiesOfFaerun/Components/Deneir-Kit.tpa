@@ -77,14 +77,14 @@ END
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
 COPY_EXISTING ~RADENEF.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL10~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL11~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL12~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL13~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL14~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL16~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL17~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL18~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL10~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL11~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL12~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL13~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL14~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL16~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL17~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 9 STR_VAR resource = ~SCRL18~ END
 
 END
 
