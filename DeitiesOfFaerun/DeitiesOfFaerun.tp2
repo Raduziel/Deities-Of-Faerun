@@ -832,6 +832,7 @@ BEGIN @999999015
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~Helarine_BGEE.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~28~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Kelemvor-Helarine.tpa~
 
+/*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -844,7 +845,6 @@ BEGIN @999999016
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~FinchNPC.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~45~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Deneir-Finch.tpa~
 
-/*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
