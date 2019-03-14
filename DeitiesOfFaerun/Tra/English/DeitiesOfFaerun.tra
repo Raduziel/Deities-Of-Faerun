@@ -199,7 +199,7 @@ Turn/Command Undead: Yes.
 Features:
 
 - Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
-- Immune to any spell that alters the emotions (including charm and fear).
+- Gains immunity to any spell that alters the emotions (including charm and fear).
 - May use the Dark Aura special ability once per day, starting at level 7.
 - May use the Phantasmal Killer special ability once per day, starting at level 10.
 - May use the Instill Madness special ability once per day, starting at level 15.
@@ -292,7 +292,7 @@ Turn/Command Undead: Yes.
 Features:
 
 - Gains +1 Saving Throw bonus against spells using Illusion/Phantasm magic.
-- Immune to any spell that alters the emotions (including charm and fear).
+- Gains immunity to any spell that alters the emotions (including charm and fear).
 - May use the Dark Aura special ability once per day, starting at level 7.
 - May use the Phantasmal Killer special ability once per day, starting at level 10.
 - May use the Instill Madness special ability once per day, starting at level 15.
@@ -658,7 +658,7 @@ Turn/Command Undead: Yes (see below).
 
 Features:
 
-- Immune to Entangle and Web.
+- Gains immunity to Entangle and Web.
 - May cast Barkskin once per day as a special ability, starting at level 3.
 - May cast Call Woodland Beings once per day as a special ability, starting at level 7.
 - May cast Animal Summoning III once per day as a special ability, starting at level 13.
@@ -714,7 +714,7 @@ Turn/Command Undead: Yes (see below).
 
 Features:
 
-- Immune to Entangle and Web.
+- Gains immunity to Entangle and Web.
 - May cast Barkskin once per day as a special ability, starting at level 3.
 - May cast Call Woodland Beings once per day as a special ability, starting at level 7.
 - May cast Animal Summoning III once per day as a special ability, starting at level 13.
@@ -742,7 +742,7 @@ Turn/Command Undead: Yes (see below).
 
 Features:
 
-- Immune to Entangle and Web.
+- Gains immunity to Entangle and Web.
 - May cast Barkskin once per day as a special ability, starting at level 3.
 - May cast Call Woodland Beings once per day as a special ability, starting at level 7.
 - May cast Animal Summoning III once per day as a special ability, starting at level 13.
@@ -1429,7 +1429,7 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Immune to wild, dead and miscast magic.
+- Gains immunity to wild, dead and miscast magic.
 - Gains a bonus of +2 bonus to <PRO_HISHER> Saving Throws vs. Spells.
 - May cast Dispel Magic as a special ability once per day, starting at level 5.
 - Gains a bonus of +2 bonus to spellcasting time, starting at level 7.
@@ -1464,7 +1464,7 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Immune to wild, dead and miscast magic.
+- Gains immunity to wild, dead and miscast magic.
 - Gains a bonus of +2 bonus to <PRO_HISHER> Saving Throws vs. Spells.
 - May cast Dispel Magic as a special ability once per day, starting at level 5.
 - Gains a bonus of +2 bonus to spellcasting time, starting at level 7.
@@ -2034,7 +2034,7 @@ Turn/Command Undead: Yes.
 Features:
 
 - Gains Infravision.
-- Immune to all Blindness effects and spells.
+- Gains immunity to all Blindness effects and spells.
 - May use the Moonbeam special ability once per day, starting at level 3.
 - May cast Moonblade once per day as a special ability, starting at level 5.
 - May cast True Seeing once per day as a special ability, starting at level 10.
@@ -2106,7 +2106,7 @@ Turn/Command Undead: Yes.
 Features:
 
 - Gains Infravision.
-- Immune to all Blindness effects and spells.
+- Gains immunity to all Blindness effects and spells.
 - May use the Moonbeam special ability once per day, starting at level 3.
 - May cast Moonblade once per day as a special ability, starting at level 5.
 - May cast True Seeing once per day as a special ability, starting at level 10.
@@ -2140,7 +2140,7 @@ Turn/Command Undead: Yes.
 Features:
 
 - Gains Infravision.
-- Immune to all Blindness effects and spells.
+- Gains immunity to all Blindness effects and spells.
 - May use the Moonbeam special ability once per day, starting at level 3.
 - May cast Moonblade once per day as a special ability, starting at level 5.
 - May cast True Seeing once per day as a special ability, starting at level 10.
@@ -2182,7 +2182,7 @@ Turn/Command Undead: No.
 
 Features:
 
-- Immune to disease.
+- Gains immunity to disease.
 - Gains a bonus of +4 bonus to <PRO_HISHER> Saving Throws vs. Poison.
 - May use the Poison Weapon special ability once per day, starting at level 5.
 - May use the Poison Touch special ability once per day, starting at level 7.
@@ -2244,7 +2244,7 @@ Turn/Command Undead: No.
 
 Features:
 
-- Immune to disease.
+- Gains immunity to disease.
 - Gains a bonus of +4 bonus to <PRO_HISHER> Saving Throws vs. Poison.
 - May use the Poison Weapon special ability once per day, starting at level 5.
 - May use the Poison Touch special ability once per day, starting at level 7.
@@ -2275,7 +2275,7 @@ Turn/Command Undead: No.
 
 Features:
 
-- Immune to disease.
+- Gains immunity to disease.
 - Gains a bonus of +4 bonus to <PRO_HISHER> Saving Throws vs. Poison.
 - May use the Poison Weapon special ability once per day, starting at level 5.
 - May use the Poison Touch special ability once per day, starting at level 7.
@@ -2530,7 +2530,7 @@ Turn/Command Undead: No.
 
 Features:
 
-- Immune to fear.
+- Gains immunity to fear.
 - May cast Cloak of Fear once per day as a special ability, starting at level 5.
 - May cast Mental Domination once per day as a special ability, starting at level 7.
 - May use the Mystic Lash special ability once per day, starting at level 10.
@@ -2589,7 +2589,7 @@ Turn/Command Undead: No.
 
 Features:
 
-- Immune to fear.
+- Gains immunity to fear.
 - May cast Cloak of Fear once per day as a special ability, starting at level 5.
 - May cast Mental Domination once per day as a special ability, starting at level 7.
 - May use the Mystic Lash special ability once per day, starting at level 10.
@@ -4678,7 +4678,7 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Immune to the effect of cursed scrolls, glyphs and symbols.
+- Gains immunity to the effect of cursed scrolls, glyphs and symbols.
 - May use the Glyph of Revealing special ability once per day, starting at level 3.
 - May cast Glyph of Warding once per day as a special ability, starting at level 5.
 - May cast Dispel Magic once per day as a special ability, starting at level 7.
@@ -4726,7 +4726,7 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Immune to the effect of cursed scrolls, glyphs and symbols.
+- Gains immunity to the effect of cursed scrolls, glyphs and symbols.
 - May use the Glyph of Revealing special ability once per day, starting at level 3.
 - May cast Glyph of Warding once per day as a special ability, starting at level 5.
 - May cast Dispel Magic once per day as a special ability, starting at level 7.
@@ -4735,5 +4735,76 @@ Features:
 GLYPH OF REVEALING
 
 The Glyphscriber creates a glyph that may reveal hidden creatures that pass by it.~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Trailblazer of Marthammor
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4401 = ~trailblazer of marthammor~
+@4402 = ~Trailblazer of Marthammor~
+@4403 = ~TRAILBLAZER OF MARTHAMMOR: Marthammor Duin (Mar-THAM-more DOO-ihn), known on other worlds as Muamman Duathal (Moo-AM-man Doo-AHthuhl) is the protector of dwarves who make their lives in human society in the North, rather than keeping to mountain or deep-delve enclaves. Commonly known as Wanderers, all such dwarves make offerings to him in appeasement for good fortune. Marthammor is the patron of adventurers and explorers and all those dwarves who travel or live far from the dwarven homelands, allowing them to find routes to escape or to victory in their travels. He also watches over dwarven craftsfolk of any good alignment, keeping their homes and persons safe. His secondary aspect as god of lightning is unique among dwarves. The Finder-of-Trails is a growing cult in the North, and he may be evolving into an intermediate power.
+
+Marthammor is seldom at home in his Cavern of Rest, which is guarded by the souls of those dwarves who perished while traveling aboveground and by boars and war dogs trained by the god himself. The Cavern lies in the ever-shifting underways of Nidavellir, third layer of Ysgard. Marthammor spends most of his time wandering the northern reaches of Faerûn in his avatar form. Marthammor sometimes sends his avatar to act as a guide or to warn urban dwarves of trouble brewing in their homelands. More often, he sends omens in the form of lightning, subsidence on trails, sudden rockfalls, or priestly divination through stone-flinging (the pattern of a fist is a common sign).
+
+Marthammor is almost gnomelike in his approach to life; he's open and friendly, and he's definitely curious what lies over the next horizon. He has a keen interest in the doings of the multiverse as a whole, and he is far less xenophobic than most dwarves or their deities.
+
+Marthammor is one of the youngest powers of the
+
+Armor: Any.
+Weapon: Bludgeoning only.
+
+Major: All, Healing, Protection, Combat, Air, Traveler. 
+Minor: Animal, Earth, Divination, Vocal.
+
+Turn/Command Undead: No.
+
+Features:
+
+- Gains immunity to all forms of lightning and electrical damage.
+- May cast Free Action once per day as a special ability, starting at level 1.
+- May cast Call Lightning once per day as a special ability, starting at level 3.
+- May cast Lightning Bolt once per day as a special ability, starting at level 5. Gains another use at level 10.
+- May cast Haste once per day as a special ability, starting at level 7. May target only themselves and has no Fatigue penalty.
+- May cast Dimension Door once per day as a special ability, starting at level 10.
+- Gains immunity to Maze and Imprisonment, starting at level 15.~
+@4404 = ~Holy Symbol of Marthammor Duin~
+@4405 = ~Only the most worthy and devoted servants of the Finder-of-Trails are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4406 = ~TRAILBLAZER OF MARTHAMMOR (F/C): Marthammor Duin (Mar-THAM-more DOO-ihn), known on other worlds as Muamman Duathal (Moo-AM-man Doo-AHthuhl) is the protector of dwarves who make their lives in human society in the North, rather than keeping to mountain or deep-delve enclaves. Commonly known as Wanderers, all such dwarves make offerings to him in appeasement for good fortune. Marthammor is the patron of adventurers and explorers and all those dwarves who travel or live far from the dwarven homelands, allowing them to find routes to escape or to victory in their travels. He also watches over dwarven craftsfolk of any good alignment, keeping their homes and persons safe. His secondary aspect as god of lightning is unique among dwarves. The Finder-of-Trails is a growing cult in the North, and he may be evolving into an intermediate power.
+
+Marthammor is seldom at home in his Cavern of Rest, which is guarded by the souls of those dwarves who perished while traveling aboveground and by boars and war dogs trained by the god himself. The Cavern lies in the ever-shifting underways of Nidavellir, third layer of Ysgard. Marthammor spends most of his time wandering the northern reaches of Faerûn in his avatar form. Marthammor sometimes sends his avatar to act as a guide or to warn urban dwarves of trouble brewing in their homelands. More often, he sends omens in the form of lightning, subsidence on trails, sudden rockfalls, or priestly divination through stone-flinging (the pattern of a fist is a common sign).
+
+Marthammor is almost gnomelike in his approach to life; he's open and friendly, and he's definitely curious what lies over the next horizon. He has a keen interest in the doings of the multiverse as a whole, and he is far less xenophobic than most dwarves or their deities.
+
+Marthammor is one of the youngest powers of the
+
+Armor: Any.
+Weapon: Bludgeoning only.
+
+Major: All, Healing, Protection, Combat, Air, Traveler. 
+Minor: Animal, Earth, Divination, Vocal.
+
+Turn/Command Undead: No.
+
+Features:
+
+- Gains immunity to all forms of lightning and electrical damage.
+- May cast Free Action once per day as a special ability, starting at level 1.
+- May cast Call Lightning once per day as a special ability, starting at level 3.
+- May cast Lightning Bolt once per day as a special ability, starting at level 5. Gains another use at level 10.
+- May cast Haste once per day as a special ability, starting at level 7. May target only themselves and has no Fatigue penalty.
+- May cast Dimension Door once per day as a special ability, starting at level 10.
+- Gains immunity to Maze and Imprisonment, starting at level 15.~
 
 //EoF
