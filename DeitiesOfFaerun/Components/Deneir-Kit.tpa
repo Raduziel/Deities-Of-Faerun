@@ -41,18 +41,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSDENE.spl~
+COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl~ ~override/RAHSDENE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSDENE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSAZUT.itm~ SAY NAME1 @4304 SAY NAME2 @4304 SAY DESC @4305
+COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm~ ~override/RAHSAZUT.itm~ SAY NAME1 @4304 SAY NAME2 @4304 SAY DESC @4305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RADene + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~DENES~
 WRITE_ASCII 0x058 ~DENEL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RADENEF.spl" override
+COPY ~DeitiesOfFaerun\Spl\RADENEF.spl~ override
 PATCH_FOR_EACH label IN
 	~CLERIC_GLYPH_OF_WARDING~
 	~TRAP_GLYPH_OF_WARDING~
@@ -70,29 +70,32 @@ PATCH_FOR_EACH label IN
 BEGIN
 	PATCH_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]%label%[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 		LPF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = EVAL ~%label%~	RET	spell_res	END
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 	END
 END
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
 COPY_EXISTING ~RADENEF.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL10~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL11~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL12~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL13~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL14~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL16~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL17~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 timing = 9 STR_VAR resource = ~SCRL18~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL10~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL11~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL12~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL13~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL14~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL16~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL17~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = ~SCRL18~ END
 
 END
 
 //Glyph of Revealing
 
-COPY "DeitiesOfFaerun\Spl\RADENE1.spl" override
+ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RADENE1.PRO~
+
+COPY ~DeitiesOfFaerun\Spl\RADENE1.spl~ override
 SAY NAME1 @4306 SAY NAME2 @4306 SAY UNIDENTIFIED_DESC @4307 SAY DESC @4307 
-  
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RADENE1% END 
+ 
 //Glyph of Warding
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_GLYPH_OF_WARDING[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -159,8 +162,8 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO277% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL "%RA_Stunned%"  END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL "%RA_Hopeless%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL ~%RA_Stunned%~  END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL ~%RA_Hopeless%~ END
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716C.BAM~	~override\%spell_res%C.BAM~
@@ -275,8 +278,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RADene~) parameter2 = 9 END
 				END
 				DEFAULT
