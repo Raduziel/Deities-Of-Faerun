@@ -1075,8 +1075,27 @@ Saving Throw: None
 
 By using this spell the Iceguardian communes with the spirit of the Great White Bear. The caster's Strength is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.
 
+====================================================================================================================================================================
+
+26) DENEIR
+
+Glyph of Revealing
+(Altering, Evocation)
+
+Level: 2
+Sphere: Divination
+Range: 60
+Duration: Permanent until discharged
+Casting Time: 5
+Area of Effect: 12-ft. radius
+Saving Throw: None
+
+Through this spell, the Glyphscriber creates a glyph that will remain flying still until triggered. Any enemy entering the glyph's area will make it explode, revealing invisible and hidden foes as well as making them glow, imposing a -1 penalty to their AC.
+
+
 
 ====================================================================================================================================================================
+
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
@@ -1089,7 +1108,6 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0
-
 
 
 ====================================================================================================================================================================
@@ -1127,6 +1145,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Clangeddin: Helm, Fighter
                                                                 
 - Cyric: Talos, Thief
+
+- Deneir: Lathander, Wizard
 
 - Eldath: Lathander, Druid
 
