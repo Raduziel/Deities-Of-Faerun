@@ -1,0 +1,145 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						         Trailblazer of Marthammor
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAMart~
+    ~RAMart 0 0 0 1 1 1 0 1~
+    ~RAMart 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMart 3 3 11 3 9 3~
+	~RAMart 0 0 0 0 0 0~
+	~RAMart 3 3 11 3 9 3~
+    ~RAMart 3 3 11 3 9 3~
+	~RAMart 0 0 0 1 0 0 0 0 0~
+	~RAMart 1 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RAMart.2da~
+	~K_C_D~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT18 SHLD23 HELM07 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * * HAMM09 *~
+	SAY @4401
+	SAY @4402
+	SAY @4403
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAMart~
+		clascolr = ~1 6 22 43 110~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~0 0 0 1 0 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAMART~  clabfile = ~RAMART~	END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMART.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@44999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMART~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMART.itm~ SAY NAME1 @4404 SAY NAME2 @4404 SAY DESC @4405
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMart + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MARTS~
+WRITE_ASCII 0x058 ~MARTL~
+
+//Features
+
+COPY ~DeitiesOfFaerun\Spl\RAMARTF.spl~ override
+
+//Call Lightning
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CALL_LIGHTNING[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CALL_LIGHTNING~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMART2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Lightning Bolt
+		  
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LIGHTNING_BOLT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LIGHTNING_BOLT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMART3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Haste
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_HASTE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HASTE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMART4.spl~
+LPF ALTER_SPELL_HEADER  INT_VAR target = 5 range = 0  END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 93 END
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Dimension Door
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DIMENSION_DOOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DIMENSION_DOOR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMART5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAMart.2da~ ~override/RAMartFC.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAFMART~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMart~)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~MARTS~ ~MARTL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

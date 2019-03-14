@@ -1,0 +1,80 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						   Trailblazer of Marthammor - Fighter/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAMartFC~
+    ~RAMartFC 0 0 0 1 1 1 0 1~
+    ~RAMartFC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMartFC 3 3 11 3 9 3~
+	~RAMartFC 0 0 0 0 0 0~
+	~RAMartFC 3 3 11 3 9 3~
+    ~RAMartFC 3 3 11 3 9 3~
+	~RAMartFC 0 0 0 1 0 0 0 0 0~
+	~RAMartFC 0 0 0 0 0 0~
+	~override\RAMartFC.2da~
+	~K_FC_D~
+	~0x00000000 8~
+	~FC0~
+	~PLAT18 SHLD23 HELM07 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * * HAMM09 *~
+	SAY @4401
+	SAY @4402
+	SAY @4406
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAMartFC~
+		clascolr = ~1 6 22 43 110~
+		clswpbon = ~1 0 2~
+		clsrcreq = ~0 0 0 1 0 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAMartFC~
+      kit_clab = ~RAMartFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAMartFC%	classID = 8 STR_VAR	kitname = ~RAMART~  END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFMART.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@44999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCMART~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCMART.itm~ SAY NAME1 @4404 SAY NAME2 @4404 SAY DESC @4405
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMartFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MARTS~
+WRITE_ASCII 0x058 ~MARTL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMartFC~)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//EoF
