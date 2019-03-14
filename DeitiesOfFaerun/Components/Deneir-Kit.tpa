@@ -7,7 +7,7 @@
 
 ADD_KIT ~RADene~
     ~RADene 0 0 0 0 1 1 0 1~
-    ~RADene 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 0 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RADene 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 0 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RADene 3 3 3 15 15 3~
 	~RADene 0 0 0 0 0 0~
 	~RADene 3 3 3 15 15 3~
@@ -45,7 +45,7 @@ COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl~ ~override/RAHSDENE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSDENE~ END
 
-COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm~ ~override/RAHSAZUT.itm~ SAY NAME1 @4304 SAY NAME2 @4304 SAY DESC @4305
+COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm~ ~override/RAHSDENE.itm~ SAY NAME1 @4304 SAY NAME2 @4304 SAY DESC @4305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RADene + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~DENES~
 WRITE_ASCII 0x058 ~DENEL~
