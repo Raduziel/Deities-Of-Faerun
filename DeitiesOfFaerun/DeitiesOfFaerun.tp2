@@ -659,6 +659,18 @@ REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Deneir-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Deneir-KitCM.tpa~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		        TRAILBLAZER OF MARTHAMMOR (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999053
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Marthammor-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Marthammor-KitFC.tpa~
+
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
