@@ -4755,7 +4755,7 @@ Marthammor is one of the youngest powers of the Morndinsamman, and as such the o
 Armor: Any.
 Weapon: Bludgeoning only.
 
-Major: All, Healing, Protection, Combat, Air, Traveler. 
+Major: All, Healing, Protection, Combat, Air, Travelers. 
 Minor: Animal, Earth, Divination, Vocal.
 
 Turn/Command Undead: No.
@@ -4792,7 +4792,7 @@ Marthammor is one of the youngest powers of the Morndinsamman, and as such the o
 Armor: Any.
 Weapon: Bludgeoning only.
 
-Major: All, Healing, Protection, Combat, Air, Traveler. 
+Major: All, Healing, Protection, Combat, Air, Travelers. 
 Minor: Animal, Earth, Divination, Vocal.
 
 Turn/Command Undead: No.
@@ -4806,5 +4806,71 @@ Features:
 - May cast Haste once per day as a special ability, starting at level 7. May target only themselves and has no Fatigue penalty.
 - May cast Dimension Door once per day as a special ability, starting at level 10.
 - Gains immunity to Maze and Imprisonment, starting at level 15.~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Hawkeye of Solonor
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4501 = ~hawkeye of solonor~
+@4502 = ~Hawkeye of Solonor~
+@4503 = ~HAWKEYE OF SOLONOR (R/C): Solonor Thelandira (SOE-lue-nohr Theh-LAN-dih-ruh) is the elven god of hunting, archery, and survival in wild and harsh places. The Great Archer's prowess with the bow is unmatched by any other power venerated in the Realms. Solonor is concerned with the integrity of nature and the balance between exploitation and agriculture on one hand and fallow, wild terrains on the other. Like Corellon Larethian and Fenmarel Mestarine, the Great Archer watches over the boundaries of elven lands. He instructs the Fair Folk in the art of hiding in and moving through natural foliage so as not to be detected as well as the art of archery and hunting. Solonor is primarily revered by elven and half-elven rangers, hunters, woodsmen, and fighters. In particular, elven hunters appeal to him for better catches or game and elven warriors trapped in hostile territory call on him for aid. In recent centuries a few humans, primarily hunters, have joined his faith as well.
+
+Solonor is allied with all the powers who collectively compose the Seldarine. In particular, the Great Archer works closely with Corellon Larethian, Fenmarel Mestarine, and Shevarash to defend the borders of elven homelands. In many tales, Fenmarel is said to be the brother of Solonor, and despite the former's estrangement from the Seldarine for which Solonor holds Lolth responsible, the Lone Wolf and the Great Archer are still close allies. Solonor has served as Shevarash's mentor since the green elf's apotheosis, and the two are united in their hatred of the Spider Queen and her followers, the drow, although the Great Archer is not as consumed with vengeance as the Night Hunter. Solonor and Rillifane Rallathil work closely to preserve and protect the natural world. Although the Great Archer is more tolerant of the slow growth of civilization than the Leaflord, a philosophical difference that sometimes spills over into the relations between their two faiths, they are united in their efforts to preserve the great forests of the Fair Folk from the relentless expansion of humankind. Solonor and Eilistraee are true kindred spirits, with some myths depicting them as half-siblings and other myths suggesting a burgeoning romantic relationship (much to the dismay of both Shevarash and Fenmarel). Among the non elven powers, Solonor is closely allied with other powers concerned with the natural world, including Mielikki, Lady of Forests, another goddess with which he has been romantically linked, Silvanus the Oakfather, Skerrit the Forester, and the various Animals Lords, particularly those concerned with hunting such as the Cat Lord and Wolf Lord. Solonor despises powers that favor despoliation over nature, and actively opposes the efforts of such gods and their followers. Solonor's greatest foes are Malar and Talos, followed closely by Lolth and members of the Unseelie Court. The Beastlord's eternal, unquenchable bloodlust is a vile perversion of every principle Solonor holds dear. Likewise, the Destroyer's hunger for destruction works to tear apart the delicate balance the Greater Archer has striven to forge and maintain. The Queen of Air and Darkness, much like the Spider Queen, embodies the corruption that can take root even in the hearts of even those of fey ancestry and against which the Great Archer stands ever vigilant.
+
+Solonor is always in pursuit of quarry, and he rarely remains in one location for very long. Unlike many hunters, the Great Archer stalks prey only out of concern for the overall balance between the species and to destroy evil-doers, particularly the drow. His serious, sometimes grim, demeanor reflects the difficulty he faces in forging a workable compromise between the competing forces of civilization and wilderness, instinct and knowledge, and savagery and domesticity. Solonor's word is his bond, and his pledge is never given lightly. Solonor does not close to do battle with an enemy, but tracks and pursues instead, firing arrows from a never-empty quiver. The favorite tactic of this deity, should he anticipate battling a particularly dangerous foe, is to physically touch that being and then retreat. Once by himself again, he can then manufacture a special arrow of slaying designed especially to kill that one opponent, should it strike home. He then hunts his quarry relentlessly, hoping to bring him down in a single shot. Many fiends from the Lower Planes have felt the bite of Solonor's deadly arrows.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Animal, Protection, Combat, Plant, Travelers. 
+Minor: Healing, Air, Sun.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- May achieve Mastery in Shortbows and Longbows.
+- May use the Aim special ability at will, starting at level 1.
+- May use the Shattering Shot special ability at will, starting at level 5.
+- May use the Rapid Shot special ability at will, starting at level 7.
+- May use the Hail of Arrows special ability at will, starting at level 11.
+
+AIM
+
+While using this ability, the Hawkeye gains +1 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and -0.5 APR. This special ability can't be combined with any other and works only with bows (both long and short).
+
+SHATTERING SHOT
+
+While using this ability, the Hawkeye imposes to <PRO_HISHER> target a non-cumulative penalty of -1 to AC, delivers +2 extra damage, but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
+
+RAPID SHOT
+
+While using this ability, the Hawkeye gains +1 APR, but takes a a penalty of -2 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
+
+HAIL OF ARROWS
+
+While using this ability, the Hawkeye's APR is set to 5, but <PRO_HESHE> also takes a penalty of -5 to Thac0 and can't move. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4504 = ~Holy Symbol of Solonor Thelandira~
+@4505 = ~Only the most worthy and devoted servants of the Great Archer are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4506 = ~Aim~
+@4507 = ~While using this ability, the Hawkeye gains +1 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and -0.5 APR. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4508 = ~Shattering Shot~
+@4509 = ~While using this ability, the Hawkeye imposes to <PRO_HISHER> target a non-cumulative penalty of -1 to AC, delivers +2 extra damage, but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4510 = ~Rapid Shot~
+@4511 = ~While using this ability, the Hawkeye gains +1 APR, but takes a a penalty of -2 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4512 = ~Hail of Arrows~
+@4513 = ~While using this ability, the Hawkeye's APR is set to 5, but <PRO_HESHE> also takes a penalty of -5 to Thac0 and can't move. This special ability can't be combined with any other and works only with bows (both long and short).~
 
 //EoF
