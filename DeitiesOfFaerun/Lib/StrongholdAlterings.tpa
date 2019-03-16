@@ -35,6 +35,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASHAR~)	BEGIN	~RASHAR~ => 0	~RASHARCM~ => 0	~RASHARCT~ => 0						END	//	Shar	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASHAU~)	BEGIN	~RASHAU~ => 0	~RASHAURC~ => 0										END	//	Shaundakul	->	Ranger
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASHIA~)	BEGIN	~RASHIA~ => 0	~RASHIARC~ => 0										END	//	Shiallia	->	Druid
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASOLO~)	BEGIN	~RASOLO~ => 0	                                                    END	//	Solonor	->	Ranger
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RASUNE~)	BEGIN	~RASUNE~ => 0	~RASUNECT~ => 0	~RASUNEFC~ => 0						END	//	Sune	->	Lathander, Bard
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATLNA~)	BEGIN	~RATLNA~ => 0	~RATLNACM~ => 0	~RATLNACT~ => 0						END	//	Talona	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RATALO~)	BEGIN	~RATALO~ => 0	~RATALOCM~ => 0	~RATALOFC~ => 0						END	//	Talos	->	Talos
@@ -197,6 +198,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~	RET	extend	negate	count	END	//	Shar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAU~	RET	extend	negate	count	END	//	Shaundakul
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHIA~	RET	extend	negate	count	END	//	Shiallia
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASOLO~	RET	extend	negate	count	END	//	Solonor
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~	RET	extend	negate	count	END	//	Talona
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~	RET	extend	negate	count	END	//	Talos
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
@@ -306,6 +308,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASELU~	RET	extend	negate	count	END	//	Selune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAU~	RET	extend	negate	count	END	//	Shaundakul
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHIA~	RET	extend	negate	count	END	//	Shiallia
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASOLO~	RET	extend	negate	count	END	//	Solonor
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~	RET	extend	negate	count	END	//	Sune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~	RET	extend	negate	count	END	//	Torm
@@ -413,6 +416,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAR~	RET	extend	negate	count	END	//	Shar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAU~	RET	extend	negate	count	END	//	Shaundakul
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHIA~	RET	extend	negate	count	END	//	Shiallia
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASOLO~	RET	extend	negate	count	END	//	Solonor
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASUNE~	RET	extend	negate	count	END	//	Sune
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATLNA~	RET	extend	negate	count	END	//	Talona
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATALO~	RET	extend	negate	count	END	//	Talos
@@ -508,6 +512,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASAVR~	RET	extend	negate	count	END	//	Savras
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAU~	RET	extend	negate	count	END	//	Shaundakul
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHIA~	RET	extend	negate	count	END	//	Shiallia
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASOLO~	RET	extend	negate	count	END	//	Solonor
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATEMP~	RET	extend	negate	count	END	//	Tempus
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
@@ -668,6 +673,7 @@ END
 	//	Kit Headers	Begin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAU~	RET	extend	negate	count	END	//	Shaundakul
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASOLO~	RET	extend	negate	count	END	//	Solonor
 	//	Kit Headers	End
 	ACTION_IF count > 1 BEGIN
 		COPY_EXISTING ~UHMAY01.DLG~ override
