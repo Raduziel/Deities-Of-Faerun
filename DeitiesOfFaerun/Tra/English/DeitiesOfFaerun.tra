@@ -4839,11 +4839,11 @@ Features:
 
 AIM
 
-While using this ability, the Hawkeye gains +1 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and -0.5 APR. This special ability can't be combined with any other and works only with bows (both long and short).
+While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and -0.5 APR. This special ability can't be combined with any other and works only with bows (both long and short).
 
 SHATTERING SHOT
 
-While using this ability, the Hawkeye imposes to <PRO_HISHER> target a non-cumulative penalty of -1 to AC, delivers +2 extra damage, but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
+While using this ability, the Hawkeye delivers +3 extra damage, but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
 
 RAPID SHOT
 
@@ -4865,9 +4865,9 @@ Equipped abilities:
 
 Weight: 0~
 @4506 = ~Aim~
-@4507 = ~While using this ability, the Hawkeye gains +1 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and -0.5 APR. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4507 = ~While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and -0.5 APR. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4508 = ~Shattering Shot~
-@4509 = ~While using this ability, the Hawkeye imposes to <PRO_HISHER> target a non-cumulative penalty of -1 to AC, delivers +2 extra damage, but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4509 = ~While using this ability, the Hawkeye delivers +3 extra damage, but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4510 = ~Rapid Shot~
 @4511 = ~While using this ability, the Hawkeye gains +1 APR, but takes a a penalty of -2 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4512 = ~Hail of Arrows~
