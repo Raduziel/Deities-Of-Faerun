@@ -1,0 +1,136 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Hawkeye of Solonor
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RASolo~
+    ~RASolo 0 1 1 1 1 0 1 1~
+    ~RASolo 0 1 1 1 1 0 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RASolo 13 13 14 3 14 3~
+	~RASolo 0 0 0 0 0 0~
+	~RASolo 13 13 14 3 14 3~
+    ~RASolo 13 13 14 3 14 3~
+	~RASolo 0 0 0 1 0 0 1 0 0~
+	~RASolo 0 0 0 0 0 0~
+	~DeitiesOfFaerun\Tables\RASolo.2da~
+	~K_CR_E K_CR_HE~
+	~0x00000000 18~
+	~CR0~
+	~LEAT19 * HELM16 * RING29 RING31 CLCK27 BOOT04 AMUL27 BRAC10 BELT03 * * * * * * BLUN24 WASLING *~
+	SAY @4501
+	SAY @4502
+	SAY @4503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RASolo~
+		clascolr = ~251 43 8 91 9~
+		clswpbon = ~1 0 2~
+		clsrcreq = ~0 1 1 0 0 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RASolo~
+      kit_clab = ~RASolo~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RASolo% classID = 18 STR_VAR kitname = ~RASOLO~ kitname2 = ~RASOLO~  END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSOLO.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSOLO~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSOLO.itm~ SAY NAME1 @4504 SAY NAME2 @4504 SAY DESC @4505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASolo + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~SOLOS~
+WRITE_ASCII 0x058 ~SOLOL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun\Spl\RASOLO1.spl~ override
+SAY NAME1 @4506 SAY NAME2 @4506 SAY UNIDENTIFIED_DESC @4507 SAY DESC @4507
+LPF AT_WILL END
+
+COPY ~DeitiesOfFaerun\Spl\RASOLO2.spl~ override
+SAY NAME1 @4508 SAY NAME2 @4508 SAY UNIDENTIFIED_DESC @4509 SAY DESC @4509
+LPF AT_WILL END
+
+COPY ~DeitiesOfFaerun\Spl\RASOLO3.spl~ override
+SAY NAME1 @4510 SAY NAME2 @4510 SAY UNIDENTIFIED_DESC @4511 SAY DESC @4511
+LPF AT_WILL END
+
+COPY ~DeitiesOfFaerun\Spl\RASOLO4.spl~ override
+SAY NAME1 @4512 SAY NAME2 @4512 SAY UNIDENTIFIED_DESC @4513 SAY DESC @4513
+LPF AT_WILL END
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 106 107 115  BEGIN
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1                                                              timing = 1 STR_VAR resource = ~RASOLO1~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASolo~) parameter2 = 109 timing = 2 STR_VAR resource = ~RASOLO1~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1                                                              timing = 1 STR_VAR resource = ~RASOLO2~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASolo~) parameter2 = 109 timing = 2 STR_VAR resource = ~RASOLO2~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1                                                              timing = 1 STR_VAR resource = ~RASOLO3~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASolo~) parameter2 = 109 timing = 2 STR_VAR resource = ~RASOLO3~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1                                                              timing = 1 STR_VAR resource = ~RASOLO4~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 318 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASolo~) parameter2 = 109 timing = 2 STR_VAR resource = ~RASOLO4~ END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~SOLOS~ ~SOLOL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~SOLOAIM~ ~SOLORAPI~ ~SOLOHAIL~ ~SOLOSHAT~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
