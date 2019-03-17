@@ -4839,7 +4839,7 @@ Features:
 
 AIM
 
-While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and have <PRO_HISHER> APR set to 1. This special ability can't be combined with any other and works only with bows (both long and short).
+While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and takes a penalty of -2 to Initiative and -1 to APR (minimum of 1 APR is maintained) for the next round. This special ability can't be combined with any other and works only with bows (both long and short).
 
 SHATTERING SHOT
 
@@ -4865,12 +4865,13 @@ Equipped abilities:
 
 Weight: 0~
 @4506 = ~Aim~
-@4507 = ~While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and a penalty of -2 to Initiative and have <PRO_HISHER> APR set to 1 for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4507 = ~While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and takes a penalty of -2 to Initiative and -1 to APR (minimum of 1 APR is maintained) for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4508 = ~Shattering Shot~
 @4509 = ~While using this ability, the Hawkeye delivers +3 extra damage, but takes a penalty of -3 to Thac0 for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4510 = ~Rapid Shot~
 @4511 = ~While using this ability, the Hawkeye gains +1 APR, but takes a a penalty of -2 to Thac0 for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4512 = ~Hail of Arrows~
 @4513 = ~While using this ability, the Hawkeye's APR is set to 5, but <PRO_HESHE> also takes a penalty of -3 to Thac0 and can't move for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4514 = ~Effect ready.~
 
 //EoF
