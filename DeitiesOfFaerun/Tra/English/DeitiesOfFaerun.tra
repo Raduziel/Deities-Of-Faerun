@@ -204,15 +204,15 @@ Features:
 - May use the Phantasmal Killer special ability once per day, starting at level 10.
 - May use the Instill Madness special ability once per day, starting at level 15.
 
-DARK AURA:
+DARK AURA
 
 The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.
 
-PHANTASMAL KILLER:
+PHANTASMAL KILLER
 
 The Strifeleader creates an illusion that reflects the target's worst fear, scaring, injuring or even killing it.
 
-INSTILL MADNESS:
+INSTILL MADNESS
 
 As the wizard spell Feeblemind, except that it has a touch range.~
 @304 = ~Holy Symbol of Cyric~
@@ -297,16 +297,15 @@ Features:
 - May use the Phantasmal Killer special ability once per day, starting at level 10.
 - May use the Instill Madness special ability once per day, starting at level 15.
 
-DARK AURA:
+DARK AURA
 
 The Strifeleader creates an aura that helps evil-aligned and undermines good-aligned creatures. Neutral aligned creatures are not affected.
 
-
-PHANTASMAL KILLER:
+PHANTASMAL KILLER
 
 The Strifeleader creates an illusion that reflects the target's worst fear, scaring, injuring or even killing it.
 
-INSTILL MADNESS:
+INSTILL MADNESS
 
 As the wizard spell Feeblemind, except that it has a touch range.~
 
@@ -999,7 +998,7 @@ Features:
 - May use the special ability Boon of Lathander once per day, starting at level 7.
 - May cast False Dawn as a special ability once per day, starting at level 9.
 
-BOON OF LATHANDER:
+BOON OF LATHANDER
 
 The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.
 
@@ -1081,7 +1080,7 @@ Features:
 - May use the special ability Boon of Lathander once per day, starting at level 7.
 - May cast False Dawn as a special ability once per day, starting at level 9.
 
-BOON OF LATHANDER:
+BOON OF LATHANDER
 
 The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.
 
@@ -1112,7 +1111,7 @@ Features:
 - May use the special ability Boon of Lathander once per day, starting at level 7.
 - May cast False Dawn as a special ability once per day, starting at level 9.
 
-BOON OF LATHANDER:
+BOON OF LATHANDER
 
 The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.
 
@@ -1213,7 +1212,7 @@ Features:
 - May use the Legend Lore special ability once per day, starting at level 10.
 - Gains permanently the benefits of Free Action at level 12.
 
-LEGEND LORE:
+LEGEND LORE
 
 The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip cursed items, neutralize poisons and cure diseases.~
 @1204 = ~Holy Symbol of Oghma~
@@ -1259,7 +1258,7 @@ Features:
 - May use the Legend Lore special ability once per day, starting at level 10.
 - Gains permanently the benefits of Free Action at level 12.
 
-LEGEND LORE:
+LEGEND LORE
 
 The Lorekeeper boosts <PRO_HISHER> Lore, learning how to use any item, unequip cursed items, neutralize poisons and cure diseases.~
 
@@ -2040,11 +2039,11 @@ Features:
 - May cast True Seeing once per day as a special ability, starting at level 10.
 - May use the Shooting Star special ability once per day, starting at level 15.
 
-MOONBEAM:
+MOONBEAM
 
 The Silverstar call a beam of light that blinds the target and forbids it from becoming invisible.
 
-SHOOTING STAR:
+SHOOTING STAR
 
 The Silverstar throws a shooting star upon an area, causing massive damage to all creatures within.~
 @2004 = ~Holy Symbol of Selûne~
@@ -2112,11 +2111,11 @@ Features:
 - May cast True Seeing once per day as a special ability, starting at level 10.
 - May use the Shooting Star special ability once per day, starting at level 15.
 
-MOONBEAM:
+MOONBEAM
 
 The Silverstar call a beam of light that blinds the target and forbids it from becoming invisible.
 
-SHOOTING STAR:
+SHOOTING STAR
 
 The Silverstar throws a shooting star upon an area, causing massive damage to all creatures within.~
 @2011 = ~SILVERSTAR OF SELÛNE (C/M): When Selûne (Seh-LOON-eh) journeys to the Realms, she is said to appear in many forms and is depicted in religious art as everything from a female face on a lunar disk to a dusky-skinned woman with wide, radiant eyes and long ivory-colored hair to a matronly, middle-aged woman whose dark hair is streaked with gray. In Durpar, Estagund, and Var the Golden, Selûne is worshiped as part of the Adama, the Durparian concept of a world spirit that embraces and enfolds the divine essence that is part of all beings. Here she is known as Lucha, She Who Guides. Lucha oversees connections and relationships, guiding herdsmen to good pastures, blessing marriages, helping lost ships at sea, and ensuring safe births. It can be safely said that as the moon changes, so does the nature of the moon goddess.
@@ -2146,11 +2145,11 @@ Features:
 - May cast True Seeing once per day as a special ability, starting at level 10.
 - May use the Shooting Star special ability once per day, starting at level 15.
 
-MOONBEAM:
+MOONBEAM
 
 The Silverstar call a beam of light that blinds the target and forbids it from becoming invisible.
 
-SHOOTING STAR:
+SHOOTING STAR
 
 The Silverstar throws a shooting star upon an area, causing massive damage to all creatures within.~
 
@@ -2190,7 +2189,7 @@ Features:
 - May cast Poison once per day as a special ability, starting at level 10.
 - May cast Cloud of Pestilence once per day as a special ability, starting at level 15.
 
-POISON TOUCH:
+POISON TOUCH
 
 The Malagent delivers a maleficent poison that gets worse every round.~
 @2104 = ~Holy Symbol of Talona~
@@ -2252,7 +2251,7 @@ Features:
 - May cast Poison once per day as a special ability, starting at level 10.
 - May cast Cloud of Pestilence once per day as a special ability, starting at level 15.
 
-POISON TOUCH:
+POISON TOUCH
 
 The Malagent delivers a maleficent poison that gets worse every round.~
 @2109 = ~MALAGENT OF TALONA (C/M): Talona (Tah-LOW-nah), one of the Dark Gods, is often depicted as a withered old crone with a scarred, tattooed face in religious texts. Where she walks, misfortune and death follow. She is an odd deity. Sages have described her as having the personality of a petulant, greedy child trapped in the body of a once-beautiful woman now scarred by horrific disease and ravaged by age: She is alternately desirous of attention at any cost like a small child and aloof like a wounded paramour who has been discarded by her love.
@@ -2283,7 +2282,7 @@ Features:
 - May cast Poison once per day as a special ability, starting at level 10.
 - May cast Cloud of Pestilence once per day as a special ability, starting at level 15.
 
-POISON TOUCH:
+POISON TOUCH
 
 The Malagent delivers a maleficent poison that gets worse every round.~
 
@@ -2316,23 +2315,23 @@ Features:
 - May cast Symbol, Pain once per day as a special ability, starting at level 15.
 - May use the Ensnarement special ability once per day, starting at level 20.
 
-TOUCH OF LOVIATAR:
+TOUCH OF LOVIATAR
 
 The Pain inflicts a great pain on <PRO_HISHER> target.
 
-WHIP OF FLAME:
+WHIP OF FLAME
 
 A whip made of fire strikes one creature and may let it on fire.
 
-WHIP OF PAIN:
+WHIP OF PAIN
 
 The Pain materializes a whip that puts the target on pain upon touch.
 
-TOUCH OF TORMENT:
+TOUCH OF TORMENT
 
 The target gets damage and is afflicted by an incapacitating pain. 
 
-ENSNAREMENT:
+ENSNAREMENT
 
 The Pain summons an Erinyes to serve <PRO_HIMHER>.~
 @2204 = ~Holy Symbol of Loviatar~
@@ -2444,23 +2443,23 @@ Features:
 - May cast Symbol, Pain once per day as a special ability, starting at level 15.
 - May use the Ensnarement special ability once per day, starting at level 20.
 
-TOUCH OF LOVIATAR:
+TOUCH OF LOVIATAR
 
 The Pain inflicts a great pain on <PRO_HISHER> target.
 
-WHIP OF FLAME:
+WHIP OF FLAME
 
 A whip made of fire strikes one creature and may let it on fire.
 
-WHIP OF PAIN:
+WHIP OF PAIN
 
 The Pain materializes a whip that puts the target on pain upon touch.
 
-TOUCH OF TORMENT:
+TOUCH OF TORMENT
 
 The target gets damage and is afflicted by an incapacitating pain. 
 
-ENSNAREMENT:
+ENSNAREMENT
 
 The Pain summons an Erinyes to serve <PRO_HIMHER>.~
 @2222 = ~PAIN OF LOVIATAR (C/M): Loviatar (Loh-VEE-a-tar), one of the Dark Gods, appears in her religion's art as a pale maiden dressed in white, pleated armor and carrying a bone-white wand, a whip, or a scourge that she uses as a weapon against her foes. She is venerated by torturers, sadists, and other twisted and evil people and creatures, including some non-humans who love to bully other non-humans. While he lived, Loviatar served Bhaal along with Talona, though the two goddesses are heated rivals. Loviatar loves to torment and tease Talona and has more than once expressed the opinion that by all rights Talona ought to and eventually will serve her.
@@ -2484,23 +2483,23 @@ Features:
 - May cast Symbol, Pain once per day as a special ability, starting at level 15.
 - May use the Ensnarement special ability once per day, starting at level 20.
 
-TOUCH OF LOVIATAR:
+TOUCH OF LOVIATAR
 
 The Pain inflicts a great pain on <PRO_HISHER> target.
 
-WHIP OF FLAME:
+WHIP OF FLAME
 
 A whip made of fire strikes one creature and may let it on fire.
 
-WHIP OF PAIN:
+WHIP OF PAIN
 
 The Pain materializes a whip that puts the target on pain upon touch.
 
-TOUCH OF TORMENT:
+TOUCH OF TORMENT
 
 The target gets damage and is afflicted by an incapacitating pain. 
 
-ENSNAREMENT:
+ENSNAREMENT
 
 The Pain summons an Erinyes to serve <PRO_HIMHER>.~
 
@@ -2535,7 +2534,7 @@ Features:
 - May cast Mental Domination once per day as a special ability, starting at level 7.
 - May use the Mystic Lash special ability once per day, starting at level 10.
 
-MYSTIC LASH:
+MYSTIC LASH
 
 The Dreadruler creates a whip that delivers electrical damage and may stun, paralyze, hurl or cut the target.~
 @2304 = ~Holy Symbol of Bane~
@@ -2594,7 +2593,7 @@ Features:
 - May cast Mental Domination once per day as a special ability, starting at level 7.
 - May use the Mystic Lash special ability once per day, starting at level 10.
 
-MYSTIC LASH:
+MYSTIC LASH
 
 The Dreadruler creates a whip that delivers electrical damage and may stun, paralyze, hurl or cut the target.~
 
@@ -2629,11 +2628,11 @@ Features:
 - May use the Plane Skipping special ability once per day, starting at level 10.
 - May cast Aerial Servant once per day as a special ability, starting at level 11.
 
-BONE DAGGER:
+BONE DAGGER
 
 The Deathstalker creates a dagger that has a slim chance of slaying any creature it strikes.
 
-PLANE SKIPPING:
+PLANE SKIPPING
 
 The Deathstalker steps into Gehenna and moves freely while others appear to be frozen in time. There's a slim chance that a Pit Fiend will follow the caster.~
 @2404 = ~Holy Symbol of Bhaal~
@@ -2697,11 +2696,11 @@ Features:
 - May use the Plane Skipping special ability once per day, starting at level 10.
 - May cast Aerial Servant once per day as a special ability, starting at level 11.
 
-BONE DAGGER:
+BONE DAGGER
 
 The Deathstalker creates a dagger that has a slim chance of slaying any creature it strikes.
 
-PLANE SKIPPING:
+PLANE SKIPPING
 
 The Deathstalker steps into Gehenna and moves freely while others appear to be frozen in time. There's a slim chance that a Pit Fiend will follow the caster.~
 
@@ -2734,11 +2733,11 @@ Features:
 - May use the Summon Minor Death special ability once per day, starting at level 10.
 - May use the Hand of Myrkul special ability once per day, starting at level 15.
 
-SUMMON MINOR DEATH:
+SUMMON MINOR DEATH
 
-This spell summons a powerful skeleton that stays at the Gray One's service for 1 turns.
+This spell summons a powerful skeleton that stays at the Gray One's service for 1 turn/level.
 
-HAND OF MYRKUL:
+HAND OF MYRKUL
 
 As the wizard spell Disintegrate, except that it has a touch range and a casting time of 1.~
 @2504 = ~Holy Symbol of Myrkul~
@@ -2801,11 +2800,11 @@ Features:
 - May use the Summon Minor Death special ability once per day, starting at level 10.
 - May use the Hand of Myrkul special ability once per day, starting at level 15.
 
-SUMMON MINOR DEATH:
+SUMMON MINOR DEATH
 
-This spell summons a powerful skeleton that stays at the Gray One's service for 1 turns.
+This spell summons a powerful skeleton that stays at the Gray One's service for 1 turn/level.
 
-HAND OF MYRKUL:
+HAND OF MYRKUL
 
 As the wizard spell Disintegrate, except that it has a touch range and a casting time of 1.~
 
@@ -2846,9 +2845,9 @@ CHILLING SCYTHE
 	
 Through this spell the Doomguide creates a magical scythe especially effective against the undead.
 
-SUMMON MINOR DEATH:
+SUMMON MINOR DEATH
 
-This spell summons a powerful skeleton that stays at the Doomguide's service for 1 turns.~
+This spell summons a powerful skeleton that stays at the Doomguide's service for 1 turn/level.~
 @2604 = ~Holy Symbol of Kelemvor~
 @2605 = ~Only the most worthy and devoted servants of the Judge of the Damned are granted these powerful holy symbols.
 	
@@ -2917,9 +2916,9 @@ CHILLING SCYTHE
 	
 Through this spell the Doomguide creates a magical scythe especially effective against the undead.
 
-SUMMON MINOR DEATH:
+SUMMON MINOR DEATH
 
-This spell summons a powerful skeleton that stays at the Doomguide's service for 1 turns.~
+This spell summons a powerful skeleton that stays at the Doomguide's service for 1 turn/level.~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -4497,7 +4496,7 @@ Features:
 - May cast Freezing Sphere once per day as a special ability, starting at level 15.
 - May never start or use fire.
 
-CALL UPON POLAR FURY:
+CALL UPON POLAR FURY
 
 The Iceguardian communes with the power of the Great White Bear, gaining some of its combat's features.~
 @4104 = ~Holy Symbol of Ulutiu~
@@ -4571,7 +4570,7 @@ Features:
 - May cast Freezing Sphere once per day as a special ability, starting at level 15.
 - May never start or use fire.
 
-CALL UPON POLAR FURY:
+CALL UPON POLAR FURY
 
 The Iceguardian communes with the power of the Great White Bear, gaining some of its combat's features.~
 
@@ -4843,15 +4842,15 @@ While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and 
 
 SHATTERING SHOT
 
-While using this ability, the Hawkeye delivers +3 extra damage, but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
+While using this ability, the Hawkeye delivers +3 extra damage but takes a penalty of -3 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
 
 RAPID SHOT
 
-While using this ability, the Hawkeye gains +1 APR, but takes a a penalty of -2 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
+While using this ability, the Hawkeye gains +1 APR but takes a penalty of -2 to Thac0. This special ability can't be combined with any other and works only with bows (both long and short).
 
 HAIL OF ARROWS
 
-While using this ability, the Hawkeye's APR is set to 5, but <PRO_HESHE> also takes a penalty of -3 to Thac0 and can't move. This special ability can't be combined with any other and works only with bows (both long and short).~
+While using this ability, the Hawkeye's APR is set to 5 but <PRO_HESHE> also takes a penalty of -3 to Thac0 and can't move. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4504 = ~Holy Symbol of Solonor Thelandira~
 @4505 = ~Only the most worthy and devoted servants of the Great Archer are granted these powerful holy symbols.
 	
@@ -4867,11 +4866,11 @@ Weight: 0~
 @4506 = ~Aim~
 @4507 = ~While using this ability, the Hawkeye gains +2 to critical hit rolls, Thac0 and takes a penalty of -2 to Initiative and -1 to APR (minimum of 1 APR is maintained) for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4508 = ~Shattering Shot~
-@4509 = ~While using this ability, the Hawkeye delivers +3 extra damage, but takes a penalty of -3 to Thac0 for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4509 = ~While using this ability, the Hawkeye delivers +3 extra damage but takes a penalty of -3 to Thac0 for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4510 = ~Rapid Shot~
-@4511 = ~While using this ability, the Hawkeye gains +1 APR, but takes a a penalty of -2 to Thac0 for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4511 = ~While using this ability, the Hawkeye gains +1 APR but takes a penalty of -2 to Thac0 for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4512 = ~Hail of Arrows~
-@4513 = ~While using this ability, the Hawkeye's APR is set to 5, but <PRO_HESHE> also takes a penalty of -3 to Thac0 and can't move for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
+@4513 = ~While using this ability, the Hawkeye's APR is set to 5 but <PRO_HESHE> also takes a penalty of -3 to Thac0 and can't move for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4514 = ~Effect ready.~
 
 //EoF
