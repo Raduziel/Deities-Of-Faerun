@@ -63,6 +63,8 @@ xiii) Give Every Class/Kit Four Weapon Slots // The warrior-like deities from Do
 
 KNOWN ISSUES:
 
+* The Fear Gaze from Shar's Eyebite can sometimes turn the target berserker. This is a problem with the Opcode.
+
 * Anomen will be able to get proficiencies as a kitless Fighter (5 slots in every weapon). There is nothing I can do about it. He is still bounded to equipment restriction, so be aware that a Watcher of Helm can only use bludgeoning weapons. Installing Kjeron's Dual-Class-Into-Kits fixes this.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1394,7 +1396,7 @@ A kit may have either major or minor access to a sphere. Major access means that
     Defensive Harmony
     Protection From Evil 10' Radius
 
-5 - Magic Resistance
+5 - Resist Magic
     Shield of Divine
     Undead Ward
 
@@ -1722,7 +1724,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 5 - Breach
     Lower Resistance
-    Magic Resistance
+    Resist Magic
 
 6 - Globe of Invulnerability
     Pierce Magic
