@@ -868,6 +868,7 @@ BEGIN @999999016
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~FinchNPC.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~45~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Deneir-Finch.tpa~
 
+*/
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -880,7 +881,6 @@ BEGIN @999999017
 REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (MOD_IS_INSTALLED ~Setup-TuraldNPC.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~46~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Marthammor-Turald.tpa~
 
-*/
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
