@@ -189,6 +189,17 @@ LPF	CLONE_EFFECT INT_VAR match_opcode = 38 opcode = 59 parameter1 = 100 paramete
 
 END
 
+//PnP Magic Resistance
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MAGIC_RESISTANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MAGIC_RESISTANCE~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999284 SAY DESC @9999285
+LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
+
+END
+
 //Fix for Physical Mirror (bug identified by Kotophey at Beamdog's Forum)
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PHYSICAL_MIRROR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
