@@ -103,19 +103,283 @@ COPY "DeitiesOfFaerun\Spl\RASHAR5.spl" override  SAY NAME1 @410 SAY UNIDENTIFIED
 
 COPY "DeitiesOfFaerun\Spl\RASHARE1.spl" override SAY NAME1 @412 SAY UNIDENTIFIED_DESC @412  //Charm Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Dominated%" END
-LPF CLONE_EFFECT INT_VAR match_opcode = 5  opcode = 142 parameter1 = 0 parameter2 = 43 END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 4; i <  7;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
+	END
+	FOR (i = 7; i < 10;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
+	END
+	FOR (i = 10; i < 13; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
+	END
+	FOR (i = 13; i < 16; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
+	END
+	FOR (i = 16; i < 19; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
+	END
+	FOR (i = 19; i < 22; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
+	END
+	FOR (i = 22; i < 25; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
+	END
+	FOR (i = 25; i < 28; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
+	END
+	FOR (i = 28; i < 31; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
+	END
+	FOR (i = 31; i < 34; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
+	END
+	FOR (i = 34; i < 37; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
+	END
+	FOR (i = 37; i < 40; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
+	END
+	FOR (i = 40; i < 43; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
+	END
+	FOR (i = 43; i < 46; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
+	END
+	FOR (i = 46; i < 49; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
+	END
+	FOR (i = 49; i < 51; ++i)	            BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
+	END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE2.spl" override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413  //Fear Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
-LPF CLONE_EFFECT INT_VAR match_opcode = 24 opcode = 142 parameter1 = 0 parameter2 = 36 END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 4; i <  7;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
+	END
+	FOR (i = 7; i < 10;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
+	END
+	FOR (i = 10; i < 13; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
+	END
+	FOR (i = 13; i < 16; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
+	END
+	FOR (i = 16; i < 19; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
+	END
+	FOR (i = 19; i < 22; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
+	END
+	FOR (i = 22; i < 25; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
+	END
+	FOR (i = 25; i < 28; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
+	END
+	FOR (i = 28; i < 31; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
+	END
+	FOR (i = 31; i < 34; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
+	END
+	FOR (i = 34; i < 37; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
+	END
+	FOR (i = 37; i < 40; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
+	END
+	FOR (i = 40; i < 43; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
+	END
+	FOR (i = 43; i < 46; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
+	END
+	FOR (i = 46; i < 49; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
+	END
+	FOR (i = 49; i < 51; ++i)	            BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
+	END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE3.spl" override SAY NAME1 @414 SAY UNIDENTIFIED_DESC @414  //Sicken Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_FoulDisease%" END
-LPF CLONE_EFFECT INT_VAR match_opcode = 78 opcode = 142 parameter1 = 0 parameter2 = 7  END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 4; i <  7;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
+	END
+	FOR (i = 7; i < 10;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
+	END
+	FOR (i = 10; i < 13; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
+	END
+	FOR (i = 13; i < 16; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
+	END
+	FOR (i = 16; i < 19; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
+	END
+	FOR (i = 19; i < 22; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
+	END
+	FOR (i = 22; i < 25; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
+	END
+	FOR (i = 25; i < 28; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
+	END
+	FOR (i = 28; i < 31; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
+	END
+	FOR (i = 31; i < 34; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
+	END
+	FOR (i = 34; i < 37; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
+	END
+	FOR (i = 37; i < 40; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
+	END
+	FOR (i = 40; i < 43; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
+	END
+	FOR (i = 43; i < 46; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
+	END
+	FOR (i = 46; i < 49; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
+	END
+	FOR (i = 49; i < 51; ++i)	            BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
+	END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE4.spl" override SAY NAME1 @415 SAY UNIDENTIFIED_DESC @415  //Sleep Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Sleep%" END
-LPF CLONE_EFFECT INT_VAR match_opcode = 39 opcode = 142 parameter1 = 0 parameter2 = 14 END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 4; i <  7;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
+	END
+	FOR (i = 7; i < 10;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
+	END
+	FOR (i = 10; i < 13; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
+	END
+	FOR (i = 13; i < 16; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
+	END
+	FOR (i = 16; i < 19; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
+	END
+	FOR (i = 19; i < 22; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
+	END
+	FOR (i = 22; i < 25; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
+	END
+	FOR (i = 25; i < 28; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
+	END
+	FOR (i = 28; i < 31; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
+	END
+	FOR (i = 31; i < 34; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
+	END
+	FOR (i = 34; i < 37; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
+	END
+	FOR (i = 37; i < 40; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
+	END
+	FOR (i = 40; i < 43; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
+	END
+	FOR (i = 43; i < 46; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
+	END
+	FOR (i = 46; i < 49; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
+	END
+	FOR (i = 49; i < 51; ++i)	            BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
+	END
 
 COPY "DeitiesOfFaerun\Tables\RASHAR5.2da" override
 
@@ -178,7 +442,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~SHARS~ ~SHARL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -197,7 +461,7 @@ ACTION_FOR_EACH file IN ~SHARS~ ~SHARL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~SHARDARK~ ~SHAREYEB~ ~SHARNIGH~ ~RASHARE1~ ~RASHARE2~ ~RASHARE3~ ~RASHARE4~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
