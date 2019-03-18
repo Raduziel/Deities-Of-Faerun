@@ -880,7 +880,7 @@ BEGIN @999999017
 REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (MOD_IS_INSTALLED ~Setup-TuraldNPC.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~46~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Marthammor-Turald.tpa~
 
-
+*/
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -893,6 +893,7 @@ BEGIN @999999018
 REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (MOD_IS_INSTALLED ~Setup-IWDNPC.tp2~ ~15~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~47~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Solonor-Korin.tpa~
 
+/*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
