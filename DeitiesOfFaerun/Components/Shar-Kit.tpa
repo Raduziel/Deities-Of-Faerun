@@ -122,55 +122,10 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 4; i <  7;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
+	FOR (i = 1; i <  51;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * ((i + 2)/3))  END
 	END
-	FOR (i = 7; i < 10;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
-	END
-	FOR (i = 10; i < 13; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
-	END
-	FOR (i = 13; i < 16; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
-	END
-	FOR (i = 16; i < 19; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
-	END
-	FOR (i = 19; i < 22; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
-	END
-	FOR (i = 22; i < 25; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
-	END
-	FOR (i = 25; i < 28; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
-	END
-	FOR (i = 28; i < 31; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
-	END
-	FOR (i = 31; i < 34; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
-	END
-	FOR (i = 34; i < 37; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
-	END
-	FOR (i = 37; i < 40; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
-	END
-	FOR (i = 40; i < 43; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
-	END
-	FOR (i = 43; i < 46; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
-	END
-	FOR (i = 46; i < 49; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
-	END
-	FOR (i = 49; i < 51; ++i)	            BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
-	END
-
+	
 COPY "DeitiesOfFaerun\Spl\RASHARE2.spl" override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413  //Fear Gaze
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
 	READ_LONG	0x64	ab_off
@@ -192,53 +147,8 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 4; i <  7;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
-	END
-	FOR (i = 7; i < 10;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
-	END
-	FOR (i = 10; i < 13; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
-	END
-	FOR (i = 13; i < 16; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
-	END
-	FOR (i = 16; i < 19; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
-	END
-	FOR (i = 19; i < 22; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
-	END
-	FOR (i = 22; i < 25; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
-	END
-	FOR (i = 25; i < 28; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
-	END
-	FOR (i = 28; i < 31; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
-	END
-	FOR (i = 31; i < 34; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
-	END
-	FOR (i = 34; i < 37; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
-	END
-	FOR (i = 37; i < 40; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
-	END
-	FOR (i = 40; i < 43; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
-	END
-	FOR (i = 43; i < 46; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
-	END
-	FOR (i = 46; i < 49; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
-	END
-	FOR (i = 49; i < 51; ++i)	            BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
+	FOR (i = 1; i <  51;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * ((i + 2)/3))  END
 	END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE3.spl" override SAY NAME1 @414 SAY UNIDENTIFIED_DESC @414  //Sicken Gaze
@@ -262,53 +172,8 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 4; i <  7;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
-	END
-	FOR (i = 7; i < 10;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
-	END
-	FOR (i = 10; i < 13; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
-	END
-	FOR (i = 13; i < 16; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
-	END
-	FOR (i = 16; i < 19; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
-	END
-	FOR (i = 19; i < 22; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
-	END
-	FOR (i = 22; i < 25; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
-	END
-	FOR (i = 25; i < 28; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
-	END
-	FOR (i = 28; i < 31; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
-	END
-	FOR (i = 31; i < 34; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
-	END
-	FOR (i = 34; i < 37; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
-	END
-	FOR (i = 37; i < 40; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
-	END
-	FOR (i = 40; i < 43; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
-	END
-	FOR (i = 43; i < 46; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
-	END
-	FOR (i = 46; i < 49; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
-	END
-	FOR (i = 49; i < 51; ++i)	            BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
+	FOR (i = 1; i <  51;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * ((i + 2)/3))  END
 	END
 
 COPY "DeitiesOfFaerun\Spl\RASHARE4.spl" override SAY NAME1 @415 SAY UNIDENTIFIED_DESC @415  //Sleep Gaze
@@ -332,53 +197,8 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 	END
 	WRITE_SHORT	0x68	ab_num
 	WRITE_LONG	0x6a	fx_off
-	FOR (i = 4; i <  7;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 12  END
-	END
-	FOR (i = 7; i < 10;  ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 18  END
-	END
-	FOR (i = 10; i < 13; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 24  END
-	END
-	FOR (i = 13; i < 16; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 30  END
-	END
-	FOR (i = 16; i < 19; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 36  END
-	END
-	FOR (i = 19; i < 22; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 42  END
-	END
-	FOR (i = 22; i < 25; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 48  END
-	END
-	FOR (i = 25; i < 28; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 54  END
-	END
-	FOR (i = 28; i < 31; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 60  END
-	END
-	FOR (i = 31; i < 34; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 66  END
-	END
-	FOR (i = 34; i < 37; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 72  END
-	END
-	FOR (i = 37; i < 40; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 78  END
-	END
-	FOR (i = 40; i < 43; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 84  END
-	END
-	FOR (i = 43; i < 46; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 90  END
-	END
-	FOR (i = 46; i < 49; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 96  END
-	END
-	FOR (i = 49; i < 51; ++i)	            BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = 102 END
+	FOR (i = 1; i <  51;  ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * ((i + 2)/3))  END
 	END
 
 COPY "DeitiesOfFaerun\Tables\RASHAR5.2da" override
