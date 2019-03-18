@@ -1645,5 +1645,18 @@ Hopelessness: Saving Throw vs. Spell with a -2 penalty or stand in place, overwh
 Stun: Saving Throw vs. Spell with a -4 penalty or be stunned for 2 rounds + 1 round every 3 levels of the caster.
 
 Death: Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are immune to this effect.~
+	@9999284 = ~Resist Magic~
+	@9999285 = ~Resist Magic
+(Alteration)
+
+Level: 5
+Sphere: Protection
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None 
+
+When this spell is cast, the priest receives a resistance to all magic. The resistance conferred is 2% per level of the caster, up to a maximum of 40% at 20th level. This resistance is set so that if the target already has more Magic Resistance than the priest would confer, it will actually lower it to the set value. This effect will last for the duration of the spell or until dispelled.~
 	
 // EoF

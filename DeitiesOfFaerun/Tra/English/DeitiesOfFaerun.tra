@@ -405,7 +405,7 @@ CHARM: The Nightcloak can charm a single person or monster. The effect is to mak
 
 FEAR: The Nightcloak can cause fear. The subject flees in blind terror for the duration of the spell.
 
-SICKEN: This power enables the caster to cause sudden pain and fever to sweep over the subject's body. The target will suffer a -4 penalty to Strength, Dexterity, Constitution, Armor Class, Thac0, damage and a 50% penalty to its Movement Rate.
+SICKEN: This power enables the caster to cause sudden pain and fever to sweep over the subject's body. The target will suffer a -4 penalty to Strength, Dexterity, Constitution, Armor Class and Thac0.
 
 SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.~
 @412 = ~Charm Gaze~
