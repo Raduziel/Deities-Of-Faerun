@@ -65,7 +65,7 @@ END
 
 //Call Upon Polar Fury
 
-COPY "DeitiesOfFaerun\Spl\RAULUT1.spl" override SAY NAME1 @4106 SAY UNIDENTIFIED_DESC  @4107
+COPY "DeitiesOfFaerun\Spl\RAULUT1.spl"  override SAY NAME1 @4106 SAY UNIDENTIFIED_DESC  @4107
 
 COPY "DeitiesOfFaerun\Spl\RAULUT11.spl" override
 
@@ -81,9 +81,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Shapechange: Great White Bear
+//Shapeshift: Great White Bear
 
-COPY "DeitiesOfFaerun\Spl\RAULUT3.spl" override SAY NAME1 @4109 SAY UNIDENTIFIED_DESC  @4110
+COPY "DeitiesOfFaerun\Spl\RAULUT3.spl"  override SAY NAME1 @4109 SAY UNIDENTIFIED_DESC  @4110
 
 COPY "DeitiesOfFaerun\Spl\RAULUT31.spl" override SAY NAME1 @4111 SAY UNIDENTIFIED_DESC  @4111
 
@@ -325,7 +325,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override
 BUT_ONLY
 
 ACTION_FOR_EACH file IN ~ULUTS~ ~ULUTL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -344,7 +344,7 @@ ACTION_FOR_EACH file IN ~ULUTS~ ~ULUTL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~ULUTCUPF~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
