@@ -25,7 +25,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RALATH~)	BEGIN	~RALATH~ => 0	~RALATHCM~ => 0	~RALATHFC~ => 0						END	//	Lathander	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RALOVI~)	BEGIN	~RALOVI~ => 0	~RALOVICM~ => 0	~RALOVIFC~ => 0						END	//	Loviatar	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMALA~)	BEGIN	~RAMALA~ => 0	~RAMALARC~ => 0										END	//	Malar	->	Talos, Druid
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMASK~)	BEGIN	~RAMART~ => 0	~RAMARTFC~ => 0										END	//	Marthammor	->	Lathander
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMART~)	BEGIN	~RAMART~ => 0	~RAMARTFC~ => 0										END	//	Marthammor	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMASK~)	BEGIN	~RAMASK~ => 0	~RAMASKCT~ => 0										END	//	Mask	->	Talos, Thief
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAMYST~)	BEGIN	~RAMYST~ => 0	~RAMYSTCM~ => 0										END	//	Mystra	->	Wizard
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAOGHM~)	BEGIN	~RAOGHM~ => 0	~RAOGHMCM~ => 0										END	//	Oghma	->	Bard, Wizard
@@ -47,6 +47,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAUMBE~)	BEGIN	~RAUMBE~ => 0	~RAUMBECT~ => 0										END	//	Umberlee	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVALK~)	BEGIN	~RAVALK~ => 0	~RAVALKFC~ => 0										END	//	Valkur	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVELS~)	BEGIN	~RAVELS~ => 0	~RAVELSCM~ => 0										END	//	Velsharoon	->	Talos, Wizard
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAYOND~)	BEGIN	~RAYOND~ => 0	~RAYONDFC~ => 0										END	//	Yondalla	->	Helm, Ranger
 	
 	DEFINE_PATCH_FUNCTION	EXTEND_TRIGGER
 		INT_VAR	index = 0	section = 0	or = 0	warn = 1
@@ -207,6 +208,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAULUT~	RET	extend	negate	count	END	//	Ulutiu
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAUMBE~	RET	extend	negate	count	END	//	Umberlee
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVELS~	RET	extend	negate	count	END	//	Velsharoon
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAYOND~	RET	extend	negate	count	END	//	Yondalla
 	//	Kit Headers	End
 	ACTION_IF count > 0 BEGIN
 		//	Remove Kits from Lathander's quest-line (script)
@@ -316,6 +318,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~		RET	extend	negate	count	END	//	Tyr
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAULUT~	RET	extend	negate	count	END	//	Ulutiu
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAVALK~	RET	extend	negate	count	END	//	Valkur
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAYOND~	RET	extend	negate	count	END	//	Yondalla
 	//	Kit Headers	End
 	ACTION_IF count > 0 BEGIN
 	//	Remove Kits to Talo's quest-line	(script)
@@ -454,6 +457,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATORM~	RET	extend	negate	count	END	//	Torm
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RATYR~		RET	extend	negate	count	END	//	Tyr
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAULUT~	RET	extend	negate	count	END	//	Ulutiu
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAYOND~	RET	extend	negate	count	END	//	Yondalla
 	//	Kit Headers	End
 	ACTION_IF	count = 1 BEGIN	OUTER_SPRINT orblock ~~	END	ELSE	BEGIN	OUTER_SPRINT orblock ~OR(%count%)~	END
 <<<<<<<< RAStrong.baf
@@ -674,6 +678,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASHAU~	RET	extend	negate	count	END	//	Shaundakul
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RASOLO~	RET	extend	negate	count	END	//	Solonor
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAYOND~	RET	extend	negate	count	END	//	Yondalla
 	//	Kit Headers	End
 	ACTION_IF count > 1 BEGIN
 		COPY_EXISTING ~UHMAY01.DLG~ override
