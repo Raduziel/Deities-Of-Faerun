@@ -4491,7 +4491,7 @@ Features:
 - Gains immunity to all forms of cold.
 - May use the Call Upon Polar Fury special ability once per day, starting at level 5.
 - May cast Ice Storm once per day as a special ability, starting at level 7.
-- May shapechange into a Great White Bear once per day as a special ability, starting at level 10.
+- May shapeshift into a Great White Bear once per day as a special ability, starting at level 10.
 - May cast Cone of Cold once per day as a special ability, starting at level 13.
 - May cast Freezing Sphere once per day as a special ability, starting at level 15.
 - May never start or use fire.
@@ -4525,7 +4525,7 @@ Saving Throw: None
 
 By using this spell the Iceguardian communes with the spirit of the Great White Bear. The caster's Strength is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.~
 @4108 = ~Bear Claw~
-@4109 = ~Shapechange: Great White Bear~
+@4109 = ~Shapeshift: Great White Bear~
 @4110 = ~This ability allows the Iceguardian to turn into one of Ulutiu's Totems, the Great White Bear, for three turns.
 
 Strength: 18/00
@@ -4565,7 +4565,7 @@ Features:
 - Gains immunity to all forms of cold.
 - May use the Call Upon Polar Fury special ability once per day, starting at level 5.
 - May cast Ice Storm once per day as a special ability, starting at level 7.
-- May shapechange into a Great White Bear once per day as a special ability, starting at level 10.
+- May shapeshift into a Great White Bear once per day as a special ability, starting at level 10.
 - May cast Cone of Cold once per day as a special ability, starting at level 13.
 - May cast Freezing Sphere once per day as a special ability, starting at level 15.
 - May never start or use fire.
@@ -4916,7 +4916,7 @@ Features:
 - May cast Spike Growth once per day as a special ability, starting at level 7.
 - Gains immunity to fear and paralysis, starting at level 7.
 - May cast Lesser Restoration once per day as a special ability, starting at level 10.
-- May shapechange into a Dire Wolf at will as a special ability, starting at level 13.~
+- May shapeshift into a Dire Wolf at will as a special ability, starting at level 13.~
 @4604 = ~Holy Symbol of Yondalla~
 @4605 = ~Only the most worthy and devoted servants of the Protector and Provider are granted these powerful holy symbols.
 	
@@ -4963,8 +4963,9 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
-@4609 = ~Shapechange: Dire Wolf~
-@4610 = ~Shapechange: Dire Wolf
+@4609 = ~Dire Wolf Claw~
+@4610 = ~Shapeshift: Dire Wolf~
+@4611 = ~Shapeshift: Dire Wolf
 
 Strength: 18
 Dexterity: 18
@@ -4976,8 +4977,9 @@ Attack Damage: 1d8 (piercing), strikes as +2 weapon
 
 Special abilities:
 
-While shapechanged, natural animals will ignore the Horn Guard.~
-@4611 = ~HORN GUARD OF YONDALLA (F/C): Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
+While shapeshifted, natural animals will ignore the Horn Guard.~
+@4612 = ~Shapeshift: Natural Form~
+@4613 = ~HORN GUARD OF YONDALLA (F/C): Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
 
 Yondalla's portfolio can be interpreted to somewhat overlap those of Sheela Peryroyl, Cyrrollalee, Arvoreen, and Urogalan, but in truth this is mainly as she is their leader and both directs their efforts and works with them in harmony to provide for both the good of the divine and the mortal halfling communities. Only Brandobaris and Tymora walk their own paths, but even they work closely with the Nurturing Matriarch in ensuring the peace and security of halflings throughout the Realms. The Protector and Provider has forged strong alliances with the patriarchs and matriarchs of the other demihuman races to ensure the mutual survival of their charges, and she is closely allied with agricultural and guardian deities of all the goodly races.
 
@@ -5001,6 +5003,6 @@ Features:
 - May cast Spike Growth once per day as a special ability, starting at level 7.
 - Gains immunity to fear and paralysis, starting at level 7.
 - May cast Lesser Restoration once per day as a special ability, starting at level 10.
-- May shapechange into a Dire Wolf at will as a special ability, starting at level 13.~
+- May shapeshift into a Dire Wolf at will as a special ability, starting at level 13.~
 
 //EoF
