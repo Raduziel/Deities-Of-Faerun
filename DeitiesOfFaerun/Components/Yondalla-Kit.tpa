@@ -8,10 +8,10 @@
 ADD_KIT ~RAYond~
     ~RAYond 0 0 0 0 1 1 0 1~
     ~RAYond 0 0 0 0 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 0 0 1 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAYond 3 3 3 3 13 3~
+	~RAYond 12 3 3 3 13 3~
 	~RAYond 0 0 0 0 0 0~
-	~RAYond 3 3 3 3 13 3~
-    ~RAYond 3 3 3 3 13 3~
+	~RAYond 12 3 3 3 13 3~
+    ~RAYond 12 3 3 3 13 3~
 	~RAYond 1 0 0 0 0 0 0 0 0~
 	~RAYond 0 0 0 0 1 0 0~
 	~DeitiesOfFaerun\Tables\RAYond.2da~
@@ -53,10 +53,17 @@ WRITE_ASCII 0x058 ~YONDL~
 //Spells
 
 COPY ~DeitiesOfFaerun\Spl\RAYONDF.spl~ override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Panic%~     END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_MoralFail%~ END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL ~%RA_Held%~      END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 = EVAL ~%RA_Paralyzed%~ END
+LPF ALTER_EFFECT     INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Panic%~     END
+LPF ALTER_EFFECT     INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_MoralFail%~ END
+LPF ALTER_EFFECT     INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL ~%RA_Held%~      END
+LPF ALTER_EFFECT     INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 = EVAL ~%RA_Paralyzed%~ END
+
+ACTION_IF !GAME_IS ~bg2ee~ BEGIN
+
+COPY_EXISTING ~RAYONDF.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 143 target = 2 timing = 1 parameter1 = 9 STR_VAR resource = ~SHLD03A~ END
+
+END
 
 COPY ~DeitiesOfFaerun\Spl\RAYONDF.eff~ override
 
@@ -168,7 +175,6 @@ SAY NAME1 @4609 SAY NAME2 @4609 SAY DESC @4609
 
 COPY ~DeitiesOfFaerun\Spl\RAYOND7.spl~  override
 SAY NAME1 @4610 SAY UNIDENTIFIED_DESC    @4611
-LPF AT_WILL END
 
 COPY ~DeitiesOfFaerun\Spl\RAYOND71.spl~ override
 SAY NAME1 @4612 SAY UNIDENTIFIED_DESC    @4612
@@ -185,7 +191,7 @@ PRETTY_PRINT_2DA
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_LONG 0x18 flags
-	PATCH_IF ((flags BAND 0b00000010) == 0b00000000) BEGIN
+	PATCH_IF ((flags BAND 0b00000010) == 0b00000010) BEGIN
 		LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
@@ -194,7 +200,6 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter2 = 9
 			  timing = 2
 		END
-		DEFAULT
 	END
 BUT_ONLY
 
