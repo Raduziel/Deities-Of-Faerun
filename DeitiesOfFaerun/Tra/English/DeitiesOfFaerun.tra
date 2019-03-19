@@ -4668,7 +4668,7 @@ Features:
 Deneir is caught up in the recording, filing, indexing and maintaining of all that was ever written or depicted. He can appear very absent-minded, and often trails off in midsentence because his mind is racing along other trails of thought even as he speaks. For all his acquaintance with book knowledge, he can be out of touch with the world as it is now—in particular, human customs in practice: He tends to use mannerisms of speech and hold to points of etiquette that disappeared long ago from Faerûn — or he may (unintentionally humorously) mix his slang terms or try to sound in vogue and actually sound profoundly dated. When he gets going on a story, he can eat up immense amounts of his listeners' time as he diverges seemingly endlessly in parenthetical substories. For all their length, his tales always convey some vital piece of knowledge to those who wait them out.
 
 Armor: All up to and including splint mail. No shield allowed.
-Weapon: Club, mace, flail, morningstar, warhammer, sling.
+Weapon: Single-handed bludgeoning only.
 
 Major: All, Healing, Protection, Thought, Travelers, Divination, Vocal.
 Minor: Necromantic, Creation, Weave, Time.
@@ -4716,7 +4716,7 @@ Through this spell, the Glyphscriber creates a glyph that will remain flying sti
 Deneir is caught up in the recording, filing, indexing and maintaining of all that was ever written or depicted. He can appear very absent-minded, and often trails off in midsentence because his mind is racing along other trails of thought even as he speaks. For all his acquaintance with book knowledge, he can be out of touch with the world as it is now—in particular, human customs in practice: He tends to use mannerisms of speech and hold to points of etiquette that disappeared long ago from Faerûn — or he may (unintentionally humorously) mix his slang terms or try to sound in vogue and actually sound profoundly dated. When he gets going on a story, he can eat up immense amounts of his listeners' time as he diverges seemingly endlessly in parenthetical substories. For all their length, his tales always convey some vital piece of knowledge to those who wait them out.
 
 Armor: All up to and including splint mail. No shield allowed.
-Weapon: Club, mace, flail, morningstar, warhammer, sling.
+Weapon: Weapon: Single-handed bludgeoning only.
 
 Major: All, Healing, Protection, Thought, Travelers, Divination, Vocal.
 Minor: Necromantic, Creation, Weave, Time.
@@ -4872,5 +4872,90 @@ Weight: 0~
 @4512 = ~Hail of Arrows~
 @4513 = ~While using this ability, the Hawkeye's APR is set to 5 but <PRO_HESHE> also takes a penalty of -3 to Thac0 and can't move for the next round. This special ability can't be combined with any other and works only with bows (both long and short).~
 @4514 = ~Effect ready.~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Horn Guard of Yondalla
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4601 = ~horn guard of yondalla~
+@4602 = ~Horn Guard of Yondalla~
+@4603 = ~HORN GUARD OF YONDALLA: Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
+
+Yondalla's portfolio can be interpreted to somewhat overlap those of Sheela Peryroyl, Cyrrollalee, Arvoreen, and Urogalan, but in truth this is mainly as she is their leader and both directs their efforts and works with them in harmony to provide for both the good of the divine and the mortal halfling communities. Only Brandobaris and Tymora walk their own paths, but even they work closely with the Nurturing Matriarch in ensuring the peace and security of halflings throughout the Realms. The Protector and Provider has forged strong alliances with the patriarchs and matriarchs of the other demihuman races to ensure the mutual survival of their charges, and she is closely allied with agricultural and guardian deities of all the goodly races.
+
+Yondalla is a kind and merciful goddess to her people. Although she brooks no evil, she despises no part of her creation, and always seeks to guide halflings who have lost their way in the world, physically or spiritually, back to their homes and friends. Although Yondalla is tolerant of thieves among her people, she does not approve of them and tries to have her priests guide such errant folk to use their skills more usefully. However, appropriating an extra share for oneself from the big folk is no great sin if no real harm or damage is done. Yondalla has given plenty of gifts to her worshipers, not the least of which is her temperament. From her, the halflings have learned to stand up for themselves, to defend their homes and families, and to seek peaceable solutions - or else turn their foes against each other and slip away unnoticed. Yondalla is a charming and persuasive power of peace, and though she can take life and health as easily as she gives it, she never seeks out opportunities to harm those who do not richly deserve it. When she is aroused to ire, however, Yondalla is a truly fearsome goddess, for all her apparent gentility and diminutive stature. Although not a power of war, Yondalla is a skilled warrior that other powers do not readily seek to challenge. If a community of halflings is faced with extermination, Yondalla acts first through her priests and with manifestations and then by having Arvoreen dispatch his avatar. If all else fails, Yondalla is very likely to send an avatar herself to defend her charges. If she does this, she fights within the area of the halfling communities and homes rather than venture attacks outside of that area.
+
+Armor: Any, but must always carry a shield.
+Weapon: Single-handed only and bows.
+
+Major: All, Healing, Plant, Protection, Combat, Creation. 
+Minor: Animal, Earth, Travelers, Vocal.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Gains +3 Thac0 with slings (instead of +1).
+- May cast Magical Stone once per day as a special ability, starting at level 1.
+- May cast Shield once per day as a special ability, starting at level 1. May target other creatures.
+- May cast Bless once per day as a special ability, starting at level 3. The spell has twice the normal duration.
+- May cast Goodberry once per day as a special ability, starting at level 5.
+- May cast Spike Growth once per day as a special ability, starting at level 7.
+- Gains immunity to fear and paralysis, starting at level 7.
+- May cast Lesser Restoration once per day as a special ability, starting at level 10.
+- May shapechange into a Dire Wolf at will as a special ability, starting at level 13.~
+@4604 = ~Holy Symbol of Yondalla~
+@4605 = ~Only the most worthy and devoted servants of the Protector and Provider are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4606 = ~Shapechange: Dire Wolf~
+@4607 = ~Shapechange: Dire Wolf
+
+Strength: 18
+Dexterity: 18
+Movement rate: +50%
+
+Base Armor Class: 6
+Number of Attacks: 2
+Attack Damage: 1d8 (piercing), strikes as +2 weapon
+
+Special abilities:
+
+While shapechanged, natural animals will ignore the Horn Guard.~
+@4608 = ~HORN GUARD OF YONDALLA (F/C): Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
+
+Yondalla's portfolio can be interpreted to somewhat overlap those of Sheela Peryroyl, Cyrrollalee, Arvoreen, and Urogalan, but in truth this is mainly as she is their leader and both directs their efforts and works with them in harmony to provide for both the good of the divine and the mortal halfling communities. Only Brandobaris and Tymora walk their own paths, but even they work closely with the Nurturing Matriarch in ensuring the peace and security of halflings throughout the Realms. The Protector and Provider has forged strong alliances with the patriarchs and matriarchs of the other demihuman races to ensure the mutual survival of their charges, and she is closely allied with agricultural and guardian deities of all the goodly races.
+
+Yondalla is a kind and merciful goddess to her people. Although she brooks no evil, she despises no part of her creation, and always seeks to guide halflings who have lost their way in the world, physically or spiritually, back to their homes and friends. Although Yondalla is tolerant of thieves among her people, she does not approve of them and tries to have her priests guide such errant folk to use their skills more usefully. However, appropriating an extra share for oneself from the big folk is no great sin if no real harm or damage is done. Yondalla has given plenty of gifts to her worshipers, not the least of which is her temperament. From her, the halflings have learned to stand up for themselves, to defend their homes and families, and to seek peaceable solutions - or else turn their foes against each other and slip away unnoticed. Yondalla is a charming and persuasive power of peace, and though she can take life and health as easily as she gives it, she never seeks out opportunities to harm those who do not richly deserve it. When she is aroused to ire, however, Yondalla is a truly fearsome goddess, for all her apparent gentility and diminutive stature. Although not a power of war, Yondalla is a skilled warrior that other powers do not readily seek to challenge. If a community of halflings is faced with extermination, Yondalla acts first through her priests and with manifestations and then by having Arvoreen dispatch his avatar. If all else fails, Yondalla is very likely to send an avatar herself to defend her charges. If she does this, she fights within the area of the halfling communities and homes rather than venture attacks outside of that area.
+
+Armor: Any, but must always carry a shield.
+Weapon: Single-handed only and bows.
+
+Major: All, Healing, Plant, Protection, Combat, Creation. 
+Minor: Animal, Earth, Travelers, Vocal.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Gains +3 Thac0 with slings (instead of +1).
+- May cast Magical Stone once per day as a special ability, starting at level 1.
+- May cast Shield once per day as a special ability, starting at level 1. May target other creatures.
+- May cast Bless once per day as a special ability, starting at level 3. The spell has twice the normal duration.
+- May cast Goodberry once per day as a special ability, starting at level 5.
+- May cast Spike Growth once per day as a special ability, starting at level 7.
+- Gains immunity to fear and paralysis, starting at level 7.
+- May cast Lesser Restoration once per day as a special ability, starting at level 10.
+- May shapechange into a Dire Wolf at will as a special ability, starting at level 13.~
 
 //EoF
