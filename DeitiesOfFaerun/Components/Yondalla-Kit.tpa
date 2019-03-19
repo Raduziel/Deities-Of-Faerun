@@ -61,7 +61,7 @@ LPF ALTER_EFFECT     INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 
 ACTION_IF !GAME_IS ~bg2ee~ BEGIN
 
 COPY_EXISTING ~RAYONDF.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 143 target = 2 timing = 1 parameter1 = 9 STR_VAR resource = ~SHLD03A~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 143 target = 2 timing = 4 duration = 1 parameter1 = 9 STR_VAR resource = ~SHLD03A~ END
 
 END
 
@@ -175,6 +175,13 @@ SAY NAME1 @4609 SAY NAME2 @4609 SAY DESC @4609
 
 COPY ~DeitiesOfFaerun\Spl\RAYOND7.spl~  override
 SAY NAME1 @4610 SAY UNIDENTIFIED_DESC    @4611
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RAYOND7.spl~ override
+SAY UNIDENTIFIED_DESC  @4607
+
+END
 
 COPY ~DeitiesOfFaerun\Spl\RAYOND71.spl~ override
 SAY NAME1 @4612 SAY UNIDENTIFIED_DESC    @4612
