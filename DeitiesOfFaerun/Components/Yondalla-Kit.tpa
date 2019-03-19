@@ -1,0 +1,222 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Horn Guard of Yondalla
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAYond~
+    ~RAYond 0 0 0 0 1 1 0 1~
+    ~RAYond 0 0 0 0 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 0 0 1 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAYond 3 3 3 3 13 3~
+	~RAYond 0 0 0 0 0 0~
+	~RAYond 3 3 3 3 13 3~
+    ~RAYond 3 3 3 3 13 3~
+	~RAYond 1 0 0 0 0 0 0 0 0~
+	~RAYond 0 0 0 0 1 0 0~
+	~DeitiesOfFaerun\Tables\RAYond.2da~
+	~K_C_HL~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT18 SHLD22 HELM07 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT07 * * * * * * WAFLAIL WASLING *~
+	SAY @4601
+	SAY @4602
+	SAY @4603
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAYond~
+		clascolr = ~26 138 54 38 52~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~0 0 0 0 1 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAYOND~ clabfile = ~RAYOND~ END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSYOND.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSYOND~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSYOND.itm~ SAY NAME1 @4604 SAY NAME2 @4604 SAY DESC @4605
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAYond + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~YONDS~
+WRITE_ASCII 0x058 ~YONDL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun\Spl\RAYONDF.spl~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Panic%~     END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_MoralFail%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL ~%RA_Held%~      END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 = EVAL ~%RA_Paralyzed%~ END
+
+COPY ~DeitiesOfFaerun\Spl\RAYONDF.eff~ override
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		107 BEGIN
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAYond~) parameter2 = 9 timing = 2 STR_VAR resource = ~RAYONDF~ END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//Magic Stone
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MAGIC_STONE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MAGIC_STONE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Shield
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHIELD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHIELD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND2.spl~
+SAY UNIDENTIFIED_DESC  @4606
+LPF ALTER_SPELL_HEADER  INT_VAR target = 1 range  = 1  END
+LPF ALTER_EFFECT        INT_VAR silent = 1 target = 2  END
+LPM ~SPELL_TO_INNATE~
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RAYOND2.spl~ override
+SAY UNIDENTIFIED_DESC  @4607
+
+END
+
+END
+
+//Bless
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND3.spl~
+SAY UNIDENTIFIED_DESC  @4608
+LPF ALTER_EFFECT        INT_VAR silent = 1 match_duration = 36 duration = 72  END
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Goodberry
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_GOOD_BERRIES[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GOOD_BERRIES~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Spike Growth
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SPIKE_GROWTH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIKE_GROWTH~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/IDPRO300.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324.spl~ 1 3 CLERIC_SPIKE_GROWTH
+SAY NAME1 @9999161 SAY NAME2 @9999161 SAY UNIDENTIFIED_DESC @9999162 SAY DESC @9999162
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_SPIKE_GROWTH~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO300% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Lesser Restoration
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_LESSER_RESTORATION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_LESSER_RESTORATION~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND6.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Shapeshift
+
+COPY ~DeitiesOfFaerun\Itm\YondallaWolf\RAYOND7.itm~  override
+SAY NAME1 @4609 SAY NAME2 @4609 SAY DESC @4609
+
+COPY ~DeitiesOfFaerun\Spl\RAYOND7.spl~  override
+SAY NAME1 @4610 SAY UNIDENTIFIED_DESC    @4611
+LPF AT_WILL END
+
+COPY ~DeitiesOfFaerun\Spl\RAYOND71.spl~ override
+SAY NAME1 @4612 SAY UNIDENTIFIED_DESC    @4612
+
+COPY ~DeitiesOfFaerun\Spl\RAYondNF.bam~ override
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAYond.2da~ ~override/RAYondFC.2da~
+SET_2DA_ENTRY 9 25 50 ~AP_RAFYOND~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_LONG 0x18 flags
+	PATCH_IF ((flags BAND 0b00000010) == 0b00000000) BEGIN
+		LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAYond + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~YONDS~ ~YONDL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
