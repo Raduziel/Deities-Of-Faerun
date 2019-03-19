@@ -1194,6 +1194,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Velsharoon: Talos, Wizard
 
+- Yondalla: Helm, Ranger
+
 Without this component the strongholds will be chosen by alignment, as the unmodded game does.
 
 
