@@ -682,6 +682,17 @@ BEGIN @99999054
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Solonor-Kit.tpa~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//		        HORN GUARD OF YONDALLA (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @99999055
+REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
+INCLUDE  ~DeitiesOfFaerun/Components/Yondalla-Kit.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Yondalla-KitFC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -891,7 +902,6 @@ BEGIN @999999018
 REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (MOD_IS_INSTALLED ~Setup-IWDNPC.tp2~ ~15~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~47~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Solonor-Korin.tpa~
 
-/*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -904,6 +914,7 @@ BEGIN @999999019
 REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (MOD_IS_INSTALLED ~nephele.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~48~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Yondalla-Nephele.tpa~
 
+/*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
