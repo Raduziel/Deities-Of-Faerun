@@ -58,10 +58,10 @@ LPF ALTER_EFFECT     INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 
 LPF ALTER_EFFECT     INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL ~%RA_Held%~      END
 LPF ALTER_EFFECT     INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 = EVAL ~%RA_Paralyzed%~ END
 
-ACTION_IF !GAME_IS ~bg2ee~ BEGIN
+ACTION_IF GAME_IS ~bg2ee~ BEGIN
 
 COPY_EXISTING ~RAYONDF.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR header = 1 opcode = 143 target = 2 timing = 1 parameter1 = 9 STR_VAR resource = ~SHLD03A~ END
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 143 END
 
 END
 
