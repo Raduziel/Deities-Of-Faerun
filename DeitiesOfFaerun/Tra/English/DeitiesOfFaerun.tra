@@ -4780,7 +4780,18 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@4406 = ~TRAILBLAZER OF MARTHAMMOR (F/C): Marthammor Duin (Mar-THAM-more DOO-ihn), known on other worlds as Muamman Duathal (Moo-AM-man Doo-AHthuhl) is the protector of dwarves who make their lives in human society in the North, rather than keeping to mountain or deep-delve enclaves. Commonly known as Wanderers, all such dwarves make offerings to him in appeasement for good fortune. Marthammor is the patron of adventurers and explorers and all those dwarves who travel or live far from the dwarven homelands, allowing them to find routes to escape or to victory in their travels. He also watches over dwarven craftsfolk of any good alignment, keeping their homes and persons safe. His secondary aspect as god of lightning is unique among dwarves. The Finder-of-Trails is a growing cult in the North, and he may be evolving into an intermediate power.
+@4406 = ~Haste
+(Alteration)
+
+Level: 3
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+When this spell is cast, the Trailblazer functions at double <PRO_HISHER> normal movement rate, gains a -2 initiative bonus, and receives an extra attack per round. Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round. This spell is not cumulative with itself or with other similar magic. Spellcasting and spell effects are not affected. Note that this spell negates the effects of a Slow spell.~
+@4407 = ~TRAILBLAZER OF MARTHAMMOR (F/C): Marthammor Duin (Mar-THAM-more DOO-ihn), known on other worlds as Muamman Duathal (Moo-AM-man Doo-AHthuhl) is the protector of dwarves who make their lives in human society in the North, rather than keeping to mountain or deep-delve enclaves. Commonly known as Wanderers, all such dwarves make offerings to him in appeasement for good fortune. Marthammor is the patron of adventurers and explorers and all those dwarves who travel or live far from the dwarven homelands, allowing them to find routes to escape or to victory in their travels. He also watches over dwarven craftsfolk of any good alignment, keeping their homes and persons safe. His secondary aspect as god of lightning is unique among dwarves. The Finder-of-Trails is a growing cult in the North, and he may be evolving into an intermediate power.
 
 Marthammor is seldom at home in his Cavern of Rest, which is guarded by the souls of those dwarves who perished while traveling aboveground and by boars and war dogs trained by the god himself. The Cavern lies in the ever-shifting underways of Nidavellir, third layer of Ysgard. Marthammor spends most of his time wandering the northern reaches of Faerûn in his avatar form. Marthammor sometimes sends his avatar to act as a guide or to warn urban dwarves of trouble brewing in their homelands. More often, he sends omens in the form of lightning, subsidence on trails, sudden rockfalls, or priestly divination through stone-flinging (the pattern of a fist is a common sign).
 
@@ -4918,8 +4929,42 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@4606 = ~Shapechange: Dire Wolf~
-@4607 = ~Shapechange: Dire Wolf
+@4606 = ~Shield
+(Evocation)
+
+Level: 1
+Range: Touch
+Duration: 1 hour
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, an invisible barrier comes into being in front of the protected creature. It sets the creature's Armor Class to 4 against all melee weapons, and 2 against missile weapons. It also grants the creature immunity from the spell Magic Missile. The effect lasts for the duration of the spell or until dispelled.~
+@4607 = ~Shield
+(Evocation)
+
+Level: 1
+Range: Touch
+Duration: 5 rounds/level
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, an invisible barrier comes into being in front of the protected creature. It sets the creature's Armor Class to 4 against melee weapons (2 against missile weapons) and makes the creature immune to any magical missiles cast at it.~
+@4608 = ~Bless
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: 40 ft.
+Duration: 12 rounds
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
+@4609 = ~Shapechange: Dire Wolf~
+@4610 = ~Shapechange: Dire Wolf
 
 Strength: 18
 Dexterity: 18
@@ -4932,7 +4977,7 @@ Attack Damage: 1d8 (piercing), strikes as +2 weapon
 Special abilities:
 
 While shapechanged, natural animals will ignore the Horn Guard.~
-@4608 = ~HORN GUARD OF YONDALLA (F/C): Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
+@4611 = ~HORN GUARD OF YONDALLA (F/C): Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
 
 Yondalla's portfolio can be interpreted to somewhat overlap those of Sheela Peryroyl, Cyrrollalee, Arvoreen, and Urogalan, but in truth this is mainly as she is their leader and both directs their efforts and works with them in harmony to provide for both the good of the divine and the mortal halfling communities. Only Brandobaris and Tymora walk their own paths, but even they work closely with the Nurturing Matriarch in ensuring the peace and security of halflings throughout the Realms. The Protector and Provider has forged strong alliances with the patriarchs and matriarchs of the other demihuman races to ensure the mutual survival of their charges, and she is closely allied with agricultural and guardian deities of all the goodly races.
 
