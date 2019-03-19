@@ -1647,6 +1647,33 @@
 		~Vocal~ => 0
 	END
 	
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAYOND~) BEGIN
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 3
+		~Vermin~ => 0
+		~Plant~ => 7
+		~Protection~ => 7
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 0
+		~Combat~ => 7
+		~Creation~ => 7
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 3
+		~Fire~ => 0
+		~Divination~ => 0
+		~Travelers~ => 3
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 3
+	END
+	
 	//AionZ's Hivemaster
 	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~C0HIVE2~) BEGIN
