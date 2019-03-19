@@ -74,7 +74,8 @@ BUT_ONLY
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_LONG 0x18 flags
-	PATCH_IF ((flags BAND 0b00000010) == 0b00000010) BEGIN
+	READ_BYTE 0x31 proficiency
+	PATCH_IF ((flags BAND 0b00000010) == 0b00000010) && !(proficiency = 104) && !(proficiency = 105) BEGIN
 		LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
