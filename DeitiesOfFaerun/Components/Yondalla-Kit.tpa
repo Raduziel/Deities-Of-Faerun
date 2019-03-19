@@ -61,7 +61,7 @@ LPF ALTER_EFFECT     INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 
 ACTION_IF !GAME_IS ~bg2ee~ BEGIN
 
 COPY_EXISTING ~RAYONDF.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 143 target = 2 timing = 4 duration = 1 parameter1 = 9 STR_VAR resource = ~SHLD03A~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 122 target = 2 timing = 4 duration = 1 parameter1 = 9 STR_VAR resource = ~SHLD03A~ END
 
 END
 
@@ -98,12 +98,12 @@ LPF ALTER_SPELL_HEADER  INT_VAR target = 1 range  = 1  END
 LPF ALTER_EFFECT        INT_VAR silent = 1 target = 2  END
 LPM ~SPELL_TO_INNATE~
 
+END
+
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
 COPY_EXISTING ~RAYOND2.spl~ override
 SAY UNIDENTIFIED_DESC  @4607
-
-END
 
 END
 
