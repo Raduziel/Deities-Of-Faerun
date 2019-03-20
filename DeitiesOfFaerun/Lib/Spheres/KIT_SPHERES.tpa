@@ -1592,6 +1592,33 @@
 		~Time~ => 0
 		~Vocal~ => 0
 	END
+	
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAURDL~) BEGIN
+		~Healing~ => 0
+		~Necromantic~ => 3
+		~Suffering~ => 7
+		~Animal~ => 0
+		~Vermin~ => 7
+		~Plant~ => 0
+		~Protection~ => 0
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 7
+		~Thought~ => 7
+		~Combat~ => 3
+		~Creation~ => 0
+		~Summoning~ => 3
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 7
+		~Fire~ => 3
+		~Divination~ => 0
+		~Travelers~ => 0
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 0
+	END
 
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAVALK~) BEGIN
 		~Healing~ => 3
