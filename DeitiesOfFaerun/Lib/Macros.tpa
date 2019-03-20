@@ -74,7 +74,7 @@ LPF DELETE_SPELL_EFFECT INT_VAR silent = 1 opcode_to_delete = 141 END
 LPF DELETE_SPELL_EFFECT INT_VAR silent = 1 opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR silent = 1 opcode_to_delete = 215 END
 LPF DELETE_SPELL_EFFECT INT_VAR silent = 1 opcode_to_delete = 321 END
-LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
+LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 power = 0 resist_dispel = 0 END
 
 END
 
