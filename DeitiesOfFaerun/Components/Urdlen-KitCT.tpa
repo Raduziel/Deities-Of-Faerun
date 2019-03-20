@@ -1,0 +1,80 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					     Bloodstalker of Urdlen - Cleric/Thief
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAUrdlCT~
+    ~RAUrdlCT 1 0 0 0 1 1 0 1~
+    ~RAUrdlCT 1 0 0 0 1 1 0 1 1 1 1 1 1 1 1 1 0 0 1 1 0 0 0 1 1 1 1 0 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAUrdlCT 11 3 3 3 9 3~
+	~RAUrdlCT 0 0 0 0 0 0~
+	~RAUrdlCT 11 3 3 3 9 3~
+    ~RAUrdlCT 11 3 3 3 9 3~
+	~RAUrdlCT 0 0 0 0 0 0 0 0 1~
+	~RAUrdlCT 0 0 0 0 0 0~
+	~override\RAUrdlCT.2da~
+	~K_CT_G~
+	~0x00000000 15~
+	~CT0~
+	~LEAT19 NEBDAG HELM06 * RING30 RING39 CLCK08 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * SW1H30 SW1H35 *~
+	SAY @4701
+	SAY @4702
+	SAY @4706
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAUrdlCT~
+		clascolr = ~47 127 183 182 66~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~0 0 0 0 0 1 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAUrdlCT~
+      kit_clab = ~RAUrdlCT~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAUrdlCT%	classID = 15 STR_VAR	kitname = ~RAURDL~  END
+
+END
+
+//Holy Symbol
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RATURDL.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACTURDL~ END
+
+COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACTURDL.itm~ SAY NAME1 @4704 SAY NAME2 @4704 SAY DESC @4705
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUrdlCT + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~URDLS~
+WRITE_ASCII 0x058 ~URDLL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		97 100 101 102 107 115  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAUrdlCT + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//EoF
