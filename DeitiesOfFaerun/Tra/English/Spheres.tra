@@ -1650,7 +1650,7 @@ Death: Saving Throw vs. Death or die. Creatures with more than 60 current Hit Po
 (Alteration)
 
 Level: 5
-Sphere: Protection
+Sphere: Protection, Weave
 Range: 0
 Duration: 3 rounds + 1 round/level
 Casting Time: 9
@@ -1658,5 +1658,17 @@ Area of Effect: The caster
 Saving Throw: None 
 
 When this spell is cast, the priest receives a resistance to all magic. The resistance conferred is 2% per level of the caster, up to a maximum of 40% at 20th level. This resistance is set so that if the target already has more Magic Resistance than the priest would confer, it will actually lower it to the set value. This effect will last for the duration of the spell or until dispelled.~
+	@9999286 = ~Resurrection
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+Restoring life to the dead is one of the priest's most powerful abilities. With Resurrection, <PRO_HESHE> can restore a character to life with full Hit Points. The deceased character must be in the party for this spell to work. This spell can only be used on deceased characters.~
 	
 // EoF
