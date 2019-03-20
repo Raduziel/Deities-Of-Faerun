@@ -61,7 +61,11 @@ LPF ALTER_EFFECT     INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 
 ACTION_IF GAME_IS ~bg2ee~ BEGIN
 
 COPY_EXISTING ~RAYONDF.spl~ override
-LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 143 END
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 0 END
+
+COPY_EXISTING ~RAYond.2da~  override
+SET_2DA_ENTRY 1 1 50 ~****      ~
+PRETTY_PRINT_2DA
 
 END
 
