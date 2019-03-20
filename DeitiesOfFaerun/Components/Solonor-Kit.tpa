@@ -58,6 +58,14 @@ LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASolo + 0x4
 WRITE_ASCII 0x03a ~SOLOS~
 WRITE_ASCII 0x058 ~SOLOL~
 
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RASolo.2da~ override
+SET_2DA_ENTRY 2  1 50 ~GA_SPCL922~
+PRETTY_PRINT_2DA
+
+END
+
 //Spells
 
 COPY ~DeitiesOfFaerun\Spl\RASOLO1.spl~ override
