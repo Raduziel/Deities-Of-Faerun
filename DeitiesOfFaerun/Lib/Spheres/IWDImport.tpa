@@ -200,6 +200,17 @@ LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
 
 END
 
+//Resurrection only works on dead person
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RESURRECTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RESURRECTION~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY DESC @9999286
+LPF	ADD_SPELL_EFFECT INT_VAR opcode = 324 parameter1 = 2048 parameter2 = 139 timing = 1 target = 2 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+
+END
+
 //Fix for Physical Mirror (bug identified by Kotophey at Beamdog's Forum)
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PHYSICAL_MIRROR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
