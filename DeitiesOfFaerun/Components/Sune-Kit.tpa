@@ -54,7 +54,22 @@ WRITE_ASCII 0x058 ~SUNEL~
 
 COPY "DeitiesOfFaerun\Spl\RASUNEF.spl" override
 
-COPY "DeitiesOfFaerun\Spl\RASUNE1.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                  //Rapture
+
+//Dire Charm
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DIRE_CHARM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DIRE_CHARM~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RASUNE1.spl~
+LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASUNE3~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASUNE3~	END
+
+END
+
+COPY "DeitiesOfFaerun\Spl\RASUNE2.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                  //Rapture
 
 COPY "DeitiesOfFaerun\Spl\RASUNEA.spl"  override                                                            //Effect upon allies
 LPF ALTER_EFFECT INT_VAR match_parameter2 = 999 match_opcode = 240 parameter2 = EVAL "%RA_DeafIc%" END
@@ -91,22 +106,8 @@ COPY "DeitiesOfFaerun\Spl\RASUNEE.spl"  override                                
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FLAME_STRIKE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FLAME_STRIKE~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RASUNE2.spl~
-LPM ~SPELL_TO_INNATE~
-
-END
-
-//Dire Charm
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DIRE_CHARM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DIRE_CHARM~	RET	spell_res	END
-
 COPY_EXISTING	~%spell_res%.spl~	~override/RASUNE3.spl~
-LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASUNE3~	END
 LPM ~SPELL_TO_INNATE~
-
-COPY_EXISTING	~%spell_res%.spl~	override
-LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASUNE3~	END
 
 END
 
@@ -214,7 +215,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_EMOTION[
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.spl~ ~override\RASPEMC.spl~
 
-ADD_SPELL ~override\RASPEMC.spl~ 1 4  CLERIC_RADUZIEL_EMOTION
+ADD_SPELL ~override\RASPEMC.spl~ 1 4  SUNE_RADUZIEL_EMOTION
 SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999279 SAY DESC @9999279
 TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
