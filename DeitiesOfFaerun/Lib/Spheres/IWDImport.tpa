@@ -2789,15 +2789,60 @@ APPEND ~hidespl.2da~ ~%spell_2%  1 0 0~
 END
 
 COPY_EXISTING ~%spell_1%.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_2%~ insert_point = 0 END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 28 opcode = 30 parameter1 = ~-100~ END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 85 opcode = 84 parameter1 = ~-100~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = EVAL ~%spell_2%~ insert_point = 0                         END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  30 target = 1 timing = 0 duration = 1 power = 4 resist_dispel = 3 parameter1 = ~-100~ parameter2 = 0 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  84 target = 1 timing = 0 duration = 1 power = 4 resist_dispel = 3 parameter1 = ~-100~ parameter2 = 0 END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 30; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 30; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 30 match_duration = 1 duration = (18 + (6 * i)) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 84 match_duration = 1 duration = (18 + (6 * i)) END
+	END
 
 COPY_EXISTING ~%spell_2%.spl~ override
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource = EVAL ~%spell_1%~ insert_point = 0 END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 30 opcode = 28 parameter1 = ~-100~ END
-LPF	CLONE_EFFECT     INT_VAR match_opcode = 84 opcode = 85 parameter1 = ~-100~ END
-
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 321 target = 1 timing = 1 STR_VAR resource = EVAL ~%spell_1%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  28 target = 1 timing = 0 duration = 1 power = 4 resist_dispel = 3 parameter1 = ~-100~ parameter2 = 0 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  85 target = 1 timing = 0 duration = 1 power = 4 resist_dispel = 3 parameter1 = ~-100~ parameter2 = 0 END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 30; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 30; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 30 match_duration = 1 duration = (18 + (6 * i)) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 84 match_duration = 1 duration = (18 + (6 * i)) END
+	END
 CLEAR_ARRAYS
 
 END
