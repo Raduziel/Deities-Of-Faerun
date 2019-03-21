@@ -2702,12 +2702,13 @@ TEXT_SPRINT	 $res_of_label(~WIZARD_FIRE_SHIELD_BLUE~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF	ALTER_EFFECT	   STR_VAR 			   match_resource = EVAL ~%SOURCE_RES%D~  resource = EVAL ~%spell_res%D~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%D~  resource = EVAL ~%spell_res%D~	END
 
 COPY_EXISTING ~SPWI403B.BAM~	~override\%spell_res%B.BAM~
 COPY_EXISTING ~SPWI403C.BAM~	~override\%spell_res%C.BAM~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Fireshield/SPWI403D.spl~	~override\%spell_res%D.spl~
+SAY NAME1 @9999275 SAY NAME2 @9999275 SAY UNIDENTIFIED_DESC @9999276 SAY DESC @9999276
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPWI403~	      resource = EVAL ~%spell_res%~	    END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%D~	END
 
@@ -2722,12 +2723,13 @@ TEXT_SPRINT	 $res_of_label(~WIZARD_FIRE_SHIELD_RED~) ~%spell_res%~
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF	ALTER_EFFECT	   STR_VAR 			   match_resource = EVAL ~%SOURCE_RES%D~  resource = EVAL ~%spell_res%D~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%D~  resource = EVAL ~%spell_res%D~	END
 
 COPY_EXISTING ~SPWI418B.BAM~	~override\%spell_res%B.BAM~
 COPY_EXISTING ~SPWI418C.BAM~	~override\%spell_res%C.BAM~
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Fireshield/SPWI418D.spl~	~override\%spell_res%D.spl~
+SAY NAME1 @9999277 SAY NAME2 @9999277 SAY UNIDENTIFIED_DESC @9999278 SAY DESC @9999278
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~SPWI418~	      resource = EVAL ~%spell_res%~	    END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%D~	END
 
