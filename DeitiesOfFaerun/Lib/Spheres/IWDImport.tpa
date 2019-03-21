@@ -36,6 +36,8 @@ END
 
 //Haste and Slow Changes
 
+ACTION_IF !MOD_IS_INSTALLED ~spell_rev/setup-spell_rev.tp2~ ~0~ BEGIN
+
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_HASTE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -77,6 +79,8 @@ COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999274 SAY DESC @9999274
 LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
 LPF CLONE_EFFECT  		INT_VAR match_opcode = 40 opcode = 190 parameter1 = ~-2~ parameter2 = 0 END
+
+END
 
 END
 
