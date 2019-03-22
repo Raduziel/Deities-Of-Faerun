@@ -7,7 +7,7 @@
 
 ADD_KIT ~RAYondFC~
     ~RAYondFC 0 0 0 0 1 1 0 1~
-    ~RAYondFC 0 0 0 0 1 1 0 1 2 2 2 2 0 2 2 2 2 2 0 0 2 2 0 0 2 2 2 2 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAYondFC 0 0 0 0 1 1 0 1 2 2 2 2 0 2 2 2 2 2 0 0 2 2 0 0 0 2 2 2 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAYondFC 12 3 3 3 13 3~
 	~RAYondFC 0 0 0 0 0 0~
 	~RAYondFC 12 3 3 3 13 3~
@@ -75,7 +75,7 @@ BUT_ONLY
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_LONG 0x18 flags
 	READ_BYTE 0x31 proficiency
-	PATCH_IF ((flags BAND 0b00000010) == 0b00000010) && !(proficiency = 104) && !(proficiency = 105) BEGIN
+	PATCH_IF ((flags BAND 0b00000010) == 0b00000010) && !(proficiency = 105) BEGIN
 		LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319

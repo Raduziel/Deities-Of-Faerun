@@ -7,7 +7,7 @@
 
 ADD_KIT ~RAYond~
     ~RAYond 0 0 0 0 1 1 0 1~
-    ~RAYond 0 0 0 0 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 0 0 1 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAYond 0 0 0 0 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAYond 12 3 3 3 13 3~
 	~RAYond 0 0 0 0 0 0~
 	~RAYond 12 3 3 3 13 3~
@@ -203,7 +203,7 @@ PRETTY_PRINT_2DA
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_LONG 0x18 flags
 	READ_BYTE 0x31 proficiency
-	PATCH_IF ((flags BAND 0b00000010) == 0b00000010) && !(proficiency = 104) && !(proficiency = 105) BEGIN
+	PATCH_IF ((flags BAND 0b00000010) == 0b00000010) && !(proficiency = 105) BEGIN
 		LPF ADD_ITEM_EQEFFECT
 			INT_VAR
 			  opcode = 319
