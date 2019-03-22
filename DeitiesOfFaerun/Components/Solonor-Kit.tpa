@@ -26,7 +26,7 @@ ADD_KIT ~RASolo~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASolo~
-		clascolr = ~203 201 189 164 146~
+		clascolr = ~27 146 72 91 14~
 		clswpbon = ~1 0 2~
 		clsrcreq = ~0 1 1 0 0 0 0~
 END

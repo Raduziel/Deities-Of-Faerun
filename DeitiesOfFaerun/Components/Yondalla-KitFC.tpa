@@ -26,7 +26,7 @@ ADD_KIT ~RAYondFC~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAYondFC~
-		clascolr = ~26 138 54 38 52~
+		clascolr = ~90 95 146 95 99~
 		clswpbon = ~1 0 2~
 		clsrcreq = ~0 0 0 0 1 0 0~
 END
