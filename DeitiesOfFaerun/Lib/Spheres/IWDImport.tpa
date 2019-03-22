@@ -2797,7 +2797,7 @@ LPF	CLONE_EFFECT       INT_VAR match_opcode = 85 opcode = 84 END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
-	FOR (j = 0; j < fx_num; ++j) BEGIN
+	FOR (i = 0; i < ab_num; ++i) BEGIN
 		READ_SHORT (ab_off + i * 0x28 + 0x1e) fx_num
 		READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
 		FOR (j = 0; j < fx_num; ++j) BEGIN
@@ -2817,7 +2817,7 @@ LPF	CLONE_EFFECT       INT_VAR match_opcode = 84 opcode = 85 END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
-	FOR (j = 0; j < fx_num; ++j) BEGIN
+	FOR (i = 0; i < ab_num; ++i) BEGIN
 		READ_SHORT (ab_off + i * 0x28 + 0x1e) fx_num
 		READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
 		FOR (j = 0; j < fx_num; ++j) BEGIN
