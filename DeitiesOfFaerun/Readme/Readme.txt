@@ -67,6 +67,8 @@ KNOWN ISSUES:
 
 * Anomen will be able to get proficiencies as a kitless Fighter (5 slots in every weapon). There is nothing I can do about it. He is still bounded to equipment restriction, so be aware that a Watcher of Helm can only use bludgeoning weapons. Installing Kjeron's Dual-Class-Into-Kits fixes this.
 
+* A multiclass R/C or F/C of one deity that gives d10 as HD will have 2 extra HP when created in ToB. I have no idea why.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This mod contains the following components:
