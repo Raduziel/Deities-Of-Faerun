@@ -95,6 +95,7 @@ THEN
 	RESPONSE #100
 		ApplySpellRES("RAHPFIX",Player1)
 		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -105,6 +106,7 @@ THEN
 	RESPONSE #100
 		ApplySpellRES("RAHPFIX",Player2)
 		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -115,6 +117,7 @@ THEN
 	RESPONSE #100
 		ApplySpellRES("RAHPFIX",Player3)
 		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -125,6 +128,7 @@ THEN
 	RESPONSE #100
 		ApplySpellRES("RAHPFIX",Player4)
 		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -135,6 +139,7 @@ THEN
 	RESPONSE #100
 		ApplySpellRES("RAHPFIX",Player5)
 		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -145,6 +150,7 @@ THEN
 	RESPONSE #100
 		ApplySpellRES("RAHPFIX",Player6)
 		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 >>>>>>>>
@@ -192,6 +198,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player1)
 		ApplySpellRES("RAHPFIX",Player1)
 		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -207,6 +214,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player2)
 		ApplySpellRES("RAHPFIX",Player2)
 		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -222,6 +230,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player3)
 		ApplySpellRES("RAHPFIX",Player3)
 		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -237,6 +246,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player4)
 		ApplySpellRES("RAHPFIX",Player4)
 		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -252,6 +262,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player5)
 		ApplySpellRES("RAHPFIX",Player5)
 		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -267,10 +278,11 @@ THEN
 		ApplySpellRES("RAHPFIX",Player6)
 		ApplySpellRES("RAHPFIX",Player6)
 		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 >>>>>>>>
-EXTEND_TOP	~AR0602.BCS~	~.../inlined.baf~
+EXTEND_BOTTOM	~AR0602.BCS~	~.../inlined.baf~
 
 
 /*Throne of Bhaal*/
@@ -297,6 +309,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player1)
 		ApplySpellRES("RAHPFIX",Player1)
 		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -319,6 +332,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player2)
 		ApplySpellRES("RAHPFIX",Player2)
 		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -341,6 +355,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player3)
 		ApplySpellRES("RAHPFIX",Player3)
 		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -363,6 +378,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player4)
 		ApplySpellRES("RAHPFIX",Player4)
 		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -385,6 +401,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player5)
 		ApplySpellRES("RAHPFIX",Player5)
 		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -407,10 +424,11 @@ THEN
 		ApplySpellRES("RAHPFIX",Player6)
 		ApplySpellRES("RAHPFIX",Player6)
 		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 >>>>>>>>
-EXTEND_TOP	~AR4000.BCS~	~.../inlined.baf~
+EXTEND_BOTTOM	~AR4000.BCS~	~.../inlined.baf~
 
 END
 
@@ -433,6 +451,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player1)
 		ApplySpellRES("RAHPFIX",Player1)
 		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -448,6 +467,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player2)
 		ApplySpellRES("RAHPFIX",Player2)
 		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -463,6 +483,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player3)
 		ApplySpellRES("RAHPFIX",Player3)
 		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -478,6 +499,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player4)
 		ApplySpellRES("RAHPFIX",Player4)
 		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -493,6 +515,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player5)
 		ApplySpellRES("RAHPFIX",Player5)
 		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -508,6 +531,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player6)
 		ApplySpellRES("RAHPFIX",Player6)
 		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 >>>>>>>>
@@ -537,6 +561,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player1)
 		ApplySpellRES("RAHPFIX",Player1)
 		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -555,6 +580,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player2)
 		ApplySpellRES("RAHPFIX",Player2)
 		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -573,6 +599,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player3)
 		ApplySpellRES("RAHPFIX",Player3)
 		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -591,6 +618,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player4)
 		ApplySpellRES("RAHPFIX",Player4)
 		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -609,6 +637,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player5)
 		ApplySpellRES("RAHPFIX",Player5)
 		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 IF
@@ -627,6 +656,7 @@ THEN
 		ApplySpellRES("RAHPFIX",Player6)
 		ApplySpellRES("RAHPFIX",Player6)
 		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+		Continue()
 END
 
 >>>>>>>>
