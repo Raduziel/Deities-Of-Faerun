@@ -59,4 +59,571 @@ LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAGaraFC + 0
 WRITE_ASCII 0x03a ~GARAS~
 WRITE_ASCII 0x058 ~GARAL~
 
+//A fix for the HP mismatch
+
+
+/*Baldur's Gate, Icewind Dale, Black Pits 1*/
+
+ACTION_IF GAME_IS ~bgee iwdee eet~ BEGIN
+
+<<<<<<<< .../inlined.baf
+
+IF
+	CheckStat(Player1,0,XP)
+	Kit(Player1,RAGaraFC)
+	TriggerOverride(Player1,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player1)
+		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player2,0,XP)
+	Kit(Player2,RAGaraFC)
+	TriggerOverride(Player2,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player2)
+		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player3,0,XP)
+	Kit(Player3,RAGaraFC)
+	TriggerOverride(Player3,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player3)
+		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player4,0,XP)
+	Kit(Player4,RAGaraFC)
+	TriggerOverride(Player4,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player4)
+		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player5,0,XP)
+	Kit(Player5,RAGaraFC)
+	TriggerOverride(Player5,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player5)
+		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player6,0,XP)
+	Kit(Player6,RAGaraFC)
+	TriggerOverride(Player6,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player6)
+		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+>>>>>>>>
+
+ACTION_IF GAME_IS ~bgee~      BEGIN
+
+EXTEND_TOP	~AR2600.BCS~	~.../inlined.baf~  /*Candlekeep*/
+
+EXTEND_TOP	~OH9310.BCS~	~.../inlined.baf~  /*Arena*/
+
+END
+
+ACTION_IF GAME_IS ~eet~       BEGIN
+
+EXTEND_TOP	~BG2600.BCS~	~.../inlined.baf~  /*Candlekeep - EET version */
+
+END
+
+ACTION_IF GAME_IS ~iwdee~     BEGIN
+
+EXTEND_TOP	~AR1006.BCS~	~.../inlined.baf~  /*Easthaven's Tavern*/
+
+END
+
+END
+
+/*Shadows of Amn, Throne of Bhaal*/
+
+ACTION_IF GAME_IS ~bg2ee~     BEGIN
+
+/*Shadows of Amn*/
+
+<<<<<<<< .../inlined.baf
+
+IF
+	CheckStat(Player1,89000,XP)
+	Kit(Player1,RAGaraFC)
+	TriggerOverride(Player1,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player2,89000,XP)
+	Kit(Player2,RAGaraFC)
+	TriggerOverride(Player2,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player3,89000,XP)
+	Kit(Player3,RAGaraFC)
+	TriggerOverride(Player3,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player4,89000,XP)
+	Kit(Player4,RAGaraFC)
+	TriggerOverride(Player4,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player5,89000,XP)
+	Kit(Player5,RAGaraFC)
+	TriggerOverride(Player5,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player6,89000,XP)
+	Kit(Player6,RAGaraFC)
+	TriggerOverride(Player6,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+>>>>>>>>
+EXTEND_TOP	~AR0602.BCS~	~.../inlined.baf~
+
+
+/*Throne of Bhaal*/
+
+<<<<<<<< .../inlined.baf
+
+IF
+	CheckStat(Player1,2500000,XP)
+	Kit(Player1,RAGaraFC)
+	TriggerOverride(Player1,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player2,2500000,XP)
+	Kit(Player2,RAGaraFC)
+	TriggerOverride(Player2,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player3,2500000,XP)
+	Kit(Player3,RAGaraFC)
+	TriggerOverride(Player3,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player4,2500000,XP)
+	Kit(Player4,RAGaraFC)
+	TriggerOverride(Player4,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player5,2500000,XP)
+	Kit(Player5,RAGaraFC)
+	TriggerOverride(Player5,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player6,2500000,XP)
+	Kit(Player6,RAGaraFC)
+	TriggerOverride(Player6,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+>>>>>>>>
+EXTEND_TOP	~AR4000.BCS~	~.../inlined.baf~
+
+END
+
+/*Siege of Dragonspear*/
+
+ACTION_IF GAME_INCLUDES ~sod~ BEGIN
+
+<<<<<<<< .../inlined.baf
+
+IF
+	CheckStat(Player1,64000,XP)
+	Kit(Player1,RAGaraFC)
+	TriggerOverride(Player1,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player2,64000,XP)
+	Kit(Player2,RAGaraFC)
+	TriggerOverride(Player2,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player3,64000,XP)
+	Kit(Player3,RAGaraFC)
+	TriggerOverride(Player3,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player4,64000,XP)
+	Kit(Player4,RAGaraFC)
+	TriggerOverride(Player4,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player5,64000,XP)
+	Kit(Player5,RAGaraFC)
+	TriggerOverride(Player5,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player6,64000,XP)
+	Kit(Player6,RAGaraFC)
+	TriggerOverride(Player6,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+>>>>>>>>
+EXTEND_TOP	~BD0120.BCS~	~.../inlined.baf~
+
+END
+
+/*Heart of Winter, Black Pits 2*/
+
+ACTION_IF GAME_IS ~iwdee bg2ee~ BEGIN
+
+<<<<<<<< .../inlined.baf
+
+IF
+	CheckStat(Player1,500000,XP)
+	Kit(Player1,RAGaraFC)
+	TriggerOverride(Player1,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ApplySpellRES("RAHPFIX",Player1)
+		ActionOverride(Player1,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player2,500000,XP)
+	Kit(Player2,RAGaraFC)
+	TriggerOverride(Player2,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ApplySpellRES("RAHPFIX",Player2)
+		ActionOverride(Player2,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player3,500000,XP)
+	Kit(Player3,RAGaraFC)
+	TriggerOverride(Player3,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ApplySpellRES("RAHPFIX",Player3)
+		ActionOverride(Player3,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player4,500000,XP)
+	Kit(Player4,RAGaraFC)
+	TriggerOverride(Player4,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ApplySpellRES("RAHPFIX",Player4)
+		ActionOverride(Player4,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player5,500000,XP)
+	Kit(Player5,RAGaraFC)
+	TriggerOverride(Player5,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ApplySpellRES("RAHPFIX",Player5)
+		ActionOverride(Player5,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+IF
+	CheckStat(Player6,500000,XP)
+	Kit(Player6,RAGaraFC)
+	TriggerOverride(Player6,Global("RAHPFIX","LOCALS",0))
+THEN
+	RESPONSE #100
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ApplySpellRES("RAHPFIX",Player6)
+		ActionOverride(Player6,SetGlobal("RAHPFIX","LOCALS",1))
+END
+
+>>>>>>>>
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+EXTEND_TOP	~AR9100.BCS~	~.../inlined.baf~
+
+END
+
+ACTION_IF GAME_IS ~bg2ee~ BEGIN
+
+EXTEND_TOP	~OH8000.BCS~	~.../inlined.baf~
+
+END
+
+END
+
 //EoF
