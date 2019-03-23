@@ -14,7 +14,7 @@ ADD_KIT ~RAValk~
     ~RAValk 14 3 3 3 10 12~
 	~RAValk 0 0 0 0 0 0 1 0 0~
 	~RAValk 1 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAValk.2da~
+	~DeitiesOfFaerun/Tables/RAValk.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAValk~
 		clascolr = ~80 58 105 95 57~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSVALK.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSVALK.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSVALK~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSVALK.itm~ SAY NAME1 @3804 SAY NAME2 @3804 SAY DESC @3805
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSVALK.itm~ SAY NAME1 @3804 SAY NAME2 @3804 SAY DESC @3805
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAValk + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~VALKS~
 WRITE_ASCII 0x058 ~VALKL~
@@ -91,11 +90,11 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %SWAVE% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"     END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL ~%RA_Stunned%~     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL ~%RA_Unconscious%~ END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAVALK3.spl~
 LPM ~SPELL_TO_INNATE~
@@ -112,7 +111,7 @@ LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
-LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
+LAF cd_new_summon_table STR_VAR descript = ~WATER_ELEMENTAL_RADUZIEL~ 2da_file = RAELEMW RET RAELEMW = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 RADUZIEL_CONJURE_WATER_ELEMENTAL
 SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
@@ -121,18 +120,18 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override/%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAVALK4.spl~
 LPM ~SPELL_TO_INNATE~
@@ -169,8 +168,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"AX" "BW" "CB" "DD" "HB" "S0" "S1" "S2" "S3" "SP" "SS" "4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~AX~ ~BW~ ~CB~ ~DD~ ~HB~ ~S0~ ~S1~ ~S2~ ~S3~ ~SP~ ~SS~ ~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAValk~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -182,7 +181,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~VALKS~ ~VALKL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

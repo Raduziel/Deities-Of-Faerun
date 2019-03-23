@@ -14,7 +14,7 @@ ADD_KIT ~RAYond~
     ~RAYond 12 3 3 3 13 3~
 	~RAYond 1 0 0 0 0 0 0 0 0~
 	~RAYond 0 0 0 0 0 1~
-	~DeitiesOfFaerun\Tables\RAYond.2da~
+	~DeitiesOfFaerun/Tables/RAYond.2da~
 	~K_C_HL~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAYond~
 		clascolr = ~90 95 146 95 99~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~0 0 0 0 1 0 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl~ ~override/RAHSYOND.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSYOND.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSYOND~ END
 
-COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm~ ~override/RAHSYOND.itm~ SAY NAME1 @4604 SAY NAME2 @4604 SAY DESC @4605
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSYOND.itm~ SAY NAME1 @4604 SAY NAME2 @4604 SAY DESC @4605
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAYond + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~YONDS~
 WRITE_ASCII 0x058 ~YONDL~
 
 //Spells
 
-COPY ~DeitiesOfFaerun\Spl\RAYONDF.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RAYONDF.spl~ override
 LPF ALTER_EFFECT     INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Panic%~     END
 LPF ALTER_EFFECT     INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_MoralFail%~ END
 LPF ALTER_EFFECT     INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL ~%RA_Held%~      END
@@ -69,7 +68,7 @@ PRETTY_PRINT_2DA
 
 END
 
-COPY ~DeitiesOfFaerun\Spl\RAYONDF.eff~ override
+COPY ~DeitiesOfFaerun/Spl/RAYONDF.eff~ override
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -154,8 +153,8 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO300% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SpikeGrowth/SPPR324C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND5.spl~
 LPM ~SPELL_TO_INNATE~
@@ -164,32 +163,32 @@ END
 
 //Heroes' Feast
 
-COPY ~DeitiesOfFaerun\Spl\RAYOND6.spl~ override 
+COPY ~DeitiesOfFaerun/Spl/RAYOND6.spl~ override 
 SAY NAME1 @4609 SAY UNIDENTIFIED_DESC @4610
 
 ACTION_IF !FILE_EXISTS_IN_GAME ~RAFeast.itm~ BEGIN
 
-COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeast.itm~ override 
+COPY ~DeitiesOfFaerun/Itm/HeroesFeast/RAFeast.itm~ override 
 SAY NAME1 @4611 SAY NAME2 @4611 SAY DESC @4612 SAY UNIDENTIFIED_DESC @4612
 
-COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeastL.bam~ override
+COPY ~DeitiesOfFaerun/Itm/HeroesFeast/RAFeastL.bam~ override
 
-COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeastS.bam~ override
+COPY ~DeitiesOfFaerun/Itm/HeroesFeast/RAFeastS.bam~ override
 
 END
 
 //Shapeshift
 
-COPY ~DeitiesOfFaerun\Itm\YondallaWolf\RAYOND7.itm~  override
+COPY ~DeitiesOfFaerun/Itm/YondallaWolf/RAYOND7.itm~  override
 SAY NAME1 @4613 SAY NAME2 @4613 SAY DESC @4613
 
-COPY ~DeitiesOfFaerun\Spl\RAYOND7.spl~  override
+COPY ~DeitiesOfFaerun/Spl/RAYOND7.spl~  override
 SAY NAME1 @4614 SAY UNIDENTIFIED_DESC @4615
 
-COPY ~DeitiesOfFaerun\Spl\RAYOND71.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RAYOND71.spl~ override
 SAY NAME1 @4616 SAY UNIDENTIFIED_DESC @4616
 
-COPY ~DeitiesOfFaerun\Spl\RAYondNF.bam~ override
+COPY ~DeitiesOfFaerun/Spl/RAYondNF.bam~ override
 
 //Multiclass CLAB
 
@@ -247,7 +246,7 @@ ACTION_FOR_EACH file IN ~YONDS~ ~YONDL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~YONDHERO~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

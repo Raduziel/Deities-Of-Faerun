@@ -14,7 +14,7 @@ ADD_KIT ~RAUrdl~
     ~RAUrdl 11 3 3 3 9 3~
 	~RAUrdl 0 0 0 0 0 0 0 0 1~
 	~RAUrdl 0 0 0 1 0 0~
-	~DeitiesOfFaerun\Tables\RAUrdl.2da~
+	~DeitiesOfFaerun/Tables/RAUrdl.2da~
 	~K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAUrdl~
 		clascolr = ~47 127 183 182 66~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~0 0 0 0 0 1 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSURDL.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSURDL.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSURDL~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSURDL.itm~ SAY NAME1 @4704 SAY NAME2 @4704 SAY DESC @4705
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSURDL.itm~ SAY NAME1 @4704 SAY NAME2 @4704 SAY DESC @4705
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUrdl + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~URDLS~
 WRITE_ASCII 0x058 ~URDLL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAURDLF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAURDLF.spl~ override
 
 //Cause Light Wounds
 
@@ -71,8 +70,8 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CauseLightWounds/SPPR114B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CauseLightWounds/SPPR114C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CauseLightWounds/SPPR114B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CauseLightWounds/SPPR114C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAURDL1.spl~
 LPM ~SPELL_TO_INNATE~
@@ -147,10 +146,10 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%~ END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 40835 parameter1 = RESOLVE_STR_REF (@9999170) END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740C.BAM~	~override/%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740.EFF~	~override\%spell_res%.EFF~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Wither/SPPR740.EFF~	~override/%spell_res%.EFF~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAURDL7.spl~
 LPM ~SPELL_TO_INNATE~

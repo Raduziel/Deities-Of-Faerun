@@ -14,7 +14,7 @@ ADD_KIT ~RAVels~
     ~RAVels 3 3 3 11 16 3~
 	~RAVels 0 0 1 0 0 1 0 0 1~
 	~RAVels 0 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RAVels.2da~
+	~DeitiesOfFaerun/Tables/RAVels.2da~
 	~K_C_H~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAVels~
 		clascolr = ~67 99 16 137 17~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 0 0 0 0 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSVELS.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSVELS.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSVELS~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSVELS.itm~ SAY NAME1 @3204 SAY NAME2 @3204 SAY DESC @3205
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSVELS.itm~ SAY NAME1 @3204 SAY NAME2 @3204 SAY DESC @3205
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAVels + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~VELSS~
 WRITE_ASCII 0x058 ~VELSL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAVELSF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAVELSF.spl~ override
 
 //Chill Touch
 		  
@@ -84,10 +83,10 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun\Spl\RAVELS4.spl~  ~override~ SAY NAME1 @3206 SAY UNIDENTIFIED_DESC @3207          //Gaseous Form
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Poison%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_Poisoned%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Bleeding%" END
+COPY ~DeitiesOfFaerun/Spl/RAVELS4.spl~  override SAY NAME1 @3206 SAY UNIDENTIFIED_DESC @3207          //Gaseous Form
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL ~%RA_Poison%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL ~%RA_Poisoned%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL ~%RA_Bleeding%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -111,11 +110,11 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EV
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 60 duration = (60 * i) END
 	END
 
-COPY ~DeitiesOfFaerun\Spl\RAVels41.spl~ override SAY NAME1 @3208 SAY UNIDENTIFIED_DESC @3208
+COPY ~DeitiesOfFaerun/Spl/RAVels41.spl~ override SAY NAME1 @3208 SAY UNIDENTIFIED_DESC @3208
 
-COPY ~DeitiesOfFaerun\Spl\RAVelsNF.bam~ override
+COPY ~DeitiesOfFaerun/Spl/RAVelsNF.bam~ override
 
-COPY ~DeitiesOfFaerun\Spl\RAVelsInv.bam~ ~override\MMSTINV.bam~
+COPY ~DeitiesOfFaerun/Spl/RAVelsInv.bam~ ~override/MMSTINV.bam~
 
 //Energy Drain
 
@@ -168,8 +167,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" "2A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~2A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -181,7 +180,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~VELSS~ ~VELSL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -200,7 +199,7 @@ ACTION_FOR_EACH file IN ~VELSS~ ~VELSL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~VELSGASO~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
