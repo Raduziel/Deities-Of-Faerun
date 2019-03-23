@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.9.7~
+VERSION ~1.9.7.1~
 
 ALWAYS
 
@@ -692,7 +692,7 @@ INCLUDE  ~DeitiesOfFaerun/Components/Solonor-Kit.tpa~
 BEGIN @99999055
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Yondalla-Kit.tpa~
-INCLUDE  ~DeitiesOfFaerun/Components/Yondalla-KitFC.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Yondalla-KitRC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
