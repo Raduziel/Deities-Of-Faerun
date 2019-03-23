@@ -200,7 +200,6 @@ Turn/Command Undead: No.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - May specialize in any melee weapon.
 - May Enrage as a Berserker once per day.
 - May cast Prayer once per day as a special ability, starting at level 5.
@@ -577,7 +576,6 @@ Turn/Command Undead: No.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - May achieve Mastery in Axes and Warhammers.
 - May cast Command twice per day as a special ability, starting at level 1.
 - May cast Spiritual Hammer once per day as a special ability, starting at level 3.
@@ -908,7 +906,6 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - Gains -2 bonus to Speed Factor.
 - May cast Glyph of Warding once per day as a special ability, starting at level 1.
 - May use the special ability Wyvern Watch once per day, starting at level 3.
@@ -1221,7 +1218,6 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - May cast Hold Person as a special ability once per day, starting at level 1.
 - May cast Strength of One as a special ability once per day, starting at level 3.
 - May cast Holy Word as a special ability once per day, starting at level 10.
@@ -1585,7 +1581,6 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - May cast Command as a special ability once per day, starting at level 1.
 - May cast Greater Command as a special ability once per day, starting at level 5.
 - May cast Bolt of Glory as a special ability once per day, starting at level 12.
@@ -1927,7 +1922,6 @@ Turn/Command Undead: No.
 Features:
 
 - May use the weapon Claws of Malar.
-- Receives Attacks Per Round as if they were warriors.
 - May cast Beast Claw once per day as a special ability, starting at level 3.
 - Becomes immune to Charm effects, starting at level 7.
 - May cast Animal Rage once per day as a special ability, starting at level 10.
@@ -3237,7 +3231,6 @@ Turn/Command Undead: No.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - May cast Clairvoyance once per day as a special ability, starting at level 3.
 - May use the Divination special ability once per day, starting at level 5.
 - May use the Consequence special ability once per day, starting at level 7.
@@ -3355,7 +3348,6 @@ Turn/Command Undead: No.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - May Enrage as a Berserker once per day.
 - May use the Chaotic Combat special ability once per day, starting at level 5.
 - May use the Blood Armor special ability once per day, starting at level 7.
@@ -4289,7 +4281,6 @@ Turn/Command Undead: No.
 
 Features:
 
-- Receives Attacks Per Round as if they were warriors.
 - May cast Invisibility once per day as a special ability, starting at level 2. 
 - May cast Protection From Normal Missiles once per day as a special ability, starting at level 3.
 - May cast Wraithform once per day as a special ability, starting at level 5.
@@ -5168,5 +5159,90 @@ Features:
 - May cast Creeping Doom once per day as a special ability, starting at level 10.
 - May cast Slay Living once per day as a special ability, starting at level 13.
 - May cast Wither once per day as a special ability, starting at level 	13.~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Luckmaiden of Haela
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4801 = ~luckmaiden of haela~
+@4802 = ~Luckmaiden of Haela~
+@4803 = ~LUCKMAIDEN OF HAELA: Haela Brightaxe (HUH-ae-la BRITE-ax) is the patron of dwarves who love the fray, who wander the surface lands (especially in the North), who face unknown dangers, and who battle monsters. Although dwarves of all alignments venerate the Lady of the Fray, those Stout Folk of chaotic or neutral good alignment who love battle or exhibit berserker tendencies tend to actively embrace the worship of the Luckmaiden.
+
+Haela dwells in a simple cave in the Beastlands, but she bothers none of the animals that dwell there, keeping to herself, hidden by everpresent mists in the depths of a forest. Findar Endar, as the grotto is known, is protected by her Guardians. Rarely at home, the Luckmaiden is usually to be found in wildspace or on a world such as Toril, wherever dwarves are enjoying battle but in need of aid.
+
+Haela is well known among dwarves for her ready laugh, her booming voice, and her ever-cheerful nature. The Luckmaiden is charming, resourceful, and delivers gallows witticisms with a broad grin.
+
+Although she recognizes no superior save Moradin, Haela is the only widely recognized dwarven demipower active in the Realms today, and as such, the Luckmaiden is ever-mindful of the wishes of the more established and more powerful members of the Morndinsamman. As a goddess of dwarven warriors, particularly those who travel far afield, Haela's portfolio overlaps with that of the Marthammor Duin, and she works closely with the Finder-of-Trails. Likewise, the Lady of the Fray maintains good relations with Clangeddin Silverbeard, the Father of Battles, into whose sphere of influence she also crosses.
+
+Only females can join Haela's clergy.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Healing, Protection, Thought, Combat, Earth.
+Minor: Creation, Divination, Travelers.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Receives Attacks Per Round as if they were warriors.
+- Gains +2 to all Saving Throws when wielding a melee weapon.
+- May cast Shield once per day as a special ability, starting at level 1.
+- May cast Aid once per day as a special ability, starting at level 3, on themselves only.
+- May cast Draw Upon Holy Might once per day as a special ability, starting at level 5.
+- May cast Prayer once per day as a special ability, starting at level 10.
+- May cast Heal once per day as a special ability, starting at level 15.~
+@4804 = ~Holy Symbol of Haela Brightaxe~
+@4805 = ~Only the most worthy and devoted servants of the Lady of the Fray are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4806 = ~Haela doesn't bestow her grace upon males.~
+@4807 = ~Aid
+(Necromancy, Conjuration)
+
+Level: 2
+Sphere: Healing, Combat 
+Range: 0
+Duration: 1 round + 1 round/level 
+Casting Time: 5 
+Area of Effect: The caster 
+Saving Throw: None 
+
+The caster of this spell gains the benefits of a Bless spell (+1 to attack rolls and Saving Throws) and a special bonus of 1d8 additional Hit Points for the duration of the spell. The Aid spell enables the priest to actually have more Hit Points than <PRO_HISHER> current maximum. The bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic.~
+@4808 = ~LUCKMAIDEN OF HAELA (F/C): Haela Brightaxe (HUH-ae-la BRITE-ax) is the patron of dwarves who love the fray, who wander the surface lands (especially in the North), who face unknown dangers, and who battle monsters. Although dwarves of all alignments venerate the Lady of the Fray, those Stout Folk of chaotic or neutral good alignment who love battle or exhibit berserker tendencies tend to actively embrace the worship of the Luckmaiden.
+
+Haela dwells in a simple cave in the Beastlands, but she bothers none of the animals that dwell there, keeping to herself, hidden by everpresent mists in the depths of a forest. Findar Endar, as the grotto is known, is protected by her Guardians. Rarely at home, the Luckmaiden is usually to be found in wildspace or on a world such as Toril, wherever dwarves are enjoying battle but in need of aid.
+
+Haela is well known among dwarves for her ready laugh, her booming voice, and her ever-cheerful nature. The Luckmaiden is charming, resourceful, and delivers gallows witticisms with a broad grin.
+
+Although she recognizes no superior save Moradin, Haela is the only widely recognized dwarven demipower active in the Realms today, and as such, the Luckmaiden is ever-mindful of the wishes of the more established and more powerful members of the Morndinsamman. As a goddess of dwarven warriors, particularly those who travel far afield, Haela's portfolio overlaps with that of the Marthammor Duin, and she works closely with the Finder-of-Trails. Likewise, the Lady of the Fray maintains good relations with Clangeddin Silverbeard, the Father of Battles, into whose sphere of influence she also crosses.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Healing, Protection, Thought, Combat, Earth.
+Minor: Creation, Divination, Travelers.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Gains +2 to all Saving Throws when wielding a melee weapon.
+- May cast Shield once per day as a special ability, starting at level 1.
+- May cast Aid once per day as a special ability, starting at level 3, on themselves only.
+- May cast Draw Upon Holy Might once per day as a special ability, starting at level 5.
+- May cast Prayer once per day as a special ability, starting at level 10.
+- May cast Heal once per day as a special ability, starting at level 15.~
 
 //EoF
