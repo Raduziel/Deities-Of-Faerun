@@ -49,6 +49,14 @@ LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUrdl + 0x4
 WRITE_ASCII 0x03a ~URDLS~
 WRITE_ASCII 0x058 ~URDLL~
 
+//Urdlen Claw
+
+COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.itm~ ~override/RAURDLCL.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUrdl + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+
+COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.spl~ ~override/RAURDLC.spl~
+LPF ALTER_EFFECT INT_VAR match_opcode = 122 STR_VAR resource = ~RAURDLCL~ END
+
 //Spells
 
 COPY ~DeitiesOfFaerun/Spl/RAURDLF.spl~ override
@@ -162,12 +170,14 @@ ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
 COPY_EXISTING ~RAUrdl.2da~ ~override/RAUrdlCT.2da~
 SET_2DA_ENTRY 9 25 50 ~AP_RATURDL~
+SET_2DA_ENTRY 3  1 50 ~AP_RAURDLT~
 PRETTY_PRINT_2DA
 
 END ELSE BEGIN
 
 COPY_EXISTING ~RAUrdl.2da~ ~override/RAUrdlCT.2da~
 SET_2DA_ENTRY 9 25 50 ~AP_RATURDL~
+SET_2DA_ENTRY 3  1 50 ~AP_RAURDLT~
 SET_2DA_ENTRY 1  7 50 ~AP_#EVASION~
 PRETTY_PRINT_2DA
 
@@ -209,6 +219,25 @@ ACTION_FOR_EACH file IN ~URDLS~ ~URDLL~ BEGIN
       new_base_index
     STR_VAR
       source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~RAURDLCL~ ~RAURDLCS~ BEGIN
+COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/MalarClaw/MOS%original_base_index%.pvrz~
     END
   END
 END
