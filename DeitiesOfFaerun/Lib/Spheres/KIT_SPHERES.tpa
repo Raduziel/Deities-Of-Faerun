@@ -801,9 +801,9 @@
 		~Air~ => 0
 		~Water~ => 0
 		~Earth~ => 7
-		~Fire~ => 3
+		~Fire~ => 0
 		~Divination~ => 3
-		~Travelers~ => 0
+		~Travelers~ => 3
 		~Weave~ => 0
 		~Trickery~ => 0
 		~Time~ => 0
