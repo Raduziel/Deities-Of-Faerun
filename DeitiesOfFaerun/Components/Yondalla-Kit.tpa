@@ -13,7 +13,7 @@ ADD_KIT ~RAYond~
 	~RAYond 12 3 3 3 13 3~
     ~RAYond 12 3 3 3 13 3~
 	~RAYond 1 0 0 0 0 0 0 0 0~
-	~RAYond 0 0 0 0 1 0 0~
+	~RAYond 0 0 0 0 0 1~
 	~DeitiesOfFaerun\Tables\RAYond.2da~
 	~K_C_HL~
 	~0x00000000 3~
@@ -193,9 +193,20 @@ COPY ~DeitiesOfFaerun\Spl\RAYondNF.bam~ override
 
 //Multiclass CLAB
 
-COPY_EXISTING ~RAYond.2da~ ~override/RAYondFC.2da~
-SET_2DA_ENTRY 9 25 50 ~AP_RAFYOND~
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RAUlut.2da~ ~override/RAUlutRC.2da~
+SET_2DA_ENTRY 9 25 50 ~AP_RARYOND~
 PRETTY_PRINT_2DA
+
+END ELSE BEGIN
+
+COPY_EXISTING ~RAUlut.2da~ ~override/RAUlutRC.2da~
+SET_2DA_ENTRY 9 25 50 ~AP_RARYOND~
+SET_2DA_ENTRY 4  1 50 ~GA_SPCL922~
+PRETTY_PRINT_2DA
+
+END
 
 //Restriction
 
