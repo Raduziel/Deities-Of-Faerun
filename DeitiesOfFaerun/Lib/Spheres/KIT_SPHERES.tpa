@@ -783,6 +783,33 @@
 		~Vocal~ => 3
 	END
 	
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAHAEL~) BEGIN
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 7
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 7
+		~Combat~ => 7
+		~Creation~ => 3
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 7
+		~Fire~ => 3
+		~Divination~ => 0
+		~Travelers~ => 3
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 0
+	END
+	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAHOAR~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 0
