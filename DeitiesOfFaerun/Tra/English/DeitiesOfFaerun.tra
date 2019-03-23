@@ -135,7 +135,12 @@ Features:
 - May specialize in any melee weapon.
 - May Enrage as a Berserker once per day.
 - May cast Prayer once per day as a special ability, starting at level 5.
-- Hit Dice: d10.~
+- May use the Heroes' Feast special ability once per day, starting at level 10.
+- Hit Dice: d10.
+
+HEROES' FEAST
+
+The priest creates a banquet that heals a small amount of damage, cures poison and diseases, prevents fear and blesses whoever eats it.~
 @204 = ~Holy Symbol of Tempus~
 @205 = ~Only the most worthy and devoted servants of the Foehammer are granted these powerful holy symbols.
 
@@ -148,7 +153,21 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@206 = ~BATTLEGUARD OF TEMPUS (F/C): Tempus (TEM-pus) is random in his favors, yet his chaotic nature favors all sides equally. Lord Tempus may be on an army's side on one day, and against them the next; such is the nature of a war. Tempus is prayed to most of all on the nights before battles and regularly venerated by all warriors, regardless of their alignment. As a result, he is a strong, exuberant, robust god — a warrior's god. Tempus sometimes appears at huge battles and important combats — and on rare occasions to individuals who are in a position to cause great strife by their decisions.
+@206 = ~Heroes' Feast~
+@207 = ~Heroes' Feast
+(Alteration, Invocation/Evocation)
+
+Level: 6
+Sphere: Creation
+Range: 0
+Duration: Special
+Casting Time: 10
+Area of Effect: 1 feaster/level
+Saving Throw: None
+
+This spell enables the priest to bring forth a feast that serves as one creature per level of experience, up to six feasters. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 8 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.~
+@208 = ~Blessed Food~
+@209 = ~BATTLEGUARD OF TEMPUS (F/C): Tempus (TEM-pus) is random in his favors, yet his chaotic nature favors all sides equally. Lord Tempus may be on an army's side on one day, and against them the next; such is the nature of a war. Tempus is prayed to most of all on the nights before battles and regularly venerated by all warriors, regardless of their alignment. As a result, he is a strong, exuberant, robust god — a warrior's god. Tempus sometimes appears at huge battles and important combats — and on rare occasions to individuals who are in a position to cause great strife by their decisions.
 
 Although mighty and profoundly honorable in battle, Tempus answers to his own warrior's code. He is quiet and solitary in relationship to other Faerûnian deities, pursuing no long-lasting alliances or brief flirtations. He is known to love food, drink, and the hunt, though he loves battle best. In recent years, he has sponsored the Red Knight into godhood. His relationship with her is one of a fond and protective father to a brilliant daughter who works hard and successfully at the family business—war.
 
@@ -168,7 +187,12 @@ Features:
 - May specialize in any melee weapon.
 - May Enrage as a Berserker once per day.
 - May cast Prayer once per day as a special ability, starting at level 5.
-- Hit Dice: d10.~
+- May use the Heroes' Feast special ability once per day, starting at level 10.
+- Hit Dice: d10.
+
+HEROES' FEAST
+
+The priest creates a banquet that heals a small amount of damage, cures poison and diseases, prevents fear and blesses whoever eats it.~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -4915,8 +4939,12 @@ Features:
 - May cast Goodberry once per day as a special ability, starting at level 5.
 - May cast Spike Growth once per day as a special ability, starting at level 7.
 - Gains immunity to fear and paralysis, starting at level 7.
-- May cast Lesser Restoration once per day as a special ability, starting at level 10.
-- May shapeshift into a Dire Wolf at will as a special ability, starting at level 13.~
+- May use the Heroes' Feast special ability once per day, starting at level 10.
+- May shapeshift into a Dire Wolf at will as a special ability, starting at level 13.
+
+HEROES' FEAST
+
+The priest creates a banquet that heals a small amount of damage, cures poison and diseases, prevents fear and blesses whoever eats it.~
 @4604 = ~Holy Symbol of Yondalla~
 @4605 = ~Only the most worthy and devoted servants of the Protector and Provider are granted these powerful holy symbols.
 	
@@ -4963,9 +4991,23 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 Upon uttering the Bless spell, the caster raises the morale of friendly creatures by +1. Furthermore, it raises their attack and damage rolls by +1. The caster determines at what range (up to 40 ft.) the spell will be cast. At the instant the spell is completed, it affects all creatures in a 15-ft. radius centered on the point selected by the caster (thus, affected creatures leaving the area are still subject to the spell's effects; those entering the area after the casting is completed are not).~
-@4609 = ~Dire Wolf Claw~
-@4610 = ~Shapeshift: Dire Wolf~
-@4611 = ~Shapeshift: Dire Wolf
+@4609 = ~Heroes' Feast~
+@4610 = ~Heroes' Feast
+(Alteration, Invocation/Evocation)
+
+Level: 6
+Sphere: Creation
+Range: 0
+Duration: Special
+Casting Time: 10
+Area of Effect: 1 feaster/level
+Saving Throw: None
+
+This spell enables the priest to bring forth a feast that serves as one creature per level of experience, up to six feasters. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 8 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.~
+@4611 = ~Blessed Food~
+@4612 = ~Dire Wolf Claw~
+@4613 = ~Shapeshift: Dire Wolf~
+@4614 = ~Shapeshift: Dire Wolf
 
 Strength: 18
 Dexterity: 18
@@ -4978,8 +5020,8 @@ Attack Damage: 1d8 (piercing), strikes as +2 weapon
 Special abilities:
 
 While shapeshifted, natural animals will ignore the Horn Guard.~
-@4612 = ~Shapeshift: Natural Form~
-@4613 = ~HORN GUARD OF YONDALLA (F/C): Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
+@4615 = ~Shapeshift: Natural Form~
+@4616 = ~HORN GUARD OF YONDALLA (F/C): Yondalla (Yon-DAH-lah) is the Protector and Provider of halflings and the chief matriarch of the halfling pantheon. She is responsible for the race's creation and for blessing them with peace, comfort, and plenty. As the goddess of protection, Yondalla fends off evil influences and intrusions into the homes and lives of halflings. Yondalla gives her people the strength of character and the determination to defend themselves. Her protection is part of the very souls of her creations, for of all the demihuman races, the halflings have most rarely succumbed to evil. As a provider, Yondalla is a goddess of fertility and growing things, of birth and youth, of nature and plants. She can make barren places and creatures fertile and increase the growing rate of plants and animals, almost as she chooses, although she uses such powers sparingly and almost never confers such benefits on other demihumans or humans for fear of giving offense to their deities.
 
 Yondalla's portfolio can be interpreted to somewhat overlap those of Sheela Peryroyl, Cyrrollalee, Arvoreen, and Urogalan, but in truth this is mainly as she is their leader and both directs their efforts and works with them in harmony to provide for both the good of the divine and the mortal halfling communities. Only Brandobaris and Tymora walk their own paths, but even they work closely with the Nurturing Matriarch in ensuring the peace and security of halflings throughout the Realms. The Protector and Provider has forged strong alliances with the patriarchs and matriarchs of the other demihuman races to ensure the mutual survival of their charges, and she is closely allied with agricultural and guardian deities of all the goodly races.
 
@@ -5002,8 +5044,12 @@ Features:
 - May cast Goodberry once per day as a special ability, starting at level 5.
 - May cast Spike Growth once per day as a special ability, starting at level 7.
 - Gains immunity to fear and paralysis, starting at level 7.
-- May cast Lesser Restoration once per day as a special ability, starting at level 10.
-- May shapeshift into a Dire Wolf at will as a special ability, starting at level 13.~
+- May use the Heroes' Feast special ability once per day, starting at level 10.
+- May shapeshift into a Dire Wolf at will as a special ability, starting at level 13.
+
+HEROES' FEAST
+
+The priest creates a banquet that heals a small amount of damage, cures poison and diseases, prevents fear and blesses whoever eats it.~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
