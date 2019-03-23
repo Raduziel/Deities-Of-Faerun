@@ -130,7 +130,24 @@ HOPELESSNESS: This spell creates the emotion of hopelessness within the area of 
 
 ====================================================================================================================================================================
 
-2) CYRIC
+2) TEMPUS
+
+Heroes' Feast
+(Alteration, Invocation/Evocation)
+
+Level: 6
+Sphere: Creation
+Range: 0
+Duration: Special
+Casting Time: 10
+Area of Effect: 1 feaster/level
+Saving Throw: None
+
+This spell enables the priest to bring forth a feast that serves as one creature per level of experience, up to six feasters. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 8 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.
+
+====================================================================================================================================================================
+
+3) CYRIC
 
 Dark Aura
 (Alteration, Invocation/Evocation)
@@ -181,7 +198,7 @@ Instill Madness causes the subject to become completely insane unless a Saving T
 
 ====================================================================================================================================================================
 
-3) SHAR
+4) SHAR
 
 Darkness
 (Alteration)
@@ -236,7 +253,7 @@ SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.
 
 ====================================================================================================================================================================
 
-4) BAERVAN
+5) BAERVAN
 
 Changestaff
 (Alteration)
@@ -253,7 +270,7 @@ By means of this spell, the caster is able to change a specially prepared staff 
 
 ====================================================================================================================================================================
 
-5) HELM
+6) HELM
 
 Mace of Odo
 (Evocation)
@@ -306,7 +323,7 @@ Although it has no attack or damage bonuses, a Seeking Sword is considered a +4 
 
 ====================================================================================================================================================================
 
-6) LATHANDER
+7) LATHANDER
 
 Boon of Lathander
 (Conjuration/Summoning)
@@ -353,7 +370,7 @@ With this spell, the caster evokes a dazzling sphere of light equal to natural s
 
 ====================================================================================================================================================================
 
-7) OGHMA
+8) OGHMA
 
 Legend Lore
 (Divination)
@@ -370,7 +387,7 @@ With this spell, the Lorekeeper can extend  knowledge immensely. The caster gain
 
 ====================================================================================================================================================================
 
-8) ILMATER
+9) ILMATER
 
 Martyrdom of Ilmater
 (Abjuration, Alteration)
@@ -403,7 +420,7 @@ This spell doubles the hit points of the spell recipient for the spell duration.
 
 ====================================================================================================================================================================
 
-9) MASK
+10) MASK
 
 Shadowcloak
 (Alteration)
@@ -424,7 +441,7 @@ The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently and a 5
 
 ====================================================================================================================================================================
 
-10) AURIL
+11) AURIL
 
 Frost Dagger
 (Evocation)
@@ -486,7 +503,7 @@ Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate t
 
 ====================================================================================================================================================================
 
-11) UMBERLEE
+12) UMBERLEE
 
 Dehydrate
 (Alteration)
@@ -518,7 +535,7 @@ This spell fill the lungs of the target creature with water. Creatures that do n
 
 ====================================================================================================================================================================
 
-12) SELÛNE
+13) SELÛNE
 
 Moonbeam
 (Invocation)
@@ -550,7 +567,7 @@ A priest casting shooting stars creates a violent turbulence in the air above th
 
 ====================================================================================================================================================================
 
-13) TALONA
+14) TALONA
 
 Poison Touch
 (Necromancy)
@@ -573,7 +590,7 @@ On this third round, the victim must make another Saving Throw. If it succeeds, 
 
 ====================================================================================================================================================================
 
-14) LOVIATAR
+15) LOVIATAR
 
 Touch of Loviatar
 (Alteration)
@@ -656,7 +673,7 @@ To dismiss the Erinyes, go to the creature's special abilities and press "Dismis
 
 ====================================================================================================================================================================
 
-15) BANE
+16) BANE
 
 Mystic Lash
 (Invocation/Evocation)
@@ -681,7 +698,7 @@ Casting this spell creates a long whip of ghostly, glowing red force that emanat
 
 ====================================================================================================================================================================
 
-16) BHAAL
+17) BHAAL
 
 Bone Dagger
 (Invocation/Evocation)
@@ -713,7 +730,7 @@ The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> app
 
 ====================================================================================================================================================================
 
-17) MYRKUL
+18) MYRKUL
 
 Summon Minor Death
 (Necromancy)
@@ -746,7 +763,7 @@ The Gray One touches <PRO_HISHER> victim forcing the creature to make a Saving T
 
 ====================================================================================================================================================================
 
-18) KELEMVOR
+19) KELEMVOR
 
 Chilling Scythe
 (Evocation, Necromancy)
@@ -781,7 +798,7 @@ This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, 
 
 ====================================================================================================================================================================
 
-19) RED KNIGHT
+20) RED KNIGHT
 
 Divination
 (Divination)
@@ -814,7 +831,7 @@ This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> 
 
 ====================================================================================================================================================================
 
-20) GARAGOS
+21) GARAGOS
 
 
 Chaotic Combat
@@ -852,7 +869,7 @@ While protected by a Blood Armor, the cleric has a +3 bonus to <PRO_HISHER> Armo
 
 ====================================================================================================================================================================
 
-21) VELSHAROON
+22) VELSHAROON
 
 
 Gaseous Form
@@ -874,7 +891,7 @@ The Necrophant immediately returns to his original form upon the expiration of t
 
 ====================================================================================================================================================================
 
-22) TYMORA
+23) TYMORA
 
 
 Moment
@@ -946,7 +963,7 @@ In the blink of an eye, the Luckbringer can be blessed by Tymora when asking for
 
 ====================================================================================================================================================================
 
-23) BESHABA
+24) BESHABA
 
 
 Bad Luck
@@ -1008,7 +1025,7 @@ In the blink of an eye, the Black Finger can be blessed by Beshaba when asking f
 
 ====================================================================================================================================================================
 
-24) HOAR
+25) HOAR
 
 
 Hand of Hoar
@@ -1046,7 +1063,7 @@ If the save is successful, the victim avoids the stun effect, and is hurled only
 
 ====================================================================================================================================================================
 
-25) ULUTIU
+26) ULUTIU
 
 Call Upon Polar Fury
 (Altering)
@@ -1063,7 +1080,7 @@ By using this spell the Iceguardian communes with the spirit of the Great White 
 
 ====================================================================================================================================================================
 
-26) DENEIR
+27) DENEIR
 
 Glyph of Revealing
 (Altering, Evocation)
