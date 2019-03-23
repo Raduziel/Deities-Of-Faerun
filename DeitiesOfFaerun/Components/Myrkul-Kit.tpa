@@ -14,7 +14,7 @@ ADD_KIT ~RAMyrk~
     ~RAMyrk 14 3 3 14 14 3~
 	~RAMyrk 0 0 0 0 0 1 0 0 0~
 	~RAMyrk 0 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RAMyrk.2da~
+	~DeitiesOfFaerun/Tables/RAMyrk.2da~
 	~K_C_H~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAMyrk~
 		clascolr = ~21 66 136 65 100~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 0 0 0 0 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMYRK.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSMYRK.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMYRK~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMYRK.itm~ SAY NAME1 @2504 SAY NAME2 @2504 SAY DESC @2505
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSMYRK.itm~ SAY NAME1 @2504 SAY NAME2 @2504 SAY DESC @2505
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMyrk + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~MYRKS~
 WRITE_ASCII 0x058 ~MYRKL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAMYRKF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAMYRKF.spl~ override
 
 //Animate Dead
 		  
@@ -73,12 +72,12 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RAMYRK2.spl~
 LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMYRK2~	END
 LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMYRK2~	END
 
 END
 		  
-COPY "DeitiesOfFaerun\Spl\RAMYRK3.spl" override  SAY NAME1 @2506 SAY  UNIDENTIFIED_DESC @2507 //Summon Minor Death
+COPY ~DeitiesOfFaerun/Spl/RAMYRK3.spl~ override  SAY NAME1 @2506 SAY  UNIDENTIFIED_DESC @2507 //Summon Minor Death
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -102,15 +101,15 @@ COPY "DeitiesOfFaerun\Spl\RAMYRK3.spl" override  SAY NAME1 @2506 SAY  UNIDENTIFI
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 60 duration = (60 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RAMYRK3.eff" override
+COPY ~DeitiesOfFaerun/Spl/RAMYRK3.eff~ override
 
-COPY "DeitiesOfFaerun\Spl\RAMYRK4.spl" override  SAY NAME1 @2509 SAY  UNIDENTIFIED_DESC @2510 //Hand of Myrkul
+COPY ~DeitiesOfFaerun/Spl/RAMYRK4.spl~ override  SAY NAME1 @2509 SAY  UNIDENTIFIED_DESC @2510 //Hand of Myrkul
 
-COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.cre" override SAY NAME1 @2508 SAY NAME2 @2508   //Minor Death - creature
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL "%RA_Poison%"   END
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL "%RA_Poisoned%" END
+COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.cre~ override SAY NAME1 @2508 SAY NAME2 @2508   //Minor Death - creature
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL ~%RA_Poison%~   END
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL ~%RA_Poisoned%~ END
 
-COPY "DeitiesOfFaerun\Cre\MinorDeath\RAMinDSu.itm" override                                   //Minor Death - weapon/immunities 
+COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.itm~ override                                   //Minor Death - weapon/immunities 
 
 //Multiclass CLAB
 
@@ -143,8 +142,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"AX" "BW" "CB" "DD" "HB" "S0" "S1" "S2" "S3" "SP" "SS" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~AX~ ~BW~ ~CB~ ~DD~ ~HB~ ~S0~ ~S1~ ~S2~ ~S3~ ~SP~ ~SS~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -156,7 +155,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~MYRKS~ ~MYRKL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -175,7 +174,7 @@ ACTION_FOR_EACH file IN ~MYRKS~ ~MYRKL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~MYRKDEAT~ ~MYRKHAND~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

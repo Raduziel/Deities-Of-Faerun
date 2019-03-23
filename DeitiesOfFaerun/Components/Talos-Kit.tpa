@@ -14,7 +14,7 @@ ADD_KIT ~RATalo~
     ~RATalo 13 3 3 3 14 3~
 	~RATalo 0 0 0 0 0 0 0 0 1~
 	~RATalo 1 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RATalo.2da~
+	~DeitiesOfFaerun/Tables/RATalo.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATalo~
 		clascolr = ~213 97 136 183 190~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSTALO.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSTALO.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTALO~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSTALO.itm~ SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSTALO.itm~ SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATalo + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TALOS~
 WRITE_ASCII 0x058 ~TALOL~
@@ -133,7 +132,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~TALOS~ ~TALOL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -175,7 +174,7 @@ BUT_ONLY
 
 //Hide the kit from Dual Classing
 
-  COPY_EXISTING ~DUALCLAS.2da~ ~override~
+  COPY_EXISTING ~DUALCLAS.2da~ override
     COUNT_2DA_COLS cols
     READ_2DA_ENTRIES_NOW rows cols
     FOR (row = 1; row < rows; ++row) BEGIN

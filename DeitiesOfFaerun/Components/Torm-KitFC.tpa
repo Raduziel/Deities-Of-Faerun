@@ -14,7 +14,7 @@ ADD_KIT ~RATormFC~
     ~RATormFC 3 3 12 3 15 3~
 	~RATormFC 1 0 0 0 0 0 0 0 0~
 	~RATormFC 0 0 0 0 0 0~
-	~override\RATormFC.2da~
+	~override/RATormFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO~
 	~0x00000000 8~
 	~FC0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATormFC~
 		clascolr = ~66 140 190 164 186~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~1 0 1 1 0 0 1~
 		hpclass = ~HPWAR~
 END
@@ -37,7 +36,7 @@ LAF qd_multiclass
       kit_name = ~RATormFC~
       kit_clab = ~RATormFC~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -50,11 +49,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFTORM.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFTORM.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCTORM~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCTORM.itm~ SAY NAME1 @1504 SAY NAME2 @1504 SAY DESC @1505
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCTORM.itm~ SAY NAME1 @1504 SAY NAME2 @1504 SAY DESC @1505
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATormFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TORMS~
 WRITE_ASCII 0x058 ~TORML~

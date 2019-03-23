@@ -14,7 +14,7 @@ ADD_KIT ~RATymo~
     ~RATymo 3 14 3 3 15 3~
 	~RATymo 0 0 0 0 0 0 1 0 0~
 	~RATymo 0 0 0 1 0 0~
-	~DeitiesOfFaerun\Tables\RATymo.2da~
+	~DeitiesOfFaerun/Tables/RATymo.2da~
 	~K_C_H   K_C_HE   K_C_HL~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATymo~
 		clascolr = ~14 96 97 5 17~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 0 1 0 0~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSTYMO.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSTYMO.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTYMO~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSTYMO.itm~ SAY NAME1 @3404 SAY NAME2 @3404 SAY DESC @3405
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSTYMO.itm~ SAY NAME1 @3404 SAY NAME2 @3404 SAY DESC @3405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATymo + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TYMOS~
 WRITE_ASCII 0x058 ~TYMOL~
@@ -61,12 +60,12 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RATYMO1.spl~
 LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATYMO1~ END
 LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATYMO1~ END
 
 END		  
 
-COPY "DeitiesOfFaerun\Spl\RATYMO2.spl"  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407	             //Moment
+COPY ~DeitiesOfFaerun/Spl/RATYMO2.spl~  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407	             //Moment
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -90,7 +89,7 @@ COPY "DeitiesOfFaerun\Spl\RATYMO2.spl"  override SAY NAME1 @3406 SAY UNIDENTIFIE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RATYMO3.spl"  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409	             //Favor of Tymora
+COPY ~DeitiesOfFaerun/Spl/RATYMO3.spl~  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409	             //Favor of Tymora
 
 //Lower Resistance
 
@@ -102,15 +101,15 @@ LPM ~SPELL_TO_INNATE~
 
 END	
 
-COPY "DeitiesOfFaerun\Spl\RATYMO5.spl"  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Luckbolt
+COPY ~DeitiesOfFaerun/Spl/RATYMO5.spl~  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Luckbolt
 
-COPY "DeitiesOfFaerun\Spl\RATymo51.spl"  override
+COPY ~DeitiesOfFaerun/Spl/RATymo51.spl~  override
 
-COPY "DeitiesOfFaerun\Spl\RATymo52.spl"  override
+COPY ~DeitiesOfFaerun/Spl/RATymo52.spl~  override
 
-COPY "DeitiesOfFaerun\Spl\RATymo53.spl"  override
+COPY ~DeitiesOfFaerun/Spl/RATymo53.spl~  override
 
-COPY "DeitiesOfFaerun\Spl\RATYMO6.spl"  override SAY NAME1 @3412 SAY UNIDENTIFIED_DESC @3413	             //Tymora's Blessing
+COPY ~DeitiesOfFaerun/Spl/RATYMO6.spl~  override SAY NAME1 @3412 SAY UNIDENTIFIED_DESC @3413	             //Tymora's Blessing
 
 //Multiclass CLAB
 
@@ -151,7 +150,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~TYMOS~ ~TYMOL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -170,7 +169,7 @@ ACTION_FOR_EACH file IN ~TYMOS~ ~TYMOL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~TYMOBLES~ ~TYMOFAVO~ ~TYMOLUCK~ ~TYMOMOME~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

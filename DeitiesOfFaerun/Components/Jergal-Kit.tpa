@@ -14,7 +14,7 @@ ADD_KIT ~RAJerg~
     ~RAJerg 3 3 3 11 9 3~
 	~RAJerg 0 1 1 0 0 0 0 0 0~
 	~RAJerg 0 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RAJerg.2da~
+	~DeitiesOfFaerun/Tables/RAJerg.2da~
 	~K_C_H~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAJerg~
 		clascolr = ~6 110 186 185 187~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 0 0 0 0 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSJERG.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSJERG.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSJERG~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSJERG.itm~ SAY NAME1 @2804 SAY NAME2 @2804 SAY DESC @2805
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSJERG.itm~ SAY NAME1 @2804 SAY NAME2 @2804 SAY DESC @2805
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAJerg + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~JERGS~
 WRITE_ASCII 0x058 ~JERGL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAJergF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAJergF.spl~ override
 
 //Ray of Enfeeblement 
 
@@ -94,8 +93,8 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %UWARD% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG3.spl~
 LPM ~SPELL_TO_INNATE~
@@ -161,7 +160,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~JERGS~ ~JERGL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

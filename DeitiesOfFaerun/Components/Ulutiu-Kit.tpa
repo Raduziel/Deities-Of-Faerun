@@ -14,7 +14,7 @@ ADD_KIT ~RAUlut~
     ~RAUlut 12 3 3 3 14 3~
 	~RAUlut 0 1 0 0 0 0 0 0 0~
 	~RAUlut 0 0 0 0 0 1~
-	~DeitiesOfFaerun\Tables\RAUlut.2da~
+	~DeitiesOfFaerun/Tables/RAUlut.2da~
 	~K_C_H~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAUlut~
 		clascolr = ~23 42 208 38 1~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 0 0 0 0 0~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSULUT.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSULUT.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSULUT~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSULUT.itm~ SAY NAME1 @4104 SAY NAME2 @4104 SAY DESC @4105
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSULUT.itm~ SAY NAME1 @4104 SAY NAME2 @4104 SAY DESC @4105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUlut + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~ULUTS~
 WRITE_ASCII 0x058 ~ULUTL~
@@ -66,11 +65,11 @@ END
 
 //Call Upon Polar Fury
 
-COPY "DeitiesOfFaerun\Spl\RAULUT1.spl"  override SAY NAME1 @4106 SAY UNIDENTIFIED_DESC  @4107
+COPY ~DeitiesOfFaerun/Spl/RAULUT1.spl~  override SAY NAME1 @4106 SAY UNIDENTIFIED_DESC  @4107
 
-COPY "DeitiesOfFaerun\Spl\RAULUT11.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAULUT11.spl~ override
 
-COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT1.itm" override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
+COPY ~DeitiesOfFaerun/Itm/GreatWhiteBear/RAULUT1.itm~ override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
 
 //Ice Storm
 
@@ -84,21 +83,21 @@ END
 
 //Shapeshift: Great White Bear
 
-COPY "DeitiesOfFaerun\Spl\RAULUT3.spl"  override SAY NAME1 @4109 SAY UNIDENTIFIED_DESC  @4110
+COPY ~DeitiesOfFaerun/Spl/RAULUT3.spl~  override SAY NAME1 @4109 SAY UNIDENTIFIED_DESC  @4110
 
-COPY "DeitiesOfFaerun\Spl\RAULUT31.spl" override SAY NAME1 @4111 SAY UNIDENTIFIED_DESC  @4111
+COPY ~DeitiesOfFaerun/Spl/RAULUT31.spl~ override SAY NAME1 @4111 SAY UNIDENTIFIED_DESC  @4111
 
-COPY "DeitiesOfFaerun\Spl\RAUlutNF.bam" override
+COPY ~DeitiesOfFaerun/Spl/RAUlutNF.bam~ override
 
-COPY "DeitiesOfFaerun\Itm\GreatWhiteBear\RAULUT3.itm" override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
+COPY ~DeitiesOfFaerun/Itm/GreatWhiteBear/RAULUT3.itm~ override SAY NAME1 @4108 SAY NAME2 @4108 SAY DESC @4108
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
-COPY "DeitiesOfFaerun\Cre\GreatWhiteBear" override 
+COPY ~DeitiesOfFaerun/Cre/GreatWhiteBear~ override 
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAUlutInv.bam" ~override\MBER3INV.bam~
+COPY ~DeitiesOfFaerun/Spl/RAUlutInv.bam~ ~override/MBER3INV.bam~
 
 //Cone of Cold
 
@@ -130,8 +129,8 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO269% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/OtilukeFreezingSphere/SPWI628C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAULUT5.spl~ SAY NAME1 @999941
 LPM ~SPELL_TO_INNATE~
@@ -179,8 +178,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUlut~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -345,7 +344,7 @@ ACTION_FOR_EACH file IN ~ULUTS~ ~ULUTL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~ULUTCUPF~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

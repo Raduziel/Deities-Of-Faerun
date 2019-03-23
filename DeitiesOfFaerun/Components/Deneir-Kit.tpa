@@ -14,7 +14,7 @@ ADD_KIT ~RADene~
     ~RADene 3 3 3 15 15 3~
 	~RADene 0 0 0 1 0 0 0 0 0~
 	~RADene 0 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RADene.2da~
+	~DeitiesOfFaerun/Tables/RADene.2da~
 	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RADene~
 		clascolr = ~24 16 105 95 79~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl~ ~override/RAHSDENE.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSDENE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSDENE~ END
 
-COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm~ ~override/RAHSDENE.itm~ SAY NAME1 @4304 SAY NAME2 @4304 SAY DESC @4305
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSDENE.itm~ SAY NAME1 @4304 SAY NAME2 @4304 SAY DESC @4305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RADene + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~DENES~
 WRITE_ASCII 0x058 ~DENEL~
 
 //Spells
 
-COPY ~DeitiesOfFaerun\Spl\RADENEF.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RADENEF.spl~ override
 PATCH_FOR_EACH label IN
 	~CLERIC_GLYPH_OF_WARDING~
 	~TRAP_GLYPH_OF_WARDING~
@@ -91,9 +90,9 @@ END
 
 //Glyph of Revealing
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RADENE1.PRO~
+ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RADENE1.PRO~
 
-COPY ~DeitiesOfFaerun\Spl\RADENE1.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RADENE1.spl~ override
 SAY NAME1 @4306 SAY NAME2 @4306 SAY UNIDENTIFIED_DESC @4307 SAY DESC @4307 
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RADENE1% END 
  
@@ -139,8 +138,8 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 18628 parameter1 = RESOLVE_STR_REF (@2215) END
 LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 169 parameter2 = iconpain END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolPain/SPPR714C.BAM~	~override/%spell_res%C.BAM~
 
 END
 
@@ -166,8 +165,8 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  re
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 1280  parameter1 = EVAL ~%RA_Stunned%~  END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 14980 parameter1 = EVAL ~%RA_Hopeless%~ END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SymbolHopelessness/SPPR716C.BAM~	~override/%spell_res%C.BAM~
 
 END
 
@@ -181,18 +180,18 @@ LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYM.spl~ override
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Symbol/RASPSYM.spl~ override
 
-ADD_SPELL ~override\RASPSYM.spl~ 1 7  DENEIR_RADUZIEL_SYMBOL
+ADD_SPELL ~override/RASPSYM.spl~ 1 7  DENEIR_RADUZIEL_SYMBOL
 SAY NAME1 @9999281 SAY NAME2 @9999281 SAY UNIDENTIFIED_DESC @9999282 SAY DESC @9999282
 TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_LONG 0x034 7 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMA.BAM~ ~override\%spell_res%A.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMB.BAM~ ~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYMC.BAM~ ~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Symbol/RASPSYMA.BAM~ ~override/%spell_res%A.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Symbol/RASPSYMB.BAM~ ~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Symbol/RASPSYMC.BAM~ ~override/%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Symbol\RASPSYM.2da~  override
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Symbol/RASPSYM.2da~  override
 
 LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SYMBOL_FEAR~            RET spell_1 = spell_res END
 LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SYMBOL_OF_PAIN~         RET spell_2 = spell_res END
@@ -311,7 +310,7 @@ ACTION_FOR_EACH file IN ~DENES~ ~DENEL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~DENEGLYP~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

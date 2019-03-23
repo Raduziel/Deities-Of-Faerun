@@ -14,7 +14,7 @@ ADD_KIT ~RATempFC~
     ~RATempFC 14 3 3 3 12 3~
 	~RATempFC 0 0 0 0 0 0 1 1 1~
 	~RATempFC 0 0 0 0 0 0~
-	~override\RATempFC.2da~
+	~override/RATempFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_D   K_FC_HO~
 	~0x00000000 8~
 	~FC0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATempFC~
 		clascolr = ~93 83 65 94 100~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~1 0 1 1 0 0 1~
 		hpclass = ~HPWAR~
 END
@@ -37,7 +36,7 @@ LAF qd_multiclass
       kit_name = ~RATempFC~
       kit_clab = ~RATempFC~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -50,11 +49,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFTEMP.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFTEMP.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCTEMP~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCTEMP.itm~ SAY NAME1 @204 SAY NAME2 @204 SAY DESC @205
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCTEMP.itm~ SAY NAME1 @204 SAY NAME2 @204 SAY DESC @205
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATempFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TEMPS~
 WRITE_ASCII 0x058 ~TEMPL~

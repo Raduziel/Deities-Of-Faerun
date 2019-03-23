@@ -14,7 +14,7 @@ ADD_KIT ~RAAuri~
     ~RAAuri 3 3 13 3 12 3~
 	~RAAuri 0 0 0 0 0 1 0 0 0~
 	~RAAuri 0 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RAAuri.2da~
+	~DeitiesOfFaerun/Tables/RAAuri.2da~
 	~K_C_H K_C_HO K_C_HE K_C_D~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAAuri~
 		clascolr = ~148 17 105 222 97~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 1 0 0 1~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSAURI.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSAURI.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSAURI~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSAURI.itm~ SAY NAME1 @1704 SAY NAME2 @1704 SAY DESC @1705
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSAURI.itm~ SAY NAME1 @1704 SAY NAME2 @1704 SAY DESC @1705
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAAuri + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~AURIS~
 WRITE_ASCII 0x058 ~AURIL~
@@ -60,15 +59,15 @@ LPM ~SPELL_TO_FEATURE~
 
 END
 
-ADD_PROJECTILE ~DeitiesOfFaerun\Spl\RAAURI1.PRO~
+ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAAURI1.PRO~
 
-COPY "DeitiesOfFaerun\Spl\RAAURI1.spl" override SAY NAME1 @1706 SAY UNIDENTIFIED_DESC @1707    //Frost Dagger
+COPY ~DeitiesOfFaerun/Spl/RAAURI1.spl~ override SAY NAME1 @1706 SAY UNIDENTIFIED_DESC @1707    //Frost Dagger
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAAURI1% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@1708) END
 
-COPY "DeitiesOfFaerun\Spl\RAAURI2.spl" override SAY NAME1 @1709 SAY UNIDENTIFIED_DESC @1710    //Frost Whip
+COPY ~DeitiesOfFaerun/Spl/RAAURI2.spl~ override SAY NAME1 @1709 SAY UNIDENTIFIED_DESC @1710    //Frost Whip
 
-COPY "DeitiesOfFaerun\Spl\RAAURI3.spl" override SAY NAME1 @1711 SAY UNIDENTIFIED_DESC @1712    //Frost Sword
+COPY ~DeitiesOfFaerun/Spl/RAAURI3.spl~ override SAY NAME1 @1711 SAY UNIDENTIFIED_DESC @1712    //Frost Sword
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -92,9 +91,9 @@ COPY "DeitiesOfFaerun\Spl\RAAURI3.spl" override SAY NAME1 @1711 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.itm" override SAY NAME1 @1711 SAY NAME2 @1711      //Frost Sword (Itm)
+COPY ~DeitiesOfFaerun/Itm/IceBlade/AURIBLAD.itm~ override SAY NAME1 @1711 SAY NAME2 @1711      //Frost Sword (Itm)
 
-COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.bam" override                                      //Frost Sword (Bam)
+COPY ~DeitiesOfFaerun/Itm/IceBlade/AURIBLAD.bam~ override                                      //Frost Sword (Bam)
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -107,7 +106,7 @@ COPY "DeitiesOfFaerun\Itm\IceBlade\AURIBLAD.bam" override                       
       original_base_index
       new_base_index
     STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun\Itm\IceBlade\MOS%original_base_index%.pvrz~
+      source_file = EVAL ~DeitiesOfFaerun/Itm/IceBlade/MOS%original_base_index%.pvrz~
     END
   END
 
@@ -133,8 +132,8 @@ END
 
 //Conjure Ice Elemental
 
-LAF cd_new_summon_table STR_VAR descript = "ICE_ELEMENTAL_RADUZIEL" 2da_file = RAELEMI RET RAELEMI = table END  
-COPY "DeitiesOfFaerun\Spl\RAAURI6.spl" override SAY NAME1 @1713 SAY UNIDENTIFIED_DESC @1714
+LAF cd_new_summon_table STR_VAR descript = ~ICE_ELEMENTAL_RADUZIEL~ 2da_file = RAELEMI RET RAELEMI = table END  
+COPY ~DeitiesOfFaerun/Spl/RAAURI6.spl~ override SAY NAME1 @1713 SAY UNIDENTIFIED_DESC @1714
 LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMI END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
@@ -159,18 +158,18 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMI END
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 60 duration = (60 * i) END
 	END
 
-COPY_EXISTING ~smtables.2da~ ~override~
+COPY_EXISTING ~smtables.2da~ override
 PRETTY_PRINT_2DA
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\Complement"  override                                  //Ice Elemental - animation, bam, sounds, itm
+COPY ~DeitiesOfFaerun/Cre/IceElemental/Complement~  override                                  //Ice Elemental - animation, bam, sounds, itm
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\RAELEMI.2DA" override                                  //Ice Elemental - 2da
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RAELEMI.2DA~ override                                  //Ice Elemental - 2da
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\RA12ice.cre" override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 12 HD
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RA12ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 12 HD
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\RA16ice.cre" override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 16 HD
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RA16ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 16 HD
 
-COPY "DeitiesOfFaerun\Cre\IceElemental\RA24ice.cre" override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 24 HD
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RA24ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 24 HD
 
 //Multiclass CLAB
 
@@ -203,8 +202,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAuri~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -216,7 +215,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~AURIS~ ~AURIL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -235,7 +234,7 @@ ACTION_FOR_EACH file IN ~AURIS~ ~AURIL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~AURIDAGG~ ~AURIELEM~ ~AURIICBL~ ~AURIWHIP~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

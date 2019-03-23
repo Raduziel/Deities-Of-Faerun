@@ -14,7 +14,7 @@ ADD_KIT ~RAMyst~
     ~RAMyst 3 3 3 14 12 3~
 	~RAMyst 0 1 0 1 0 0 0 1 0~
 	~RAMyst 0 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RAMyst.2da~
+	~DeitiesOfFaerun/Tables/RAMyst.2da~
 	~K_C_H K_C_HE K_C_E K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAMyst~
 		clascolr = ~57 79 124 17 18~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 1 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMYST.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSMYST.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMYST~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMYST.itm~ SAY NAME1 @1404 SAY NAME2 @1404 SAY DESC @1405
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSMYST.itm~ SAY NAME1 @1404 SAY NAME2 @1404 SAY DESC @1405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMyst + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~MYSTS~
 WRITE_ASCII 0x058 ~MYSTL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAMYSTF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAMYSTF.spl~ override
 PATCH_FOR_EACH label IN
 	~WILD_MAGIC_AREA~
 	~DEAD_MAGIC_AREA~
@@ -77,7 +76,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DISPEL_MAGIC[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DISPEL_MAGIC~	RET	spell_res	END
 
-COPY_EXISTING	~RAMYSTF.spl~	~override~
+COPY_EXISTING	~RAMYSTF.spl~	override
 LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 
 END
@@ -87,7 +86,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SECRET_WORD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SECRET_WORD~	RET	spell_res	END
 
-COPY_EXISTING	~RAMYSTF.spl~	~override~
+COPY_EXISTING	~RAMYSTF.spl~	override
 LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 
 END
@@ -97,7 +96,7 @@ END
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_BREACH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BREACH~	RET	spell_res	END
 
-COPY_EXISTING	~RAMYSTF.spl~	~override~
+COPY_EXISTING	~RAMYSTF.spl~	override
 LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 
 END
@@ -141,7 +140,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~MYSTS~ ~MYSTL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

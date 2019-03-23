@@ -14,7 +14,7 @@ ADD_KIT ~RABhaa~
     ~RABhaa 3 3 12 3 14 3~
 	~RABhaa 0 0 1 0 0 0 0 0 0~
 	~RABhaa 0 0 0 1 0 0~
-	~DeitiesOfFaerun\Tables\RABhaa.2da~
+	~DeitiesOfFaerun/Tables/RABhaa.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RABhaa~
 		clascolr = ~182 140 140 62 186~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSBHAA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSBHAA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBHAA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBHAA.itm~ SAY NAME1 @2404 SAY NAME2 @2404 SAY DESC @2405
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSBHAA.itm~ SAY NAME1 @2404 SAY NAME2 @2404 SAY DESC @2405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABhaa + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~BHAAS~
 WRITE_ASCII 0x058 ~BHAAL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RABHAA1.spl" override SAY NAME1 @2406 SAY UNIDENTIFIED_DESC  @2407                //Bone Dagger
+COPY ~DeitiesOfFaerun/Spl/RABHAA1.spl~ override SAY NAME1 @2406 SAY UNIDENTIFIED_DESC  @2407                //Bone Dagger
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -76,11 +75,11 @@ COPY "DeitiesOfFaerun\Spl\RABHAA1.spl" override SAY NAME1 @2406 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RABHAA11.spl" override
+COPY ~DeitiesOfFaerun/Spl/RABHAA11.spl~ override
 
-COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.itm" override SAY NAME1 @2406 SAY NAME2 @2406 SAY DESC @2406
+COPY ~DeitiesOfFaerun/Itm/BoneDagger/RABoneDg.itm~ override SAY NAME1 @2406 SAY NAME2 @2406 SAY DESC @2406
 
-COPY "DeitiesOfFaerun\Itm\BoneDagger\RABoneDg.bam" override
+COPY ~DeitiesOfFaerun/Itm/BoneDagger/RABoneDg.bam~ override
 
 
 //Finger of Death
@@ -93,7 +92,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABHAA3.spl" override SAY NAME1 @2408 SAY UNIDENTIFIED_DESC @2409                //Plane Skipping
+COPY ~DeitiesOfFaerun/Spl/RABHAA3.spl~ override SAY NAME1 @2408 SAY UNIDENTIFIED_DESC @2409                //Plane Skipping
 
 //Aerial Servant
 
@@ -146,8 +145,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABhaa~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -159,7 +158,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~BHAAS~ ~BHAAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -178,7 +177,7 @@ ACTION_FOR_EACH file IN ~BHAAS~ ~BHAAL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~BHAABONE~ ~BHAAPLAN~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

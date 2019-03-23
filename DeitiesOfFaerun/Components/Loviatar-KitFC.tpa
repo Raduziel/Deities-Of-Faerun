@@ -14,7 +14,7 @@ ADD_KIT ~RALoviFC~
     ~RALoviFC 3 3 15 3 15 3~
 	~RALoviFC 0 0 1 0 0 0 0 0 0~
 	~RALoviFC 0 0 0 0 0 0~
-	~override\RALoviFC.2da~
+	~override/RALoviFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_E   K_FC_G   K_FC_HL   K_FC_D   K_FC_HO~
 	~0x00000000 8~
 	~FC0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RALoviFC~
 		clascolr = ~202 105 72 170 200~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RALoviFC~
       kit_clab = ~RALoviFC~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFLOVI.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFLOVI.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCLOVI~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCLOVI.itm~ SAY NAME1 @2204 SAY NAME2 @2204 SAY DESC @2205
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCLOVI.itm~ SAY NAME1 @2204 SAY NAME2 @2204 SAY DESC @2205
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALoviFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~LOVIS~
 WRITE_ASCII 0x058 ~LOVIL~

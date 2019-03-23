@@ -14,7 +14,7 @@ ADD_KIT ~RAEldaRC~
     ~RAEldaRC 3 3 3 3 14 13~
 	~RAEldaRC 0 0 0 1 1 0 0 0 0~
 	~RAEldaRC 0 0 0 0 0 0~
-	~override\RAEldaRC.2da~
+	~override/RAEldaRC.2da~
 	~K_CR_H K_CR_E K_CR_HE K_CR_HL~
 	~0x00000000 18~
 	~CR0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAEldaRC~
 		clascolr = ~3 17 105 98 175~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~1 1 1 0 1 0 0~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RAEldaRC~
       kit_clab = ~RAEldaRC~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RARELDA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RARELDA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RARCELDA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RARCELDA.itm~ SAY NAME1 @4004 SAY NAME2 @4004 SAY DESC @4005
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RARCELDA.itm~ SAY NAME1 @4004 SAY NAME2 @4004 SAY DESC @4005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAEldaRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~ELDAS~
 WRITE_ASCII 0x058 ~ELDAL~
@@ -82,8 +81,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" "D4" "C6" "C2" "C1"  BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~D4~ ~C6~ ~C2~ ~C1~  BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAEldaRC~) parameter2 = 9 END
 				END
 				DEFAULT

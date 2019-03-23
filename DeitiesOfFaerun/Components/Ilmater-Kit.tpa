@@ -14,7 +14,7 @@ ADD_KIT ~RAIlma~
     ~RAIlma 3 3 14 3 12 3~
 	~RAIlma 1 0 0 0 0 0 0 0 0~
 	~RAIlma 1 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RAIlma.2da~
+	~DeitiesOfFaerun/Tables/RAIlma.2da~
 	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HO   K_C_HL   K_C_D~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAIlma~
 		clascolr = ~14 28 222 9 14~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSILMA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSILMA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSILMA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSILMA.itm~ SAY NAME1 @1304 SAY NAME2 @1304 SAY DESC @1305
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSILMA.itm~ SAY NAME1 @1304 SAY NAME2 @1304 SAY DESC @1305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAIlma + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~ILMAS~
 WRITE_ASCII 0x058 ~ILMAL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAILMAF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAILMAF.spl~ override
 
 //Remove Fear
 
@@ -83,11 +82,11 @@ END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RAILMA3.spl" override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307   //Martyrdom of Ilmater
+COPY ~DeitiesOfFaerun/Spl/RAILMA3.spl~ override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307   //Martyrdom of Ilmater
 
-COPY "DeitiesOfFaerun\Spl\RAILMA4.spl" override SAY NAME1 @1308 SAY UNIDENTIFIED_DESC @1309   //Endurance of Ilmater
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
+COPY ~DeitiesOfFaerun/Spl/RAILMA4.spl~ override SAY NAME1 @1308 SAY UNIDENTIFIED_DESC @1309   //Endurance of Ilmater
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Diseased%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_FoulDisease%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -146,8 +145,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" "2A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~2A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -159,7 +158,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~ILMAS~ ~ILMAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -178,7 +177,7 @@ ACTION_FOR_EACH file IN ~ILMAS~ ~ILMAL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~ILMAENDU~ ~ILMAMART~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

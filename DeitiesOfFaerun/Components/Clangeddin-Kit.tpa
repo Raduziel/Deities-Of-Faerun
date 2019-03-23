@@ -14,7 +14,7 @@ ADD_KIT ~RAClan~
     ~RAClan 15 3 3 3 9 3~
 	~RAClan 1 1 0 0 0 0 0 0 0~
 	~RAClan 1 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAClan.2da~
+	~DeitiesOfFaerun/Tables/RAClan.2da~
 	~K_C_D~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAClan~
 		clascolr = ~205 5 79 41 105~
-		clswpbon = ~1 0 3~
 		clsrcreq = ~0 0 0 1 0 0 0~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSCLAN.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSCLAN.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSCLAN~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSCLAN.itm~ SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSCLAN.itm~ SAY NAME1 @504 SAY NAME2 @504 SAY DESC @505
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAClan + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~CLANS~
 WRITE_ASCII 0x058 ~CLANL~
@@ -61,7 +60,7 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN1.spl~
 LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RACLAN1~	END
 LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RACLAN1~	END
 
 END		  
@@ -95,7 +94,7 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RACLAN4.spl~
 LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RACLAN4~	END
 LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RACLAN4~	END
 
 END
@@ -119,7 +118,7 @@ PRETTY_PRINT_2DA
 //BAM
 
 ACTION_FOR_EACH file IN ~CLANS~ ~CLANL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

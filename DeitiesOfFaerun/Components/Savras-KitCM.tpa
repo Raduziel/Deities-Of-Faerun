@@ -14,7 +14,7 @@ ADD_KIT ~RASavrCM~
     ~RASavrCM 3 3 3 11 14 3~
 	~RASavrCM 0 1 0 0 0 0 0 0 0~
 	~RASavrCM 0 0 0 0 0 0~
-	~override\RASavrCM.2da~
+	~override/RASavrCM.2da~
 	~K_CM_H K_CM_HE K_CM_E~
 	~0x00000000 14~
 	~CM0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASavrCM~
 		clascolr = ~24 146 50 51 81~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 1 0~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RASavrCM~
       kit_clab = ~RASavrCM~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAMSAVR.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMSAVR.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMSAVR~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACMSAVR.itm~ SAY NAME1 @3104 SAY NAME2 @3104 SAY DESC @3105
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMSAVR.itm~ SAY NAME1 @3104 SAY NAME2 @3104 SAY DESC @3105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASavrCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SAVRS~
 WRITE_ASCII 0x058 ~SAVRL~
@@ -82,8 +81,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" "2A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~2A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASavrCM~) parameter2 = 9 END
 				END
 				DEFAULT

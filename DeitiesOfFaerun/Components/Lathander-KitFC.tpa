@@ -14,7 +14,7 @@ ADD_KIT ~RALathFC~
     ~RALathFC 3 3 3 3 14 12~
 	~RALathFC 0 0 0 1 0 0 0 0 0~
 	~RALathFC 0 0 0 0 0 0~
-	~override\RALathFC.2da~
+	~override/RALathFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
 	~0x00000000 8~
 	~FC0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RALathFC~
 		clascolr = ~147 99 81 115 172~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RALathFC~
       kit_clab = ~RALathFC~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFLATH.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFLATH.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCLATH~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCLATH.itm~ SAY NAME1 @1004 SAY NAME2 @1004 SAY DESC @1005
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCLATH.itm~ SAY NAME1 @1004 SAY NAME2 @1004 SAY DESC @1005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALathFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~LATHS~
 WRITE_ASCII 0x058 ~LATHL~

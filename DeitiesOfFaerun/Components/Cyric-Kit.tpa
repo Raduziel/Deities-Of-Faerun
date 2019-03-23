@@ -14,7 +14,7 @@ ADD_KIT ~RACyri~
     ~RACyri 13 3 3 3 13 3~
 	~RACyri 0 0 0 0 0 1 0 0 1~
 	~RACyri 0 0 0 1 0 0~
-	~DeitiesOfFaerun\Tables\RACyri.2da~
+	~DeitiesOfFaerun/Tables/RACyri.2da~
 	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HO   K_C_HL   K_C_D~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RACyri~
 		clascolr = ~99 140 60 62 61~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,25 +40,25 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSCYRI.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSCYRI.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSCYRI~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSCYRI.itm~ SAY NAME1 @304 SAY NAME2 @304 SAY DESC @305
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSCYRI.itm~ SAY NAME1 @304 SAY NAME2 @304 SAY DESC @305
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RACyri + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~CYRIS~
 WRITE_ASCII 0x058 ~CYRIL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RACYRIF.spl" override
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Panic%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_MoralFail%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Charmed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Dominated%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Berserk%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Hopeless%" END
+COPY ~DeitiesOfFaerun/Spl/RACYRIF.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL ~%RA_Panic%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL ~%RA_MoralFail%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL ~%RA_Charmed%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL ~%RA_DireCharmed%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL ~%RA_Dominated%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL ~%RA_Berserk%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL ~%RA_Hopeless%~ END
 PATCH_FOR_EACH label IN
 	~CLERIC_COMMAND~
 	~CLERIC_REMOVE_FEAR~
@@ -124,11 +123,11 @@ PATCH_FOR_EACH label IN
 BEGIN
 	PATCH_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]%label%[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 		LPF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = EVAL ~%label%~	RET	spell_res	END
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL "%RA_SpellInef%" target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 	END
 END
 
-COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307 //Dark Aura
+COPY ~DeitiesOfFaerun/Spl/RACYRI1.spl~ override SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307 //Dark Aura
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -153,7 +152,7 @@ COPY "DeitiesOfFaerun\Spl\RACYRI1.spl" override SAY NAME1 @306 SAY UNIDENTIFIED_
 	END
 
 
-COPY "DeitiesOfFaerun\Spl\RACYRIE.spl" override                                           //Bonuses for Evil-aligned
+COPY ~DeitiesOfFaerun/Spl/RACYRIE.spl~ override                                           //Bonuses for Evil-aligned
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -177,7 +176,7 @@ COPY "DeitiesOfFaerun\Spl\RACYRIE.spl" override                                 
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                           //Penalties for Good-aligned
+COPY ~DeitiesOfFaerun/Spl/RACYRIG.spl~ override                                           //Penalties for Good-aligned
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -201,10 +200,10 @@ COPY "DeitiesOfFaerun\Spl\RACYRIG.spl" override                                 
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 	
-COPY "DeitiesOfFaerun\Spl\RACYRI2.spl" override SAY NAME1 @308 SAY UNIDENTIFIED_DESC  @309                           //Phantasmal Killer
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
+COPY ~DeitiesOfFaerun/Spl/RACYRI2.spl~ override SAY NAME1 @308 SAY UNIDENTIFIED_DESC  @309                           //Phantasmal Killer
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Panic%~ END
 
-COPY "DeitiesOfFaerun\Spl\RACYRI21.spl" override
+COPY ~DeitiesOfFaerun/Spl/RACYRI21.spl~ override
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FEEBLEMIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN    //Instill Madness
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FEEBLEMIND~	RET	spell_res	END
@@ -255,7 +254,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~CYRIS~ ~CYRIL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -274,7 +273,7 @@ ACTION_FOR_EACH file IN ~CYRIS~ ~CYRIL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~CYRIDAAU~ ~CYRIINMA~ ~CYRIPHAN~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

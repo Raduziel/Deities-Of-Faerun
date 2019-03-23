@@ -14,7 +14,7 @@ ADD_KIT ~RATymoCT~
     ~RATymoCT 3 14 3 3 15 3~
 	~RATymoCT 0 0 0 0 0 0 1 0 0~
 	~RATymoCT 0 0 0 0 0 0~
-	~override\RATymoCT.2da~
+	~override/RATymoCT.2da~
 	~K_CT_H   K_CT_HE   K_CT_HL~
 	~0x00000000 15~
 	~CT0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATymoCT~
 		clascolr = ~14 96 97 5 17~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 0 1 0 0~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RATymoCT~
       kit_clab = ~RATymoCT~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RATTYMO.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RATTYMO.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACTTYMO~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACTTYMO.itm~ SAY NAME1 @3404 SAY NAME2 @3404 SAY DESC @3405
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACTTYMO.itm~ SAY NAME1 @3404 SAY NAME2 @3404 SAY DESC @3405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATymoCT + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TYMOS~
 WRITE_ASCII 0x058 ~TYMOL~

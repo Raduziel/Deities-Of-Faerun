@@ -14,7 +14,7 @@ ADD_KIT ~RASune~
     ~RASune 3 3 3 3 12 16~
 	~RASune 0 0 0 0 0 0 1 0 0~
 	~RASune 1 0 0 1 0 0~
-	~DeitiesOfFaerun\Tables\RASune.2da~
+	~DeitiesOfFaerun/Tables/RASune.2da~
 	~K_C_H   K_C_HE   K_C_E~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASune~
 		clascolr = ~67 81 47 46 70~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 0 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSUNE.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSSUNE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSUNE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSUNE.itm~ SAY NAME1 @104 SAY NAME2 @104 SAY DESC @105
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSSUNE.itm~ SAY NAME1 @104 SAY NAME2 @104 SAY DESC @105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASune + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SUNES~
 WRITE_ASCII 0x058 ~SUNEL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RASUNEF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RASUNEF.spl~ override
 
 
 //Dire Charm
@@ -69,15 +68,15 @@ LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = 
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RASUNE2.spl"  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                  //Rapture
+COPY ~DeitiesOfFaerun/Spl/RASUNE2.spl~  override SAY NAME1 @106 SAY UNIDENTIFIED_DESC @107                  //Rapture
 
-COPY "DeitiesOfFaerun\Spl\RASUNEA.spl"  override                                                            //Effect upon allies
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 999 match_opcode = 240 parameter2 = EVAL "%RA_DeafIc%" END
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 998 match_opcode = 240 parameter2 = EVAL "%RA_FeebIc%" END
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 997 match_opcode = 240 parameter2 = EVAL "%RA_NausIc%" END
-LPF ALTER_EFFECT INT_VAR match_parameter2 = 996 match_opcode = 240 parameter2 = EVAL "%RA_FatiIc%" END
+COPY ~DeitiesOfFaerun/Spl/RASUNEA.spl~  override                                                            //Effect upon allies
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 999 match_opcode = 240 parameter2 = EVAL ~%RA_DeafIc%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 998 match_opcode = 240 parameter2 = EVAL ~%RA_FeebIc%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 997 match_opcode = 240 parameter2 = EVAL ~%RA_NausIc%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 996 match_opcode = 240 parameter2 = EVAL ~%RA_FatiIc%~ END
 
-COPY "DeitiesOfFaerun\Spl\RASUNEE.spl"  override                                                            //Effect upon enemies
+COPY ~DeitiesOfFaerun/Spl/RASUNEE.spl~  override                                                            //Effect upon enemies
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -125,11 +124,11 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO255% END
 LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35484 parameter1 = EVAL ~%RA_Panic%~ END
 LPF ALTER_EFFECT       INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI427~ resource = ~XXWI427~ END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/SPWI428C.BAM~	~override/%spell_res%C.BAM~
 
 CLEAR_ARRAYS
 
@@ -153,8 +152,8 @@ LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 187 paramete
 LPF	ALTER_EFFECT	   INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPWI428~ resource = EVAL $res_of_label(~WIZARD_EMOTION_FEAR~)	END
 LPF	DELETE_EFFECT	   STR_VAR match_resource = ~SPIN115~	END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING ~%res_of_label_WIZARD_EMOTION_FEAR%.spl~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI427~ resource = EVAL ~%spell_res%~ END
@@ -175,7 +174,7 @@ LPF ALTER_SPELL_HEADER  INT_VAR projectile = %IDPRO255% END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = ~-1~                                                                                                                                                       END
 LPF ADD_SPELL_EFFECT    INT_VAR opcode = 321 target = 2            duration = 1                                                                                STR_VAR resource = ~XXWI429~  insert_point = 0 END
 LPF ADD_SPELL_EFFECT    INT_VAR opcode = 174 target = 2 timing = 1                                                 power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR resource = ~#EFF_M05~ insert_point = 1 END
-LPF ADD_SPELL_EFFECT    INT_VAR opcode = 139 target = 2 timing = 1               parameter1 = EVAL "%RA_Hopeless%" power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR                       insert_point = 2 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 139 target = 2 timing = 1               parameter1 = EVAL ~%RA_Hopeless%~ power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR                       insert_point = 2 END
 LPF ADD_SPELL_EFFECT    INT_VAR opcode =  39 target = 2            duration = 60 parameter2 = 1                    power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR                       insert_point = 3 END
 LPF ADD_SPELL_EFFECT    INT_VAR opcode = 174 target = 2 timing = 4 duration = 60                                   power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR resource = ~#EFF_E05~ insert_point = 4 END
 LPF ADD_SPELL_EFFECT    INT_VAR opcode = 142 target = 2            duration = 60 parameter2 = 44                   power = 4 savingthrow = 1 resist_dispel = 1 STR_VAR                       insert_point = 5 END
@@ -203,8 +202,8 @@ LPF ALTER_EFFECT  	   INT_VAR match_opcode = 142 match_parameter2 = 186 paramete
 LPF	ALTER_EFFECT	   INT_VAR match_opcode = 321 STR_VAR match_resource = ~SPPR716~ resource = EVAL $res_of_label(~CLERIC_SYMBOL_OF_HOPELESSNESS~)	END
 LPF	DELETE_EFFECT	   STR_VAR match_resource = ~SPIN115~	END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/SPWI429C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING ~SPWI411.spl~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 321 STR_VAR match_resource = ~XXWI429~ resource = EVAL ~%spell_res%~ END
@@ -213,16 +212,16 @@ END
 
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_EMOTION[ %TAB%%WNL%$]~) BEGIN
 
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.spl~ ~override\RASPEMC.spl~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Emotion/RASPEMO.spl~ ~override/RASPEMC.spl~
 
-ADD_SPELL ~override\RASPEMC.spl~ 1 4  SUNE_RADUZIEL_EMOTION
+ADD_SPELL ~override/RASPEMC.spl~ 1 4  SUNE_RADUZIEL_EMOTION
 SAY NAME1 @9999278 SAY NAME2 @9999278 SAY UNIDENTIFIED_DESC @9999279 SAY DESC @9999279
 TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2 WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOA.BAM~ ~override\%spell_res%A.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOB.BAM~ ~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMOC.BAM~ ~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Emotion/RASPEMOA.BAM~ ~override/%spell_res%A.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Emotion/RASPEMOB.BAM~ ~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Emotion/RASPEMOC.BAM~ ~override/%spell_res%C.BAM~
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
@@ -246,7 +245,7 @@ LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPE~         RET
 LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_FEAR~         RET spell_3  = spell_res END
 LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_COURAGE~      RET spell_4  = spell_res END
 
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\Emotion\RASPEMO.2da~  override
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Emotion/RASPEMO.2da~  override
 
 APPEND ~RASPEMO.2da~ ~HOPELESSNESS %spell_1% 3~
 APPEND ~RASPEMO.2da~ ~HOPE         %spell_2% 3~
@@ -324,7 +323,7 @@ ACTION_FOR_EACH file IN ~SUNES~ ~SUNEL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~SUNERAPT~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

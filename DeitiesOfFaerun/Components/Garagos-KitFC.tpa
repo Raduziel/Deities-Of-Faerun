@@ -14,7 +14,7 @@ ADD_KIT ~RAGaraFC~
     ~RAGaraFC 13 3 11 3 9 3~
 	~RAGaraFC 0 0 0 0 0 0 0 1 1~
 	~RAGaraFC 0 0 0 0 0 0~
-	~override\RAGaraFC.2da~
+	~override/RAGaraFC.2da~
 	~K_FC_H   K_FC_HE   K_FC_D   K_FC_HO   K_FC_HL   K_FC_G   K_FC_E~
 	~0x00000000 8~
 	~FC0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAGaraFC~
 		clascolr = ~30 65 47 39 66~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~1 1 1 1 1 1 1~
 		hpclass = ~HPWAR~
 END
@@ -37,7 +36,7 @@ LAF qd_multiclass
       kit_name = ~RAGaraFC~
       kit_clab = ~RAGaraFC~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -50,11 +49,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFGARA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFGARA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCGARA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCGARA.itm~ SAY NAME1 @3004 SAY NAME2 @3004 SAY DESC @3005
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCGARA.itm~ SAY NAME1 @3004 SAY NAME2 @3004 SAY DESC @3005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAGaraFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~GARAS~
 WRITE_ASCII 0x058 ~GARAL~

@@ -14,7 +14,7 @@ ADD_KIT ~RATyr~
     ~RATyr 9 3 3 3 9 3~
 	~RATyr 1 0 0 0 0 0 0 0 0~
 	~RATyr 1 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RATyr.2da~
+	~DeitiesOfFaerun/Tables/RATyr.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATyr~
 		clascolr = ~205 96 140 164 104~
-		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSTYR.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSTYR.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTYR~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSTYR.itm~ SAY NAME1 @1104 SAY NAME2 @1104 SAY DESC @1105
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSTYR.itm~ SAY NAME1 @1104 SAY NAME2 @1104 SAY DESC @1105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATyr + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TYRS~
 WRITE_ASCII 0x058 ~TYRL~
@@ -61,7 +60,7 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RATYR1.spl~
 LPF	CLONE_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATYR1~ END
 LPM ~SPELL_TO_INNATE~ 
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATYR1~ END
 
 END
@@ -96,7 +95,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY_EXISTING ~RATYR1.spl~ ~override~
+COPY_EXISTING ~RATYR1.spl~ override
 LPF AT_WILL END
 
 
@@ -128,7 +127,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~TYRS~ ~TYRL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -170,7 +169,7 @@ BUT_ONLY
 
 //Hide the kit from Dual Classing
 
-  COPY_EXISTING ~DUALCLAS.2da~ ~override~
+  COPY_EXISTING ~DUALCLAS.2da~ override
     COUNT_2DA_COLS cols
     READ_2DA_ENTRIES_NOW rows cols
     FOR (row = 1; row < rows; ++row) BEGIN 

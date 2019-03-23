@@ -14,7 +14,7 @@ ADD_KIT ~RAGara~
     ~RAGara 13 3 11 3 9 3~
 	~RAGara 0 0 0 0 0 0 0 1 1~
 	~RAGara 1 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAGara.2da~
+	~DeitiesOfFaerun/Tables/RAGara.2da~
 	~K_C_H   K_C_HE   K_C_D   K_C_HO   K_C_HL   K_C_G   K_C_E~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAGara~
 		clascolr = ~30 65 47 39 66~
-		clswpbon = ~1 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 		hpclass = ~HPWAR~
 END
@@ -42,21 +41,21 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSGARA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSGARA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSGARA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSGARA.itm~ SAY NAME1 @3004 SAY NAME2 @3004 SAY DESC @3005
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSGARA.itm~ SAY NAME1 @3004 SAY NAME2 @3004 SAY DESC @3005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAGara + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~GARAS~
 WRITE_ASCII 0x058 ~GARAL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAGARAF.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Charmed%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
+COPY ~DeitiesOfFaerun/Spl/RAGARAF.spl~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Charmed%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_DireCharmed%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL ~%RA_Dominated%~ END
 
 //Enrage
 
@@ -69,12 +68,12 @@ LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = 
 
 COPY_EXISTING	~%spell_res%D.spl~	~override/RAGARA1D.spl~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAGARA1~ END
 
 END                                                           
 
-COPY "DeitiesOfFaerun\Spl\RAGARA2.spl" override SAY NAME1 @3006 SAY UNIDENTIFIED_DESC @3007    				 //Chaotic Combat
+COPY ~DeitiesOfFaerun/Spl/RAGARA2.spl~ override SAY NAME1 @3006 SAY UNIDENTIFIED_DESC @3007    				 //Chaotic Combat
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -98,15 +97,15 @@ COPY "DeitiesOfFaerun\Spl\RAGARA2.spl" override SAY NAME1 @3006 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RAGARA2.eff" override
+COPY ~DeitiesOfFaerun/Spl/RAGARA2.eff~ override
 
-COPY "DeitiesOfFaerun\Spl\RAGARA22.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAGARA22.spl~ override
 
-COPY "DeitiesOfFaerun\Spl\RAGARA2A.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAGARA2A.spl~ override
 
-COPY "DeitiesOfFaerun\Spl\RAGARA2B.spl" override
+COPY ~DeitiesOfFaerun/Spl/RAGARA2B.spl~ override
 
-COPY "DeitiesOfFaerun\Spl\RAGARA3.spl" override SAY NAME1 @3008 SAY UNIDENTIFIED_DESC @3009                  //Blood Armor
+COPY ~DeitiesOfFaerun/Spl/RAGARA3.spl~ override SAY NAME1 @3008 SAY UNIDENTIFIED_DESC @3009                  //Blood Armor
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -158,7 +157,7 @@ PRETTY_PRINT_2DA
 //BAM
 
 ACTION_FOR_EACH file IN ~GARAS~ ~GARAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -177,7 +176,7 @@ ACTION_FOR_EACH file IN ~GARAS~ ~GARAL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~GARABLOO~ ~GARACHAO~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

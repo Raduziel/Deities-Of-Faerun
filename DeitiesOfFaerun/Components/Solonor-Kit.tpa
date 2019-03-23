@@ -14,7 +14,7 @@ ADD_KIT ~RASolo~
     ~RASolo 13 13 14 3 14 3~
 	~RASolo 0 0 0 1 0 0 1 0 0~
 	~RASolo 0 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RASolo.2da~
+	~DeitiesOfFaerun/Tables/RASolo.2da~
 	~K_CR_E K_CR_HE~
 	~0x00000000 18~
 	~CR0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASolo~
 		clascolr = ~27 146 72 91 14~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~0 1 1 0 0 0 0~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RASolo~
       kit_clab = ~RASolo~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RARSOLO.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RARSOLO.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RARCSOLO~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RARCSOLO.itm~ SAY NAME1 @4504 SAY NAME2 @4504 SAY DESC @4505
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RARCSOLO.itm~ SAY NAME1 @4504 SAY NAME2 @4504 SAY DESC @4505
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASolo + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SOLOS~
 WRITE_ASCII 0x058 ~SOLOL~
@@ -68,22 +67,22 @@ END
 
 //Spells
 
-COPY ~DeitiesOfFaerun\Spl\RASOLO1.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RASOLO1.spl~ override
 SAY NAME1 @4506 SAY NAME2 @4506 SAY UNIDENTIFIED_DESC @4507 SAY DESC @4507
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4514) END
 LPF AT_WILL END
 
-COPY ~DeitiesOfFaerun\Spl\RASOLO2.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RASOLO2.spl~ override
 SAY NAME1 @4508 SAY NAME2 @4508 SAY UNIDENTIFIED_DESC @4509 SAY DESC @4509
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4514) END
 LPF AT_WILL END
 
-COPY ~DeitiesOfFaerun\Spl\RASOLO3.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RASOLO3.spl~ override
 SAY NAME1 @4510 SAY NAME2 @4510 SAY UNIDENTIFIED_DESC @4511 SAY DESC @4511
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4514) END
 LPF AT_WILL END
 
-COPY ~DeitiesOfFaerun\Spl\RASOLO4.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RASOLO4.spl~ override
 SAY NAME1 @4512 SAY NAME2 @4512 SAY UNIDENTIFIED_DESC @4513 SAY DESC @4513
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4514) END
 LPF AT_WILL END
@@ -127,7 +126,7 @@ ACTION_FOR_EACH file IN ~SOLOS~ ~SOLOL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~SOLOAIM~ ~SOLOSHAT~ ~SOLORAPI~ ~SOLOHAIL~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

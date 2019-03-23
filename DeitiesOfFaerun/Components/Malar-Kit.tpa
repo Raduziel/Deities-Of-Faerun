@@ -14,7 +14,7 @@ ADD_KIT ~RAMala~
     ~RAMala 13 3 3 3 12 3~
 	~RAMala 0 0 0 0 0 0 0 0 1~
 	~RAMala 0 0 0 0 0 1~
-	~DeitiesOfFaerun\Tables\RAMala.2da~
+	~DeitiesOfFaerun/Tables/RAMala.2da~
 	~K_C_H K_C_HO~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAMala~
 		clascolr = ~198 87 198 29 198~
-		clswpbon = ~1 0 3~
 		clsrcreq = ~1 0 0 0 0 0 1~
 END
 
@@ -41,32 +40,32 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMALA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSMALA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMALA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMALA.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSMALA.itm~ SAY NAME1 @1804 SAY NAME2 @1804 SAY DESC @1805
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMala + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~MALAS~
 WRITE_ASCII 0x058 ~MALAL~
 
 //Malar Claw
 
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALACS.SPL" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Bleeding%" END
+COPY ~DeitiesOfFaerun/Itm/MalarClaw/RAMALACS.SPL~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Bleeding%~ END
 
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.itm" ~override/RAMALACL.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
+COPY ~DeitiesOfFaerun/Itm/MalarClaw/RAMALA.itm~ ~override/RAMALACL.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMala + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 
-COPY "DeitiesOfFaerun\Itm\MalarClaw\RAMALA.spl" ~override/RAMALAC.spl~
+COPY ~DeitiesOfFaerun/Itm/MalarClaw/RAMALA.spl~ ~override/RAMALAC.spl~
 LPF ALTER_EFFECT INT_VAR match_opcode = 122 STR_VAR resource = ~RAMALACL~ END
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RAMALAF.spl" override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Charmed%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_DireCharmed%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_Dominated%" END
+COPY ~DeitiesOfFaerun/Spl/RAMALAF.spl~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Charmed%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_DireCharmed%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL ~%RA_Dominated%~ END
 
 //Beast Claw
 
@@ -85,10 +84,10 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT       STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/SPPR219C.BAM~	~override/%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/BCLAW.ITM~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/BeastClaw/BCLAW.ITM~	override
 SAY NAME1 @9999128 SAY NAME2 @9999128 SAY UNIDENTIFIED_DESC @9999128 SAY DESC @9999128
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAMALA1.spl~
@@ -108,7 +107,7 @@ LPM ~SPELL_TO_INNATE~
 COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
 IF_EXISTS
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~	END
 
 END ELSE BEGIN
@@ -123,11 +122,11 @@ LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  r
 LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%B~  resource = EVAL ~%spell_res%B~	END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 173   parameter2 = iconrage END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522C.BAM~	~override/%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.spl~	~override\%spell_res%B.spl~
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37605 parameter1 = EVAL "%RA_Berserk%" END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AnimalRage/SPPR522B.spl~	~override/%spell_res%B.spl~
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37605 parameter1 = EVAL ~%RA_Berserk%~ END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPPR522~	      resource = EVAL ~%spell_res%~	    END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
 
@@ -139,7 +138,7 @@ LPM ~SPELL_TO_INNATE~
 COPY_EXISTING	~%spell_res%B.spl~	~override/RAMALA2B.spl~
 IF_EXISTS
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMALA2~	END
 LPM ~SPELL_TO_INNATE~
 
@@ -188,8 +187,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMala~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -201,7 +200,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~MALAS~ ~MALAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -220,7 +219,7 @@ ACTION_FOR_EACH file IN ~MALAS~ ~MALAL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~RAMALACL~ ~RAMALACS~ BEGIN
-COPY ~DeitiesOfFaerun\Itm\MalarClaw\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Itm/MalarClaw/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -233,7 +232,7 @@ COPY ~DeitiesOfFaerun\Itm\MalarClaw\%file%.bam~ ~override~
       original_base_index
       new_base_index
     STR_VAR
-      source_file = EVAL ~DeitiesOfFaerun\Itm\MalarClaw\MOS%original_base_index%.pvrz~
+      source_file = EVAL ~DeitiesOfFaerun/Itm/MalarClaw/MOS%original_base_index%.pvrz~
     END
   END
 END

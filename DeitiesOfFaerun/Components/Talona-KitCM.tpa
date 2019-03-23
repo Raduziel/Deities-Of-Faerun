@@ -14,7 +14,7 @@ ADD_KIT ~RATlnaCM~
     ~RATlnaCM 3 3 14 3 14 3~
 	~RATlnaCM 0 0 0 0 0 0 0 0 1~
 	~RATlnaCM 0 0 0 0 0 0~
-	~override\RATlnaCM.2da~
+	~override/RATlnaCM.2da~
 	~K_CM_H   K_CM_HE   K_CM_E   K_CM_G   K_CM_HL   K_CM_D   K_CM_HO~
 	~0x00000000 14~
 	~CM0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATlnaCM~
 		clascolr = ~20 54 39 92 137~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RATlnaCM~
       kit_clab = ~RATlnaCM~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAMTLNA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMTLNA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMTLNA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACMTLNA.itm~ SAY NAME1 @2104 SAY NAME2 @2104 SAY DESC @2105
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMTLNA.itm~ SAY NAME1 @2104 SAY NAME2 @2104 SAY DESC @2105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATlnaCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TLNAS~
 WRITE_ASCII 0x058 ~TLNAL~

@@ -14,7 +14,7 @@ ADD_KIT ~RABaraCM~
     ~RABaraCM 3 15 3 15 9 3~
 	~RABaraCM 0 0 0 1 0 0 0 0 0~
 	~RABaraCM 0 0 0 0 0 0~
-	~override\RABaraCM.2da~
+	~override/RABaraCM.2da~
 	~K_CM_G~
 	~0x00000000 14~
 	~CM0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RABaraCM~
 		clascolr = ~205 43 66 182 191~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~0 0 0 0 0 1 0~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RABaraCM~
       kit_clab = ~RABaraCM~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAMBARA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMBARA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMBARA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACMBARA.itm~ SAY NAME1 @604 SAY NAME2 @604 SAY DESC @605
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMBARA.itm~ SAY NAME1 @604 SAY NAME2 @604 SAY DESC @605
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABaraCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~BARAS~
 WRITE_ASCII 0x058 ~BARAL~
@@ -82,8 +81,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCM~) parameter2 = 9 END
 				END
 				DEFAULT

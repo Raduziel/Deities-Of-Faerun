@@ -14,7 +14,7 @@ ADD_KIT ~RALath~
     ~RALath 3 3 3 3 14 12~
 	~RALath 0 0 0 1 0 0 0 0 0~
 	~RALath 1 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RALath.2da~
+	~DeitiesOfFaerun/Tables/RALath.2da~
 	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RALath~
 		clascolr = ~147 99 81 115 172~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,22 +40,22 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSLATH.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSLATH.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSLATH~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSLATH.itm~ SAY NAME1 @1004 SAY NAME2 @1004 SAY DESC @1005
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSLATH.itm~ SAY NAME1 @1004 SAY NAME2 @1004 SAY DESC @1005
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALath + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~LATHS~
 WRITE_ASCII 0x058 ~LATHL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RALATHF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RALATHF.spl~ override
 
-COPY "DeitiesOfFaerun\Spl\RALATH1.spl" override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Boon of Lathander
+COPY ~DeitiesOfFaerun/Spl/RALATH1.spl~ override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Boon of Lathander
 
-COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Faerie Fire
+COPY ~DeitiesOfFaerun/Spl/RALATH2.spl~ override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Faerie Fire
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -80,7 +79,7 @@ COPY "DeitiesOfFaerun\Spl\RALATH2.spl" override SAY NAME1 @1008 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 24 duration = (24 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RALATH3.spl" override SAY NAME1 @1010 SAY UNIDENTIFIED_DESC  @1011   //Sunrise
+COPY ~DeitiesOfFaerun/Spl/RALATH3.spl~ override SAY NAME1 @1010 SAY UNIDENTIFIED_DESC  @1011   //Sunrise
 
 //False Dawn
 
@@ -125,7 +124,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~LATHS~ ~LATHL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -144,7 +143,7 @@ ACTION_FOR_EACH file IN ~LATHS~ ~LATHL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~LATHFAFI~ ~LATHSUNR~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -186,7 +185,7 @@ BUT_ONLY
 
 //Hide the kit from Dual Classing
 
-  COPY_EXISTING ~DUALCLAS.2da~ ~override~
+  COPY_EXISTING ~DUALCLAS.2da~ override
     COUNT_2DA_COLS cols
     READ_2DA_ENTRIES_NOW rows cols
     FOR (row = 1; row < rows; ++row) BEGIN 

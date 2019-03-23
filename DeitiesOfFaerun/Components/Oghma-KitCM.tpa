@@ -14,7 +14,7 @@ ADD_KIT ~RAOghmCM~
     ~RAOghmCM 3 3 3 12 14 3~
 	~RAOghmCM 0 0 0 0 1 0 0 0 0~
 	~RAOghmCM 0 0 0 0 0 0~
-	~override\RAOghmCM.2da~
+	~override/RAOghmCM.2da~
 	~K_CM_H   K_CM_HE   K_CM_E   K_CM_G   K_CM_HL   K_CM_D~
 	~0x00000000 14~
 	~CM0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAOghmCM~
 		clascolr = ~205 254 105 22 202~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 0~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RAOghmCM~
       kit_clab = ~RAOghmCM~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAMOGHM.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMOGHM.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMOGHM~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RACMOGHM.itm~ SAY NAME1 @1204 SAY NAME2 @1204 SAY DESC @1205
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMOGHM.itm~ SAY NAME1 @1204 SAY NAME2 @1204 SAY DESC @1205
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAOghmCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~OGHMS~
 WRITE_ASCII 0x058 ~OGHML~
@@ -82,8 +81,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
 				END
 				DEFAULT

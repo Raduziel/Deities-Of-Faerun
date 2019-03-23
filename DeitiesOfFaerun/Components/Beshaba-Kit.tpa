@@ -14,7 +14,7 @@ ADD_KIT ~RABesh~
     ~RABesh 3 3 3 3 10 3~
 	~RABesh 0 0 0 0 0 0 0 0 1~
 	~RABesh 1 0 1 1 0 0~
-	~DeitiesOfFaerun\Tables\RABesh.2da~
+	~DeitiesOfFaerun/Tables/RABesh.2da~
 	~K_C_H   K_C_HE   K_C_HL   K_C_G   K_C_HO~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RABesh~
 		clascolr = ~44 139 117 140 119~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 0 1 1 1~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSBESH.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSBESH.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBESH~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSBESH.itm~ SAY NAME1 @3504 SAY NAME2 @3504 SAY DESC @3505
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSBESH.itm~ SAY NAME1 @3504 SAY NAME2 @3504 SAY DESC @3505
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABesh + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~BESHS~
 WRITE_ASCII 0x058 ~BESHL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RABESH1.spl"  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bad Luck
+COPY ~DeitiesOfFaerun/Spl/RABESH1.spl~  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bad Luck
 
 //Doom
 
@@ -63,12 +62,12 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RABESH2.spl~
 LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RABESH2~	END
 LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RABESH2~	END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABESH3.spl"  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Bane of Beshaba
+COPY ~DeitiesOfFaerun/Spl/RABESH3.spl~  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Bane of Beshaba
 
 //Lower Resistance
 
@@ -80,7 +79,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RABESH5.spl"  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Misfortune
+COPY ~DeitiesOfFaerun/Spl/RABESH5.spl~  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Misfortune
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -104,7 +103,7 @@ COPY "DeitiesOfFaerun\Spl\RABESH5.spl"  override SAY NAME1 @3510 SAY UNIDENTIFIE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY "DeitiesOfFaerun\Spl\RABESH6.spl"  override SAY NAME1 @3512 SAY UNIDENTIFIED_DESC @3513	             //Beshaba's Mercy
+COPY ~DeitiesOfFaerun/Spl/RABESH6.spl~  override SAY NAME1 @3512 SAY UNIDENTIFIED_DESC @3513	             //Beshaba's Mercy
 
 //Black Blade of Disaster
 
@@ -164,7 +163,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~BESHS~ ~BESHL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -183,7 +182,7 @@ ACTION_FOR_EACH file IN ~BESHS~ ~BESHL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~BESHBLUC~ ~BESHBANE~ ~BESHMISF~ ~BESHMERC~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

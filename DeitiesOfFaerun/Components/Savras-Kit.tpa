@@ -14,7 +14,7 @@ ADD_KIT ~RASavr~
     ~RASavr 3 3 3 11 14 3~
 	~RASavr 0 1 0 0 0 0 0 0 0~
 	~RASavr 0 0 1 0 0 0~
-	~DeitiesOfFaerun\Tables\RASavr.2da~
+	~DeitiesOfFaerun/Tables/RASavr.2da~
 	~K_C_H K_C_HE K_C_E~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RASavr~
 		clascolr = ~24 146 50 51 81~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 0 1 0~
 END
 
@@ -41,28 +40,28 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSAVR.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSSAVR.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSAVR~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSAVR.itm~ SAY NAME1 @3104 SAY NAME2 @3104 SAY DESC @3105
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSSAVR.itm~ SAY NAME1 @3104 SAY NAME2 @3104 SAY DESC @3105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASavr + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SAVRS~
 WRITE_ASCII 0x058 ~SAVRL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RASAVRF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RASAVRF.spl~ override
 
 ACTION_IF !FILE_EXISTS_IN_GAME ~RAForeIc.bam~ BEGIN
 	
-	COPY "DeitiesOfFaerun\Spl\RAForeIc.bam" override
+	COPY ~DeitiesOfFaerun/Spl/RAForeIc.bam~ override
 	LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@2910) STR_VAR bam_file = RAFOREIC RET iconfore = icon END
 
 END ELSE BEGIN
 	OUTER_SPRINT	file ~RAForeIc~
 	COPY_EXISTING ~statdesc.2da~	override
-		REPLACE_EVALUATE CASE_INSENSITIVE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+[0-9\-]+[ %TAB%]+%file%[ %TAB%%WNL%$]~ BEGIN	SET	iconfore = (~%MATCH1%~)	END	~%MATCH0%~
+		REPLACE_EVALUATE CASE_INSENSITIVE ~[%WNL%^]/(0x[0-9A-F]+/|[0-9]+/)[ %TAB%]+[0-9/-]+[ %TAB%]+%file%[ %TAB%%WNL%$]~ BEGIN	SET	iconfore = (~%MATCH1%~)	END	~%MATCH0%~
 	BUT_ONLY
 END
  
@@ -85,7 +84,7 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RASAVR2.spl~
 LPF	CLONE_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASAVR2~ END
 LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR match_opcode = 206 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RASAVR2~ END
 
 END 
@@ -113,7 +112,7 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RASAVR5.spl" override SAY NAME1 @2908 SAY UNIDENTIFIED_DESC @2909     //Consequence
+COPY ~DeitiesOfFaerun/Spl/RASAVR5.spl~ override SAY NAME1 @2908 SAY UNIDENTIFIED_DESC @2909     //Consequence
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
 //Multiclass CLAB
@@ -147,8 +146,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" "2A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~2A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASavr~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -160,7 +159,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~SAVRS~ ~SAVRL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -179,7 +178,7 @@ ACTION_FOR_EACH file IN ~SAVRS~ ~SAVRL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~SAVRCONS~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

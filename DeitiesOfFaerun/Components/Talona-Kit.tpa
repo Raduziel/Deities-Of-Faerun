@@ -14,7 +14,7 @@ ADD_KIT ~RATlna~
     ~RATlna 3 3 14 3 14 3~
 	~RATlna 0 0 0 0 0 0 0 0 1~
 	~RATlna 0 0 1 1 0 0~
-	~DeitiesOfFaerun\Tables\RATlna.2da~
+	~DeitiesOfFaerun/Tables/RATlna.2da~
 	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HL   K_C_D   K_C_HO~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATlna~
 		clascolr = ~20 54 39 92 137~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSTLNA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSTLNA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTLNA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSTLNA.itm~ SAY NAME1 @2104 SAY NAME2 @2104 SAY DESC @2105
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSTLNA.itm~ SAY NAME1 @2104 SAY NAME2 @2104 SAY DESC @2105
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATlna + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TLNAS~
 WRITE_ASCII 0x058 ~TLNAL~
 
 //Spells
 
-COPY "DeitiesOfFaerun\Spl\RATLNAF.spl" override		  
+COPY ~DeitiesOfFaerun/Spl/RATLNAF.spl~ override		  
 
 //Poison Weapon
 		  
@@ -62,16 +61,16 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~ASSASSIN_POISON~	RET	spell_res	
 COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA1.spl~
 LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATLNA1~ END
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
+COPY_EXISTING	~%spell_res%.spl~	override
 LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATLNA1~ END
 
 END
 
-COPY "DeitiesOfFaerun\Spl\RATLNA2.spl" override SAY NAME1 @2106 SAY UNIDENTIFIED_DESC @2107   //Poison Touch
+COPY ~DeitiesOfFaerun/Spl/RATLNA2.spl~ override SAY NAME1 @2106 SAY UNIDENTIFIED_DESC @2107   //Poison Touch
 
-COPY "DeitiesOfFaerun\Spl\RATLNA21.spl" override
+COPY ~DeitiesOfFaerun/Spl/RATLNA21.spl~ override
 
-COPY "DeitiesOfFaerun\Spl\RATLNA22.spl" override
+COPY ~DeitiesOfFaerun/Spl/RATLNA22.spl~ override
 
 //Contagion
 
@@ -112,10 +111,10 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO309% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37800 parameter1 = EVAL "%RA_Blinded%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37800 parameter1 = EVAL ~%RA_Blinded%~ END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RATLNA5.spl~
 LPM ~SPELL_TO_INNATE~
@@ -166,7 +165,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~TLNAS~ ~TLNAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -185,7 +184,7 @@ ACTION_FOR_EACH file IN ~TLNAS~ ~TLNAL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~TLNAPOTO~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

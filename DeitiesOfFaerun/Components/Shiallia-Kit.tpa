@@ -14,7 +14,7 @@ ADD_KIT ~RAShia~
     ~RAShia 3 3 3 3 11 11~
 	~RAShia 0 0 0 1 0 0 0 0 0~
 	~RAShia 0 0 0 0 0 1~
-	~DeitiesOfFaerun\Tables\RAShia.2da~
+	~DeitiesOfFaerun/Tables/RAShia.2da~
 	~K_C_H K_C_HE K_C_E K_C_HL K_C_G~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAShia~
 		clascolr = ~3 53 113 137 56~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 0 1 1 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSHIA.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSSHIA.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSHIA~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSHIA.itm~ SAY NAME1 @4204 SAY NAME2 @4204 SAY DESC @4205
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSSHIA.itm~ SAY NAME1 @4204 SAY NAME2 @4204 SAY DESC @4205
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAShia + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SHIAS~
 WRITE_ASCII 0x058 ~SHIAL~
 
 //Features
 
-COPY "DeitiesOfFaerun\Spl\RASHIAF.spl" override
+COPY ~DeitiesOfFaerun/Spl/RASHIAF.spl~ override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4206) END
 
 //Lay on Hands
@@ -165,8 +164,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" "D4" "D3" "C6" "C3" "C2" "C1"  BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~D4~ ~D3~ ~C6~ ~C3~ ~C2~ ~C1~  BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShia~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -178,7 +177,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~SHIAS~ ~SHIAL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

@@ -14,7 +14,7 @@ ADD_KIT ~RAUmbe~
     ~RAUmbe 3 3 15 3 13 3~
 	~RAUmbe 0 0 0 0 0 0 0 0 1~
 	~RAUmbe 0 0 0 1 0 0~
-	~DeitiesOfFaerun\Tables\RAUmbe.2da~
+	~DeitiesOfFaerun/Tables/RAUmbe.2da~
 	~K_C_H K_C_HO K_C_HE~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAUmbe~
 		clascolr = ~81 55 125 15 15~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 0 1 0 0 0 1~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSUMBE.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSUMBE.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSUMBE~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSUMBE.itm~ SAY NAME1 @1904 SAY NAME2 @1904 SAY DESC @1905
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSUMBE.itm~ SAY NAME1 @1904 SAY NAME2 @1904 SAY DESC @1905
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUmbe + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~UMBES~
 WRITE_ASCII 0x058 ~UMBEL~
@@ -81,18 +80,18 @@ WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %SWAVE% END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"     END
-LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%" END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL ~%RA_Stunned%~     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL ~%RA_Unconscious%~ END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426C.BAM~	~override/%spell_res%C.BAM~
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE1.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun\Spl\RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907  //Dehydrate
+COPY ~DeitiesOfFaerun/Spl/RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907  //Dehydrate
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -116,7 +115,7 @@ COPY ~DeitiesOfFaerun\Spl\RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_dicenumber = 1 dicenumber = i END
 	END
 
-COPY ~DeitiesOfFaerun\Spl\RAUMBE3.SPL~ override SAY NAME1 @1908 SAY UNIDENTIFIED_DESC @1909	  //Drown
+COPY ~DeitiesOfFaerun/Spl/RAUMBE3.SPL~ override SAY NAME1 @1908 SAY UNIDENTIFIED_DESC @1909	  //Drown
 
 //Conjure Water Elemental
 
@@ -128,7 +127,7 @@ LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
 
-LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
+LAF cd_new_summon_table STR_VAR descript = ~WATER_ELEMENTAL_RADUZIEL~ 2da_file = RAELEMW RET RAELEMW = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 RADUZIEL_CONJURE_WATER_ELEMENTAL
 SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
@@ -137,18 +136,18 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override/%spell_res%C.BAM~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
 SAY NAME1 @9999143 SAY NAME2 @9999143
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	~override~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE4.spl~
 LPM ~SPELL_TO_INNATE~
@@ -196,8 +195,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbe~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -209,7 +208,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~UMBES~ ~UMBEL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -228,7 +227,7 @@ ACTION_FOR_EACH file IN ~UMBES~ ~UMBEL~ BEGIN
 END
 
 ACTION_FOR_EACH file IN ~UMBEDEHY~ ~UMBEDROW~ BEGIN
-COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ ~override~
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

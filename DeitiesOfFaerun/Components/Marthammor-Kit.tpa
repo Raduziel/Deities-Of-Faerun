@@ -14,7 +14,7 @@ ADD_KIT ~RAMart~
     ~RAMart 3 3 11 3 9 3~
 	~RAMart 0 0 0 1 0 0 0 0 0~
 	~RAMart 1 0 0 0 0 0~
-	~DeitiesOfFaerun\Tables\RAMart.2da~
+	~DeitiesOfFaerun/Tables/RAMart.2da~
 	~K_C_D~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAMart~
 		clascolr = ~1 6 22 43 110~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~0 0 0 1 0 0 0~
 END
 
@@ -41,18 +40,18 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSMART.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSMART.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMART~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSMART.itm~ SAY NAME1 @4404 SAY NAME2 @4404 SAY DESC @4405
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSMART.itm~ SAY NAME1 @4404 SAY NAME2 @4404 SAY DESC @4405
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMart + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~MARTS~
 WRITE_ASCII 0x058 ~MARTL~
 
 //Features
 
-COPY ~DeitiesOfFaerun\Spl\RAMARTF.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RAMARTF.spl~ override
 
 //Free Action
 

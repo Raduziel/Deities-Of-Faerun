@@ -14,7 +14,7 @@ ADD_KIT ~RAShau~
     ~RAShau 13 3 11 3 14 3~
 	~RAShau 0 0 0 0 0 0 1 1 0~
 	~RAShau 0 0 0 0 0 1~
-	~DeitiesOfFaerun\Tables\RAShau.2da~
+	~DeitiesOfFaerun/Tables/RAShau.2da~
 	~K_C_H K_C_HE~
 	~0x00000000 3~
 	~Cl0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAShau~
 		clascolr = ~66 79 254 41 6~
-		clswpbon = ~1 0 3~
 		clsrcreq = ~1 0 1 0 0 0 0~
 END
 
@@ -41,11 +40,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSSHAU.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSSHAU.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSSHAU~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSSHAU.itm~ SAY NAME1 @3704 SAY NAME2 @3704 SAY DESC @3705
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSSHAU.itm~ SAY NAME1 @3704 SAY NAME2 @3704 SAY DESC @3705
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAShau + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SHAUS~
 WRITE_ASCII 0x058 ~SHAUL~
@@ -109,14 +108,14 @@ END
 
 //Restrictions
 
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ override
 PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 		READ_BYTE 0x18 flags1
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "D4" "C6" "C2" "C1"  BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~D4~ ~C6~ ~C2~ ~C1~  BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -128,7 +127,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~SHAUS~ ~SHAUL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index

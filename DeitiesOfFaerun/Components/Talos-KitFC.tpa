@@ -14,7 +14,7 @@ ADD_KIT ~RATaloFC~
     ~RATaloFC 13 3 3 3 14 3~
 	~RATaloFC 0 0 0 0 0 0 0 0 1~
 	~RATaloFC 0 0 0 0 0 0~
-	~override\RATaloFC.2da~
+	~override/RATaloFC.2da~
 	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
 	~0x00000000 8~
 	~FC0~
@@ -27,7 +27,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RATaloFC~
 		clascolr = ~213 97 136 183 190~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -36,7 +35,7 @@ LAF qd_multiclass
       kit_name = ~RATaloFC~
       kit_clab = ~RATaloFC~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun\Lib\Multiclass~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
@@ -49,11 +48,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAFTALO.spl~
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFTALO.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCTALO~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAFCTALO.itm~ SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCTALO.itm~ SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATaloFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~TALOS~
 WRITE_ASCII 0x058 ~TALOL~
