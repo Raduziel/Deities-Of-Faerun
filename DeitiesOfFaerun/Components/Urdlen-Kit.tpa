@@ -51,7 +51,7 @@ WRITE_ASCII 0x058 ~URDLL~
 
 //Urdlen Claw
 
-COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.itm~ ~override/RAURDLCL.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
+COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.itm~ ~override/RAURDLCL.itm~ SAY NAME1 @4706 SAY NAME2 @4706 SAY DESC @4707
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUrdl + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 
 COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.spl~ ~override/RAURDLC.spl~

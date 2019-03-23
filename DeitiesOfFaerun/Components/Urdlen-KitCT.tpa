@@ -59,7 +59,7 @@ WRITE_ASCII 0x058 ~URDLL~
 
 //Urdlen Claw
 
-COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.itm~ ~override/RAURDLTH.itm~ SAY NAME1 @1806 SAY NAME2 @1806 SAY DESC @1807
+COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.itm~ ~override/RAURDLTH.itm~ SAY NAME1 @4706 SAY NAME2 @4706 SAY DESC @4707
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUrdlCT + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 
 COPY ~DeitiesOfFaerun/Itm/UrdlenClaw/RAURDL.spl~ ~override/RAURDLT.spl~
@@ -88,111 +88,111 @@ ACTION_IF	GAME_IS ~bg2ee~	BEGIN
 
 <<<<<<<< .../inlined_script.baf
 IF
-	Global(~RA_URDLEN_IMPORT~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT","GLOBAL",0)
 		Kit(Player1,RAURDL)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLCL~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLCL",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT","GLOBAL",0)
 		Kit(Player1,RAURDLCT)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLTH~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLTH",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_2~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_2","GLOBAL",0)
 		Kit(Player2,RAURDL)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_2~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLCL~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_2","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLCL",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_2~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_2","GLOBAL",0)
 		Kit(Player2,RAURDLCT)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_2~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLTH~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_2","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLTH",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_3~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_3","GLOBAL",0)
 		Kit(Player3,RAURDL)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_3~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLCL~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_3","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLCL",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_3~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_3","GLOBAL",0)
 		Kit(Player3,RAURDLCT)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_3~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLTH~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_3","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLTH",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_4~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_4","GLOBAL",0)
 		Kit(Player4,RAURDL)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_4~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLCL~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_4","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLCL",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_4~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_4","GLOBAL",0)
 		Kit(Player4,RAURDLCT)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_4~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLTH~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_4","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLTH",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_5~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_5","GLOBAL",0)
 		Kit(Player5,RAURDL)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_5~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLCL~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_5","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLCL",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_5~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_5","GLOBAL",0)
 		Kit(Player5,RAURDLCT)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_5~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLTH~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_5","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLTH",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_6~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_6","GLOBAL",0)
 		Kit(Player6,RAURDL)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_6~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLCL~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_6","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLCL",0,0,0))
 		Continue()
 END
 IF
-	Global(~RA_URDLEN_IMPORT_6~,~GLOBAL~,0)
+	Global("RA_URDLEN_IMPORT_6","GLOBAL",0)
 		Kit(Player6,RAURDLCT)
 THEN
 	RESPONSE #100
-		SetGlobal(~RA_URDLEN_IMPORT_6~,~GLOBAL~,1)
-		ActionOverride(~Chest7~,CreateItem(~RAURDLTH~,0,0,0))
+		SetGlobal("RA_URDLEN_IMPORT_6","GLOBAL",1)
+		ActionOverride("Chest7",CreateItem("RAURDLTH",0,0,0))
 		Continue()
 END
 
