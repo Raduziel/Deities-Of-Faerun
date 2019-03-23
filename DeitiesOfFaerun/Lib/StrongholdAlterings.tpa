@@ -48,7 +48,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAURDL~)	BEGIN	~RAURDL~ => 0	~RAURDLCT~ => 0										END	//	Urdlen	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVALK~)	BEGIN	~RAVALK~ => 0	~RAVALKFC~ => 0										END	//	Valkur	->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAVELS~)	BEGIN	~RAVELS~ => 0	~RAVELSCM~ => 0										END	//	Velsharoon	->	Talos, Wizard
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAYOND~)	BEGIN	~RAYOND~ => 0	~RAYONDFC~ => 0										END	//	Yondalla	->	Helm, Ranger
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAYOND~)	BEGIN	~RAYOND~ => 0	~RAYONDRC~ => 0										END	//	Yondalla	->	Helm, Ranger
 	
 	DEFINE_PATCH_FUNCTION	EXTEND_TRIGGER
 		INT_VAR	index = 0	section = 0	or = 0	warn = 1
