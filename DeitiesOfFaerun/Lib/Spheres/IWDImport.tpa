@@ -1960,7 +1960,7 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 								 END
 LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 56   parameter2 = iconentr                  								 END
 LPF	ALTER_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPWI327~ resource = EVAL $res_of_label(~WIZARD_ICELANCE~)			 		  END
-LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE2~		 								 		  END
+LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE3~		 								 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RAAURI1~		 								 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~SPPR503~		 								 		  END
 LPF	CLONE_EFFECT 	   INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_LANCE_OF_DISRUPTION~) 		  END
@@ -2452,7 +2452,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ENTROPY_SHIELD~	RET	spel
 COPY_EXISTING ~%spell_res%.spl~ override
 SAY NAME1 @9999200 SAY NAME2 @9999200 SAY UNIDENTIFIED_DESC @9999201 SAY DESC @9999201
 LPF	ALTER_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPWI327~ resource = EVAL $res_of_label(~WIZARD_ICELANCE~)			 		    END
-LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE2~		 								 		    END
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RASUNE3~		 								 		    END
 LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~RAAURI1~		 								 		    END
 LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = ~SPPR503~		 								 		    END
 LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_LANCE_OF_DISRUPTION~) 		    END
@@ -3001,7 +3001,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_
 LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL
 SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
@@ -3030,7 +3030,7 @@ ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_
 LAF cd_new_summon_table STR_VAR descript = "AIR_ELEMENTAL_RADUZIEL" 2da_file = RAELEMA RET RAELEMA = table END
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
 SAY NAME1 @9999228 SAY NAME2 @9999228 SAY UNIDENTIFIED_DESC @9999229 SAY DESC @9999229
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
