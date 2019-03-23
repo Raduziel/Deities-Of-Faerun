@@ -1140,8 +1140,10 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Eldath: Lathander, Druid
 
-- Garagos: Talos                                   
-                 
+- Garagos: Talos
+
+- Haela: Helm, Fighter
+         
 - Helm: Helm
 
 - Hoar: Helm
@@ -2000,6 +2002,14 @@ AC 0 | Thac0 9 | Attacks per Round 3 | STR 18/00
 Damage: 2d8 (slashing)  - strikes as +2
 
 Resistances (%): 100 Cold. Can only be hurt by weapons +1 or better.
+
+---
+
+g8) Yondalla's Wolf
+
+AC 6 | Attacks per Round 2 | STR 18 | DEX 18 | Movement Rate +50%
+
+Damage: 1d8 (piercing)  - strikes as +2
 
 ====================================================================================================================================================================
 
