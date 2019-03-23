@@ -1888,7 +1888,7 @@ Equipped abilities:
 
 Weight: 0~
 @1806 = ~Claw of Malar~
-@1807 = ~This claw is given by the Church of Malar to its elected Talons. It consists of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like lion's claws. Despite being uncomfortable, it is possible to wear a glove under the claws.
+@1807 = ~This claw is given by the Church of Malar to its elected Talons. It consists of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like lion's claws. Despite being uncomfortable, it is possible to wear a glove under the claw.
 
 STATISTICS:
 
@@ -5109,6 +5109,7 @@ Turn/Command Undead: Yes (see below).
 
 Features:
 
+- May use the weapon Claws of Urdlen.
 - Turns Undead as a priest two levels lower.
 - May cast Cause Light Wounds once per day as a special ability, starting at level 1.
 - May cast Blindness once per day as a special ability, starting at level 3.
@@ -5129,7 +5130,20 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@4706 = ~BLOODSTALKER OF URDLEN (C/T): Urdlen (URD-len), a neuter and sexless being, is the epitome of the evil impulse that rules some gnomes and is feared by the rest. A mindless force of malicious evil and destruction, Urdlen serves as a warning for every gnome to beware the taint of greed that lies within the gnomish delight in gems and jewelry. It is telling that gnomes have no myths of how this evil arose, but that they simply fear Urdlen's vicious, life-hating evil and bloodlust. Just as the Crawler Below can burrow into the earth of the Abyss, so it hopes evil will burrow into the hearts and souls of gnomes everywhere. Urdlen thrives on trickery that harms the innocent and the good. It is commonly venerated by evil thieves and fighters, although gnomes from all walks of life have succumbed to its evil taint. Spriggans are said to be the twisted offspring of gnomes who succumbed to Urdlen's taint early in the history of the Forgotten Folk, and they honor their god and patron by perpetuating its reign of terror.
+@4706 = ~Claw of Urdlen~
+@4707 = ~This claw is given by the Church of Urdlen to its elected Bloodstalkers. It consists of metal weapons gripped in the fists that resemble brass knuckles studded with rows of sharp, jagged edges along the top like mole's claws. Despite being uncomfortable, it is possible to wear a glove under the claw.
+
+STATISTICS:
+
+Damage: 1d6+2 (piercing or slashing)
+Speed Factor: 6
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+3 Strength
+
+Weight: 1~
+@4708 = ~BLOODSTALKER OF URDLEN (C/T): Urdlen (URD-len), a neuter and sexless being, is the epitome of the evil impulse that rules some gnomes and is feared by the rest. A mindless force of malicious evil and destruction, Urdlen serves as a warning for every gnome to beware the taint of greed that lies within the gnomish delight in gems and jewelry. It is telling that gnomes have no myths of how this evil arose, but that they simply fear Urdlen's vicious, life-hating evil and bloodlust. Just as the Crawler Below can burrow into the earth of the Abyss, so it hopes evil will burrow into the hearts and souls of gnomes everywhere. Urdlen thrives on trickery that harms the innocent and the good. It is commonly venerated by evil thieves and fighters, although gnomes from all walks of life have succumbed to its evil taint. Spriggans are said to be the twisted offspring of gnomes who succumbed to Urdlen's taint early in the history of the Forgotten Folk, and they honor their god and patron by perpetuating its reign of terror.
 
 Urdlen's place in the gnome pantheon is oddly unquestioned, though the god is greatly feared and secretly reviled by nearly all the Forgotten Folk. Urdlen hates all the other gods of the gnomes with a passion, and they in turn war against it. Further, the Crawler Below has garnered the enmity of dwarven and halfling powers as well. Urdlen contests with Flandal Steelskin, Garl Glittergold, Segojan Earthcaller, Callarduran Smoothhands, and Urogalan, for those gnomes and halflings under their protection are most often the target of Urdlen's attacks. Although it may be more of a rivalry, the Crawler Below and Zuggtmoy, the Demoness Lady of Fungi, are supposed to have an understanding of some sorts, an alliance that allows isolated followers of the Crawler Below to eke out a living on the wild fungi and lichens of the Underdark.
 
@@ -5145,6 +5159,7 @@ Turn/Command Undead: Yes (see below).
 
 Features:
 
+- May use the weapon Claws of Urdlen.
 - Turns Undead as a priest two levels lower.
 - May cast Cause Light Wounds once per day as a special ability, starting at level 1.
 - May cast Blindness once per day as a special ability, starting at level 3.
