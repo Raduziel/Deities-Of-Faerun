@@ -20,18 +20,7 @@ INSTALLATION NOTES:
 
 * Deities of Faerûn will probably misbehave with any mod component that alters the strongholds quests (except for those that exclusively remove the one-stronghold limit).
 
-* Deities of Faerûn is not compatible with any mods that alters the Cleric and will break any kit added by other mods (except for the Holy Redeemer from I Hate Undead) - this can be fixed doing the following:
-
-Add "clswpbon = ~0 0 3~" (no quotation marks) in the ADD_KIT routine of the kit's tpa/tp2 as the example below:
-
-.................................................
-| LAF fl#add_kit_ee                             |
-|	STR_VAR                                 |
-|		kit_name = ~KitInternalName~    |
-|		clswpbon = ~0 0 3~              |
-|		(...)                           |
-| END                                           |
-.................................................
+* Deities of Faerûn will allow any cleric kit to use any weapon, unless the kit is especifically patched to have restrictions.
 
 -- A special note about Tweaks Anthology --
 
