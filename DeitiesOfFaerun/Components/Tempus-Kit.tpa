@@ -53,12 +53,28 @@ WRITE_ASCII 0x058 ~TEMPL~
 
 //Spells
 
+//Enrage
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP1.spl~
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RATEMP2D~	END
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATEMP1~ END
+
+COPY_EXISTING	~%spell_res%D.spl~	~override/RATEMP1D.spl~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATEMP1~ END
+
+END
+
 //Prayer
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PRAYER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PRAYER~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP1.spl~
+COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP2.spl~
 LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
@@ -87,31 +103,31 @@ LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
 LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40256 parameter1 = EVAL "%RA_Bonus%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 183   parameter2 = iconpray END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP1.spl~
+COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP2.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
 
-//Enrage
+//Heroes' Feast
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
+COPY ~DeitiesOfFaerun\Spl\RATEMP3.spl~ override 
+SAY NAME1 @206 SAY UNIDENTIFIED_DESC @207
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RATEMP2.spl~
-LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RATEMP2D~	END
-LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATEMP2~ END
+ACTION_IF !FILE_EXISTS_IN_GAME ~RAFeast.itm~ BEGIN
 
-COPY_EXISTING	~%spell_res%D.spl~	~override/RATEMP2D.spl~
+COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeast.itm~ override 
+SAY NAME1 @208 SAY NAME2 @208 SAY DESC @209 SAY UNIDENTIFIED_DESC @209
 
-COPY_EXISTING	~%spell_res%.spl~	~override~
-LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATEMP2~ END
+COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeastL.bam~ override
+
+COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeastS.bam~ override
 
 END
 
 //Multiclass CLAB
 
 COPY_EXISTING ~RATemp.2da~ ~override/RATempFC.2da~
-SET_2DA_ENTRY 3 25 50 ~AP_RAFTEMP~
+SET_2DA_ENTRY 4 25 50 ~AP_RAFTEMP~
 READ_2DA_ENTRIES_NOW read 51
 	FOR (i = 1; i < 51; ++i)	BEGIN
 		FOR (j = 0; j < read; ++j)	BEGIN
@@ -145,7 +161,7 @@ BUT_ONLY
 //BAM
 
 ACTION_FOR_EACH file IN ~TEMPS~ ~TEMPL~ BEGIN
-  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ ~override~
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -162,6 +178,25 @@ ACTION_FOR_EACH file IN ~TEMPS~ ~TEMPL~ BEGIN
     END
   END
 END
+
+ACTION_FOR_EACH file IN ~TEMPHERO~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END	
 
 //Hide the original kit
 
@@ -187,7 +222,7 @@ BUT_ONLY
 
 //Hide the kit from Dual Classing
 
-  COPY_EXISTING ~DUALCLAS.2da~ ~override~
+  COPY_EXISTING ~DUALCLAS.2da~ override
     COUNT_2DA_COLS cols
     READ_2DA_ENTRIES_NOW rows cols
     FOR (row = 1; row < rows; ++row) BEGIN 

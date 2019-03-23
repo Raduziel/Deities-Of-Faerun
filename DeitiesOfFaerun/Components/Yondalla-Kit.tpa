@@ -41,11 +41,11 @@ END
 
 //Holy Symbol
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl" ~override/RAHSYOND.spl~
+COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.spl~ ~override/RAHSYOND.spl~
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
 LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSYOND~ END
 
-COPY "DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm" ~override/RAHSYOND.itm~ SAY NAME1 @4604 SAY NAME2 @4604 SAY DESC @4605
+COPY ~DeitiesOfFaerun\Itm\HolySymbols\RAHS.itm~ ~override/RAHSYOND.itm~ SAY NAME1 @4604 SAY NAME2 @4604 SAY DESC @4605
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAYond + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~YONDS~
 WRITE_ASCII 0x058 ~YONDL~
@@ -162,33 +162,32 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//Lesser Restoration
+//Heroes' Feast
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_LESSER_RESTORATION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_LESSER_RESTORATION~	RET	spell_res	END
+COPY ~DeitiesOfFaerun\Spl\RAYOND6.spl~ override 
+SAY NAME1 @4609 SAY UNIDENTIFIED_DESC @4610
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RAYOND6.spl~
-LPM ~SPELL_TO_INNATE~
+ACTION_IF !FILE_EXISTS_IN_GAME ~RAFeast.itm~ BEGIN
+
+COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeast.itm~ override 
+SAY NAME1 @4611 SAY NAME2 @4611 SAY DESC @4612 SAY UNIDENTIFIED_DESC @4612
+
+COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeastL.bam~ override
+
+COPY ~DeitiesOfFaerun\Itm\HeroesFeast\RAFeastS.bam~ override
 
 END
 
 //Shapeshift
 
 COPY ~DeitiesOfFaerun\Itm\YondallaWolf\RAYOND7.itm~  override
-SAY NAME1 @4609 SAY NAME2 @4609 SAY DESC @4609
+SAY NAME1 @4613 SAY NAME2 @4613 SAY DESC @4613
 
 COPY ~DeitiesOfFaerun\Spl\RAYOND7.spl~  override
-SAY NAME1 @4610 SAY UNIDENTIFIED_DESC    @4611
-
-ACTION_IF GAME_IS ~iwdee~ BEGIN
-
-COPY_EXISTING ~RAYOND7.spl~ override
-SAY UNIDENTIFIED_DESC  @4607
-
-END
+SAY NAME1 @4614 SAY UNIDENTIFIED_DESC @4615
 
 COPY ~DeitiesOfFaerun\Spl\RAYOND71.spl~ override
-SAY NAME1 @4612 SAY UNIDENTIFIED_DESC    @4612
+SAY NAME1 @4616 SAY UNIDENTIFIED_DESC @4616
 
 COPY ~DeitiesOfFaerun\Spl\RAYondNF.bam~ override
 
@@ -235,5 +234,24 @@ ACTION_FOR_EACH file IN ~YONDS~ ~YONDL~ BEGIN
     END
   END
 END
+
+ACTION_FOR_EACH file IN ~YONDHERO~ BEGIN
+COPY ~DeitiesOfFaerun\Spl\BAM\%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END	
 
 //EoF
