@@ -42,8 +42,6 @@ BUT_ONLY
 
 ACTION_IF GAME_IS ~bg2ee~ BEGIN
 
-DELETE ~CDHLYSYM.spl~
-
 COPY_EXISTING ~CLABPR01.2DA~ override
 SET_2DA_ENTRY_LATER ~RACLABPR01~ 3 25 ~****~
 SET_2DA_ENTRIES_NOW ~RACLABPR01~ 1
@@ -54,30 +52,17 @@ END
 
 //Solves the issue with the extra spell slot for Multiclass Cleric-Mage
 
-COPY ~DeitiesOfFaerun\Spl\RASLOT.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RASLOT.spl~    override
 
-//Solves the issue with the HP for F/C Kits thats receive HP as Warriors
+//Solves the issue with the HP for F/C Kits that receive HP as Warriors
 
-COPY ~DeitiesOfFaerun\Spl\RAHPFix.spl~  override
+COPY ~DeitiesOfFaerun/Spl/RAHPFix.spl~   override
 
-//Solves the issue with WPPROF, PROFSMAX and CLSWPBON
+//Grants extra APR for the kits that receive APR as Warriors
 
-COPY_EXISTING ~CLSWPBON.2DA~ override
-SET_2DA_ENTRY_LATER ~RACLSWPBON~ 5 1 ~1~
-SET_2DA_ENTRIES_NOW ~RACLSWPBON~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
+COPY ~DeitiesOfFaerun/Spl/RAAPRFx.spl~   override
 
-COPY_EXISTING ~PROFSMAX.2DA~ override
-SET_2DA_ENTRY_LATER ~RAPROFSMAX~  5 1 ~2~  //Cleric
-SET_2DA_ENTRY_LATER ~RAPROFSMAX~ 10 1 ~2~  //Fighter-Cleric
-SET_2DA_ENTRY_LATER ~RAPROFSMAX~ 16 1 ~2~  //Cleric-Mage
-SET_2DA_ENTRY_LATER ~RAPROFSMAX~ 17 1 ~2~  //Cleric-Thief
-SET_2DA_ENTRY_LATER ~RAPROFSMAX~ 19 1 ~2~  //Fighter-Mage-Cleric
-SET_2DA_ENTRY_LATER ~RAPROFSMAX~ 20 1 ~2~  //Cleric-Ranger
-SET_2DA_ENTRIES_NOW ~RAPROFSMAX~ 1
-PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
+//Solves the issue with WEAPPROF
 
 COPY_EXISTING ~WEAPPROF.2DA~ override
 SET_2DA_ENTRY_LATER ~RAWEAPPROF~ 3   6  ~1~ //Cleric
@@ -300,7 +285,7 @@ BUT_ONLY_IF_IT_CHANGES
 
 //Several files for kit's special abilities
 
-ACTION_IF ((!GAME_IS ~iwdee~) AND ((!FILE_EXISTS ~b_IWD.itm~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
+ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common~ override
 
@@ -354,9 +339,9 @@ END
 
 //Spell to block Turn Undead for some kits
 
-COPY ~DeitiesOfFaerun\Spl\RABloTU.spl~ override
+COPY ~DeitiesOfFaerun/Spl/RABloTU.spl~ override
 
-//Fix for the "Unturnable" Skeleton Warriors in IWDEE (bug identified by Enqenq at Beamdog's Forum)
+//Fix for the ~Unturnable~ Skeleton Warriors in IWDEE (bug identified by Enqenq at Beamdog's Forum)
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
