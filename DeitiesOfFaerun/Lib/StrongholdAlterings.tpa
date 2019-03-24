@@ -6,6 +6,7 @@
 //__________________________________________________________________________________
 
 //	ACTION_DEFINE_ARRAY	$SH(~%2da%~)	BEGIN	~KITID~	=> 0	~MULTIID1~ => 0	~MULTIID2~ => 0	etc...	END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAARVO~)	BEGIN	~RAARVO~ => 0	~RAARVOFC~ => 0										END	//	Arvoreen -> Helm, Fighter
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAAURI~)	BEGIN	~RAAURI~ => 0	~RAAURICM~ => 0										END	//	Auril	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAAZUT~)	BEGIN	~RAAZUT~ => 0	~RAAZUTCM~ => 0										END	//	Azuth	->	Wizard
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABAER~)	BEGIN	~RABAER~ => 0	~RABAERCM~ => 0	~RABAERRC~ => 0						END	//	Baervan	->	Ranger, Druid
@@ -178,6 +179,7 @@
 //	Remove kits Lathander's quest-line
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
+	    LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAARVO~	RET	extend	negate	count	END	//	Arvoreen
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAURI~	RET	extend	negate	count	END	//	Auril
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
@@ -294,6 +296,7 @@ END
 //Remove Kits from Talos' quest-line
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAARVO~	RET	extend	negate	count	END	//	Arvoreen
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAAZUT~	RET	extend	negate	count	END	//	Azuth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
@@ -455,6 +458,7 @@ END
 //	Add Kits to Helm's quest-line (script)
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAARVO~	RET	extend	negate	count	END	//	Arvoreen
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~	RET	extend	negate	count	END	//	Clangeddin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHAEL~	RET	extend	negate	count	END	//	Haela
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~	RET	extend	negate	count	END	//	Helm
@@ -615,6 +619,7 @@ END
 	OUTER_SPRINT extend ~~
 	OUTER_SET count = 1
 	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAARVO~	RET	extend	negate	count	END	//	Arvoreen
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABANE~	RET	extend	negate	count	END	//	Bane
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~	RET	extend	negate	count	END	//	Clangeddin
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHAEL~	RET	extend	negate	count	END	//	Haela
