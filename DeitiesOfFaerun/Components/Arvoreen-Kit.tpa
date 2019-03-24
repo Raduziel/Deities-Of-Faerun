@@ -1,0 +1,241 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Truesword of Arvoreen
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAArvo~
+    ~RAArvo 0 0 0 0 1 1 0 1~
+    ~RAArvo 0 0 0 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAArvo 12 3 12 3 9 3~
+	~RAArvo 0 0 0 0 0 0~
+	~RAArvo 12 3 12 3 9 3~
+    ~RAArvo 12 3 12 3 9 3~
+	~RAArvo 1 1 0 1 0 0 0 0 0~
+	~RAArvo 1 0 0 0 0 0~
+	~DeitiesOfFaerun/Tables/RAArvo.2da~
+	~K_C_HL~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT18 SHLD20 HELM07 * RING09 RING29 CLCK05 BOOT01 AMUL27 BRAC10 BELT04 * * * * * * SW1H31 SW1H25 *~
+	SAY @4901
+	SAY @4902
+	SAY @4903
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAArvo~
+		clascolr = ~93 127 121 138 96~
+		clsrcreq = ~0 0 0 0 1 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAARVO~  clabfile = ~RAARVO~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSARVO.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSARVO~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSARVO.itm~ SAY NAME1 @4904 SAY NAME2 @4904 SAY DESC @4905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAArvo + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~ARVOS~
+WRITE_ASCII 0x058 ~ARVOL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAArvoF.spl~ override
+
+//Detect Evil
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_DETECT_EVIL[ %TAB%%WNL%%LNL%%MNL%$]~)        BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_DETECT_EVIL~	       RET spell_res END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAARVO1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Strength
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_STRENGTH[ %TAB%%WNL%%LNL%%MNL%$]~)           BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_STRENGTH~           RET spell_res END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAARVO2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Lay on Hands
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]PALADIN_LAY_ON_HANDS[ %TAB%%WNL%%LNL%%MNL%$]~)      BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~PALADIN_LAY_ON_HANDS~      RET spell_res END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAARVO3.spl~ SAY UNIDENTIFIED_DESC @4906
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR silent = 1 header = (i - 1) match_opcode = 17  match_parameter1 = (i*2) parameter1 = (i) END
+	END
+
+END
+
+//Remove Fear
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_REMOVE_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)        BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_REMOVE_FEAR~	       RET spell_res END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAARVO4.spl~ SAY UNIDENTIFIED_DESC @4907
+LPF ALTER_SPELL_HEADER INT_VAR target = 5                                                                           END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 321 target = 2 timing = 1    STR_VAR resource = ~RAARVOR4~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 278 target = 2 duration = 60 parameter1 = 1 power = 1 resist_dispel = 3     END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  73 target = 2 duration = 60 parameter1 = 1 power = 1 resist_dispel = 3     END
+LPF ALTER_EFFECT       INT_VAR silente = 1  match_duration = 300     duration = 60                                  END 
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Strength of One
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_STRENGTH_OF_ONE[ %TAB%%WNL%%LNL%%MNL%$]~)    BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_STRENGTH_OF_ONE~	   RET spell_res END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAARVO5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Easy March
+
+COPY ~DeitiesOfFaerun/Spl/RAARVO6.spl~ override SAY NAME1 @4908 SAY UNIDENTIFIED_DESC @4909
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Fatigued%~ END
+
+COPY_EXISTING_REGEXP ~^.+\.spl$~ override
+	SET	       ab_size = 0x28
+	READ_LONG  0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG  0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	     opcode
+			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x4) parameter1
+			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x8) parameter2
+			PATCH_MATCH	opcode WITH
+	126	WHEN  ((parameter1 > 0 AND parameter2 = 0) OR (parameter1 > 9 AND parameter2 = 1) OR (parameter1 > 100 AND parameter2 = 2))	              BEGIN
+		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 126	opcode = 321 parameter2 = 0	STR_VAR resource = ~RAARVO6~ insert = ~first~	END
+		SET	j = fx_num
+	END
+	176	WHEN	((parameter1 > 0 AND parameter2 = 0) OR (parameter1 > 9 AND parameter2 = 1) OR (parameter1 > 100 AND parameter2 = 2))	BEGIN
+		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 176	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
+		SET	j = fx_num
+	END
+	16	BEGIN	
+		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 16	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
+		SET	j = fx_num
+	END
+	317	BEGIN	
+		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 317	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
+		SET	j = fx_num
+	END
+	DEFAULT
+END
+			
+END
+
+END
+
+//Champion's Strength
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CHAMPIONS_STRENGTH[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CHAMPIONS_STRENGTH~ RET spell_res END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAARVO7.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAArvo.2da~  override
+READ_2DA_ENTRIES_NOW read 51
+	FOR (i = 5; i < 51; ++i)	BEGIN
+		FOR (j = 4; j < read; ++j)	BEGIN
+			PATCH_IF	EVAL $read(~%j%~ ~%i%~) STRING_EQUAL ~****~ BEGIN
+				SET_2DA_ENTRY j i 51 ~AP_RAARVO4~
+				SET	j = read
+			END
+		END
+END
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RAArvo.2da~ ~override/RAArvoFC.2da~
+SET_2DA_ENTRY 9 25 50 ~AP_RAFARVO~
+PRETTY_PRINT_2DA
+
+//BAM
+
+ACTION_FOR_EACH file IN ~ARVOS~ ~ARVOL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~ARVOMARC~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

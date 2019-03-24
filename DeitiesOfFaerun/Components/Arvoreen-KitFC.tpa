@@ -1,0 +1,60 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					    Truesword of Arvoreen - Fighter/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAArvoFC~
+    ~RAArvoFC 0 0 0 0 1 1 0 1~
+    ~RAArvoFC 0 0 0 0 1 1 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAArvoFC 12 3 12 3 9 3~
+	~RAArvoFC 0 0 0 0 0 0~
+	~RAArvoFC 12 3 12 3 9 3~
+    ~RAArvoFC 12 3 12 3 9 3~
+	~RAArvoFC 1 1 0 1 0 0 0 0 0~
+	~RAArvoFC 0 0 0 0 0 0~
+	~override/RAArvoFC.2da~
+	~K_FC_HL~
+	~0x00000000 8~
+	~FC0~
+	~PLAT18 SHLD20 HELM07 * RING09 RING29 CLCK05 BOOT01 AMUL27 BRAC10 BELT04 * * * * * * SW1H31 SW1H25 *~
+	SAY @4901
+	SAY @4902
+	SAY @4910
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAArvoFC~
+		clascolr = ~93 127 121 138 96~
+		clsrcreq = ~0 0 0 0 1 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAArvoFC~
+      kit_clab = ~RAArvoFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAArvoFC%	classID = 8 STR_VAR	kitname = ~RAARVO~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFARVO.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCARVO~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCARVO.itm~ SAY NAME1 @4904 SAY NAME2 @4904 SAY DESC @4905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAArvoFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~ARVOS~
+WRITE_ASCII 0x058 ~ARVOL~
+
+//EoF
