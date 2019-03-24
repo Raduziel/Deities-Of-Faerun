@@ -41,6 +41,7 @@ OUTER_SET RA_Dispel = (GAME_IS ~bgee~) ? 25820 : GAME_IS ~bg2ee eet~ ? 14056 : (
 OUTER_SET RA_SpellInef = (GAME_IS ~bgee~) ? 24534 : GAME_IS ~bg2ee eet~ ? 4742 : (GAME_IS ~iwdee~) ? 4742 : 0       // Spell Ineffective
 OUTER_SET RA_Entangled = (GAME_IS ~bgee~) ? 25144 : GAME_IS ~bg2ee eet~ ? 334 : (GAME_IS ~iwdee~) ? 37709 : 0       // Entangled
 OUTER_SET RA_Regeneration = (GAME_IS ~bgee~) ? 26307 : GAME_IS ~bg2ee eet~ ? 11006 : (GAME_IS ~iwdee~) ? 36398 : 0  // Regenerating
+OUTER_SET RA_Fatigued = (GAME_IS ~bgee~) ? 24536 : GAME_IS ~bg2ee eet~ ? 61410 : (GAME_IS ~iwdee~) ? 34693 : 0      // Fatigued
 
 OUTER_SET RA_Bonus = (GAME_IS ~bgee~) ? 81649 : GAME_IS ~bg2ee eet~ ? 103226 : (GAME_IS ~iwdee~) ? 40256 : 0        // Combat Bonuses
 OUTER_SET RA_Penalty = (GAME_IS ~bgee~) ? 81650 : GAME_IS ~bg2ee eet~ ? 103227 : (GAME_IS ~iwdee~) ? 40257 : 0      // Combat Penalties
