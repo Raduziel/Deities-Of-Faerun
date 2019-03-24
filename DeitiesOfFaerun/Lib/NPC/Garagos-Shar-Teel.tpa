@@ -18,60 +18,60 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 
 OUTER_SET kit = "%RAGara%"
 
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~ 	                   RET spell_1  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_COMMAND~ 	                   RET spell_2  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_LIGHT_WOUNDS~            RET spell_3  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DETECT_EVIL~                  RET spell_4  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MAGIC_STONE~ 	               RET spell_5  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECT_FROM_EVIL~            RET spell_6  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_FEAR~                  RET spell_7  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SANCTUARY~                    RET spell_8  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SHILLELAGH~                   RET spell_9  = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ARMOR_OF_FAITH~ 	           RET spell_10 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DOOM~ 	                       RET spell_11 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_AID~  	                       RET spell_12 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ARMOR_OF_FAITH~ 	           RET spell_1  = spell_res END //1
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~ 	                   RET spell_2  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_COMMAND~ 	                   RET spell_3  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_LIGHT_WOUNDS~            RET spell_4  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DETECT_EVIL~                  RET spell_5  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DOOM~ 	                       RET spell_6  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MAGIC_STONE~ 	               RET spell_7  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECT_FROM_EVIL~            RET spell_8  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_FEAR~                  RET spell_9  = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SANCTUARY~                    RET spell_10 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SHILLELAGH~                   RET spell_11 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_AID~  	                       RET spell_12 = spell_res END //2
 			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BARKSKIN~ 	                   RET spell_13 = spell_res END
 			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CHANT~ 	                   RET spell_14 = spell_res END
 			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CHARM_PERSON~                 RET spell_15 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FIND_TRAPS~                   RET spell_16 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FLAME_BLADE~                  RET spell_17 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLD_PERSON~                  RET spell_18 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_KNOW_ALIGNMENT~               RET spell_19 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RESIST_FIRE~                  RET spell_20 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SILENCE_15_FOOT~              RET spell_21 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SLOW_POISON~                  RET spell_22 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRITUAL_HAMMER~             RET spell_23 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DRAW_UPON_HOLY_MIGHT~         RET spell_24 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMATE_DEAD~                 RET spell_25 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DISPEL_MAGIC~                 RET spell_26 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GLYPH_OF_WARDING~             RET spell_27 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECTION_FROM_FIRE~         RET spell_28 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_CURSE~                 RET spell_29 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_PARALYSIS~ 	           RET spell_30 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_INVISIBILITY_PURGE~           RET spell_31 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MISCAST_MAGIC~                RET spell_32 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RIGID_THINKING~ 	           RET spell_33 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STRENGTH_OF_ONE~              RET spell_34 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_UNHOLY_BLIGHT~                RET spell_35 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_MEDIUM_WOUNDS~           RET spell_36 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_DISEASE~                 RET spell_37 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DRAW_UPON_HOLY_MIGHT~         RET spell_16 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FIND_TRAPS~                   RET spell_17 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FLAME_BLADE~                  RET spell_18 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLD_PERSON~                  RET spell_19 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_KNOW_ALIGNMENT~               RET spell_20 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RESIST_FIRE~                  RET spell_21 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SILENCE_15_FOOT~              RET spell_22 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SLOW_POISON~                  RET spell_23 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRITUAL_HAMMER~             RET spell_24 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMATE_DEAD~                 RET spell_25 = spell_res END //3
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_DISEASE~                 RET spell_26 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_MEDIUM_WOUNDS~           RET spell_27 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DISPEL_MAGIC~                 RET spell_28 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GLYPH_OF_WARDING~             RET spell_29 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_INVISIBILITY_PURGE~           RET spell_30 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MISCAST_MAGIC~                RET spell_31 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECTION_FROM_FIRE~         RET spell_32 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_CURSE~                 RET spell_33 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_PARALYSIS~ 	           RET spell_34 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RIGID_THINKING~ 	           RET spell_35 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STRENGTH_OF_ONE~              RET spell_36 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_UNHOLY_BLIGHT~                RET spell_37 = spell_res END
 			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ZONE_OF_SWEET_AIR~            RET spell_38 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_SERIOUS_WOUNDS~          RET spell_39 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FREE_ACTION~                  RET spell_40 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_NEUTRALIZE_POISON~            RET spell_41 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MENTAL_DOMINATION~            RET spell_42 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DEFENSIVE_HARMONY~            RET spell_43 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECTION_FROM_LIGHTNING~    RET spell_44 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECTION_FROM_EVIL_10_FOOT~ RET spell_45 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DEATH_WARD~                   RET spell_46 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_POISON~                       RET spell_47 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLY_POWER~                   RET spell_48 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_NEGATIVE_PLANE_PROTECTION~    RET spell_49 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CAUSE_SERIOUS_WOUNDS~         RET spell_50 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FAR_SIGHT~                    RET spell_51 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CLOAK_OF_FEAR~                RET spell_52 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_LESSER_RESTORATION~           RET spell_53 = spell_res END
-			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_SUMMONING_1~           RET spell_54 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMAL_SUMMONING_1~           RET spell_39 = spell_res END //4
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CAUSE_SERIOUS_WOUNDS~         RET spell_40 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_SERIOUS_WOUNDS~          RET spell_41 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CLOAK_OF_FEAR~                RET spell_42 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DEATH_WARD~                   RET spell_43 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DEFENSIVE_HARMONY~            RET spell_44 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FAR_SIGHT~                    RET spell_45 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FREE_ACTION~                  RET spell_46 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLY_POWER~                   RET spell_47 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_LESSER_RESTORATION~           RET spell_48 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MENTAL_DOMINATION~            RET spell_49 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_NEGATIVE_PLANE_PROTECTION~    RET spell_50 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_NEUTRALIZE_POISON~            RET spell_51 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_POISON~                       RET spell_52 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECTION_FROM_EVIL_10_FOOT~ RET spell_53 = spell_res END
+			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECTION_FROM_LIGHTNING~    RET spell_54 = spell_res END
 			
 
     COPY_EXISTING ~shartd.cre~ ~override~
@@ -158,7 +158,7 @@ END
 	  ADD_KNOWN_SPELL ~%spell_9%~ #0 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_10%~ #0 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_11%~ #0 ~priest~
-	  ADD_MEMORIZED_SPELL ~%spell_11%~ #0 ~priest~ (2)
+	  ADD_MEMORIZED_SPELL ~%spell_3%~ #0 ~priest~ (2)
 	  READ_LONG       0x2a8 spl_off
 	  READ_LONG       0x2ac spl_num
 		FOR (i = 0; i < spl_num; ++i) BEGIN
@@ -215,8 +215,8 @@ END
 	  ADD_KNOWN_SPELL ~%spell_22%~ #1 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_23%~ #1 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_24%~ #1 ~priest~
-	  ADD_MEMORIZED_SPELL ~%spell_11%~ #0 ~priest~ (3)
-	  ADD_MEMORIZED_SPELL ~%spell_17%~ #1 ~priest~ (2)
+	  ADD_MEMORIZED_SPELL ~%spell_3%~  #0 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_16%~ #1 ~priest~ (2)
 	  READ_LONG       0x2a8 spl_off
 	  READ_LONG       0x2ac spl_num
 		FOR (i = 0; i < spl_num; ++i) BEGIN
@@ -289,9 +289,9 @@ END
 	  ADD_KNOWN_SPELL ~%spell_36%~ #2 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_37%~ #2 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_38%~ #2 ~priest~
-	  ADD_MEMORIZED_SPELL ~%spell_11%~ #0 ~priest~ (3)
-	  ADD_MEMORIZED_SPELL ~%spell_17%~ #1 ~priest~ (3)
-	  ADD_MEMORIZED_SPELL ~%spell_34%~ #2 ~priest~ (2)
+	  ADD_MEMORIZED_SPELL ~%spell_3%~  #0 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_16%~ #1 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_36%~ #2 ~priest~ (2)
 	  READ_LONG       0x2a8 spl_off
 	  READ_LONG       0x2ac spl_num
 		FOR (i = 0; i < spl_num; ++i) BEGIN
@@ -383,10 +383,10 @@ COPY_EXISTING ~k9SHARTE.cre~ ~override~
 	  ADD_KNOWN_SPELL ~%spell_52%~ #3 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_53%~ #3 ~priest~
 	  ADD_KNOWN_SPELL ~%spell_54%~ #3 ~priest~
-	  ADD_MEMORIZED_SPELL ~%spell_11%~ #0 ~priest~ (3)
-	  ADD_MEMORIZED_SPELL ~%spell_17%~ #1 ~priest~ (3)
-	  ADD_MEMORIZED_SPELL ~%spell_34%~ #2 ~priest~ (2)
-	  ADD_MEMORIZED_SPELL ~%spell_48%~ #3 ~priest~ (1)
+	  ADD_MEMORIZED_SPELL ~%spell_3%~  #0 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_16%~ #1 ~priest~ (3)
+	  ADD_MEMORIZED_SPELL ~%spell_36%~ #2 ~priest~ (2)
+	  ADD_MEMORIZED_SPELL ~%spell_47%~ #3 ~priest~ (1)
 	  READ_LONG       0x2a8 spl_off
 	  READ_LONG       0x2ac spl_num
 		FOR (i = 0; i < spl_num; ++i) BEGIN
