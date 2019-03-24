@@ -1086,6 +1086,25 @@ Through this spell, the Glyphscriber creates a glyph that will remain flying sti
 
 ====================================================================================================================================================================
 
+28) Easy March
+(Invocation)
+
+Level: 5
+Sphere: Travelers. 
+Range: 50 ft.
+Duration: 5 days
+Casting Time: 10 
+Area of Effect: 15-ft. radius around the caster
+Saving Throw: None
+
+This spell enables the Truesword's party to force march for five days with two times their normal movement rate without any risk of fatigue.
+
+All creatures affected by this spell suffer a -1 penalty to their attack rolls for the duration of the spell and this modifier cannot be negated by resting.
+
+The effects of this spell will be canceled by Haste or Improved Haste.
+
+====================================================================================================================================================================
+
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
@@ -1119,6 +1138,8 @@ This component also alters stats (raising it to the kit's minimum), alignment (a
 d) New strongholds possibilities
 
 Some kits will be able to get strongholds non-related to the cleric's one (as listed below). Notice that the one-stronghold rule still applies, so even with Tyr being eligible for three strongholds (Helm, Fighter and Paladin) chosen one will make you lose the possibility of getting another. 
+
+- Arvoreen: Helm, Fighter
 
 - Auril: Talos
 
