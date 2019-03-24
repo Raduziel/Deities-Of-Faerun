@@ -432,6 +432,33 @@
 		~Vocal~ => 3
 	END
 	
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAARVO~) BEGIN
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 7
+		~Sun~ => 3
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 0
+		~Combat~ => 7
+		~Creation~ => 3
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 7
+		~Fire~ => 0
+		~Divination~ => 7
+		~Travelers~ => 0
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 3
+	END
+	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAAURI~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 7
