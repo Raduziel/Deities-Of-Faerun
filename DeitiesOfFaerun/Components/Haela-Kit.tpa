@@ -1,0 +1,187 @@
+	//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Luckmaiden of Haela
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAHael~
+    ~RAHael 1 1 1 1 1 1 1 1~
+    ~RAHael 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHael 11 10 3 3 9 3~
+	~RAHael 0 0 0 0 0 0~
+	~RAHael 11 10 3 3 9 3~
+    ~RAHael 11 10 3 3 9 3~
+	~RAHael 0 0 0 1 0 0 1 0 0~
+	~RAHael 1 0 0 0 0 0~
+	~DeitiesOfFaerun/Tables/RAHael.2da~
+	~K_C_D~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT16 HAMM09 BDHELM09 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT03 * * * * * * AX1H07 WAFLAIL *~
+	SAY @4801
+	SAY @4802
+	SAY @4803
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHael~
+		clascolr = ~24 19 14 91 28~
+		clsrcreq = ~0 0 0 1 0 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAHAEL~  clabfile = ~RAHAEL~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSHAEL.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSHAEL~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSHAEL.itm~ SAY NAME1 @4804 SAY NAME2 @4804 SAY DESC @4805
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAHael + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~HAELS~
+WRITE_ASCII 0x058 ~HAELL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAHAELF.spl~  override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4706) END
+
+COPY ~DeitiesOfFaerun/Spl/RAHAELF.eff~  override
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 97 98 99 100 101 102 115 BEGIN
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHael~)   parameter2 = 9 timing = 2 STR_VAR resource = ~RAHAELF~ END
+		  END
+		DEFAULT
+	END
+BUT_ONLY
+  
+//Shield
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHIELD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHIELD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHAEL1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END		  
+
+//Aid
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_AID[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_AID~ RET spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHAEL2.spl~
+SAY UNIDENTIFIED_DESC  @4807
+LPF ALTER_SPELL_HEADER  INT_VAR target = 5 range  = 0  END
+LPF ALTER_EFFECT        INT_VAR silent = 1 target = 2  END
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Draw Upon Holy Might
+
+ACTION_IF ((GAME_IS ~iwdee~) AND (FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DRAW_UPON_HOLY_MIGHT[ %TAB%%WNL%%LNL%%MNL%$]~))) BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DRAW_UPON_HOLY_MIGHT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHAEL3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]INNATE_DRAW_UPON_HOLY_MIGHT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~INNATE_DRAW_UPON_HOLY_MIGHT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHAEL3.spl~
+
+END
+
+END
+
+//Prayer
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PRAYER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PRAYER~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHAEL4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/OHVRNP.PRO~
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/OHVRPO.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316.spl~ 1 3 CLERIC_PRAYER
+SAY NAME1 @999948 SAY NAME2 @999948 SAY UNIDENTIFIED_DESC @999949 SAY DESC @999949
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/SPPR316C.BAM~	~override/%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERB.SPL~ override
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRNP% END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40257 parameter1 = EVAL ~%RA_Penalty%~ END
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@999947) STR_VAR bam_file = RAALLIC RET iconpray = icon END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Prayer/#PRAYERG.SPL~ override
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %OHVRPO% END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 40256 parameter1 = EVAL ~%RA_Bonus%~ END
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 183   parameter2 = iconpray END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHAEL4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Heal
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HEAL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HEAL~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHAEL5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END	
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAHael.2da~ ~override/RAHaelFC.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAFHAEL~
+PRETTY_PRINT_2DA
+
+//BAM
+
+ACTION_FOR_EACH file IN ~HAELS~ ~HAELL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

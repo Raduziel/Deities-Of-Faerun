@@ -74,8 +74,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
 		107 BEGIN
-		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAYond~) parameter2 = 9 timing = 2 STR_VAR resource = ~RAYONDF~ END
-		END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAYond~)   parameter2 = 9 timing = 2 STR_VAR resource = ~RAYONDF~ END
+		  END
 		DEFAULT
 	END
 BUT_ONLY

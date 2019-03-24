@@ -1,0 +1,72 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						 Luckmaiden of Haela - Fighter/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAHaelFC~
+    ~RAHaelFC 1 1 1 1 3 1 3 1~
+    ~RAHaelFC 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHaelFC 11 10 3 3 9 3~
+	~RAHaelFC 0 0 0 0 0 0~
+	~RAHaelFC 11 10 3 3 9 3~
+    ~RAHaelFC 11 10 3 3 9 3~
+	~RAHaelFC 0 0 0 1 0 0 1 0 0~
+	~RAHaelFC 0 0 0 0 0 0~
+	~override/RAHaelFC.2da~
+	~K_FC_D~
+	~0x00000000 8~
+	~FC0~
+	~PLAT16 HAMM09 BDHELM09 * RING29 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT03 * * * * * * AX1H07 WAFLAIL *~
+	SAY @4801
+	SAY @4802
+	SAY @4808
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHaelFC~
+		clascolr = ~24 19 14 91 28~
+		clsrcreq = ~0 0 0 1 0 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHaelFC~
+      kit_clab = ~RAHaelFC~
+      base_class = ~P~
+	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAHaelFC%	classID = 8 STR_VAR	kitname = ~RAHAEL~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFHAEL.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCHAEL~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCHAEL.itm~ SAY NAME1 @4804 SAY NAME2 @4804 SAY DESC @4805
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAHaelFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~HAELS~
+WRITE_ASCII 0x058 ~HAELL~
+
+//Spells
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 97 98 99 100 101 102 115 BEGIN
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHaelFC~)   parameter2 = 9 timing = 2 STR_VAR resource = ~RAHAELF~ END
+		  END
+		DEFAULT
+	END
+BUT_ONLY
+
+//EoF
