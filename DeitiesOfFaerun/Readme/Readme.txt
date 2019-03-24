@@ -2042,7 +2042,7 @@ THANKS
 
 I have a lot of people to say "Thank You".
 
-Kjeron undoubtedly deserves a huge thank you as he guided me through this long journey. I learned a lot from him.
+Kjeron undoubtedly deserves a huge thank you as he guided me through this long journey. I learn a lot from him.
 
 Subtledoctor and Grammarsalad also deserve a big thank you. When I approached them saying that I wanted to make a cleric kitpack they were very supportive.
 
