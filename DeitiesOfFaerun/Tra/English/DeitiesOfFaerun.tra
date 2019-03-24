@@ -724,7 +724,7 @@ Weight: 0~
 
 Level: 7
 Sphere: Plant 
-Range: 40
+Range: 40 ft.
 Duration: 1 turn/level
 Casting Time: 4 
 Area of Effect: Special 
@@ -1749,7 +1749,7 @@ Weight: 0~
 
 Level: 1
 Sphere: Creation, Water
-Range: 30
+Range: 30 ft.
 Duration: Instantaneous
 Casting Time: 3
 Area of Effect: 1 creature
@@ -1763,7 +1763,7 @@ This spell creates a dagger that flies to a target determined by the caster. Thi
 
 Level: 2
 Sphere: Creation, Water
-Range: 5
+Range: 5 ft.
 Duration: Instantaneous
 Casting Time: 5
 Area of Effect: 1 creature
@@ -1987,7 +1987,7 @@ Weight: 0~
 
 Level: 3
 Sphere: Suffering, Water
-Range: 40
+Range: 40 ft.
 Duration: Instantaneous
 Casting Time: 4
 Area of Effect: 1 creature
@@ -2000,7 +2000,7 @@ This spell evaporates moisture from the bodies of the target creature, inflictin
 
 Level: 6	
 Sphere: Water
-Range: 30
+Range: 30 ft.
 Duration: 1 turn
 Casting Time: 6
 Area of Effect: 1 creature
@@ -2099,7 +2099,7 @@ Weight: 0~
 
 Level: 5
 Sphere: Moon
-Range: 60
+Range: 60 ft.
 Duration: 1 round/level
 Casting Time: 2
 Area of Effect: 1 creature
@@ -2112,7 +2112,7 @@ This spell can only be used outdoors. The Silverstar calls a beam of light from 
 
 Level: 7
 Sphere: Moon
-Range: 100
+Range: 100 ft.
 Duration: Instantaneous
 Casting Time: 7
 Area of Effect: 15-ft. radius
@@ -2400,7 +2400,7 @@ This spell is the reason why a Pain of Loviatar has this title. The touched crea
 
 Level: 2
 Sphere: Fire, Suffering
-Range: 12
+Range: 12 ft.
 Duration: Special
 Casting Time: 5
 Area of Effect: 1 creature
@@ -2414,7 +2414,7 @@ The Pain creates a whip made of fire that is directed against a creature. The wh
 
 Level: 3
 Sphere: Suffering
-Range: 10
+Range: 10 ft.
 Duration: 1 round/level
 Casting Time: 6
 Area of Effect: 1 creature
@@ -2445,7 +2445,7 @@ At the end of the second round, the victim makes another Saving Throw vs. Spells
 
 Level: 6
 Sphere: Summoning
-Range: 35
+Range: 35 ft.
 Duration: 20 turns
 Casting Time: 9
 Area of Effect: Special
@@ -2590,7 +2590,7 @@ Weight: 0~
 
 Level: 5
 Sphere: Creation, Combat
-Range: 10
+Range: 10 ft.
 Duration: Special
 Casting Time: 8
 Area of Effect: 1 creature
@@ -2793,7 +2793,7 @@ Weight: 0~
 
 Level: 6
 Sphere: Necromantic
-Range: 35
+Range: 35 ft.
 Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
@@ -2915,7 +2915,7 @@ If a Chilling Scythe even touches an undead creature it delivers 4d6 points of m
 
 Level: 6
 Sphere: Necromantic
-Range: 35
+Range: 35 ft.
 Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
@@ -3304,7 +3304,7 @@ Weight: 0~
 
 Level: 4
 Sphere: Combat
-Range: 30
+Range: 30 ft.
 Duration: 1 round/level
 Casting Time: 3
 Area of Effect: 1 creature
@@ -3746,7 +3746,7 @@ This spell confers a protection for a single recipient creature that cannot be e
 
 Level: 6
 Sphere: Protection
-Range: 100
+Range: 100 ft.
 Duration: 4 rounds
 Casting Time: 9
 Area of Effect: 1 creature
@@ -4736,7 +4736,7 @@ Weight: 0~
 
 Level: 2
 Sphere: Divination
-Range: 60
+Range: 60 ft.
 Duration: Permanent until discharged
 Casting Time: 5
 Area of Effect: 12-ft. radius
@@ -5244,5 +5244,119 @@ Features:
 - May cast Draw Upon Holy Might once per day as a special ability, starting at level 5.
 - May cast Prayer once per day as a special ability, starting at level 10.
 - May cast Heal once per day as a special ability, starting at level 15.~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Truesword of Arvoreen
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@4901 = ~truesword of arvoreen~
+@4902 = ~Truesword of Arvoreen~
+@4903 = ~TRUESWORD OF ARVOREEN: Arvoreen (ARE-voh-reen) the Defender, fiery guardian of the home, is the nearest thing to a halfling war god. He is a god of stern defense and aggressive watchfulness, who is always preparing for incursions into halfling lands and making ready to repulse hostile creatures at the first sign of trouble. Arvoreen is venerated primarily by halfling fighters, but also by fighter/thieves who prefer the former set of skills over the latter.
+
+Arvoreen has cultivated good relations with most of the good and neutral deities, particularly of the dwarven, elven, gnome, and human pantheons. Of the halfling gods, Arvoreen is most closely aligned with Yondalla, Cyrrollalee, and Urogalan, although he has strong ties with the entire halfling pantheon. The Defender has little patience or understanding of the principles or priorities of unreliable rogues such as Brandobaris and Tymora, but he does value their contributions in defending his charges from external threats. As a large fraction of halflings live in and among human communities, Arvoreen finds that most of the divine threats to his charges are a result of the plots of the evil deities of the halflings' human neighbors.
+
+Arvoreen is anxiously protective of the halfling race, and he is always alert to impending dangers. The Defender, although quite powerful, is not a particularly aggressive deity. He only engages in combat if he is attacked, though he does seek out his enemies and actively confront them to get them to desist from their evil practices. He does not go very far out of his way to avoid combat if it occurs, however, and fights to the finish. Although he stops short of advocating war, Arvoreen is not shy about pointing out folks who are acting suspiciously - after all, they just might be evil in disguise. He is more serious and less carefree and joyful than the typical halfling (or halfling deity) and serves as a reminder that the safety they currently enjoy was hard won and can be easily lost.
+
+Arvoreen sends avatars to defend and patrol halfling communities very readily. Arvoreen may reward warriors who have defended halfling communities with a minor magical item, even if of another race.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Healing, Protection, Combat, Earth, Divination.
+Minor: Sun, Creation, Vocal.
+
+Turn/Command Undead: Yes (see below).
+
+Features:
+
+- Turns Undead as a priest two levels lower.
+- Receives Attacks Per Round as if they were warriors.
+- Gains +2 to all Saving Throws when wielding a melee weapon.
+- May cast Detect Evil once per day as a special ability, starting at level 1.
+- May cast Strength once per day as a special ability, starting at level 3.
+- May Lay on Hands as a Paladin once per day, starting at level 5, restoring 1 HP/level.
+- May cast Remove Fear once per day as a special ability, starting at level 5. The spell is centered on the Truesword and also grants +1 to Thac0 and Damage.
+- May cast Strength of One once per day as a special ability, starting at level 7.
+- May use the Easy March special ability once per day, starting at level 10.	
+- May cast Champion's Strength of One once per day as a special ability, starting at level 13.
+
+EASY MARCH
+
+This spell doubles the party's movement rate and grants immunity to fatigue for 5 days.~
+@4904 = ~Holy Symbol of Arvoreen~
+@4905 = ~Only the most worthy and devoted servants of the Vigilant Guardian are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@4906 = ~The Truesword channels positive energy to heal the touched creature of 1 Hit Point per level of the caster.~
+@4907 = ~Remove Fear
+(Abjuration)
+
+Level: 1
+Sphere: Combat, Moon, Protection, Thought. 
+Range: 0 
+Duration: 1 turn
+Casting Time: 1 
+Area of Effect: 15-ft. radius around the caster
+Saving Throw: None 
+
+The priest instills courage in the spell's recipients, raising their morale to its highest. The recipients' morale will gradually reset to normal as the duration runs out. If the recipients are affected by magical fear, this is negated. While this spell lasts, the recipients will also receive a +1 bonus to Thac0 and damage.~
+@4908 = ~Easy March~
+@4909 = ~Easy March
+(Invocation)
+
+Level: 5
+Sphere: Travelers. 
+Range: 50 ft.
+Duration: 5 days
+Casting Time: 10 
+Area of Effect: 15-ft. radius around the caster
+Saving Throw: None
+
+This spell enables the Truesword's party to force march for five days with two times their normal movement rate without any risk of fatigue.
+
+All creatures affected by this spell suffer a -1 penalty to their attack rolls for the duration of the spell and this modifier cannot be negated by resting.
+
+The effects of this spell will be canceled by Haste or Improved Haste.~
+@4910 = ~TRUESWORD OF ARVOREEN (F/C): Arvoreen (ARE-voh-reen) the Defender, fiery guardian of the home, is the nearest thing to a halfling war god. He is a god of stern defense and aggressive watchfulness, who is always preparing for incursions into halfling lands and making ready to repulse hostile creatures at the first sign of trouble. Arvoreen is venerated primarily by halfling fighters, but also by fighter/thieves who prefer the former set of skills over the latter.
+
+Arvoreen has cultivated good relations with most of the good and neutral deities, particularly of the dwarven, elven, gnome, and human pantheons. Of the halfling gods, Arvoreen is most closely aligned with Yondalla, Cyrrollalee, and Urogalan, although he has strong ties with the entire halfling pantheon. The Defender has little patience or understanding of the principles or priorities of unreliable rogues such as Brandobaris and Tymora, but he does value their contributions in defending his charges from external threats. As a large fraction of halflings live in and among human communities, Arvoreen finds that most of the divine threats to his charges are a result of the plots of the evil deities of the halflings' human neighbors.
+
+Arvoreen is anxiously protective of the halfling race, and he is always alert to impending dangers. The Defender, although quite powerful, is not a particularly aggressive deity. He only engages in combat if he is attacked, though he does seek out his enemies and actively confront them to get them to desist from their evil practices. He does not go very far out of his way to avoid combat if it occurs, however, and fights to the finish. Although he stops short of advocating war, Arvoreen is not shy about pointing out folks who are acting suspiciously - after all, they just might be evil in disguise. He is more serious and less carefree and joyful than the typical halfling (or halfling deity) and serves as a reminder that the safety they currently enjoy was hard won and can be easily lost.
+
+Arvoreen sends avatars to defend and patrol halfling communities very readily. Arvoreen may reward warriors who have defended halfling communities with a minor magical item, even if of another race.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Healing, Protection, Combat, Earth, Divination.
+Minor: Sun, Creation, Vocal.
+
+Turn/Command Undead: Yes (see below).
+
+Features:
+
+- Turns Undead as a priest two levels lower.
+- Gains +2 to all Saving Throws when wielding a melee weapon.
+- May cast Detect Evil once per day as a special ability, starting at level 1.
+- May cast Strength once per day as a special ability, starting at level 3.
+- May Lay on Hands as a Paladin once per day, starting at level 5, restoring 1 HP/level.
+- May cast Remove Fear once per day as a special ability, starting at level 5. The spell is centered on the Truesword and also grants +1 to Thac0 and Damage.
+- May cast Strength of One once per day as a special ability, starting at level 7.
+- May use the Easy March special ability once per day, starting at level 10.	
+- May cast Champion's Strength of One once per day as a special ability, starting at level 13.
+
+EASY MARCH
+
+This spell doubles the party's movement rate and grants immunity to fatigue for 5 days.~
 
 //EoF
