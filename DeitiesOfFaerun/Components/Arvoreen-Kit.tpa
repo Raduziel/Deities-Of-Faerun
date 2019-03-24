@@ -82,22 +82,8 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RAARVO3.spl~ SAY UNIDENTIFIED_DESC @49
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
-	READ_ASCII	ab_off	ability (0x28)
 	READ_SHORT	(ab_off + 0x1e) fx_num
 	READ_SHORT	(ab_off + 0x20) fx_idx
-	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
-	FOR (i = 2; i < 51; ++i)	BEGIN
-		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
-		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
-		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
-		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
-		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
-		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
-		SET	fx_idx += fx_num
-		SET	ab_num += 1
-	END
-	WRITE_SHORT	0x68	ab_num
-	WRITE_LONG	0x6a	fx_off
 	FOR (i = 1; i < 51; ++i)	BEGIN
 		LPF	ALTER_EFFECT INT_VAR silent = 1 header = (i - 1) match_opcode = 17  match_parameter1 = (i*2) parameter1 = (i) END
 	END
@@ -187,7 +173,7 @@ READ_2DA_ENTRIES_NOW read 51
 	FOR (i = 5; i < 51; ++i)	BEGIN
 		FOR (j = 4; j < read; ++j)	BEGIN
 			PATCH_IF	EVAL $read(~%j%~ ~%i%~) STRING_EQUAL ~****~ BEGIN
-				SET_2DA_ENTRY j i 51 ~AP_RAARVO4~
+				SET_2DA_ENTRY j i 51 ~GA_RAARVO4~
 				SET	j = read
 			END
 		END
