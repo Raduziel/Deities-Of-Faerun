@@ -950,20 +950,17 @@ BEGIN @999999019
 REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (MOD_IS_INSTALLED ~nephele.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~48~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Yondalla-Nephele.tpa~
 
-/*
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//				         HELGA, THE LUCKMAIDEN OF HAELA
+//				         MAZZY, THE TRUESWORD OF ARVOREEN
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 
-BEGIN @999999020
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~XXXXXX.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~49~)) @9999905
-INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Haela-Helga.tpa~
-
-*/
+BEGIN @999999021
+REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~51~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Arvoreen-Mazzy.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
