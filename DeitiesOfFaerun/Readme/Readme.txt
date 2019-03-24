@@ -1086,7 +1086,9 @@ Through this spell, the Glyphscriber creates a glyph that will remain flying sti
 
 ====================================================================================================================================================================
 
-28) Easy March
+28) ARVOREEN
+
+Easy March
 (Invocation)
 
 Level: 5
@@ -1101,7 +1103,7 @@ This spell enables the Truesword's party to force march for five days with two t
 
 All creatures affected by this spell suffer a -1 penalty to their attack rolls for the duration of the spell and this modifier cannot be negated by resting.
 
-The effects of this spell will be canceled by Haste or Improved Haste.
+The effects of this spell will be canceled by Haste, Improved Haste and similar effects.
 
 ====================================================================================================================================================================
 
