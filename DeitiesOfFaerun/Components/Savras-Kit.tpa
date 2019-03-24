@@ -61,7 +61,7 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~RAForeIc.bam~ BEGIN
 END ELSE BEGIN
 	OUTER_SPRINT	file ~RAForeIc~
 	COPY_EXISTING ~statdesc.2da~	override
-		REPLACE_EVALUATE CASE_INSENSITIVE ~[%WNL%^]/(0x[0-9A-F]+/|[0-9]+/)[ %TAB%]+[0-9/-]+[ %TAB%]+%file%[ %TAB%%WNL%$]~ BEGIN	SET	iconfore = (~%MATCH1%~)	END	~%MATCH0%~
+		REPLACE_EVALUATE CASE_INSENSITIVE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+[0-9\-]+[ %TAB%]+%file%[ %TAB%%WNL%$]~ BEGIN	SET	iconfore = (~%MATCH1%~)	END	~%MATCH0%~
 	BUT_ONLY
 END
  

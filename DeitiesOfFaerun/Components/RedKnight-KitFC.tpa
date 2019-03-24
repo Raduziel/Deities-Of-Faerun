@@ -59,7 +59,7 @@ WRITE_ASCII 0x058 ~REDKL~
 
 //Restrictions
 
-COPY_EXISTING_REGEXP GLOB ~^.+/.itm$~ override
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ override
 PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
 		READ_BYTE 0x18 flags1
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
