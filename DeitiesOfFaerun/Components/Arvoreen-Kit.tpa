@@ -147,20 +147,20 @@ COPY_EXISTING_REGEXP ~^.+\.spl$~ override
 			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x4) parameter1
 			READ_LONG	(fx_off + (fx_idx + j) * 0x30 + 0x8) parameter2
 			PATCH_MATCH	opcode WITH
-	126	WHEN  ((parameter1 > 0 AND parameter2 = 0) OR (parameter1 > 9 AND parameter2 = 1) OR (parameter1 > 100 AND parameter2 = 2))	              BEGIN
-		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 126	opcode = 321 parameter2 = 0	STR_VAR resource = ~RAARVO6~ insert = ~first~	END
+	126	WHEN  ((parameter1 > 0 AND parameter2 = 0) OR (parameter1 > 9 AND parameter2 = 1) OR (parameter1 > 100 AND parameter2 = 2))	                      BEGIN
+		LPF	CLONE_EFFECT INT_VAR header = i multi_match = 1 match_opcode = 126	opcode = 321 parameter2 = 0	STR_VAR resource = ~RAARVO6~ insert = ~first~	END
 		SET	j = fx_num
 	END
 	176	WHEN	((parameter1 > 0 AND parameter2 = 0) OR (parameter1 > 9 AND parameter2 = 1) OR (parameter1 > 100 AND parameter2 = 2))	BEGIN
-		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 176	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
+		LPF	CLONE_EFFECT INT_VAR header = i multi_match = 1 match_opcode = 176	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
 		SET	j = fx_num
 	END
 	16	BEGIN	
-		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 16	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
+		LPF	CLONE_EFFECT INT_VAR header = i multi_match = 1 match_opcode = 16	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
 		SET	j = fx_num
 	END
 	317	BEGIN	
-		LPF	CLONE_EFFECT header = i multi_match = 1 match_opcode = 317	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
+		LPF	CLONE_EFFECT INT_VAR header = i multi_match = 1 match_opcode = 317	opcode = 321 parameter2 = 0	STR_VAR	resource = ~RAARVO6~ insert = ~first~	END
 		SET	j = fx_num
 	END
 	DEFAULT
