@@ -1507,54 +1507,8 @@ Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
 A Slow spell causes creatures to move and attack at half of their normal rates. It negates Haste, but does not otherwise affect magically hasted or slowed creatures. Slowed creatures have an Armor Class and attack penalty of -4 and -2 penalty to initiative. Creatures save at -4 vs. Spell.~
-	@9999273 = ~Haste
-(Alteration)
-
-Level: 3
-Range: Visual range of the caster
-Duration: 3 rounds + 1 round/level
-Casting Time: 3
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-Haste doubles the base movement rate of all friendly creatures within the area of effect, grants them each an extra attack per round and +2 bonus to initiative. (Spellcasting and spell effects are not sped up.) All affected by the Haste spell must be in the designated area of effect. Note that this spell negates the effects of a Slow spell. This spell is not cumulative with itself or with other similar magic. Anyone affected by Haste will suffer fatigue when the spell wears off.~
-	@9999274 = ~Slow
-(Alteration)
-
-Level: 3
-Range: Visual range of the caster
-Duration: 3 rounds + 1 round/level
-Casting Time: 3
-Area of Effect: 15-ft. radius
-Saving Throw: Neg.
-
-Slow causes creatures to move and attack at 1/2 of their normal rates. It negates Haste, but does not otherwise affect magically sped-up or slowed creatures. Slowed creatures suffer -4 penalties to attack and Armor Class and -2 penalty to initiative. To make matters worse, creatures save at -4 against this spell.~
-	@9999275 = ~Fireshield (Blue)~
-	@9999276 = ~Fireshield (Blue)
-(Evocation, Alteration)
-
-Level: 4
-Range: 0
-Duration: 3 rounds + 1 round/level
-Casting Time: 4
-Area of Effect: The caster
-Saving Throw: None
-
-The blue fireshield protects the user from cold damage by surrounding the caster with a shield of ice flame. This shield not only grants the user +50% Cold Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 cold damage.~
-	@9999277 = ~Fireshield (Red)~
-	@9999278 = ~Fireshield (Red)
-(Evocation, Alteration)
-
-Level: 4
-Range: 0
-Duration: 3 rounds + 1 round/level
-Casting Time: 4
-Area of Effect: The caster
-Saving Throw: None
-
-The red fireshield protects the user from fire damage by surrounding the caster with a shield of flame. This shield does not only grant the user +50% Fire Resistance, it also protects <PRO_HIMHER> from attacks made from within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 points of fire damage.~
-	@9999279 = ~Fireshield~
-	@9999280 = ~Fireshield
+	@9999273 = ~Fireshield~
+	@9999274 = ~Fireshield
 (Evocation)
 
 Level: 4
@@ -1570,7 +1524,7 @@ This spell allows the caster to summon either fireshield that can be either red 
 The blue fireshield protects the user from cold damage by surrounding the caster with a shield of ice flame. This shield not only grants the user +50% Cold Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 cold damage. This effect, however, doubles any fire-based damage that the caster may suffer.
 
 The red fireshield protects the user from fire damage by surrounding the caster with a shield of flame. This shield not only grants the user +50% Fire Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 fire damage. This effect, however, doubles any cold-based damage that the caster may suffer.~
-	@9999281 = ~Fireshield
+	@9999275 = ~Fireshield
 (Evocation)
 
 Level: 4
@@ -1585,8 +1539,8 @@ This spell allows the caster to summon either fireshield that can be either red 
 The blue fireshield protects the user from cold damage by surrounding the caster with a shield of ice flame. This shield not only grants the user +50% Cold Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 cold damage. This effect, however, doubles any fire-based damage that the caster may suffer.
 
 The red fireshield protects the user from fire damage by surrounding the caster with a shield of flame. This shield not only grants the user +50% Fire Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 fire damage. This effect, however, doubles any cold-based damage that the caster may suffer.~
-	@9999282 = ~Emotion~
-	@9999283 = ~Emotion
+	@9999276 = ~Emotion~
+	@9999277 = ~Emotion
 (Enchantment/Charm)
 
 Level: 4
@@ -1606,7 +1560,7 @@ COURAGE: This spell creates the emotion of courage within the area of effect. Al
 FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
 
 HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
-	@9999284 = ~Emotion
+	@9999278 = ~Emotion
 (Enchantment/Charm)
 
 Level: 4
@@ -1625,8 +1579,8 @@ COURAGE: This spell creates the emotion of courage within the area of effect. Al
 FEAR: This spell creates the emotion of fear within the area of effect. All enemies who fail to save vs. Spell flee for 5 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.
 
 HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
-	@9999285 = ~Symbol~
-	@9999286 = ~Symbol
+	@9999279 = ~Symbol~
+	@9999280 = ~Symbol
 (Conjuration/Summoning)
 
 Level: 7
@@ -1648,7 +1602,7 @@ Hopelessness: Saving Throw vs. Spell with a -2 penalty or stand in place, overwh
 Stun: Saving Throw vs. Spell with a -4 penalty or be stunned for 2 rounds + 1 round every 3 levels of the caster.
 
 Death: Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are immune to this effect.~
-	@9999287 = ~Symbol
+	@9999281 = ~Symbol
 (Conjuration/Summoning)
 
 Level: 8
@@ -1669,8 +1623,8 @@ Hopelessness: Saving Throw vs. Spell with a -2 penalty or stand in place, overwh
 Stun: Saving Throw vs. Spell with a -4 penalty or be stunned for 2 rounds + 1 round every 3 levels of the caster.
 
 Death: Saving Throw vs. Death or die. Creatures with more than 60 current Hit Points are immune to this effect.~
-	@9999288 = ~Resist Magic~
-	@9999289 = ~Resist Magic
+	@9999282 = ~Resist Magic~
+	@9999283 = ~Resist Magic
 (Alteration)
 
 Level: 5
@@ -1682,7 +1636,7 @@ Area of Effect: The caster
 Saving Throw: None 
 
 When this spell is cast, the priest receives a resistance to all magic. The resistance conferred is 2% per level of the caster, up to a maximum of 40% at 20th level. This resistance is set so that if the target already has more Magic Resistance than the priest would confer, it will actually lower it to the set value. This effect will last for the duration of the spell or until dispelled.~
-	@9999290 = ~Resurrection
+	@9999284 = ~Resurrection
 (Necromancy)
 
 Level: 7

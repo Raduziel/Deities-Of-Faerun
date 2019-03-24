@@ -4,6 +4,8 @@ INSTALLATION NOTES:
 
 * Deities of Faerûn is not compatible with Faiths and Powers.
 
+* Deities of Faerûn is not compatible with Spells Revision.
+
 * Deities of Faerûn should be installed after any mod that adds or alters items in the game.
 
 * Deities of Faerûn should be installed after any mod that adds or alters spells in the game.
