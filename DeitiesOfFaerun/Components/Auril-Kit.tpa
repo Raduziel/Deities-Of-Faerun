@@ -56,6 +56,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_COLD~	RE
 
 COPY_EXISTING ~%spell_res%.spl~ ~override/RAAURIF.spl~
 LPM ~SPELL_TO_FEATURE~
+LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 28 parameter1 = 50 END
 
 END
 

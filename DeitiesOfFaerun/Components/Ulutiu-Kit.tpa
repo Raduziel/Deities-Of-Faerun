@@ -58,8 +58,9 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_COLD~	RE
 
 COPY_EXISTING ~%spell_res%.spl~ ~override/RAULUTF.spl~
 LPM ~SPELL_TO_FEATURE~
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 49  parameter1 = 2    parameter2 = 0 target = 2 timing = 1                              END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~                target = 2 timing = 9 STR_VAR resource = ~RAULUTF~ END
+LPF ADD_SPELL_EFFECT INT_VAR                  opcode = 49  parameter1 = 2    parameter2 = 0 target = 2 timing = 1                              END
+LPF ADD_SPELL_EFFECT INT_VAR                  opcode = 206 parameter1 = ~-1~                target = 2 timing = 9 STR_VAR resource = ~RAULUTF~ END
+LPF ALTER_EFFECT     INT_VAR silent = 1 match_opcode = 85  parameter1 = 100                                                                    END
 
 END
 
