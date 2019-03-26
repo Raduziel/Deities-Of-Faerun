@@ -136,6 +136,8 @@ Saving Throw: None
 
 This spell enables the priest to bring forth a feast that serves as one creature per level of experience, up to six feasters. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 8 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.
 
+If the food is not consumed withing 1 hour, it will disappear.
+
 ====================================================================================================================================================================
 
 3) CYRIC
