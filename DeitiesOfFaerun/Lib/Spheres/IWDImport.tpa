@@ -2960,9 +2960,6 @@ ACTION_CLEAR_ARRAY	fireshield	ACTION_CLEAR_ARRAY	emotion	ACTION_CLEAR_ARRAY	symb
 	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_FIRE_SHIELD_RED[ %TAB%%WNL%%LNL%%MNL%$]~)	       BEGIN
 		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FIRE_SHIELD_RED~      RET $fireshield(~red~)       = spell_res	END
 	END
-	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]SR_FIRESHIELD_RED[ %TAB%%WNL%%LNL%%MNL%$]~)	               BEGIN
-		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~SR_FIRESHIELD_RED~           RET $fireshield(~sr_red~)    = spell_res	END
-	END
 	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_HOPELESSNESS[ %TAB%%WNL%%LNL%%MNL%$]~)	   BEGIN
 		LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET $emotion(~hopelessness~) = spell_res END
 	END
@@ -2996,7 +2993,7 @@ ACTION_CLEAR_ARRAY	fireshield	ACTION_CLEAR_ARRAY	emotion	ACTION_CLEAR_ARRAY	symb
 					PATCH_IF	SHORT_AT (fx_off + (j + fx_idx) * 0x30) = 147	BEGIN
 						READ_ASCII	(fx_off + (j + fx_idx) * 0x30 + 0x14) resource	TO_UPPER resource
 						PATCH_MATCH	~%resource%~ WITH
-							$fireshield(~red~)	$fireshield(~blue~)	 $fireshield(~sr_red~)                  BEGIN
+							$fireshield(~red~)	$fireshield(~blue~)                                         BEGIN
 								TEXT_SPRINT $learn(~%SOURCE_RES%~) ~fireshield~
 							END
 							$emotion(~hopelessness~) $emotion(~hope~) $emotion(~courage~) $emotion(~fear~)	BEGIN
@@ -3206,7 +3203,54 @@ END
 			
 END
 END
-BUT_ONLY	
+BUT_ONLY
+
+//PnP Resist Fire/Cold
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_RESIST_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_RESIST_FIRE~          RET spell_1 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_PROTECTION_FROM_COLD~ RET spell_2 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_PROTECTION_FROM_FIRE~ RET spell_3 = spell_res END
+
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/ResistFireCold~ override
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999297) STR_VAR bam_file = RAFIREIC RET iconfire = icon   END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999298) STR_VAR bam_file = RACOLDIC RET iconcold = icon   END
+
+COPY_EXISTING ~%spell_1%.spl~ ~override/%spell_1%F.spl~
+SAY NAME1 @9999297 SAY NAME2 @9999297  SAY UNIDENTIFIED_DESC ~~ SAY DESC ~~
+LPF ALTER_SPELL_HEADER                                       STR_VAR     icon = EVAL ~%spell_3%B~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 321 STR_VAR resource = EVAL ~%spell_1%F~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 142 parameter2 = iconfire                  END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 28                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 85                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 139 match_parameter1 = EVAL ~%RA_RCold%~   END
+
+COPY_EXISTING ~%spell_1%.spl~ ~override/%spell_1%C.spl~
+SAY NAME1 @9999298 SAY NAME2 @9999298  SAY UNIDENTIFIED_DESC ~~ SAY DESC ~~
+LPF ALTER_SPELL_HEADER                                       STR_VAR     icon = EVAL ~%spell_2%B~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 321 STR_VAR resource = EVAL ~%spell_1%C~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 142 parameter2 = iconcold                  END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 30                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 84                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 139 match_parameter1 = EVAL ~%RA_RFire%~   END
+
+COPY_EXISTING ~%spell_1%.spl~ override
+SAY NAME1 @9999295 SAY NAME2 @9999295  SAY UNIDENTIFIED_DESC @9999296 SAY DESC @9999296
+FOR (level = 2; level < 51; level += 1) BEGIN
+
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level                                             END
+
+END
+LPF	ALTER_SPELL_HEADER  INT_VAR target = 7 range = 0 speed = 0                                                              END
+LPF DELETE_EFFECT                                                                                                           END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 214 target = 1 timing = 1 power = 2 resist_dispel = 3 STR_VAR resource = ~RASPRFC~ END
+
+APPEND ~RASPRFC.2da~ ~FIRE %spell_1%F 3~
+APPEND ~RASPRFC.2da~ ~COLD %spell_1%C 3~
+
+END
 
 //PnP Cure/Cause Wounds Spells
 
