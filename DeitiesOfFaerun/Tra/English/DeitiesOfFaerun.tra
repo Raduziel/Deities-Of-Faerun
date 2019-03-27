@@ -165,7 +165,7 @@ Casting Time: 10
 Area of Effect: 1 feaster/level
 Saving Throw: None
 
-This spell enables the priest to bring forth a feast that serves as one creature per level of experience, up to six creatures. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 8 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.
+This spell enables the priest to bring forth a feast that serves one creature per level of experience, up to six creatures. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 1d4+4 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.
 
 If the food is not consumed withing 1 hour, it will disappear.~
 @208 = ~Blessed Food~
@@ -175,7 +175,7 @@ STATISTICS:
 
 Special: 
 
-Heals 8 Hit Points
+Heals 1d4+4 Hit Points
 
 Cures diseases
 
@@ -5013,7 +5013,7 @@ Casting Time: 10
 Area of Effect: 1 feaster/level
 Saving Throw: None
 
-This spell enables the priest to bring forth a feast that serves as one creature per level of experience, up to six creatures. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 8 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.
+This spell enables the priest to bring forth a feast that serves one creature per level of experience, up to six creatures. Those who eat the feast are cured of all diseases, are immune to poison for 12 hours, and are healed of 1d4+4 points of damage after feasting. The food that is consumed is equal to a bless spell that lasts for 12 hours. Also, during this same period, the people who consumed the feast are immune to fear.
 
 If the food is not consumed withing 1 hour, it will disappear.~
 @4611 = ~Blessed Food~
@@ -5023,7 +5023,7 @@ STATISTICS:
 
 Special: 
 
-Heals 8 Hit Points
+Heals 1d4+4 Hit Points
 
 Cures diseases
 
