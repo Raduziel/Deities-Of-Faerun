@@ -3237,6 +3237,7 @@ LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 84                     
 LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 139 match_parameter1 = EVAL ~%RA_RFire%~   END
 
 COPY_EXISTING ~%spell_1%.spl~ override
+WRITE_SHORT 0x022 0
 SAY NAME1 @9999295 SAY NAME2 @9999295  SAY UNIDENTIFIED_DESC @9999296 SAY DESC @9999296
 FOR (level = 2; level < 51; level += 1) BEGIN
 
