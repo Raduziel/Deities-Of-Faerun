@@ -1768,5 +1768,20 @@ Area of Effect: 1 creature
 Saving Throw: 1/2
 
 By casting this spell and touching a creature, the priest deals 3d8+3 points of magic damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
+	@9999295 = ~Resist Fire or Cold~
+	@9999296 = ~Resist Fire or Cold
+(Alteration)
+
+Level: 2
+Sphere: Protection
+Range: Touch
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is placed upon a creature, the creature's body is toughened to withstand heat or cold, as chosen by the caster. Complete immunity to mild conditions (standing naked in the snow or reaching into an ordinary fire to pluck out a note) is gained. The recipient can somewhat resist intense heat or cold (whether natural or magical in origin), such as red-hot charcoal, a large amount of burning oil, flametongue swords, fire storms, fireballs, meteor swarms, red dragon's breath, frostbrand swords, ice storms, wands of frost, or white dragon's breath. In all of these cases, the temperature affects the creature to some extent. The recipient has all damage sustained by fire or cold reduced by 50%.~
+	@9999297 = ~Resist Fire~
+	@9999298 = ~Resist Cold~	
 	
 // EoF
