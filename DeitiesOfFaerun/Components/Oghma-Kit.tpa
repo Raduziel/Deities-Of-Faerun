@@ -58,6 +58,7 @@ LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FREE_ACTION~	RET	spell_r
 
 COPY_EXISTING ~%spell_res%.spl~	~override/RAOGHMF.spl~
 LPM ~SPELL_TO_FEATURE~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~ target = 2 timing = 9 STR_VAR resource = ~RAOGHMF~ END
 
 END
 

@@ -64,6 +64,7 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR res
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~GASP~     END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~HOLDFST~  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206  target = 2 timing = 9     STR_VAR resource = ~TALONGF~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~ target = 2 timing = 9 STR_VAR resource = ~RABAERF~ END
 
 //Animal Summoning III
 

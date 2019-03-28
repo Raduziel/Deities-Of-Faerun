@@ -101,6 +101,9 @@ LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist
 
 END
 
+COPY_EXISTING	~RAMYSTF.spl~	override
+LPF ADD_SPELL_EFFECT INT_VAR header = 3 opcode = 206 target = 2 power = 0 resist_dispel = 0 timing = 9 STR_VAR resource = ~RAMYSTF~ END
+
 //Dispel Magic
 		  
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DISPEL_MAGIC[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN

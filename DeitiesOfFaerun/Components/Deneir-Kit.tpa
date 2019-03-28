@@ -72,6 +72,7 @@ BEGIN
 		LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = EVAL ~%RA_SpellInef%~ target = 2 timing = 9 STR_VAR resource = EVAL ~%spell_res%~ END
 	END
 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~ target = 2 timing = 9 STR_VAR resource = ~RADENEF~ END
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
