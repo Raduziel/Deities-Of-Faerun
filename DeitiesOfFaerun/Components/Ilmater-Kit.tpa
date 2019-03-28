@@ -9,7 +9,7 @@ ADD_KIT ~RAIlma~
     ~RAIlma 0 0 0 0 1 1 0 1~
     ~RAIlma 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAIlma 3 3 14 3 12 3~
-	~RAIlma 0 0 2 0 0 0~
+	~RAIlma 0 0 0 0 0 0~
 	~RAIlma 3 3 3 3 12 3~
     ~RAIlma 3 3 14 3 12 3~
 	~RAIlma 1 0 0 0 0 0 0 0 0~

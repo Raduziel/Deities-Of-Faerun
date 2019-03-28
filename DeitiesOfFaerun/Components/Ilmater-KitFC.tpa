@@ -9,7 +9,7 @@ ADD_KIT ~RAIlmaFC~
     ~RAIlmaFC 0 0 0 0 1 1 0 1~
     ~RAIlmaFC 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAIlmaFC 3 3 14 3 12 3~
-	~RAIlmaFC 0 0 2 0 0 0~
+	~RAIlmaFC 0 0 0 0 0 0~
 	~RAIlmaFC 3 3 3 3 12 3~
     ~RAIlmaFC 3 3 14 3 12 3~
 	~RAIlmaFC 1 0 0 0 0 0 0 0 0~
