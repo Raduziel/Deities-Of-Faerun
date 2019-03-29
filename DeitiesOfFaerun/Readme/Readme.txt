@@ -1450,7 +1450,8 @@ A kit may have either major or minor access to a sphere. Major access means that
     
 [Sun]
 
-1 - Sunscorch
+1 - Light
+    Sunscorch
 
 2 - Flametongue
 
@@ -1495,8 +1496,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 [Darkness]
 
-1 - Blindness
-    Doom
+1 - Doom
     Spook
 
 2 - Horror
@@ -1776,8 +1776,8 @@ A kit may have either major or minor access to a sphere. Major access means that
     
 [Trickery]
 
-1 - Blindness
-    Color Spray
+1 - Color Spray
+    Light
     Reflect Image
 
 2 - Blur
