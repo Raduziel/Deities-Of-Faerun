@@ -1795,5 +1795,29 @@ Area of Effect: 1 creature
 Saving Throw: Special
 
 This spell forces the target to Save vs. Death or be instantly killed. If the Saving Throw is successful, the target takes 2d8+1 points of magic damage instead. Note that a character struck with a Slay Living spell can still be raised from the dead with a Raise Dead or Resurrection spell.~	
+	@9999300 = ~Free Action
+(Abjuration)
+
+Level: 4
+Sphere: Travelers
+Range: Touch
+Duration: 1 turn/level
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell gives the affected creature an immunity to magic that impedes movement (such as the Grease, Web, or Slow spells) and negates the effects of paralysis and hold. The recipient of the spell can still be hasted and receive beneficial movement effects such as those granted by items like the boots of speed.~
+	@9999301 = ~Light~
+	@9999302 = ~Light
+(Alteration)
+
+Sphere: Sun, Trickery
+Range: 120 ft. 
+Duration: 1 turn/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell causes a luminous glow that is centered on the visual organs of a creature blinding it and worsening its attack and Saving Throw rolls by 4 and giving the a penalty of -4 to its Armor Class. The caster can extinguish the light at any time by uttering a single word. Light spells are not cumulative - multiple castings do not provide a brighter light. The light must be attached to a creature and unfortunately can't be used to improve the enlightenment of a room.~
 	
 // EoF
