@@ -62,10 +62,20 @@ END ELSE BEGIN
 		REPLACE_EVALUATE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+%file%[ %TAB%%WNL%$]~	BEGIN	SET	EVAL ~%file%~ = (~%MATCH1%~ +1)	END	~%MATCH0%~
 	BUT_ONLY
 END
-		  
+
 COPY ~DeitiesOfFaerun/Spl/RAMASK1.spl~ override  SAY NAME1 @406 SAY  UNIDENTIFIED_DESC @407     
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RADARK% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Blinded%~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_BLINDNESS~ RET spell_res	END
+
+COPY_EXISTING ~RAMASK1.spl~ override
+
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 timing = 1 resist_dispel = 1 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+
+END
 
 //Shadowcloak
 
