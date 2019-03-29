@@ -1664,7 +1664,7 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 (Necromancy)
 
 Level: 1
-Sphere: Healing
+Sphere: Suffering
 Range: Touch
 Duration: Instant
 Casting Time: 5
@@ -1688,7 +1688,7 @@ A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderat
 (Necromancy)
 
 Level: 2
-Sphere: Healing
+Sphere: Suffering
 Range: Touch
 Duration: Instant
 Casting Time: 5
@@ -1712,7 +1712,7 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 (Necromancy)
 
 Level: 3
-Sphere: Healing
+Sphere: Suffering
 Range: Touch
 Duration: Instant
 Casting Time: 5
@@ -1736,7 +1736,7 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 (Necromancy)
 
 Level: 4
-Sphere: Healing
+Sphere: Suffering
 Range: Touch
 Duration: Instant
 Casting Time: 5
@@ -1760,7 +1760,7 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 (Necromancy)
 
 Level: 5
-Sphere: Healing
+Sphere: Suffering
 Range: Touch
 Duration: Instant
 Casting Time: 8
@@ -1782,6 +1782,18 @@ Saving Throw: None
 
 When this spell is placed upon a creature, the creature's body is toughened to withstand heat or cold, as chosen by the caster. Complete immunity to mild conditions (standing naked in the snow or reaching into an ordinary fire to pluck out a note) is gained. The recipient can somewhat resist intense heat or cold (whether natural or magical in origin), such as red-hot charcoal, a large amount of burning oil, flametongue swords, fire storms, fireballs, meteor swarms, red dragon's breath, frostbrand swords, ice storms, wands of frost, or white dragon's breath. In all of these cases, the temperature affects the creature to some extent. The recipient has all damage sustained by fire or cold reduced by 50%.~
 	@9999297 = ~Resist Fire~
-	@9999298 = ~Resist Cold~	
+	@9999298 = ~Resist Cold~
+	@9999299 = ~Slay Living
+(Necromancy)
+
+Level: 5
+Sphere: Necromantic
+Range: Touch
+Duration: Instant
+Casting Time: 10
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell forces the target to Save vs. Death or be instantly killed. If the Saving Throw is successful, the target takes 2d8+1 points of magic damage instead. Note that a character struck with a Slay Living spell can still be raised from the dead with a Raise Dead or Resurrection spell.~	
 	
 // EoF
