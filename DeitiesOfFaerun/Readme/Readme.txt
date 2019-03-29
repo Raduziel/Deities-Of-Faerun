@@ -1496,7 +1496,8 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 [Darkness]
 
-1 - Doom
+1 - Blindness
+    Doom
     Spook
 
 2 - Horror
@@ -1776,8 +1777,8 @@ A kit may have either major or minor access to a sphere. Major access means that
     
 [Trickery]
 
-1 - Color Spray
-    Light
+1 - Blindness
+    Color Spray
     Reflect Image
 
 2 - Blur
