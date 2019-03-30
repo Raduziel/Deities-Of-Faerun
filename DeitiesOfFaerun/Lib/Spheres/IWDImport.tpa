@@ -35,31 +35,84 @@ LPF CLONE_EFFECT  INT_VAR silent = 1 match_opcode = 169 match_parameter2 = 1 par
 
 END
 
-//Haste and Slow Changes
+//Conjure Water Elemental - Raduziel
 
-ACTION_IF !GAME_IS ~iwdee~ BEGIN
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_HASTE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HASTE~	RET	spell_res	END
+LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL
+SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
 
-COPY_EXISTING	~%spell_res%.spl~	override
-SAY UNIDENTIFIED_DESC @9999271 SAY DESC @9999271
-LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
-LPF CLONE_EFFECT  		INT_VAR match_opcode = 16 opcode = 190 parameter1 = 2    parameter2 = 0 END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
 
 END
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SLOW[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SLOW~	RET	spell_res	END
+//Conjure Air Elemental - Raduziel
 
-COPY_EXISTING	~%spell_res%.spl~	override
-SAY UNIDENTIFIED_DESC @9999272 SAY DESC @9999272
-LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
-LPF CLONE_EFFECT  		INT_VAR match_opcode = 40 opcode = 190 parameter1 = ~-2~ parameter2 = 0 END
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "AIR_ELEMENTAL_RADUZIEL" 2da_file = RAELEMA RET RAELEMA = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
+SAY NAME1 @9999228 SAY NAME2 @9999228 SAY UNIDENTIFIED_DESC @9999229 SAY DESC @9999229
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMA END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	override
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
 
 END
 
-END
+//Elemental Changes
+
+COPY_EXISTING_REGEXP ~.*\.cre~ override
+	READ_LONG	0x028	animation
+		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN /*Air Elemental*/
+			WRITE_BYTE 0x063  50
+			WRITE_BYTE 0x05b  50
+			WRITE_BYTE 0x05a  50
+			WRITE_BYTE 0x05f  50
+		END
+		PATCH_IF (animation = 29440) OR (animation = 29441) OR (animation = 57931) BEGIN /*Earth Elemental*/
+			WRITE_BYTE 0x05b 100
+		END
+		PATCH_IF (animation = 57933) OR (animation = 57964) BEGIN /*Water Elemental*/
+			WRITE_BYTE 0x05b  ~-100~
+			WRITE_BYTE 0x05a    50
+			WRITE_BYTE 0x05f    50
+			WRITE_BYTE 0x05c    50
+		END
+BUT_ONLY_IF_IT_CHANGES
 
 //Iron Skin Changes
 
@@ -155,38 +208,6 @@ COPY_EXISTING	~%spell_res%.spl~	override
 COPY_EXISTING ~IDPRO249.pro~ override
 	WRITE_SHORT	0x3e	22
 IF_EXISTS
-
-END
-
-//Silence provides MS boost
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SILENCE_15_FOOT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SILENCE_15_FOOT~	RET	spell_res	END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-LPF	CLONE_EFFECT INT_VAR match_opcode = 38 opcode = 59 parameter1 = 100 parameter2 = 0   END
-
-END
-
-//PnP Magic Resistance
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MAGIC_RESISTANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MAGIC_RESISTANCE~	RET	spell_res	END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY NAME1 @9999282 SAY NAME2 @9999282 SAY UNIDENTIFIED_DESC @9999283 SAY DESC @9999283
-LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
-
-END
-
-//Resurrection only works on dead person
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RESURRECTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RESURRECTION~	RET	spell_res	END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999284 SAY DESC @9999284
-LPF	ADD_SPELL_EFFECT INT_VAR opcode = 324 parameter1 = 2048 parameter2 = 139 timing = 1 target = 2 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
 
 END
 
@@ -2583,7 +2604,43 @@ COPY_EXISTING_REGEXP ~^.+\.\(spl\|itm\)$~ override
 	END
 BUT_ONLY
 
-//Fireshield - Raduziel's PnP Version
+//PnP Silence (MS boost)
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SILENCE_15_FOOT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SILENCE_15_FOOT~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+LPF	CLONE_EFFECT INT_VAR match_opcode = 38 opcode = 59 parameter1 = 100 parameter2 = 0   END
+
+END
+
+//PnP Haste and Slow
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_HASTE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HASTE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	override
+SAY UNIDENTIFIED_DESC @9999271 SAY DESC @9999271
+LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
+LPF CLONE_EFFECT  		INT_VAR match_opcode = 16 opcode = 190 parameter1 = 2    parameter2 = 0 END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SLOW[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SLOW~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	override
+SAY UNIDENTIFIED_DESC @9999272 SAY DESC @9999272
+LPF DELETE_SPELL_EFFECT INT_VAR silent = 1        opcode_to_delete = 190   END
+LPF CLONE_EFFECT  		INT_VAR match_opcode = 40 opcode = 190 parameter1 = ~-2~ parameter2 = 0 END
+
+END
+
+END
+
+//PnP Fireshield
 
 ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_FIRESHIELD[ %TAB%%WNL%$]~))  BEGIN
 
@@ -2682,7 +2739,7 @@ CLEAR_ARRAYS
 
 END
 
-//Emotion - Raduziel's PnP Version
+//PnP Emotion
 
 ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_EMOTION[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_EMOTION[ %TAB%%WNL%$]~))  BEGIN
 
@@ -2747,7 +2804,7 @@ CLEAR_ARRAYS
 
 END
 
-//Symbol - Raduziel's PnP version
+//PnP Symbol
 
 ACTION_IF (!FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_SYMBOL[ %TAB%%WNL%$]~) AND !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_RADUZIEL_SYMBOL[ %TAB%%WNL%$]~))  BEGIN
 
@@ -2842,85 +2899,6 @@ CLEAR_ARRAYS
 
 END
 
-//Conjure Water Elemental - Raduziel
-
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
-
-LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL
-SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
-SAY NAME1 @9999143 SAY NAME2 @9999143
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
-SAY NAME1 @9999143 SAY NAME2 @9999143
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
-SAY NAME1 @9999143 SAY NAME2 @9999143
-
-END
-
-//Conjure Air Elemental - Raduziel
-
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
-
-LAF cd_new_summon_table STR_VAR descript = "AIR_ELEMENTAL_RADUZIEL" 2da_file = RAELEMA RET RAELEMA = table END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
-SAY NAME1 @9999228 SAY NAME2 @9999228 SAY UNIDENTIFIED_DESC @9999229 SAY DESC @9999229
-TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMA END
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2C.BAM~	~override\%spell_res%C.BAM~
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	override
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	override
-SAY NAME1 @9999230 SAY NAME2 @9999230
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	override
-SAY NAME1 @9999230 SAY NAME2 @9999230
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	override
-SAY NAME1 @9999230 SAY NAME2 @9999230
-
-END
-
-//Elemental Changes
-
-COPY_EXISTING_REGEXP ~.*\.cre~ override
-	READ_LONG	0x028	animation
-		PATCH_IF (animation = 29472) OR (animation = 29473) BEGIN /*Air Elemental*/
-			WRITE_BYTE 0x063  50
-			WRITE_BYTE 0x05b  50
-			WRITE_BYTE 0x05a  50
-			WRITE_BYTE 0x05f  50
-		END
-		PATCH_IF (animation = 29440) OR (animation = 29441) OR (animation = 57931) BEGIN /*Earth Elemental*/
-			WRITE_BYTE 0x05b 100
-		END
-		PATCH_IF (animation = 57933) OR (animation = 57964) BEGIN /*Water Elemental*/
-			WRITE_BYTE 0x05b  ~-100~
-			WRITE_BYTE 0x05a    50
-			WRITE_BYTE 0x05f    50
-			WRITE_BYTE 0x05c    50
-		END
-BUT_ONLY_IF_IT_CHANGES
-	
 //New scrolls for Wizards (Emotion, Fireshield and Symbol)
 
 LAF   RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RADUZIEL_FIRESHIELD~ RET spell_1 = spell_res END
@@ -3075,7 +3053,375 @@ ACTION_CLEAR_ARRAY	fireshield	ACTION_CLEAR_ARRAY	emotion	ACTION_CLEAR_ARRAY	symb
 		END
 	BUT_ONLY
 	
-//PnP Free Action - respects Haste, Improved Haste, Increased Movement Rate and don't cure Stun - a huge guidance from Kjeron made this possible.
+//PnP Magic Resistance
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MAGIC_RESISTANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MAGIC_RESISTANCE~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY NAME1 @9999282 SAY NAME2 @9999282 SAY UNIDENTIFIED_DESC @9999283 SAY DESC @9999283
+LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
+
+END
+
+//PnP Resurrection (only works on dead person)
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RESURRECTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RESURRECTION~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999284 SAY DESC @9999284
+LPF	ADD_SPELL_EFFECT INT_VAR opcode = 324 parameter1 = 2048 parameter2 = 139 timing = 1 target = 2 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+
+END
+
+//PnP Cure/Cause Wounds Spells
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_LIGHT_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_LIGHT_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999285 SAY DESC @9999285
+LPF DELETE_EFFECT    INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT    INT_VAR silent = 1 match_opcode =  17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 1    parameter1 =   0 resist_dispel = 2 dicenumber = 1 dicesize = 8 END
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_LIGHT_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_LIGHT_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999286 SAY DESC @9999286
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 1    parameter1 =   0 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 1 dicesize = 8 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_MODERATE_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_MODERATE_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999287 SAY DESC @9999287
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 2    parameter1 =   1 resist_dispel = 2 dicenumber = 1 dicesize = 10 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_MODERATE_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_MODERATE_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999288 SAY DESC @9999288
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 2    parameter1 =   1 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 1 dicesize = 10 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_MEDIUM_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_MEDIUM_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999289 SAY DESC @9999289
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 3    parameter1 =   2 resist_dispel = 2 dicenumber = 1 dicesize = 12 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_MEDIUM_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_MEDIUM_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999290 SAY DESC @9999290
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 3    parameter1 =   2 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 1 dicesize = 12 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_SERIOUS_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_SERIOUS_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999291 SAY DESC @9999291
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 4    parameter1 =   1 resist_dispel = 2 dicenumber = 2 dicesize = 8 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_SERIOUS_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_SERIOUS_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999292 SAY DESC @9999292
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 4    parameter1 =   1 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 2 dicesize = 8 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_CRITICAL_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_CRITICAL_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999293 SAY DESC @9999293
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 5    parameter1 =   3 resist_dispel = 2 dicenumber = 3 dicesize = 8 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_CRITICAL_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_CRITICAL_WOUNDS~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999294 SAY DESC @9999294
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 185 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 169 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 159 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 158 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 157 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 156 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 153 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 152 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 147 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 145 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 141 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 139 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 128 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 121 parameter2 = 104 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 5    parameter1 =   3 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 3 dicesize = 8 END
+
+END
+
+//PnP Resist Fire/Cold
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_RESIST_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_RESIST_FIRE~          RET spell_1 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_PROTECTION_FROM_COLD~ RET spell_2 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_PROTECTION_FROM_FIRE~ RET spell_3 = spell_res END
+
+COPY ~DeitiesOfFaerun/Lib/Spheres/Import/ResistFireCold~ override
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999297) STR_VAR bam_file = RAFIREIC RET iconfire = icon   END
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999298) STR_VAR bam_file = RACOLDIC RET iconcold = icon   END
+
+COPY_EXISTING ~%spell_1%.spl~ ~override/%spell_1%F.spl~
+SAY NAME1 @9999297 SAY NAME2 @9999297  SAY UNIDENTIFIED_DESC ~~ SAY DESC ~~
+LPF ALTER_SPELL_HEADER                                       STR_VAR     icon = EVAL ~%spell_3%B~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 321 STR_VAR resource = EVAL ~%spell_1%F~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 142 parameter2 = iconfire                  END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 28                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 85                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 139 match_parameter1 = EVAL ~%RA_RCold%~   END
+
+COPY_EXISTING ~%spell_1%.spl~ ~override/%spell_1%C.spl~
+SAY NAME1 @9999298 SAY NAME2 @9999298  SAY UNIDENTIFIED_DESC ~~ SAY DESC ~~
+LPF ALTER_SPELL_HEADER                                       STR_VAR     icon = EVAL ~%spell_2%B~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 321 STR_VAR resource = EVAL ~%spell_1%C~   END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 142 parameter2 = iconcold                  END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 30                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 84                                         END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 139 match_parameter1 = EVAL ~%RA_RFire%~   END
+
+COPY_EXISTING ~%spell_1%.spl~ override
+WRITE_SHORT 0x022 0
+SAY NAME1 @9999295 SAY NAME2 @9999295  SAY UNIDENTIFIED_DESC @9999296 SAY DESC @9999296
+FOR (level = 2; level < 51; level += 1) BEGIN
+
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level                                             END
+
+END
+LPF	ALTER_SPELL_HEADER  INT_VAR target = 7 range = 0 speed = 0                                                              END
+LPF DELETE_EFFECT                                                                                                           END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 214 target = 1 timing = 1 power = 2 resist_dispel = 3 STR_VAR resource = ~RASPRFC~ END
+
+APPEND ~RASPRFC.2da~ ~FIRE %spell_1%F 3~
+APPEND ~RASPRFC.2da~ ~COLD %spell_1%C 3~
+
+END
+
+//PnP Slay Living
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_SLAY_LIVING[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SLAY_LIVING~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999299 SAY DESC @9999299
+LPF ALTER_SPELL_HEADER INT_VAR silent = 1 target = 1 range = 1 speed = 10 END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode =  12              END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode =  13              END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 111              END
+LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 324              END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12 target = 2 timing = 1 power = 5    parameter1 =   1 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber  = 2 dicesize = 8                                                         END 
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  13 target = 2 timing = 1 power = 5                     parameter2 = 2              resist_dispel = 1 savingthrow = 4               STR_VAR                               insert_point = 0 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 9                                                              STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 55                                                             STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+
+END
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]ENEMY_CLERIC_SLAY_LIVING[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~ENEMY_CLERIC_SLAY_LIVING~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+FOR (level = 2; level < 51; level += 1) BEGIN
+
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level END
+
+END
+
+LPF ALTER_SPELL_HEADER INT_VAR silent = 1 target = 1 range = 1 speed = 10 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 9  STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 55  opcode = 13   parameter2 = 4 savingthrow = 4 END
+LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 12  parameter1 = 1   dicenumber = 2 dicesize = 8 END
+
+END
+
+//PnP Free Action (respects Haste, Improved Haste, Increased Movement Rate and don't cure Stun) a huge guidance from Kjeron made this possible.
 
 COPY_EXISTING_REGEXP ~^.+\.spl$~ override
 	TO_UPPER   SOURCE_RES
@@ -3205,348 +3551,86 @@ END
 END
 BUT_ONLY
 
-//PnP Resist Fire/Cold
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FREE_ACTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FREE_ACTION~	RET	spell_res	END
 
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_RESIST_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_RESIST_FIRE~          RET spell_1 = spell_res END
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_PROTECTION_FROM_COLD~ RET spell_2 = spell_res END
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_PROTECTION_FROM_FIRE~ RET spell_3 = spell_res END
-
-COPY ~DeitiesOfFaerun/Lib/Spheres/Import/ResistFireCold~ override
-
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999297) STR_VAR bam_file = RAFIREIC RET iconfire = icon   END
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999298) STR_VAR bam_file = RACOLDIC RET iconcold = icon   END
-
-COPY_EXISTING ~%spell_1%.spl~ ~override/%spell_1%F.spl~
-SAY NAME1 @9999297 SAY NAME2 @9999297  SAY UNIDENTIFIED_DESC ~~ SAY DESC ~~
-LPF ALTER_SPELL_HEADER                                       STR_VAR     icon = EVAL ~%spell_3%B~   END
-LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 321 STR_VAR resource = EVAL ~%spell_1%F~   END
-LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 142 parameter2 = iconfire                  END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 28                                         END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 85                                         END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 139 match_parameter1 = EVAL ~%RA_RCold%~   END
-
-COPY_EXISTING ~%spell_1%.spl~ ~override/%spell_1%C.spl~
-SAY NAME1 @9999298 SAY NAME2 @9999298  SAY UNIDENTIFIED_DESC ~~ SAY DESC ~~
-LPF ALTER_SPELL_HEADER                                       STR_VAR     icon = EVAL ~%spell_2%B~   END
-LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 321 STR_VAR resource = EVAL ~%spell_1%C~   END
-LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 142 parameter2 = iconcold                  END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 30                                         END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 84                                         END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 139 match_parameter1 = EVAL ~%RA_RFire%~   END
-
-COPY_EXISTING ~%spell_1%.spl~ override
-WRITE_SHORT 0x022 0
-SAY NAME1 @9999295 SAY NAME2 @9999295  SAY UNIDENTIFIED_DESC @9999296 SAY DESC @9999296
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999300 SAY DESC @9999300
+LPF ALTER_SPELL_HEADER  INT_VAR silent = 1 speed = 7 END
 FOR (level = 2; level < 51; level += 1) BEGIN
-
-LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level                                             END
-
+LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level  END
 END
-LPF	ALTER_SPELL_HEADER  INT_VAR target = 7 range = 0 speed = 0                                                              END
-LPF DELETE_EFFECT                                                                                                           END
-LPF ADD_SPELL_EFFECT    INT_VAR opcode = 214 target = 1 timing = 1 power = 2 resist_dispel = 3 STR_VAR resource = ~RASPRFC~ END
-
-APPEND ~RASPRFC.2da~ ~FIRE %spell_1%F 3~
-APPEND ~RASPRFC.2da~ ~COLD %spell_1%C 3~
-
-END
-
-//PnP Cure/Cause Wounds Spells
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_LIGHT_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_LIGHT_WOUNDS~ RET spell_res END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR silent = 1 header = (i - 1) match_duration = 102 duration = (i * 60) END
+	END
+	
+END ELSE BEGIN
 
 COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999285 SAY DESC @9999285
-LPF DELETE_EFFECT    INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT    INT_VAR silent = 1 match_opcode =  17 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 1    parameter1 =   0 resist_dispel = 2 dicenumber = 1 dicesize = 8 END
-END
+SAY UNIDENTIFIED_DESC @9999300 SAY DESC @9999300
 
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_LIGHT_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_LIGHT_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999286 SAY DESC @9999286
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 1    parameter1 =   0 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 1 dicesize = 8 END
+END	
 
 END
 
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_MODERATE_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_MODERATE_WOUNDS~ RET spell_res END
+//PnP Light
 
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999287 SAY DESC @9999287
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 2    parameter1 =   1 resist_dispel = 2 dicenumber = 1 dicesize = 10 END
+ACTION_IF !FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_RADUZIEL_LIGHT[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
 
-END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALight.spl~ 1 1 CLERIC_RADUZIEL_LIGHT
+SAY NAME1 @9999301 SAY NAME2 @9999301 SAY UNIDENTIFIED_DESC @9999302 SAY DESC @9999302
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER                                                             STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 139 parameter1 = EVAL ~%RA_Blinded%~                                      END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206                                  STR_VAR = EVAL ~%spell_res%~         END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR silent = 1 header = (i - 1) match_duration = 60 duration = (i * 60) END
+	END
 
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_MODERATE_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_MODERATE_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999288 SAY DESC @9999288
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 2    parameter1 =   1 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 1 dicesize = 10 END
-
-END
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_MEDIUM_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_MEDIUM_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999289 SAY DESC @9999289
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 3    parameter1 =   2 resist_dispel = 2 dicenumber = 1 dicesize = 12 END
-
-END
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_MEDIUM_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_MEDIUM_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999290 SAY DESC @9999290
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 3    parameter1 =   2 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 1 dicesize = 12 END
-
-END
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_SERIOUS_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_SERIOUS_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999291 SAY DESC @9999291
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 4    parameter1 =   1 resist_dispel = 2 dicenumber = 2 dicesize = 8 END
-
-END
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_SERIOUS_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_SERIOUS_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999292 SAY DESC @9999292
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 4    parameter1 =   1 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 2 dicesize = 8 END
-
-END
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURE_CRITICAL_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURE_CRITICAL_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999293 SAY DESC @9999293
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  17 target = 2 timing = 1 power = 5    parameter1 =   3 resist_dispel = 2 dicenumber = 3 dicesize = 8 END
-
-END
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CAUSE_CRITICAL_WOUNDS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CAUSE_CRITICAL_WOUNDS~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999294 SAY DESC @9999294
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode = 324 END
-LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  12 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 185 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 169 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 159 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 158 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 157 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 156 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 153 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 152 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 147 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 145 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 141 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 139 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 128 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 = 104 parameter2 = 121 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 =  55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode =  12 target = 2 timing = 1 power = 5    parameter1 =   3 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber = 3 dicesize = 8 END
-
-END
-
-//PnP Slay Living
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_SLAY_LIVING[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_SLAY_LIVING~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-SAY UNIDENTIFIED_DESC @9999299 SAY DESC @9999299
-LPF ALTER_SPELL_HEADER INT_VAR silent = 1 target = 1 range = 1 speed = 10 END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode =  12              END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode =  13              END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 111              END
-LPF DELETE_EFFECT      INT_VAR silent = 1 match_opcode = 324              END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12 target = 2 timing = 1 power = 5    parameter1 =   1 parameter2 = 0 + (64 << 16) resist_dispel = 1 dicenumber  = 2 dicesize = 8                                                         END 
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  13 target = 2 timing = 1 power = 5                     paratemer2 = 2              resist_dispel = 1 savingthrow = 4               STR_VAR                               insert_point = 0 END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 9                                                              STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 55                                                             STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-
-END
-
-ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]ENEMY_CLERIC_SLAY_LIVING[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~ENEMY_CLERIC_SLAY_LIVING~ RET spell_res END
-
-COPY_EXISTING ~%spell_res%.spl~ override
-FOR (level = 2; level < 51; level += 1) BEGIN
-
-LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = level END
-
-END
-
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 9  STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 0 duration = 1 parameter1 =   0 parameter2 = 55 STR_VAR resource = EVAL ~%spell_res%~ insert_point = 0 END
-LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 55  opcode = 13   parameter2 = 4 savingthrow = 4 END
-LPF ALTER_EFFECT       INT_VAR silent = 1 match_opcode = 12  parameter1 = 1   dicenumber = 2 dicesize = 8 END
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightA.BAM~	~override\%spell_res%A.BAM~	
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightB.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightC.BAM~	~override\%spell_res%C.BAM~	
 
 END
 
