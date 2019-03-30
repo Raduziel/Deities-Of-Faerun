@@ -1812,14 +1812,14 @@ This spell gives the affected creature an immunity to magic that impedes movemen
 (Alteration)
 
 Level: 1
-Sphere: Sun, Trickery
+Sphere: Sun
 Range: 120 ft. 
 Duration: 1 turn/level
 Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell causes a luminous glow that is centered on the visual organs of a creature. If a Saving Throw vs. Spell is not successfully made by the creature, it becomes blind and gets a -4 penalty to Thac0, Armor Class and Saving Throws. Light spells are not cumulative - multiple castings do not provide a brighter light. The light must be attached to a creature and unfortunately can't be used to improve the enlightenment of a room. Blinded creature are immune to gaze attacks.
+This spell causes a luminous glow that is centered on the visual organs of a creature. If a Saving Throw vs. Spell is not successfully made by the creature, it becomes blind and gets a -4 penalty to Thac0, Armor Class and Saving Throws. Light spells are not cumulative - multiple castings do not provide a brighter light. The light must be attached to a creature and unfortunately can't be used to improve the lightning of a room. Blinded creature are immune to gaze attacks.
 
 This spell and all its effects will be canceled by Darkness.~
 	
