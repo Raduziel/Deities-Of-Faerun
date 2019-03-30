@@ -3602,9 +3602,10 @@ ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALight.spl~ 1 1 CLERIC_RADU
 SAY NAME1 @9999301 SAY NAME2 @9999301 SAY UNIDENTIFIED_DESC @9999302 SAY DESC @9999302
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER                                                             STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF ALTER_EFFECT       INT_VAR match_opcode = 139 parameter1 = EVAL ~%RA_Blinded%~                                      END
-LPF ALTER_EFFECT       INT_VAR match_opcode = 206                                  STR_VAR = EVAL ~%spell_res%~         END
+LPF	ALTER_SPELL_HEADER                                                             STR_VAR icon = EVAL ~%spell_res%B~	 END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 139 parameter1 = EVAL ~%RA_Blinded%~                                       END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 206                                  STR_VAR resource = EVAL ~%spell_res%~ END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 324                                  STR_VAR resource = EVAL ~%spell_res%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
