@@ -1819,8 +1819,8 @@ Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell causes a luminous glow that is centered on the visual organs of a creature. If a Saving Throw vs. Spell is not successfully made by the creature, it becomes blind and gets a -4 penalty to Thac0, Armor Class and Saving Throws. Light spells are not cumulative - multiple castings do not provide a brighter light. The light must be attached to a creature and unfortunately can't be used to improve the lightning of a room. Blinded creature are immune to gaze attacks.
+This spell causes a luminous glow that is centered close to the visual organs of a creature. If a Saving Throw vs. Spell is not successfully made by the creature, it becomes blind and gets a -4 penalty to Thac0, Armor Class and Saving Throws. Light spells are not cumulative - multiple castings do not provide brighter light. The light must be attached to a creature and unfortunately can't be used to improve the lighting of a room. Blinded creatures are immune to gaze attacks.
 
-This spell and all its effects will be canceled by Darkness.~
+This spell won't have any effect against blind creatures or those who don't possess visual organs and all its effects will be canceled by Darkness.~
 	
 // EoF
