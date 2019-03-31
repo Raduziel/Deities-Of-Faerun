@@ -3629,9 +3629,12 @@ LPF ALTER_EFFECT       INT_VAR match_opcode = 324                               
 		LPF	ALTER_EFFECT INT_VAR silent = 1 header = (i - 1) match_duration = 60 duration = (i * 60) END
 	END
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightA.BAM~	~override\%spell_res%A.BAM~	
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightB.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightC.BAM~	~override\%spell_res%C.BAM~	
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightA.BAM~ ~override\%spell_res%A.BAM~	
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightB.BAM~ ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALightC.BAM~ ~override\%spell_res%C.BAM~	
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALight.BAM~	  override
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALight.VVC~	  override
 
 END
 
