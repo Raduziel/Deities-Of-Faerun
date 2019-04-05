@@ -5,7 +5,7 @@ VERSION ~1.9.7.4~
 ALWAYS
 
 	INCLUDE ~DeitiesOfFaerun/Lib/fl#add_kit_ee.tpa~
-	INCLUDE ~DeitiesOfFaerun/Lib/RA_VariablesDoF.tpa~
+	INCLUDE ~DeitiesOfFaerun/Lib/RA_Variables.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/Macros.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/KjeronReplaceDLG.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/Spheres/F(x).tpa~
