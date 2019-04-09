@@ -296,5 +296,165 @@ DEFINE_ACTION_FUNCTION GET_AOE_PROJ RET_ARRAY proList BEGIN
 			END
 		BUT_ONLY
 	END
+
+//The following codes were made by Argent77
+
+DEFINE_ACTION_FUNCTION TO_HEX_NUMBER
+INT_VAR
+  value     = 0
+  minDigits = 1
+  prefix    = 0
+RET
+  hexNumber
+BEGIN
+  ACTION_IF (minDigits < 1) BEGIN OUTER_SET minDigits = 1 END
+  ACTION_IF (minDigits > 8) BEGIN OUTER_SET minDigits = 8 END
+  OUTER_TEXT_SPRINT hexNumber ~~
+  ACTION_DEFINE_ARRAY digit BEGIN ~0~ ~1~ ~2~ ~3~ ~4~ ~5~ ~6~ ~7~ ~8~ ~9~ ~a~ ~b~ ~c~ ~d~ ~e~ ~f~ END
+
+  ACTION_IF (value < 0) BEGIN
+    OUTER_SET signed = 1
+    OUTER_SET value = 0 - value
+  END ELSE BEGIN
+    OUTER_SET signed = 0
+  END
+
+  OUTER_WHILE (value != 0) BEGIN
+    OUTER_SET curDigit = value BAND 0xf
+    OUTER_SET value = value BLSR 4
+    OUTER_TEXT_SPRINT hexDigit $EVAL digit(~%curDigit%~)
+    OUTER_TEXT_SPRINT hexNumber ~%hexDigit%%hexNumber%~
+  END
+
+  OUTER_WHILE (STRING_LENGTH ~%hexNumber%~ < minDigits) BEGIN
+    OUTER_TEXT_SPRINT hexNumber ~0%hexNumber%~
+  END
+
+  ACTION_IF (prefix) BEGIN
+    OUTER_TEXT_SPRINT hexNumber ~0x%hexNumber%~
+  END
+
+  ACTION_IF (signed) BEGIN
+    OUTER_TEXT_SPRINT hexNumber ~-%hexNumber%~
+  END
+END
+
+DEFINE_PATCH_FUNCTION TO_HEX_NUMBER
+INT_VAR
+  value     = 0
+  minDigits = 1
+  prefix    = 0
+RET
+  hexNumber
+BEGIN
+  INNER_ACTION BEGIN
+    LAF TO_HEX_NUMBER INT_VAR value = value minDigits = minDigits prefix = prefix RET hexNumber END
+  END
+END
+
+DEFINE_ACTION_FUNCTION ADD_SPLPROT_ENTRY
+INT_VAR
+  stat      = "-1"
+STR_VAR
+  value     = "*"
+  relation  = "*"
+RET
+  index
+BEGIN
+  OUTER_SET index = "-1"
+
+  ACTION_IF (stat >= 0) BEGIN
+    LAF TO_HEX_NUMBER INT_VAR value = stat RET hexNumber END
+    OUTER_TEXT_SPRINT valueHex ~0x%hexNumber%~
+    ACTION_IF (~%value%~ STRING_EQUAL ~~) BEGIN
+      OUTER_TEXT_SPRINT value ~*~
+    END
+    ACTION_IF (~%relation%~ STRING_EQUAL ~~) BEGIN
+      OUTER_TEXT_SPRINT relation ~*~
+    END
+
+    ACTION_IF (FILE_EXISTS_IN_GAME ~splprot.2da~) BEGIN
+      COPY_EXISTING ~splprot.2da~ ~override~
+        READ_2DA_ENTRIES_NOW table 4
+        FOR (idx = 0; idx < table; idx += 1) BEGIN
+          READ_2DA_ENTRY_FORMER table idx 1 curStat
+          PATCH_IF (~%stat%~ STRING_EQUAL ~%curStat%~ OR ~%valueHex%~ STRING_EQUAL_CASE ~%curStat%~) BEGIN
+            READ_2DA_ENTRY_FORMER table idx 2 curValue
+            PATCH_IF (~%value%~ STRING_EQUAL ~%curValue%~) BEGIN
+              READ_2DA_ENTRY_FORMER table idx 3 curRelation
+              PATCH_IF (~%relation%~ STRING_EQUAL ~%curRelation%~) BEGIN
+                SET index = idx
+                SET idx = table
+              END
+            END
+          END
+        END
+		
+        PATCH_IF (index < 0) BEGIN
+        PATCH_IF (stat >= 0x100) BEGIN
+            TEXT_SPRINT line ~%table% %valueHex% %value% %relation%~
+          END ELSE BEGIN
+            TEXT_SPRINT line ~%table% %stat% %value% %relation%~
+          END
+          INSERT_2DA_ROW table 4 ~%line%~
+          SET index = table
+        END
+      BUT_ONLY
+    END
+  END
+END
+
+DEFINE_PATCH_FUNCTION FIND_FREE_ANIM_SLOT
+INT_VAR
+  slotMin   = 0
+  slotMax   = (slotMin BAND 0xf000) + 0x1000
+  slotSteps = 1
+RET
+  slot
+BEGIN
+  SET slot = "-1"
+  SET slotSteps = (slotSteps < 1) ? 1 : slotSteps
+  SET slotMin = (slotMin < 0) ? 0 : slotMin
+  SET slotMax = (slotMax < 0) ? 0 : slotMax
+  PATCH_IF (slotMax < slotMin) BEGIN
+    SET tmp = slotMin
+    SET slotMin = slotMax
+    SET slotMax = tmp
+  END
+
+  INNER_PATCH ~%animationSlots%~ BEGIN
+    FOR (idx = slotMin; idx < slotMax; idx += slotSteps) BEGIN
+      LOOKUP_IDS_SYMBOL_OF_INT name ~animate~ idx
+      PATCH_IF (~%name%~ STR_EQ ~%idx%~) BEGIN
+        LPF TO_HEX_NUMBER INT_VAR value = idx minDigits = 4 RET hexNumber END
+        PATCH_IF (NOT FILE_EXISTS_IN_GAME ~%hexNumber%.ini~ AND 
+                  ~%slotList%~ STRING_CONTAINS_REGEXP ~"%hexNumber%"~ != 0) BEGIN
+          SET slot = idx
+          SET idx = slotMax
+        END
+      END
+    END
+  END
+END
+
+DEFINE_ACTION_FUNCTION FIND_FREE_ANIM_SLOT﻿
+INT_VAR
+  slotMin   = 0
+  slotMax   = (slotMin BAND 0xf000) + 0x1000
+  slotSteps = 1
+RET
+  slot
+BEGIN
+  OUTER_PATCH ~~ BEGIN
+    LPF FIND_FREE_ANIM_SLOT
+    INT_VAR
+      slotMin = slotMin
+      slotMax = slotMax
+      slotSteps = slotSteps
+    RET
+      slot
+    END
+  END
+END
 	
 //EoF
