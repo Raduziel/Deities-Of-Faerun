@@ -1822,5 +1822,6 @@ Saving Throw: Neg.
 This spell causes a luminous glow that is centered close to the visual organs of a creature. If a Saving Throw vs. Spell is not successfully made by the creature, it becomes blind and gets a -4 penalty to Thac0, Armor Class and Saving Throws. Light spells are not cumulative - multiple castings do not provide brighter light. The light must be attached to a creature and unfortunately can't be used to improve the lighting of a room. Blinded creatures are immune to gaze attacks.
 
 This spell won't have any effect against blind creatures or those who don't possess visual organs and all its effects will be canceled by Darkness.~
+	@9999303 = ~When asked about her past, MAZZY proudly states that she has spent numerous years adventuring around Amn with her other halfling comrades, basing out of her home town of Trademeet. The thought of Patrick and her other companions and their fates brings a shadow across her face, however. Mazzy is a dedicated servant of Arvoreen, the halfling god of war, and she resents the common perception by the bigger races that the stout folk cannot defend themselves or act with valor.~
 	
 // EoF
