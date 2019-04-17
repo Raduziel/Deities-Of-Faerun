@@ -99,7 +99,8 @@ OUTER_SET kit = "%RAArvoFC%"
 			LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_WONDROUS_RECALL~              RET spell_79 = spell_res END
 			
 	COPY_EXISTING ~mazzy8.cre~ ~override~
-      WRITE_SHORT     0x244 0
+      SAY             BIO   @9999303
+	  WRITE_SHORT     0x244 0
       WRITE_BYTE      0x246 "%kit%"
       WRITE_BYTE      0x247 0x40
 	  WRITE_BYTE	  0x234  7       //Lv Fighter
@@ -204,6 +205,7 @@ END
 	BUT_ONLY
 	
 	COPY_EXISTING ~mazzy9.cre~ ~override~
+	  SAY             BIO   @9999303
       WRITE_SHORT     0x244 0
       WRITE_BYTE      0x246 "%kit%"
       WRITE_BYTE      0x247 0x40
@@ -309,6 +311,7 @@ END
 	BUT_ONLY
 	
 	COPY_EXISTING ~mazzy11.cre~ ~override~
+	  SAY             BIO   @9999303
       WRITE_SHORT     0x244 0
       WRITE_BYTE      0x246 "%kit%"
       WRITE_BYTE      0x247 0x40
@@ -430,6 +433,7 @@ END
 	BUT_ONLY
 
 COPY_EXISTING ~mazzy12.cre~ ~override~
+      SAY             BIO   @9999303
       WRITE_SHORT     0x244 0
       WRITE_BYTE      0x246 "%kit%"
       WRITE_BYTE      0x247 0x40
@@ -551,6 +555,7 @@ END
 	BUT_ONLY
 	
 	COPY_EXISTING ~mazzy15.cre~ ~override~
+	  SAY             BIO   @9999303
       WRITE_SHORT     0x244 0
       WRITE_BYTE      0x246 "%kit%"
       WRITE_BYTE      0x247 0x40
