@@ -1934,7 +1934,7 @@
 	
 	//Ulb's Bearwalker
 	
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UBbear~) BEGIN
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~UBBEAR~) BEGIN
 		~All~ => 0 
 		~Healing~ => 0
 		~Necromantic~ => 0
