@@ -695,6 +695,8 @@ ACTION_FOR_EACH creature IN mazzy8 mazzy9 mazzy11 mazzy12 mazzy15 BEGIN
 
 END
   
-END  
+END
+
+STRING_SET #65024 @9999304
   
 //EoF
