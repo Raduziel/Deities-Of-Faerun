@@ -1823,5 +1823,17 @@ This spell causes a luminous glow that is centered close to the visual organs of
 
 This spell won't have any effect against blind creatures or those who don't possess visual organs and all its effects will be canceled by Darkness.~
 	@9999303 = ~When asked about her past, MAZZY proudly states that she has spent numerous years adventuring around Amn with her other halfling comrades, basing out of her home town of Trademeet. The thought of Patrick and her other companions and their fates brings a shadow across her face, however. Mazzy is a dedicated servant of Arvoreen, the halfling god of war, and she resents the common perception by the bigger races that the stout folk cannot defend themselves or act with valor.~
+	@9999304 = ~Bring me Mazzy, the halfling fighter/cleric.~
+	@9999305 = ~Spell Immunity
+(Abjuration)
+
+Level: 5
+Range: 0
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+Casting this spell grants the wizard protection from one spell school of <PRO_HISHER> choice. After the spell is cast, the wizard must choose the school <PRO_HESHE> wishes to be protected from. All spells of this school will not be able to harm or aid the caster for the duration of this spell. This includes all spells from this school, including any priest spells that might benefit the caster. The wizard can only be protected against one school at a time.~
 	
 // EoF
