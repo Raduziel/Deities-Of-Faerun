@@ -277,7 +277,86 @@ BUT_ONLY
 	    LAF	INDEX_SPELLS INT_VAR sub = 0 RET_ARRAY spl25List spl78List spl109List spl216List splDispelList END
 	    LAF	INDEX_SPELLS INT_VAR sub = 1 RET_ARRAY spl25List spl78List spl109List spl216List splDispelList END
 	    LAF	INDEX_EFFS	 INT_VAR sub = 1 RET_ARRAY eff25List eff78List eff109List eff216List effDispelList END
-	
+
+//Spell Immunity no longer stacks with it's different versions
+
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SPELL_IMMUNITY~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+SAY UNIDENTIFIED_DESC @9999305 SAY DESC @9999305
+
+COPY_EXISTING ~SPWI590.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI591~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI592~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI593~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI597~ insert_point = 0 END
+
+COPY_EXISTING ~SPWI591.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI590~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI592~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI593~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI597~ insert_point = 0 END
+
+COPY_EXISTING ~SPWI592.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI590~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI591~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI593~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI597~ insert_point = 0 END
+
+COPY_EXISTING ~SPWI593.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI590~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI591~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI592~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI597~ insert_point = 0 END
+
+COPY_EXISTING ~SPWI594.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI590~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI591~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI592~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI593~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI597~ insert_point = 0 END
+
+COPY_EXISTING ~SPWI595.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI590~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI591~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI592~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI593~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI597~ insert_point = 0 END
+
+COPY_EXISTING ~SPWI596.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI590~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI591~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI592~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI593~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI597~ insert_point = 0 END
+
+COPY_EXISTING ~SPWI597.spl~ override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI590~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI591~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI592~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI593~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+		
 /* Importing IWD Spells */
 
 ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
