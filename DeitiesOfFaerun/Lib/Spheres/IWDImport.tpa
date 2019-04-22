@@ -3717,6 +3717,51 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/Light/RALight.VVC~	  override
 
 END
 
+//Faerie Fire
+
+ACTION_IF !GAME_INCLUDES ~sod~ BEGIN
+
+ACTION_IF !FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116.spl~ 1 1 CLERIC_FAERIE_FIRE
+SAY NAME1 @9999306 SAY NAME2 @9999306 SAY UNIDENTIFIED_DESC @9999307 SAY DESC @9999307
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE 0x3a ~LATHFAFI~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = ~LATHFAFI~ END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource   = EVAL ~%spell_res%~        END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 parameter1 = RESOLVE_STR_REF(@9999306) END
+
+COPY ~DeitiesOfFaerun/Spl/BAM/LATHFAFI.bam~ override
+    LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+
+ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+	LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~ END
+END
+  
+END
+
+END
+
+ACTION_IF GAME_INCLUDES ~sod~ BEGIN
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_FAERIE_FIRE~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~	override
+WRITE_ASCIIE 0x3a ~LATHFAFI~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = ~LATHFAFI~ END
+
+COPY ~DeitiesOfFaerun/Spl/BAM/LATHFAFI.bam~ override
+    LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+
+ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+	LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~ END
+END
+
+END
+
+END
+
 //Respecting my OCD for aligned things
 
 COPY_EXISTING ~smtables.2da~ override
