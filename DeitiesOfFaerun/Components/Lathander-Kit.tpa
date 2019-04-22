@@ -53,33 +53,49 @@ WRITE_ASCII 0x058 ~LATHL~
 
 COPY ~DeitiesOfFaerun/Spl/RALATHF.spl~ override
 
-COPY ~DeitiesOfFaerun/Spl/RALATH1.spl~ override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Boon of Lathander
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FAERIE_FIRE~	RET	spell_res	END
 
-COPY ~DeitiesOfFaerun/Spl/RALATH2.spl~ override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Faerie Fire
-	READ_LONG	0x64	ab_off
-	READ_SHORT	0x68	ab_num
-	READ_LONG	0x6a	fx_off
-	READ_ASCII	ab_off	ability (0x28)
-	READ_SHORT	(ab_off + 0x1e) fx_num
-	READ_SHORT	(ab_off + 0x20) fx_idx
-	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
-	FOR (i = 2; i < 51; ++i)	BEGIN
-		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
-		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
-		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
-		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
-		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
-		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
-		SET	fx_idx += fx_num
-		SET	ab_num += 1
-	END
-	WRITE_SHORT	0x68	ab_num
-	WRITE_LONG	0x6a	fx_off
-	FOR (i = 1; i < 51; ++i)	BEGIN
-		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 24 duration = (24 * i) END
-	END
+COPY_EXISTING ~%spell_res%.spl~	~override/RALATH1.spl~
+WRITE_ASCIIE 0x3a ~LATHFAFI~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = ~LATHFAFI~ END
+LPM ~SPELL_TO_INNATE~
 
-COPY ~DeitiesOfFaerun/Spl/RALATH3.spl~ override SAY NAME1 @1010 SAY UNIDENTIFIED_DESC  @1011   //Sunrise
+COPY ~DeitiesOfFaerun/Spl/BAM/LATHFAFI.bam~ override
+    LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+
+ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+	LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~ END
+END
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/INAREASM.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116.spl~ 1 1 CLERIC_FAERIE_FIRE
+SAY NAME1 @9999306 SAY NAME2 @9999306 SAY UNIDENTIFIED_DESC @9999307 SAY DESC @9999307
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE 0x3a ~LATHFAFI~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = ~LATHFAFI~       END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %INAREASM% END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource   = EVAL ~%spell_res%~        END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 parameter1 = RESOLVE_STR_REF(@9999306) END
+
+COPY ~DeitiesOfFaerun/Spl/BAM/LATHFAFI.bam~ override
+    LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+
+ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+	LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~ END
+END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RALATH1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+COPY ~DeitiesOfFaerun/Spl/RALATH2.spl~ override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Sunrise
+
+COPY ~DeitiesOfFaerun/Spl/RALATH3.spl~ override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Boon of Lathander
 
 //False Dawn
 
@@ -142,7 +158,7 @@ ACTION_FOR_EACH file IN ~LATHS~ ~LATHL~ BEGIN
   END
 END
 
-ACTION_FOR_EACH file IN ~LATHFAFI~ ~LATHSUNR~ BEGIN
+ACTION_FOR_EACH file IN ~LATHSUNR~ BEGIN
 COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
