@@ -333,21 +333,6 @@ During this spell's effect, the spell recipient receives bonuses of + 1 on attac
 
 ---
 
-Faerie Fire
-(Alteration)
-
-Level: 1
-Sphere: Sun
-Range: 80 ft.
-Duration: 4 rounds/level
-Casting Time: 4
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell enables the caster to outline one or more objects or creatures with a pale glowing light. Outlined creatures are easier to strike; thus, opponents gain a +2 bonus to attack rolls. Note that outlining can render otherwise invisible creatures visible.
-
----
-
 Sunrise
 (Evocation, Alteration)
 
