@@ -1033,22 +1033,18 @@ Turn/Command Undead: Yes (see below).
 Features:
 
 - Turns Undead as a priest two levels higher.
-- May use the special ability Faerie Fire once per day, starting at level 3.
+- May cast Faerie Fire once per day as a special ability, starting at level 3.
 - May use the special ability Sunrise once per day, starting at level 5.
 - May use the special ability Boon of Lathander once per day, starting at level 7.
-- May cast False Dawn as a special ability once per day, starting at level 9.
-
-BOON OF LATHANDER
-
-The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.
-
-FAERIE FIRE
-
-The Dawnbringer makes <PRO_HISHER> enemy glow, giving it a -2 penalty to Armor Class and dispelling invisibility.
+- May cast False Dawn once per day as a special ability, starting at level 9.
 
 SUNRISE
 
-The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.~
+The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.
+
+BOON OF LATHANDER
+
+The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.~
 @1004 = ~Holy Symbol of Lathander~
 @1005 = ~Only the most worthy and devoted servants of the Morninglord are granted these powerful holy symbols.
 
@@ -1061,34 +1057,8 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@1006 = ~Boon of Lathander~
-@1007 = ~Boon of Lathander
-(Conjuration/Summoning)
-
-Level: 4
-Sphere: Combat
-Range: Touch
-Duration: 6 rounds
-Casting Time: 7
-Area of Effect: 1 creature
-Saving Throw: None
-
-During this spell's effect, the recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in Faerie Fire.~
-@1008 = ~Faerie Fire~
-@1009 = ~Faerie Fire
-(Alteration)
-
-Level: 1
-Sphere: Sun
-Range: 80 ft.
-Duration: 4 rounds/level
-Casting Time: 4
-Area of Effect: 15-ft. radius
-Saving Throw: None
-
-This spell enables the caster to outline one or more objects or creatures with a pale glowing light. Outlined creatures are easier to strike; thus, opponents gain a +2 bonus to attack rolls. Note that outlining can render otherwise invisible creatures visible.~
-@1010 = ~Sunrise~
-@1011 = ~Sunrise
+@1006 = ~Sunrise~
+@1007 = ~Sunrise
 (Evocation, Alteration)
 
 Level: 3
@@ -1100,7 +1070,20 @@ Area of Effect: The caster
 Saving Throw: Special
 
 With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around <PRO_HIMHER>self. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.~
-@1012 = ~DAWNBRINGER OF LATHANDER (F/C): A powerful, exuberant god, Lathander (Lah-THANder) is known as the Commander of Creativity and the Morninglord. When Lathander is depicted, he is most often shown in a form similar to his avatar or as a mist of glowing, rose-colored swirls with two golden eyes at the center. As the god of beginnings, Lathander traditionally receives prayer from many inhabitants of Faerûn at the start of a journey or endeavor. Lathander's name is invoked to seal alliances and start new ventures or companies. As a result, the god is very popular among the merchant classes. Though depicted as young, Lathander's noble bearing and demeanor serve him well among the nobility, who also favor his worship in many places. Because he encourages his clergy to strike out and start new shrines and temples all over Faerûn, Lathander's broad-based popularity is rounded out by the many peasant folk aided by his clergy. 
+@1008 = ~Boon of Lathander~
+@1009 = ~Boon of Lathander
+(Conjuration/Summoning)
+
+Level: 4
+Sphere: Combat
+Range: Touch
+Duration: 6 rounds
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+During this spell's effect, the recipient receives bonuses of + 1 on attack rolls and +1 on all saving throws and is allowed one extra attack per round. The spell recipient glows with a rose-red radiance during this time of augmented ability. This radiance is similar to faerie fire in appearance, but it does not carry with it the benefits that opponents would gain when attacking a creature outlined in Faerie Fire.~
+@1010 = ~DAWNBRINGER OF LATHANDER (F/C): A powerful, exuberant god, Lathander (Lah-THANder) is known as the Commander of Creativity and the Morninglord. When Lathander is depicted, he is most often shown in a form similar to his avatar or as a mist of glowing, rose-colored swirls with two golden eyes at the center. As the god of beginnings, Lathander traditionally receives prayer from many inhabitants of Faerûn at the start of a journey or endeavor. Lathander's name is invoked to seal alliances and start new ventures or companies. As a result, the god is very popular among the merchant classes. Though depicted as young, Lathander's noble bearing and demeanor serve him well among the nobility, who also favor his worship in many places. Because he encourages his clergy to strike out and start new shrines and temples all over Faerûn, Lathander's broad-based popularity is rounded out by the many peasant folk aided by his clergy. 
 
 Lathander has a reputation for being sometimes overly enthusiastic, slightly vain, and given to excesses, all flaws very common among the young. He is also eternally optimistic and doggedly perseverant. His alliance with Chauntea serves them both well, since his interests in birth, nurture, and vibrant life dovetail well with her portfolio. The churches of Chauntea and Lathandet have only grown closer since the Time of Troubles, and rumors hold that Lathander has been courting the favor of the Earthmother romantically as well as politically.
 
@@ -1115,23 +1098,19 @@ Turn/Command Undead: Yes (see below).
 Features:
 
 - Turns Undead as a priest two levels higher.
-- May use the special ability Faerie Fire once per day, starting at level 3.
+- May cast Faerie Fire once per day as a special ability, starting at level 3.
 - May use the special ability Sunrise once per day, starting at level 5.
 - May use the special ability Boon of Lathander once per day, starting at level 7.
-- May cast False Dawn as a special ability once per day, starting at level 9.
-
-BOON OF LATHANDER
-
-The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.
-
-FAERIE FIRE
-
-The Dawnbringer makes <PRO_HISHER> enemy glow, giving it a -2 penalty to Armor Class and dispelling invisibility.
+- May cast False Dawn once per day as a special ability, starting at level 9.
 
 SUNRISE
 
-The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.~
-@1013 = ~DAWNBRINGER OF LATHANDER (C/M): A powerful, exuberant god, Lathander (Lah-THANder) is known as the Commander of Creativity and the Morninglord. When Lathander is depicted, he is most often shown in a form similar to his avatar or as a mist of glowing, rose-colored swirls with two golden eyes at the center. As the god of beginnings, Lathander traditionally receives prayer from many inhabitants of Faerûn at the start of a journey or endeavor. Lathander's name is invoked to seal alliances and start new ventures or companies. As a result, the god is very popular among the merchant classes. Though depicted as young, Lathander's noble bearing and demeanor serve him well among the nobility, who also favor his worship in many places. Because he encourages his clergy to strike out and start new shrines and temples all over Faerûn, Lathander's broad-based popularity is rounded out by the many peasant folk aided by his clergy. 
+The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.
+
+BOON OF LATHANDER
+
+The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.~
+@1011 = ~DAWNBRINGER OF LATHANDER (C/M): A powerful, exuberant god, Lathander (Lah-THANder) is known as the Commander of Creativity and the Morninglord. When Lathander is depicted, he is most often shown in a form similar to his avatar or as a mist of glowing, rose-colored swirls with two golden eyes at the center. As the god of beginnings, Lathander traditionally receives prayer from many inhabitants of Faerûn at the start of a journey or endeavor. Lathander's name is invoked to seal alliances and start new ventures or companies. As a result, the god is very popular among the merchant classes. Though depicted as young, Lathander's noble bearing and demeanor serve him well among the nobility, who also favor his worship in many places. Because he encourages his clergy to strike out and start new shrines and temples all over Faerûn, Lathander's broad-based popularity is rounded out by the many peasant folk aided by his clergy. 
 
 Lathander has a reputation for being sometimes overly enthusiastic, slightly vain, and given to excesses, all flaws very common among the young. He is also eternally optimistic and doggedly perseverant. His alliance with Chauntea serves them both well, since his interests in birth, nurture, and vibrant life dovetail well with her portfolio. The churches of Chauntea and Lathandet have only grown closer since the Time of Troubles, and rumors hold that Lathander has been courting the favor of the Earthmother romantically as well as politically.
 
@@ -1146,22 +1125,18 @@ Turn/Command Undead: Yes (see below).
 Features:
 
 - Turns Undead as a priest two levels higher.
-- May use the special ability Faerie Fire once per day, starting at level 3.
+- May cast Faerie Fire once per day as a special ability, starting at level 3.
 - May use the special ability Sunrise once per day, starting at level 5.
 - May use the special ability Boon of Lathander once per day, starting at level 7.
-- May cast False Dawn as a special ability once per day, starting at level 9.
-
-BOON OF LATHANDER
-
-The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.
-
-FAERIE FIRE
-
-The Dawnbringer makes <PRO_HISHER> enemy glow, giving it a -2 penalty to Armor Class and dispelling invisibility.
+- May cast False Dawn once per day as a special ability, starting at level 9.
 
 SUNRISE
 
-The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.~
+The Dawnbringer creates a light that blinds, damages and destroys (vampires only) an undead creature.
+
+BOON OF LATHANDER
+
+The Dawnbringer receives a +1 bonus to <PRO_HISHER> attack and damage rolls and an extra attack.~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
