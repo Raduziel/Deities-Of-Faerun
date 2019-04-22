@@ -1835,5 +1835,18 @@ Area of Effect: The caster
 Saving Throw: None
 
 Casting this spell grants the wizard protection from one spell school of <PRO_HISHER> choice. After the spell is cast, the wizard must choose the school <PRO_HESHE> wishes to be protected from. All spells of this school will not be able to harm or aid the caster for the duration of this spell. This includes all spells from this school, including any priest spells that might benefit the caster. The wizard can only be protected against one school at a time.~
+	@9999306 = ~Faerie Fire~
+	@9999307 = ~Faerie Fire 
+(Alteration)
+
+Level: 1
+Sphere: Fire
+Range: Sight
+Duration: 4 rounds/level
+Casting Time: 4
+Area of Effect: 10-ft. radius
+Saving Throw: None
+
+This spell outlines one or more creatures with a pale violet glow, making positions and movements easily visible. Outlined creatures are easier to strike, giving them an Armor Class penalty of -2.~
 	
 // EoF
