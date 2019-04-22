@@ -3725,14 +3725,16 @@ ACTION_IF !FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TA
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/INAREASM.PRO~
 
+OUTER_SET RA_Faerie = RESOLVE_STR_REF(@9999306)
+
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116.spl~ 1 1 CLERIC_FAERIE_FIRE
 SAY NAME1 @9999306 SAY NAME2 @9999306 SAY UNIDENTIFIED_DESC @9999307 SAY DESC @9999307
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE 0x3a ~LATHFAFI~ #8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = ~LATHFAFI~       END
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %INAREASM% END
-LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource   = EVAL ~%spell_res%~        END
-LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 parameter1 = RESOLVE_STR_REF(@9999306) END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource   = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 parameter1 = EVAL ~%RA_Faerie%~ END
 
 COPY ~DeitiesOfFaerun/Spl/BAM/LATHFAFI.bam~ override
     LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
