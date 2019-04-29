@@ -1848,5 +1848,17 @@ Area of Effect: 10-ft. radius
 Saving Throw: None
 
 This spell outlines one or more creatures with a pale violet glow, making positions and movements easily visible. Outlined creatures are easier to strike, giving them an Armor Class penalty of -2.~
+	@9999308 = ~Acid Storm~
+	@9999309 = ~Acid Storm
+(Evocation)
+
+Level: 7
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: 12-ft. radius
+Saving Throw: 1/2
+
+This spell unleashes an acidic downpour on the area of effect, doing 1d4 points of acid damage each round for the first three rounds, 1d6 points for the next three rounds, and 1d8 points for each round thereafter. Moving out of the area of effect does not stop the damage—the acid adheres to the skin, and any creatures in the area of effect when Acid Storm is cast continue to suffer acid damage as long as the spell duration lasts. Creatures make a Save vs. Spell every round after they have been hit by the cloud—if successful, they only take half damage (for that round only).~
 	
 // EoF
