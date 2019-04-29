@@ -117,6 +117,8 @@ BEGIN @9999909
 		
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/IWDImport.tpa~
 		
+		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/NewSpells.tpa~
+		
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Main.tpa~
 		
 		ACTION_IF GAME_IS ~iwdee~ BEGIN
