@@ -2269,6 +2269,25 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/MassCauseLightWounds/SPPR523C.BAM~	~ove
 
 END
 
+//Acid Storm
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_ACID_STORM[ %TAB%%WNL%$]~) BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/AcidStorm/IDPRO211.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/AcidStorm/SPWI724.spl~ 2 7 WIZARD_ACID_STORM
+SAY NAME1 @9999308 SAY NAME2 @9999308 SAY UNIDENTIFIED_DESC @9999309 SAY DESC @9999309
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~ END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO211%    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource = EVAL ~%spell_res%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AcidStorm/SPWI724B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/AcidStorm/SPWI724C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
 END
 
 /*Spell Fixes and Improvements */
