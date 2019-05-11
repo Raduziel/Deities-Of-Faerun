@@ -115,7 +115,7 @@ COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.itm~ override                     
 
 COPY_EXISTING ~RAMyrk.2da~ ~override/RAMyrkCM.2da~
 SET_2DA_ENTRY 6 25 50 ~AP_RAMMYRK~
-SET_2DA_ENTRY 6  1 50 ~AP_RASLOT~
+SET_2DA_ENTRY 6  1 50 ~AP_RASCNEC~
 PRETTY_PRINT_2DA
 
 //Restriction

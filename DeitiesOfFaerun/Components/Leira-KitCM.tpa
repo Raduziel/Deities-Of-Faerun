@@ -16,7 +16,7 @@ ADD_KIT ~RALeirCM~
 	~RALeirCM 0 0 0 0 0 0~
 	~override/RALeirCM.2da~
 	~K_CM_H  K_CM_HE  K_CM_G~
-	~0x00000000 14~
+	~0x00000400 14~
 	~CM0~
 	~* * * * * * * * * * * * * * * * * * * *~
 	SAY @3301

@@ -119,7 +119,7 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = ic
 
 COPY_EXISTING ~RASavr.2da~ ~override/RASavrCM.2da~
 SET_2DA_ENTRY 7 25 50 ~AP_RAMSAVR~
-SET_2DA_ENTRY 7  1 50 ~AP_RASLOT~
+SET_2DA_ENTRY 7  1 50 ~AP_RASCDIV~
 PRETTY_PRINT_2DA
 
 //Restriction
