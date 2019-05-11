@@ -291,6 +291,14 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/Common~ override
 
 END
 
+//Files for Specialist-Mage-Kits
+
+COPY ~DeitiesofFaerun/Spl/RASCDIV.spl~ override
+
+COPY ~DeitiesofFaerun/Spl/RASCILL.spl~ override
+
+COPY ~DeitiesofFaerun/Spl/RASCNEC.spl~ override
+
 //Area patching to fit some script's needs
 
 ACTION_IF GAME_IS ~bgee~ BEGIN								//BGEE + SoD
