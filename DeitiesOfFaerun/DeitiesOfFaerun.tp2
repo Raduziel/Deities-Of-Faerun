@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 SUPPORT ~Raduziel www.twitter.com/raduziel~
-VERSION ~1.9.7.5~
+VERSION ~1.9.7.4~
 
 ALWAYS
 
@@ -115,9 +115,9 @@ BEGIN @9999909
 		OUTER_SET	sphere_shm_align = 0
 		OUTER_SET	sphere_alignment = 0
 		
-		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/IWDImport.tpa~
-		
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/NewSpells.tpa~
+		
+		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/IWDImport.tpa~
 		
 		INCLUDE	~%MOD_FOLDER%/%FILE_PATH%/Main.tpa~
 		
@@ -969,6 +969,18 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Yondalla-Nephele.tpa~
 BEGIN @999999021
 REQUIRE_PREDICATE ((GAME_IS ~bg2ee eet~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~51~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Arvoreen-Mazzy.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				       DAVE, THE STORMCALLER OF TALOS
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @999999022
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~setup-bgeenpcpack.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~11~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Talos-Dave.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
