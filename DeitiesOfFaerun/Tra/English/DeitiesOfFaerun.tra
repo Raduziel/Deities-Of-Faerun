@@ -169,7 +169,7 @@ This spell enables the priest to bring forth a feast that serves one creature pe
 
 If the food is not consumed withing 1 hour, it will disappear.~
 @208 = ~Blessed Food~
-@209 = ~Created by the Heroes' Feast spell, this delicious food will heal 8 point of damage, cure all diseases and poisons and provide immunity to poison and fear for 12 hours. Those who eat this food is also under the effect of Bless for the same amount of time.
+@209 = ~Created by the Heroes' Feast spell, this delicious food will heal 1d4+4 point of damage, cure all diseases and poisons and provide immunity to poison and fear for 12 hours. Those who eat this food is also under the effect of Bless for the same amount of time.
 
 STATISTICS:
 
@@ -4995,7 +4995,7 @@ This spell enables the priest to bring forth a feast that serves one creature pe
 
 If the food is not consumed withing 1 hour, it will disappear.~
 @4611 = ~Blessed Food~
-@4612 = ~Created by the Heroes' Feast spell, this delicious food will heal 8 point of damage, cure all diseases and poisons and provide immunity to poison and fear for 12 hours. Those who eat this food is also under the effect of Bless for the same amount of time.
+@4612 = ~Created by the Heroes' Feast spell, this delicious food will heal 1d4+4 point of damage, cure all diseases and poisons and provide immunity to poison and fear for 12 hours. Those who eat this food is also under the effect of Bless for the same amount of time.
 
 STATISTICS:
 
