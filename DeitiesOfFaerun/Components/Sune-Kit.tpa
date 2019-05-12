@@ -112,9 +112,11 @@ END
 
 //Emotion
 
+//Fear
+
 ACTION_IF	!FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionFear/IDPRO255.PRO~
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Common/IDPRO255.PRO~
 
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionFear/SPWI428.spl~ 2 4 WIZARD_EMOTION_FEAR
 SAY NAME1 @9999112 SAY NAME2 @9999112 SAY UNIDENTIFIED_DESC @9999113 SAY DESC @9999113
@@ -138,7 +140,7 @@ END
 
 ACTION_IF	!FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionCourage/IDPRO407.PRO~
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Common/IDPRO407.PRO~
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999116) STR_VAR bam_file = RACOURAG RET iconcour = icon END
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionCourage/SPWI427.spl~ 2 4 WIZARD_EMOTION_COURAGE
@@ -188,7 +190,7 @@ END
 
 ACTION_IF	!FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/EmotionHope/IDPRO407.PRO~
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/Common/IDPRO407.PRO~
 
 LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999123) STR_VAR bam_file = RAHOPEIC RET iconhope = icon END
 ADD_SPELL ~DeitiesOfFaerun/Lib/Spheres/Import/EmotionHope/SPWI429.spl~ 2 4 WIZARD_EMOTION_HOPE
