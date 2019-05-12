@@ -22,6 +22,20 @@ END
 
 END
 
+//Fix for Protection From Evil, 10' Radius
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PROTECTION_FROM_EVIL_10_FOOT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECTION_FROM_EVIL_10_FOOT~	RET	spell_res	END
+
+COPY_EXISTING ~IDPRO258.pro~ ~override/RAPFE10.pro~
+WRITE_SHORT 0x204 160
+WRITE_SHORT 0x206 160
+
+COPY_EXISTING ~%spell_res%.spl~ override
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAPFE10% END
+
+END
+
 //Fix for Chaotic Commands
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CHAOTIC_COMMANDS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -85,28 +99,6 @@ LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 142 parameter1 = 0   par
 LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 174 timing = 4 duration = 60 parameter1 = 0   parameter2 = 0 resist_dispel = 3 STR_VAR resource = ~EFF_E04~ END
 
 COPY "DeitiesOfFaerun\Lib\Spheres\Import\Common\RAIDENIC.BAM" override
-
-END
-
-//Bless for non-Evil only
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~	RET	spell_res	END
-
-COPY_EXISTING	~%spell_res%.spl~	override
-WRITE_LONG 0x1e (THIS BOR 0x2)
-IF_EXISTS
-
-END
-
-//Curse for non-Good only
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CURSE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURSE~	RET	spell_res	END
-
-COPY_EXISTING	~%spell_res%.spl~	override
-WRITE_LONG 0x1e (THIS BOR 0x4)
-IF_EXISTS
 
 END
 
@@ -720,6 +712,9 @@ END
 ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_CLOUD_OF_PESTILENCE[ %TAB%%WNL%$]~) BEGIN
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/IDPRO309.PRO~
+
+OUTER_SET clear_filename = (IDPRO309 - 1)
+APPEND    ~CLEARAIR.2DA~ ~Cloud_of_Pest %clear_filename%~
 
 ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CloudofPestilance/SPPR423.spl~ 1 4 CLERIC_CLOUD_OF_PESTILENCE
 SAY NAME1 @999987 SAY NAME2 @999987 SAY UNIDENTIFIED_DESC @999988 SAY DESC @999988
@@ -2457,6 +2452,32 @@ LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ r
 LPF	CLONE_EFFECT INT_VAR match_opcode = 318 STR_VAR match_resource = ~SPPR106~ resource = EVAL $res_of_label(~WIZARD_MORDENKAINENS_FORCE_MISSILES~) END
 
 END
+
+END
+
+//Bless for non-Evil only
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_BLESS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_BLESS~ RET spell_1 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURSE~ RET spell_2 = spell_res END
+
+COPY_EXISTING	~%spell_1%.spl~	override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 1 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~%spell_2%~ insert_point = 0 END
+WRITE_LONG 0x1e (THIS BOR 0x2)
+IF_EXISTS
+
+END
+
+//Curse for non-Good only
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_CURSE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_CURSE~ RET spell_1 = spell_res END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_BLESS~ RET spell_2 = spell_res END
+
+COPY_EXISTING	~%spell_1%.spl~	override
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 1 parameter1 = 0 parameter2 = 2 STR_VAR resource = ~%spell_2%~ insert_point = 0 END
+WRITE_LONG 0x1e (THIS BOR 0x4)
+IF_EXISTS
 
 END
 
