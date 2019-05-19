@@ -466,6 +466,7 @@ BEGIN @99999036
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Azuth-Kit.tpa~
 INCLUDE  ~DeitiesOfFaerun/Components/Azuth-KitCM.tpa~
+INCLUDE  ~DeitiesOfFaerun/Components/Azuth-KitFMC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -961,6 +962,18 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Yondalla-Nephele.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
+//				       HELGA, THE LUCKMAIDEN OF HAELA
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @999999020
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~placeholder.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~50~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Haela-Helga.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
 //				         MAZZY, THE TRUESWORD OF ARVOREEN
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -993,6 +1006,18 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Talos-Dave.tpa~
 BEGIN @999999023
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~setup-ds.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~12~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Jetlaya.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				      JENORA, THE MAGISTRATI OF AZUTH
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @999999023
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~placeholder.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~29~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Azuth-Jenora.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
