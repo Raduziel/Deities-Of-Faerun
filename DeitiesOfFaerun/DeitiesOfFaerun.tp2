@@ -39,11 +39,6 @@ LANGUAGE ~English~
 
 BEGIN @9999901
 INCLUDE ~DeitiesOfFaerun/Lib/DeitiesOfFaerun.tpa~
-INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitC.tpa~
-INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitCM.tpa~
-INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitCT.tpa~
-INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitFC.tpa~
-INCLUDE ~DeitiesOfFaerun/Lib/NPC/NPC-KitRC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
