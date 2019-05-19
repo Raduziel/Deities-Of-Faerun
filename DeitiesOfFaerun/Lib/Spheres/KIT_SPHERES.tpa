@@ -1,32 +1,4 @@
 
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAKITC~)			BEGIN
-		~All~ => 7
-		~Healing~ => 7
-		~Necromantic~ => 7
-		~Suffering~ => 7
-		~Animal~ => 7
-		~Vermin~ => 7
-		~Plant~ => 7
-		~Protection~ => 7
-		~Sun~ => 7
-		~Moon~ => 7
-		~Darkness~ => 7
-		~Thought~ => 7
-		~Combat~ => 7
-		~Creation~ => 7
-		~Summoning~ => 7
-		~Air~ => 7
-		~Water~ => 7
-		~Earth~ => 7
-		~Fire~ => 7
-		~Divination~ => 7
-		~Travelers~ => 7
-		~Weave~ => 7
-		~Trickery~ => 7
-		~Time~ => 7
-		~Vocal~ => 7
-	END
-
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~TALOS~)			BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 0
