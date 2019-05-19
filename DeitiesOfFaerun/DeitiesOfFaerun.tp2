@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 SUPPORT ~Raduziel www.twitter.com/raduziel~
-VERSION ~1.9.7.4~
+VERSION ~1.9.7.5~
 
 ALWAYS
 
@@ -981,6 +981,18 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Arvoreen-Mazzy.tpa~
 BEGIN @999999022
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~setup-bgeenpcpack.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~11~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Talos-Dave.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				      JETLAYA, THE DAWNBRINGER OF LATHANDER
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @999999023
+REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~setup-ds.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~12~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Jetlaya.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
