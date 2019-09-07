@@ -1002,6 +1002,8 @@ BEGIN @999999023
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~setup-ds.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~12~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Jetlaya.tpa~
 
+/*
+
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
@@ -1013,6 +1015,8 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Jetlaya.tpa~
 BEGIN @999999024
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~placeholder.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~29~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Azuth-Jenora.tpa~
+
+*/
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
