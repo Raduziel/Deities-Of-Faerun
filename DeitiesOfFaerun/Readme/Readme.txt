@@ -10,7 +10,7 @@ INSTALLATION NOTES:
 
 * Deities of Faerûn should be installed after any mod that adds or alters spells in the game.
 
-* Deities of Faerûn should be installed after mods that introduce NPCs that receives a kit from DoF.
+* Deities of Faerûn should be installed after mods that introduce NPCs.
 
 * Deities of Faerûn should be installed before mods that introduce Kits that will use the Sphere System.
 
