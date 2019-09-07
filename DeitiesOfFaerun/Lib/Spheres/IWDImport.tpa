@@ -3245,7 +3245,9 @@ BUT_ONLY IF_EXISTS
 				REPLACE_TEXTUALLY ~\(%spell_7%\|%spell_8%\|%spell_9%\)~            ~RASPSYW~
 				END
 				WRITE_ASCIIE mem_off ~%mem%~ (mem_num * 0xc)
-			END	DEFAULT
+			END
+			DEFAULT
+			END
 		END
 	BUT_ONLY
 		
