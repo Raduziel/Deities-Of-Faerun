@@ -302,6 +302,38 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resour
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI594~ insert_point = 0 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
+
+//Control over summoned fiends (with Protection From Evil)
+
+<<<<<<<< .../inlined.baf
+
+IF
+!Allegiance(Myself,30)
+CheckSpellState(LastSummonerOf(Myself),1)
+THEN 
+RESPONSE #100
+SetInterrupt(FALSE)
+ChangeEnemyAlly(Myself,5)
+AttackReevaluate(NearestEnemyOf(Myself),30)
+SetInterrupt(TRUE)
+END
+
+IF
+Allegiance(Myself,30)
+!CheckSpellState(LastSummonerOf(Myself),1)
+THEN 
+RESPONSE #100
+SetInterrupt(FALSE)
+ChangeEnemyAlly(Myself,255)
+AttackReevaluate(NearestEnemyOf(Myself),30)
+SetInterrupt(TRUE)
+END
+
+>>>>>>>>
+
+EXTEND_BOTTOM ~DEMGLASU.BCS~ ~.../inlined.baf~
+EXTEND_BOTTOM ~DEMNABSU.BCS~ ~.../inlined.baf~
+EXTEND_BOTTOM ~DEMPITSU.BCS~ ~.../inlined.baf~
 		
 /* Importing IWD Spells */
 
@@ -3139,8 +3171,83 @@ PHP_EACH learn AS base => sub BEGIN
 	PATCH_IF ~%sub%~ STRING_EQUAL ~symbol~	   BEGIN REPLACE_TEXTUALLY ~%base%[ %TAB%%WNL%$]~ ~RASCSYM ~ END
 END
 BUT_ONLY IF_EXISTS
-	
-	
+
+//Spellbook correction for Fireshield, Emotion and Symbol (by Kjeron)
+
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_FIRE_SHIELD_BLUE[ %TAB%%WNL%%LNL%%MNL%$]~)     BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_BLUE~     RET spell_1 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_FIRE_SHIELD_RED[ %TAB%%WNL%%LNL%%MNL%$]~)      BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_FIRE_SHIELD_RED~      RET spell_2 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_HOPELESSNESS[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPELESSNESS~ RET spell_3 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_HOPE[ %TAB%%WNL%%LNL%%MNL%$]~)         BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_HOPE~         RET spell_4 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_COURAGE[ %TAB%%WNL%%LNL%%MNL%$]~)      BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_COURAGE~      RET spell_5 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_EMOTION_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)         BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_EMOTION_FEAR~         RET spell_6 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_SYMBOL_DEATH[ %TAB%%WNL%%LNL%%MNL%$]~)         BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~IZARD_SYMBOL_DEATH~          RET spell_7 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_SYMBOL_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)          BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SYMBOL_FEAR~          RET spell_8 = spell_res      END
+	END
+	ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]WIZARD_SYMBOL_STUN[ %TAB%%WNL%%LNL%%MNL%$]~)          BEGIN
+		LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_SYMBOL_STUN~          RET spell_9 = spell_res      END	
+
+	COPY_EXISTING ~CAMPAIGN.2da~ override
+		READ_2DA_ENTRIES_NOW	READ_CAMPAIGN 12
+		FOR	(i = 0; i < READ_CAMPAIGN; ++i)	BEGIN
+			TEXT_SPRINT $campaign_dialog(~%i%~) EVAL ~%READ_CAMPAIGN_%i%_11%~
+		END
+	BUT_ONLY
+	OUTER_SPRINT $campaign_dialog(~0~) ~PDIALOG~
+
+	ACTION_PHP_EACH	campaign_dialog AS null => file	BEGIN
+		PRINT	~%file%~
+		COPY_EXISTING ~%file%.2da~	override
+			READ_2DA_ENTRIES_NOW READ_PDIALOG 3
+			FOR (i = 0; i < READ_PDIALOG; ++i)	BEGIN
+				READ_2DA_ENTRY_FORMER READ_PDIALOG i 0 name	TO_UPPER	name
+				TEXT_SPRINT	$RA_party_NPC(~%name%~) ~%name%~
+			END
+		BUT_ONLY	IF_EXISTS
+	END	
+
+	COPY_EXISTING_REGEXP ~^.+\.cre$~ override
+		READ_ASCII 0x280 name (32) NULL	TO_UPPER name
+		PATCH_IF ~%name%~ STR_EQ EVAL $RA_party_NPC(~%name%~) BEGIN
+			READ_BYTE 0x273 class
+			PATCH_MATCH	class	WITH
+			1 5 7 10 13 14 17 19	BEGIN
+				READ_LONG 0x2a0 known_off
+				READ_LONG 0x2a4 known_num
+				READ_ASCII known_off known (known_num * 0xc)
+				INNER_PATCH_SAVE known ~%known%~	BEGIN
+				REPLACE_TEXTUALLY ~\(%spell_1%\|%spell_2%\)~                       ~RASPFSW~
+				REPLACE_TEXTUALLY ~\(%spell_3%\|%spell_4%\|%spell_5%\|%spell_6%\)~ ~RASPEMW~
+				REPLACE_TEXTUALLY ~\(%spell_7%\|%spell_8%\|%spell_9%\)~            ~RASPSYW~
+				END
+				WRITE_ASCIIE known_off ~%known%~ (known_num * 0xc)
+				READ_LONG 0x2b0 mem_off
+				READ_LONG 0x2b4 mem_num
+				READ_ASCII	mem_off mem (mem_num * 0xc)
+				INNER_PATCH_SAVE	mem ~%mem%~	BEGIN
+				REPLACE_TEXTUALLY ~\(%spell_1%\|%spell_2%\)~                       ~RASPFSW~
+				REPLACE_TEXTUALLY ~\(%spell_3%\|%spell_4%\|%spell_5%\|%spell_6%\)~ ~RASPEMW~
+				REPLACE_TEXTUALLY ~\(%spell_7%\|%spell_8%\|%spell_9%\)~            ~RASPSYW~
+				END
+				WRITE_ASCIIE mem_off ~%mem%~ (mem_num * 0xc)
+			END	DEFAULT
+		END
+	BUT_ONLY
+		
 //PnP Magic Resistance
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MAGIC_RESISTANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
