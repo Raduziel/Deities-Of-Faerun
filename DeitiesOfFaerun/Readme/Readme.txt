@@ -1606,7 +1606,7 @@ A kit may have either major or minor access to a sphere. Major access means that
     Storm Shell
     Zone of Sweet Air
 
-4 - Cloud of Pestilance
+4 - Cloud of Pestilence
     Protection From Lightning
     Static Charge
 
@@ -1793,7 +1793,7 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 4 - Minor Sequencer
 
-5 - Desintegrate
+5 - Disintegrate
 
 6 - Improved Haste
     Spell Sequencer
@@ -1826,7 +1826,6 @@ A kit may have either major or minor access to a sphere. Major access means that
 7 - Great Shout
     Power Word: Kill
     Power Word: Stun
-    Wail of the Banshee
 
 f2) Divine Casters:
 
