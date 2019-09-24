@@ -1,5 +1,62 @@
+//Conjure Water Elemental - Raduziel
 
-//PnP Light
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "WATER_ELEMENTAL_RADUZIEL" 2da_file = RAELEMW RET RAELEMW = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_WATER_ELEMENTAL
+SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+END
+
+//Conjure Air Elemental - Raduziel
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = "AIR_ELEMENTAL_RADUZIEL" 2da_file = RAELEMA RET RAELEMA = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
+SAY NAME1 @9999228 SAY NAME2 @9999228 SAY UNIDENTIFIED_DESC @9999229 SAY DESC @9999229
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMA END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/SPPRRA2C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RAELEMA.2DA~	override
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA12AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA16AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureAirElemental/RA24AIR.CRE~	override
+SAY NAME1 @9999230 SAY NAME2 @9999230
+
+END
+
+//Light
 
 ACTION_IF !FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_RADUZIEL_LIGHT[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
 
