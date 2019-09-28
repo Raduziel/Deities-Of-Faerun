@@ -1154,6 +1154,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Garagos: Talos
 
+- Garl: Helm
+
 - Haela: Helm, Fighter
          
 - Helm: Helm
