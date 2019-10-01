@@ -5376,4 +5376,107 @@ EASY MARCH
 
 This spell doubles the party's movement rate and grants immunity to fatigue for 5 days.~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Glitterbright of Garl
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@5001 = ~glittergold of garl~
+@5002 = ~Glittergold of Garl~
+@5003 = ~GLITTERGOLD OF GARL: Garl Glittergold (GARL GLIHT-ter'gold) is the Watchful Protector of the Forgotten Folk and the leader of the gnome pantheon. He is said to have discovered the first gnomes while exploring a new cavern and then told them a joke before leading them into the world. All gnomes who embrace the communal life of the Forgotten Folk venerate the Joker, even if they also worship another deity. His name is invoked by gnomes involved in smithcraft (particularly those who work with gold) and gem cutting. Gnomes who wish to play a prank or tell a joke invoke his name, as do those who seek to protect and strengthen gnome communities.
+
+Garl is on excellent terms with the rest of the gnome pantheon, with the notable exception of Urdlen. He insists they cooperate in all endeavors, and he shares with them his responsibilities and concerns, thus mining and smithing are also overseen by Flandal Steelskin, illusion is also the province of Baravar Cloakshadow, protection and combat are responsibilities shared with Gaerdal Ironhand, and so on. Garl's boon companion is Arumdina the justifier, a great intelligent two-headed battle axe, commonly referred to as female, who serves him as both weapon and friend. The sight of the gleaming weapon that cleaves through stone as easily as through air and slices through metal armor as if it did not exist has probably encouraged more than one victim of one of Garl's jokes to laugh it off with good humor rather than get too mad.
+
+The Joker is often found in the company of other powers of other pantheons of similar perspective, including Brandobaris, Erevan Ilesere, Tymora, and Vergadain. The various powers worshiped by humanoids and creatures of the Under-dark are often the target of Garl's jests, and he usually leaves them helpless helpless and humbled, a victim of self-inflicted folly. As a result, despite his ever-optimistic hope that they might learn a lesson about overweening pride and pomposity, the Joker has garnered many enemies from among their ranks, particularly among the kobold pantheon. Notable among the Joker's exploits are the story of how he pretended to be caught by Kurtulmak before escaping as he collapsed the kobold god's cavern on top of Kurtulmak, and the story of how Garl dressed up as a deer to lure Grankhul, the bugbear hunter god, out into the open before trapping him with an illusion and leaving him trussed up like a turkey.
+
+Garl is a gentle and approachable power, one who values quick thinking and a clear head more than almost anything. He rarely stays in one location for very long. Though physical prowess and spiritual might are important, nothing is more crucial than keeping it all in perspective. Garl watches over cooperation among gnomes at all times; he may send omens, even an avatar, to resolve strife and serious disputes. Garl prefers trickery, illusion, and wiles to direct physical confrontation, although if forced to fight he is hardly weak. The leader of the gnome pantheon often steals evil weapons and magic intended for malefic ends from their owners and then disposes of them. The Joker is also a mischievous trickster, said to have the largest collection of jokes in the multiverse, and he has always got one appropriate to the situation. The Joker usually carries plenty of props for his illusions and practical jokes as he never knows when they might come in handy. There is another side to Garl than that of the witty adventurer who collapsed the kobold god's cavern. The Watchful Protector is ever alert to threats to the Forgotten Folk and watches directly over their affairs. If such threats cannot be forestalled, Garl will defend his people as needed and appropriate. Although his military prowess is almost always used defensively, when Garl's people are physically threatened, the god is a grim and determined war leader who out-thinks as well as out-fights his opponents.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Protection, Combat, Creation, Earth, Trickery.
+Minor: Healing, Sun, Travelers.
+
+Turn/Command Undead: Yes (see below).
+
+Features:
+
+- Turns Undead as a priest two levels lower.
+- May cast Glitterdust once per day as a special ability, starting at level 3.
+- May use the Tasha's Uncontrollable Hideous Laughter special ability once per day, starting at level 5.
+- May cast Mirror Image once per day as a special ability, starting at level 7.
+- Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic at level 7.
+- May cast Improved Invisibility once per day as a special ability, starting at level 10.
+- Always protected as if wearing a Cloak of Displacement, starting at level 13.
+
+TAUNT
+
+The caster taunts a group of creatures, turning <PRO_HIMHER>self into a priority target.
+
+TASHA'S UNCONTROLLABLE HIDEOUS LAUGHER
+
+The caster makes one creature fall into a burst of uncontrollable laughter, penalizing its Strength score.~
+@5004 = ~Holy Symbol of Garl Glittergold~
+@5005 = ~Only the most worthy and devoted servants of the Joker are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@5006 = ~Tasha's Uncontrollable Hideous Laughter~
+@5007 = ~Tasha's Uncontrollable Hideous Laughter
+(Enchantment/Charm)
+
+Level: 2
+Sphere: Thought
+Range: 60 ft.
+Duration: 1 round/level
+Casting Time: 2
+Area of Effect: One creature
+Saving Throw: Neg.
+
+The victim of this spell perceives everything as hilariously funny. On the round this spell is cast, the victim begins smiling, then giggling, chuckling, tittering, snickering, guffawing, and finally collapsing into gales of uncontrollable, hideous laughter. While under the effect of this spell, the affected creature must regain its feet, and loses 2 points from its Strength.
+
+This spell only affects somehow intelligent creatures (Intelligence score equal or greater than 4).~
+@5008 = ~Laughing~
+@5009 = ~GLITTERGOLD OF GARL (F/C): Garl Glittergold (GARL GLIHT-ter'gold) is the Watchful Protector of the Forgotten Folk and the leader of the gnome pantheon. He is said to have discovered the first gnomes while exploring a new cavern and then told them a joke before leading them into the world. All gnomes who embrace the communal life of the Forgotten Folk venerate the Joker, even if they also worship another deity. His name is invoked by gnomes involved in smithcraft (particularly those who work with gold) and gem cutting. Gnomes who wish to play a prank or tell a joke invoke his name, as do those who seek to protect and strengthen gnome communities.
+
+Garl is on excellent terms with the rest of the gnome pantheon, with the notable exception of Urdlen. He insists they cooperate in all endeavors, and he shares with them his responsibilities and concerns, thus mining and smithing are also overseen by Flandal Steelskin, illusion is also the province of Baravar Cloakshadow, protection and combat are responsibilities shared with Gaerdal Ironhand, and so on. Garl's boon companion is Arumdina the justifier, a great intelligent two-headed battle axe, commonly referred to as female, who serves him as both weapon and friend. The sight of the gleaming weapon that cleaves through stone as easily as through air and slices through metal armor as if it did not exist has probably encouraged more than one victim of one of Garl's jokes to laugh it off with good humor rather than get too mad.
+
+The Joker is often found in the company of other powers of other pantheons of similar perspective, including Brandobaris, Erevan Ilesere, Tymora, and Vergadain. The various powers worshiped by humanoids and creatures of the Under-dark are often the target of Garl's jests, and he usually leaves them helpless helpless and humbled, a victim of self-inflicted folly. As a result, despite his ever-optimistic hope that they might learn a lesson about overweening pride and pomposity, the Joker has garnered many enemies from among their ranks, particularly among the kobold pantheon. Notable among the Joker's exploits are the story of how he pretended to be caught by Kurtulmak before escaping as he collapsed the kobold god's cavern on top of Kurtulmak, and the story of how Garl dressed up as a deer to lure Grankhul, the bugbear hunter god, out into the open before trapping him with an illusion and leaving him trussed up like a turkey.
+
+Garl is a gentle and approachable power, one who values quick thinking and a clear head more than almost anything. He rarely stays in one location for very long. Though physical prowess and spiritual might are important, nothing is more crucial than keeping it all in perspective. Garl watches over cooperation among gnomes at all times; he may send omens, even an avatar, to resolve strife and serious disputes. Garl prefers trickery, illusion, and wiles to direct physical confrontation, although if forced to fight he is hardly weak. The leader of the gnome pantheon often steals evil weapons and magic intended for malefic ends from their owners and then disposes of them. The Joker is also a mischievous trickster, said to have the largest collection of jokes in the multiverse, and he has always got one appropriate to the situation. The Joker usually carries plenty of props for his illusions and practical jokes as he never knows when they might come in handy. There is another side to Garl than that of the witty adventurer who collapsed the kobold god's cavern. The Watchful Protector is ever alert to threats to the Forgotten Folk and watches directly over their affairs. If such threats cannot be forestalled, Garl will defend his people as needed and appropriate. Although his military prowess is almost always used defensively, when Garl's people are physically threatened, the god is a grim and determined war leader who out-thinks as well as out-fights his opponents.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Protection, Combat, Creation, Earth, Trickery.
+Minor: Healing, Sun, Travelers.
+
+Turn/Command Undead: Yes (see below).
+
+Features:
+
+- Turns Undead as a priest two levels lower.
+- May cast Glitterdust once per day as a special ability, starting at level 3.
+- May use the Tasha's Uncontrollable Hideous Laughter special ability once per day, starting at level 5.
+- May cast Mirror Image once per day as a special ability, starting at level 7.
+- Gains +2 Saving Throw bonus against spells using Illusion/Phantasm magic at level 7.
+- May cast Improved Invisibility once per day as a special ability, starting at level 10.
+- Always protected as if wearing a Cloak of Displacement, starting at level 13.
+
+TAUNT
+
+The caster taunts a group of creatures, turning <PRO_HIMHER>self into a priority target.
+
+TASHA'S UNCONTROLLABLE HIDEOUS LAUGHER
+
+The caster makes one creature fall into a burst of uncontrollable laugher, penalizing its Strength score.~
+
 //EoF

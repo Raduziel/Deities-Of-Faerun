@@ -253,7 +253,7 @@ Changestaff
 
 Level: 7
 Sphere: Plant 
-Range: 40
+Range: 40 ft.
 Duration: 1 turn/level
 Casting Time: 4 
 Area of Effect: Special 
@@ -426,7 +426,7 @@ Frost Dagger
 
 Level: 1
 Sphere: Creation, Water
-Range: 30
+Range: 30 ft.
 Duration: Instantaneous
 Casting Time: 3
 Area of Effect: One creature
@@ -441,7 +441,7 @@ Frost Whip
 
 Level: 2
 Sphere: Creation, Water
-Range: 5
+Range: 5 ft.
 Duration: Instantaneous
 Casting Time: 5
 Area of Effect: One creature
@@ -488,7 +488,7 @@ Dehydrate
 
 Level: 3
 Sphere: Suffering, Water
-Range: 40
+Range: 40 ft.
 Duration: Instantaneous
 Casting Time: 4
 Area of Effect: One creature
@@ -503,7 +503,7 @@ Drown
 
 Level: 6
 Sphere: Water
-Range: 30
+Range: 30 ft.
 Duration: 1 turn
 Casting Time: 6
 Area of Effect: One creature
@@ -520,7 +520,7 @@ Moonbeam
 
 Level: 5
 Sphere: Moon
-Range: 60
+Range: 60 ft.
 Duration: 1 round/level
 Casting Time: 2
 Area of Effect: One creature
@@ -535,7 +535,7 @@ Shooting Star
 
 Level: 7
 Sphere: Moon
-Range: 100
+Range: 100 ft.
 Duration: Instantaneous
 Casting Time: 7
 Area of Effect: 15-ft. radius
@@ -590,7 +590,7 @@ Whip of Flame
 
 Level: 2
 Sphere: Fire, Suffering
-Range: 12
+Range: 12 ft.
 Duration: Special
 Casting Time: 5
 Area of Effect: One creature
@@ -715,7 +715,7 @@ Summon Minor Death
 
 Level: 6
 Sphere: Necromantic
-Range: 35
+Range: 35 ft.
 Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
@@ -765,7 +765,7 @@ Summon Minor Death
 
 Level: 6
 Sphere: Necromantic
-Range: 35
+Range: 35 ft.
 Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Special
@@ -817,7 +817,7 @@ Chaotic Combat
 
 Level: 4
 Sphere: Combat
-Range: 30
+Range: 30 ft.
 Duration: 1 round/level
 Casting Time: 3
 Area of Effect: One creature
@@ -907,7 +907,7 @@ Luckbolt
 
 Level: 6
 Sphere: Protection
-Range: 100
+Range: 100 ft.
 Duration: 4 rounds
 Casting Time: 9
 Area of Effect: One creature
@@ -1065,7 +1065,7 @@ Glyph of Revealing
 
 Level: 2
 Sphere: Divination
-Range: 60
+Range: 60 ft.
 Duration: Permanent until discharged
 Casting Time: 5
 Area of Effect: 12-ft. radius
@@ -1081,7 +1081,7 @@ Easy March
 (Invocation)
 
 Level: 5
-Sphere: Travelers. 
+Sphere: Travelers 
 Range: 50 ft.
 Duration: 5 days
 Casting Time: 10 
@@ -1093,6 +1093,25 @@ This spell enables the Truesword's party to force march for five days with two t
 All creatures affected by this spell suffer a -1 penalty to their attack rolls for the duration of the spell and this modifier cannot be negated by resting.
 
 The effects of this spell will be canceled by Haste, Improved Haste and similar effects.
+
+====================================================================================================================================================================
+
+29) GARL GLITTERGOLD
+
+Tasha's Uncontrollable Hideous Laughter
+(Enchantment/Charm)
+
+Level: 2
+Sphere: Thought
+Range: 60 ft.
+Duration: 1 round/level
+Casting Time: 2
+Area of Effect: One creature
+Saving Throw: Neg.
+
+The victim of this spell perceives everything as hilariously funny. On the round this spell is cast, the victim begins smiling, then giggling, chuckling, tittering, snickering, guffawing, and finally collapsing into gales of uncontrollable, hideous laughter. While under the effect of this spell, the affected creature must regain its feet, and loses 2 points from its Strength.
+
+This spell only affects somehow intelligent creatures (Intelligence score equal or greater than 4).
 
 ====================================================================================================================================================================
 

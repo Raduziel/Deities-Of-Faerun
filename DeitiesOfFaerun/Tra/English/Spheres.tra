@@ -132,7 +132,7 @@ This spell creates nine darts that can be used by the caster and cannot be unequ
 
 Level: 6
 Sphere: Necromantic
-Range: Touch
+Range: 0
 Duration: 1 round/level
 Casting Time: 6
 Area of Effect: The caster
@@ -683,7 +683,7 @@ This spell blankets the area of effect with a silver-blue mist—any creature wi
 
 Level: 4
 Sphere: Air
-Range: 0
+Range: Visual range of the caster
 Duration: 1 turn/level
 Casting Time: 9
 Area of Effect: Visual range of the caster
