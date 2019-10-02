@@ -1155,7 +1155,7 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 
 - Azuth: Wizard
 
-- Baervan Wildwanderer : Druid, Ranger
+- Baervan: Druid, Ranger
 
 - Bane: Talos, Fighter
 
