@@ -755,7 +755,7 @@
 		~Vocal~ => 7
 	END
 	
-		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAGARL~) BEGIN
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAGARL~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 0
 		~Suffering~ => 0
