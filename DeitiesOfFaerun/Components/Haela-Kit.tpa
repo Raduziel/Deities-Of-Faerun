@@ -52,7 +52,7 @@ WRITE_ASCII 0x058 ~HAELL~
 //Spells
 
 COPY ~DeitiesOfFaerun/Spl/RAHAELF.spl~  override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4706) END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4806) END
 
 COPY ~DeitiesOfFaerun/Spl/RAHAELF.eff~  override
 
