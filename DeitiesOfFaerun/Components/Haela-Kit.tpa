@@ -59,7 +59,7 @@ COPY ~DeitiesOfFaerun/Spl/RAHAELF.eff~  override
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 97 98 99 100 101 102 115 BEGIN
+		103 104 105 106 107 BEGIN
 		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHael~)   parameter2 = 9 timing = 2 STR_VAR resource = ~RAHAELF~ END
 		  END
 		DEFAULT
