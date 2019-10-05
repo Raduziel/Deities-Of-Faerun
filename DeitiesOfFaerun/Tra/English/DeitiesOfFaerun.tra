@@ -5206,7 +5206,7 @@ Turn/Command Undead: Yes.
 Features:
 
 - Receives Attacks Per Round as if they were warriors.
-- Gains +2 to all Saving Throws when wielding a melee weapon.
+- Gains +2 to all Saving Throws when not wielding a ranged weapon.
 - May cast Shield once per day as a special ability, starting at level 1.
 - May cast Aid once per day as a special ability, starting at level 3, on themselves only.
 - May cast Draw Upon Holy Might once per day as a special ability, starting at level 5.
@@ -5255,7 +5255,7 @@ Turn/Command Undead: Yes.
 
 Features:
 
-- Gains +2 to all Saving Throws when wielding a melee weapon.
+- Gains +2 to all Saving Throws when not wielding a ranged weapon.
 - May cast Shield once per day as a special ability, starting at level 1.
 - May cast Aid once per day as a special ability, starting at level 3, on themselves only.
 - May cast Draw Upon Holy Might once per day as a special ability, starting at level 5.
