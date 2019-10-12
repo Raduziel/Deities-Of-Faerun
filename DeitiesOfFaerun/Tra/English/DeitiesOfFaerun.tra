@@ -5526,8 +5526,9 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@5106 = ~Spiderwalk~
-@5107 = ~Spiderwalk
+@5106 = ~Lolth doesn't bestow her grace upon males.~
+@5107 = ~Spiderwalk~
+@5108 = ~Spiderwalk
 (Alteration)
 
 Level: 1
@@ -5539,7 +5540,7 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When the Arachne casts this spell, Lolth's grace is bestowed upon the touched creature, allowing it to move freely through webs - no matter if they are natural or magical.~
-@5108 = ~Domination
+@5109 = ~Domination
 (Enchantment/Charm)
 
 Level: 5
@@ -5553,7 +5554,7 @@ Saving Throw: Neg.
 The Domination spell enables the caster to control the actions of any creature while the spell is in effect. This control is maintained through a telepathic link between the caster and the victim. Unlike the 4th-level priest spell Mental Domination, the target has no option for release, even if made to do something against his morals. This effect can only be reversed by Dispel Magic. The target is allowed a Saving Throw vs. Spell with a -2 penalty to negate the effect.
 
 Unlike the regular Domination spell, this version ignores elves' and half-elves' (of all races) racial resistance versus Charm.~
-@5109 = ~Domination
+@5110 = ~Domination
 (Enchantment/Charm)
 
 Level: 5
