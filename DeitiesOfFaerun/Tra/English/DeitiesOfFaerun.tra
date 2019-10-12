@@ -5553,7 +5553,7 @@ Saving Throw: Neg.
 
 The Domination spell enables the caster to control the actions of any creature while the spell is in effect. This control is maintained through a telepathic link between the caster and the victim. Unlike the 4th-level priest spell Mental Domination, the target has no option for release, even if made to do something against his morals. This effect can only be reversed by Dispel Magic. The target is allowed a Saving Throw vs. Spell with a -2 penalty to negate the effect.
 
-Unlike the regular Domination spell, this version ignores elves' and half-elves' (of all races) racial resistance versus Charm.~
+Unlike the regular Domination spell, this version ignores the racial resistance to Charm of elves and half-elves.~
 @5110 = ~Domination
 (Enchantment/Charm)
 
@@ -5567,6 +5567,6 @@ Saving Throw: Neg.
 
 Domination enables the caster to control the actions of any creature while the spell is in effect. This control is maintained through a telepathic link between the caster and the victim. Unlike the 4th-level priest spell Mental Domination, the target has no option for release, even if made to do something against <PRO_HISHER> morals, except, of course, Dispel Magic. The target gets a Save vs. Spell at -2 in order to avoid the effect.
 
-Unlike the regular Domination spell, this version ignores elves' and half-elves' (of all races) racial resistance versus Charm.~
+Unlike the regular Domination spell, this version ignores the racial resistance to Charm of elves and half-elves.~
 
 //EoF
