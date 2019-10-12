@@ -5410,10 +5410,6 @@ Features:
 - May cast Improved Invisibility once per day as a special ability, starting at level 10.
 - Always protected as if wearing a Cloak of Displacement, starting at level 13.
 
-TAUNT
-
-The caster taunts a group of creatures, turning <PRO_HIMHER>self into a priority target.
-
 TASHA'S UNCONTROLLABLE HIDEOUS LAUGHER
 
 The caster makes one creature fall into a burst of uncontrollable laughter, penalizing its Strength score.~
@@ -5471,12 +5467,105 @@ Features:
 - May cast Improved Invisibility once per day as a special ability, starting at level 10.
 - Always protected as if wearing a Cloak of Displacement, starting at level 13.
 
-TAUNT
-
-The caster taunts a group of creatures, turning <PRO_HIMHER>self into a priority target.
-
 TASHA'S UNCONTROLLABLE HIDEOUS LAUGHER
 
 The caster makes one creature fall into a burst of uncontrollable laugher, penalizing its Strength score.~
+
+/__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Arachne of Lolth
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@5101 = ~arachne of lolth~
+@5102 = ~Arachne of Lolth~
+@5103 = ~ARACHNE OF LOLTH: Lolth (LOLTH) is the goddess of the drow race and drow society. She is responsible for the nature, customs, laws, and survival of most drow commu-nities. The Spider Queen maintains her absolute rule over drow cities by means of her clergy, who tirelessly seek out and destroy all traces of dissent, disobedience, rival faiths, or sacrilege and who ruthlessly enforce the Way of Lolth. The Spider Queen foments unending chaos in drow society and sets the drow eternally at war with each other both for her own amuse-ment and to prevent complacency, runaway pride from asserting itself, or the rise of other faiths. Lolth is also venerated by chitines, a small spiderlike race that are castoffs of the drow.
+
+As Araushnee, Lolth was once a lesser power of the Seldarine and the consort of Corellon Larethian. She was the patron of artisans, the goddess of elven destiny, and-later, by Corellon's decree-the keeper of those elves who shared her darkly beautiful features. The Weaver of Destiny bore Corel-lon twin godlings-Vhaeraun and Eilistraee-before she turned against her lover and betrayed him. First she aided Gruumsh One-Eye, chief among the orcish gods, in one of his perennial battles with the Creator of the Elves, and then she set Malar on the trail of the weakened Corellon after observing the Beastlord defeat Herne on Faerun. When these plots failed as a result of Corellon's skill at arms and Sehanine's interference, Araushnee raised a host of hostile powers-the anti-Seldarine-to assault Arvandor. Despite the treachery of Araushnee, and to a lesser extent, Vhaeraun, the assault failed and the perfidy of Corellon's consort and son were revealed. By order of the Council of the Seldarine, Araushnee was transformed into a spider-shaped tanar'ri and banished to the Abyss.
+
+As an Abyssal Lord, Araushnee assumed the name Lolth and conquered a considerable portion of that foul plane, driving off Ghaunadaur and subjugating Kiaransalee in the process. The Spider Queen then turned her attentions toward corrupting the mortal children of the Seldarine and reclaiming her divinity. Lolth's attentions were drawn once again to Abeir-Toril by the intrusion of the moon elven heroine Kethryllia Amarillis into her domain, and the Spider Queen immediately began to cultivate followers among the most cruel and corrupt of Corellon's children in Faerun. In the centuries that followed, Lolth made great inroads among the warlike Ilythiiri, who had long since spread across the South conquering their kin- folk under the careful guidance of Vhaeraun, and to a lesser extent, Ghau- nadaur. Lolth's machinations among the elves culminated in the Crown Wars, and eventually, the descent of the drow into the Underdark, but by that time she had enmeshed most of the dark-skinned Ilythiiri, now drow, in her webs and engendered the death of countless elves and the destruction of much of elven civilization in Faerun.
+
+In the centuries since the Crown Wars, Lolth's followers have continued to spread throughout the Underdark, from Dusklyngh to T'lindhet and from Guallidurth to now-fallen V'elddrinnsshar. While other powers contest her rule, the Spider Queen's dominion over the dark elves continues to expand, albeit more slowly than before. Lolth's followers have been occupied with the conquest of the Underdark and the destruction of the faerie elves of the surface, and the Spider Queen has never ceased in her efforts to destroy the elven sanctuary of Evermeet.
+
+Since the Time of Troubles, Lolth has assumed additional aspects as two of her many stratagems to increase the ranks of her faithful and thus her own personal power. In the drow city of Menzoberranzan, in the Underdark beneath the North where Lolth-or Lloth, as she is known there-appeared during the Time of Troubles, the Spider Queen has allowed rumors to spread of a new demipower of chaos and assassins, Zinzerena the Hunted. While Zinzer-ena was once a legendary drow assassin and later an emerging demipower of a world other than Abeir-Toril, the Spider Queen recently slew Zinzerena-or at least banished her influence from the Realms-and assumed her aspect as a test to see if additional divine aspects increased or decreased the total (albeit fragmented) divine power available. In the Lands of Light, Lolth has long found that the deeply imbued racial antipathy of the surface elves toward the Spider Queen interferes with her attempts to seduce otherwise eminently corruptible individuals. With the death of Moander, always a more comprehensible (and tempting) force of evil to the nature-loving surface elves than the Spider Queen, Lolth has assumed the Darkbringer's aspect and portfolio of rotting death, decay, and corruption and revived its cult in a bid to add elven, half-elven, and human worshipers to the ranks of her faithful.
+
+Although the Spider Queen detests all the members of the Seldarine, Lolth reserves her deepest hatred for her former lover, Corellon Larethian, who banished her to the Abyss and named her tanar'ri. The Spider Queen particularly loathes Sehanine Moonbow, long her rival, for her part in foiling Lolth's bid to replace Corellon as head of the Seldarine. The Spider Queen has also vowed vengeance against Fenmarel Mestarine, who spurned her after initially falling to her seductions.
+
+Lolth is a cruel, capricious goddess, thought by many to be insane. She delights in setting her worshipers at each other's throats, so that the strongest, most devious and most cruel survive to serve her. Lolth roams the Realms often, appearing in answer to the rituals of drow priests, and working whatever harm she can to the enemies of drow. (During the Time of Troubles, Lolth appeared in the northern city of Menzoberranzan for a short period of time.) The Spider Queen secretly wants to be worshiped by humans and elves of other races on the surface Realms, and sometimes journeys among their communities, whispering of the power Lolth can bring. Lolth is malicious in her dealings and coldly vicious in a fight. She enjoys both personally dealing and causing death, destruction, and painful torture. Even more, Lolth enjoys corrupting elves and humans to her service. Lolth can be kind and render aid to those she fancies - but she really cares only for herself; her favor and aid can never be relied on. The Spider Queen enjoys the company of and can converse with spiders of all sorts.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
+Minor: Healing, Thought, Divination.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Immunity to poison.
+- Arachne are not harmed by spiders, unless if it is the desire of Lolth.
+- May use the Spiderwalk special ability once per day, starting at level 2.
+- May cast Dispel Magic once per day as a special ability, starting at level 5.
+- May cast Spider Spawn once per day as a special ability, starting at level 7.
+- May cast True Seeing once per day as a special ability, starting at level 10.
+- May cast Domination once per day as a special ability, starting at level 13.
+
+SPIDERWALK
+
+While this spell is active, the caster is immune to any sort of web, no matter its source (trap, spell or monster's special ability).~
+@5104 = ~Holy Symbol of Lolth~
+@5105 = ~Only the most worthy and devoted servants of the Spider Queen are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@5106 = ~Spiderwalk~
+@5107 = ~Spiderwalk
+(Alteration)
+
+Level: 1
+Sphere: Vermin
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When the Arachne casts this spell, Lolth's grace is bestowed upon the touched creature, allowing it to move freely through webs - no matter if they are natural or magical.~
+@5108 = ~Domination
+(Enchantment/Charm)
+
+Level: 5
+Sphere: Thought
+Range: Visual range of the caster
+Duration: 8 rounds
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+The Domination spell enables the caster to control the actions of any creature while the spell is in effect. This control is maintained through a telepathic link between the caster and the victim. Unlike the 4th-level priest spell Mental Domination, the target has no option for release, even if made to do something against his morals. This effect can only be reversed by Dispel Magic. The target is allowed a Saving Throw vs. Spell with a -2 penalty to negate the effect.
+
+Unlike the regular Domination spell, this version ignores elves' and half-elves' (of all races) racial resistance versus Charm.~
+@5109 = ~Domination
+(Enchantment/Charm)
+
+Level: 5
+Sphere: Thought
+Range: Visual range of the caster
+Duration: 15 rounds
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+Domination enables the caster to control the actions of any creature while the spell is in effect. This control is maintained through a telepathic link between the caster and the victim. Unlike the 4th-level priest spell Mental Domination, the target has no option for release, even if made to do something against <PRO_HISHER> morals, except, of course, Dispel Magic. The target gets a Save vs. Spell at -2 in order to avoid the effect.
+
+Unlike the regular Domination spell, this version ignores elves' and half-elves' (of all races) racial resistance versus Charm.~
 
 //EoF

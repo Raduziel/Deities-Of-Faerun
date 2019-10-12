@@ -1115,6 +1115,23 @@ This spell only affects somehow intelligent creatures (Intelligence score equal 
 
 ====================================================================================================================================================================
 
+30) LOLTH
+
+Spiderwalk
+(Alteration)
+
+Level: 1
+Sphere: Vermin
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When the Arachne casts this spell, Lolth's grace is bestowed upon the touched creature, allowing it to move freely through webs - no matter if they are natural or magical.
+
+====================================================================================================================================================================
+
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
@@ -1188,6 +1205,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Kelemvor: Helm
 
 - Lathander: Lathander
+
+- Lolth: Talos
 
 - Loviatar: Talos
 
