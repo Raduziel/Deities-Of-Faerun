@@ -1,4 +1,4 @@
-	//__________________________________________________________________________________
+//__________________________________________________________________________________
 //__________________________________________________________________________________
 //
 //						       Luckmaiden of Haela
@@ -56,16 +56,6 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RE
 
 COPY ~DeitiesOfFaerun/Spl/RAHAELF.eff~  override
 
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		103 104 105 106 107 BEGIN
-		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHael~)   parameter2 = 9 timing = 2 STR_VAR resource = ~RAHAELF~ END
-		  END
-		DEFAULT
-	END
-BUT_ONLY
-  
 //Shield
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHIELD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
