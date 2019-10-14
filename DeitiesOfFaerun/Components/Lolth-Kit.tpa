@@ -27,7 +27,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RALolt~
 		clascolr = ~135 47 136 183 66~
-		clsrcreq = ~0 0 0 0 0 0 0~
+		clsrcreq = ~0 1 0 0 0 0 0~
 END
 
 //Sphere
