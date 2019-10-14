@@ -303,38 +303,6 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resour
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
 
-//Control over summoned fiends (with Protection From Evil)
-
-<<<<<<<< .../inlined.baf
-
-IF
-!Allegiance(Myself,30)
-CheckSpellState(LastSummonerOf(Myself),1)
-THEN 
-RESPONSE #100
-SetInterrupt(FALSE)
-ChangeEnemyAlly(Myself,5)
-AttackReevaluate(NearestEnemyOf(Myself),30)
-SetInterrupt(TRUE)
-END
-
-IF
-Allegiance(Myself,30)
-!CheckSpellState(LastSummonerOf(Myself),1)
-THEN 
-RESPONSE #100
-SetInterrupt(FALSE)
-ChangeEnemyAlly(Myself,255)
-AttackReevaluate(NearestEnemyOf(Myself),30)
-SetInterrupt(TRUE)
-END
-
->>>>>>>>
-
-EXTEND_BOTTOM ~DEMGLASU.BCS~ ~.../inlined.baf~
-EXTEND_BOTTOM ~DEMNABSU.BCS~ ~.../inlined.baf~
-EXTEND_BOTTOM ~DEMPITSU.BCS~ ~.../inlined.baf~
-		
 /* Importing IWD Spells */
 
 ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
