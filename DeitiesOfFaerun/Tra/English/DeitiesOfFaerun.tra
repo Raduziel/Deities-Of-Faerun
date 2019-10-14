@@ -5396,7 +5396,7 @@ Armor: Any.
 Weapon: Any.
 
 Major: All, Protection, Combat, Creation, Earth, Trickery.
-Minor: Healing, Sun, Travelers.
+Minor: Healing, Sun, Thought, Travelers.
 
 Turn/Command Undead: Yes (see below).
 
@@ -5497,7 +5497,7 @@ Armor: Any.
 Weapon: Any.
 
 Major: All, Necromantic, Suffering, Vermin, Darkness, Summoning.
-Minor: Healing, Thought, Divination.
+Minor: Healing, Thought, Divination, Weave.
 
 Turn/Command Undead: Yes.
 
