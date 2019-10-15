@@ -1082,7 +1082,7 @@ Easy March
 
 Level: 5
 Sphere: Travelers 
-Range: 50 ft.
+Range: 0
 Duration: 5 days
 Casting Time: 10 
 Area of Effect: 15-ft. radius around the caster
@@ -1129,6 +1129,25 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When the Arachne casts this spell, Lolth's grace is bestowed upon the touched creature, allowing it to move freely through webs - no matter if they are natural or magical.
+
+====================================================================================================================================================================
+
+31) GRUUMSH
+
+Command the Horde
+(Enchantment/Charm)
+
+Level: 5
+Sphere: Vocal
+Range: 0
+Duration: 5 rounds/level
+Casting Time: 3
+Area of Effect: 30-ft. radius around the caster
+Saving Throw: Neg.
+
+This spell compels every evil orc, half-orc, orog or ogrillon around the Eye to blindly follow his orders unless a successful Saving Throw vs. Spell with a -2 penalty is made.
+
+A dominated critter will fight by the Eye's side no matter what happens, following him to death if commanded so.
 
 ====================================================================================================================================================================
 
@@ -1191,6 +1210,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Garagos: Talos
 
 - Garl: Helm
+
+- Gruumsh: Talos
 
 - Haela: Helm, Fighter
          
