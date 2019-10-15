@@ -5333,7 +5333,7 @@ The priest instills courage in the spell's recipients, raising their morale to i
 
 Level: 5
 Sphere: Travelers. 
-Range: 50 ft.
+Range: 0
 Duration: 5 days
 Casting Time: 10 
 Area of Effect: 15-ft. radius around the caster
@@ -5540,5 +5540,127 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When the Arachne casts this spell, Lolth's grace is bestowed upon the touched creature, allowing it to move freely through webs - no matter if they are natural or magical.~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                        Eye of Gruumsh
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@5201 = ~eye of gruumsh~
+@5202 = ~Eye of Gruumsh~
+@5203 = ~EYE OF GRUUMSH: Gruumsh (GROOMSH) is the undisputed head of the pantheon of the orcs. In pre-history, one or two now-unknown orc gods conspired to depose He-Who-Never-Sleeps, and were destroyed utterly. Since that time, Gruumsh has ruled the other orc gods with an iron grip. He is a fearsome, brutal god who revels in warfare, and ever seeks new territory for his race.
+
+This drive to acquire territory and living space is Gruumsh's greatest motivation. He has always felt cheated by the way the gods of humanity and demihumans divided up the world, casting aside orcs (and himself!) without any respect. Gruumsh drives his people relentlessly, through the work of his priests and shamans, to colonize new lands. And his deep and abiding hatred of the other gods ensures that he strives to achieve such dominion through warfare, constant and unceasing. Gruumsh tolerates no sign of peaceability from his people. Indeed, orcs have no word for "peace" in their language, only a guttural expletive which means, roughly, "temporary respite from strife".
+
+Gruumsh has an abiding hatred of Corellon Larethian for defeating him in battle. Orc religion denies that Gruumsh lost an eye to Corellon, as their story of "in the beginning..." demonstrates. They hold that Gruumsh was tricked and cheated by Corellon's magic and that the elf-god could not win a fair fight. Gruumsh seeks to have his people raze and destroy elvish homelands whenever possible. It is as well for the elves that they usually live in homelands far distant from the orc clans.
+
+But then, Gruumsh has an equally deep hatred of dwarves and their gods. The shamanic tales of how Gruumsh and the Elder Orcs fought for control of the mountains would weary the patience of any listener. Orcs desire mountains for their stark and barren quality; they are despoilers and love the bare and bleak. Still, they'll take whatever they can get, and a major strength of the race is their ability to survive almost anywhere.
+
+That property, too, is close to Gruumsh's heart. He and his priests weed out works who are sick, weak, lame, or unfit for the prosecution of war. Gruumsh is a harsh and lawful deity, and iron rule and weeding out the weak is a key element of orc thinking. Since males are physically stronger than females, females are usually relegated to the roles of child-rearing and making sure the warriors have food on the table after a hard day's pillaging and slaughter. "If Gruumsh intended females to be the equal of males he'd have given them bigger muscles" is a less brutish translation of an orcish saying among the warrior caste.
+
+Fortunately for the races of the Prime Material plane, much of Gruumsh's attention is taken up with the eternal battle of orc and goblin spirits in Hell, where he directs the warfare against them from his iron fortress. But Gruumsh is ever watchful over his race and is especially watchful for transgressions. 
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Suffering, Darkness, Combat, Earth, Divination.
+Minor: Creation, Summoning, Vocal.
+
+Turn/Command Undead: Yes (see below).
+
+Features:
+
+- Hit Dice: d10.
+- May achieve Mastery in Spears.
+- Commands Undead as a priest two levels lower.
+- Receives Attacks Per Round as if they were warriors.
+- +1 bonus to hit and damage rolls against elves and half-elves.
+- May cast Aid once per day as a special ability, starting at level 3.
+- Gains immunity to all Blindness effects and spells, starting at level 5.
+- May cast Blindness once per day as a special ability, starting at level 7.
+- May use the Command the Horde special ability once per day, starting at level 9.
+- May Enrage as a Berserker once per day, starting at level 11.
+
+
+COMMAND THE HORDE
+
+The Eye of Gruumsh may charm any evil critter with orcish blood in an area around him.~
+@5204 = ~Holy Symbol of Gruumsh~
+@5205 = ~Only the most worthy and devoted servants of the One-Eyed God are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@5206 = ~Gruumsh doesn't bestow his grace upon females.~
+@5207 = ~Command the Horde~
+@5208 = ~Command the Horde
+(Enchantment/Charm)
+
+Level: 5
+Sphere: Vocal
+Range: 0
+Duration: 5 rounds/level
+Casting Time: 3
+Area of Effect: 30-ft. radius around the caster
+Saving Throw: Neg.
+
+This spell compels every evil orc, half-orc, orog or ogrillon around the Eye to blindly follow his orders unless a successful Saving Throw vs. Spell with a -2 penalty is made.
+
+A dominated critter will fight by the Eye's side no matter what happens, following him to death if commanded so.~
+@5209 = ~Aid
+(Necromancy, Conjuration)
+
+Level: 2
+Sphere: Healing, Combat 
+Range: 0
+Duration: 1 round + 1 round/level 
+Casting Time: 5 
+Area of Effect: The caster 
+Saving Throw: None 
+
+The caster of this spell gains the benefits of a Bless spell (+1 to attack rolls and Saving Throws) and a special bonus of 1d8 additional Hit Points for the duration of the spell. The Aid spell enables the priest to actually have more Hit Points than his current maximum. The bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic.~
+@5210 = ~EYE OF GRUUMSH (F/C): Gruumsh (GROOMSH) is the undisputed head of the pantheon of the orcs. In pre-history, one or two now-unknown orc gods conspired to depose He-Who-Never-Sleeps, and were destroyed utterly. Since that time, Gruumsh has ruled the other orc gods with an iron grip. He is a fearsome, brutal god who revels in warfare, and ever seeks new territory for his race.
+
+This drive to acquire territory and living space is Gruumsh's greatest motivation. He has always felt cheated by the way the gods of humanity and demihumans divided up the world, casting aside orcs (and himself!) without any respect. Gruumsh drives his people relentlessly, through the work of his priests and shamans, to colonize new lands. And his deep and abiding hatred of the other gods ensures that he strives to achieve such dominion through warfare, constant and unceasing. Gruumsh tolerates no sign of peaceability from his people. Indeed, orcs have no word for "peace" in their language, only a guttural expletive which means, roughly, "temporary respite from strife".
+
+Gruumsh has an abiding hatred of Corellon Larethian for defeating him in battle. Orc religion denies that Gruumsh lost an eye to Corellon, as their story of "in the beginning..." demonstrates. They hold that Gruumsh was tricked and cheated by Corellon's magic and that the elf-god could not win a fair fight. Gruumsh seeks to have his people raze and destroy elvish homelands whenever possible. It is as well for the elves that they usually live in homelands far distant from the orc clans.
+
+But then, Gruumsh has an equally deep hatred of dwarves and their gods. The shamanic tales of how Gruumsh and the Elder Orcs fought for control of the mountains would weary the patience of any listener. Orcs desire mountains for their stark and barren quality; they are despoilers and love the bare and bleak. Still, they'll take whatever they can get, and a major strength of the race is their ability to survive almost anywhere.
+
+That property, too, is close to Gruumsh's heart. He and his priests weed out works who are sick, weak, lame, or unfit for the prosecution of war. Gruumsh is a harsh and lawful deity, and iron rule and weeding out the weak is a key element of orc thinking. Since males are physically stronger than females, females are usually relegated to the roles of child-rearing and making sure the warriors have food on the table after a hard day's pillaging and slaughter. "If Gruumsh intended females to be the equal of males he'd have given them bigger muscles" is a less brutish translation of an orcish saying among the warrior caste.
+
+Fortunately for the races of the Prime Material plane, much of Gruumsh's attention is taken up with the eternal battle of orc and goblin spirits in Hell, where he directs the warfare against them from his iron fortress. But Gruumsh is ever watchful over his race and is especially watchful for transgressions. 
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Suffering, Darkness, Combat, Earth, Divination.
+Minor: Creation, Summoning, Vocal.
+
+Turn/Command Undead: Yes (see below).
+
+Features:
+
+- Hit Dice: d10.
+- May achieve Mastery in Spears.
+- Commands Undead as a priest two levels lower.
+- +1 bonus to hit and damage rolls against elves and half-elves.
+- May cast Aid once per day as a special ability, starting at level 3.
+- Gains immunity to all Blindness effects and spells, starting at level 5.
+- May cast Blindness once per day as a special ability, starting at level 7.
+- May use the Command the Horde special ability once per day, starting at level 9.
+- May Enrage as a Berserker once per day, starting at level 11.
+
+
+COMMAND THE HORDE
+
+The Eye of Gruumsh may charm any evil critter with orcish blood in an area around him.~
 
 //EoF
