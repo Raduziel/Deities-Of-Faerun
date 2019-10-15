@@ -19,6 +19,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAELDA~)	BEGIN	~RAELDA~ => 0	~RAELDARC~ => 0										END	//	Eldath -> Lathander, Druid
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAGARA~)	BEGIN	~RAGARA~ => 0	~RAGARAFC~ => 0										END	//	Garagos	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAGARA~)	BEGIN	~RAGARL~ => 0	~RAGARLFC~ => 0										END	//	Garl	->	Helm
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAGRUU~)	BEGIN	~RAGRUU~ => 0	~RAGRUUFC~ => 0										END	//	Gruumsh	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAHAEL~)	BEGIN	~RAHAEL~ => 0	~RAHAELFC~ => 0										END	//	Haela	->	Helm, Fighter
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAHELM~)	BEGIN	~RAHELM~ => 0	~RAHELMFC~ => 0										END	//	Helm	->	Helm
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAHOAR~)	BEGIN	~RAHOAR~ => 0	~RAHOARFC~ => 0	~RAHOARCT~ => 0						END	//	Hoar	->	Helm
@@ -192,6 +193,7 @@
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~	RET	extend	negate	count	END	//	Cyric
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGARA~	RET	extend	negate	count	END	//	Garagos
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGARL~	RET	extend	negate	count	END	//	Garl
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGRUU~	RET	extend	negate	count	END	//	Gruumsh
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHAEL~	RET	extend	negate	count	END	//	Haela
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHELM~	RET	extend	negate	count	END	//	Helm
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAHOAR~	RET	extend	negate	count	END	//	Hoar
@@ -353,6 +355,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABESH~	RET	extend	negate	count	END	//	Beshaba
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~	RET	extend	negate	count	END	//	Cyric
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGARA~	RET	extend	negate	count	END	//	Garagos
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGRUU~	RET	extend	negate	count	END	//	Gruumsh
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALOLT~	RET	extend	negate	count	END	//	Lolth
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALOVI~	RET	extend	negate	count	END	//	Loviatar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMALA~	RET	extend	negate	count	END	//	Malar
@@ -421,6 +424,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RADENE~	RET	extend	negate	count	END	//	Deneir
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAELDA~	RET	extend	negate	count	END	//	Eldath
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGARA~	RET	extend	negate	count	END	//	Garagos
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGRUU~	RET	extend	negate	count	END	//	Gruumsh
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAILMA~	RET	extend	negate	count	END	//	Ilmater
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RALATH~	RET	extend	negate	count	END	//	Lathander
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAMART~	RET	extend	negate	count	END	//	Marthammor
