@@ -9,7 +9,7 @@ ALWAYS
 	INCLUDE ~DeitiesOfFaerun/Lib/Macros.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/KjeronReplaceDLG.tpa~
 	INCLUDE ~DeitiesOfFaerun/Lib/Spheres/F(x).tpa~
-	INCLUDE ~DeitiesOfFaerun/Lib/Multiclass/qd_multiclass.tpa~
+	INCLUDE ~DeitiesOfFaerun/Lib/qd_multiclass.tpa~
   
   
   ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.tpa~ BEGIN
