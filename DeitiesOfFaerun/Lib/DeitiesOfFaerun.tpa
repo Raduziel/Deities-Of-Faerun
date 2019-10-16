@@ -359,6 +359,14 @@ BUT_ONLY IF_EXISTS
 
 END
 
+//Compatibility for IWD Evasion and QD Multiclass
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~#EVASION.spl~ ~override/#EVADE.spl~
+
+END
+
 //Fix for an issue with the Flail of Ages
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
