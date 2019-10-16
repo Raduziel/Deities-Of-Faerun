@@ -35,7 +35,6 @@ LAF qd_multiclass
       kit_name = ~RASharCT~
       kit_clab = ~RASharCT~
       base_class = ~P~
-	  mc_dir = ~DeitiesOfFaerun/Lib/Multiclass~
 END
 
 //Sphere
