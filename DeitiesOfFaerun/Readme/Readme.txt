@@ -1149,6 +1149,8 @@ This spell compels every evil orc, half-orc, orog or ogrillon around the Eye to 
 
 A dominated critter will fight by the Eye's side no matter what happens, following him to death if commanded so.
 
+A deafened creature can't be affected by this spell
+
 ====================================================================================================================================================================
 
 

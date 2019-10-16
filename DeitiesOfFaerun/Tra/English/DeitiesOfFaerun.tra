@@ -5613,7 +5613,9 @@ Saving Throw: Neg.
 
 This spell compels every evil orc, half-orc, orog or ogrillon around the Eye to blindly follow his orders unless a successful Saving Throw vs. Spell with a -2 penalty is made.
 
-A dominated critter will fight by the Eye's side no matter what happens, following him to death if commanded so.~
+A dominated critter will fight by the Eye's side no matter what happens, following him to death if commanded so.
+
+A deafened creature can't be affected by this spell.~
 @5209 = ~Aid
 (Necromancy, Conjuration)
 
