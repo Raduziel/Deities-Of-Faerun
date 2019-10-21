@@ -673,6 +673,33 @@
 		~Time~ => 0
 		~Vocal~ => 0
 	END
+
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RACORE~) BEGIN
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 7
+		~Sun~ => 3
+		~Moon~ => 7
+		~Darkness~ => 0
+		~Thought~ => 3
+		~Combat~ => 7
+		~Creation~ => 7
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 0
+		~Fire~ => 0
+		~Divination~ => 3
+		~Travelers~ => 0
+		~Weave~ => 7
+		~Trickery~ => 0
+		~Time~ => 3
+		~Vocal~ => 0
+	END
 	
 		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RADENE~) BEGIN
 		~Healing~ => 7
