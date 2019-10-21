@@ -15,6 +15,7 @@
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RABESH~)	BEGIN	~RABESH~ => 0	~RABESHFC~ => 0	~RABESHCT~ => 0	 ~RABESHCM~ => 0	END	//	Beshaba	->	Talos
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RACLAN~)	BEGIN	~RACLAN~ => 0	~RACLANFC~ => 0										END	//	Clangeddin	->	Helm, Fighter
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RACYRI~)	BEGIN	~RACYRI~ => 0	~RACYRICT~ => 0										END	//	Cyric	->	Talos, Thief
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RACORE~)	BEGIN	~RACORE~ => 0	~RACOREMC~ => 0										END	//	Corellon ->	Lathander
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RADENE~)	BEGIN	~RADENE~ => 0	~RADENECM~ => 0										END	//	Deneir	->	Lathander, Wizard
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAELDA~)	BEGIN	~RAELDA~ => 0	~RAELDARC~ => 0										END	//	Eldath -> Lathander, Druid
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$SH(~RAGARA~)	BEGIN	~RAGARA~ => 0	~RAGARAFC~ => 0										END	//	Garagos	->	Talos
@@ -243,6 +244,7 @@
 //	Add Kits to Lathander's quest-line
 	OUTER_SPRINT negate ~~	OUTER_SPRINT extend ~~	OUTER_SET count = 0
 	//	Kit Headers	Begin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACORE~	RET	extend	negate	count	END	//	Corellon
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RADENE~	RET	extend	negate	count	END	//	Deneir
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAELDA~	RET	extend	negate	count	END	//	Eldath
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAILMA~	RET	extend	negate	count	END	//	Ilmater
@@ -307,6 +309,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABAER~	RET	extend	negate	count	END	//	Baervan
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACLAN~	RET	extend	negate	count	END	//	Clangeddin
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACORE~	RET	extend	negate	count	END	//	Corellon
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RADENE~	RET	extend	negate	count	END	//	Deneir
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAELDA~	RET	extend	negate	count	END	//	Eldath
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGARL~	RET	extend	negate	count	END	//	Garl
@@ -421,6 +424,7 @@ END
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABARA~	RET	extend	negate	count	END	//	Baravar
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RABESH~	RET	extend	negate	count	END	//	Beshaba
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACYRI~	RET	extend	negate	count	END	//	Cyric
+		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RACORE~	RET	extend	negate	count	END	//	Corellon
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RADENE~	RET	extend	negate	count	END	//	Deneir
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAELDA~	RET	extend	negate	count	END	//	Eldath
 		LAF	STRONGHOLD_STRING	INT_VAR	count	STR_VAR	negate extend kit = ~RAGARA~	RET	extend	negate	count	END	//	Garagos
