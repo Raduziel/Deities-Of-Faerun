@@ -3,7 +3,7 @@
 // For adding existing kits to the multiclass kit selection during chargen.
 // For use with the Enhanced Infinity Engine v2.0 and later.
 // Author: Aquadrizzt (updated by Subtledoctor, improved by Argent77)
-// Version: 0.9
+// Version: 0.10
 // Published: November 26, 2017
 //---------------------------------------------
 
@@ -281,7 +281,7 @@ END
 //---------------------------------------------------------------
 // QD_MULTICLASS (by Aquadrizzt, etc.)
 //---------------------------------------------------------------
-OUTER_SPRINT qd_multiclass#version "0.9"
+OUTER_SPRINT qd_multiclass#version "0.10"
 
 // All base class CLAB tables should exist before calling ADD_KIT
 ACTION_FOR_EACH resref IN ~CLABDR01~ ~CLABFI01~ ~CLABMA01~ ~CLABPR01~ ~CLABRN01~ ~CLABTH01~ BEGIN
@@ -342,126 +342,158 @@ BEGIN
     FAIL ~ERROR: Invalid or unsupported parent class of kit [%kit_name%]~
   END
 
-  // resolve base class type
-  ACTION_DEFINE_ASSOCIATIVE_ARRAY class_table BEGIN
-    ~DRUID~   => ~D~
-    ~FIGHTER~ => ~F~
-    ~MAGE~    => ~M~
-    ~CLERIC~  => ~P~
-    ~RANGER~  => ~R~
-    ~THIEF~   => ~T~
+  // determine whether "kit_clab" points to a base class table
+  OUTER_SET skip = 0
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY base_clabs BEGIN
+    ~DRUID~   => ~CLABDR01~
+    ~FIGHTER~ => ~CLABFI01~
+    ~MAGE~    => ~CLABMA01~
+    ~CLERIC~  => ~CLABPR01~
+    ~RANGER~  => ~CLABRN01~
+    ~THIEF~   => ~CLABTH01~
   END
-  ACTION_IF (~%base_class%~ STR_EQ ~~) BEGIN
-    // Determine automatically from parent class
-    OUTER_TEXT_SPRINT parent_class_name $multiclass_entries(~%parent_class_id%~)
-    OUTER_PATCH_SAVE base_class ~%parent_class_name%~ BEGIN REPLACE_TEXTUALLY ~_.*~ ~~ END
-  END
-  ACTION_TO_UPPER ~base_class~
-  ACTION_IF (IS_AN_INT ~base_class~) BEGIN
-    OUTER_PATCH ~~ BEGIN LOOKUP_IDS_SYMBOL_OF_INT base_class ~class~ base_class END
-  END
-  ACTION_IF (VARIABLE_IS_SET $class_table(~%base_class%~)) BEGIN
-    OUTER_TEXT_SPRINT base_class $class_table(~%base_class%~)
-  END ELSE ACTION_IF (STRING_LENGTH ~%base_class%~ != 1 OR
-                      INDEX(~%base_class%~ ~DFMPRT~) < 0) BEGIN
-    FAIL ~ERROR: Unsupported argument "base_class" [%base_class%]~
-  END
-
-  // create template EFF files for internal use
-  ACTION_IF (NOT FILE_EXISTS ~.../inlined/QD_MC_AP.EFF~) BEGIN
-    COPY - ~.../inlined/qd_blank.file~ ~.../inlined/QD_MC_AP.EFF~
-      INSERT_BYTES 0 0x110
-      WRITE_ASCII  0x00 "EFF V2.0EFF V2.0" (16)
-      PATCH_FOR_EACH ofs IN ~0x80~ ~0x84~ ~0x88~ ~0x8c~ BEGIN
-        WRITE_LONG ofs "-1"
+  OUTER_TEXT_SPRINT class_name $multiclass_entries(~%parent_class_id%~)
+  OUTER_PATCH ~%class_name%~ BEGIN
+    REPLACE_EVALUATE
+      ~[^_]+~
+      BEGIN
+        PATCH_IF (NOT skip && VARIABLE_IS_SET $base_clabs(~%MATCH0%~)) BEGIN
+          TEXT_SPRINT clab $base_clabs(~%MATCH0%~)
+          PATCH_IF (~%clab%~ STR_EQ ~%kit_clab%~) BEGIN
+            // no need to process entries from a base class clab: will be applied automatically by the engine
+            SET skip = 1
+          END
+        END
       END
-      WRITE_LONG   0x10 146 // cast spell
-      WRITE_LONG   0x14 2   // preset target
-      WRITE_LONG   0x20 1   // cast instantly (ignore level)
-      WRITE_SHORT  0x24 1   // permament until death
-      WRITE_SHORT  0x2c 100 // probability 100%
+      ~~
   END
 
-  ACTION_IF (NOT FILE_EXISTS ~.../inlined/QD_MC_GA.EFF~) BEGIN
-    COPY - ~.../inlined/qd_blank.file~ ~.../inlined/QD_MC_GA.EFF~
-      INSERT_BYTES 0 0x110
-      WRITE_ASCII  0x00 "EFF V2.0EFF V2.0" (16)
-      PATCH_FOR_EACH ofs IN ~0x80~ ~0x84~ ~0x88~ ~0x8c~ BEGIN
-        WRITE_LONG ofs "-1"
-      END
-      WRITE_LONG   0x10 171 // give spell
-      WRITE_LONG   0x14 2   // preset target
-      WRITE_SHORT  0x24 1   // permament until death
-      WRITE_SHORT  0x2c 100 // probability 100%
-  END
+  ACTION_IF (NOT skip) BEGIN
+    // resolve base class type
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY class_table BEGIN
+      ~DRUID~   => ~D~
+      ~FIGHTER~ => ~F~
+      ~MAGE~    => ~M~
+      ~CLERIC~  => ~P~
+      ~RANGER~  => ~R~
+      ~THIEF~   => ~T~
+    END
+    ACTION_IF (~%base_class%~ STR_EQ ~~) BEGIN
+      // Determine automatically from parent class
+      OUTER_TEXT_SPRINT parent_class_name $multiclass_entries(~%parent_class_id%~)
+      OUTER_PATCH_SAVE base_class ~%parent_class_name%~ BEGIN REPLACE_TEXTUALLY ~_.*~ ~~ END
+    END
+    ACTION_TO_UPPER ~base_class~
+    ACTION_IF (IS_AN_INT ~base_class~) BEGIN
+      OUTER_PATCH ~~ BEGIN LOOKUP_IDS_SYMBOL_OF_INT base_class ~class~ base_class END
+    END
+    ACTION_IF (VARIABLE_IS_SET $class_table(~%base_class%~)) BEGIN
+      OUTER_TEXT_SPRINT base_class $class_table(~%base_class%~)
+    END ELSE ACTION_IF (STRING_LENGTH ~%base_class%~ != 1 OR
+                        INDEX(~%base_class%~ ~DFMPRT~) < 0) BEGIN
+      FAIL ~ERROR: Unsupported argument "base_class" [%base_class%]~
+    END
 
-  // parse kit clab and assign abilities to spell effects
-  ACTION_IF (NOT ~%kit_clab%~ STR_EQ ~~ AND
-             FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~) BEGIN
-    ACTION_CLEAR_ARRAY ~token_cache~  // collects affected base class CLABs for later update
-    COPY_EXISTING ~%kit_clab%.2da~ ~override~
-      READ_2DA_ENTRIES_NOW rows 1
-      READ_2DA_ENTRY_FORMER rows 1 0 default
-      FOR (row = 3; row < rows; ++row) BEGIN
-        FOR (col = 1; VARIABLE_IS_SET $rows(~%row%~ ~%col%~); ++col) BEGIN
-          TEXT_SPRINT class_token ~%base_class%~
-          READ_2DA_ENTRY_FORMER rows row col ability
-          TO_UPPER ~ability~
-          PATCH_IF !(~%ability%~ STR_EQ ~%default%~) BEGIN
-            PATCH_IF (~%ability%~ STRING_MATCHES_REGEXP ~[DFMPRT]GA_.+~ = 0 ||
-                      ~%ability%~ STRING_MATCHES_REGEXP ~[DFMPRT]AP_.+~ = 0) BEGIN
-              // override base class
-              INNER_PATCH_SAVE ability ~%ability%~ BEGIN
-                READ_ASCII 0 class_token (1)
-                DELETE_BYTES 0 1
-              END
-            END
-            LPF SUBSTRING INT_VAR start = 0 length = 3 STR_VAR string = EVAL ~%ability%~ RET abil_type = substring END
-            SET length = (STRING_LENGTH ~%ability%~) - 3
-            LPF SUBSTRING INT_VAR start = 3 length STR_VAR string = EVAL ~%ability%~ RET abil_new = substring END
-            PATCH_IF (length < 8) BEGIN
-              DEFINE_ASSOCIATIVE_ARRAY abil_types BEGIN
-                ~AP_~ => ~QD_MC_AP~
-                ~GA_~ => ~QD_MC_GA~
-              END
-              PATCH_IF (VARIABLE_IS_SET $abil_types(~%abil_type%~)) BEGIN
-                // mark base class CLAB for update
-                SET $token_cache(~%class_token%~) = 1
+    // create template EFF files for internal use
+    ACTION_IF (NOT FILE_EXISTS ~.../inlined/QD_MC_AP.EFF~) BEGIN
+      COPY - ~.../inlined/qd_blank.file~ ~.../inlined/QD_MC_AP.EFF~
+        INSERT_BYTES 0 0x110
+        WRITE_ASCII  0x00 "EFF V2.0EFF V2.0" (16)
+        PATCH_FOR_EACH ofs IN ~0x80~ ~0x84~ ~0x88~ ~0x8c~ BEGIN
+          WRITE_LONG ofs "-1"
+        END
+        WRITE_LONG   0x10 146 // cast spell
+        WRITE_LONG   0x14 2   // preset target
+        WRITE_LONG   0x20 1   // cast instantly (ignore level)
+        WRITE_SHORT  0x24 1   // permament until death
+        WRITE_SHORT  0x2c 100 // probability 100%
+    END
 
-                // granted abilities or bonuses
-                TEXT_SPRINT qdmc_eff_resref $abil_types(~%abil_type%~)
-                INNER_ACTION BEGIN
-                  COPY ~.../inlined/%qdmc_eff_resref%.EFF~ ~override/%abil_new%#.EFF~
-                    WRITE_ASCIIE 0x30 ~%abil_new%~ (8)
-                    SET col_length = STRING_LENGTH ~%col%~
-                  ACTION_IF (col < 10) BEGIN
-                    OUTER_TEXT_SPRINT qdmc_spl_resref ~QD_MC%class_token%0%col%~
-                  END ELSE BEGIN
-                    OUTER_TEXT_SPRINT qdmc_spl_resref ~QD_MC%class_token%%col%~
+    ACTION_IF (NOT FILE_EXISTS ~.../inlined/QD_MC_GA.EFF~) BEGIN
+      COPY - ~.../inlined/qd_blank.file~ ~.../inlined/QD_MC_GA.EFF~
+        INSERT_BYTES 0 0x110
+        WRITE_ASCII  0x00 "EFF V2.0EFF V2.0" (16)
+        PATCH_FOR_EACH ofs IN ~0x80~ ~0x84~ ~0x88~ ~0x8c~ BEGIN
+          WRITE_LONG ofs "-1"
+        END
+        WRITE_LONG   0x10 171 // give spell
+        WRITE_LONG   0x14 2   // preset target
+        WRITE_SHORT  0x24 1   // permament until death
+        WRITE_SHORT  0x2c 100 // probability 100%
+    END
+
+    // parse kit clab and assign abilities to spell effects
+    ACTION_IF (NOT ~%kit_clab%~ STR_EQ ~~ AND
+               FILE_EXISTS_IN_GAME ~%kit_clab%.2DA~) BEGIN
+      ACTION_CLEAR_ARRAY ~token_cache~  // collects affected base class CLABs for later update
+      COPY_EXISTING ~%kit_clab%.2da~ ~override~
+        READ_2DA_ENTRIES_NOW rows 1
+        READ_2DA_ENTRY_FORMER rows 1 0 default
+        FOR (row = 3; row < rows; ++row) BEGIN
+          FOR (col = 1; VARIABLE_IS_SET $rows(~%row%~ ~%col%~); ++col) BEGIN
+            TEXT_SPRINT class_token ~%base_class%~
+            READ_2DA_ENTRY_FORMER rows row col ability
+            TO_UPPER ~ability~
+            PATCH_IF !(~%ability%~ STR_EQ ~%default%~) BEGIN
+              PATCH_IF (~%ability%~ STRING_MATCHES_REGEXP ~[DFMPRT]GA_.+~ = 0 ||
+                        ~%ability%~ STRING_MATCHES_REGEXP ~[DFMPRT]AP_.+~ = 0) BEGIN
+                // override base class
+                INNER_PATCH_SAVE ability ~%ability%~ BEGIN
+                  READ_ASCII 0 class_token (1)
+                  DELETE_BYTES 0 1
+                END
+              END
+              PATCH_IF (STRING_LENGTH ~%ability%~ > 3) BEGIN
+                LPF SUBSTRING INT_VAR start = 0 length = 3 STR_VAR string = EVAL ~%ability%~ RET abil_type = substring END
+                SET length = (STRING_LENGTH ~%ability%~) - 3
+                LPF SUBSTRING INT_VAR start = 3 length STR_VAR string = EVAL ~%ability%~ RET abil_new = substring END
+                PATCH_IF (length < 8) BEGIN
+                  DEFINE_ASSOCIATIVE_ARRAY abil_types BEGIN
+                    ~AP_~ => ~QD_MC_AP~
+                    ~GA_~ => ~QD_MC_GA~
                   END
-                  LAF QD_ENSURE_QDMC_SPL STR_VAR base_class = EVAL ~%class_token%~ END
-                  COPY_EXISTING ~%qdmc_spl_resref%.SPL~ ~override~
-                    LPF ADD_SPELL_EFFECT
-                      INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = kit_id parameter2 = 9
-                      STR_VAR resource = EVAL ~%abil_new%#~
+                  PATCH_IF (VARIABLE_IS_SET $abil_types(~%abil_type%~)) BEGIN
+                    // mark base class CLAB for update
+                    SET $token_cache(~%class_token%~) = 1
+
+                    // granted abilities or bonuses
+                    TEXT_SPRINT qdmc_eff_resref $abil_types(~%abil_type%~)
+                    INNER_ACTION BEGIN
+                      COPY ~.../inlined/%qdmc_eff_resref%.EFF~ ~override/%abil_new%#.EFF~
+                        WRITE_ASCIIE 0x30 ~%abil_new%~ (8)
+                        SET col_length = STRING_LENGTH ~%col%~
+                      ACTION_IF (col < 10) BEGIN
+                        OUTER_TEXT_SPRINT qdmc_spl_resref ~QD_MC%class_token%0%col%~
+                      END ELSE BEGIN
+                        OUTER_TEXT_SPRINT qdmc_spl_resref ~QD_MC%class_token%%col%~
+                      END
+                      LAF QD_ENSURE_QDMC_SPL STR_VAR base_class = EVAL ~%class_token%~ END
+                      COPY_EXISTING ~%qdmc_spl_resref%.SPL~ ~override~
+                        LPF ADD_SPELL_EFFECT
+                          INT_VAR insert_point = 0 opcode = 177 target = 1 timing = 9 resist_dispel = 0 power = 0 parameter1 = kit_id parameter2 = 9
+                          STR_VAR resource = EVAL ~%abil_new%#~
+                        END
                     END
+                  END ELSE BEGIN
+                    PATCH_WARN ~WARNING: Could not evaluate kit ability entry [%ability%]. Skipping.~
+                  END
+                END ELSE BEGIN
+                  PATCH_WARN ~WARNING: Internal ability name too long [%abil_new%]. Skipping.~
                 END
               END ELSE BEGIN
                 PATCH_WARN ~WARNING: Could not evaluate kit ability entry [%ability%]. Skipping.~
               END
-            END ELSE BEGIN
-              PATCH_WARN ~WARNING: Internal ability name too long [%abil_new%]. Skipping.~
             END
           END
         END
-      END
-    BUT_ONLY
+      BUT_ONLY
 
-    // make all marked base class CLABs multiclass-ready
-    ACTION_PHP_EACH token_cache AS token => _ BEGIN
-      LAF QD_ENSURE_BASE_CLAB STR_VAR base_class = EVAL ~%token%~ RET success clab_resref END
+      // make all marked base class CLABs multiclass-ready
+      ACTION_PHP_EACH token_cache AS token => _ BEGIN
+        LAF QD_ENSURE_BASE_CLAB STR_VAR base_class = EVAL ~%token%~ RET success clab_resref END
+      END
+    END ELSE BEGIN
+      WARN ~WARNING: Could not find kit ability table [%kit_clab%.2da]. Skipping.~
     END
-  END ELSE BEGIN
-    WARN ~WARNING: Could not find kit ability table [%kit_clab%.2da]. Skipping.~
   END
 END
