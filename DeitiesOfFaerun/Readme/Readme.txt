@@ -1153,6 +1153,22 @@ A deafened creature can't be affected by this spell
 
 ====================================================================================================================================================================
 
+32) CORELLON
+
+Sixth Sense
+(Divination)
+
+Level: 1
+Sphere: Divination
+Range: 0
+Duration: 3 turns
+Casting Time: 10
+Area of Effect: The caster
+Saving Throw: None
+
+This spell imbues the Feywarden with a sixth sense, alerting <PRO_HIMHER> of unexpected danger to <PRO_HIMHER>self. Although the exact nature of the threat is never revealed, the priest does realize that something dangerous is about to occur a moment before the event unfolds. While so protected, the cleric receives a +3 bonus to AC vs. Missile Weapons, Initiative and Saving Throw vs. Breath Weapons.
+
+====================================================================================================================================================================
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
@@ -1204,6 +1220,8 @@ Some kits will be able to get strongholds non-related to the cleric's one (as li
 - Clangeddin: Helm, Fighter
                                                                 
 - Cyric: Talos, Thief
+
+- Corellon: Lathander
 
 - Deneir: Lathander, Wizard
 
