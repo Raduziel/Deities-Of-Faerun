@@ -61,6 +61,20 @@ LPF CLONE_EFFECT  INT_VAR silent = 1 match_opcode = 169 match_parameter2 = 1 par
 
 END
 
+//Fix for Larloch's Minor Drain
+
+ACTION_FOR_EACH spell IN ~SPWI119A~ ~SPIN104A~ BEGIN
+
+ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
+
+COPY_EXISTING ~%spell%.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 3 END
+BUT_ONLY
+
+END
+
+END
+
 //Elemental Changes
 
 COPY_EXISTING_REGEXP ~.*\.cre~ override
