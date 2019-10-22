@@ -5663,4 +5663,98 @@ COMMAND THE HORDE
 
 The Eye of Gruumsh may charm any evil critter with orcish blood in an area around him.~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Feywarden of Corellon
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@5301 = ~feywarden of corellon~
+@5302 = ~Feywarden of Corellon~
+@5303 = ~FEYWARDEN OF CORELLON: The leader of the elven pantheon, Corellon Larethian (CORE-ehlon Lah-RETH-ee-yen), is said to have given birth to the entire elven race, although sometimes Sehanine (or Angharradh) is given credit as well. Elven lore states that the Fair Folk sprang from drops of blood Corellon shed in epic battles with Gruumsh mingled with Sehanine's (or Angharradh's) tears. The Creator of the Elves embodies the highest ideals of elvenkind, and he is the patron of most aesthetic endeavors, including art, magic, music, poetry, and warfare. He is venerated by all the Fair Folk, except the drow and those who have turned to Lolth, Ghaunadaur, Vhaeraun, and other dark powers. Corellon is especially popular with elf and half-elf mages, musicians, and poets.
+
+As ruler of the Seldarine, Corellon has a strong relationship with almost all the other elven powers, including Eilistraee, his daughter by Araushnee (Lolth), whom he reluctantly banished from Arvandor along with her mother at the Dark Maiden's insistence. Either Sehanine or Angharradh is now said to be Corellon's consort, depending on the subrace of the speaker, and the Protector works closely with the Goddess of Moonlight and the Triune Goddess in their dual aspects. Only Fenmarel Mestarine is somewhat estranged from the Coronal of Arvandor, and the Lone Wolf's differences with Corellon are not all that great. The Creator of the Elves has forged strong alliances with the leaders of the other demihuman pantheons in the face of the seemingly endless waves of human expansion and the ever-present threat of the monstrous populations and their dark powers, as well as with the good- and neutral-aligned powers of the humans. The Protector works closely with Mystra, the Mother of All Magic. Whereas the Lady of Mysteries governs the Weave, Corellon oversees elven magic, particularly elven High Magic, and the intimate connection between the Fair Folk and the mantle of magic that envelops the world. (More information on elven High Magic is found in the Cormanthyr: Empire of the Elves sourcebook.) Corellon's epic battle with Gruumsh One-Eye, leader of the orc pantheon, is legendary, and the pair of pantheistic patriarchs ave never reached a lasting truce in their never-ending battle over territory. Malar's relentless attacks on the Seldarine and the Fair Folk have likewise earned him Corellon's eternal enmity. The rift between Corellon and his former lover Araushnee, now known as Lolth, is still as bitter as the day he banished the Spider Queen to the Abyss and named her tanar'ri. The Protector's rift with his errant son Vhaeraun is nearly as deep, and the Protector has despaired of the Masked Lord ever repenting of his evil ways. In his vigilant defense of elves and their homelands, Corellon has earned the enmity of countless powers whose worshipers seek to seize the forests, magic, or wealth of the Fair Folk.
+
+Corellon is a powerful warrior god whose hands protect his creations with the gentleness of a sculptor and the unspeakable power of a master swordswinger. While other deities may reflect the joy, delights, and accomplishments of the Fair Folk, Corellon stands as an ever-vigilant watcher over them. His life spirit flows from and into the elves and their lands, and while mortal elves daydream and enter the reverie, Corellon never abandons his watchfulness. Only when it is time for the Fair Folk to pass from Faerun to Arvandor does he finally cease watching over each elf and allows Sehanine to take a larger role in caring for them. Corellon frequently wanders the elven lands and borders in disguise (often in the form of one of the diminutive sylvan race), observing the actions of priests and craftsfolk and defending elven homelands from interlopers. Though his martial might is swift and terrible, the soft-spoken Creator of the Elves is ever humble and always open to learning something new, one of his sources of might. He enjoys discovering new philosophies of thought and new methods of action, even from mortals, and he has a keen interest in other cultures.
+
+Corellon's primary servitors are identical twin spirits, Lashrael and Felarathael. Held by some of the Fair Folk, particularly gold elves, to be demipowers in their own right, Corellon's messengers are solars who resemble tall, shining, androgynous elves clad in gleaming white robes. They are most often seen delivering messages for the Protector in the Realms, and they are also dispatched to defend elves if they are threatened. The two have distinctive personalities, however. Lashrael is given to emotional extremes. When delivering a message, Lashrael speaks with great conviction, and depending upon the message, enormous joy or sorrow. In battle, Lashrael is ferocious, neither asking nor giving quarter. Felarathael, on the other hand, is the very image of rational detachment, treating all situations with logic and calm reason. Felarathael always speaks in a slow, measured, but immensely reassuring voice, and fights with unhurried skill. When Lashrael or Felarathael strike a victim in combat, they may inflict one of the following effects in lieu of damage: victim steeps (no saving throw allowed), victim is randomly teleported 1d10 miles, victim is polymorphed into a woodland animal, or victim suffers from amnesia.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Healing, Protection, Moon, Combat, Creation, Weave.
+Minor: Sun, Thought, Divination, Time.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Gains a bonus of +1 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
+- May use the Sixth Sense special ability once per day, starting at level 1.
+- May cast Faerie Fire once per day as a special ability, starting at level 3.
+- May cast Cat's Grace once per day as a special ability, starting at level 5.
+- Gains a further bonus of +2 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
+- May cast Enchanted Weapon once per day as a special ability, starting at level 10.
+- May cast Prismatic Spray once per day as a special ability, starting at level 13.
+- May cast Sunray once per day as a special ability, starting at level 15.
+
+SIXTH SENSE
+
+The Feywarden enchances <PRO_HISHER> awareness about the events that surrounds <PRO_HIMHER> gaining bonus to react to them.~
+@5304 = ~Holy Symbol of Corellon~
+@5305 = ~Only the most worthy and devoted servants of the Coronal of Arvandor are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@5306 = ~Sixth Sense~
+@5307 = ~Sixth Sense
+(Divination)
+
+Level: 1
+Sphere: Divination
+Range: 0
+Duration: 3 turns
+Casting Time: 10
+Area of Effect: The caster
+Saving Throw: None
+
+This spell imbues the Feywarden with a sixth sense, alerting <PRO_HIMHER> of unexpected danger to <PRO_HIMHER>self. Although the exact nature of the threat is never revealed, the priest does realize that something dangerous is about to occur a moment before the event unfolds. While so protected, the cleric receives a +3 bonus to AC vs. Missile Weapons, Initiative and Saving Throw vs. Breath Weapons.~
+@5308 = ~FEYWARDEN OF CORELLON (F/C/M): The leader of the elven pantheon, Corellon Larethian (CORE-ehlon Lah-RETH-ee-yen), is said to have given birth to the entire elven race, although sometimes Sehanine (or Angharradh) is given credit as well. Elven lore states that the Fair Folk sprang from drops of blood Corellon shed in epic battles with Gruumsh mingled with Sehanine's (or Angharradh's) tears. The Creator of the Elves embodies the highest ideals of elvenkind, and he is the patron of most aesthetic endeavors, including art, magic, music, poetry, and warfare. He is venerated by all the Fair Folk, except the drow and those who have turned to Lolth, Ghaunadaur, Vhaeraun, and other dark powers. Corellon is especially popular with elf and half-elf mages, musicians, and poets.
+
+As ruler of the Seldarine, Corellon has a strong relationship with almost all the other elven powers, including Eilistraee, his daughter by Araushnee (Lolth), whom he reluctantly banished from Arvandor along with her mother at the Dark Maiden's insistence. Either Sehanine or Angharradh is now said to be Corellon's consort, depending on the subrace of the speaker, and the Protector works closely with the Goddess of Moonlight and the Triune Goddess in their dual aspects. Only Fenmarel Mestarine is somewhat estranged from the Coronal of Arvandor, and the Lone Wolf's differences with Corellon are not all that great. The Creator of the Elves has forged strong alliances with the leaders of the other demihuman pantheons in the face of the seemingly endless waves of human expansion and the ever-present threat of the monstrous populations and their dark powers, as well as with the good- and neutral-aligned powers of the humans. The Protector works closely with Mystra, the Mother of All Magic. Whereas the Lady of Mysteries governs the Weave, Corellon oversees elven magic, particularly elven High Magic, and the intimate connection between the Fair Folk and the mantle of magic that envelops the world. (More information on elven High Magic is found in the Cormanthyr: Empire of the Elves sourcebook.) Corellon's epic battle with Gruumsh One-Eye, leader of the orc pantheon, is legendary, and the pair of pantheistic patriarchs ave never reached a lasting truce in their never-ending battle over territory. Malar's relentless attacks on the Seldarine and the Fair Folk have likewise earned him Corellon's eternal enmity. The rift between Corellon and his former lover Araushnee, now known as Lolth, is still as bitter as the day he banished the Spider Queen to the Abyss and named her tanar'ri. The Protector's rift with his errant son Vhaeraun is nearly as deep, and the Protector has despaired of the Masked Lord ever repenting of his evil ways. In his vigilant defense of elves and their homelands, Corellon has earned the enmity of countless powers whose worshipers seek to seize the forests, magic, or wealth of the Fair Folk.
+
+Corellon is a powerful warrior god whose hands protect his creations with the gentleness of a sculptor and the unspeakable power of a master swordswinger. While other deities may reflect the joy, delights, and accomplishments of the Fair Folk, Corellon stands as an ever-vigilant watcher over them. His life spirit flows from and into the elves and their lands, and while mortal elves daydream and enter the reverie, Corellon never abandons his watchfulness. Only when it is time for the Fair Folk to pass from Faerun to Arvandor does he finally cease watching over each elf and allows Sehanine to take a larger role in caring for them. Corellon frequently wanders the elven lands and borders in disguise (often in the form of one of the diminutive sylvan race), observing the actions of priests and craftsfolk and defending elven homelands from interlopers. Though his martial might is swift and terrible, the soft-spoken Creator of the Elves is ever humble and always open to learning something new, one of his sources of might. He enjoys discovering new philosophies of thought and new methods of action, even from mortals, and he has a keen interest in other cultures.
+
+Corellon's primary servitors are identical twin spirits, Lashrael and Felarathael. Held by some of the Fair Folk, particularly gold elves, to be demipowers in their own right, Corellon's messengers are solars who resemble tall, shining, androgynous elves clad in gleaming white robes. They are most often seen delivering messages for the Protector in the Realms, and they are also dispatched to defend elves if they are threatened. The two have distinctive personalities, however. Lashrael is given to emotional extremes. When delivering a message, Lashrael speaks with great conviction, and depending upon the message, enormous joy or sorrow. In battle, Lashrael is ferocious, neither asking nor giving quarter. Felarathael, on the other hand, is the very image of rational detachment, treating all situations with logic and calm reason. Felarathael always speaks in a slow, measured, but immensely reassuring voice, and fights with unhurried skill. When Lashrael or Felarathael strike a victim in combat, they may inflict one of the following effects in lieu of damage: victim steeps (no saving throw allowed), victim is randomly teleported 1d10 miles, victim is polymorphed into a woodland animal, or victim suffers from amnesia.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Healing, Protection, Moon, Combat, Creation, Weave.
+Minor: Sun, Thought, Divination, Time.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- Gains a bonus of +1 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
+- May use the Sixth Sense special ability once per day, starting at level 1.
+- May cast Faerie Fire once per day as a special ability, starting at level 3.
+- May cast Cat's Grace once per day as a special ability, starting at level 5.
+- Gains a further bonus of +2 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
+- May cast Enchanted Weapon once per day as a special ability, starting at level 10.
+- May cast Prismatic Spray once per day as a special ability, starting at level 13.
+- May cast Sunray once per day as a special ability, starting at level 15.
+
+SIXTH SENSE
+
+The Feywarden enchances <PRO_HISHER> awareness about the events that surrounds <PRO_HIMHER> gaining bonus to react to them.~
+
 //EoF
