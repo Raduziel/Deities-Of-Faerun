@@ -332,7 +332,7 @@ LAF	ADD_SPLPROT INT_VAR	stat = 36  value = 18 relation = 3	                 RET 
 LAF	ADD_SPLPROT INT_VAR	stat = 259 value = STR_CHECK2 relation = MIXED_CHECK RET FINAL_CHECK = new_row END
 
 COPY_EXISTING ~%spell_res%.spl~ override SAY UNIDENTIFIED_DESC @9999310 SAY DESC @9999310
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter2 = FINAL_CHECKS76 STR_VAR insert_point = 0 resource = EVAL ~%spell_res%~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter2 = FINAL_CHECK STR_VAR insert_point = 0 resource = EVAL ~%spell_res%~ END
 
 END
 
@@ -348,7 +348,7 @@ LAF	ADD_SPLPROT INT_VAR	stat = 36  value = 18 relation = 3	                 RET 
 LAF	ADD_SPLPROT INT_VAR	stat = 259 value = STR_CHECK2 relation = MIXED_CHECK RET FINAL_CHECK = new_row END
 
 COPY_EXISTING ~%spell_res%.spl~ override SAY UNIDENTIFIED_DESC @9999311 SAY DESC @9999311
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter2 = FINAL_CHECKS75 STR_VAR insert_point = 0 resource = EVAL ~%spell_res%~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter2 = FINAL_CHECK STR_VAR insert_point = 0 resource = EVAL ~%spell_res%~ END
 
 END
 
