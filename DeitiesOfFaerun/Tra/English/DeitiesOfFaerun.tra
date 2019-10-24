@@ -5693,7 +5693,7 @@ Features:
 - May use the Sixth Sense special ability once per day, starting at level 1.
 - May cast Faerie Fire once per day as a special ability, starting at level 3.
 - May cast Cat's Grace once per day as a special ability, starting at level 5.
-- Gains a further bonus of +2 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death.
+- Gains a further bonus of +2 to <PRO_HISHER> Saving Throws vs. Paralyzation/Poison/Death, starting at level 5.
 - May cast Enchanted Weapon once per day as a special ability, starting at level 10.
 - May cast Prismatic Spray once per day as a special ability, starting at level 13.
 - May cast Sunray once per day as a special ability, starting at level 15.
@@ -5755,6 +5755,6 @@ Features:
 
 SIXTH SENSE
 
-The Feywarden enchances <PRO_HISHER> awareness about the events that surrounds <PRO_HIMHER> gaining bonus to react to them.~
+The Feywarden enhances <PRO_HISHER> awareness about the events that surround <PRO_HIMHER> gaining a bonus to react to them.~
 
 //EoF
