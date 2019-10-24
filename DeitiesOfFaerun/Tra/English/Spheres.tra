@@ -1922,5 +1922,17 @@ Saving Throw: None
 When this spells is cast, the priest effectively draws on the strength of <PRO_HISHER> god and lends it to the target creature, in effect creating a champion. The target gains a bonus to <PRO_HISHER> THAC0 at a rate of 1 for every 3 levels of the caster. So a 9th level priest would confer a THAC0 bonus of 3 to the target, and so on. Also the target's Strength is set to 18/00 for the duration of the spell, unless it is already higher.
 
 The drawback to this is that the priest must concentrate on the connection between the target and <PRO_HISHER> god for the duration of the spell, hence losing the ability to cast any spells during this time. The effect lasts for 3 rounds for every level of the caster or until dispelled.~
+	@9999315 = ~Cat's Grace~
+	@9999316 = ~Cat's Grace
+(Alteration)
 
+Level: 2
+Range: Touch
+Duration: 1 hour/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell magically increases a target's Dexterity. The amount depends on the target's class: Rogues gain 1d8 points, warriors and wizards gain 1d6 points, and priests gain 1d4 points. If a character has more than one class, the larger die is used. Cat's Grace cannot raise a target's Dexterity past 20.~
+	@9999317 = ~Dexterity Modification~
 // EoF
