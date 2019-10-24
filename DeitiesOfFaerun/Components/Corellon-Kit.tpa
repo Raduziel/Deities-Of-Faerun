@@ -1,0 +1,209 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Feywarden of Corellon
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RACore~
+    ~RACore 0 0 0 0 1 1 0 1~
+    ~RACore 0 0 0 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RACore 11 3 3 11 9 3~
+	~RACore 0 0 0 0 0 0~
+	~RACore 11 3 3 11 9 3~
+    ~RACore 11 3 3 11 9 3~
+	~RACore 0 0 0 0 0 0 1 0 0~
+	~RACore 1 0 1 0 0 0~
+	~DeitiesOfFaerun/Tables/RACore.2da~
+	~K_C_HE K_C_E~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT18 SHLD25 HELM03 * RING29 RING31 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * SW1H31 BOW12 *~
+	SAY @5301
+	SAY @5302
+	SAY @5303
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RACore~
+		clascolr = ~82 46 24 84 83~
+		clsrcreq = ~0 0 0 1 1 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RACORE~  clabfile = ~RACORE~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSCORE.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSCORE~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSCORE.itm~ SAY NAME1 @5304 SAY NAME2 @5304 SAY DESC @5305
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RACore + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~CORES~
+WRITE_ASCII 0x058 ~COREL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RACoreF.spl~ override
+
+//Sixth Sense
+
+COPY ~DeitiesOfFaerun/Spl/RACore1.bam~ override
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@5307) STR_VAR bam_file = RACORE1 RET iconsixt = icon END	
+COPY ~DeitiesOfFaerun/Spl/RACORE1.spl~ override
+SAY NAME1 @5306 SAY NAME2 @5306 SAY UNIDENTIFIED_DESC @5307 SAY DESC @5307 
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconsixt END
+
+//Cat's Grace
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CATS_GRACE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CATS_GRACE~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RACORE2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999315) STR_VAR bam_file = RACATSIC RET iconcats = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225.spl~ 2 2 WIZARD_CATS_GRACE
+SAY NAME1 @9999315 SAY NAME2 @9999315 SAY UNIDENTIFIED_DESC @9999316 SAY DESC @9999316
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~ END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT       INT_VAR match_opcode = 139 match_parameter1 = 14024 parameter1 = RESOLVE_STR_REF(@9999317) END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 142 match_parameter2 = 185 parameter2 = iconcats END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RACORE2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Faerie Fire
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RADUZIEL_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RADUZIEL_FAERIE_FIRE~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RACORE3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_FAERIE_FIRE~ RET spell_res END
+
+APPEND ~hidespl.2da~ ~%spell_res%  1 0 0~
+
+END
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/FAERIFI.PRO~
+
+OUTER_SET RA_Faerie = RESOLVE_STR_REF(@9999306)
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116.spl~ 1 1 CLERIC_RADUZIEL_FAERIE_FIRE
+SAY NAME1 @9999306 SAY NAME2 @9999306 SAY UNIDENTIFIED_DESC @9999307 SAY DESC @9999307
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER INT_VAR target = 4 STR_VAR icon = EVAL ~%spell_res%B~ END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %FAERIFI% END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource   = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 parameter1 = EVAL ~%RA_Faerie%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RACORE3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Enchanted Weapon
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ENCHANTED_WEAPON[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ENCHANTED_WEAPON~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RACORE4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
+
+//Prismatic Spray
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PRISMATIC_SPRAY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PRISMATIC_SPRAY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RACORE5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
+  
+//Sunray
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SUNRAY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SUNRAY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RACORE6.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RACore.2da~ ~override/RACoreFM.2da~
+SET_2DA_ENTRY 7 25 50 ~AP_RAFMCOR~
+SET_2DA_ENTRY 3  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//BAM
+
+ACTION_FOR_EACH file IN ~CORES~ ~COREL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~CORESIXT~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+
+//EoF
