@@ -1860,5 +1860,67 @@ Area of Effect: 12-ft. radius
 Saving Throw: 1/2
 
 This spell unleashes an acidic downpour on the area of effect, doing 1d4 points of acid damage each round for the first three rounds, 1d6 points for the next three rounds, and 1d8 points for each round thereafter. Moving out of the area of effect does not stop the damage—the acid adheres to the skin, and any creatures in the area of effect when Acid Storm is cast continue to suffer acid damage as long as the spell duration lasts. Creatures make a Save vs. Spell every round after they have been hit by the cloud—if successful, they only take half damage (for that round only).~
+	@9999310 = ~Strength of One
+(Alteration)
+
+Level: 3
+Sphere: Combat
+Range: 0
+Duration: 7 rounds
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, party members within the area of effect are given a Strength score of 18/76, unless their score is already higher. The spell lasts for 7 rounds, whereupon everyone's Strength returns to normal.~
+	@9999311 = ~Strength of One
+(Alteration)
+
+Level: 3
+Sphere: Combat
+Range: 0 
+Duration: 1 turn 
+Casting Time: 3 
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, party members within the area of effect are given a Strength score of 18/75, unless their score is already higher. The spell lasts for 1 turn, whereupon everyone's Strength returns to normal.~
+	@9999312 = ~Holy Power
+(Evocation)
+
+Level: 4
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength is set to 18/00 — unless it is already higher — <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
+	@9999313 = ~Champion's Strength
+(Alteration)
+
+Level: 5
+Sphere: Combat
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, the priest effectively draws on the strength of <PRO_HISHER> deity and lends it to the target creature, in effect creating a champion. The target's Strength is set to 20 – 23 for 1 turn (25% chance of each value), unless it is already higher. As soon as the spell is cast, the caster becomes fatigued, suffering a penalty to all <PRO_HISHER> rolls. The drawback to this spell is that the priest must concentrate on the connection between the target and <PRO_HISHER> deity for the duration of the spell, hence losing the ability to cast any additional spells during this time. The effect lasts for one turn or until dispelled.~
+	@9999314 = ~Champion's Strength
+(Alteration)
+
+Level: 5 
+Sphere: Combat
+Range: Visual range of the caster
+Duration: 3 rounds/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None 
+
+When this spells is cast, the priest effectively draws on the strength of <PRO_HISHER> god and lends it to the target creature, in effect creating a champion. The target gains a bonus to <PRO_HISHER> THAC0 at a rate of 1 for every 3 levels of the caster. So a 9th level priest would confer a THAC0 bonus of 3 to the target, and so on. Also the target's Strength is set to 18/00 for the duration of the spell, unless it is already higher.
+
+The drawback to this is that the priest must concentrate on the connection between the target and <PRO_HISHER> god for the duration of the spell, hence losing the ability to cast any spells during this time. The effect lasts for 3 rounds for every level of the caster or until dispelled.~
 
 // EoF
