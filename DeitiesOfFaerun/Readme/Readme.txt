@@ -1422,7 +1422,8 @@ A kit may have either major or minor access to a sphere. Major access means that
 
 [Animal]
 
-1 - Infravision
+1 - Cat's Grace
+    Infravision
 
 2 - Alicorn Lance
     Beast Claw
