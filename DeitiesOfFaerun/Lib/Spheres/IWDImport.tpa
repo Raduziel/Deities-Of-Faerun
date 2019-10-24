@@ -2335,6 +2335,25 @@ COPY ~DeitiesofFaerun/Lib/Spheres/Import/AcidStorm/SPWI724C.BAM~	~override\%spel
 
 END
 
+//Cat's Grace
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_CATS_GRACE[ %TAB%%WNL%$]~) BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999315) STR_VAR bam_file = RACATSIC RET iconcats = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225.spl~ 2 2 WIZARD_CATS_GRACE
+SAY NAME1 @9999315 SAY NAME2 @9999315 SAY UNIDENTIFIED_DESC @9999316 SAY DESC @9999316
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~ END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT       INT_VAR match_opcode = 139 match_parameter1 = 14024 parameter1 = RESOLVE_STR_REF(@9999317) END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 142 match_parameter2 = 185 parameter2 = iconcats END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225C.BAM~	~override\%spell_res%C.BAM~
+
+END
+
 END
 
 /*Spell Fixes and Improvements */
