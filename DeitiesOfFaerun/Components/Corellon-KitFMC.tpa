@@ -1,0 +1,59 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					  Feywarden of Corellon - Fighter/Mage/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RACoreFM~
+    ~RACoreFM 0 0 0 0 1 1 0 1~
+    ~RACoreFM 0 0 0 0 1 1 0 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RACoreFM 11 3 3 11 9 3~
+	~RACoreFM 0 0 0 0 0 0~
+	~RACoreFM 11 3 3 11 9 3~
+    ~RACoreFM 11 3 3 11 9 3~
+	~RACoreFM 0 0 0 0 0 0 1 0 0~
+	~RACoreFM 0 0 0 0 0 0~
+	~override/RACoreFM.2da~
+	~K_FMC_HE K_FMC_E~
+	~0x00000000 17~
+	~FMC~
+	~CLCK15 SHLD25 HELM03 * RING29 RING31 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * SW1H31 BOW12 *~
+	SAY @5301
+	SAY @5302
+	SAY @5308
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RACoreFM~
+		clascolr = ~82 46 24 84 83~
+		clsrcreq = ~0 0 0 1 1 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RACoreFM~
+      kit_clab = ~RACoreFM~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RACoreFM%	classID = 17 STR_VAR	kitname = ~RACORE~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFMCOR.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACoreFM~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACoreFM.itm~ SAY NAME1 @5304 SAY NAME2 @5304 SAY DESC @5305
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RACoreFM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~CORES~
+WRITE_ASCII 0x058 ~COREL~
+
+//EoF

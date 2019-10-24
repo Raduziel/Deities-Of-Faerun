@@ -53,28 +53,28 @@ WRITE_ASCII 0x058 ~LATHL~
 
 COPY ~DeitiesOfFaerun/Spl/RALATHF.spl~ override
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FAERIE_FIRE~	RET	spell_res	END
+//Faerie Fire
 
-ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/FAERIFI.PRO~
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RADUZIEL_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RADUZIEL_FAERIE_FIRE~	RET	spell_res	END
 
 COPY_EXISTING ~%spell_res%.spl~	~override/RALATH1.spl~
-SAY UNIDENTIFIED_DESC @9999307 SAY DESC @9999307
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER INT_VAR target = 4 STR_VAR icon = EVAL ~%spell_res%B~ END
-LPF ALTER_SPELL_HEADER INT_VAR projectile = %FAERIFI% END
 LPM ~SPELL_TO_INNATE~
 
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116C.BAM~	~override\%spell_res%C.BAM~
-
 END ELSE BEGIN
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_FAERIE_FIRE~ RET spell_res END
+
+APPEND ~hidespl.2da~ ~%spell_res%  1 0 0~
+
+END
 
 ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/FAERIFI.PRO~
 
 OUTER_SET RA_Faerie = RESOLVE_STR_REF(@9999306)
 
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116.spl~ 1 1 CLERIC_FAERIE_FIRE
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116.spl~ 1 1 CLERIC_RADUZIEL_FAERIE_FIRE
 SAY NAME1 @9999306 SAY NAME2 @9999306 SAY UNIDENTIFIED_DESC @9999307 SAY DESC @9999307
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
@@ -86,7 +86,7 @@ LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 paramet
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116C.BAM~	~override\%spell_res%C.BAM~
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RALATH1.spl~
+COPY_EXISTING ~%spell_res%.spl~	~override/RALATH1.spl~
 LPM ~SPELL_TO_INNATE~
 
 END
