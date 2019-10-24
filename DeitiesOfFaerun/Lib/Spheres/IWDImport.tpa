@@ -317,6 +317,90 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resour
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI595~ insert_point = 0 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPWI596~ insert_point = 0 END
 
+//Preventing Strength of One, Holy Power and Champion's Strength from reducing a creature's Strength
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_STRENGTH_OF_ONE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STRENGTH_OF_ONE~	RET	spell_res	END
+
+LAF	ADD_SPLPROT INT_VAR	stat = 36  value = 18 relation = 5	                 RET STR_CHECK1  = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 37  value = 76 relation = 2	                 RET EXSTR_CHECK = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 260 value = STR_CHECK1 relation = EXSTR_CHECK RET MIXED_CHECK = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 36  value = 18 relation = 3	                 RET STR_CHECK2  = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 259 value = STR_CHECK2 relation = MIXED_CHECK RET FINAL_CHECK = new_row END
+
+COPY_EXISTING ~%spell_res%.spl~ override SAY UNIDENTIFIED_DESC @9999310 SAY DESC @9999310
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter2 = FINAL_CHECKS76 STR_VAR insert_point = 0 resource = EVAL ~%spell_res%~ END
+
+END
+
+END ELSE BEGIN
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_STRENGTH_OF_ONE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STRENGTH_OF_ONE~	RET	spell_res	END
+
+LAF	ADD_SPLPROT INT_VAR	stat = 36  value = 18 relation = 5	                 RET STR_CHECK1  = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 37  value = 75 relation = 2	                 RET EXSTR_CHECK = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 260 value = STR_CHECK1 relation = EXSTR_CHECK RET MIXED_CHECK = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 36  value = 18 relation = 3	                 RET STR_CHECK2  = new_row END
+LAF	ADD_SPLPROT INT_VAR	stat = 259 value = STR_CHECK2 relation = MIXED_CHECK RET FINAL_CHECK = new_row END
+
+COPY_EXISTING ~%spell_res%.spl~ override SAY UNIDENTIFIED_DESC @9999311 SAY DESC @9999311
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter2 = FINAL_CHECKS75 STR_VAR insert_point = 0 resource = EVAL ~%spell_res%~ END
+
+END
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLY_POWER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLY_POWER~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override SAY UNIDENTIFIED_DESC @9999312 SAY DESC @9999312
+LPF	DELETE_EFFECT	 INT_VAR match_opcode = 44 END
+LPF	DELETE_EFFECT	 INT_VAR match_opcode = 97 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 1 duration = 1 parameter1 = 19 parameter2 = 124 STR_VAR insert_point = ~-1~ resource = EVAL ~%spell_res%~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 54 opcode = 44 parameter1 = 18  STR_VAR insert = ~last~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 54 opcode = 97 parameter1 = 100 STR_VAR insert = ~last~ END
+
+END
+
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CHAMPIONS_STRENGTH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CHAMPIONS_STRENGTH~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override SAY UNIDENTIFIED_DESC @9999313 SAY DESC @9999313
+LPF	DELETE_EFFECT	 INT_VAR match_opcode = 44 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter1 = 23 parameter2 = 124 probability1 = 100 probability2 = 76 STR_VAR insert_point = ~-1~ resource = EVAL ~%spell_res%~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 142 opcode = 44                  parameter1 = 23 parameter2 = 1   probability1 = 100 probability2 = 76 STR_VAR insert = ~last~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter1 = 22 parameter2 = 124 probability1 = 75  probability2 = 51 STR_VAR insert_point = ~-1~ resource = EVAL ~%spell_res%~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 142 opcode = 44                  parameter1 = 22 parameter2 = 1   probability1 = 75  probability2 = 51 STR_VAR insert = ~last~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter1 = 21 parameter2 = 124 probability1 = 50  probability2 = 26 STR_VAR insert_point = ~-1~ resource = EVAL ~%spell_res%~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 142 opcode = 44                  parameter1 = 21 parameter2 = 1   probability1 = 50  probability2 = 26 STR_VAR insert = ~last~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter1 = 20 parameter2 = 124 probability1 = 25  probability2 =  0 STR_VAR insert_point = ~-1~ resource = EVAL ~%spell_res%~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 142 opcode = 44                  parameter1 = 20 parameter2 = 1   probability1 = 25  probability2 =  0 STR_VAR insert = ~last~  END
+
+END
+
+END ELSE BEGIN
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CHAMPIONS_STRENGTH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CHAMPIONS_STRENGTH~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ override SAY UNIDENTIFIED_DESC @9999314 SAY DESC @9999314
+LPF	DELETE_EFFECT	 INT_VAR match_opcode = 44 END
+LPF	DELETE_EFFECT	 INT_VAR match_opcode = 97 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 duration = 1 parameter1 = 19 parameter2 = 124 STR_VAR insert_point = ~-1~ resource = EVAL ~%spell_res%~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 142 opcode = 44 parameter1 = 18  parameter2 = 1 STR_VAR insert = ~last~ END
+LPF CLONE_EFFECT     INT_VAR match_opcode = 142 opcode = 97 parameter1 = 100 parameter2 = 1 STR_VAR insert = ~last~ END
+
+END
+
+END
+
 /* Importing IWD Spells */
 
 ACTION_IF ((!GAME_IS ~iwdee~) AND ((!MOD_IS_INSTALLED ~spells/SetUp-spells.tp2~ ~0~) OR (!MOD_IS_INSTALLED ~Iwdification/setup-iwdification.tp2~ ~0~))) BEGIN
