@@ -27,7 +27,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RACoreFM~
 		clascolr = ~82 46 24 84 83~
-		clsrcreq = ~0 0 0 1 1 0 0~
+		clsrcreq = ~0 1 1 0 0 0 0~
 END
 
 LAF qd_multiclass

@@ -27,7 +27,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RACore~
 		clascolr = ~82 46 24 84 83~
-		clsrcreq = ~0 0 0 1 1 0 0~
+		clsrcreq = ~0 1 1 0 0 0 0~
 END
 
 //Sphere
@@ -57,7 +57,7 @@ COPY ~DeitiesOfFaerun/Spl/RACoreF.spl~ override
 
 COPY ~DeitiesOfFaerun/Spl/RACore1.bam~ override
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@5307) STR_VAR bam_file = RACORE1 RET iconsixt = icon END	
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@5306) STR_VAR bam_file = RACORE1 RET iconsixt = icon END	
 COPY ~DeitiesOfFaerun/Spl/RACORE1.spl~ override
 SAY NAME1 @5306 SAY NAME2 @5306 SAY UNIDENTIFIED_DESC @5307 SAY DESC @5307 
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconsixt END
