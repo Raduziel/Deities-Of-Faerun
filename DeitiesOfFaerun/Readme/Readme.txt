@@ -2117,7 +2117,7 @@ Subtledoctor and Grammarsalad also deserve a big thank you. When I approached th
 
 CrevsDaak's guide "[How to] Making kit mods for the EE!" made this kitpack possible. To be honest, made possible that I started modding. Thanks!
 
-CamDawg's SPELL_TO_INNATE helped me a lot in this process. His guide to modding strongholds and the code that I turned into SPELL_TO_KIT_FEATURE where very helpful too. So thanks.
+CamDawg's SPELL_TO_INNATE helped me a lot in this process. His guide to modding strongholds and the code that I turned into SPELL_TO_FEATURE where very helpful too. So thanks.
 
 Gwendolyne was fundamental to make this kitpack have so many BAMs. Thank you!
 
