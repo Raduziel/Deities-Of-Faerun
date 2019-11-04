@@ -2192,4 +2192,64 @@
 		~Vocal~ => 0
 	END
 	
+	//Semiticgod's Cleric/Druid/Mage
+	
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~USCDW1~) BEGIN
+		~All~ => 7 
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 7
+		~Vermin~ => 7
+		~Plant~ => 7
+		~Protection~ => 7
+		~Sun~ => 3
+		~Moon~ => 3
+		~Darkness~ => 0
+		~Thought~ => 7
+		~Combat~ => 7
+		~Creation~ => 3
+		~Summoning~ => 0
+		~Air~ => 7
+		~Water~ => 7
+		~Earth~ => 7
+		~Fire~ => 3
+		~Divination~ => 7
+		~Travelers~ => 3
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 0
+	END
+	
+	//Semiticgod's Druid/Mage
+	
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~USCDW2~) BEGIN
+		~All~ => 7 
+		~Healing~ => 3
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 7
+		~Vermin~ => 7
+		~Plant~ => 7
+		~Protection~ => 0
+		~Sun~ => 3
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 0
+		~Combat~ => 0
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 7
+		~Water~ => 7
+		~Earth~ => 7
+		~Fire~ => 3
+		~Divination~ => 0
+		~Travelers~ => 0
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 0
+	END	
+	
 //EoF
