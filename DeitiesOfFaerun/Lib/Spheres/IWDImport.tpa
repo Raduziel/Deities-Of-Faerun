@@ -68,7 +68,7 @@ ACTION_FOR_EACH spell IN ~SPWI119A~ ~SPIN104A~ BEGIN
 ACTION_IF FILE_EXISTS_IN_GAME ~%spell%.spl~ THEN BEGIN
 
 COPY_EXISTING ~%spell%.spl~ override
-LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = 3 END
+LPF ALTER_EFFECT INT_VAR match_opcode = 12 special = BIT0 END
 BUT_ONLY
 
 END
