@@ -522,12 +522,12 @@ Target is put to sleep and suffers 1d10 points of magic damage unless a Saving T
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//						        Alaghar of Clangeddin
+//						        Alaghor of Clangeddin
 //__________________________________________________________________________________
 //__________________________________________________________________________________
-@501 = ~alaghar of clangeddin~
-@502 = ~Alaghar of Clangeddin~
-@503 = ~ALAGHAR OF CLANGEDDIN: Clangeddin Silverbeard (CLAN-gehd-din SIHL-vur-beerd) is the Father of Battle and primary dwarven war god. All dwarves who must fight, especially dwarves who are warriors by profession, worship Clangeddin, their patron and exultant leader in war. The Father of Battle is the deity of choice among lawful neutral dwarven warriors.
+@501 = ~alaghor of clangeddin~
+@502 = ~Alaghor of Clangeddin~
+@503 = ~ALAGHOR OF CLANGEDDIN: Clangeddin Silverbeard (CLAN-gehd-din SIHL-vur-beerd) is the Father of Battle and primary dwarven war god. All dwarves who must fight, especially dwarves who are warriors by profession, worship Clangeddin, their patron and exultant leader in war. The Father of Battle is the deity of choice among lawful neutral dwarven warriors.
 
 Clangeddin watches over the battle-skills and performances of dwarves from his mountain fortress in Arcadia. He encourages valor in battle, weapon-mastery and training, and wisdom in war, and most often manifests his powers to further these aims. Clangeddin is concerned with war as a way of life and is very different from Moradin in this respect. The aptly named Father of Battle especially hates giants and has taught the dwarves - and the gnomes, through their gods - special ways of fighting giant-type creatures.
 
@@ -562,7 +562,7 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@506 = ~ALAGHAR OF CLANGEDDIN (F/C): Clangeddin Silverbeard (CLAN-gehd-din SIHL-vur-beerd) is the Father of Battle and primary dwarven war god. All dwarves who must fight, especially dwarves who are warriors by profession, worship Clangeddin, their patron and exultant leader in war. The Father of Battle is the deity of choice among lawful neutral dwarven warriors.
+@506 = ~ALAGHOR OF CLANGEDDIN (F/C): Clangeddin Silverbeard (CLAN-gehd-din SIHL-vur-beerd) is the Father of Battle and primary dwarven war god. All dwarves who must fight, especially dwarves who are warriors by profession, worship Clangeddin, their patron and exultant leader in war. The Father of Battle is the deity of choice among lawful neutral dwarven warriors.
 
 Clangeddin watches over the battle-skills and performances of dwarves from his mountain fortress in Arcadia. He encourages valor in battle, weapon-mastery and training, and wisdom in war, and most often manifests his powers to further these aims. Clangeddin is concerned with war as a way of life and is very different from Moradin in this respect. The aptly named Father of Battle especially hates giants and has taught the dwarves - and the gnomes, through their gods - special ways of fighting giant-type creatures.
 
