@@ -1214,6 +1214,33 @@
 		~Vocal~ => 0
 	END
 	
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAMORA~) BEGIN
+		~Healing~ => 3
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 7
+		~Sun~ => 0
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 3
+		~Combat~ => 7
+		~Creation~ => 7
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 7
+		~Fire~ => 3
+		~Divination~ => 3
+		~Travelers~ => 0
+		~Weave~ => 0
+		~Trickery~ => 0
+		~Time~ => 0
+		~Vocal~ => 7
+	END
+	
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~RAMYRK~) BEGIN
 		~Healing~ => 3
 		~Necromantic~ => 7
