@@ -5757,4 +5757,102 @@ SIXTH SENSE
 
 The Feywarden enhances <PRO_HISHER> awareness about the events that surround <PRO_HIMHER> gaining a bonus to react to them.~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	   		                 Sonnlinor of Moradin
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+@5401 = ~sonnlinor of moradin~
+@5402 = ~Sonnlinor of Moradin~
+@5403 = ~SONNLINOR OF MORADIN: Moradin (MOAR-uh-din) is the creator god of the dwarven race and leader of the Morndinsamman. He is said to have created all dwarves, forging them from metals and gems in the fires that lie at the "heart of the world," and breathing life-the first dwarven souls-into the cooling forms. All dwarves appease Moradin, even if they do not wholeheartedly support him. Lawful good dwarves support and work openly to serve the Soul Forger, even if they also worship another deity. His name is invoked by dwarves involved in smithwork or craftsmanship of any sort, and they give him homage by doing their best work and seeking to emulate his stonework and craftsmanship. Moradin is said to inspire dwarven inventions and seeks constantly to improve the race-increasing dwarven good nature, intelligence, and ability to exist in harmony with other living things. At the same time, he battles the pride and isolationist tendencies that occur naturally in his elite creations. 
+
+Moradin is held by many dwarven creation myths to have been incarnated from rock, stone, and metal, with his soul eternally present in the form of fire. That same fire fueled the forge in which Moradin created the Stout Folk and, in some myths, Moradin breathes fire over the first dwarves to bring them to life.
+
+The Soul Forger rules the other dwarven deities sternly, and only his wife, Berronar Truesilver, can regularly bring a smile to his face. In some dwarven realms, the Soul Forger is said to be the father of Dumathoin, Abbathor, Laduguer, Clangeddin, Sharindlar, Diirinka, Vergadain, Thard Harr, Gorm Gulthyn, Marthammor Duin, and Dugmaren Brightmantle, but the exact relationships and ordering vary from culture to culture. It is the All-Father who banished Deep Duerra, Laduguer, Diirinka, Diinkarazan, and their followers, smiting them with his hammer and driving them forth. If Abbathor is ever banished, it will be at the Soul Forger's command. Moradin loathes Gruumsh, Maglubiyet, and the other goblinkin deities (those of the ores, goblins, hobgoblins, bugbears, kobolds, and urds), and he detests the evil giant deities as well. His gruff and uncompromising nature wins him few friends outside the dwarven pantheon, but he is said to be close with Cyrrollalee, Garl Glittergold, Flandal Steelskin, Gond, Helm, Kossuth, Tyr, and Torm, and enjoys a strategic alliance with Yondalla and Corellon Larethian. Moradin has little patience for the elven powers, but he has worked effectively with them in the past when it was necessary.
+
+Moradin is a stern and uncompromising defender of the dwarven people and of the principles of law and good. Moradin is a harsh but fair judge. He judges dwarves on their achievements and the success of their endeavors, not just on their good hearts. The Soul Forger is strength and force of will embodied; his weapons, armor, and tools are virtual extensions of his own incarnate being. Moradin seldom appears in the Realms, preferring to work through manifestations rather than avatars. His usual reason for intervention in either form is to encourage dwarves to follow the correct path or make the best decision at a critical time. He also intervenes to aid or inspire dwarves who may serve the race in the future, or to aid or encourage nondwarves who aid the dwarves.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Combat, Creation, Earth, Protection, Vocal.
+Minor: Fire, Divination, Healing, Thought.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- May cast Command once per day as a special ability, starting at level 1.
+- May cast Spiritual Hammer once per day as a special ability, starting at level 3.
+- May cast Dispel Magic once per day as a special ability, starting at level 5.
+- May use the Stonefire special ability once per day, starting at level 7.
+- May cast True Seeing four times per day as a special ability, starting at level 10.
+- May cast Flame Strike once per day as a special ability, starting at level 10.
+- May cast Defensive Harmony once per day as a special ability, starting at level 13.
+- May cast Aura of Flaming Death once per day as a special ability, starting at level 15.
+
+STONEFIRE
+
+The Sonnlinor touches a target with a heated stone that causes fire damage and creates a white smoke that burns any creature around the caster.~
+@5404 = ~Holy Symbol of Moradin~
+@5405 = ~Only the most worthy and devoted servants of the Soul Forger are granted these powerful holy symbols.
+	
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Turn Undead Level: +1
+– Decrease spellcasting time by 1
+– Can memorize one extra divine spell from level 1 to 7
+
+Weight: 0~
+@5406 = ~Stonefire~
+@5407 = ~Stonefire
+(Alteration)
+
+Level: 4
+Sphere: Earth, Fire
+Range: Touch
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: 30-ft. radius around the target
+Saving Throw: Special
+
+When casting this spell the priest touches the target with an incandescent stone.
+
+This touch is very painful, causing 4d4 of fire damage and creates a white smoke that burns all the creatures around the target (and also the target) but the Sonnlinor.
+
+This smoke causes 2d6 points of fire damage and persists until the end of the spell. The creature touched by the stone must succeed in a Saving Throw vs. Death or be unconscious for one round.~
+@5408 = ~SONNLINOR OF MORADIN (F/C): Moradin (MOAR-uh-din) is the creator god of the dwarven race and leader of the Morndinsamman. He is said to have created all dwarves, forging them from metals and gems in the fires that lie at the "heart of the world," and breathing life-the first dwarven souls-into the cooling forms. All dwarves appease Moradin, even if they do not wholeheartedly support him. Lawful good dwarves support and work openly to serve the Soul Forger, even if they also worship another deity. His name is invoked by dwarves involved in smithwork or craftsmanship of any sort, and they give him homage by doing their best work and seeking to emulate his stonework and craftsmanship. Moradin is said to inspire dwarven inventions and seeks constantly to improve the race-increasing dwarven good nature, intelligence, and ability to exist in harmony with other living things. At the same time, he battles the pride and isolationist tendencies that occur naturally in his elite creations. 
+
+Moradin is held by many dwarven creation myths to have been incarnated from rock, stone, and metal, with his soul eternally present in the form of fire. That same fire fueled the forge in which Moradin created the Stout Folk and, in some myths, Moradin breathes fire over the first dwarves to bring them to life.
+
+The Soul Forger rules the other dwarven deities sternly, and only his wife, Berronar Truesilver, can regularly bring a smile to his face. In some dwarven realms, the Soul Forger is said to be the father of Dumathoin, Abbathor, Laduguer, Clangeddin, Sharindlar, Diirinka, Vergadain, Thard Harr, Gorm Gulthyn, Marthammor Duin, and Dugmaren Brightmantle, but the exact relationships and ordering vary from culture to culture. It is the All-Father who banished Deep Duerra, Laduguer, Diirinka, Diinkarazan, and their followers, smiting them with his hammer and driving them forth. If Abbathor is ever banished, it will be at the Soul Forger's command. Moradin loathes Gruumsh, Maglubiyet, and the other goblinkin deities (those of the ores, goblins, hobgoblins, bugbears, kobolds, and urds), and he detests the evil giant deities as well. His gruff and uncompromising nature wins him few friends outside the dwarven pantheon, but he is said to be close with Cyrrollalee, Garl Glittergold, Flandal Steelskin, Gond, Helm, Kossuth, Tyr, and Torm, and enjoys a strategic alliance with Yondalla and Corellon Larethian. Moradin has little patience for the elven powers, but he has worked effectively with them in the past when it was necessary.
+
+Moradin is a stern and uncompromising defender of the dwarven people and of the principles of law and good. Moradin is a harsh but fair judge. He judges dwarves on their achievements and the success of their endeavors, not just on their good hearts. The Soul Forger is strength and force of will embodied; his weapons, armor, and tools are virtual extensions of his own incarnate being. Moradin seldom appears in the Realms, preferring to work through manifestations rather than avatars. His usual reason for intervention in either form is to encourage dwarves to follow the correct path or make the best decision at a critical time. He also intervenes to aid or inspire dwarves who may serve the race in the future, or to aid or encourage nondwarves who aid the dwarves.
+
+Armor: Any.
+Weapon: Any.
+
+Major: All, Combat, Creation, Earth, Protection, Vocal.
+Minor: Fire, Divination, Healing, Thought.
+
+Turn/Command Undead: Yes.
+
+Features:
+
+- May cast Command once per day as a special ability, starting at level 1.
+- May cast Spiritual Hammer once per day as a special ability, starting at level 3.
+- May cast Dispel Magic once per day as a special ability, starting at level 5.
+- May use the Stonefire special ability once per day, starting at level 7.
+- May cast True Seeing four times per day as a special ability, starting at level 10.
+- May cast Flame Strike once per day as a special ability, starting at level 10.
+- May cast Defensive Harmony once per day as a special ability, starting at level 13.
+- May cast Aura of Flaming Death once per day as a special ability, starting at level 15.
+
+STONEFIRE
+
+The Sonnlinor touches a target with a heated stone that causes fire damage and creates a white smoke that burns and chokes any creature around the caster.~
+
 //EoF
