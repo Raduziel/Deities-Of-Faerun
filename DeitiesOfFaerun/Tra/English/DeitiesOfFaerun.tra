@@ -5493,6 +5493,8 @@ Although the Spider Queen detests all the members of the Seldarine, Lolth reserv
 
 Lolth is a cruel, capricious goddess, thought by many to be insane. She delights in setting her worshipers at each other's throats, so that the strongest, most devious and most cruel survive to serve her. Lolth roams the Realms often, appearing in answer to the rituals of drow priests, and working whatever harm she can to the enemies of drow. (During the Time of Troubles, Lolth appeared in the northern city of Menzoberranzan for a short period of time.) The Spider Queen secretly wants to be worshiped by humans and elves of other races on the surface Realms, and sometimes journeys among their communities, whispering of the power Lolth can bring. Lolth is malicious in her dealings and coldly vicious in a fight. She enjoys both personally dealing and causing death, destruction, and painful torture. Even more, Lolth enjoys corrupting elves and humans to her service. Lolth can be kind and render aid to those she fancies - but she really cares only for herself; her favor and aid can never be relied on. The Spider Queen enjoys the company of and can converse with spiders of all sorts.
 
+Only females can join Lolth's clergy.
+
 Armor: Any.
 Weapon: Any.
 
@@ -5560,6 +5562,8 @@ But then, Gruumsh has an equally deep hatred of dwarves and their gods. The sham
 That property, too, is close to Gruumsh's heart. He and his priests weed out works who are sick, weak, lame, or unfit for the prosecution of war. Gruumsh is a harsh and lawful deity, and iron rule and weeding out the weak is a key element of orc thinking. Since males are physically stronger than females, females are usually relegated to the roles of child-rearing and making sure the warriors have food on the table after a hard day's pillaging and slaughter. "If Gruumsh intended females to be the equal of males he'd have given them bigger muscles" is a less brutish translation of an orcish saying among the warrior caste.
 
 Fortunately for the races of the Prime Material plane, much of Gruumsh's attention is taken up with the eternal battle of orc and goblin spirits in Hell, where he directs the warfare against them from his iron fortress. But Gruumsh is ever watchful over his race and is especially watchful for transgressions. 
+
+Only males can join Gruumsh's clergy.
 
 Armor: Any.
 Weapon: Any.
@@ -5773,6 +5777,8 @@ The Soul Forger rules the other dwarven deities sternly, and only his wife, Berr
 
 Moradin is a stern and uncompromising defender of the dwarven people and of the principles of law and good. Moradin is a harsh but fair judge. He judges dwarves on their achievements and the success of their endeavors, not just on their good hearts. The Soul Forger is strength and force of will embodied; his weapons, armor, and tools are virtual extensions of his own incarnate being. Moradin seldom appears in the Realms, preferring to work through manifestations rather than avatars. His usual reason for intervention in either form is to encourage dwarves to follow the correct path or make the best decision at a critical time. He also intervenes to aid or inspire dwarves who may serve the race in the future, or to aid or encourage nondwarves who aid the dwarves.
 
+Only males can join Moradin's clergy.
+
 Armor: Any.
 Weapon: Any.
 
@@ -5807,8 +5813,9 @@ Equipped abilities:
 – Can memorize one extra divine spell from level 1 to 7
 
 Weight: 0~
-@5406 = ~Stonefire~
-@5407 = ~Stonefire
+@5406 = ~Moradin doesn't bestow his grace upon females.~
+@5407 = ~Stonefire~
+@5408 = ~Stonefire
 (Alteration)
 
 Level: 4
@@ -5824,7 +5831,7 @@ When casting this spell the priest touches the target with an incandescent stone
 This touch is very painful, causing 4d4 of fire damage and creates a white smoke that burns all the creatures around the target (and also the target) but the Sonnlinor.
 
 This smoke causes 2d6 points of fire damage and persists until the end of the spell. The creature touched by the stone must succeed in a Saving Throw vs. Death or be unconscious for one round.~
-@5408 = ~SONNLINOR OF MORADIN (F/C): Moradin (MOAR-uh-din) is the creator god of the dwarven race and leader of the Morndinsamman. He is said to have created all dwarves, forging them from metals and gems in the fires that lie at the "heart of the world," and breathing life-the first dwarven souls-into the cooling forms. All dwarves appease Moradin, even if they do not wholeheartedly support him. Lawful good dwarves support and work openly to serve the Soul Forger, even if they also worship another deity. His name is invoked by dwarves involved in smithwork or craftsmanship of any sort, and they give him homage by doing their best work and seeking to emulate his stonework and craftsmanship. Moradin is said to inspire dwarven inventions and seeks constantly to improve the race-increasing dwarven good nature, intelligence, and ability to exist in harmony with other living things. At the same time, he battles the pride and isolationist tendencies that occur naturally in his elite creations. 
+@5409 = ~SONNLINOR OF MORADIN (F/C): Moradin (MOAR-uh-din) is the creator god of the dwarven race and leader of the Morndinsamman. He is said to have created all dwarves, forging them from metals and gems in the fires that lie at the "heart of the world," and breathing life-the first dwarven souls-into the cooling forms. All dwarves appease Moradin, even if they do not wholeheartedly support him. Lawful good dwarves support and work openly to serve the Soul Forger, even if they also worship another deity. His name is invoked by dwarves involved in smithwork or craftsmanship of any sort, and they give him homage by doing their best work and seeking to emulate his stonework and craftsmanship. Moradin is said to inspire dwarven inventions and seeks constantly to improve the race-increasing dwarven good nature, intelligence, and ability to exist in harmony with other living things. At the same time, he battles the pride and isolationist tendencies that occur naturally in his elite creations. 
 
 Moradin is held by many dwarven creation myths to have been incarnated from rock, stone, and metal, with his soul eternally present in the form of fire. That same fire fueled the forge in which Moradin created the Stout Folk and, in some myths, Moradin breathes fire over the first dwarves to bring them to life.
 
