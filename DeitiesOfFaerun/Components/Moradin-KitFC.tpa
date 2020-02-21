@@ -1,0 +1,59 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						 Sonnlinor of Moradin - Fighter/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAMoraFC~
+    ~RAMoraFC 1 1 1 1 2 1 2 1~
+    ~RAMoraFC 1 1 1 1 2 1 2 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMoraFC 10 3 3 3 11 3~
+	~RAMoraFC 0 0 0 0 0 0~
+	~RAMoraFC 10 3 3 3 11 3~
+    ~RAMoraFC 10 3 3 3 11 3~
+	~RAMoraFC 1 1 0 0 0 0 0 0 0~
+	~RAMoraFC 0 0 0 0 0 0~
+	~override/RAMoraFC.2da~
+	~K_FC_D~
+	~0x00000000 8~
+	~FC0~
+	~PLAT09 HAMM09 BDHELM09 * RING09 RING29 CLCK05 BOOT01 AMUL27 BRAC10 BELT03 * * * * * * AX1H07 WAFLAIL *~
+	SAY @5401
+	SAY @5402
+	SAY @5406
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAMoraFC~
+		clascolr = ~235 135 64 8 72~
+		clsrcreq = ~0 0 0 1 0 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAMoraFC~
+      kit_clab = ~RAMoraFC~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAMoraFC%	classID = 8 STR_VAR	kitname = ~RAMORA~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFMORA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCMORA~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCMORA.itm~ SAY NAME1 @5404 SAY NAME2 @5404 SAY DESC @5405
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMoraFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MORAS~
+WRITE_ASCII 0x058 ~MORAL~
+
+//EoF
