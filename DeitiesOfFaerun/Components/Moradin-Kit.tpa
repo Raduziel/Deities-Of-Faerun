@@ -51,6 +51,9 @@ WRITE_ASCII 0x058 ~MORAL~
 
 //Spells
 
+COPY ~DeitiesOfFaerun/Spl/RAMORAF.spl~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@5406) END
+
 //Command
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_COMMAND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
@@ -139,7 +142,7 @@ END
 
 //Multiclass CLAB
 
-COPY_EXISTING ~RAMora.2da~ ~override/RAClanFC.2da~
+COPY_EXISTING ~RAMora.2da~ ~override/RAMoraFC.2da~
 SET_2DA_ENTRY 12 25 50 ~AP_RAFMORA~
 PRETTY_PRINT_2DA
 
