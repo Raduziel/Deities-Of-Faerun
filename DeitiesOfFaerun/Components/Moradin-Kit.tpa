@@ -88,26 +88,26 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-//True Seeing
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_TRUE_SIGHT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_TRUE_SIGHT~	RET	spell_res	END
-
-COPY_EXISTING	~%spell_res%.spl~	~override/RAMORA4.spl~
-LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RAMORA4D~	END
-LPM ~SPELL_TO_INNATE~
-
-COPY_EXISTING	~%spell_res%D.spl~	~override/RAMORA4D.spl~
-
-END
-
 //Flame Strike
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FLAME_STRIKE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FLAME_STRIKE~	RET	spell_res	END
 
-COPY_EXISTING	~%spell_res%.spl~	~override/RAMORA5.spl~
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMORA4.spl~
 LPM ~SPELL_TO_INNATE~
+
+END
+
+//True Seeing
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_TRUE_SIGHT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_TRUE_SIGHT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMORA5.spl~
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RAMORA5D~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%D.spl~	~override/RAMORA5D.spl~
 
 END
 
