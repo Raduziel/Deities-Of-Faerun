@@ -5796,15 +5796,10 @@ Features:
 - May cast Command once per day as a special ability, starting at level 1.
 - May cast Spiritual Hammer once per day as a special ability, starting at level 3.
 - May cast Dispel Magic once per day as a special ability, starting at level 5.
-- May use the Stonefire special ability once per day, starting at level 7.
+- May cast Flame Strike once per day as a special ability, starting at level 7.
 - May cast True Seeing four times per day as a special ability, starting at level 10.
-- May cast Flame Strike once per day as a special ability, starting at level 10.
 - May cast Defensive Harmony once per day as a special ability, starting at level 13.
-- May cast Aura of Flaming Death once per day as a special ability, starting at level 15.
-
-STONEFIRE
-
-The Sonnlinor touches a target with a heated stone that causes fire damage and creates a white smoke that burns any creature around the caster.~
+- May cast Aura of Flaming Death once per day as a special ability, starting at level 15.~
 @5404 = ~Holy Symbol of Moradin~
 @5405 = ~Only the most worthy and devoted servants of the Soul Forger are granted these powerful holy symbols.
 	
@@ -5818,24 +5813,7 @@ Equipped abilities:
 
 Weight: 0~
 @5406 = ~Moradin doesn't bestow his grace upon females.~
-@5407 = ~Stonefire~
-@5408 = ~Stonefire
-(Alteration)
-
-Level: 4
-Sphere: Earth, Fire
-Range: Touch
-Duration: 1 round/level
-Casting Time: 7
-Area of Effect: 30-ft. radius around the target
-Saving Throw: Special
-
-When casting this spell the priest touches the target with an incandescent stone.
-
-This touch is very painful, causing 4d4 of fire damage and creates a white smoke that burns all the creatures around the target (and also the target) but the Sonnlinor.
-
-This smoke causes 2d6 points of fire damage and persists until the end of the spell. The creature touched by the stone must succeed in a Saving Throw vs. Death or be unconscious for one round.~
-@5409 = ~SONNLINOR OF MORADIN (F/C): Moradin (MOAR-uh-din) is the creator god of the dwarven race and leader of the Morndinsamman. He is said to have created all dwarves, forging them from metals and gems in the fires that lie at the "heart of the world," and breathing life-the first dwarven souls-into the cooling forms. All dwarves appease Moradin, even if they do not wholeheartedly support him. Lawful good dwarves support and work openly to serve the Soul Forger, even if they also worship another deity. His name is invoked by dwarves involved in smithwork or craftsmanship of any sort, and they give him homage by doing their best work and seeking to emulate his stonework and craftsmanship. Moradin is said to inspire dwarven inventions and seeks constantly to improve the race-increasing dwarven good nature, intelligence, and ability to exist in harmony with other living things. At the same time, he battles the pride and isolationist tendencies that occur naturally in his elite creations. 
+@5407 = ~SONNLINOR OF MORADIN (F/C): Moradin (MOAR-uh-din) is the creator god of the dwarven race and leader of the Morndinsamman. He is said to have created all dwarves, forging them from metals and gems in the fires that lie at the "heart of the world," and breathing life-the first dwarven souls-into the cooling forms. All dwarves appease Moradin, even if they do not wholeheartedly support him. Lawful good dwarves support and work openly to serve the Soul Forger, even if they also worship another deity. His name is invoked by dwarves involved in smithwork or craftsmanship of any sort, and they give him homage by doing their best work and seeking to emulate his stonework and craftsmanship. Moradin is said to inspire dwarven inventions and seeks constantly to improve the race-increasing dwarven good nature, intelligence, and ability to exist in harmony with other living things. At the same time, he battles the pride and isolationist tendencies that occur naturally in his elite creations. 
 
 Moradin is held by many dwarven creation myths to have been incarnated from rock, stone, and metal, with his soul eternally present in the form of fire. That same fire fueled the forge in which Moradin created the Stout Folk and, in some myths, Moradin breathes fire over the first dwarves to bring them to life.
 
@@ -5858,14 +5836,9 @@ Features:
 - May cast Command once per day as a special ability, starting at level 1.
 - May cast Spiritual Hammer once per day as a special ability, starting at level 3.
 - May cast Dispel Magic once per day as a special ability, starting at level 5.
-- May use the Stonefire special ability once per day, starting at level 7.
+- May cast Flame Strike once per day as a special ability, starting at level 7.
 - May cast True Seeing four times per day as a special ability, starting at level 10.
-- May cast Flame Strike once per day as a special ability, starting at level 10.
 - May cast Defensive Harmony once per day as a special ability, starting at level 13.
-- May cast Aura of Flaming Death once per day as a special ability, starting at level 15.
-
-STONEFIRE
-
-The Sonnlinor touches a target with a heated stone that causes fire damage and creates a white smoke that burns and chokes any creature around the caster.~
+- May cast Aura of Flaming Death once per day as a special ability, starting at level 15.~
 
 //EoF

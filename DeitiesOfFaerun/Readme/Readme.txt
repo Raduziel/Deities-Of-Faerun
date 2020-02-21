@@ -1170,27 +1170,6 @@ This spell imbues the Feywarden with a sixth sense, alerting <PRO_HIMHER> of une
 
 ====================================================================================================================================================================
 
-32) MORADIN
-
-Stonefire
-(Alteration)
-
-Level: 4
-Sphere: Earth, Fire
-Range: Touch
-Duration: 1 round/level
-Casting Time: 7
-Area of Effect: 30-ft. radius around the target
-Saving Throw: Special
-
-When casting this spell the priest touches the target with an incandescent stone.
-
-This touch is very painful, causing 4d4 of fire damage and creates a white smoke that burns all the creatures around the target (and also the target) but the Sonnlinor.
-
-This smoke causes 2d6 points of fire damage and persists until the end of the spell. The creature touched by the stone must succeed in a Saving Throw vs. Death or be unconscious for one round.
-
-====================================================================================================================================================================
-
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
 STATISTICS:
