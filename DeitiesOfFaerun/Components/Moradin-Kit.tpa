@@ -127,6 +127,34 @@ END
 
 //Aura of Flaming Death
 
+ACTION_IF GAME_IS ~bgee~ BEGIN
+
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]RADUZIEL_AURA_OF_FLAMING_DEATH[ %TAB%%WNL%$]~) BEGIN
+
+ADD_SPELL ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730.spl~ 1 7  RADUZIEL_AURA_OF_FLAMING_DEATH
+SAY NAME1 @9999318 SAY NAME2 @9999318 SAY UNIDENTIFIED_DESC @9999319 SAY DESC @9999319
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_ASCIIE 0x3a ~%spell_res%C~ #8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~ END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~  resource = EVAL ~%spell_res%~	END
+LPF	ALTER_EFFECT	   STR_VAR 			  match_resource = EVAL ~%SOURCE_RES%D~ resource = EVAL ~%spell_res%D~	END
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730.BAM~  ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730.BAM~  ~override\%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730D.SPL~ ~override\%spell_res%D.SPL~
+
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~RADUZIEL_AURA_OF_FLAMING_DEATH~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMORA7.spl~
+LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 321 target = 2 parameter2 = 2 STR_VAR insert_point = 0 resource = EVAL ~%spell_res%~ END
+LPM ~SPELL_TO_INNATE~
+
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\Effects~ override
+
+END 
+
+END ELSE BEGIN
+
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_AURA_OF_FLAMING_DEATH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_AURA_OF_FLAMING_DEATH~	RET	spell_res	END
 
@@ -137,6 +165,8 @@ LPM ~SPELL_TO_INNATE~
 
 COPY_EXISTING	~%spell_res%.spl~	override
 LPF	ADD_SPELL_EFFECT	INT_VAR	opcode = 321 target = 2 parameter2 = 2 STR_VAR insert_point = 0 resource = EVAL ~RAMORA7~     END
+
+END
 
 END
 
