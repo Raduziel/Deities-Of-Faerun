@@ -1935,4 +1935,6 @@ Saving Throw: None
 
 This spell magically increases a target's Dexterity. The amount depends on the target's class: Rogues gain 1d8 points, warriors and wizards gain 1d6 points, and priests gain 1d4 points. If a character has more than one class, the larger die is used. Cat's Grace cannot raise a target's Dexterity past 20.~
 	@9999317 = ~Dexterity Modification~
+	@9999318 = ~Aura of Flaming Death~
+	@9999319 = ~Aura of Flaming Death~
 // EoF
