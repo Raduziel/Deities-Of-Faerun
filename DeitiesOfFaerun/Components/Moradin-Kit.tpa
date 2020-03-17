@@ -138,8 +138,8 @@ LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~ END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~  resource = EVAL ~%spell_res%~	END
 LPF	ALTER_EFFECT	   STR_VAR 			  match_resource = EVAL ~%SOURCE_RES%D~ resource = EVAL ~%spell_res%D~	END
 
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730.BAM~  ~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730.BAM~  ~override\%spell_res%C.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730B.BAM~  ~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730C.BAM~  ~override\%spell_res%C.BAM~
 
 COPY ~DeitiesofFaerun\Lib\Spheres\Import\AuraofFlamingDeath\SPPR730D.SPL~ ~override\%spell_res%D.SPL~
 
