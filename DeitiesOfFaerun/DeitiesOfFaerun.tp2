@@ -1,6 +1,6 @@
 BACKUP ~DeitiesOfFaerun/Backup~
 SUPPORT ~Raduziel www.twitter.com/raduziel~
-VERSION ~1.9.7.6.1~
+VERSION ~1.9.7.7~
 
 ALWAYS
 
@@ -1061,6 +1061,18 @@ BEGIN @999999023
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~setup-ds.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~12~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Jetlaya.tpa~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				       T’VIY, THE BLOODSTALKER OF URDLEN
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @999999024
+REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (MOD_IS_INSTALLED ~Tviy.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~49~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Urdlen-Tviy.tpa~
+
 /*
 
 //__________________________________________________________________________________
@@ -1071,7 +1083,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Lathander-Jetlaya.tpa~
 //__________________________________________________________________________________
 
 
-BEGIN @999999024
+BEGIN @999999025
 REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~placeholder.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~29~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Azuth-Jenora.tpa~
 
