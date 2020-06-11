@@ -3881,7 +3881,7 @@ END
 
 END
 
-// Illusonary Creatures will have the Illusionary Gender
+//Illusonary Creatures will have the Illusionary Gender (great idea from Luke)
 
 ACTION_FOR_EACH creature IN ~SS1GOB1~ ~SS2GOB1~ ~SS1GOB2~ ~SS2GOB2~ ~SS1GOB3~ ~SS2GOB3~ ~SS1LIZ3~ ~SS1LIZ4~ ~SS2LIZ5~ ~SS2LIZ6~ ~SS2LIZ7~ ~SS1TRL6~ ~SS1TRL7~ ~SS3TRL7~ ~SS1TRL8~ ~SS3TRL8~ ~SS3UMB8~ ~SS3UMB9~ BEGIN
 
