@@ -28,6 +28,7 @@ ACTION_FOR_EACH creature IN ~l#tviy~ BEGIN
       WRITE_BYTE    0x247 0x40
 	  SET_BG2_PROFICIENCY 115 0
 	  SET_BG2_PROFICIENCY  96 1
+	  LPF ADD_CRE_EFFECT INT_VAR opcode = 112 target = 1 timing = 4 duration = 3 STR_VAR resource = ~RAURDLCL~ END
 	  BUT_ONLY
   END
   
