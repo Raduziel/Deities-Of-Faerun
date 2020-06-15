@@ -82,6 +82,8 @@ OUTER_SET kit = "%RAGara%"
 	  WRITE_BYTE	  0x23b 9        //Wisdom
 	  WRITE_BYTE	  0x23d 11       //Constitution
 	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_SHORT	  0x024 20       //Max HP
+	  WRITE_SHORT	  0x026 20       //Current HP
 	  WRITE_LONG      0x028 24592    //Animation
 	  WRITE_BYTE      0x052 20       //Thac0
 	  WRITE_BYTE      0x054 10       //Death
@@ -139,6 +141,8 @@ END
 	  WRITE_BYTE	  0x23b 9        //Wisdom
 	  WRITE_BYTE	  0x23d 11       //Constitution
 	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_SHORT	  0x024 14       //Max HP
+	  WRITE_SHORT	  0x026 14       //Current HP
 	  WRITE_LONG      0x028 24592    //Animation
 	  WRITE_BYTE      0x052 20       //Thac0
 	  WRITE_BYTE      0x054 10       //Death
@@ -182,6 +186,8 @@ END
 	  WRITE_BYTE	  0x23b 9        //Wisdom
 	  WRITE_BYTE	  0x23d 11       //Constitution
 	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_SHORT	  0x024 26       //Max HP
+	  WRITE_SHORT	  0x026 26       //Current HP
 	  WRITE_LONG      0x028 24592    //Animation
 	  WRITE_BYTE      0x052 18       //Thac0
 	  WRITE_BYTE      0x054 9        //Death
@@ -241,6 +247,8 @@ END
 	  WRITE_BYTE	  0x23b 9        //Wisdom
 	  WRITE_BYTE	  0x23d 11       //Constitution
 	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_SHORT	  0x024 37       //Max HP
+	  WRITE_SHORT	  0x026 37       //Current HP
 	  WRITE_LONG      0x028 24592    //Animation
 	  WRITE_BYTE      0x052 18       //Thac0
 	  WRITE_BYTE      0x054 9        //Death
@@ -319,6 +327,8 @@ COPY_EXISTING ~k9SHARTE.cre~ ~override~
 	  WRITE_BYTE	  0x23b 9        //Wisdom
 	  WRITE_BYTE	  0x23d 11       //Constitution
 	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_SHORT	  0x024 62       //Max HP
+	  WRITE_SHORT	  0x026 62       //Current HP
 	  WRITE_LONG      0x028 24592    //Animation
 	  WRITE_BYTE      0x052 16       //Thac0
 	  WRITE_BYTE      0x054 7        //Death
