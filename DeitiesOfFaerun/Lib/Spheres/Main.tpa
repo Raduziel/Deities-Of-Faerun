@@ -456,7 +456,6 @@
 2DA V1.0
 ****
             	ResRef	Type>>>>>>>>
-	COPY	~.../inlined.2da~ ~override/%file%%i%G.2da~
 
 	ACTION_CLEAR_ARRAY	alter_level
 	ACTION_CLEAR_ARRAY	convert_clone
