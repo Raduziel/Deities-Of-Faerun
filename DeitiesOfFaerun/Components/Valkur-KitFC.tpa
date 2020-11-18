@@ -81,7 +81,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
 			PATCH_MATCH	~%animation%~ WITH
-				~AX~ ~BW~ ~CB~ ~DD~ ~HB~ ~S0~ ~S1~ ~S2~ ~S3~ ~SP~ ~SS~ ~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
+				~AX~ ~BW~ ~CB~ ~DD~ ~HB~ ~S0~ ~S1~ ~S2~ ~S3~ ~SS~ ~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAValkFC~) parameter2 = 9 END
 				END
 				DEFAULT
