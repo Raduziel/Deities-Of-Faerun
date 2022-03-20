@@ -107,7 +107,7 @@ LPF	ALTER_SPELL_HEADER	INT_VAR	target = 1 END
 LPF ALTER_EFFECT  		INT_VAR match_opcode = 218 target = 2 END
 LPF ALTER_EFFECT  		INT_VAR match_opcode = 215 target = 2 END
 LPF ALTER_EFFECT  		INT_VAR match_opcode = 174 target = 2 END
-LPF ALTER_EFFECT  		INT_VAR match_opcode = 50  target = 2 END
+LPF ALTER_EFFECT  		INT_VAR match_opcode = 61  target = 2 END
 
 END
 
