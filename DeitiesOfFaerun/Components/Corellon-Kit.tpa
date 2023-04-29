@@ -62,40 +62,12 @@ COPY ~DeitiesOfFaerun/Spl/RACORE1.spl~ override
 SAY NAME1 @5306 SAY NAME2 @5306 SAY UNIDENTIFIED_DESC @5307 SAY DESC @5307 
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconsixt END
 
-//Cat's Grace
-
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CATS_GRACE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
-LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CATS_GRACE~	RET	spell_res	END
-
-COPY_EXISTING ~%spell_res%.spl~	~override/RACORE2.spl~
-LPM ~SPELL_TO_INNATE~
-
-END ELSE BEGIN
-
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999315) STR_VAR bam_file = RACATSIC RET iconcats = icon END
-ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225.spl~ 2 2 WIZARD_CATS_GRACE
-SAY NAME1 @9999315 SAY NAME2 @9999315 SAY UNIDENTIFIED_DESC @9999316 SAY DESC @9999316
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~ END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource = EVAL ~%spell_res%~ END
-LPF	ALTER_EFFECT       INT_VAR match_opcode = 139 match_parameter1 = 14024 parameter1 = RESOLVE_STR_REF(@9999317) END
-LPF ALTER_EFFECT       INT_VAR match_opcode = 142 match_parameter2 = 185 parameter2 = iconcats END
-
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225B.BAM~	~override\%spell_res%B.BAM~
-COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225C.BAM~	~override\%spell_res%C.BAM~
-
-COPY_EXISTING ~%spell_res%.spl~	~override/RACORE2.spl~
-LPM ~SPELL_TO_INNATE~
-
-END
-
 //Faerie Fire
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RADUZIEL_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RADUZIEL_FAERIE_FIRE~	RET	spell_res	END
 
-COPY_EXISTING ~%spell_res%.spl~	~override/RACORE3.spl~
+COPY_EXISTING ~%spell_res%.spl~	~override/RACORE2.spl~
 LPM ~SPELL_TO_INNATE~
 
 END ELSE BEGIN
@@ -122,6 +94,34 @@ LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 paramet
 
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116B.BAM~	~override\%spell_res%B.BAM~
 COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RACORE2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Cat's Grace
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CATS_GRACE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CATS_GRACE~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RACORE3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999315) STR_VAR bam_file = RACATSIC RET iconcats = icon END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225.spl~ 2 2 WIZARD_CATS_GRACE
+SAY NAME1 @9999315 SAY NAME2 @9999315 SAY UNIDENTIFIED_DESC @9999316 SAY DESC @9999316
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~ END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT       INT_VAR match_opcode = 139 match_parameter1 = 14024 parameter1 = RESOLVE_STR_REF(@9999317) END
+LPF ALTER_EFFECT       INT_VAR match_opcode = 142 match_parameter2 = 185 parameter2 = iconcats END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/CatsGrace/SPWI225C.BAM~	~override\%spell_res%C.BAM~
 
 COPY_EXISTING ~%spell_res%.spl~	~override/RACORE3.spl~
 LPM ~SPELL_TO_INNATE~
