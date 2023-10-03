@@ -51,7 +51,9 @@ WRITE_ASCII 0x058 ~BHAAL~
 
 //Spells
 
-COPY ~DeitiesOfFaerun/Spl/RABHAA1.spl~ override SAY NAME1 @2406 SAY UNIDENTIFIED_DESC  @2407                //Bone Dagger
+//Bone Dagger
+
+COPY ~DeitiesOfFaerun/Spl/RABHAA1.spl~ override SAY NAME1 @2406 SAY UNIDENTIFIED_DESC  @2407
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -114,7 +116,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RABHAA3.spl~ override SAY NAME1 @2408 SAY UNIDENTIFIED_DESC @2409                //Plane Skipping
+//Plane Skipping
+
+COPY ~DeitiesOfFaerun/Spl/RABHAA3.spl~ override SAY NAME1 @2408 SAY UNIDENTIFIED_DESC @2409
 
 //Aerial Servant
 

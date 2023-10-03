@@ -161,7 +161,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RALovi6.spl~ override SAY NAME1 @2216 SAY UNIDENTIFIED_DESC @2217             //Ensnarement
+//Ensnarement
+
+COPY ~DeitiesOfFaerun/Spl/RALovi6.spl~ override SAY NAME1 @2216 SAY UNIDENTIFIED_DESC @2217
 
 COPY ~DeitiesOfFaerun/Spl/RALovi6.eff~ override
 

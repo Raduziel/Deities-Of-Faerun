@@ -59,15 +59,13 @@ COPY ~DeitiesOfFaerun/Spl/RASHAREF.spl~ override
 
 //Darkness
 
-ACTION_IF !FILE_EXISTS_IN_GAME ~RADARK.PRO~ BEGIN
 	ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RADARK.PRO~
 	COPY ~DeitiesOfFaerun/Spl/UB!Dark.bam~ override
-END ELSE BEGIN
+
 	OUTER_SPRINT	file ~RADARK~
 	COPY_EXISTING ~PROJECTL.IDS~	override
 		REPLACE_EVALUATE ~[%WNL%^]\(0x[0-9A-F]+\|[0-9]+\)[ %TAB%]+%file%[ %TAB%%WNL%$]~	BEGIN	SET	EVAL ~%file%~ = (~%MATCH1%~ +1)	END	~%MATCH0%~
 	BUT_ONLY
-END
 
 COPY ~DeitiesOfFaerun/Spl/RASHAR1.spl~ override  SAY NAME1 @406 SAY  UNIDENTIFIED_DESC @407 
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RADARK% END	
@@ -93,8 +91,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RASHAR3.spl~ override  SAY NAME1 @408 SAY UNIDENTIFIED_DESC @409  //Nightmare
+//Nightmare
 
+COPY ~DeitiesOfFaerun/Spl/RASHAR3.spl~ override  SAY NAME1 @408 SAY UNIDENTIFIED_DESC @409
 
 //Shadow Door
 
@@ -106,11 +105,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
+//Eyebite
+
 COPY ~DeitiesOfFaerun/Spl/RASHAR5.vvc~ override
 
-COPY ~DeitiesOfFaerun/Spl/RASHAR5.spl~ override  SAY NAME1 @410 SAY UNIDENTIFIED_DESC @411  //Eyebite
+COPY ~DeitiesOfFaerun/Spl/RASHAR5.spl~ override  SAY NAME1 @410 SAY UNIDENTIFIED_DESC @411
 
-COPY ~DeitiesOfFaerun/Spl/RASHARE1.spl~ override SAY NAME1 @412 SAY UNIDENTIFIED_DESC @412  //Charm Gaze
+COPY ~DeitiesOfFaerun/Spl/RASHARE1.spl~ override SAY NAME1 @412 SAY UNIDENTIFIED_DESC @412
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Dominated%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
@@ -135,7 +136,7 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * ((i + 2)/3))  END
 	END
 	
-COPY ~DeitiesOfFaerun/Spl/RASHARE2.spl~ override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413  //Fear Gaze
+COPY ~DeitiesOfFaerun/Spl/RASHARE2.spl~ override SAY NAME1 @413 SAY UNIDENTIFIED_DESC @413
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Panic%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
@@ -160,7 +161,7 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * ((i + 2)/3))  END
 	END
 
-COPY ~DeitiesOfFaerun/Spl/RASHARE3.spl~ override SAY NAME1 @414 SAY UNIDENTIFIED_DESC @414  //Sicken Gaze
+COPY ~DeitiesOfFaerun/Spl/RASHARE3.spl~ override SAY NAME1 @414 SAY UNIDENTIFIED_DESC @414
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_FoulDisease%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
@@ -185,7 +186,7 @@ LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EV
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * ((i + 2)/3))  END
 	END
 
-COPY ~DeitiesOfFaerun/Spl/RASHARE4.spl~ override SAY NAME1 @415 SAY UNIDENTIFIED_DESC @415  //Sleep Gaze
+COPY ~DeitiesOfFaerun/Spl/RASHARE4.spl~ override SAY NAME1 @415 SAY UNIDENTIFIED_DESC @415
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Sleep%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num

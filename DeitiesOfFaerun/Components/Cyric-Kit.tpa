@@ -128,7 +128,9 @@ BEGIN
 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~ target = 2 timing = 9 STR_VAR resource = ~RACYRIF~ END
 
-COPY ~DeitiesOfFaerun/Spl/RACYRI1.spl~ override SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307 //Dark Aura
+//Dark Aura
+
+COPY ~DeitiesOfFaerun/Spl/RACYRI1.spl~ override SAY NAME1 @306 SAY UNIDENTIFIED_DESC @307
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -153,7 +155,9 @@ COPY ~DeitiesOfFaerun/Spl/RACYRI1.spl~ override SAY NAME1 @306 SAY UNIDENTIFIED_
 	END
 
 
-COPY ~DeitiesOfFaerun/Spl/RACYRIE.spl~ override                                           //Bonuses for Evil-aligned
+//Bonuses for Evil-aligned
+
+COPY ~DeitiesOfFaerun/Spl/RACYRIE.spl~ override
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -177,7 +181,9 @@ COPY ~DeitiesOfFaerun/Spl/RACYRIE.spl~ override                                 
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY ~DeitiesOfFaerun/Spl/RACYRIG.spl~ override                                           //Penalties for Good-aligned
+//Penalties for Good-aligned
+
+COPY ~DeitiesOfFaerun/Spl/RACYRIG.spl~ override
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -201,12 +207,16 @@ COPY ~DeitiesOfFaerun/Spl/RACYRIG.spl~ override                                 
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 	
-COPY ~DeitiesOfFaerun/Spl/RACYRI2.spl~ override SAY NAME1 @308 SAY UNIDENTIFIED_DESC  @309                           //Phantasmal Killer
+//Phantasmal Killer
+
+COPY ~DeitiesOfFaerun/Spl/RACYRI2.spl~ override SAY NAME1 @308 SAY UNIDENTIFIED_DESC  @309
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Panic%~ END
 
 COPY ~DeitiesOfFaerun/Spl/RACYRI21.spl~ override
 
-ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FEEBLEMIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN    //Instill Madness
+//Instill Madness
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FEEBLEMIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FEEBLEMIND~	RET	spell_res	END
 
 COPY_EXISTING	~%spell_res%.spl~	~override/RACYRI3.spl~ SAY NAME1 @310 SAY UNIDENTIFIED_DESC @311 

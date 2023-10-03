@@ -53,7 +53,9 @@ WRITE_ASCII 0x058 ~KELEL~
 
 COPY ~DeitiesOfFaerun/Spl/RAKELEF.spl~ override
 
-COPY ~DeitiesOfFaerun/Spl/RAKELE1.spl~ override SAY NAME1 @2606 SAY UNIDENTIFIED_DESC @2607          //Chilling Scythe
+//Chilling Scythe
+
+COPY ~DeitiesOfFaerun/Spl/RAKELE1.spl~ override SAY NAME1 @2606 SAY UNIDENTIFIED_DESC @2607
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -77,11 +79,11 @@ COPY ~DeitiesOfFaerun/Spl/RAKELE1.spl~ override SAY NAME1 @2606 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY ~DeitiesOfFaerun/Itm/ChillingScythe/KELESCYT.itm~ override SAY NAME1 @2606 SAY NAME2 @2606      //Chilling Scythe (Itm)
+COPY ~DeitiesOfFaerun/Itm/ChillingScythe/KELESCYT.itm~ override SAY NAME1 @2606 SAY NAME2 @2606
 
-COPY ~DeitiesOfFaerun/Itm/ChillingScythe/KELESBLD.spl~ override                                      //Chilling Scythe (Spl)
+COPY ~DeitiesOfFaerun/Itm/ChillingScythe/KELESBLD.spl~ override
 
-COPY ~DeitiesOfFaerun/Itm/ChillingScythe/KELESBLD.bam~ override                                      //Chilling Scythe (Bam)
+COPY ~DeitiesOfFaerun/Itm/ChillingScythe/KELESBLD.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -111,7 +113,9 @@ LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 174 END
 LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 215 END
 LPF ALTER_EFFECT INT_VAR target = 2 timing = 9 duration = 0 resist_dispel = 0 END
 		  
-COPY ~DeitiesOfFaerun/Spl/RAKELE3.spl~ override  SAY NAME1 @2506 SAY  UNIDENTIFIED_DESC @2608 //Summon Minor Death
+//Summon Minor Death
+		  
+COPY ~DeitiesOfFaerun/Spl/RAKELE3.spl~ override  SAY NAME1 @2506 SAY  UNIDENTIFIED_DESC @2608
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -137,11 +141,11 @@ COPY ~DeitiesOfFaerun/Spl/RAKELE3.spl~ override  SAY NAME1 @2506 SAY  UNIDENTIFI
 
 COPY ~DeitiesOfFaerun/Spl/RAKELE3.eff~ override
 
-COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.cre~ override SAY NAME1 @2508 SAY NAME2 @2508   //Minor Death - creature
+COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.cre~ override SAY NAME1 @2508 SAY NAME2 @2508
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL ~%RA_Poison%~   END
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL ~%RA_Poisoned%~ END
 
-COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.itm~ override                                   //Minor Death - weapon/immunities 
+COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.itm~ override
 
 //Multiclass CLAB
 

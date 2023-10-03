@@ -113,11 +113,12 @@ COPY ~DeitiesOfFaerun/Spl/RABAER3.spl~ override SAY NAME1 @706 SAY UNIDENTIFIED_
 	END
 
 
-COPY ~DeitiesOfFaerun/Cre/Changestaff/Complement~   override                                            //Treant (Animation) - Thanks for teaching me how to do this, Kjeron!
+//Treant (Creature)
 
-COPY ~DeitiesOfFaerun/Cre/Changestaff/RATREANT.cre~ override SAY NAME1 @708 SAY NAME2 @708              //Treant (Creature)
+COPY ~DeitiesOfFaerun/Cre/Changestaff/Complement~   override
 
-COPY ~DeitiesOfFaerun/Cre/Changestaff/RAPlant.itm~ override                                             //Treant (Ring)
+COPY ~DeitiesOfFaerun/Cre/Changestaff/RATREANT.cre~ override SAY NAME1 @708 SAY NAME2 @708
+COPY ~DeitiesOfFaerun/Cre/Changestaff/RAPlant.itm~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL ~%RA_Stun%~      END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL ~%RA_Stunned%~   END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL ~%RA_Poison%~    END

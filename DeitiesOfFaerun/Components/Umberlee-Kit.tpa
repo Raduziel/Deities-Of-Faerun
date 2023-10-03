@@ -92,7 +92,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907  //Dehydrate
+//Dehydrate
+
+COPY ~DeitiesOfFaerun/Spl/RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907  
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -115,8 +117,10 @@ COPY ~DeitiesOfFaerun/Spl/RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED
 	FOR (i = 1; i < 51; ++i)	BEGIN
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_dicenumber = 1 dicenumber = i END
 	END
+	
+//Drown
 
-COPY ~DeitiesOfFaerun/Spl/RAUMBE3.SPL~ override SAY NAME1 @1908 SAY UNIDENTIFIED_DESC @1909	  //Drown
+COPY ~DeitiesOfFaerun/Spl/RAUMBE3.SPL~ override SAY NAME1 @1908 SAY UNIDENTIFIED_DESC @1909
 
 //Conjure Water Elemental
 

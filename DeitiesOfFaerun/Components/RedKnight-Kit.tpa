@@ -74,11 +74,15 @@ COPY_EXISTING	~%spell_res%.spl~	~override/RAREDK1.spl~
 LPM ~SPELL_TO_INNATE~
 
 END                                                  	  
-		  
-COPY ~DeitiesOfFaerun/Spl/RAREDK2.spl~ override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907              //Divination
+
+//Divination
+
+COPY ~DeitiesOfFaerun/Spl/RAREDK2.spl~ override SAY NAME1 @2906 SAY UNIDENTIFIED_DESC @2907
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
-COPY ~DeitiesOfFaerun/Spl/RAREDK3.spl~ override SAY NAME1 @2908 SAY UNIDENTIFIED_DESC @2909              //Consequence
+//Consequence
+
+COPY ~DeitiesOfFaerun/Spl/RAREDK3.spl~ override SAY NAME1 @2908 SAY UNIDENTIFIED_DESC @2909
 LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = iconfore END
 
 //Mass Invisibility

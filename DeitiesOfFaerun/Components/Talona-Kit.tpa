@@ -66,7 +66,9 @@ LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = 
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RATLNA2.spl~ override SAY NAME1 @2106 SAY UNIDENTIFIED_DESC @2107   //Poison Touch
+//Poison Touch
+
+COPY ~DeitiesOfFaerun/Spl/RATLNA2.spl~ override SAY NAME1 @2106 SAY UNIDENTIFIED_DESC @2107
 
 COPY ~DeitiesOfFaerun/Spl/RATLNA21.spl~ override
 

@@ -87,7 +87,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RAHOAR4.spl~   override SAY NAME1 @3606 SAY UNIDENTIFIED_DESC @3607	             //Hand of Hoar
+//Hand of Hoar
+
+COPY ~DeitiesOfFaerun/Spl/RAHOAR4.spl~   override SAY NAME1 @3606 SAY UNIDENTIFIED_DESC @3607
 
 COPY ~DeitiesOfFaerun/Spl/RAHoar4.eff~   override
 
@@ -107,7 +109,9 @@ ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAHoar5C.PRO~
 COPY_EXISTING ~RAHoar5C.PRO~ override
 WRITE_SHORT	0x21a %RAHoar5T%
 
-COPY ~DeitiesOfFaerun/Spl/RAHOAR5.spl~  override SAY NAME1 @3609 SAY UNIDENTIFIED_DESC @3610	             //Thunder Staff
+//Thunder Staff
+
+COPY ~DeitiesOfFaerun/Spl/RAHOAR5.spl~  override SAY NAME1 @3609 SAY UNIDENTIFIED_DESC @3610
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAHoar5C% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Stunned%~ END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 139 parameter1 = EVAL ~%RA_Deaf%~ END

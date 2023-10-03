@@ -53,11 +53,13 @@ WRITE_ASCII 0x058 ~HELML~
 
 COPY ~DeitiesOfFaerun/Spl/RAHELMF.spl~ override
 
-COPY ~DeitiesOfFaerun/Spl/RAHELM1.spl~ override SAY NAME1 @806 SAY UNIDENTIFIED_DESC @807              //Mace of Odo
+//Mace of Odo
 
-COPY ~DeitiesOfFaerun/Itm/MaceofOdo/RAHELM1.itm~ override SAY NAME1 @806 SAY NAME2 @806                //Mace of Odo (Itm)
+COPY ~DeitiesOfFaerun/Spl/RAHELM1.spl~ override SAY NAME1 @806 SAY UNIDENTIFIED_DESC @807
 
-COPY ~DeitiesOfFaerun/Itm/MaceofOdo/RAHELM1.bam~ override                                              //Mace of Odo (Bam)
+COPY ~DeitiesOfFaerun/Itm/MaceofOdo/RAHELM1.itm~ override SAY NAME1 @806 SAY NAME2 @806
+
+COPY ~DeitiesOfFaerun/Itm/MaceofOdo/RAHELM1.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -74,11 +76,13 @@ COPY ~DeitiesOfFaerun/Itm/MaceofOdo/RAHELM1.bam~ override                       
     END
   END
 
-COPY ~DeitiesOfFaerun/Spl/RAHELM2.BAM~ override                                                        //Wyvern Watch (Projectile Bam)
-  
-ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAHELM2.PRO~                                                       //Wyvern Watch (Projectile)
+//Wyvern Watch
 
-COPY ~DeitiesOfFaerun/Spl/RAHELM2.spl~ override SAY NAME1 @808 SAY UNIDENTIFIED_DESC @809              //Wyvern Watch
+COPY ~DeitiesOfFaerun/Spl/RAHELM2.BAM~ override
+  
+ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAHELM2.PRO~
+
+COPY ~DeitiesOfFaerun/Spl/RAHELM2.spl~ override SAY NAME1 @808 SAY UNIDENTIFIED_DESC @809
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -104,7 +108,9 @@ COPY ~DeitiesOfFaerun/Spl/RAHELM2.spl~ override SAY NAME1 @808 SAY UNIDENTIFIED_
 	END
 
 
-COPY ~DeitiesOfFaerun/Spl/RAHELM3.spl~ override SAY NAME1 @810 SAY UNIDENTIFIED_DESC @811              //Seeking Sword
+//Seeking Sword
+
+COPY ~DeitiesOfFaerun/Spl/RAHELM3.spl~ override SAY NAME1 @810 SAY UNIDENTIFIED_DESC @811
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -128,11 +134,11 @@ COPY ~DeitiesOfFaerun/Spl/RAHELM3.spl~ override SAY NAME1 @810 SAY UNIDENTIFIED_
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 12 duration = (12 * i) END
 	END
 
-COPY ~DeitiesOfFaerun/Spl/RAHELM3.eff~ override                                                        //Seeking Sword (Eff)
+COPY ~DeitiesOfFaerun/Spl/RAHELM3.eff~ override
 
-COPY ~DeitiesOfFaerun/Cre/SeekingSword/RAHELM3.itm~ override SAY NAME1 @810 SAY NAME2 @810             //Seeking Sword (Itm)
+COPY ~DeitiesOfFaerun/Cre/SeekingSword/RAHELM3.itm~ override SAY NAME1 @810 SAY NAME2 @810
 
-COPY ~DeitiesOfFaerun/Cre/SeekingSword/RAHELM3.cre~ override SAY NAME1 @810 SAY NAME2 @810             //Seeking Sword (Cre)
+COPY ~DeitiesOfFaerun/Cre/SeekingSword/RAHELM3.cre~ override SAY NAME1 @810 SAY NAME2 @810
 
 //Glyph of Warding
 

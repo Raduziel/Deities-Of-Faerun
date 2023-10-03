@@ -63,13 +63,19 @@ END
 
 ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAAURI1.PRO~
 
-COPY ~DeitiesOfFaerun/Spl/RAAURI1.spl~ override SAY NAME1 @1706 SAY UNIDENTIFIED_DESC @1707    //Frost Dagger
+//Frost Dagger
+
+COPY ~DeitiesOfFaerun/Spl/RAAURI1.spl~ override SAY NAME1 @1706 SAY UNIDENTIFIED_DESC @1707
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAAURI1% END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@1708) END
 
-COPY ~DeitiesOfFaerun/Spl/RAAURI2.spl~ override SAY NAME1 @1709 SAY UNIDENTIFIED_DESC @1710    //Frost Whip
+//Frost Whip
 
-COPY ~DeitiesOfFaerun/Spl/RAAURI3.spl~ override SAY NAME1 @1711 SAY UNIDENTIFIED_DESC @1712    //Frost Sword
+COPY ~DeitiesOfFaerun/Spl/RAAURI2.spl~ override SAY NAME1 @1709 SAY UNIDENTIFIED_DESC @1710
+
+//Frost Sword
+
+COPY ~DeitiesOfFaerun/Spl/RAAURI3.spl~ override SAY NAME1 @1711 SAY UNIDENTIFIED_DESC @1712
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -93,9 +99,11 @@ COPY ~DeitiesOfFaerun/Spl/RAAURI3.spl~ override SAY NAME1 @1711 SAY UNIDENTIFIED
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY ~DeitiesOfFaerun/Itm/IceBlade/AURIBLAD.itm~ override SAY NAME1 @1711 SAY NAME2 @1711      //Frost Sword (Itm)
+//Frost Sword (Itm)
 
-COPY ~DeitiesOfFaerun/Itm/IceBlade/AURIBLAD.bam~ override                                      //Frost Sword (Bam)
+COPY ~DeitiesOfFaerun/Itm/IceBlade/AURIBLAD.itm~ override SAY NAME1 @1711 SAY NAME2 @1711
+
+COPY ~DeitiesOfFaerun/Itm/IceBlade/AURIBLAD.bam~ override
     LPF UPDATE_PVRZ_INDICES
     RET
       original_base_index
@@ -163,15 +171,17 @@ LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMI END
 COPY_EXISTING ~smtables.2da~ override
 PRETTY_PRINT_2DA
 
-COPY ~DeitiesOfFaerun/Cre/IceElemental/Complement~  override                                  //Ice Elemental - animation, bam, sounds, itm
+//Ice Elemental - creature files
 
-COPY ~DeitiesOfFaerun/Cre/IceElemental/RAELEMI.2DA~ override                                  //Ice Elemental - 2da
+COPY ~DeitiesOfFaerun/Cre/IceElemental/Complement~  override
 
-COPY ~DeitiesOfFaerun/Cre/IceElemental/RA12ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 12 HD
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RAELEMI.2DA~ override
 
-COPY ~DeitiesOfFaerun/Cre/IceElemental/RA16ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 16 HD
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RA12ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715
 
-COPY ~DeitiesOfFaerun/Cre/IceElemental/RA24ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715  //Ice Elemental - creature 24 HD
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RA16ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715
+
+COPY ~DeitiesOfFaerun/Cre/IceElemental/RA24ice.cre~ override SAY NAME1 @1715 SAY NAME2 @1715
 
 //Multiclass CLAB
 

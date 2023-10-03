@@ -65,7 +65,9 @@ LPF	CLONE_EFFECT INT_VAR match_opcode = 321 silent = 1 STR_VAR match_resource = 
 
 END		  
 
-COPY ~DeitiesOfFaerun/Spl/RATYMO2.spl~  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407	             //Moment
+//Moment
+
+COPY ~DeitiesOfFaerun/Spl/RATYMO2.spl~  override SAY NAME1 @3406 SAY UNIDENTIFIED_DESC @3407
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -89,7 +91,9 @@ COPY ~DeitiesOfFaerun/Spl/RATYMO2.spl~  override SAY NAME1 @3406 SAY UNIDENTIFIE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY ~DeitiesOfFaerun/Spl/RATYMO3.spl~  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409	             //Favor of Tymora
+//Favor of Tymora
+
+COPY ~DeitiesOfFaerun/Spl/RATYMO3.spl~  override SAY NAME1 @3408 SAY UNIDENTIFIED_DESC @3409
 
 //Lower Resistance
 
@@ -101,7 +105,9 @@ LPM ~SPELL_TO_INNATE~
 
 END	
 
-COPY ~DeitiesOfFaerun/Spl/RATYMO5.spl~  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411	             //Luckbolt
+//Luckbolt
+
+COPY ~DeitiesOfFaerun/Spl/RATYMO5.spl~  override SAY NAME1 @3410 SAY UNIDENTIFIED_DESC @3411
 
 COPY ~DeitiesOfFaerun/Spl/RATymo51.spl~  override
 
@@ -109,7 +115,9 @@ COPY ~DeitiesOfFaerun/Spl/RATymo52.spl~  override
 
 COPY ~DeitiesOfFaerun/Spl/RATymo53.spl~  override
 
-COPY ~DeitiesOfFaerun/Spl/RATYMO6.spl~  override SAY NAME1 @3412 SAY UNIDENTIFIED_DESC @3413	             //Tymora's Blessing
+//Tymora's Blessing
+
+COPY ~DeitiesOfFaerun/Spl/RATYMO6.spl~  override SAY NAME1 @3412 SAY UNIDENTIFIED_DESC @3413
 
 //Multiclass CLAB
 

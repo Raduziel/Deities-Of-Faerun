@@ -51,7 +51,9 @@ WRITE_ASCII 0x058 ~BESHL~
 
 //Spells
 
-COPY ~DeitiesOfFaerun/Spl/RABESH1.spl~  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507	             //Bad Luck
+//Bad Luck
+
+COPY ~DeitiesOfFaerun/Spl/RABESH1.spl~  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507
 
 //Doom
 
@@ -67,7 +69,9 @@ LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = 
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RABESH3.spl~  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509	             //Bane of Beshaba
+//Bane of Beshaba
+
+COPY ~DeitiesOfFaerun/Spl/RABESH3.spl~  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509
 
 //Lower Resistance
 
@@ -79,7 +83,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RABESH5.spl~  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511	             //Misfortune
+//Misfortune
+
+COPY ~DeitiesOfFaerun/Spl/RABESH5.spl~  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -103,7 +109,9 @@ COPY ~DeitiesOfFaerun/Spl/RABESH5.spl~  override SAY NAME1 @3510 SAY UNIDENTIFIE
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
 	END
 
-COPY ~DeitiesOfFaerun/Spl/RABESH6.spl~  override SAY NAME1 @3512 SAY UNIDENTIFIED_DESC @3513	             //Beshaba's Mercy
+//Beshaba's Mercy
+
+COPY ~DeitiesOfFaerun/Spl/RABESH6.spl~  override SAY NAME1 @3512 SAY UNIDENTIFIED_DESC @3513
 
 //Black Blade of Disaster
 

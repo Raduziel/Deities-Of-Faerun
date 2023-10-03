@@ -91,9 +91,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RALATH2.spl~ override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007   //Sunrise
+//Sunrise
 
-COPY ~DeitiesOfFaerun/Spl/RALATH3.spl~ override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009   //Boon of Lathander
+COPY ~DeitiesOfFaerun/Spl/RALATH2.spl~ override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007
+
+//Boon of Lathander
+
+COPY ~DeitiesOfFaerun/Spl/RALATH3.spl~ override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009
 
 //False Dawn
 

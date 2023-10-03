@@ -83,7 +83,9 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RAVELS4.spl~  override SAY NAME1 @3206 SAY UNIDENTIFIED_DESC @3207          //Gaseous Form
+//Gaseous Form
+
+COPY ~DeitiesOfFaerun/Spl/RAVELS4.spl~  override SAY NAME1 @3206 SAY UNIDENTIFIED_DESC @3207
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL ~%RA_Poison%~ END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL ~%RA_Poisoned%~ END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL ~%RA_Bleeding%~ END

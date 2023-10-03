@@ -54,7 +54,9 @@ WRITE_ASCII 0x058 ~SELUL~
 COPY ~DeitiesOfFaerun/Spl/RASELUF.spl~ override
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Blinded%~ END
 
-COPY ~DeitiesOfFaerun/Spl/RASELU1.spl~ override SAY NAME1 @2006 SAY UNIDENTIFIED_DESC @2007             //Moonbeam
+//Moonbeam
+
+COPY ~DeitiesOfFaerun/Spl/RASELU1.spl~ override SAY NAME1 @2006 SAY UNIDENTIFIED_DESC @2007
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Blinded%~ END
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
@@ -124,7 +126,9 @@ ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RASELU4.PRO~
 
 COPY ~DeitiesOfFaerun/Spl/UB!SSta1.bam~ override
 
-COPY ~DeitiesOfFaerun/Spl/RASELU4.spl~ override SAY NAME1 @2008 SAY UNIDENTIFIED_DESC @2009    //Shooting Star
+//Shooting Star
+
+COPY ~DeitiesOfFaerun/Spl/RASELU4.spl~ override SAY NAME1 @2008 SAY UNIDENTIFIED_DESC @2009
 LPF ALTER_SPELL_HEADER INT_VAR projectile = %RASELU4% END
 
 //Multiclass CLAB

@@ -73,7 +73,9 @@ LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = 
 
 END                                                           
 
-COPY ~DeitiesOfFaerun/Spl/RAGARA2.spl~ override SAY NAME1 @3006 SAY UNIDENTIFIED_DESC @3007    				 //Chaotic Combat
+//Chaotic Combat
+
+COPY ~DeitiesOfFaerun/Spl/RAGARA2.spl~ override SAY NAME1 @3006 SAY UNIDENTIFIED_DESC @3007
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off
@@ -105,7 +107,9 @@ COPY ~DeitiesOfFaerun/Spl/RAGARA2A.spl~ override
 
 COPY ~DeitiesOfFaerun/Spl/RAGARA2B.spl~ override
 
-COPY ~DeitiesOfFaerun/Spl/RAGARA3.spl~ override SAY NAME1 @3008 SAY UNIDENTIFIED_DESC @3009                  //Blood Armor
+//Blood Armor
+
+COPY ~DeitiesOfFaerun/Spl/RAGARA3.spl~ override SAY NAME1 @3008 SAY UNIDENTIFIED_DESC @3009
 	READ_LONG	0x64	ab_off
 	READ_SHORT	0x68	ab_num
 	READ_LONG	0x6a	fx_off

@@ -73,9 +73,13 @@ LPM ~SPELL_TO_INNATE~
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RAILMA3.spl~ override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307   //Martyrdom of Ilmater
+//Martyrdom of Ilmater
 
-COPY ~DeitiesOfFaerun/Spl/RAILMA4.spl~ override SAY NAME1 @1308 SAY UNIDENTIFIED_DESC @1309   //Endurance of Ilmater
+COPY ~DeitiesOfFaerun/Spl/RAILMA3.spl~ override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307
+
+//Endurance of Ilmater
+
+COPY ~DeitiesOfFaerun/Spl/RAILMA4.spl~ override SAY NAME1 @1308 SAY UNIDENTIFIED_DESC @1309
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Diseased%~ END
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_FoulDisease%~ END
 	READ_LONG	0x64	ab_off

@@ -62,7 +62,9 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~ target = 2 timing = 
 
 END
 
-COPY ~DeitiesOfFaerun/Spl/RAOGHM1.spl~ override SAY NAME1 @1206 SAY UNIDENTIFIED_DESC @1207 //Legend Lore
+//Legend Lore
+
+COPY ~DeitiesOfFaerun/Spl/RAOGHM1.spl~ override SAY NAME1 @1206 SAY UNIDENTIFIED_DESC @1207
 
 //Friends
 
