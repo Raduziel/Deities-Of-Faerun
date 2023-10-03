@@ -1022,8 +1022,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Yondalla-Nephele.tpa~
 
 
 BEGIN @999999020 LABEL ~DeitiesOfFaerun-LuckmaidenOfHaela-Helga~
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~Setup-Helga.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~50~)) @9999905
-REQUIRE_PREDICATE (((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~Setup-Helga.tp2~ ~0~)) OR ((GAME_IS ~bg2ee eet~) AND (MOD_IS_INSTALLED ~Setup-SkitiaNPCs.tp2~ ~0~)) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~50~)) @9999905
+REQUIRE_PREDICATE (((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~Setup-Helga.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~50~)) OR ((GAME_IS ~bg2ee eet~) AND (MOD_IS_INSTALLED ~Setup-SkitiaNPCs.tp2~ ~0~)) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~50~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Haela-Helga.tpa~
 
 //__________________________________________________________________________________
