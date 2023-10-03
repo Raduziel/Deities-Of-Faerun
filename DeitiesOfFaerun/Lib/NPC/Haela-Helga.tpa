@@ -20,7 +20,7 @@ OUTER_SET kit = "%RAHael%"
 
 ACTION_IF GAME_IS ~bgee~ BEGIN
 
-ACTION_FOR_EACH creature IN ~X3Helga~ ~X32Helga~ BEGIN
+ACTION_FOR_EACH creature IN ~X3Helga~ BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 
@@ -63,6 +63,71 @@ ACTION_FOR_EACH creature IN ~X3Helga~ ~X32Helga~ BEGIN
     ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAHael	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAHAEL~	kitname2 = ~~	END
+
+  END
+  
+  END
+  
+  END
+  
+  COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAHaelFC" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAHaelFC"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAHaelFC%"
+
+ACTION_IF GAME_IS ~bgee~ BEGIN
+
+ACTION_FOR_EACH creature IN ~X3HFC1~ ~X3HFC2~ BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  REMOVE_MEMORIZED_SPELL ~X3HBOLT~
+      REMOVE_KNOWN_SPELL ~X3HBOLT~
+	  REMOVE_MEMORIZED_SPELL ~X3HURLS~
+      REMOVE_KNOWN_SPELL ~X3HURLS~
+      BUT_ONLY
+  END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAHaelFC	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAHAEL~	kitname2 = ~~	END
+
+  END
+  
+  END
+  
+  END ELSE BEGIN
+  
+  ACTION_FOR_EACH creature IN ~X3HFC~ ~X3HFC25~ BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  REMOVE_MEMORIZED_SPELL ~X3HBOLT~
+      REMOVE_KNOWN_SPELL ~X3HBOLT~
+	  REMOVE_MEMORIZED_SPELL ~X3HURLS~
+      REMOVE_KNOWN_SPELL ~X3HURLS~
+      BUT_ONLY
+  END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAHaelFC	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAHAEL~	kitname2 = ~~	END
 
   END
   
