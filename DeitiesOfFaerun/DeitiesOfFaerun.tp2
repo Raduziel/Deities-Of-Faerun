@@ -1073,21 +1073,19 @@ BEGIN @999999024 LABEL ~DeitiesOfFaerun-BloodstalkerOfUrdlen-Tviy~
 REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (MOD_IS_INSTALLED ~Tviy.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~49~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Urdlen-Tviy.tpa~
 
-/*
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//				      JENORA, THE MAGISTRATI OF AZUTH
+//				      ATHANASIOS, THE BATTLEGUARD OF TEMPUS
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 
-BEGIN @999999025 LABEL ~DeitiesOfFaerun-MagistratiOfAzuth-Jenora~
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~placeholder.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~29~)) @9999905
-INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Azuth-Jenora.tpa~
+BEGIN @999999025 LABEL ~DeitiesOfFaerun-BattleguardOfTempus-Athanasios~
+REQUIRE_PREDICATE ((GAME_IS ~iwdee~) AND (MOD_IS_INSTALLED ~athanasiosnpc.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~4~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tempus-Athanasios.tpa~
 
-*/
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
