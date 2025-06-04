@@ -890,7 +890,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Shar-Viconia.tpa~
 
 
 BEGIN @99999909 LABEL ~DeitiesOfFaerun-WaveservantOfUmberlee-Tenya~
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~setup-TenyaThermidor.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~21~)) @9999905
+REQUIRE_PREDICATE (((GAME_IS ~bgee~) AND (MOD_IS_INSTALLED ~Setup-TenyaThermidor.tp2~ ~0~)) OR ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~b2#tenyl.bmp~)) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~21~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Umberlee-Tenya.tpa~
 
 //__________________________________________________________________________________
@@ -902,7 +902,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Umberlee-Tenya.tpa~
 
 
 BEGIN @999999010 LABEL ~DeitiesOfFaerun-HolyJusticeOfTyr-Drake~
-REQUIRE_PREDICATE ((GAME_IS ~bgee eet~) AND (MOD_IS_INSTALLED ~Setup-Drake.tp2~ ~0~) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~13~)) @9999905
+REQUIRE_PREDICATE (((GAME_IS ~bgee~) AND (MOD_IS_INSTALLED ~Setup-Drake.tp2~ ~0~)) OR ((GAME_IS ~bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~c0drake.cre~)) AND (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~13~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tyr-Drake.tpa~
 
 //__________________________________________________________________________________
