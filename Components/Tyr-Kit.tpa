@@ -1,0 +1,186 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Holy Justice of Tyr
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RATyr~
+    ~RATyr 1 0 0 0 1 1 0 1~
+    ~RATyr 0 0 0 0 1 1 0 1 1 1 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATyr 9 3 3 3 9 3~
+	~RATyr 0 0 0 0 0 0~
+	~RATyr 9 3 3 3 9 3~
+    ~RATyr 9 3 3 3 9 3~
+	~RATyr 1 0 0 0 0 0 0 0 0~
+	~RATyr 1 0 0 0 0 0~
+	~DeitiesOfFaerun/Tables/RATyr.2da~
+	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT15 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * SW1H31 HAMM09 *~
+	SAY @1101
+	SAY @1102
+	SAY @1103
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RATyr~
+		clascolr = ~205 96 140 164 104~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RATYR~  clabfile = ~RATYR~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSTYR.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTYR~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSTYR.itm~ SAY NAME1 @1104 SAY NAME2 @1104 SAY DESC @1105
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATyr + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~TYRS~
+WRITE_ASCII 0x058 ~TYRL~
+
+//Spells
+
+
+//Hold Person
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLD_PERSON[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLD_PERSON~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATYR1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Strength of One
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_STRENGTH_OF_ONE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STRENGTH_OF_ONE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATYR2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Holy Word
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLY_WORD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLY_WORD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATYR3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Detect Invisibility
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_DETECT_INVISIBILITY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_DETECT_INVISIBILITY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATYR4.spl~
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATYR4~ END
+LPF AT_WILL END
+LPM ~SPELL_TO_INNATE~ 
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT INT_VAR match_opcode = 318 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATYR4~ END
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RATyr.2da~ ~override/RATyrFC.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RAFTYR~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyr~)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~TYRS~ ~TYRL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//Hide the original kit
+
+COPY_EXISTING
+~K_C_H.2DA~  override
+~K_C_HO.2DA~ override 
+~K_C_HE.2DA~ override
+~K_C_HL.2DA~ override
+~K_C_E.2DA~  override
+~K_C_D.2DA~  override
+~K_C_G.2DA~  override
+	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
+	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
+		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
+		PATCH_MATCH kit WITH
+			40 BEGIN
+				REMOVE_2DA_ROW i 2
+			END
+			DEFAULT
+		END
+	END
+BUT_ONLY
+
+//Hide the kit from Dual Classing
+
+  COPY_EXISTING ~DUALCLAS.2da~ override
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN 
+      READ_2DA_ENTRY_FORMER rows row 0 ~kit_name~
+      PATCH_IF (~%kit_name%~ STRING_EQUAL_CASE ~OHTYR~) BEGIN
+        SET tyr_row = %row%
+      END
+    END
+    FOR (col = 1; col < 7; ++col) BEGIN 
+      PATCH_IF IS_AN_INT %tyr_row% BEGIN
+        SET_2DA_ENTRY %tyr_row% col cols 0
+      END
+    END
+  BUT_ONLY
+
+//EoF

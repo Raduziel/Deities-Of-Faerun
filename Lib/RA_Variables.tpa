@@ -1,0 +1,61 @@
+// Setting variables to be included into LPF ALTER_EFFECT function.
+OUTER_SET RA_Drain1 = (GAME_IS ~bgee~) ? 25802 : GAME_IS ~bg2ee eet~ ? 41495 : (GAME_IS ~iwdee~) ? 35498 : 0		// One Level Drained
+OUTER_SET RA_Drain2 = (GAME_IS ~bgee~) ? 25803 : GAME_IS ~bg2ee eet~ ? 40968 : (GAME_IS ~iwdee~) ? 35497 : 0		// Two Levels Drained
+OUTER_SET RA_Drain3 = (GAME_IS ~bgee~) ? 25804 : GAME_IS ~bg2ee eet~ ? 40969 : (GAME_IS ~iwdee~) ? 35496 : 0		// Three Levels Drained
+OUTER_SET RA_Drain4 = (GAME_IS ~bgee~) ? 25805 : GAME_IS ~bg2ee eet~ ? 40979 : (GAME_IS ~iwdee~) ? 35472 : 0		// Four Levels Drained
+OUTER_SET RA_Drain5 = (GAME_IS ~bgee~) ? 25806 : GAME_IS ~bg2ee eet~ ? 41616 : (GAME_IS ~iwdee~) ? 35495 : 0		// Five Levels Drained
+
+OUTER_SET RA_Panic = (GAME_IS ~bgee~) ? 25818 : GAME_IS ~bg2ee eet~ ? 17427 : (GAME_IS ~iwdee~) ? 35484 : 0			// Panic
+OUTER_SET RA_MoralFail = (GAME_IS ~bgee~) ? 20568 : GAME_IS ~bg2ee eet~ ? 14007 : (GAME_IS ~iwdee~) ? 20568 : 0		// Morale Failure: Panic
+
+OUTER_SET RA_Diseased = (GAME_IS ~bgee~) ? 31238 : GAME_IS ~bg2ee eet~ ? 54337 : (GAME_IS ~iwdee~) ? 35593 : 0		// Diseased
+OUTER_SET RA_FoulDisease = (GAME_IS ~bgee~) ? 26453 : GAME_IS ~bg2ee eet~ ? 39752 : (GAME_IS ~iwdee~) ? 39752 : 0	// Stricken by a foul disease
+OUTER_SET RA_Poison = (GAME_IS ~bgee~) ? 26215 : GAME_IS ~bg2ee eet~ ? 14017 : (GAME_IS ~iwdee~) ? 36317 : 0		// Poison
+OUTER_SET RA_Poisoned = (GAME_IS ~bgee~) ? 25425 : GAME_IS ~bg2ee eet~ ? 14662 : (GAME_IS ~iwdee~) ? 37607 : 0		// Poisoned
+OUTER_SET RA_Bleeding = (GAME_IS ~bgee~) ? 25137 : GAME_IS ~bg2ee eet~ ? 54335 : (GAME_IS ~iwdee~) ? 37707 : 0	    // Bleeding
+OUTER_SET RA_Charmed = (GAME_IS ~bgee bg2ee eet~) ? 14672 : (GAME_IS ~iwdee~) ? 37801 : 0							// Charmed
+OUTER_SET RA_DireCharmed = (GAME_IS ~bgee bg2ee eet~) ? 14780 : (GAME_IS ~iwdee~) ? 17392 : 0					    // Dire Charmed
+OUTER_SET RA_Berserk = (GAME_IS ~bgee bg2ee eet~) ? 14036 : (GAME_IS ~iwdee~) ? 37605 : 0							// Berserk
+OUTER_SET RA_Held = (GAME_IS ~bgee bg2ee eet~) ? 14102 : (GAME_IS ~iwdee~) ? 35606 : 0								// Held
+OUTER_SET RA_Paralyzed = (GAME_IS ~bgee bg2ee eet~) ? 14650 : (GAME_IS ~iwdee~) ? 35542 : 0		                    // Paralyzed
+OUTER_SET RA_Dominated = (GAME_IS ~bgee~) ? 26206 : GAME_IS ~bg2ee eet~ ? 8364 : (GAME_IS ~iwdee~) ? 35544 : 0		// Dominated
+OUTER_SET RA_Feebleminded = (GAME_IS ~bgee bg2ee eet~) ? 23744 : (GAME_IS ~iwdee~) ? 14407 : 0						// Feebleminded
+OUTER_SET RA_Sleep = (GAME_IS ~bgee~) ? 26371 : GAME_IS ~bg2ee eet~ ? 14001 : (GAME_IS ~iwdee~) ? 37613 : 0		    // Sleep
+OUTER_SET RA_Stun = (GAME_IS ~bgee~) ? 35567 : GAME_IS ~bg2ee eet~ ? 14043 : (GAME_IS ~iwdee~) ? 35567 : 0		    // Stun
+OUTER_SET RA_Stunned = (GAME_IS ~bgee~) ? 26050 : GAME_IS ~bg2ee eet~ ? 74272 : (GAME_IS ~iwdee~) ? 35568 : 0		// Stunned
+OUTER_SET RA_Blinded = (GAME_IS ~bgee~) ? 31786 : GAME_IS ~bg2ee eet~ ? 14674 : (GAME_IS ~iwdee~) ? 37800 : 0		// Blinded
+OUTER_SET RA_RigidThink = (GAME_IS ~bgee~) ? 26184 : GAME_IS ~bg2ee eet~ ? 14791 : (GAME_IS ~iwdee~) ? 37603 : 0    // Rigid Thinking
+OUTER_SET RA_Confused = (GAME_IS ~bgee~) ? 25807 : GAME_IS ~bg2ee eet~ ? 14782 : (GAME_IS ~iwdee~) ? 37604 : 0      // Confused
+OUTER_SET RA_Intoxicated = (GAME_IS ~bgee bg2ee eet~) ? 17396 : (GAME_IS ~iwdee~) ? 37606 : 0                       // Intoxicated
+OUTER_SET RA_Hopeless = (GAME_IS ~bgee bg2ee eet~) ? 23740 : (GAME_IS ~iwdee~) ? 14980 : 0                          // Hopelessness
+OUTER_SET RA_AbDrain = (GAME_IS ~bgee~) ? 25081 : GAME_IS ~bg2ee eet~ ? 8320 : (GAME_IS ~iwdee~) ? 37685 : 0        // Ability Score Drain
+OUTER_SET RA_IntDrain = (GAME_IS ~bgee~) ? 25076 : GAME_IS ~bg2ee eet~ ? 8311 : (GAME_IS ~iwdee~) ? 37680 : 0       // Mind Flayer Drain
+OUTER_SET RA_Deaf = (GAME_IS ~bgee~) ? 25102 : GAME_IS ~bg2ee eet~ ? 54318 : (GAME_IS ~iwdee~) ? 35952 : 0          // Deaf
+OUTER_SET RA_Cursed = (GAME_IS ~bgee bg2ee eet~) ? 17426 : (GAME_IS ~iwdee~) ? 14406 : 0                            // Cursed
+OUTER_SET RA_Slowed = (GAME_IS ~bgee~) ? 11799 : GAME_IS ~bg2ee eet~ ? 335 : (GAME_IS ~iwdee~) ? 37787 : 0          // Slowed
+OUTER_SET RA_Slow = (GAME_IS ~bgee~) ? 12081 : GAME_IS ~bg2ee eet~ ? 11799 : (GAME_IS ~iwdee~) ? 37638 : 0          // Slow
+OUTER_SET RA_Haste = (GAME_IS ~bgee~) ? 26018 : GAME_IS ~bg2ee eet~ ? 13054 : (GAME_IS ~iwdee~) ? 37635 : 0         // Haste
+OUTER_SET RA_Hasted = (GAME_IS ~bgee~) ? 26019 : GAME_IS ~bg2ee eet~ ? 14023 : (GAME_IS ~iwdee~) ? 36035 : 0        // Hasted
+OUTER_SET RA_Unconscious = (GAME_IS ~bgee~) ? 25130 : GAME_IS ~bg2ee eet~ ? 20438 : (GAME_IS ~iwdee~) ? 37340 : 0   // Unconscious
+OUTER_SET RA_Healed = (GAME_IS ~bgee~) ? 25810 : GAME_IS ~bg2ee eet~ ? 14022 : (GAME_IS ~iwdee~) ? 35473 : 0        // Healed
+OUTER_SET RA_Dispel = (GAME_IS ~bgee~) ? 25820 : GAME_IS ~bg2ee eet~ ? 14056 : (GAME_IS ~iwdee~) ? 35499 : 0        // Dispel Effects
+OUTER_SET RA_SpellInef = (GAME_IS ~bgee~) ? 24534 : GAME_IS ~bg2ee eet~ ? 4742 : (GAME_IS ~iwdee~) ? 4742 : 0       // Spell Ineffective
+OUTER_SET RA_Entangled = (GAME_IS ~bgee~) ? 25144 : GAME_IS ~bg2ee eet~ ? 334 : (GAME_IS ~iwdee~) ? 37709 : 0       // Entangled
+OUTER_SET RA_Regeneration = (GAME_IS ~bgee~) ? 26307 : GAME_IS ~bg2ee eet~ ? 11006 : (GAME_IS ~iwdee~) ? 36398 : 0  // Regenerating
+OUTER_SET RA_Fatigued = (GAME_IS ~bgee~) ? 24536 : GAME_IS ~bg2ee eet~ ? 61410 : (GAME_IS ~iwdee~) ? 34693 : 0      // Fatigued
+OUTER_SET RA_Silenced = (GAME_IS ~bgee~) ? 14676 : GAME_IS ~bg2ee eet~ ? 14002 : (GAME_IS ~iwdee~) ? 14676 : 0      // Silenced
+
+OUTER_SET RA_RCold = (GAME_IS ~bgee~) ? 26159 : GAME_IS ~bg2ee eet~ ? 14014 : (GAME_IS ~iwdee~) ? 36255 : 0         // Resist Cold
+OUTER_SET RA_RFire = (GAME_IS ~bgee~) ? 26160 : GAME_IS ~bg2ee eet~ ? 14012 : (GAME_IS ~iwdee~) ? 36256 : 0         // Resist Fire
+
+OUTER_SET RA_Bonus = (GAME_IS ~bgee~) ? 81649 : GAME_IS ~bg2ee eet~ ? 103226 : (GAME_IS ~iwdee~) ? 40256 : 0        // Combat Bonuses
+OUTER_SET RA_Penalty = (GAME_IS ~bgee~) ? 81650 : GAME_IS ~bg2ee eet~ ? 103227 : (GAME_IS ~iwdee~) ? 40257 : 0      // Combat Penalties
+
+OUTER_SET RA_UndeadD = (GAME_IS ~bgee~) ? 35600 : GAME_IS ~bg2ee eet~ ? 10554 : (GAME_IS ~iwdee~) ? 35600 : 0       // Undead destroyed 
+OUTER_SET RA_Death = (GAME_IS ~bgee~) ? 35591 : GAME_IS ~bg2ee eet~ ? 14026 : (GAME_IS ~iwdee~) ? 35591 : 0         // Death
+OUTER_SET RA_Vorpal = (GAME_IS ~bgee~) ? 35592 : GAME_IS ~bg2ee eet~ ? 64285 : (GAME_IS ~iwdee~) ? 35592 : 0        // Vorpal Hit
+
+OUTER_SET RA_DeafIc = (GAME_IS ~bgee~) ? 112 : GAME_IS ~bg2ee eet~ ? 112 : (GAME_IS ~iwdee~) ? 83 : 0	// Deafness Icon
+OUTER_SET RA_FeebIc = (GAME_IS ~bgee~) ? 54  : GAME_IS ~bg2ee eet~ ? 54  : (GAME_IS ~iwdee~) ? 48 : 0	// Feeblemind Icon
+OUTER_SET RA_NausIc = (GAME_IS ~bgee~) ? 126 : GAME_IS ~bg2ee eet~ ? 126 : (GAME_IS ~iwdee~) ? 43 : 0	// Nauseous Icon
+OUTER_SET RA_FatiIc = (GAME_IS ~bgee~) ? 39  : GAME_IS ~bg2ee eet~ ? 39  : (GAME_IS ~iwdee~) ? 44 : 0	// Fatigue Icon

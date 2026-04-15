@@ -1,0 +1,168 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Holy Champion of Torm
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RATorm~
+    ~RATorm 0 0 0 0 1 1 0 1~
+    ~RATorm 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATorm 3 3 12 3 15 3~
+	~RATorm 0 0 0 0 0 0~
+	~RATorm 3 3 12 3 15 3~
+    ~RATorm 3 3 12 3 15 3~
+	~RATorm 1 0 0 0 0 0 0 0 0~
+	~RATorm 1 0 0 0 0 0~
+	~DeitiesOfFaerun/Tables/RATorm.2da~
+	~K_C_H K_C_HE K_C_D K_C_HO~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT18 SHLD21 HELM21 * RING09 RING31 CLCK05 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * BLUN14 HAMM09 *~
+	SAY @1501
+	SAY @1502
+	SAY @1503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RATorm~
+		clascolr = ~66 140 190 164 186~
+		clsrcreq = ~1 0 1 1 0 0 1~
+		hpclass = ~HPWAR~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RATORM~  clabfile = ~RATORM~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSTORM.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSTORM~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSTORM.itm~ SAY NAME1 @1504 SAY NAME2 @1504 SAY DESC @1505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATorm + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~TORMS~
+WRITE_ASCII 0x058 ~TORML~
+
+//Spells
+
+//Command
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_COMMAND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_COMMAND~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATORM1.spl~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM1~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM1~	END
+
+END
+
+//Greater Command
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_GREATER_COMMAND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GREATER_COMMAND~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATORM2.spl~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM2~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RATORM2~	END
+
+END
+
+//Bolt of Glory
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BOLT_OF_GLORY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BOLT_OF_GLORY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATORM3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Power Word, Stun
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_POWER_WORD_STUN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_POWER_WORD_STUN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATORM4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Holy Word
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_HOLY_WORD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_HOLY_WORD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RATORM5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RATorm.2da~ ~override/RATormFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFTORM~
+READ_2DA_ENTRIES_NOW read 51
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		FOR (j = 0; j < read; ++j)	BEGIN
+			PATCH_IF	EVAL $read(~%j%~ ~%i%~) STRING_EQUAL ~****~ BEGIN
+				SET_2DA_ENTRY j i 51 ~AP_RAHPFIX~
+				SET	j = read
+			END
+		END
+END
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RATorm + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~TORMS~ ~TORML~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

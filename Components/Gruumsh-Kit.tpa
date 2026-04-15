@@ -1,0 +1,184 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						            Eye of Gruumsh
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAGruu~
+    ~RAGruu 0 0 0 0 1 1 0 1~
+    ~RAGruu 0 0 0 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 3 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAGruu 13 3 3 3 9 3~
+	~RAGruu 0 0 0 0 0 0~
+	~RAGruu 13 3 3 3 9 3~
+    ~RAGruu 13 3 3 3 9 3~
+	~RAGruu 0 0 1 0 0 0 0 0 0~
+	~RAGruu 1 0 0 0 0 0~
+	~DeitiesOfFaerun/Tables/RAGruu.2da~
+	~K_C_HO~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT18 * HELM07 * RING09 RING31 CLCK05 BOOT01 AMUL21 BRAC10 BELT04 * * * * * * SPER08 * *~
+	SAY @5201
+	SAY @5202
+	SAY @5203
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAGruu~
+		clascolr = ~100 47 66 127 83~
+		clsrcreq = ~0 0 0 0 0 0 1~
+		hpclass = ~HPWAR~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAGRUU~  clabfile = ~RAGRUU~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSGRUU.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSGRUU~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSGRUU.itm~ SAY NAME1 @5204 SAY NAME2 @5204 SAY DESC @5205
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAGruu + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~GRUUS~
+WRITE_ASCII 0x058 ~GRUUL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAGRUUF.spl~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@5206) END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Blinded%~     END
+
+//Aid
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_AID[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_AID~ RET spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAGRUU1.spl~
+SAY UNIDENTIFIED_DESC  @5209
+LPF ALTER_SPELL_HEADER  INT_VAR target = 5 range  = 0  END
+LPF ALTER_EFFECT        INT_VAR silent = 1 target = 2  END
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Blindness
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_BLINDNESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BLINDNESS~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAGRUU2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Command the Horde
+
+ADD_PROJECTILE ~DeitiesofFaerun/Spl/RAGruu3.PRO~
+
+COPY ~DeitiesOfFaerun/Spl/RAGRUU3.spl~  override SAY NAME1 @5207 SAY UNIDENTIFIED_DESC @5208
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAGruu3% END
+
+COPY ~DeitiesOfFaerun/Spl/RAGRUU31.spl~ override
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 30 duration = (30 * i) END
+	END
+
+//Enrage
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAGRUU4.spl~
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RAGRUU4D~	END
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAGRUU4~ END
+
+COPY_EXISTING	~%spell_res%D.spl~	~override/RAGRUU4D.spl~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAGRUU4~ END
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAGruu.2da~ ~override/RAGruuFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFGRUU~
+READ_2DA_ENTRIES_NOW read 51
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		FOR (j = 0; j < read; ++j)	BEGIN
+			PATCH_IF	EVAL $read(~%j%~ ~%i%~) STRING_EQUAL ~****~ BEGIN
+				SET_2DA_ENTRY j i 51 ~AP_RAHPFIX~
+				SET	j = read
+			END
+		END
+END
+PRETTY_PRINT_2DA
+
+//BAM
+
+ACTION_FOR_EACH file IN ~GRUUS~ ~GRUUL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~GRUUCOMM~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

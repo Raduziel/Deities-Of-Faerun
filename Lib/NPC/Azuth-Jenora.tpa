@@ -1,0 +1,41 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					     JENORA, THE MAGISTRATI OF AZUTH
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAAzutFM" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAAzutFM"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RAAzutFM%"
+
+ACTION_FOR_EACH creature IN ~k9Jenor~ BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT      0x244 0
+      WRITE_BYTE       0x246 "%kit%"
+      WRITE_BYTE       0x247 0x40
+	  REMOVE_CRE_ITEM ~k9BRAC18~
+      BUT_ONLY
+  END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RAAzutFM	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RAAZUT~	kitname2 = ~~	END
+
+  END
+  
+  END
+  
+//EoF

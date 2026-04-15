@@ -1,0 +1,211 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Black Finger of Beshaba
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RABesh~
+    ~RABesh 0 0 0 0 1 1 0 1~
+    ~RABesh 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABesh 3 3 3 3 10 3~
+	~RABesh 0 0 0 0 0 0~
+	~RABesh 3 3 3 3 10 3~
+    ~RABesh 3 3 3 3 10 3~
+	~RABesh 0 0 0 0 0 0 0 0 1~
+	~RABesh 1 0 1 1 0 0~
+	~DeitiesOfFaerun/Tables/RABesh.2da~
+	~K_C_H   K_C_HE   K_C_HL   K_C_G   K_C_HO~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT12 SHLD22 HELM04 * RING31 RING09 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN14 HAMM09 *~
+	SAY @3501
+	SAY @3502
+	SAY @3503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RABesh~
+		clascolr = ~44 139 117 140 119~
+		clsrcreq = ~1 0 1 0 1 1 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RABESH~  clabfile = ~RABESH~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSBESH.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBESH~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSBESH.itm~ SAY NAME1 @3504 SAY NAME2 @3504 SAY DESC @3505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABesh + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~BESHS~
+WRITE_ASCII 0x058 ~BESHL~
+
+//Spells
+
+//Bad Luck
+
+COPY ~DeitiesOfFaerun/Spl/RABESH1.spl~  override SAY NAME1 @3506 SAY UNIDENTIFIED_DESC @3507
+
+//Doom
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DOOM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DOOM~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABESH2.spl~
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RABESH2~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT	INT_VAR	match_opcode = 321 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RABESH2~	END
+
+END
+
+//Bane of Beshaba
+
+COPY ~DeitiesOfFaerun/Spl/RABESH3.spl~  override SAY NAME1 @3508 SAY UNIDENTIFIED_DESC @3509
+
+//Lower Resistance
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LOWER_RESISTANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LOWER_RESISTANCE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABESH4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Misfortune
+
+COPY ~DeitiesOfFaerun/Spl/RABESH5.spl~  override SAY NAME1 @3510 SAY UNIDENTIFIED_DESC @3511
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
+	END
+
+//Beshaba's Mercy
+
+COPY ~DeitiesOfFaerun/Spl/RABESH6.spl~  override SAY NAME1 @3512 SAY UNIDENTIFIED_DESC @3513
+
+//Black Blade of Disaster
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_BLACK_BLADE_OF_DISASTER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_BLACK_BLADE_OF_DISASTER~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABesh7.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RABesh.2da~ ~override/RABeshFC.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RAFBESH~
+PRETTY_PRINT_2DA
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RABesh.2da~ ~override/RABeshCT.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RATBESH~
+PRETTY_PRINT_2DA
+
+END ELSE BEGIN
+
+COPY_EXISTING ~RABesh.2da~ ~override/RABeshCT.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RATBESH~
+SET_2DA_ENTRY 1  7 50 ~AP_#EVADE~
+PRETTY_PRINT_2DA
+
+END
+
+COPY_EXISTING ~RABesh.2da~ ~override/RABeshCM.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RAMBESH~
+SET_2DA_ENTRY 8  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RABesh + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~BESHS~ ~BESHL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~BESHBLUC~ ~BESHBANE~ ~BESHMISF~ ~BESHMERC~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

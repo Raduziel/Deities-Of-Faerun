@@ -1,0 +1,160 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						         Dreadruler of Bane
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RABane~
+    ~RABane 0 0 0 0 0 0 0 0~
+    ~RABane 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1 0 0 0 0 0 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABane 12 3 3 3 10 3~
+	~RABane 0 0 0 0 0 0~
+	~RABane 12 3 3 3 10 3~
+    ~RABane 12 3 3 3 10 3~
+	~RABane 0 0 1 0 0 0 0 0 0~
+	~RABane 1 0 0 0 0 0~
+	~DeitiesOfFaerun/Tables/RABane.2da~
+	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT09 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT01 AMUL27 BRAC10 BELT04 * * * * * * SPER08 HAMM09 *~
+	SAY @2301
+	SAY @2302
+	SAY @2303
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RABane~
+		clascolr = ~29 47 136 188 182~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RABANE~  clabfile = ~RABANE~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSBANE.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSBANE~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSBANE.itm~ SAY NAME1 @2304 SAY NAME2 @2304 SAY DESC @2305
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABane + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~BANES~
+WRITE_ASCII 0x058 ~BANEL~
+
+//Spells
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_REMOVE_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_FEAR~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~ ~override/RABANEF.spl~
+LPM ~SPELL_TO_FEATURE~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~ target = 2 timing = 9 STR_VAR resource = ~RABANEF~ END
+
+END
+
+//Cloak of Fear
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CLOAK_OF_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CLOAK_OF_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABANE1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+		  
+//Mental Domination
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_MENTAL_DOMINATION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_MENTAL_DOMINATION~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RABANE2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Mystic Lash
+
+COPY ~DeitiesOfFaerun/Spl/RABANE3.spl~ override SAY NAME1 @2306 SAY UNIDENTIFIED_DESC  @2307
+
+COPY ~DeitiesOfFaerun/Spl/RABANE31.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL ~%RA_Stunned%~ END 
+
+COPY ~DeitiesOfFaerun/Spl/RABANE32.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = EVAL ~%RA_Paralyzed%~ END
+
+COPY ~DeitiesOfFaerun/Spl/RABANE33.spl~ override
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RABane.2da~ ~override/RABaneFC.2da~
+SET_2DA_ENTRY 5 25 50 ~AP_RAFBANE~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 99 103 104 105 106 107  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABane~)
+			  parameter2 = 9
+			  timing = 2
+		END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~BANES~ ~BANEL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~BANEWHIP~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

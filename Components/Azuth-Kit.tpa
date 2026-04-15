@@ -1,0 +1,210 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Magistrati of Azuth
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAAzut~
+    ~RAAzut 0 0 0 0 1 1 0 1~
+    ~RAAzut 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAAzut 3 3 3 13 14 3~
+	~RAAzut 0 0 0 0 0 0~
+	~RAAzut 3 3 3 13 14 3~
+    ~RAAzut 3 3 3 13 14 3~
+	~RAAzut 0 1 0 0 0 0 0 0 0~
+	~RAAzut 0 0 1 0 0 0~
+	~DeitiesOfFaerun/Tables/RAAzut.2da~
+	~K_C_H K_C_HE K_C_E K_C_G~
+	~0x00000000 3~
+	~Cl0~
+	~* SHLD22 HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF10 BLUN25 *~
+	SAY @2701
+	SAY @2702
+	SAY @2703
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAAzut~
+		clascolr = ~5 170 169 135 5~
+		clsrcreq = ~1 1 1 0 0 1 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAAZUT~  clabfile = ~RAAZUT~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSAZUT.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSAZUT~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSAZUT.itm~ SAY NAME1 @2704 SAY NAME2 @2704 SAY DESC @2705
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAAzut + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~AZUTS~
+WRITE_ASCII 0x058 ~AZUTL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAAZUTF.spl~ override
+  
+//Armor
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ARMOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ARMOR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT1.spl~
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 2
+
+END
+		  
+//Agannazar's Scorcher
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_AGANNAZAR_SCORCHER[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_AGANNAZAR_SCORCHER~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT2.spl~
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 3
+
+END
+
+//Melf's Minute Meteors
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MELF_METEOR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MELF_METEOR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT3.spl~
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 4
+
+END
+
+//Otiluke's Resilient Sphere
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_OTILUKES_RESILIENT_SPHERE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_OTILUKES_RESILIENT_SPHERE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT4.spl~
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 5
+
+END
+
+//Spell Shield
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SPELL_SHIELD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SPELL_SHIELD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT5.spl~
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 6
+
+END
+
+//Protection From Magic Energy
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_MAGIC_ENERGY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_MAGIC_ENERGY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT6.spl~
+WRITE_SHORT 0x1C 2                        
+WRITE_LONG  0x34 7
+
+END
+
+//Magic Missile
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_MAGIC_MISSILE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_MAGIC_MISSILE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT7.spl~
+LPM ~SPELL_TO_INNATE~
+
+END 
+
+//Fireball
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FIREBALL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FIREBALL~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAAZUT8.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAAzut.2da~ ~override/RAAzutCM.2da~
+SET_2DA_ENTRY 10 25 50 ~AP_RAMAZUT~
+SET_2DA_ENTRY 10  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RAAzut.2da~ ~override/RAAzutFM.2da~
+SET_2DA_ENTRY 10 25 50 ~AP_RAFMAZU~
+SET_2DA_ENTRY 10  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAAzut + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~2A~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzut~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~AZUTS~ ~AZUTL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+
+//EoF

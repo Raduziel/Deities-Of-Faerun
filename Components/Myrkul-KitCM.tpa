@@ -1,0 +1,93 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						    Gray One of Myrkul - Cleric/Mage
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAMyrkCM~
+    ~RAMyrkCM 0 0 0 0 1 1 0 1~
+    ~RAMyrkCM 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMyrkCM 14 3 3 14 14 3~
+	~RAMyrkCM 0 0 0 0 0 0~
+	~RAMyrkCM 14 3 3 14 14 3~
+    ~RAMyrkCM 14 3 3 14 14 3~
+	~RAMyrkCM 0 0 0 0 0 1 0 0 0~
+	~RAMyrkCM 0 0 0 0 0 0~
+	~override/RAMyrkCM.2da~
+	~K_CM_H~
+	~0x00001000 14~
+	~CM0~
+	~WA2ROBE SHLD25 HELM17 * RING09 RING39 CLCK30 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN25 SW1H30 *~
+	SAY @2501
+	SAY @2502
+	SAY @2511
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAMyrkCM~
+		clascolr = ~21 66 136 65 100~
+		clsrcreq = ~1 0 0 0 0 0 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAMyrkCM~
+      kit_clab = ~RAMyrkCM~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAMyrkCM%	classID = 14 STR_VAR	kitname = ~RAMYRK~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMMYRK.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMMYRK~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMMYRK.itm~ SAY NAME1 @2504 SAY NAME2 @2504 SAY DESC @2505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMyrkCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MYRKS~
+WRITE_ASCII 0x058 ~MYRKL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 96 98 99 103 104 105 106 BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMyrkCM + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~AX~ ~BW~ ~CB~ ~DD~ ~HB~ ~S0~ ~S1~ ~S2~ ~S3~ ~SP~ ~SS~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//EoF

@@ -1,0 +1,193 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Painbearer of Ilmater
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAIlma~
+    ~RAIlma 0 0 0 0 1 1 0 1~
+    ~RAIlma 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAIlma 3 3 14 3 12 3~
+	~RAIlma 0 0 0 0 0 0~
+	~RAIlma 3 3 3 3 12 3~
+    ~RAIlma 3 3 14 3 12 3~
+	~RAIlma 1 0 0 0 0 0 0 0 0~
+	~RAIlma 1 0 1 0 0 0~
+	~DeitiesOfFaerun/Tables/RAIlma.2da~
+	~K_C_H   K_C_HE   K_C_E   K_C_G   K_C_HO   K_C_HL   K_C_D~
+	~0x00000000 3~
+	~Cl0~
+	~* WAFLAIL HELM04 * RING31 MISC72 OHRCLCK3 BOOT01 AMUL27 BRAC16 BELT09 * * * * * * STAF10 HAMM09 *~
+	SAY @1301
+	SAY @1302
+	SAY @1303
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAIlma~
+		clascolr = ~14 28 222 9 14~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAILMA~  clabfile = ~RAILMA~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSILMA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSILMA~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSILMA.itm~ SAY NAME1 @1304 SAY NAME2 @1304 SAY DESC @1305
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAIlma + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~ILMAS~
+WRITE_ASCII 0x058 ~ILMAL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAILMAF.spl~ override
+
+//Remove Fear
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_REMOVE_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_FEAR~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAILMA1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Draw Upon Holy Might
+
+ACTION_IF FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DRAW_UPON_HOLY_MIGHT[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DRAW_UPON_HOLY_MIGHT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAILMA2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Martyrdom of Ilmater
+
+COPY ~DeitiesOfFaerun/Spl/RAILMA3.spl~ override SAY NAME1 @1306 SAY UNIDENTIFIED_DESC @1307
+
+//Endurance of Ilmater
+
+COPY ~DeitiesOfFaerun/Spl/RAILMA4.spl~ override SAY NAME1 @1308 SAY UNIDENTIFIED_DESC @1309
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL ~%RA_Diseased%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL ~%RA_FoulDisease%~ END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_duration = 6 duration = ((6 * i)+6) END
+	END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAIlma.2da~ ~override/RAIlmaFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFILMA~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RAIlma.2da~ ~override/RAIlmaCM.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAMILMA~
+SET_2DA_ENTRY 6  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAIlma + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ ~2A~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~ILMAS~ ~ILMAL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~ILMAENDU~ ~ILMAMART~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

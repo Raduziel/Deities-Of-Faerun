@@ -1,0 +1,202 @@
+/*		Update State Trigger Offset		*/
+DEFINE_PATCH_FUNCTION	STR_OFF_UPDATE	INT_VAR	length = 0	off_add = 0	BEGIN
+	READ_LONG	0x18	s_trig_off	//	state_trigger_offset
+	READ_LONG	0x1c	s_trig_num	//	state_trigger_number
+	s_trig_off += off_add	WRITE_LONG	0x18	s_trig_off
+	FOR	(i = 0; i < s_trig_num; ++i)	BEGIN
+		READ_LONG	(s_trig_off + i * 0x8)	offset
+		WRITE_LONG	(s_trig_off + i * 0x8)	(offset + length)
+	END
+END
+/*		Update Response Trigger Offset		*/
+DEFINE_PATCH_FUNCTION	RST_OFF_UPDATE	INT_VAR	length = 0	off_add = 0	BEGIN
+	READ_LONG	0x20	r_trig_off	//	response_trigger_offset
+	READ_LONG	0x24	r_trig_num	//	response_trigger_number
+	r_trig_off += off_add	WRITE_LONG	0x20	r_trig_off
+	FOR	(i = 0; i < r_trig_num; ++i)	BEGIN
+		READ_LONG	(r_trig_off + i * 0x8)	offset
+		WRITE_LONG	(r_trig_off + i * 0x8)	(offset + length)
+	END
+END
+/*		Update Action Offset		*/
+DEFINE_PATCH_FUNCTION	ACT_OFF_UPDATE	INT_VAR	length = 0	off_add = 0	BEGIN
+	READ_LONG	0x28	action_off	//	action_offset
+	READ_LONG	0x2c	action_num	//	action_number
+	action_off += off_add	WRITE_LONG	0x28	action_off
+	FOR	(i = 0; i < action_num; ++i)	BEGIN
+		READ_LONG	(action_off + i * 0x8)	offset
+		WRITE_LONG	(action_off + i * 0x8)	(offset + length)
+	END
+END
+/*		Get State Trigger Offset		*/
+DEFINE_PATCH_FUNCTION	S_TRIGGER_OFFSET	INT_VAR	index = ~-1~	RET	s_trig_idx	BEGIN
+	READ_LONG	0x18	s_trig_off	//	state_trigger_offset
+	READ_LONG	0x1c	s_trig_num	//	state_trigger_number
+	PATCH_IF	(index = ~-1~) OR (index > s_trig_num)	BEGIN	index = s_trig_num	END
+	READ_LONG	(s_trig_off + index * 0x8 + 0x0)	s_trig_idx
+END
+/*		Get Response Trigger Offset		*/
+DEFINE_PATCH_FUNCTION	R_TRIGGER_OFFSET	INT_VAR	index = ~-1~	RET	r_trig_idx	BEGIN
+	READ_LONG	0x20	r_trig_off	//	response_trigger_offset
+	READ_LONG	0x24	r_trig_num	//	response_trigger_number
+	PATCH_IF	(index = ~-1~) OR (index > r_trig_num)	BEGIN	index = r_trig_num	END
+	READ_LONG	(r_trig_off + index * 0x8 + 0x0)	r_trig_idx
+END
+/*		Get Action Offset		*/
+DEFINE_PATCH_FUNCTION	ACTION_OFFSET	INT_VAR	index = ~-1~	RET	action_idx	BEGIN
+	READ_LONG	0x28	action_off	//	action_offset
+	READ_LONG	0x2c	action_num	//	action_number
+	PATCH_IF	(index = ~-1~) OR (index >= action_num)	BEGIN
+		index = action_num	
+		READ_LONG	(action_off + index * 0x8 - 0x8)	action_idx
+		READ_LONG	(action_off + index * 0x8 - 0x4)	length
+		action_idx += length
+	END	ELSE	BEGIN
+		READ_LONG	(action_off + index * 0x8 + 0x0)	action_idx
+	END
+END
+/*		Update for New State Trigger		*/
+DEFINE_PATCH_FUNCTION	S_TRIGGER_UPDATE	INT_VAR	index = ~-1~	length = 0	BEGIN
+	READ_LONG	0x18	s_trig_off	//	state_trigger_offset
+	READ_LONG	0x1c	s_trig_num	//	state_trigger_number
+	READ_LONG	0x20	r_trig_off	//	response_trigger_offset
+	READ_LONG	0x24	r_trig_num	//	response_trigger_number
+	READ_LONG	0x28	action_off	//	action_offset
+	READ_LONG	0x2c	action_num	//	action_number
+	PATCH_IF	(index = ~-1~) OR (index > s_trig_num)	BEGIN	index = s_trig_num	END
+	READ_LONG	(s_trig_off + index * 0x8)	offset
+	INSERT_BYTES	(s_trig_off + index * 0x8)	0x8
+		WRITE_LONG	(s_trig_off + index * 0x8)	offset
+		WRITE_LONG	(s_trig_off + index * 0x8 + 0x4)	length
+	++s_trig_num	WRITE_LONG	0x1c	s_trig_num
+	FOR	(i = 0; i < s_trig_num; ++i)	BEGIN	READ_LONG	(s_trig_off + i * 0x8)	offset
+				PATCH_IF	(i > index)	BEGIN	WRITE_LONG	(s_trig_off + i * 0x8)	(offset + length + 0x8)
+							END	ELSE	BEGIN	WRITE_LONG	(s_trig_off + i * 0x8)	(offset + 0x8)
+		END
+	END
+	LPF	RST_OFF_UPDATE	INT_VAR length = (length + 0x8)	off_add = 0x8	END
+	LPF	ACT_OFF_UPDATE	INT_VAR length = (length + 0x8)	off_add = 0x8	END
+END
+/*		Update for New Response Trigger		*/
+DEFINE_PATCH_FUNCTION	R_TRIGGER_UPDATE	INT_VAR	index = ~-1~	length = 0	BEGIN
+	READ_LONG	0x18	s_trig_off	//	state_trigger_offset
+	READ_LONG	0x1c	s_trig_num	//	state_trigger_number
+	READ_LONG	0x20	r_trig_off	//	response_trigger_offset
+	READ_LONG	0x24	r_trig_num	//	response_trigger_number
+	READ_LONG	0x28	action_off	//	action_offset
+	READ_LONG	0x2c	action_num	//	action_number
+	PATCH_IF	(index = ~-1~) OR (index > r_trig_num)	BEGIN	index = r_trig_num	END
+	READ_LONG	(r_trig_off + index * 0x8)	offset
+	INSERT_BYTES	(r_trig_off + index * 0x8)	0x8
+		WRITE_LONG	(r_trig_off + index * 0x8)	offset
+		WRITE_LONG	(r_trig_off + index * 0x8 + 0x4)	length
+	++r_trig_num	WRITE_LONG	0x24	r_trig_num
+	FOR	(i = 0; i < s_trig_num; ++i)	BEGIN	READ_LONG	(s_trig_off + i * 0x8)	offset	WRITE_LONG	(s_trig_off + i * 0x8)	(offset + 0x8)	END
+	FOR	(i = 0; i < r_trig_num; ++i)	BEGIN	READ_LONG	(r_trig_off + i * 0x8)	offset
+				PATCH_IF	(i > index)	BEGIN	WRITE_LONG	(r_trig_off + i * 0x8)	(offset + length + 0x8)
+							END	ELSE	BEGIN	WRITE_LONG	(r_trig_off + i * 0x8)	(offset + 0x8)
+		END
+	END
+	LPF	ACT_OFF_UPDATE	INT_VAR length = (length + 0x8)	off_add = 0x8	END
+END
+/*		Update for New Action		*/
+DEFINE_PATCH_FUNCTION	ACTION_UPDATE	INT_VAR	index = ~-1~	length = 0	BEGIN
+	READ_LONG	0x18	s_trig_off	//	state_trigger_offset
+	READ_LONG	0x1c	s_trig_num	//	state_trigger_number
+	READ_LONG	0x20	r_trig_off	//	response_trigger_offset
+	READ_LONG	0x24	r_trig_num	//	response_trigger_number
+	READ_LONG	0x28	action_off	//	action_offset
+	READ_LONG	0x2c	action_num	//	action_number
+	PATCH_IF	(index = ~-1~) OR (index >= action_num)	BEGIN
+		index = action_num	
+		READ_LONG	(action_off + index * 0x8 - 0x8)	pre_offset
+		READ_LONG	(action_off + index * 0x8 - 0x4)	pre_value
+		offset = pre_offset + pre_value
+	END	ELSE	BEGIN	READ_LONG	(action_off + index * 0x8)	offset
+	END
+	INSERT_BYTES	(action_off + index * 0x8)	0x8
+		WRITE_LONG	(action_off + index * 0x8)	offset
+		WRITE_LONG	(action_off + index * 0x8 + 0x4)	length
+	++action_num	WRITE_LONG	0x2c	action_num
+	FOR	(i = 0; i < s_trig_num; ++i)	BEGIN	READ_LONG	(s_trig_off + i * 0x8)	offset	WRITE_LONG	(s_trig_off + i * 0x8)	(offset + 0x8)	END
+	FOR	(i = 0; i < r_trig_num; ++i)	BEGIN	READ_LONG	(r_trig_off + i * 0x8)	offset	WRITE_LONG	(r_trig_off + i * 0x8)	(offset + 0x8)	END
+	FOR	(i = 0; i < action_num; ++i)	BEGIN	READ_LONG	(action_off + i * 0x8)	offset
+				PATCH_IF	(i > index)	BEGIN	WRITE_LONG	(action_off + i * 0x8)	(offset + length + 0x8)
+							END	ELSE	BEGIN	WRITE_LONG	(action_off + i * 0x8)	(offset + 0x8)	END
+	END
+END
+/*		Add New State		*/
+DEFINE_PATCH_FUNCTION	ADD_STATE	INT_VAR	index = ~-1~	text = ~-1~	trigger = ~-1~	RET	 index	BEGIN
+	READ_LONG	0x8		state_num	//	states_number
+	READ_LONG	0xc		state_off	//	states_offset
+	READ_LONG	0x14	response_off	//	responses_offset
+	PATCH_IF	(index = ~-1~) OR (index > state_num)	BEGIN	index = state_num	END
+	PATCH_IF	index > 0	BEGIN	
+		READ_LONG	(state_off + (index - 1) * 0x10 + 0x4)	state_res_off
+		READ_LONG	(state_off + (index - 1) * 0x10 + 0x8)	state_res_num
+		state_res_off = state_res_off + state_res_num
+	END	ELSE	BEGIN	state_res_off = 0	END
+	INSERT_BYTES	(state_off + index * 0x10)	0x10
+		WRITE_LONG	(state_off + index * 0x10)	text
+		WRITE_LONG	(state_off + index * 0x10 + 0x4)	state_res_off
+		WRITE_LONG	(state_off + index * 0x10 + 0xc)	trigger
+	++state_num		WRITE_LONG	0x8		state_num
+	response_off += 0x10	WRITE_LONG	0x14	response_off
+	LPF	STR_OFF_UPDATE	INT_VAR length = 0x10	off_add = 0x10	END
+	LPF	RST_OFF_UPDATE	INT_VAR length = 0x10	off_add = 0x10	END
+	LPF	ACT_OFF_UPDATE	INT_VAR length = 0x10	off_add = 0x10	END
+END
+/*		Add New Response		*/
+DEFINE_PATCH_FUNCTION	ADD_RESPONSE
+	INT_VAR	state = 0	index = ~-1~	flags = 0	text = ~-1~	trigger = ~-1~	action = ~-1~	next_state = 0
+	STR_VAR next_dlg = ~~	BEGIN
+	READ_LONG	0x10	response_num	//	response_number
+	READ_LONG	0x14	response_off	//	response_offset
+	READ_LONG	0x8		state_num	//	states_number
+	READ_LONG	0xc		state_off	//	states_offset
+	READ_LONG	0x24	r_trig_num	//	response_trigger_number
+	READ_LONG	0x2c	action_num	//	action_number
+	READ_LONG	(state_off + state * 0x10 + 0x4)	state_res_off
+	READ_LONG	(state_off + state * 0x10 + 0x8)	state_res_num
+	PATCH_IF	(index = ~-1~) OR (index > state_res_num)	BEGIN	index = state_res_num	END
+	PATCH_IF	(text != ~-1~)		BEGIN	flags += 1	END
+	PATCH_IF	(trigger != ~-1~)	BEGIN	flags += 2	PATCH_IF (trigger > r_trig_num)	BEGIN	trigger = r_trig_num	END	END
+	PATCH_IF	(action != ~-1~)	BEGIN	flags += 4	PATCH_IF (action > action_num)		BEGIN	action = action_num	END	END
+	PATCH_IF	(next_state = ~-1~)	BEGIN	next_state = state_num + 1	END
+	PATCH_IF	(~%next_dlg%~ STRING_EQUAL ~~)	BEGIN	flags += 8	END
+	INSERT_BYTES	(response_off + (state_res_off + index) * 0x20)	0x20
+		WRITE_LONG	(response_off + (state_res_off + index) * 0x20)	flags
+		WRITE_LONG	(response_off + (state_res_off + index) * 0x20 + 0x4)	text
+		WRITE_LONG	(response_off + (state_res_off + index) * 0x20 + 0xc)	trigger	
+		WRITE_LONG	(response_off + (state_res_off + index) * 0x20 + 0x10)	action
+		WRITE_EVALUATED_ASCII	(response_off + (state_res_off + index) * 0x20 + 0x14)	~%next_dlg%~	#8
+		WRITE_LONG	(response_off + (state_res_off + index) * 0x20 + 0x1c)	next_state
+	++response_num	WRITE_LONG	0x10	response_num
+	++state_res_num	WRITE_LONG	(state_off + state * 0x10 + 0x8)	state_res_num
+	FOR	(i = state + 1; i < state_num; ++i)	BEGIN
+		READ_LONG	(state_off + i * 0x10 + 0x4)	state_res_off
+		++state_res_off
+		WRITE_LONG	(state_off + i * 0x10 + 0x4)	state_res_off
+	END
+	LPF	STR_OFF_UPDATE	INT_VAR length = 0x20	off_add = 0x20	END
+	LPF	RST_OFF_UPDATE	INT_VAR length = 0x20	off_add = 0x20	END
+	LPF	ACT_OFF_UPDATE	INT_VAR length = 0x20	off_add = 0x20	END
+END
+/*		Add New State Trigger		*/
+DEFINE_PATCH_FUNCTION	ADD_S_TRIGGER	INT_VAR	index = ~-1~	STR_VAR trigger = ~~	BEGIN
+	LPF	S_TRIGGER_OFFSET	INT_VAR index = index	RET	s_trig_idx = s_trig_idx	END
+	length = (STRING_LENGTH	~%trigger%~)	INSERT_BYTES	s_trig_idx	length	WRITE_EVALUATED_ASCII	s_trig_idx	~%trigger%~
+	LPF	S_TRIGGER_UPDATE	INT_VAR index = index	length = length	END
+END
+/*		Add New Response Trigger		*/
+DEFINE_PATCH_FUNCTION	ADD_R_TRIGGER	INT_VAR	index = ~-1~	STR_VAR trigger = ~~	BEGIN
+	LPF	R_TRIGGER_OFFSET	INT_VAR index = index	RET	r_trig_idx = r_trig_idx	END
+	length = (STRING_LENGTH	~%trigger%~)	INSERT_BYTES	r_trig_idx	length	WRITE_EVALUATED_ASCII	r_trig_idx	~%trigger%~
+	LPF	R_TRIGGER_UPDATE	INT_VAR index = index	length = length	END
+END
+/*		Add New Action		*/
+DEFINE_PATCH_FUNCTION	ADD_ACTION	INT_VAR	index = ~-1~	STR_VAR action = ~~	BEGIN
+	LPF	ACTION_OFFSET	INT_VAR index = index	RET	action_idx = action_idx	END
+	length = (STRING_LENGTH	~%action%~)	INSERT_BYTES	action_idx	length	WRITE_EVALUATED_ASCII	action_idx	~%action%~
+	LPF	ACTION_UPDATE	INT_VAR index = index	length = length	END
+END

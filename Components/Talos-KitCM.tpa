@@ -1,0 +1,78 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						   Stormcaller of Talos - Cleric/Mage
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RATaloCM~
+    ~RATaloCM 0 0 0 1 1 1 0 1~
+    ~RATaloCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RATaloCM 13 3 3 3 14 3~
+	~RATaloCM 0 0 0 0 0 0~
+	~RATaloCM 13 3 3 3 14 3~
+    ~RATaloCM 13 3 3 3 14 3~
+	~RATaloCM 0 0 0 0 0 0 0 0 1~
+	~RATaloCM 0 0 0 0 0 0~
+	~override/RATaloCM.2da~
+	~K_CM_H K_CM_HE K_CM_D K_CM_HO K_CM_E K_CM_HL K_CM_G~
+	~0x00000000 14~
+	~CM0~
+	~PLAT18 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * SPER08 HAMM09 *~
+	SAY @901
+	SAY @902
+	SAY @907
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RATaloCM~
+		clascolr = ~213 97 136 183 190~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RATaloCM~
+      kit_clab = ~RATaloCM~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RATaloCM%	classID = 14 STR_VAR	kitname = ~RATALO~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMTALO.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMTALO~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMTALO.itm~ SAY NAME1 @904 SAY NAME2 @904 SAY DESC @905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATaloCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~TALOS~
+WRITE_ASCII 0x058 ~TALOL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATaloCM~)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//EoF

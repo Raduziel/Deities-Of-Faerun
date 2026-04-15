@@ -1,0 +1,73 @@
+		ACTION_CLEAR_ARRAY	access_spells
+		OUTER_SPRINT		$access_spells(~All~)				~RASP01~
+		OUTER_SPRINT		$access_spells(~Healing~)			~RASP02~
+		OUTER_SPRINT		$access_spells(~Necromantic~)	    ~RASP03~
+		OUTER_SPRINT		$access_spells(~Suffering~)			~RASP04~
+		OUTER_SPRINT		$access_spells(~Animal~)			~RASP05~
+		OUTER_SPRINT		$access_spells(~Vermin~)			~RASP06~
+		OUTER_SPRINT		$access_spells(~Plant~)				~RASP07~
+		OUTER_SPRINT		$access_spells(~Protection~)		~RASP08~
+		OUTER_SPRINT		$access_spells(~Sun~)				~RASP09~
+		OUTER_SPRINT		$access_spells(~Moon~)				~RASP10~
+		OUTER_SPRINT		$access_spells(~Darkness~)			~RASP11~
+		OUTER_SPRINT		$access_spells(~Thought~)			~RASP12~
+		OUTER_SPRINT		$access_spells(~Combat~)			~RASP13~
+		OUTER_SPRINT		$access_spells(~Creation~)			~RASP14~
+		OUTER_SPRINT		$access_spells(~Summoning~)			~RASP15~
+		OUTER_SPRINT		$access_spells(~Air~)				~RASP16~
+		OUTER_SPRINT		$access_spells(~Water~)				~RASP17~
+		OUTER_SPRINT		$access_spells(~Earth~)				~RASP18~
+		OUTER_SPRINT		$access_spells(~Fire~)				~RASP19~
+		OUTER_SPRINT		$access_spells(~Divination~)		~RASP20~
+		OUTER_SPRINT		$access_spells(~Travelers~)			~RASP21~
+		OUTER_SPRINT		$access_spells(~Weave~)				~RASP22~
+		OUTER_SPRINT		$access_spells(~Trickery~)			~RASP23~
+		OUTER_SPRINT		$access_spells(~Time~)				~RASP24~
+		OUTER_SPRINT		$access_spells(~Vocal~)				~RASP25~
+		
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_CLERIC~)	BEGIN
+		~Healing~ => 7
+		~Protection~ => 7
+		~Sun~ => 3
+		~Moon~ => 3
+		~Thought~ => 7
+		~Combat~ => 7
+		~Creation~ => 3
+		~Divination~ => 7
+		~Travelers~ => 3
+	END
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_PALADIN~)	BEGIN
+		~Combat~ => 4
+		~Divination~ => 4
+		~Healing~ => 4
+		~Protection~ => 4
+	END
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_DRUID~)	BEGIN
+		~Healing~ => 3
+		~Animal~ => 7
+		~Vermin~ => 7
+		~Plant~ => 7
+		~Sun~ => 3
+		~Air~ => 7
+		~Water~ => 7
+		~Earth~ => 7
+		~Fire~ => 3
+	END
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_SHAMAN~)	BEGIN
+		~All~ => 7
+		~Healing~ => 3
+		~Animal~ => 7
+		~Vermin~ => 7
+		~Plant~ => 7
+		~Sun~ => 3
+		~Air~ => 7
+		~Water~ => 7
+		~Earth~ => 7
+		~Fire~ => 3
+	END
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~DEFAULT_RANGER~)	BEGIN
+		~Animal~ => 3
+		~Plant~  => 3
+	END
+	
+//EoF

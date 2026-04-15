@@ -1,0 +1,65 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						   YVETTE, THE HEARTWARDER OF SUNE
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RASune" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RASune"
+	  SET "rows" = 0 	
+	END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit = "%RASune%"
+
+ACTION_FOR_EACH creature IN yxyve1 BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_BYTE    0x246 "%kit%"
+      WRITE_BYTE    0x247 0x40
+	  WRITE_BYTE    0x23e 16
+	  BUT_ONLY
+  END
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RASune	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RASUNE~	kitname2 = ~~	END
+
+  END
+  
+  END
+
+  
+//Kit
+
+<<<<<<<< .../inlined_script.baf
+IF
+	Global("MyKit","LOCALS",0)
+	InParty(Myself)
+	Class(Myself,CLERIC)
+THEN
+	RESPONSE #100
+		SetGlobal("MyKit","LOCALS",1)
+		AddKit(RASune)
+END
+>>>>>>>>
+EXTEND_TOP ~YXYVE.BCS~ ~.../inlined_script.baf~
+
+//Holy Symbol
+
+COPY_EXISTING	~YxYv25.bcs~	override
+	DECOMPILE_AND_PATCH	BEGIN
+		REPLACE_TEXTUALLY	~GiveItemCreate("YxSymb",Myself,0,0,0)~	~~
+	END
+BUT_ONLY IF_EXISTS
+
+//EoF

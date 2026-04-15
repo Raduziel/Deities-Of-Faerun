@@ -1,0 +1,181 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Doomscribe of Jergal
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAJerg~
+    ~RAJerg 0 0 0 0 0 0 0 0~
+    ~RAJerg 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAJerg 3 3 3 11 9 3~
+	~RAJerg 0 0 0 0 0 0~
+	~RAJerg 3 3 3 11 9 3~
+    ~RAJerg 3 3 3 11 9 3~
+	~RAJerg 0 1 1 0 0 0 0 0 0~
+	~RAJerg 0 0 1 0 0 0~
+	~DeitiesOfFaerun/Tables/RAJerg.2da~
+	~K_C_H~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT05 SHLD25 HELM17 * RING09 RING39 CLCK05 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * BLUN25 HAMM09 *~
+	SAY @2801
+	SAY @2802
+	SAY @2803
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAJerg~
+		clascolr = ~6 110 186 185 187~
+		clsrcreq = ~1 0 0 0 0 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAJERG~  clabfile = ~RAJERG~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSJERG.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSJERG~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSJERG.itm~ SAY NAME1 @2804 SAY NAME2 @2804 SAY DESC @2805
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAJerg + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~JERGS~
+WRITE_ASCII 0x058 ~JERGL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAJergF.spl~ override
+
+//Ray of Enfeeblement 
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_RAY_OF_ENFEEBLEMENT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_RAY_OF_ENFEEBLEMENT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Skull Trap
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SKULL_TRAP[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SKULL_TRAP~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Undead Ward
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_UNDEAD_WARD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_UNDEAD_WARD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/UWARD.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521.spl~ 1 5 CLERIC_UNDEAD_WARD
+SAY NAME1 @9999100 SAY NAME2 @9999100 SAY UNIDENTIFIED_DESC @9999101 SAY DESC @9999101
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %UWARD% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1  match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/UndeadWard/SPPR521C.BAM~	~override/%spell_res%C.BAM~
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Negative Plane Protection
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_NEGATIVE_PLANE_PROTECTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_NEGATIVE_PLANE_PROTECTION~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Animate Dead
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMATE_DEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMATE_DEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Energy Drain
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ENERGY_DRAIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ENERGY_DRAIN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAJERG6.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAJerg.2da~ ~override/RAJergCM.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RAMJERG~
+SET_2DA_ENTRY 8  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
+		  
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+	89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAJerg + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~JERGS~ ~JERGL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

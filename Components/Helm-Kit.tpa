@@ -1,0 +1,273 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						       Watcher of Helm
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAHelm~
+    ~RAHelm 0 0 0 0 1 1 0 1~
+    ~RAHelm 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHelm 14 3 3 3 13 3~
+	~RAHelm 0 0 0 0 0 0~
+	~RAHelm 14 3 3 3 13 3~
+    ~RAHelm 14 3 3 3 13 3~
+	~RAHelm 0 1 0 0 0 0 0 0 0~
+	~RAHelm 1 0 0 0 0 0~
+	~DeitiesOfFaerun/Tables/RAHelm.2da~
+	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT09 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * WAFLAIL HAMM09 *~
+	SAY @801
+	SAY @802
+	SAY @803
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHelm~
+		clascolr = ~147 238 127 238 170~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAHELM~  clabfile = ~RAHELM~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSHELM.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSHELM~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSHELM.itm~ SAY NAME1 @804 SAY NAME2 @804 SAY DESC @805
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAHelm + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~HELMS~
+WRITE_ASCII 0x058 ~HELML~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAHELMF.spl~ override
+
+//Mace of Odo
+
+COPY ~DeitiesOfFaerun/Spl/RAHELM1.spl~ override SAY NAME1 @806 SAY UNIDENTIFIED_DESC @807
+
+COPY ~DeitiesOfFaerun/Itm/MaceofOdo/RAHELM1.itm~ override SAY NAME1 @806 SAY NAME2 @806
+
+COPY ~DeitiesOfFaerun/Itm/MaceofOdo/RAHELM1.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/MaceofOdo/MOS%original_base_index%.pvrz~
+    END
+  END
+
+//Wyvern Watch
+
+COPY ~DeitiesOfFaerun/Spl/RAHELM2.BAM~ override
+  
+ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAHELM2.PRO~
+
+COPY ~DeitiesOfFaerun/Spl/RAHELM2.spl~ override SAY NAME1 @808 SAY UNIDENTIFIED_DESC @809
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAHELM2% END
+		LPF	ALTER_EFFECT	   INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
+	END
+
+
+//Seeking Sword
+
+COPY ~DeitiesOfFaerun/Spl/RAHELM3.spl~ override SAY NAME1 @810 SAY UNIDENTIFIED_DESC @811
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 12 duration = (12 * i) END
+	END
+
+COPY ~DeitiesOfFaerun/Spl/RAHELM3.eff~ override
+
+COPY ~DeitiesOfFaerun/Cre/SeekingSword/RAHELM3.itm~ override SAY NAME1 @810 SAY NAME2 @810
+
+COPY ~DeitiesOfFaerun/Cre/SeekingSword/RAHELM3.cre~ override SAY NAME1 @810 SAY NAME2 @810
+
+//Glyph of Warding
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_GLYPH_OF_WARDING[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_GLYPH_OF_WARDING~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHELM4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAHelm.2da~ ~override/RAHelmFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFHELM~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAHelm + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~3A~ ~2A~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~HELMS~ ~HELML~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~HELMMAOD~ ~HELMWYWA~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//Hide the original kit
+
+COPY_EXISTING
+~K_C_H.2DA~  override
+~K_C_HO.2DA~ override 
+~K_C_HE.2DA~ override
+~K_C_HL.2DA~ override
+~K_C_E.2DA~  override
+~K_C_D.2DA~  override
+~K_C_G.2DA~  override
+	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
+	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
+		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
+		PATCH_MATCH kit WITH
+			20 BEGIN
+				REMOVE_2DA_ROW i 2
+			END
+			DEFAULT
+		END
+	END
+BUT_ONLY
+
+//Hide the kit from Dual Classing
+
+  COPY_EXISTING ~DUALCLAS.2da~ override
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN 
+      READ_2DA_ENTRY_FORMER rows row 0 ~kit_name~
+      PATCH_IF (~%kit_name%~ STRING_EQUAL_CASE ~HELM~) BEGIN
+        SET helm_row = %row%
+      END
+    END
+    FOR (col = 1; col < 7; ++col) BEGIN 
+      PATCH_IF IS_AN_INT %helm_row% BEGIN
+        SET_2DA_ENTRY %helm_row% col cols 0
+      END
+    END
+  BUT_ONLY
+
+//EoF

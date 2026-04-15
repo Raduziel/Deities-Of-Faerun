@@ -1,0 +1,93 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					      Hoodwinker of Baravar - Cleric/Mage
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RABaraCM~
+    ~RABaraCM 0 1 1 0 1 0 0 1~
+    ~RABaraCM 0 1 1 0 1 0 0 1 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 1 0 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABaraCM 3 15 3 15 9 3~
+	~RABaraCM 0 0 0 0 0 0~
+	~RABaraCM 3 15 3 15 9 3~
+    ~RABaraCM 3 15 3 15 9 3~
+	~RABaraCM 0 0 0 1 0 0 0 0 0~
+	~RABaraCM 0 0 0 0 0 0~
+	~override/RABaraCM.2da~
+	~K_CM_G~
+	~0x00000400 14~
+	~CM0~
+	~CLCK19 BDSHLD01 HELM14 * RING05 RING28 CLCK03 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * DAGG13 BOW19 *~
+	SAY @601
+	SAY @602
+	SAY @607
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RABaraCM~
+		clascolr = ~205 43 66 182 191~
+		clsrcreq = ~0 0 0 0 0 1 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RABaraCM~
+      kit_clab = ~RABaraCM~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RABaraCM%	classID = 14 STR_VAR	kitname = ~RABARA~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMBARA.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMBARA~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMBARA.itm~ SAY NAME1 @604 SAY NAME2 @604 SAY DESC @605
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABaraCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~BARAS~
+WRITE_ASCII 0x058 ~BARAL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 92 93 94 95 97 98 99 100 101 104  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RABaraCM + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCM~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//EoF

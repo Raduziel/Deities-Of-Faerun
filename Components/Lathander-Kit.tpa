@@ -1,0 +1,222 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Dawnbringer of Lathander
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RALath~
+    ~RALath 0 0 0 0 1 1 0 1~
+    ~RALath 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RALath 3 3 3 3 14 12~
+	~RALath 0 0 0 0 0 0~
+	~RALath 3 3 3 3 14 12~
+    ~RALath 3 3 3 3 14 12~
+	~RALath 0 0 0 1 0 0 0 0 0~
+	~RALath 1 0 1 0 0 0~
+	~DeitiesOfFaerun/Tables/RALath.2da~
+	~K_C_H K_C_HE K_C_D K_C_HO K_C_E K_C_HL K_C_G~
+	~0x00000000 3~
+	~Cl0~
+	~WA2PLAT SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * BLUN14 HAMM09 *~
+	SAY @1001
+	SAY @1002
+	SAY @1003
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RALath~
+		clascolr = ~147 99 81 115 172~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RALATH~  clabfile = ~RALATH~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSLATH.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSLATH~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSLATH.itm~ SAY NAME1 @1004 SAY NAME2 @1004 SAY DESC @1005
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RALath + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~LATHS~
+WRITE_ASCII 0x058 ~LATHL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RALATHF.spl~ override
+
+//Faerie Fire
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RADUZIEL_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RADUZIEL_FAERIE_FIRE~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RALATH1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~	~[ %TAB%]CLERIC_FAERIE_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_FAERIE_FIRE~ RET spell_res END
+
+APPEND ~hidespl.2da~ ~%spell_res%  1 0 0~
+
+END
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/FAERIFI.PRO~
+
+OUTER_SET RA_Faerie = RESOLVE_STR_REF(@9999306)
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116.spl~ 1 1 CLERIC_RADUZIEL_FAERIE_FIRE
+SAY NAME1 @9999306 SAY NAME2 @9999306 SAY UNIDENTIFIED_DESC @9999307 SAY DESC @9999307
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER INT_VAR target = 4 STR_VAR icon = EVAL ~%spell_res%B~ END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %FAERIFI% END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~ resource   = EVAL ~%spell_res%~ END
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_opcode   = 139                 parameter1 = EVAL ~%RA_Faerie%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116B.BAM~	~override\%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/FaerieFire/SPPR116C.BAM~	~override\%spell_res%C.BAM~
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RALATH1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Sunrise
+
+COPY ~DeitiesOfFaerun/Spl/RALATH2.spl~ override SAY NAME1 @1006 SAY UNIDENTIFIED_DESC  @1007
+
+//Boon of Lathander
+
+COPY ~DeitiesOfFaerun/Spl/RALATH3.spl~ override SAY NAME1 @1008 SAY UNIDENTIFIED_DESC  @1009
+
+//False Dawn
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FALSE_DAWN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FALSE_DAWN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RALATH4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RALath.2da~ ~override/RALathFC.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAFLATH~
+PRETTY_PRINT_2DA
+
+COPY_EXISTING ~RALath.2da~ ~override/RALathCM.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAMLATH~
+SET_2DA_ENTRY 6  1 50 ~AP_RASLOT~
+PRETTY_PRINT_2DA
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALath~)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~LATHS~ ~LATHL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~LATHSUNR~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//Hide the original kit
+
+COPY_EXISTING
+~K_C_H.2DA~  override
+~K_C_HO.2DA~ override 
+~K_C_HE.2DA~ override
+~K_C_HL.2DA~ override
+~K_C_E.2DA~  override
+~K_C_D.2DA~  override
+~K_C_G.2DA~  override
+	READ_2DA_ENTRIES_NOW ~READ_K_C_H~ 2
+	FOR (i = READ_K_C_H - 1; i >= 0; --i) BEGIN
+		READ_2DA_ENTRY_FORMER ~READ_K_C_H~ i 1 kit
+		PATCH_MATCH kit WITH
+			21 BEGIN
+				REMOVE_2DA_ROW i 2
+			END
+			DEFAULT
+		END
+	END
+BUT_ONLY
+
+//Hide the kit from Dual Classing
+
+  COPY_EXISTING ~DUALCLAS.2da~ override
+    COUNT_2DA_COLS cols
+    READ_2DA_ENTRIES_NOW rows cols
+    FOR (row = 1; row < rows; ++row) BEGIN 
+      READ_2DA_ENTRY_FORMER rows row 0 ~kit_name~
+      PATCH_IF (~%kit_name%~ STRING_EQUAL_CASE ~LATHANDER~) BEGIN
+        SET lathander_row = %row%
+      END
+    END
+    FOR (col = 1; col < 6; ++col) BEGIN 
+      PATCH_IF IS_AN_INT %lathander_row% BEGIN
+        SET_2DA_ENTRY %lathander_row% col cols 0
+      END
+    END
+  BUT_ONLY
+
+//EoF

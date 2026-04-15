@@ -1,0 +1,284 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Doombringer of Hoar
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAHoar~
+    ~RAHoar 0 0 0 0 1 1 0 1~
+    ~RAHoar 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHoar 3 10 3 3 9 3~
+	~RAHoar 0 0 0 0 0 0~
+	~RAHoar 3 10 3 3 9 3~
+    ~RAHoar 3 10 3 3 9 3~
+	~RAHoar 0 1 0 0 0 0 0 0 0~
+	~RAHoar 1 0 0 1 0 0~
+	~DeitiesOfFaerun/Tables/RAHoar.2da~
+	~K_C_H  K_C_HE  K_C_E  K_C_D  K_C_HL  K_C_G  K_C_HO~
+	~0x00000000 3~
+	~Cl0~
+	~PLAT12 SHLD26 HELM07 * RING05 RING28 CLCK05 BOOT05 AMUL27 BRAC10 BELT06 * * * * * * WAFLAIL SW2H15 *~
+	SAY @3601
+	SAY @3602
+	SAY @3603
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHoar~
+		clascolr = ~14 47 63 100 93~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAHOAR~  clabfile = ~RAHOAR~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSHOAR.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSHOAR~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSHOAR.itm~ SAY NAME1 @3604 SAY NAME2 @3604 SAY DESC @3605
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAHoar + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~HOARS~
+WRITE_ASCII 0x058 ~HOARL~
+
+//Spells
+
+//Enrage
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]BERSERKER_RAGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~BERSERKER_RAGE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR1.spl~
+LPF	ALTER_EFFECT STR_VAR silent = 1 match_resource = EVAL ~%spell_res%D~ resource = EVAL ~RAHOAR1D~	END
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAHOAR1~ END
+
+COPY_EXISTING	~%spell_res%D.spl~	~override/RAHOAR1D.spl~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT INT_VAR silent = 1 match_opcode = 206 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAHOAR1~ END
+
+END
+
+//Shocking Grasp
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SHOCKING_GRASP[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SHOCKING_GRASP~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Lightning Bolt
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LIGHTNING_BOLT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LIGHTNING_BOLT~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOAR3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Hand of Hoar
+
+COPY ~DeitiesOfFaerun/Spl/RAHOAR4.spl~   override SAY NAME1 @3606 SAY UNIDENTIFIED_DESC @3607
+
+COPY ~DeitiesOfFaerun/Spl/RAHoar4.eff~   override
+
+COPY ~DeitiesOfFaerun/Spl/RAHOAR41.spl~  override
+
+COPY ~DeitiesOfFaerun/Cre/Revenant/RAHoar41.cre~  override
+
+COPY ~DeitiesOfFaerun/Cre/Revenant/RAHoar4.cre~   override SAY NAME1 @3608 SAY NAME2 @3608
+
+COPY ~DeitiesOfFaerun/Cre/Revenant/RAHoar4.itm~   override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Held%~ END
+
+ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAHoar5T.PRO~
+
+ADD_PROJECTILE ~DeitiesOfFaerun/Spl/RAHoar5C.PRO~
+
+COPY_EXISTING ~RAHoar5C.PRO~ override
+WRITE_SHORT	0x21a %RAHoar5T%
+
+//Thunder Staff
+
+COPY ~DeitiesOfFaerun/Spl/RAHOAR5.spl~  override SAY NAME1 @3609 SAY UNIDENTIFIED_DESC @3610
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %RAHoar5C% END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL ~%RA_Stunned%~ END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 139 parameter1 = EVAL ~%RA_Deaf%~ END
+
+//Protection From Normal Missile
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_PROTECTION_FROM_NORMAL_MISSILES[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_PROTECTION_FROM_NORMAL_MISSILES~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAHOARF.spl~
+LPM ~SPELL_TO_FEATURE~
+LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 156 END
+
+END
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAHoar.2da~ ~override/RAHoarFC.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RAFHOAR~
+PRETTY_PRINT_2DA
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RAHoar.2da~ ~override/RAHoarCT.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RATHOAR~
+PRETTY_PRINT_2DA
+
+END ELSE BEGIN
+
+COPY_EXISTING ~RAHoar.2da~ ~override/RAHoarCT.2da~
+SET_2DA_ENTRY 8 25 50 ~AP_RATHOAR~
+SET_2DA_ENTRY 1  7 50 ~AP_#EVADE~
+PRETTY_PRINT_2DA
+
+END
+
+//BAM
+
+ACTION_FOR_EACH file IN ~HOARS~ ~HOARL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~HOARHAND~ ~HOARTHUN~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//Revenant's Script
+
+<<<<<<<< .../inlined_script.baf
+IF
+	!AreaType(CITY)
+	AreaType(53)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	!TriggerOverride(Player1,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player1)
+		Continue()
+END
+IF
+	!AreaType(CITY)
+	AreaType(53)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",2)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
+	!TriggerOverride(Player2,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player2)
+		Continue()
+END
+IF
+	!AreaType(CITY)
+	AreaType(53)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",3)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
+	!TriggerOverride(Player3,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player3)
+		Continue()
+END
+IF
+	!AreaType(CITY)
+	AreaType(53)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",4)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
+	!TriggerOverride(Player4,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player4)
+		Continue()
+END
+IF
+	!AreaType(CITY)
+	AreaType(53)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",5)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
+	!TriggerOverride(Player5,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player5)
+		Continue()
+END
+IF
+	!AreaType(CITY)
+	AreaType(53)
+	Exists("RAHoar4")
+	!StateCheck("RAHoar4",STATE_REALLY_DEAD)
+	Global("RAHoar4_Owner","GLOBAL",6)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
+	!TriggerOverride(Player6,InMyArea("RAHoar4"))
+THEN
+	RESPONSE #100
+		MoveGlobalObject("RAHoar4",Player6)
+		Continue()
+END
+
+>>>>>>>>
+EXTEND_BOTTOM ~baldur.bcs~	~.../inlined_script.baf~
+
+ACTION_IF GAME_INCLUDES ~sod~ BEGIN                           //Revenant's Script (SoD)
+
+EXTEND_BOTTOM ~bdbaldur.bcs~	~.../inlined_script.baf~ END
+
+ACTION_IF GAME_IS ~bg2ee~ BEGIN                               //Revenant's Script (ToB)
+
+EXTEND_BOTTOM ~baldur25.bcs~	~.../inlined_script.baf~ END 
+
+//EoF

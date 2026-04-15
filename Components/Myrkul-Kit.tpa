@@ -1,0 +1,199 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						        Gray One of Myrkul
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAMyrk~
+    ~RAMyrk 0 0 0 0 1 1 0 1~
+    ~RAMyrk 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMyrk 14 3 3 14 14 3~
+	~RAMyrk 0 0 0 0 0 0~
+	~RAMyrk 14 3 3 14 14 3~
+    ~RAMyrk 14 3 3 14 14 3~
+	~RAMyrk 0 0 0 0 0 1 0 0 0~
+	~RAMyrk 0 0 1 0 0 0~
+	~DeitiesOfFaerun/Tables/RAMyrk.2da~
+	~K_C_H~
+	~0x00000000 3~
+	~Cl0~
+	~LEAT13 SHLD25 HELM17 * RING09 RING39 CLCK30 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN25 SW1H30 *~
+	SAY @2501
+	SAY @2502
+	SAY @2503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAMyrk~
+		clascolr = ~21 66 136 65 100~
+		clsrcreq = ~1 0 0 0 0 0 0~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAMYRK~  clabfile = ~RAMYRK~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSMYRK.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSMYRK~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSMYRK.itm~ SAY NAME1 @2504 SAY NAME2 @2504 SAY DESC @2505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMyrk + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MYRKS~
+WRITE_ASCII 0x058 ~MYRKL~
+
+//Spells
+
+COPY ~DeitiesOfFaerun/Spl/RAMYRKF.spl~ override
+
+//Animate Dead
+		  
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMATE_DEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMATE_DEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMYRK1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Dolorous Decay
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DOLOROUS_DECAY[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DOLOROUS_DECAY~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAMYRK2.spl~
+LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMYRK2~	END
+LPM ~SPELL_TO_INNATE~
+
+COPY_EXISTING	~%spell_res%.spl~	override
+LPF	CLONE_EFFECT INT_VAR	match_opcode = 324 silent = 1 STR_VAR match_resource = EVAL ~%spell_res%~ resource = EVAL ~RAMYRK2~	END
+
+END
+  
+//Summon Minor Death
+
+COPY ~DeitiesOfFaerun/Spl/RAMYRK3.spl~ override  SAY NAME1 @2506 SAY  UNIDENTIFIED_DESC @2507
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 60 duration = (60 * i) END
+	END
+
+COPY ~DeitiesOfFaerun/Spl/RAMYRK3.eff~ override
+
+//Hand of Myrkul
+
+COPY ~DeitiesOfFaerun/Spl/RAMYRK4.spl~ override  SAY NAME1 @2509 SAY  UNIDENTIFIED_DESC @2510
+
+COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.cre~ override SAY NAME1 @2508 SAY NAME2 @2508
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1  match_opcode = 267 parameter1 = EVAL ~%RA_Poison%~   END
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2  match_opcode = 267 parameter1 = EVAL ~%RA_Poisoned%~ END
+
+COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.itm~ override
+
+//Multiclass CLAB
+
+COPY_EXISTING ~RAMyrk.2da~ ~override/RAMyrkCM.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RAMMYRK~
+SET_2DA_ENTRY 6  1 50 ~AP_RASCNEC~
+PRETTY_PRINT_2DA
+
+//Restriction
+	
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 96 98 99 103 104 105 106 BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMyrk + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~AX~ ~BW~ ~CB~ ~DD~ ~HB~ ~S0~ ~S1~ ~S2~ ~S3~ ~SP~ ~SS~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~MYRKS~ ~MYRKL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~MYRKDEAT~ ~MYRKHAND~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

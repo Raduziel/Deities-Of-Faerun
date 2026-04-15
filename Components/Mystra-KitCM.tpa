@@ -1,0 +1,78 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					   Dweomerkeeper of Mystra - Cleric/Mage
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAMystCM~
+    ~RAMystCM 0 0 0 0 1 1 0 1~
+    ~RAMystCM 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAMystCM 3 3 3 14 12 3~
+	~RAMystCM 0 0 0 0 0 0~
+	~RAMystCM 3 3 3 14 12 3~
+    ~RAMystCM 3 3 3 14 12 3~
+	~RAMystCM 0 1 0 1 0 0 0 1 0~
+	~RAMystCM 0 0 0 0 0 0~
+	~override/RAMystCM.2da~
+	~K_CM_H K_CM_HE K_CM_E K_CM_G~
+	~0x00000000 14~
+	~CM0~
+	~CHAN18 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * STAF10 HAMM09 *~
+	SAY @1401
+	SAY @1402
+	SAY @1406
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAMystCM~
+		clascolr = ~57 79 124 17 18~
+		clsrcreq = ~1 1 1 0 0 1 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAMystCM~
+      kit_clab = ~RAMystCM~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RAMystCM%	classID = 14 STR_VAR	kitname = ~RAMYST~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAMMYST.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACMMYST~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACMMYST.itm~ SAY NAME1 @1404 SAY NAME2 @1404 SAY DESC @1405
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAMystCM + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~MYSTS~
+WRITE_ASCII 0x058 ~MYSTL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAMystCM + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//EoF

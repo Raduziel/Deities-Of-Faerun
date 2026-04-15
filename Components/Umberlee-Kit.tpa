@@ -1,0 +1,253 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//						      Waveservant of Umberlee
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RAUmbe~
+    ~RAUmbe 0 1 0 1 1 1 0 1~
+    ~RAUmbe 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAUmbe 3 3 15 3 13 3~
+	~RAUmbe 0 0 0 0 0 0~
+	~RAUmbe 3 3 15 3 13 3~
+    ~RAUmbe 3 3 15 3 13 3~
+	~RAUmbe 0 0 0 0 0 0 0 0 1~
+	~RAUmbe 0 0 0 1 0 0~
+	~DeitiesOfFaerun/Tables/RAUmbe.2da~
+	~K_C_H K_C_HO K_C_HE~
+	~0x00000000 3~
+	~Cl0~
+	~LEAT19 * HELM07 * RING07 RING33 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * WASPEAR HAMM09 *~
+	SAY @1901
+	SAY @1902
+	SAY @1903
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAUmbe~
+		clascolr = ~81 55 125 15 15~
+		clsrcreq = ~1 0 1 0 0 0 1~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF	BUILD_SPHERE_ACCESS	STR_VAR	kitname = ~RAUMBE~  clabfile = ~RAUMBE~	END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAHSUMBE.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAHSUMBE~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAHSUMBE.itm~ SAY NAME1 @1904 SAY NAME2 @1904 SAY DESC @1905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RAUmbe + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~UMBES~
+WRITE_ASCII 0x058 ~UMBEL~
+
+//Spells
+
+//Free Action (Feature)
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_FREE_ACTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_FREE_ACTION~	RET	spell_res	END
+
+COPY_EXISTING ~%spell_res%.spl~	~override/RAUMBEF.spl~
+LPM ~SPELL_TO_FEATURE~
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 parameter1 = ~-1~ target = 2 timing = 9 STR_VAR resource = ~RAUMBEF~ END
+
+END
+  
+//Smashing Wave
+		  
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SMASHING_WAVE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SMASHING_WAVE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SWAVE.PRO~
+
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426.spl~ 1 4 CLERIC_SMASHING_WAVE
+SAY NAME1 @9999139 SAY NAME2 @9999139 SAY UNIDENTIFIED_DESC @9999140 SAY DESC @9999140
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %SWAVE% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL ~%RA_Stunned%~     END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL ~%RA_Unconscious%~ END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/SmashingWave/SPPR426C.BAM~	~override/%spell_res%C.BAM~
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Dehydrate
+
+COPY ~DeitiesOfFaerun/Spl/RAUMBE2.SPL~ override SAY NAME1 @1906 SAY UNIDENTIFIED_DESC @1907  
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_dicenumber = 1 dicenumber = i END
+	END
+	
+//Drown
+
+COPY ~DeitiesOfFaerun/Spl/RAUMBE3.SPL~ override SAY NAME1 @1908 SAY UNIDENTIFIED_DESC @1909
+
+//Conjure Water Elemental
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+LAF cd_new_summon_table STR_VAR descript = ~WATER_ELEMENTAL_RADUZIEL~ 2da_file = RAELEMW RET RAELEMW = table END
+ADD_SPELL ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1.spl~ 1 6 CLERIC_RADUZIEL_CONJURE_AIR_ELEMENTAL
+SAY NAME1 @9999141 SAY NAME2 @9999141 SAY UNIDENTIFIED_DESC @9999142 SAY DESC @9999142
+TEXT_SPRINT	spell_res ~%DEST_RES%~ TO_UPPER	spell_res WRITE_SHORT 0x01c 2
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+LPF ALTER_EFFECT	   INT_VAR match_opcode = 331 parameter2 = RAELEMW END
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1B.BAM~	~override/%spell_res%B.BAM~
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/SPPRRA1C.BAM~	~override/%spell_res%C.BAM~
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RAELEMW.2DA~	override
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA12WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA16WATR.CRE~	override
+SAY NAME1 @9999143 SAY NAME2 @9999143
+
+COPY ~DeitiesofFaerun/Lib/Spheres/Import/ConjureWaterElemental/RA24WATR.CRE~	override
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAUMBE4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Multiclass CLAB
+
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RAUmbe.2da~ ~override/RAUmbeCT.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RATUMBE~
+PRETTY_PRINT_2DA
+
+END ELSE BEGIN
+
+COPY_EXISTING ~RAUmbe.2da~ ~override/RAUmbeCT.2da~
+SET_2DA_ENTRY 6 25 50 ~AP_RATUMBE~
+SET_2DA_ENTRY 1  7 50 ~AP_#EVADE~
+PRETTY_PRINT_2DA
+
+END
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAUmbe + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		END
+	SET match = 1
+		END
+		DEFAULT
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbe~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//BAM
+
+ACTION_FOR_EACH file IN ~UMBES~ ~UMBEL~ BEGIN
+  COPY ~DeitiesOfFaerun/Itm/HolySymbols/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Itm/HolySymbols/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+ACTION_FOR_EACH file IN ~UMBEDEHY~ ~UMBEDROW~ BEGIN
+COPY ~DeitiesOfFaerun/Spl/BAM/%file%.bam~ override
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~DeitiesOfFaerun/Spl/BAM/MOS%original_base_index%.pvrz~
+    END
+  END
+END	
+
+//EoF

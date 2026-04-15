@@ -1,0 +1,78 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//					   Black Finger of Beshaba - Cleric/Thief
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RABeshCT~
+    ~RABeshCT 0 0 0 0 1 1 0 1~
+    ~RABeshCT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABeshCT 3 3 3 3 10 3~
+	~RABeshCT 0 0 0 0 0 0~
+	~RABeshCT 3 3 3 3 10 3~
+    ~RABeshCT 3 3 3 3 10 3~
+	~RABeshCT 0 0 0 0 0 0 0 0 1~
+	~RABeshCT 0 0 0 0 0 0~
+	~override/RABeshCT.2da~
+	~K_CT_H   K_CT_HE   K_CT_HL   K_CT_G   K_CT_HO~
+	~0x00000000 15~
+	~CT0~
+	~LEAT17 SHLD22 HELM04 * RING31 RING09 CLCK05 BOOT04 AMUL27 BRAC10 BELT06 * * * * * * BLUN14 HAMM09 *~
+	SAY @3501
+	SAY @3502
+	SAY @3515
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RABeshCT~
+		clascolr = ~44 139 117 140 119~
+		clsrcreq = ~1 0 1 0 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RABeshCT~
+      kit_clab = ~RABeshCT~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RABeshCT%	classID = 15 STR_VAR	kitname = ~RABESH~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RATBESH.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RACTBESH~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACTBESH.itm~ SAY NAME1 @3504 SAY NAME2 @3504 SAY DESC @3505
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABeshCT + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~BESHS~
+WRITE_ASCII 0x058 ~BESHL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RABeshCT + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//EoF

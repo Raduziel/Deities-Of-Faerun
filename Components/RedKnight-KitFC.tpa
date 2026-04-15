@@ -1,0 +1,77 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				  Holy Strategist of the Red Knight - Fighter/Cleric
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+ADD_KIT ~RARedKFC~
+    ~RARedKFC 0 0 0 0 2 2 0 2~
+    ~RARedKFC 0 0 0 0 2 2 0 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RARedKFC 3 3 3 13 13 10~
+	~RARedKFC 0 0 0 0 0 0~
+	~RARedKFC 3 3 3 13 13 10~
+    ~RARedKFC 3 3 3 13 13 10~
+	~RARedKFC 0 1 0 0 0 0 0 0 0~
+	~RARedKFC 0 0 0 0 0 0~
+	~override/RARedKFC.2da~
+	~K_FC_H K_FC_HE K_FC_D K_FC_HO K_FC_E K_FC_HL K_FC_G~
+	~0x00000000 8~
+	~FC0~
+	~PLAT09 SHLD23 HELM07 * RING09 RING31 CLCK20 BOOT04 AMUL27 BRAC10 BELT04 * * * * * * WAFLAIL HAMM09 *~
+	SAY @2901
+	SAY @2902
+	SAY @2911
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RARedKFC~
+		clascolr = ~198 29 47 46 195~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RARedKFC~
+      kit_clab = ~RARedKFC~
+      base_class = ~P~
+END
+
+//Sphere
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+LAF	BUILD_SPHERE_ACCESS	INT_VAR	kitid = %RARedKFC%	classID = 8 STR_VAR	kitname = ~RAREDK~  END
+
+END
+
+//Holy Symbol
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.spl~ ~override/RAFREDK.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@9999903) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 122   STR_VAR resource = ~RAFCREDK~ END
+
+COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RAFCREDK.itm~ SAY NAME1 @2904 SAY NAME2 @2904 SAY DESC @2905
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RARedKFC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
+WRITE_ASCII 0x03a ~REDKS~
+WRITE_ASCII 0x058 ~REDKL~
+
+//Restrictions
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ override
+PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	~%animation%~ WITH
+				~3A~ ~2A~ BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RARedKFC~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY
+
+//EoF
