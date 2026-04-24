@@ -1080,6 +1080,17 @@ BEGIN @999999925 LABEL ~DeitiesOfFaerun-BattleguardOfTempus-Athanasios~
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~4~ AND GAME_IS ~iwdee~ AND (FILE_EXISTS_IN_GAME ~c0athan.cre~ OR FILE_EXISTS_IN_GAME ~c0athfc.cre~)) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tempus-Athanasios.tpa~
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				       OSPREY, THE GLYPHSCRIBER OF DENEIR
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @999999926 LABEL ~DeitiesOfFaerun-GlyphscriberOfDeneir-Osprey~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~45~ AND GAME_IS ~bgee eet~ AND (FILE_EXISTS_IN_GAME ~c0athan.cre~ OR FILE_EXISTS_IN_GAME ~c0athfc.cre~)) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Deneir-Osprey.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
