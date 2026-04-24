@@ -138,25 +138,6 @@ READ_2DA_ENTRIES_NOW read 51
 END
 PRETTY_PRINT_2DA
 
-//Restriction
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		103 104 105 106 107 BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATemp~)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
-
 //BAM
 
 ACTION_FOR_EACH file IN ~TEMPS~ ~TEMPL~ BEGIN

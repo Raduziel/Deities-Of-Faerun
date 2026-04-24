@@ -13,7 +13,7 @@ ADD_KIT ~RAMora~
 	~RAMora 10 3 3 3 11 3~
     ~RAMora 10 3 3 3 11 3~
 	~RAMora 1 1 0 0 0 0 0 0 0~
-	~RAMora 1 0 0 0 0 0~
+	~RAMora 0 0 0 0 0 0~
 	~DeitiesOfFaerun/Tables/RAMora.2da~
 	~K_C_D~
 	~0x00000000 3~
@@ -172,9 +172,11 @@ END
 
 //Multiclass CLAB
 
-COPY_EXISTING ~RAMora.2da~ ~override/RAMoraFC.2da~
-SET_2DA_ENTRY 12 25 50 ~AP_RAFMORA~
-PRETTY_PRINT_2DA
+/*
+
+This kit is not allowed to Multiclass
+
+*/
 
 //BAM
 

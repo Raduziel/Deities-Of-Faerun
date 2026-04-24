@@ -140,40 +140,6 @@ PRETTY_PRINT_2DA
 
 END
 
-//Restrictions
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	SET match = 0
-	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 97 98 99 100 101 103 104 105  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAShia + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		END
-	SET match = 1
-		END
-		DEFAULT
-		END
-	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
-		READ_BYTE 0x18 flags1
-		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-			READ_ASCII	0x22 animation (2)
-			TO_UPPER animation
-			PATCH_MATCH	~%animation%~ WITH
-				~4A~ ~3A~ ~D4~ ~D3~ ~C6~ ~C3~ ~C2~ ~C1~  BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShia~) parameter2 = 9 END
-				END
-				DEFAULT
-			END
-		END
-	END
-BUT_ONLY
-
 //BAM
 
 ACTION_FOR_EACH file IN ~SHIAS~ ~SHIAL~ BEGIN

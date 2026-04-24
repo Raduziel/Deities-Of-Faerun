@@ -1,0 +1,1587 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//								  KITS RESTRICTIONS
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	SET match = 0
+
+	// Heartwarder of Sune
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~3~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASune~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASuneCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASuneFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+		END
+	END
+
+	// Battleguard of Tempus
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~4~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			103 104 105 106 107 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATemp~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATempFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+		END
+	END
+
+	// Strifeleader of Cyric
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~5~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RACyri~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RACyriCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+		END
+	END
+
+	// Nightcloak of Shar
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~6~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShar~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASharCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASharCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+		END	
+	
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShar~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASharCM~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASharCT~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Hoodwinker of Baravar
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~8~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 92 93 94 95 97 98 99 100 101 104 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ BEGIN
+					PATCH_MATCH ~%SOURCE_RES%~ WITH
+                    ~CHAN12~ ~CHAN13~ ~CHAN14~ ~CHAN16~ ~CHAN19~ ~DWCHAN01~ ~DWCHAN02~ ~ELFCHAN~ BEGIN
+                    END
+                    DEFAULT
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCM~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaraCT~) parameter2 = 9 END
+					END
+				END	
+				DEFAULT
+				END
+			END
+		END
+
+	END
+
+	// Fastpaw of Baervan
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~9~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 93 94 95 97 99 100 101 102 104 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaer~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerCM~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Watcher of Helm
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~10~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelmFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~3A~ ~2A~ ~4W~ ~3W~ ~2W~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelm~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHelmFC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+	
+	// Stormcaller of Talos
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~11~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATalo~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATaloCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATaloFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Dawnbringer of Lathander
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~12~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALath~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALathCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALathFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Holy Justice of Tyr
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~13~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyr~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyrFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Lorekeeper of Oghma
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~14~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghm~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAOghmCM~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Painbearer of Ilmater
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~15~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlmaCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlmaFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~2A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlma~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlmaCM~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIlmaFC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+			
+	// Dweomerkeeper of Mystra
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~16~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyst~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMystCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Holy Champion of Torm
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~17~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATorm~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATormFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Silentwalker of Mask
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~18~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 98 99 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMask~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMaskCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+					PATCH_MATCH ~%SOURCE_RES%~ WITH
+                    ~CHAN12~ ~CHAN13~ ~CHAN14~ ~CHAN16~ ~CHAN19~ ~DWCHAN01~ ~DWCHAN02~ ~ELFCHAN~ BEGIN
+                    END
+                    DEFAULT
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMask~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMaskCT~) parameter2 = 9 END
+					END
+				END	
+				DEFAULT
+				END
+			END
+		END	
+
+	END
+	
+	// Icevassal of Auril
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~19~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAuri~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAuriCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAuri~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAuriCM~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Talon of Malar
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~20~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 98 99 103 104 105 106 107 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMala~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMalaRC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMala~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMalaRC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END	
+
+	END
+
+	// Waveservant of Umberlee
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~21~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbe~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbeCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbe~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUmbeCT~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Silverstar of Selune
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~22~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASelu~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASeluCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASeluFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Malagent of Talona
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~23~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATlna~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATlnaCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATlnaCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Pain of Loviatar
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~24~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALovi~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALoviCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALoviFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALovi~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALoviCM~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALoviFC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END	
+
+	END
+
+	// Dreadruler of Bane
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~25~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 99 103 104 105 106 107 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABane~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaneFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Deathstalker of Bhaal
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~26~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 92 93 94 95 99 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABhaa~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABhaaCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABhaa~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABhaaCT~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END	
+
+	END
+	
+	// Gray One of Myrkul
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~27~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 96 98 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrk~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMyrkCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Doomguide of Kelemvor
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~28~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 92 93 94 95 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKeleFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKeleFC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Magistrati of Azuth
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~29~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzuth~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzuthCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzuthFM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~2A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzuth~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzuthCM~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAAzuthFM~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Doomscribe of Jergal
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~30~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAJerg~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAJergCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Sibylite of Savras
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~33~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASavr~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASavrCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~2A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASavr~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RASavrCM~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Necrophant of Velsharoon
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~34~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVelsCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~2A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVels~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAVelsCM~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Mistcaller of Leira
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~35~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeir~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeirCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeirCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+			
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~2A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeir~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeirCM~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RALeirCT~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Luckbringer of Tymora
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~36~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATymo~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATymoCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Black Finger of Beshaba
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~37~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABesh~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABeshFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABeshCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABeshCT~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Windwalker of Shaundakul
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~39~ BEGIN
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~D4~ ~C2~ ~C5~ ~C6~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShau~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShauRC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Wavetamer of Valkur
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~40~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 96 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAValk~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAValkFC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAValk~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAValkFC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Darkwalker of Ibrandul
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~41~ BEGIN
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIbra~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAIbraCT~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Pacifist of Eldath
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~42~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 97 98 99 100 101 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAElda~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAEldaRC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~2A~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAElda~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAEldaRC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Iceguardian of Ulutiu
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~43~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 92 93 94 95 97 99 100 101 102 103 104 107 115 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUlut~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUlutRC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUlut~) parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUlutRC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Woodwife of Shiallia
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~44~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 97 98 99 100 101 103 104 105 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShia~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShiaRC~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~3A~ ~D3~ ~D4~ ~C1~ ~C2~ ~C3~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShia~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAShiaRC~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Glyphscriber of Deneir
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~45~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 102 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RADene~)
+						parameter2 = 9
+						timing     = 2
+				END
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RADeneCM~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+		PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
+			READ_BYTE 0x18 flags1
+			PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+				READ_ASCII 0x22 animation (2)
+				TO_UPPER animation
+				PATCH_MATCH ~%animation%~ WITH
+					~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ ~C7~ BEGIN
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RADene~)   parameter2 = 9 END
+						LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RADeneCM~) parameter2 = 9 END
+					END
+					DEFAULT
+					END
+			END
+		END
+
+	END
+
+	// Trailblazer of Marthammor
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~46~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			89 90 91 92 93 94 95 96 98 99 103 104 105 106 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMart~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+	// Bloodstalker of Urdlen
+	PATCH_IF MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~49~ BEGIN
+
+		PATCH_MATCH proficiency WITH
+			97 100 101 102 107 115 BEGIN
+				LPF ADD_ITEM_EQEFFECT
+					INT_VAR
+						opcode     = 319
+						target     = 1
+						parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUrdl~)
+						parameter2 = 9
+						timing     = 2
+				END
+				SET match = 1
+			END
+			DEFAULT
+			END
+
+	END
+
+BUT_ONLY
+
+//EoF

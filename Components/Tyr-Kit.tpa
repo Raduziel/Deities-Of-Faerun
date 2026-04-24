@@ -103,25 +103,6 @@ COPY_EXISTING ~RATyr.2da~ ~override/RATyrFC.2da~
 SET_2DA_ENTRY 5 25 50 ~AP_RAFTYR~
 PRETTY_PRINT_2DA
 
-//Restriction
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATyr~)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
-
 //BAM
 
 ACTION_FOR_EACH file IN ~TYRS~ ~TYRL~ BEGIN

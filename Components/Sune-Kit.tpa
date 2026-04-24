@@ -7,7 +7,7 @@
 
 ADD_KIT ~RASune~
     ~RASune 0 0 0 0 1 1 0 1~
-    ~RASune 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RASune 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RASune 3 3 3 3 12 16~
 	~RASune 0 0 0 0 0 0~
 	~RASune 3 3 3 3 12 16~
@@ -294,25 +294,6 @@ SET_2DA_ENTRY 1  7 50 ~AP_#EVADE~
 PRETTY_PRINT_2DA
 
 END
-
-//Restriction
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 98 99 103 104  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RASune + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
 
 //BAM
 

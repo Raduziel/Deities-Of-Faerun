@@ -7,7 +7,7 @@
 
 ADD_KIT ~RAKele~
     ~RAKele 0 0 0 0 0 0 0 0~
-    ~RAKele 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAKele 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAKele 3 3 12 3 14 3~
 	~RAKele 0 0 0 0 0 0~
 	~RAKele 3 3 12 3 14 3~
@@ -152,40 +152,6 @@ COPY ~DeitiesOfFaerun/Cre/MinorDeath/RAMinDSu.itm~ override
 COPY_EXISTING ~RAKele.2da~ ~override/RAKeleFC.2da~
 SET_2DA_ENTRY 5 25 50 ~AP_RAFKELE~
 PRETTY_PRINT_2DA
-
-//Restriction
-	
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	SET match = 0
-	PATCH_MATCH proficiency WITH 
-		89 90 92 93 94 95 99  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RAKele + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		END
-	SET match = 1
-		END
-		DEFAULT
-		END
-	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
-		READ_BYTE 0x18 flags1
-		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-			READ_ASCII	0x22 animation (2)
-			TO_UPPER animation
-			PATCH_MATCH	~%animation%~ WITH
-				~4A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAKele~) parameter2 = 9 END
-				END
-				DEFAULT
-			END
-		END
-	END
-BUT_ONLY
 
 //BAM
 

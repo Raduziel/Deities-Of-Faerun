@@ -57,25 +57,6 @@ LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RATempFC + 0
 WRITE_ASCII 0x03a ~TEMPS~
 WRITE_ASCII 0x058 ~TEMPL~
 
-//Restrictions
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		103 104 105 106 107 BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RATempFC~)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
-
 //A fix for the HP mismatch
 
 

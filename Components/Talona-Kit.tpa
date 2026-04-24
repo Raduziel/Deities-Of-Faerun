@@ -7,7 +7,7 @@
 
 ADD_KIT ~RATlna~
     ~RATlna 0 0 0 0 1 1 0 1~
-    ~RATlna 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RATlna 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RATlna 3 3 14 3 14 3~
 	~RATlna 0 0 0 0 0 0~
 	~RATlna 3 3 14 3 14 3~
@@ -144,25 +144,6 @@ COPY_EXISTING ~RATlna.2da~ ~override/RATlnaCM.2da~
 SET_2DA_ENTRY 7 25 50 ~AP_RAMTLNA~
 SET_2DA_ENTRY 7  1 50 ~AP_RASLOT~
 PRETTY_PRINT_2DA
-
-//Restriction
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RATlna + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
 
 //BAM
 

@@ -11,34 +11,55 @@ COPY_EXISTING ~kitlist.2da~ ~override~
     READ_2DA_ENTRY "%index%" 5 9 "clab"
     PATCH_IF ("%clab%" STRING_COMPARE_CASE "RASune" = 0) BEGIN
       READ_2DA_ENTRY "%index%" 0 9 "RASune"
-	  SET "rows" = 0 	
-	END
+    END
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RASuneCT" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RASuneCT"
+    END
   END
   BUT_ONLY_IF_IT_CHANGES
 
-OUTER_SET kit = "%RASune%"
-
 ACTION_FOR_EACH creature IN yxyve1 BEGIN
 
-  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ BEGIN
 
     COPY_EXISTING ~%creature%.cre~ ~override~
-      WRITE_SHORT   0x244 0
-      WRITE_BYTE    0x246 "%kit%"
-      WRITE_BYTE    0x247 0x40
-	  WRITE_BYTE    0x23e 16
-	  BUT_ONLY
-  END
-  
-    ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+        READ_BYTE 0x273 creature_class
+    BUT_ONLY_IF_IT_CHANGES
 
-	LAF	UPDATE_NPC_SPHERE	INT_VAR kitid = RASune	STR_VAR	npc_file = EVAL ~%creature%~	kitname = ~RASUNE~	kitname2 = ~~	END
+    ACTION_IF (creature_class = 3) BEGIN
 
-  END
-  
-  END
+        COPY_EXISTING ~%creature%.cre~ ~override~
+            WRITE_SHORT 0x244 0
+            WRITE_BYTE  0x246 "%RASune%"
+            WRITE_BYTE  0x247 0x40
+            WRITE_BYTE  0x23e 16
+        BUT_ONLY
 
-  
+        ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+            LAF UPDATE_NPC_SPHERE INT_VAR kitid = RASune STR_VAR npc_file = EVAL ~%creature%~ kitname = ~RASUNE~ kitname2 = ~~ END
+        END
+
+    END
+
+    ACTION_IF (creature_class = 15) BEGIN
+
+        COPY_EXISTING ~%creature%.cre~ ~override~
+            WRITE_SHORT 0x244 0
+            WRITE_BYTE  0x246 "%RASuneCT%"
+            WRITE_BYTE  0x247 0x40
+            WRITE_BYTE  0x23e 16
+        BUT_ONLY
+
+        ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+            LAF UPDATE_NPC_SPHERE INT_VAR kitid = RASuneCT STR_VAR npc_file = EVAL ~%creature%~ kitname = ~RASUNE~ kitname2 = ~~ END
+        END
+
+    END
+
+END
+
+END
+ 
 //Kit
 
 <<<<<<<< .../inlined_script.baf
@@ -53,6 +74,19 @@ THEN
 END
 >>>>>>>>
 EXTEND_TOP ~YXYVE.BCS~ ~.../inlined_script.baf~
+
+<<<<<<<< .../inlined_script_ct.baf
+IF
+    Global("MyKit","LOCALS",0)
+    InParty(Myself)
+    Class(Myself,CLERIC_THIEF)
+THEN
+    RESPONSE #100
+        SetGlobal("MyKit","LOCALS",1)
+        AddKit(RASuneCT)
+END
+>>>>>>>>
+EXTEND_TOP ~YXYVE.BCS~ ~.../inlined_script_ct.baf~
 
 //Holy Symbol
 

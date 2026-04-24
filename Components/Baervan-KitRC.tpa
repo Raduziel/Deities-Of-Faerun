@@ -7,7 +7,7 @@
 
 ADD_KIT ~RABaerRC~
     ~RABaerRC 0 1 1 1 1 0 1 1~
-    ~RABaerRC 0 1 1 1 1 0 1 1 0 0 0 2 0 0 0 2 0 2 2 0 0 0 2 2 0 2 0 2 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RABaerRC 0 1 1 1 1 0 1 1 0 0 0 2 0 0 0 2 0 2 2 0 0 0 0 2 0 2 0 2 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RABaerRC 3 3 10 3 9 3~
 	~RABaerRC 0 0 0 0 0 0~
 	~RABaerRC 3 3 10 3 9 3~
@@ -55,39 +55,5 @@ COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RARCBAER.itm~ SAY NAME
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABaerRC + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~BAERS~
 WRITE_ASCII 0x058 ~BAERL~
-
-//Restrictions
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	SET match = 0
-	PATCH_MATCH proficiency WITH 
-		89 90 91 93 94 95 97 99 100 101 104 106  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RABaerRC + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		END
-	SET match = 1
-		END
-		DEFAULT
-		END
-	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
-		READ_BYTE 0x18 flags1
-		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-			READ_ASCII	0x22 animation (2)
-			TO_UPPER animation
-			PATCH_MATCH	~%animation%~ WITH
-				~4A~ ~3A~ ~D1~ ~D2~ ~D3~ ~D4~ ~C0~ ~C1~ ~C2~ ~C3~ ~C4~ ~C5~ ~C6~ BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABaerRC~) parameter2 = 9 END
-				END
-				DEFAULT
-			END
-		END
-	END
-BUT_ONLY
 
 //EoF

@@ -13,7 +13,7 @@ ADD_KIT ~RAUrdl~
 	~RAUrdl 11 3 3 3 9 3~
     ~RAUrdl 11 3 3 3 9 3~
 	~RAUrdl 0 0 0 0 0 0 0 0 1~
-	~RAUrdl 0 0 0 1 0 0~
+	~RAUrdl 0 0 0 0 0 0~
 	~DeitiesOfFaerun/Tables/RAUrdl.2da~
 	~K_C_G~
 	~0x00000000 3~
@@ -166,22 +166,11 @@ END
 
 //Multiclass CLAB
 
-ACTION_IF !GAME_IS ~iwdee~ BEGIN
+/*
 
-COPY_EXISTING ~RAUrdl.2da~ ~override/RAUrdlCT.2da~
-SET_2DA_ENTRY 9 25 50 ~AP_RATURDL~
-SET_2DA_ENTRY 3  1 50 ~AP_RAURDLT~
-PRETTY_PRINT_2DA
+This kit is not allowed to Multiclass
 
-END ELSE BEGIN
-
-COPY_EXISTING ~RAUrdl.2da~ ~override/RAUrdlCT.2da~
-SET_2DA_ENTRY 9 25 50 ~AP_RATURDL~
-SET_2DA_ENTRY 3  1 50 ~AP_RAURDLT~
-SET_2DA_ENTRY 1  7 50 ~AP_#EVADE~
-PRETTY_PRINT_2DA
-
-END
+*/
 
 //Restriction
 

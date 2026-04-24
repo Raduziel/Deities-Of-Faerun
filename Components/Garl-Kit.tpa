@@ -13,7 +13,7 @@ ADD_KIT ~RAGarl~
 	~RAGarl 3 11 3 11 9 3~
     ~RAGarl 3 11 3 11 9 3~
 	~RAGarl 1 0 0 1 0 0 0 0 0~
-	~RAGarl 1 0 0 0 0 0~
+	~RAGarl 0 0 0 0 0 0~
 	~DeitiesOfFaerun/Tables/RAGarl.2da~
 	~K_C_G~
 	~0x00000000 3~
@@ -112,9 +112,11 @@ END
 
 //Multiclass CLAB
 
-COPY_EXISTING ~RAGarl.2da~ ~override/RAGarlFC.2da~
-SET_2DA_ENTRY 7 25 50 ~AP_RAFGARL~
-PRETTY_PRINT_2DA
+/*
+
+This kit is not allowed to Multiclass
+
+*/
 
 //BAM
 

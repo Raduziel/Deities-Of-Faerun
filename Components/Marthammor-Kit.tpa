@@ -13,7 +13,7 @@ ADD_KIT ~RAMart~
 	~RAMart 3 3 11 3 9 3~
     ~RAMart 3 3 11 3 9 3~
 	~RAMart 0 0 0 1 0 0 0 0 0~
-	~RAMart 1 0 0 0 0 0~
+	~RAMart 0 0 0 0 0 0~
 	~DeitiesOfFaerun/Tables/RAMart.2da~
 	~K_C_D~
 	~0x00000000 3~
@@ -108,28 +108,11 @@ END
 
 //Multiclass CLAB
 
-COPY_EXISTING ~RAMart.2da~ ~override/RAMartFC.2da~
-SET_2DA_ENTRY 7 25 50 ~AP_RAFMART~
-PRETTY_PRINT_2DA
+/*
 
-//Restriction
+This kit is not allowed to Multiclass
 
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAMart~)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
+*/
 
 //BAM
 

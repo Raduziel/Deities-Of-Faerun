@@ -125,40 +125,6 @@ SET_2DA_ENTRY 7 25 50 ~AP_RAMBARA~
 SET_2DA_ENTRY 7  1 50 ~AP_RASCILL~
 PRETTY_PRINT_2DA
 
-//Restriction
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	SET match = 0
-	PATCH_MATCH proficiency WITH 
-		89 90 92 93 94 95 97 98 99 100 101 104  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RABara + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		END
-	SET match = 1
-		END
-		DEFAULT
-		END
-	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
-		READ_BYTE 0x18 flags1
-		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-			READ_ASCII	0x22 animation (2)
-			TO_UPPER animation
-			PATCH_MATCH	~%animation%~ WITH
-				~4A~ ~3A~ BEGIN
-					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RABara~) parameter2 = 9 END
-				END
-				DEFAULT
-			END
-		END
-	END
-BUT_ONLY
-
 //BAM
 
 ACTION_FOR_EACH file IN ~BARAS~ ~BARAL~ BEGIN

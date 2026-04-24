@@ -9,29 +9,39 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   COUNT_2DA_ROWS ~9~ "rows"
   FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
     READ_2DA_ENTRY "%index%" 5 9 "clab"
-    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAMartFC" = 0) BEGIN
-      READ_2DA_ENTRY "%index%" 0 9 "RAMartFC"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "RAMart" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "RAMart"
       SET "rows" = 0
     END
   END
   BUT_ONLY_IF_IT_CHANGES
 
-OUTER_SET kit = "%RAMartFC%"
+OUTER_SET kit = "%RAMart%"
 
 ACTION_FOR_EACH creature IN ~yitur~ BEGIN
   
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 	  
 	COPY_EXISTING ~%creature%.cre~ ~override~
-	  WRITE_SHORT   0x244 0
-      WRITE_BYTE    0x246 "%kit%"
-      WRITE_BYTE    0x247 0x40
+	  WRITE_SHORT     0x244 0
+      WRITE_BYTE      0x246 "%kit%"
+      WRITE_BYTE      0x247 0x40
+	  WRITE_BYTE	  0x273 3        //Class
+	  WRITE_SHORT	  0x024 8        //Max HP
+	  WRITE_SHORT	  0x026 8        //Current HP
+	  WRITE_LONG      0x028 6002     //Animation
+	  WRITE_BYTE      0x052 20       //Thac0
+	  WRITE_BYTE      0x054 10       //Death
+	  WRITE_BYTE      0x055 14       //Wands
+	  WRITE_BYTE      0x056 13       //Polymorph
+	  WRITE_BYTE      0x057 16       //Breath
+	  WRITE_BYTE      0x058 15       //Spells
 	  BUT_ONLY
   END 
   
     ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
-	LAF	UPDATE_NPC_SPHERE INT_VAR kitid = RAMartFC STR_VAR npc_file = EVAL ~%creature%~ kitname = ~RAMART~ kitname2 = ~~ END
+	LAF	UPDATE_NPC_SPHERE INT_VAR kitid = RAMart STR_VAR npc_file = EVAL ~%creature%~ kitname = ~RAMART~ kitname2 = ~~ END
 
   END
   

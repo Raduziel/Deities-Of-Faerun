@@ -2109,6 +2109,154 @@ Damage: 1d8 (piercing)  - strikes as +2
 
 ====================================================================================================================================================================
 
+h) Dragon Armors
+
+								      Unidentified Description
+
+Scale Mail
+This suit of scale mail is well-made, with overlapping scales secured to a leather backing. The material appears to come from a large and powerful creature, though it does not appear to be entirely ordinary.
+
+STATISTICS:
+
+Armor Class: 6 (5 vs. piercing and missile)
+Requires:
+8 Strength
+
+Weight: 25
+
+								   Green Dragon Scale (BGEE - SoD)
+
+This shimmering viridian suit of leather armor is soft and supple despite the strength in the plates of green dragon scale. The wearer of this armor is protected from even the heaviest blows as well as from poison.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to poison
+
+Armor Class: 3 (2 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+								   Blue Dragon Scale (BG2EE - ToB)
+
+The light but durable scales of the blue dragon provide excellent protection against weapons and all forms of electricity.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +90%
+
+Armor Class: -8 (-9 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+							           White Dragon Scale (IWDEE - HoW)
+
+Not surprisingly, this armor created from the scales of Icasaracht provides the wearer with protection from cold and ice.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +50%
+
+Armor Class: -2 (-3 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+								     Black Dragon Scale (IWDEE)
+
+This armor was crafted by the dwarven smiths and priests of Clan Battlehammer when one of their own, Bruenhal, led a band of heroes in the defeat of a black dragon far to the south. Some dwarves turn up their noses at the thought of wearing armor made from the remains of a dragon, but Bruenhal proudly wore the armor until the end of his days.
+
+STATISTICS:
+
+Equipped abilities:
+– Save vs. Spell: +2
+– Acid Resistance: +25%
+
+Armor Class: 4 (3 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+								   Shadow Dragon Scale (BG2EE)
+
+This suit of armor is formed from interlocking shadow dragon scales. Elegant workmanship and practical considerations make this armor both beautiful and useful. The shadow dragon scales grant the wearer extra protection from acid.
+
+STATISTICS:
+
+Equipped abilities:
+– Acid Resistance: +50%
+
+Armor Class: -8 (-9 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+								    Red Dragon Scale (BG2EE)
+
+Dragon scale armor is light of weight, strong, and resistant to fire. Because of these properties, it is much sought after, but finding, let alone slaying, a powerful ancient dragon is near impossible. It is usually easier to search for an existing suit, such as this one. One should be careful wearing it near dragons, however, particularly red ones.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+
+Armor Class: -7 (-8 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+								White Dragon Scale (BG2EE - ToB)
+
+Not surprisingly, this armor created from the scales of an ice dragon provides the wearer with protection from cold and ice.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +50%
+
+Charge abilities:
+– Cone of Cold three times per day
+  Damage: 10d4+10 cold (Save vs. Spell for half)
+  Range: 8 ft.
+  Area of Effect: 18-ft. cone with 90-deg. arc
+
+Armor Class: -8 (-9 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+							       Silver Dragon Scale (BG2EE - ToB)
+
+This armor, forged from the scales of a silver dragon, is a dead giveaway of wrongdoing on the part of the wearer. While the protection it offers is impressive, one cannot ignore the fact that a creature of incredible grace and beauty had to be destroyed in order for this armor to be made.
+
+STATISTICS:
+
+Equipped Abilities:
+– Charisma: -2
+– Magic Resistance: +15%
+– Movement rate increased by 3
+
+Combat abilities:
+– Heals wearer 2 Hit Points each time damage is taken
+
+Armor Class: -8 (-9 vs. piercing and missile)
+Requires:
+ 8 Strength
+
+Weight: 25
+
+====================================================================================================================================================================
 THANKS
 
 I have a lot of people to say "Thank You".

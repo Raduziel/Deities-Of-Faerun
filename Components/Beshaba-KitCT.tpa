@@ -56,23 +56,4 @@ LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RABeshCT + 0
 WRITE_ASCII 0x03a ~BESHS~
 WRITE_ASCII 0x058 ~BESHL~
 
-//Restrictions
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RABeshCT + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
-
 //EoF

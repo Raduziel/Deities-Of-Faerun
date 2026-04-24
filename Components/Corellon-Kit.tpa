@@ -13,7 +13,7 @@ ADD_KIT ~RACore~
 	~RACore 11 3 3 11 9 3~
     ~RACore 11 3 3 11 9 3~
 	~RACore 0 0 0 0 0 0 1 0 0~
-	~RACore 1 0 1 0 0 0~
+	~RACore 0 0 0 0 0 0~
 	~DeitiesOfFaerun/Tables/RACore.2da~
 	~K_C_HE K_C_E~
 	~0x00000000 3~
@@ -160,10 +160,11 @@ END
 
 //Multiclass CLAB
 
-COPY_EXISTING ~RACore.2da~ ~override/RACoreFM.2da~
-SET_2DA_ENTRY 7 25 50 ~AP_RAFMCOR~
-SET_2DA_ENTRY 3  1 50 ~AP_RASLOT~
-PRETTY_PRINT_2DA
+/*
+
+This kit is not allowed to Multiclass
+
+*/
 
 //BAM
 

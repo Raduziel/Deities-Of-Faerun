@@ -7,7 +7,7 @@
 
 ADD_KIT ~RASuneCT~
     ~RASuneCT 0 0 0 0 1 1 0 1~
-    ~RASuneCT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 1 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RASuneCT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RASuneCT 3 3 3 3 12 16~
 	~RASuneCT 0 0 0 0 0 0~
 	~RASuneCT 3 3 3 3 12 16~
@@ -55,24 +55,5 @@ COPY ~DeitiesOfFaerun/Itm/HolySymbols/RAHS.itm~ ~override/RACTSUNE.itm~ SAY NAME
 LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter1 = (RASuneCT + 0x4000) parameter2 = 9 timing = 2 power = 1 END
 WRITE_ASCII 0x03a ~SUNES~
 WRITE_ASCII 0x058 ~SUNEL~
-
-//Restrictions
-
-COPY_EXISTING_REGEXP ~.*\.itm~ override
-	READ_BYTE 0x31 proficiency
-	PATCH_MATCH proficiency WITH 
-		89 90 91 92 93 94 95 96 98 99 103 104  BEGIN
-		  LPF ADD_ITEM_EQEFFECT
-			INT_VAR
-			  opcode = 319
-			  target = 1
-			  parameter1 = (RASuneCT + 0x4000)
-			  parameter2 = 9
-			  timing = 2
-		  END
-		END
-		DEFAULT
-	END
-BUT_ONLY
 
 //EoF
