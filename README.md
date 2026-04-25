@@ -72,8 +72,7 @@ Those are needed for the rest of the mod. Basically it install all the new BAMs 
 
 
 
-========================================================================================================================================================
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 b) Kits
@@ -119,7 +118,7 @@ FEAR: This spell creates the emotion of fear within the area of effect. All enem
 
 HOPELESSNESS: This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just stand and do nothing for 1 turn. This spell nullifies Emotion, Hope within the area of effect at the time of casting.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2) TEMPUS
 
@@ -138,7 +137,7 @@ This spell enables the priest to bring forth a feast that serves as one creature
 
 If the food is not consumed withing 1 hour, it will disappear.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 3) CYRIC
 
@@ -189,7 +188,7 @@ Saving Throw: Neg.
 
 Instill Madness causes the subject to become completely insane unless a Saving Throw vs. Spell is made with a -2 penalty. Upon a failed Saving Throw, the subject remains in this state until a successful Dispel Magic is cast upon it.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4) SHAR
 
@@ -244,7 +243,7 @@ SICKEN: This power enables the caster to cause sudden pain and fever to sweep ov
 
 SLEEP: The Nightcloak can cause any individual to fall into a comatose slumber.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 5) BAERVAN
 
@@ -261,7 +260,7 @@ Saving Throw: None
 
 By means of this spell, the caster is able to change a specially prepared staff into a treant-like creature of the largest size, about 24 feet tall. When the priest plants the end of the staff in the ground and speaks a special command and invocation, the staff turns into a treant-like creature. The staff-treant defends the caster and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. The transformation lasts either for as many turns as the caster has experience levels or until the staff is destroyed, whichever occurs first. If the staff-treant is reduced to 0 hit points or less, it crumbles to a sawdust-like powder and the staff is destroyed.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 6) HELM
 
@@ -314,7 +313,7 @@ This spell brings into being a shimmering blade of force that appears as a sword
 
 Although it has no attack or damage bonuses, a Seeking Sword is considered a +4 magical weapon for determining what sorts of beings it can strike and can only be harmed by fire, electricity, magic, acid or crushing damage. Other spell casting is impossible for the duration of the spell.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 7) LATHANDER
 
@@ -346,7 +345,7 @@ Saving Throw: Special
 
 With this spell, the caster evokes a dazzling sphere of light equal to natural sunlight around himself. Any undead touched by the Dawnbringer will suffer 4d6 points of damage, be blinded and, for vampires and shadows only, destroyed. A Saving Throw vs. Spells is allowed to halve the damage and deny the other effects.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 8) OGHMA
 
@@ -363,7 +362,7 @@ Saving Throw: None
 
 With this spell, the Lorekeeper can extend  knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 9) ILMATER
 
@@ -396,7 +395,7 @@ Saving Throw: None
 
 This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is only then taken from the real hit points of the affected being. The spell also protects the vitality of the spell recipient so that all checks of any sort against contracting diseases automatically succeed, and all other Saving Throws receive a +2 bonus.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 10) MASK
 
@@ -417,7 +416,7 @@ A shadowcloak both confuses attackers with its swirling, smoky chaos, and slows 
 
 The shadowcloak grants to the Silentwalker a 100% bonus to Move Silently and a 50% bonus do Hide in Shadows.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 11) AURIL
 
@@ -479,7 +478,7 @@ Saving Throw: None
 
 Upon casting a Conjure Ice Elemental spell, the Icevassal opens a special gate to the Paraelemental Plane of Ice, and an ice elemental is summoned in the vicinity of the caster. There is a 60% chance that a 12-Hit-Dice elemental appears; a 35% chance that a 16-Hit-Dice elemental appears; and a 5% chance that a 24-Hit-Dice elemental appears. The elemental will do the bidding of the caster until it is slain or the duration of the spell runs out. All the commands given to the elemental are done telepathically, so there is no time lost due to miscommunication and no need to know the language of the summoned creature. Unlike Mages, priests do not have to engage in a battle of the minds to control their elemental.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 12) UMBERLEE
 
@@ -511,7 +510,7 @@ Saving Throw: Special
 
 This spell fill the lungs of the target creature with water. Creatures that do not breathe are unaffected. Drowning creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, and half movement rate during the effect of the spell. On top of that, the target takes 4d8 of crushing damage. A successful Saving Throw vs. Spells negates all effects except for the damage.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 13) SELÛNE
 
@@ -543,7 +542,7 @@ Saving Throw: None
 
 A priest casting shooting stars creates a violent turbulence in the air above the area of effect, from which a number of magically-charged miniature starts to erupt and shower onto the ground. Within the area of effect, all creatures suffer 6d10 points of magical damage and 48 points of crushing damage. A successful Saving Throw vs. Spells at a -4 penalty indicates half damage.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 14) TALONA
 
@@ -566,7 +565,7 @@ On this second round, the victim must make another Saving Throw. If it succeeds,
 
 On this third round, the victim must make another Saving Throw. If it succeeds, the victim suffers 1d10 points of poison damage. If it fails, the victim will fall into a coma that will last for 1 turn.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 15) LOVIATAR
 
@@ -649,7 +648,7 @@ This spell summons an Erinyes to serve the Pain. While summoned, there's a chanc
 
 To dismiss the Erinyes, go to the creature's special abilities and press "Dismiss".
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 16) BANE
 
@@ -674,7 +673,7 @@ Casting this spell creates a long whip of ghostly, glowing red force that emanat
 
 4: Target is hurled 25 yards away from the Dreadruler and suffer an extra 2d6 points of bludgeoning damage.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 17) BHAAL
 
@@ -706,7 +705,7 @@ Saving Throw: None
 
 The Deathstalker enters the Plane of Gehenna while those around <PRO_HIMHER> appear to be frozen in time. While in the other plane, the <PRO_HESHE> can move freely during 30 seconds, but can't attack, cast spells, use items or turn undead while this spell lasts. The Deathstalker must be cautious, as there's a 5% chance of a Pit Fiend follow <PRO_HIMHER> during the Plane Skipping.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 18) MYRKUL
 
@@ -739,7 +738,7 @@ Saving Throw: Neg.
 The Gray One touches <PRO_HISHER> victim forcing the creature to make a Saving Throw vs. Death or be transformed into dust. This transformation is instantaneous and irreversible. There is also a good chance that this will destroy some if not all of the items that the creature is carrying.
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 19) KELEMVOR
 
@@ -774,7 +773,7 @@ Saving Throw: None
 This spell summons a Minor Death to serve the Doomguide. It has 64 HP, 1 Thac0, AC -4, can only be damaged with weapons +1 or better, strikes twice per round delivering 2d8 points of slashing damage per hit and cannot be turned. The Minor Death is also immune to cold, fire, poison, electricity damage and all Enchantment/Charm spells.
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 20) RED KNIGHT
 
@@ -807,7 +806,7 @@ Saving Throw: None
 This spell allows the caster to foresee what is about to happen to <PRO_HIMHER> and around <PRO_HIMHER> in the next moments. Due to this awareness, the caster becomes immune to backstabbing and gains a +2 bonus to Thac0, Armor Class, Saving Throws and can to detect traps that are close.
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 21) GARAGOS
 
@@ -845,7 +844,7 @@ This spell enshrouds the priest in an armor of dense blood. Any weapon used to a
 While protected by a Blood Armor, the cleric has a +3 bonus to <PRO_HISHER> Armor Class and a 25% resistance to cold and fire as well as a 25% vulnerability to electricity.
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 22) VELSHAROON
 
@@ -867,7 +866,7 @@ In gaseous form, the priest is all but immune to attack. Only magical fire or li
 
 The Necrophant immediately returns to his original form upon the expiration of the spell duration or by voluntarily ending the spell.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 23) TYMORA
 
@@ -939,7 +938,7 @@ Saving Throw: None
 In the blink of an eye, the Luckbringer can be blessed by Tymora when asking for the Lady's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 24) BESHABA
 
@@ -1001,7 +1000,7 @@ Saving Throw: None
 
 In the blink of an eye, the Black Finger can be blessed by Beshaba when asking for the Maid's help. The priest receives a +5 bonus to Armor Class, Saving Throws and to <PRO_HISHER> critical hit range.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 25) HOAR
 
@@ -1039,7 +1038,7 @@ Upon completion of this spell, the Doombringer raps his weapon (usually a staff)
 If the save is successful, the victim avoids the stun effect, and is hurled only half the distance, receiving half the damage.
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 26) ULUTIU
 
@@ -1056,7 +1055,7 @@ Saving Throw: None
 
 By using this spell the Iceguardian communes with the spirit of the Great White Bear. The caster's Strength is raised to 18/00 and <PRO_HESHE> may deliver two attacks for 1d10/1d10 slashing damage. A critical hit will result in additional crushing damage of 3d6. All attacks are considered as delivered by a +2 weapon.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 27) DENEIR
 
@@ -1073,7 +1072,7 @@ Saving Throw: None
 
 Through this spell, the Glyphscriber creates a glyph that will remain flying still until triggered. Any enemy entering the glyph's area will make it explode, revealing invisible and hidden foes as well as making them glow for the next 3 rounds, imposing a -1 penalty to their AC.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 28) ARVOREEN
 
@@ -1094,7 +1093,7 @@ All creatures affected by this spell suffer a -1 penalty to their attack rolls f
 
 The effects of this spell will be canceled by Haste, Improved Haste and similar effects.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 29) GARL GLITTERGOLD
 
@@ -1113,7 +1112,7 @@ The victim of this spell perceives everything as hilariously funny. On the round
 
 This spell only affects somehow intelligent creatures (Intelligence score equal or greater than 4).
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 30) LOLTH
 
@@ -1130,7 +1129,7 @@ Saving Throw: None
 
 When the Arachne casts this spell, Lolth's grace is bestowed upon the touched creature, allowing it to move freely through webs - no matter if they are natural or magical.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 31) GRUUMSH
 
@@ -1151,7 +1150,7 @@ A dominated critter will fight by the Eye's side no matter what happens, followi
 
 A deafened creature can't be affected by this spell
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 32) CORELLON
 
@@ -1168,7 +1167,7 @@ Saving Throw: None
 
 This spell imbues the Feywarden with a sixth sense, alerting <PRO_HIMHER> of unexpected danger to <PRO_HIMHER>self. Although the exact nature of the threat is never revealed, the priest does realize that something dangerous is about to occur a moment before the event unfolds. While so protected, the cleric receives a +3 bonus to AC vs. Missile Weapons, Initiative and Saving Throw vs. Breath Weapons.
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 On top of the new spells and special abilities, every kit will get a Holy Symbol at level 25. Every kit get its own Holy Symbol, but their powers are the same and are listed below:
 
@@ -1183,7 +1182,7 @@ Equipped abilities:
 Weight: 0
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -1195,7 +1194,7 @@ This component also alters stats (raising it to the kit's minimum), alignment (a
 
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -1307,7 +1306,7 @@ Without this component the strongholds will be chosen by alignment, as the unmod
 
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -1317,7 +1316,7 @@ This component will make all non-magical armors, helmets and shields use the kit
 
 
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -2001,7 +2000,7 @@ f3) Non-DoF kits compatible with DoF's Sphere System:
 	Major: All, Air, Water, Sun, Divination, Vocal, Combat
 	Minor: Trickery, Travelers, Time
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 g) Bestiary
 
@@ -2107,7 +2106,7 @@ AC 6 | Attacks per Round 2 | STR 18 | DEX 18 | Movement Rate +50%
 
 Damage: 1d8 (piercing)  - strikes as +2
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 h) Dragon Armors
 
@@ -2256,7 +2255,7 @@ Requires:
 
 Weight: 25
 
-====================================================================================================================================================================
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 THANKS
 
 I have a lot of people to say "Thank You".
