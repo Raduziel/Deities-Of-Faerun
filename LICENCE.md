@@ -4,7 +4,7 @@ Copyright (c) [2026] [Raduziel]. All rights reserved.
 
 This license governs the use of this mod ("DoF") for Baldur's Gate:
 Enhanced Edition, Baldur's Gate II: Enhanced Edition, and Icewind Dale:
-Enhanced Edition (collectively, the "Games").
+Enhanced Edition.
 
 1. GRANT OF LICENSE
    You are granted a non-exclusive, non-transferable, revocable license to:
