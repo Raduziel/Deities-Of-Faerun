@@ -1083,7 +1083,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tempus-Athanasios.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//				       OSPREY, THE GLYPHSCRIBER OF DENEIR
+//				         OSPREY, THE GLYPHSCRIBER OF DENEIR
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -1091,6 +1091,17 @@ INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Tempus-Athanasios.tpa~
 BEGIN @999999926 LABEL ~DeitiesOfFaerun-GlyphscriberOfDeneir-Osprey~
 REQUIRE_PREDICATE (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~45~ AND GAME_IS ~bgee eet~ AND FILE_EXISTS_IN_GAME ~C0CR2OS.cre~) @9999905
 INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Deneir-Osprey.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				           CASSIA, THE WATCHER OF HELM
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @999999927 LABEL ~DeitiesOfFaerun-WatcherOfHelm-Cassia~
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~DeitiesOfFaerun.tp2~ ~10~ AND GAME_IS ~iwdee~ AND FILE_EXISTS_IN_GAME ~AWCass.cre~) @9999905
+INCLUDE  ~DeitiesOfFaerun/Lib/NPC/Helm-Cassia.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
@@ -1113,7 +1124,7 @@ INCLUDE  ~DeitiesOfFaerun/Lib/StrongholdAlterings.tpa~
 
 BEGIN @9999910 LABEL ~DeitiesOfFaerun-PnPDragonArmor~
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
-INCLUDE ~DeitiesOfFaerun/Lib/KitsRestrictions.tpa~
+INCLUDE ~DeitiesOfFaerun/Lib/PnPDragonArmor.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________

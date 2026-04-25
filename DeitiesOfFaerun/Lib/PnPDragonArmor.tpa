@@ -33,7 +33,7 @@ COPY_EXISTING ~BDLEAT05.itm~ ~override~
 SAY 0x0c @99903                         
 SAY 0x54 @99904
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = 3 parameter2 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~3~ parameter2 = 16  END
 
 END
 
@@ -42,28 +42,28 @@ ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
 COPY_EXISTING ~LEAT19.itm~ ~override~
 SAY 0x54 @99911
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = -8 parameter2 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~-8~ parameter2 = 16  END
 
 COPY_EXISTING ~PLAT18.itm~ ~override~
 SAY 0x54 @99912
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = -7 parameter2 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~-7~ parameter2 = 16  END
 
 COPY_EXISTING ~PLAT20.itm~ ~override~
 SAY 0x0c @99905							
 SAY 0x54 @99906
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = -8 parameter2 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~-8~ parameter2 = 16  END
 
 COPY_EXISTING ~CHAN20.itm~ ~override~
 SAY 0x54 @99913
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = -8 parameter2 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~-8~ parameter2 = 16  END
 
 COPY_EXISTING ~OHDARMOR.itm~ ~override~
 SAY 0x54 @99914
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = -8 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~-8~ = 16  END
 
 END
 
@@ -73,12 +73,12 @@ COPY_EXISTING ~cdscale.itm~ ~override~
 SAY 0x0c @99907							
 SAY 0x54 @99908
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = -2 parameter2 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~-2~ parameter2 = 16  END
 
 COPY_EXISTING ~DRAGARM.itm~ ~override~
 SAY 0x0c @99909							
 SAY 0x54 @99910
 
-LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = 4  parameter2 = 16  END
+LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 0 target = 1 timing = 2 parameter1 = ~4~  parameter2 = 16  END
 
 END

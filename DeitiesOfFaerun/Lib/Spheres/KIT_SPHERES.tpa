@@ -2009,7 +2009,37 @@
 		~Trickery~ => 0
 		~Time~ => 0
 		~Vocal~ => 0
-	END	
+	END
+	
+	//Lava's Hoarder of Astilabor
+	
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY	$priestspherelist(~L#AFUC~) BEGIN
+		~All~ => 7 
+		~Healing~ => 7
+		~Necromantic~ => 0
+		~Suffering~ => 0
+		~Animal~ => 0
+		~Vermin~ => 0
+		~Plant~ => 0
+		~Protection~ => 7
+		~Sun~ => 3
+		~Moon~ => 0
+		~Darkness~ => 0
+		~Thought~ => 3
+		~Combat~ => 7
+		~Creation~ => 0
+		~Summoning~ => 0
+		~Air~ => 0
+		~Water~ => 0
+		~Earth~ => 7
+		~Fire~ => 7
+		~Divination~ => 0
+		~Travelers~ => 3
+		~Weave~ => 3
+		~Trickery~ => 0
+		~Time~ => 7
+		~Vocal~ => 0
+	END
 	
 	//Raduziel's Circle Enforcer
 	
@@ -2337,6 +2367,6 @@
 		~Trickery~ => 0
 		~Time~ => 0
 		~Vocal~ => 0
-	END	
+	END
 	
 //EoF

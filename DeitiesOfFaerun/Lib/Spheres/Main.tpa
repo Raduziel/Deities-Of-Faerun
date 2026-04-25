@@ -212,17 +212,17 @@
 			READ_BYTE	0x1e	alignment
 			SET	alignment &= 63
 			PATCH_MATCH	alignment WITH
-				1		BEGIN	SET	$alignments(~1~) = 16	SET	$alignments(~2~) = 32	END	//	Non-Chaotic
+				1	BEGIN	SET	$alignments(~1~) = 16	SET	$alignments(~2~) = 32	END	//	Non-Chaotic
 				32	BEGIN	SET	$alignments(~1~) = 16	SET	$alignments(~2~) = 48	END	//	Non-LCNeutral
 				16	BEGIN	SET	$alignments(~1~) = 32	SET	$alignments(~2~) = 48	END	//	Non-Lawful
-				2		BEGIN	SET	$alignments(~1~) = 1	SET	$alignments(~2~) = 2	END	//	Non-Evil
-				8		BEGIN	SET	$alignments(~1~) = 1	SET	$alignments(~2~) = 3	END	//	Non-GENeutral
-				4		BEGIN	SET	$alignments(~1~) = 2	SET	$alignments(~2~) = 3	END	//	Non-Good
+				2	BEGIN	SET	$alignments(~1~) = 1	SET	$alignments(~2~) = 2	END	//	Non-Evil
+				8	BEGIN	SET	$alignments(~1~) = 1	SET	$alignments(~2~) = 3	END	//	Non-GENeutral
+				4	BEGIN	SET	$alignments(~1~) = 2	SET	$alignments(~2~) = 3	END	//	Non-Good
 				48	BEGIN	SET	$alignments(~1~) = 48	END	//	Chaotic-only
 				17	BEGIN	SET	$alignments(~1~) = 32	END	//	LCNeutral-only
 				33	BEGIN	SET	$alignments(~1~) = 16	END	//	Lawful-only
 				12	BEGIN	SET	$alignments(~1~) = 3	END	//	Evil-only
-				6		BEGIN	SET	$alignments(~1~) = 2	END	//	GENeutral-only
+				6	BEGIN	SET	$alignments(~1~) = 2	END	//	GENeutral-only
 				10	BEGIN	SET	$alignments(~1~) = 1	END	//	Good-only
 				60	BEGIN	SET	$alignments(~1~) = 51	END	//	Chaotic Evil only
 				54	BEGIN	SET	$alignments(~1~) = 50	END	//	Chaotic Neutral only
@@ -265,14 +265,14 @@
 						LPF	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = EVAL ~%one%~	RET	spell_res	END
 						PATCH_IF !	(~%one%~	STRING_MATCHES_REGEXP ~WIZARD_.+~)	BEGIN
 							PATCH_MATCH	~%one%~	WITH
-								~WIZARD_CHROMATIC_ORB~										WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR101~	END
-								~WIZARD_WEB~															WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR201~	END
-								~WIZARD_LIGHTNING_BOLT~										WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR301~	END
-								~WIZARD_IMPROVED_INVISIBILITY~						WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR401~	END
-								~WIZARD_CHAOS~														WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR501~	END
-								~WIZARD_CHAIN_LIGHTNING~									WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR601~	END
-								~WIZARD_HASTE~														WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA301~	END
-								~WIZARD_MINOR_SPELL_DEFLECTION~						WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA302~	END
+								~WIZARD_CHROMATIC_ORB~						WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR101~	END
+								~WIZARD_WEB~								WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR201~	END
+								~WIZARD_LIGHTNING_BOLT~						WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR301~	END
+								~WIZARD_IMPROVED_INVISIBILITY~				WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR401~	END
+								~WIZARD_CHAOS~								WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR501~	END
+								~WIZARD_CHAIN_LIGHTNING~					WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPDR601~	END
+								~WIZARD_HASTE~								WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA301~	END
+								~WIZARD_MINOR_SPELL_DEFLECTION~				WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA302~	END
 								~WIZARD_PROTECTION_FROM_NORMAL_MISSILES~	WHEN natureSpheres != 0	BEGIN	TEXT_SPRINT	spell_res	~SPRA303~	END
 							DEFAULT
 								INNER_PATCH_SAVE	newfile	~%spell_res%~	BEGIN	WRITE_ASCII	0	~RA~ #2	END
