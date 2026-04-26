@@ -59,6 +59,81 @@ ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ BEGIN
 END
 
 END
+
+//Transform Short Bow to Dart
+
+ACTION_IF FILE_EXISTS_IN_GAME ~YXY3.itm~ BEGIN
+
+//BAM
+
+COPY ~DeitiesOfFaerun/Spl/BAM/IDartYve.bam~ ~override~
+
+//Header
+
+COPY_EXISTING ~YXY3.itm~ ~override~
+
+	WRITE_LONG  0x18 (THIS BAND 0xFFFFFFFD) // Clear BIT1 (Two-Handed flag)
+	WRITE_SHORT 0x38 1			            // Stack Amount (don't stack)
+	WRITE_ASCII 0x3a ~IDartYve~ #8          // Inventory Icon
+	WRITE_ASCII 0x22 ~~         #2          // Animation (None)
+	WRITE_BYTE  0x31 0x6a                   // Weapon Proficiency
+	WRITE_SHORT 0x1c 0x18                   // Item Type: Darts
+	WRITE_ASCII	0x44 ~GDART01~  #8          // Ground Icon
+	WRITE_ASCII	0x58 ~CDART04~  #8          // Description Icon
+	WRITE_SHORT 0x26 0                      // Min Strength
+	WRITE_LONG  0x4c 0                      // Weight
+	WRITE_LONG  0x08 6919                   // Unidentified Dart Name
+	WRITE_LONG  0x50 6922			        // Unidentified Dart Description
+	WRITE_LONG  0x60 1				        // Enchantment
+	SAY         IDENTIFIED_DESC ~This dart is another favored weapon of the Heartwarder of Sune, Yvette. Small and unassuming in appearance, it bears a minor enchantment that causes it to return to the hand that cast it.
+
+STATISTICS:
+
+Equipped abilities: 
+– Immunity to fear
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+
+THAC0: +1
+Damage: 1d3+1 (missile)
+Speed Factor: 1
+Proficiency Type: Dart
+Type: One-handed
+
+Weight: 0
+
+Usable by:
+  Yvette~
+
+//Extended Header
+
+LPF ALTER_ITEM_HEADER INT_VAR launcher = 0 speed = 1 thac0_bonus = 1 dicesize = 3 dicenumber = 1 damage_bonus = 1 damage_type = 4 projectile = 319 animation_overhand = 0 animation_backhand = 0 animation_thrust = 0 STR_VAR icon = ~IDartYve~ END
+
+//Effects
+
+LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 1 END
+LPF DELETE_ITEM_EFFECT   INT_VAR opcode_to_delete = 1 END
+
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 1   target = 1 timing = 2 parameter1 = 3 parameter2 = 1 END
+
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 17427 END //String Panic 
+
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 14007 END //String Panic
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 14018 END //String Morale Modification
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 14099 END //String Morale Break
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 14134 END //String Morale Failure
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 20568 END //String Morale Failure: Panic
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 20569 END //String Morale Failure: Running
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 timing = 2 parameter1 = 20570 END //String Morale Failure: Berserk
+
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 101 target = 1 timing = 2 parameter2 = 106   END //Morale Break Effect
+
+LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 142 target = 1 timing = 2 parameter2 = 37    END //Display Resist Fear Icon
+
+BUT_ONLY
+
+END
  
 //Kit
 
