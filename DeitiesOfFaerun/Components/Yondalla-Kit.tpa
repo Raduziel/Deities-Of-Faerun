@@ -7,7 +7,7 @@
 
 ADD_KIT ~RAYond~
     ~RAYond 0 0 0 0 1 1 0 1~
-    ~RAYond 0 0 0 0 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAYond 0 0 0 0 1 1 0 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAYond 12 3 3 3 13 3~
 	~RAYond 0 0 0 0 0 0~
 	~RAYond 12 3 3 3 13 3~
@@ -62,19 +62,17 @@ ACTION_IF GAME_IS ~bg2ee~ BEGIN
 COPY_EXISTING ~RAYONDF.spl~ override
 LPF DELETE_SPELL_HEADER INT_VAR silent = 1 header_type = ~-1~ min_level = 0 END
 
-COPY_EXISTING ~RAYond.2da~  override
-SET_2DA_ENTRY 1 1 50 ~****      ~
-PRETTY_PRINT_2DA
-
 END
 
-COPY ~DeitiesOfFaerun/Spl/RAYONDF.eff~ override
+COPY ~DeitiesOfFaerun/Spl/RAYONDS1.eff~ override
+COPY ~DeitiesOfFaerun/Spl/RAYONDS2.eff~ override
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
 		107 BEGIN
-		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAYond~)   parameter2 = 9 timing = 2 STR_VAR resource = ~RAYONDF~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAYond~)   parameter2 = 9 timing = 2 insert_point = ~-1~ STR_VAR resource = ~RAYONDS1~ END
+		  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAYond~)   parameter2 = 9 timing = 2 insert_point = ~-1~ STR_VAR resource = ~RAYONDS2~ END
 		  END
 		DEFAULT
 	END

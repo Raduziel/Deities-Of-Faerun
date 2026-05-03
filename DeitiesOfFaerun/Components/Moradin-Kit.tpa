@@ -51,8 +51,14 @@ WRITE_ASCII 0x058 ~MORAL~
 
 //Spells
 
+COPY ~DeitiesOfFaerun/Spl/RAGenRes.spl~ ~override/RAMORAR.spl~
+LPF ALTER_EFFECT INT_VAR                       match_opcode = 139 parameter1 = RESOLVE_STR_REF (@5406) END
+LPF ALTER_EFFECT INT_VAR                       match_opcode = 321 STR_VAR resource = ~RAMORAF~  END
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 1  match_opcode = 206 STR_VAR resource = ~RAMORAF~  END
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 2  match_opcode = 206 STR_VAR resource = ~RAHSMORA~ END
+
 COPY ~DeitiesOfFaerun/Spl/RAMORAF.spl~ override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@5406) END
+LPF ALTER_EFFECT INT_VAR  match_opcode = 326 STR_VAR resource = ~RAMORAR~  END
 
 //Command
 

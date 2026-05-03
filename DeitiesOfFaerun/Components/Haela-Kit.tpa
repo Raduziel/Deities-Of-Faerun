@@ -51,10 +51,35 @@ WRITE_ASCII 0x058 ~HAELL~
 
 //Spells
 
+COPY ~DeitiesOfFaerun/Spl/RAGenRes.spl~ ~override/RAHAELR.spl~
+LPF ALTER_EFFECT INT_VAR                       match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4806) END
+LPF ALTER_EFFECT INT_VAR                       match_opcode = 321 STR_VAR resource = ~RAHAELF~  END
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 1  match_opcode = 206 STR_VAR resource = ~RAHAELF~  END
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 2  match_opcode = 206 STR_VAR resource = ~RAHSHAEL~ END
+LPF CLONE_EFFECT INT_VAR 					   match_opcode = 206 STR_VAR resource = ~RAFHAEL~  END
+
 COPY ~DeitiesOfFaerun/Spl/RAHAELF.spl~  override
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@4806) END
+LPF ALTER_EFFECT INT_VAR  match_opcode = 326 STR_VAR resource = ~RAHAELR~  END
+LPF ALTER_EFFECT INT_VAR  match_opcode = 321 STR_VAR resource = ~RAHAELF~  END
+LPF ALTER_EFFECT INT_VAR  match_opcode = 206 STR_VAR resource = ~RAHAELF~  END
+
 
 COPY ~DeitiesOfFaerun/Spl/RAHAELF.eff~  override
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+    READ_LONG  0x64  ab_off
+    READ_SHORT 0x68  ab_num
+    SET is_ranged = 0
+    FOR (i = 0; i < ab_num; ++i) BEGIN
+        READ_BYTE (ab_off + i * 0x38) ab_type
+        PATCH_IF (ab_type != 1) BEGIN
+            SET is_ranged = 1
+        END
+    END
+    PATCH_IF (is_ranged = 0) BEGIN
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 177 target = 1 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHael~) parameter2 = 109 timing = 2 STR_VAR resource = ~RAHAELF~ END
+    END
+BUT_ONLY
 
 //Shield
 

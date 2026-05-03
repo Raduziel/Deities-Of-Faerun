@@ -756,14 +756,13 @@ INCLUDE  ~DeitiesOfFaerun/Components/Lolth-Kit.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//		        EYE OF GRUUMSH (IWDEE, EET, BGEE and BG2EE)
+//		       BLOODSPEAR OF GRUUMSH (IWDEE, EET, BGEE and BG2EE)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 BEGIN @99999952 LABEL ~DeitiesOfFaerun-EyeOfGruumsh~
 REQUIRE_COMPONENT ~DeitiesOfFaerun.tp2~ ~0~ @9999902
 INCLUDE  ~DeitiesOfFaerun/Components/Gruumsh-Kit.tpa~
-INCLUDE  ~DeitiesOfFaerun/Components/Gruumsh-KitFC.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
