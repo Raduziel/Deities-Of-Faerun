@@ -120,7 +120,7 @@ LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@9999225) STR_VAR bam_
 COPY_EXISTING	~%spell_res%.spl~	override
 SAY UNIDENTIFIED_DESC @9999226 SAY DESC @9999226	
 LPF	ALTER_SPELL_HEADER	INT_VAR	target = 5 range = 0 END
-LPF ALTER_EFFECT  		INT_VAR match_opcode = 21 target = 2   timing = 0 duration = 60 parameter1 = 250 parameter2 = 1 resist_dispel = 3 END
+LPF ALTER_EFFECT  		INT_VAR match_opcode = 21 target = 2   timing = 0 duration = 60 parameter1 = 100 parameter2 = 1 resist_dispel = 3 END
 LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 142 parameter1 = 0   parameter2 = iconiden resist_dispel = 3 				  END
 LPF	CLONE_EFFECT	    INT_VAR match_opcode = 21 opcode = 174 timing = 4 duration = 60 parameter1 = 0   parameter2 = 0 resist_dispel = 3 STR_VAR resource = ~EFF_E04~ END
 
@@ -3878,6 +3878,16 @@ COPY_EXISTING ~%spell_res%.spl~ override
 SAY UNIDENTIFIED_DESC @9999300 SAY DESC @9999300
 
 END	
+
+END
+
+//PnP Neutralize Poison
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~SPELL.IDS~ ~[ %TAB%]CLERIC_NEUTRALIZE_POISON[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
+LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~CLERIC_NEUTRALIZE_POISON~ RET spell_res END
+
+COPY_EXISTING ~%spell_res%.spl~ override
+LPF DELETE_EFFECT INT_VAR silent = 1 match_opcode =  17 END
 
 END
 

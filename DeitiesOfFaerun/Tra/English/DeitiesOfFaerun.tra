@@ -1248,12 +1248,12 @@ Weight: 0~
 Level: 6
 Sphere: Divination
 Range: Touch
-Duration: Special
+Duration: 5 rounds
 Casting Time: 3
-Area of Effect: 1 creature
+Area of Effect: The caster
 Saving Throw: None
 
-With this spell, the Lorekeeper can extend someone's knowledge immensely. The caster gains 100 points of Lore for five rounds, is capable of using any item for two rounds and learns how to unequip cursed items, cure diseases and neutralize poisons.~
+For the duration of the spell, the priest’s Lore is set to 100. In addition, the Lorekeeper gains the Use Any Item ability and is granted one use each of Neutralize Poison, Remove Curse, and Cure Disease as innate abilities, usable only while the spell lasts.~
 @1208 = ~LOREKEEPER OF OGHMA (C/M): Oghma (OGG-mah) is the most powerful god of knowledge in Faerûn. Much as Mystra of old was said to sit in judgment of each new spell, Oghma is said to decide whether a new idea would be known to the world or confined to its originator. Deneir and Milil both act as intercessors for Oghma, carrying new information both to him and to those whom Oghma favors. He is on good relations with the artificer god, Gond Wonderbringer, who serves him by giving ideas manifest form, but their relationship has sometimes become tense due to Gond's proclivity to press for the rapid introduction of new devices throughout Faerûn. In Durpar, Estagund, and Var the Golden, Oghma is worshiped as part of the Adama, the Durparian concept of a world spirit that embraces and enfolds the divine essence that is part of all beings. Here he is known as Curna, goddess of wisdom.
 
 Oghma is a cheerful and wise power whose ability to persuade others to his point of view he puts to endless use. He can be solemn and righteous, but he is more often quietly humorous and quick to smile. His one flaw may be his fondness for his own thoughts; he tends to implement rather convoluted plots that he has worked out first in his own mind rather than to take direct action.
